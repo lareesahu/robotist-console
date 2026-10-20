@@ -50,7 +50,7 @@ git commit → git push to main → Render detects push → site live in ~60s
 This is a **GitHub → Render auto-deploy** pipeline. The `render.yaml` file at the repo root is the Render Blueprint that controls this. Auto-Deploy is set to **"On Commit"** in the Render dashboard.
 
 **Render service:** `robotist` (Static Site, `srv-d7egikd7vvec73f79q80`)
-**Render account login:** `lareesa@pulse-branding.com` / `Evolveyourbrand2021` (email login — do not use GitHub OAuth button)
+**Render account login:** lareesa@pulse-branding.com — password is not stored in this repo.
 
 For full deployment details, troubleshooting, and account setup, see **[DEPLOY.md](./DEPLOY.md)**.
 
