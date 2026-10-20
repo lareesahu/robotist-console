@@ -1,0 +1,7 @@
+-r ../grn/requirements.txt
+beautifulsoup4==4.13.4
+
+psycopg[binary]>=3.2,<4
+
+pypdf>=6.0,<7
+pypdfium2>=4.30,<6

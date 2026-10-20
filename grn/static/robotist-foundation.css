@@ -1,0 +1,51 @@
+/* Homepage typography, applied to the public GRN/inquiry flows. */
+.has-site-shell {font-family:var(--font-body);-webkit-font-smoothing:antialiased}
+.has-site-shell main {font-family:var(--font-body);letter-spacing:normal}
+.has-site-shell main h1,.has-site-shell main h2,.has-site-shell main h3 {font-family:var(--font-main);letter-spacing:-.02em;font-weight:600}
+.has-site-shell main .eyebrow {font-family:var(--font-main);letter-spacing:.16em;font-weight:500}
+.has-site-shell main p,.has-site-shell main label,.has-site-shell main input,.has-site-shell main textarea,.has-site-shell main select,.has-site-shell main button {letter-spacing:normal}
+.has-site-shell main button,.has-site-shell main .button {font-family:var(--font-main);font-weight:500;border-radius:2px}
+.has-site-shell .grn-onepager .intro {font-size:16px;line-height:1.75;font-weight:300}
+.has-site-shell .hero-application {scroll-margin-top:calc(var(--nav-h) + 24px)}
+.has-site-shell main [id] {scroll-margin-top:calc(var(--nav-h) + 24px)}
+.has-site-shell .hero-application h2 {font-size:28px}
+.has-site-shell .hero-application .application-lede {font-size:14px}
+.has-site-shell .hero-application label {font-size:13px}
+.has-site-shell .hero-application input,.has-site-shell .hero-application select,.has-site-shell .hero-application textarea {font-size:16px;min-height:44px}
+.has-site-shell .hero-application button {font-size:14px;min-height:44px}
+.has-site-shell .hero-application .form-progress {font-size:12px;letter-spacing:normal}
+.has-site-shell .hero-application .application-privacy {font-size:12px}
+.has-site-shell .hero-application .checks label {font-size:13px;min-height:44px;align-items:flex-start}
+.has-site-shell .hero-application .checks input {min-height:20px;min-width:20px;width:20px;height:20px;flex-shrink:0}
+.has-site-shell .hero-application summary {font-size:14px;min-height:44px;line-height:44px}
+.has-site-shell .hero-application summary span {color:#aabacb}
+.has-site-shell .hero-application input::placeholder,.has-site-shell .hero-application textarea::placeholder {color:#aabacb;opacity:1}
+.has-site-shell .skip:focus {z-index:2000}
+@media(max-width:760px) {
+ .has-site-shell .grn-onepager h1 {font-size:34px;line-height:1.1}
+ .has-site-shell .grn-onepager .hero-copy .intro {font-size:14px;line-height:1.5}
+ .has-site-shell .hero-application .application-lede {font-size:13px;margin-bottom:12px}
+ .has-site-shell .hero-application {padding:17px 20px}
+ .has-site-shell .hero-application h2 {font-size:26px}
+}
+@media(prefers-reduced-motion:reduce) {
+ .has-site-shell {scroll-behavior:auto}
+ .has-site-shell .robotist-shell .nav,.has-site-shell .robotist-shell .nav-links,.has-site-shell .robotist-shell .nav-hamburger span {transition:none}
+}
+
+/* Keep the inherited GRN nav reset from wrapping the universal header. */
+.robotist-shell .nav {flex-wrap:nowrap}
+.robotist-shell .nav-logo {min-width:0
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.robotist-shell .nav-logo img {max-width:100%;object-fit:contain}
+.robotist-shell .nav-hamburger {flex-shrink:0}
+@media(max-width:400px){.robotist-shell .nav-cta{padding-left:14px;padding-right:14px;flex-shrink:0}.robotist-shell .nav-logo {max-width:calc(100vw - 186px)
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}}
+.has-site-shell main .section h2,.has-site-shell main .section h3 {font-family:var(--font-main);font-weight:600;letter-spacing:-.02em}
+.faq-list summary { min-height: 44px; padding-top: 8px; padding-bottom: 8px; }

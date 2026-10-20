@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">Article — Robotist</title>
+<meta name="description" id="page-desc" content="Robotist blog article">
+<meta name="robots" content="index, follow">
+<link rel="canonical" id="page-canonical" href="https://www.robotist.com.au/blog-post.html">
+<meta property="og:type" content="article">
+<meta property="og:title" id="og-title" content="Article — Robotist">
+<meta property="og:description" id="og-desc" content="Robotist blog article">
+<meta property="og:url" id="og-url" content="https://www.robotist.com.au/blog-post.html">
+<meta property="og:image" id="og-image" content="">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" id="tw-title" content="Article — Robotist">
+<meta name="twitter:description" id="tw-desc" content="Robotist blog article">
+<meta name="twitter:image" id="tw-image" content="">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg-0: #030810; --bg-1: #060D18; --bg-2: #0C1828; --bg-3: #142035; --bg-4: #1E3550;
+  --accent: #4AA8C8; --accent-dim: #2E8FB5; --accent-light: #A8DCEF;
+  --accent-glow: rgba(74,168,200,0.12); --white: #F0F4F8;
+  --grey-1: #8A9BB0; --grey-2: #4A5A6A; --grey-3: #1E2D3D;
+  --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --nav-h: 72px; --gutter: clamp(24px, 6vw, 80px);
+}
+html { scroll-behavior: smooth; font-size: 16px; height: 100%; }
+body { background: var(--bg-0); color: var(--white); font-family: var(--font-body); overflow-x: hidden; }
+
+/* Nav */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; align-items: center; justify-content: space-between; padding: 0 var(--gutter); height: var(--nav-h); background: rgba(3,8,16,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(74,168,200,0.08); }
+.nav-logo { display:flex; align-items:center; text-decoration: none;
+  min-height: 44px;
+}
+.nav-logo img { display:block; height:28px; width:auto; }
+.nav-links { display: flex; align-items: center; gap: 40px; list-style: none; }
+.nav-links a { font-family: var(--font-main); font-weight: 300; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey-1); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--white); }
+.nav-links a.active { color: var(--accent); }
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  box-sizing: border-box;
+  line-height: 1;
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bg-0);
+  background: var(--accent);
+  padding: 0 26px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+.nav-cta:hover { background: var(--accent-light); transform: translateY(-1px); }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+.nav-hamburger span { display: block; width: 24px; height: 1px; background: var(--grey-1); transition: transform 0.3s, opacity 0.3s; }
+.nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translateY(12px); }
+.nav-hamburger.active span:nth-child(2) { opacity: 0; }
+.nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translateY(-12px); }
+.nav-links.open { display: flex; flex-direction: column; position: absolute; top: var(--nav-h); left: 0; right: 0; background: rgba(3,8,16,0.95); backdrop-filter: blur(24px); padding: 20px var(--gutter); gap: 16px; z-index: 400; border-bottom: 1px solid rgba(74,168,200,0.08); }
+
+/* Cover */
+.article-cover { margin-top: var(--nav-h); width: 100%; max-height: 420px; overflow: hidden; background: var(--bg-2); display: flex; align-items: center; justify-content: center; }
+.article-cover img { width: 100%; height: auto; max-height: 420px; object-fit: contain; display: block; }
+
+/* Article layout */
+.article-wrap { display: grid; grid-template-columns: 200px 1fr; max-width: 1000px; margin: 0 auto; padding: 0 var(--gutter); gap: 60px; }
+
+/* TOC sidebar */
+.toc-sidebar { padding-top: 48px; position: sticky; top: calc(var(--nav-h) + 24px); align-self: start; max-height: calc(100vh - var(--nav-h) - 48px); overflow-y: auto; }
+.toc-title { font-family: var(--font-main); font-size: 10px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey-1); margin-bottom: 16px; }
+.toc-list { list-style: none; }
+.toc-list li { margin-bottom: 6px; }
+.toc-list a { font-size: 12px; font-weight: 400; color: var(--grey-1); text-decoration: none; line-height: 1.5; display: block; padding: 3px 0; border-left: 2px solid transparent; padding-left: 12px; transition: color 0.15s, border-color 0.15s; }
+.toc-list a:hover { color: var(--grey-1); border-left-color: var(--grey-3); }
+.toc-list a.active { color: var(--accent); border-left-color: var(--accent); }
+.toc-list a.toc-h4 { padding-left: 24px; font-size: 11px; }
+
+/* Main article */
+.article { padding: 48px 0 80px; max-width: 680px; }
+.article-category { font-family: var(--font-main); font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 14px; }
+.article h1 { font-family: var(--font-main); font-size: clamp(28px, 4.5vw, 42px); font-weight: 600; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 12px; }
+.article-meta { font-family: var(--font-main); font-size: 12px; font-weight: 400; color: var(--grey-1); letter-spacing: 0.06em; margin-bottom: 36px; display: flex; gap: 18px; align-items: center; }
+.article-meta-dot { width: 3px; height: 3px; border-radius: 50%; background: var(--grey-3); }
+
+/* Content */
+.article-content { font-family: var(--font-body); font-size: 17px; font-weight: 400; line-height: 1.8; color: #C4CCD4; }
+.article-content p { margin-bottom: 28px; }
+.article-content h3 { font-family: var(--font-main); font-size: 22px; font-weight: 600; color: var(--white); margin: 56px 0 18px; letter-spacing: -0.015em; line-height: 1.3; scroll-margin-top: calc(var(--nav-h) + 20px); }
+.article-content h4 { font-family: var(--font-main); font-size: 17px; font-weight: 600; color: var(--white); margin: 36px 0 14px; scroll-margin-top: calc(var(--nav-h) + 20px); }
+.article-content ul, .article-content ol { margin: 0 0 28px 22px; }
+.article-content li { margin-bottom: 12px; line-height: 1.7; }
+.article-content li strong { color: var(--white); font-weight: 600; }
+.article-content em { color: var(--accent-light); font-style: normal; }
+.article-content strong { color: var(--white); font-weight: 600; }
+
+/* Key takeaway */
+.key-takeaway { margin: 40px 0; padding: 24px 28px; background: var(--bg-1); border-left: 3px solid var(--accent); }
+.key-takeaway-label { font-family: var(--font-main); font-size: 9px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.key-takeaway p { font-size: 15px; font-weight: 400; color: var(--white); line-height: 1.65; margin-bottom: 0; }
+
+/* CTA */
+.article-cta { margin-top: 56px; padding: 36px 40px; background: var(--bg-1); border: 1px solid var(--grey-3); text-align: center; }
+.article-cta h3 { font-family: var(--font-main); font-size: 18px; font-weight: 600; color: var(--white); margin: 0 0 8px; }
+.article-cta p { font-size: 14px; font-weight: 400; color: var(--grey-1); margin-bottom: 20px; }
+.article-cta a { display: inline-block; font-family: var(--font-main); font-size: 12px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--bg-0); background: var(--accent); padding: 14px 32px; text-decoration: none; transition: background 0.2s; }
+.article-cta a:hover { background: var(--accent-light); }
+
+/* Related posts */
+.related { max-width: 1000px; margin: 0 auto; padding: 0 var(--gutter) 100px; }
+.related h2 { font-family: var(--font-main); font-size: 13px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey-1); margin-bottom: 24px; }
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+.related-card { background: var(--bg-1); border: 1px solid var(--grey-3); padding: 24px; text-decoration: none; transition: border-color 0.2s, background 0.2s; }
+.related-card:hover { border-color: var(--accent-dim); background: var(--bg-2); }
+.related-card-category { font-family: var(--font-main); font-size: 8px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.related-card-title { font-family: var(--font-main); font-size: 15px; font-weight: 600; color: var(--white); line-height: 1.35; margin-bottom: 6px; }
+.related-card-meta { font-family: var(--font-main); font-size: 10px; font-weight: 400; color: var(--grey-1); }
+
+/* Not found */
+.article-not-found { text-align: center; padding: calc(var(--nav-h) + 100px) var(--gutter) 100px; }
+.article-not-found h2 { font-family: var(--font-main); font-size: 24px; font-weight: 600; margin-bottom: 12px; }
+.article-not-found p { color: var(--grey-1); margin-bottom: 24px; }
+.article-not-found a { color: var(--accent); }
+
+/* Footer */
+.footer { background: var(--bg-0); border-top: 1px solid rgba(74,168,200,0.06); padding: 80px var(--gutter) 40px; }
+.footer-inner { max-width: var(--container); margin: 0 auto; display: grid; grid-template-columns: 2.5fr 1fr 1fr 1fr; gap: 80px; margin-bottom: 64px; }
+.footer-logo { font-family: var(--font-main); font-weight: 500; font-size: 16px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 20px; }
+.footer-tagline { font-family: var(--font-body); font-size: 13px; font-weight: 300; line-height: 1.75; color: var(--grey-1); max-width: 300px; margin-bottom: 32px; }
+.footer-col-title { font-family: var(--font-main); font-size: 10px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--grey-1); margin-bottom: 24px; }
+.footer-links { display: flex; flex-direction: column; gap: 14px; list-style: none; }
+.footer-links a { font-family: var(--font-body); font-size: 13px; font-weight: 300; color: var(--grey-1); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--white); }
+.footer-bottom { max-width: var(--container); margin: 0 auto; padding-top: 32px; border-top: 1px solid var(--grey-3); display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+.footer-copy { font-family: var(--font-body); font-size: 12px; font-weight: 300; color: var(--grey-1); letter-spacing: 0.04em; }
+.footer-legal { display: flex; gap: 28px; }
+.footer-legal a { font-family: var(--font-body); font-size: 12px; font-weight: 300; color: var(--grey-1); text-decoration: none; transition: color 0.2s; }
+.footer-legal a:hover { color: var(--grey-1); }
+
+@media (max-width: 860px) {
+  .article-wrap { grid-template-columns: 1fr; gap: 0; }
+  .toc-sidebar { display: none; }
+  .article { padding-top: 32px; }
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+  .footer-inner { grid-template-columns: 1fr; gap: 40px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .footer-legal { flex-wrap: wrap; gap: 16px; }
+}
+.nav-cta--ghost {
+  min-height: 42px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--grey-1);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  padding: 0 22px;
+}
+.nav-cta--ghost:hover { color: var(--white); border-color: rgba(255, 255, 255, 0.45); }
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+
+
+@media (max-width: 600px) {
+  .article-content { font-size: 16px; }
+  .article-content h3 { font-size: 19px; margin-top: 40px; }
+  .article-cta { padding: 28px 24px; }
+  .related-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Inquiry Modal ── */
+.modal-overlay{
+  position:fixed;inset:0;z-index:10000;
+  background:rgba(0,0,0,.82);backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  display:flex;align-items:center;justify-content:center;padding:20px;
+  animation:modalFadeIn .25s ease;
+}
+@keyframes modalFadeIn{from{opacity:0}to{opacity:1}}
+
+.modal-box{
+  position:relative;
+  background:var(--bg-0,#030810);
+  border:1px solid rgba(74,168,200,.12);
+  border-radius:6px;
+  padding:clamp(28px,4vw,48px);
+  width:100%;max-width:540px;
+  max-height:90vh;overflow-y:auto;
+  animation:modalSlideUp .3s ease;
+}
+@keyframes modalSlideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+
+.modal-close{
+  position:absolute;top:14px;right:18px;
+  background:none;border:none;
+  color:var(--grey-1,#8A9BB0);font-size:24px;
+  cursor:pointer;line-height:1;padding:4px;
+  transition:color .2s;
+}
+.modal-close:hover{color:var(--white,#F0F4F8)}
+
+/* ── Form Typography ── */
+.inquiry-eyebrow{
+  font-family:var(--font-main);font-size:10px;font-weight:500;
+  letter-spacing:.3em;text-transform:uppercase;
+  color:var(--accent,#4AA8C8);margin-bottom:12px;
+}
+.inquiry-title{
+  font-family:var(--font-main);font-size:clamp(22px,3vw,32px);
+  font-weight:300;line-height:1.2;letter-spacing:-.02em;
+  color:var(--white,#F0F4F8);margin-bottom:14px;
+}
+.inquiry-title em{font-style:normal;color:var(--accent,#4AA8C8);font-weight:600}
+.inquiry-desc{
+  font-family:var(--font-body);font-size:14px;font-weight:300;
+  line-height:1.7;color:var(--grey-1,#8A9BB0);margin-bottom:28px;
+}
+
+/* ── Form Fields ── */
+.inquiry-form{display:flex;flex-direction:column;gap:14px;text-align:left}
+.inquiry-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.inquiry-field{display:flex;flex-direction:column;gap:5px}
+.inquiry-field label{
+  font-family:var(--font-main);font-size:10px;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;color: var(--grey-1);
+}
+.inquiry-field input,
+.inquiry-field select,
+.inquiry-field textarea{
+  font-family:var(--font-body);font-size:15px;font-weight:300;
+  color:var(--white,#F0F4F8);background:var(--bg-1,#060D18);
+  border:1px solid rgba(255,255,255,.07);padding:12px 14px;
+  outline:none;transition:border-color .2s,background .2s;
+}
+.inquiry-field input:focus,
+.inquiry-field select:focus,
+.inquiry-field textarea:focus{
+  border-color:rgba(74,168,200,.35);background:var(--bg-2,#0C1828);
+}
+.inquiry-field input::placeholder,
+.inquiry-field textarea::placeholder{color: var(--grey-1)}
+
+.inquiry-field select{
+  appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%238A9BB0' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;
+  padding-right:38px;
+}
+.inquiry-field select option{background:var(--bg-2,#0C1828);color:var(--white,#F0F4F8)}
+.inquiry-field textarea{resize:vertical;min-height:110px}
+
+.inquiry-submit-wrap{display:flex;justify-content:flex-start;margin-top:4px}
+
+/* ── Modal button ── */
+.modal-box .btn-primary{
+  font-family:var(--font-main);font-weight:500;font-size:12px;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--bg-0,#030810);background:var(--accent,#4AA8C8);
+  padding:14px 32px;border:none;cursor:pointer;
+  transition:background .2s,transform .15s;
+}
+.modal-box .btn-primary:hover{background:var(--accent-light,#A8DCEF);transform:translateY(-1px)}
+.modal-box .btn-primary:disabled{opacity:.6;cursor:not-allowed;transform:none}
+
+/* ── Mobile ── */
+@media(max-width:600px){
+  .modal-overlay{padding:12px;align-items:flex-end}
+  .modal-box{border-radius:12px 12px 0 0;max-height:92vh;padding:24px 20px 32px}
+  .inquiry-row{grid-template-columns:1fr}
+  .inquiry-submit-wrap{justify-content:stretch}
+  .modal-box .btn-primary{width:100%;text-align:center}
+}
+/* ── Article media (responsive) ── */
+.article-cover img,.article-content img{max-width:100%;height:auto}
+.article-content iframe{max-width:100%}
+.article-content table{display:block;max-width:100%;overflow-x:auto}
+.article-wrap>*{min-width:0}
+/* ── SEO FAQ ── */
+.article-faq{margin-top:44px;padding-top:28px;border-top:1px solid rgba(74,168,200,.14)}
+.article-faq h2{font-family:var(--font-main);font-weight:600;font-size:22px;letter-spacing:-.01em;margin:0 0 18px;color:var(--white)}
+.article-faq .faq-item{margin-bottom:20px}
+.article-faq .faq-item h3{font-family:var(--font-main);font-weight:600;font-size:16px;color:var(--accent-light);margin:0 0 6px}
+.article-faq .faq-item p{margin:0;color:var(--white);font-weight:300}
+</style>
+<link rel="stylesheet" href="/mobile-usability.css">
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <a href="/" class="nav-logo"><img src="/images/logo.svg" alt="Robotist" style="height:clamp(24px, 3.5vw, 36px);width:auto;"></a>
+    <ul class="nav-links">
+    <li><a href="/index.html#catalogue">Catalogue</a></li>
+    <li><a href="/index.html#services">Services</a></li>
+    <li><a href="/compare.html">Compare</a></li>
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="/grn/" class="nav-cta nav-cta--ghost">Join us</a>
+    <a href="/contact.html" class="nav-cta">Get Started</a>
+  </div>
+  <button class="nav-hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div id="article-container"></div>
+
+<div id="related-container"></div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <span class="footer-logo">Robotist</span>
+      <p class="footer-tagline">The global robotics platform. We connect businesses worldwide with the machines that will define the next decade of commerce.</p>
+      <p style="font-family:var(--font-body);font-size:12px;font-weight:300;color: var(--grey-1);">Shanghai · Hangzhou · Sydney</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Platform</div>
+      <ul class="footer-links">
+        <li><a href="/#catalogue">Robot Catalogue</a></li>
+        <li><a href="/compare.html">Compare Robots</a></li>
+        <li><a href="/#services">Integration Services</a></li>
+        <li><a href="/#services">Maintenance Plans</a></li>
+        <li><a href="/#services">Consultation</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="/about.html">About Robotist</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="mailto:robert@robotist.com.au">robert@robotist.com.au</a></li>
+        <li><a href="mailto:lareesa@robotist.com.au">lareesa@robotist.com.au</a></li>
+        <li><a href="https://www.linkedin.com/company/robotistworld/">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">&copy; 2026 Robotist Pty Ltd. All rights reserved.</span>
+    <span class="footer-legal" style="display:inline-flex;flex-wrap:wrap;gap:14px;font-size:12px;letter-spacing:.04em;"><a href="/faq.html">FAQ</a><a href="/terms.html">Terms</a><a href="/cookies.html">Cookies</a><a href="/privacy.html">Privacy</a></span>
+  </div>
+</footer>
+
+<script>
+const slug = new URLSearchParams(window.location.search).get('slug');
+
+function buildTOC(content) {
+  const parser = new DOMParser();
+  const doc = parser.parseFromString('<div>' + content + '</div>', 'text/html');
+  const headings = doc.querySelectorAll('h3, h4');
+  if (headings.length < 3) return '';
+  let html = '<nav class="toc-sidebar"><div class="toc-title">On this page</div><ul class="toc-list">';
+  headings.forEach((h, i) => {
+    const id = 'section-' + i;
+    h.id = id;
+    const cls = h.tagName === 'H4' ? ' toc-h4' : '';
+    html += `<li><a href="#${id}" class="${cls}">${h.textContent}</a></li>`;
+  });
+  html += '</ul></nav>';
+  return { toc: html, content: doc.querySelector('div').innerHTML };
+}
+
+function coverUrlFor(post) {
+  const rel = post.coverUrl || ('blog/covers/' + post.slug + '.jpg');
+  return rel.startsWith('http') ? rel : '/' + rel.replace(/^\/+/, '');
+}
+
+function absUrl(u) {
+  return u.startsWith('http') ? u : 'https://www.robotist.com.au' + u;
+}
+
+function seoDate(d) {
+  const dt = new Date(d);
+  if (isNaN(dt)) return undefined;
+  const p = n => String(n).padStart(2, '0');
+  return dt.getFullYear() + '-' + p(dt.getMonth() + 1) + '-' + p(dt.getDate());
+}
+
+function seoJsonLd(post) {
+  const pageUrl = 'https://www.robotist.com.au/blog/' + post.slug + '.html';
+  const cover = absUrl(coverUrlFor(post));
+  const objs = [{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "description": post.metaDescription || post.excerpt,
+    "image": [cover],
+    "datePublished": seoDate(post.publishedAt || post.date),
+    "dateModified": seoDate(post.dateModified || post.publishedAt || post.date),
+    "author": { "@type": "Organization", "name": "Robotist", "url": "https://www.robotist.com.au/" },
+    "publisher": { "@type": "Organization", "name": "Robotist", "logo": { "@type": "ImageObject", "url": "https://www.robotist.com.au/robotist-og.jpg" } },
+    "mainEntityOfPage": { "@type": "WebPage", "@id": pageUrl },
+    "url": pageUrl,
+    "articleSection": post.category,
+    "keywords": (post.keywords || []).join(', ')
+  }, {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.robotist.com.au/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.robotist.com.au/blog.html" },
+      { "@type": "ListItem", "position": 3, "name": post.title, "item": pageUrl }
+    ]
+  }];
+  if (post.faq && post.faq.length) {
+    objs.push({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": post.faq.map(f => ({ "@type": "Question", "name": f.q, "acceptedAnswer": { "@type": "Answer", "text": f.a } }))
+    });
+  }
+  const el = document.createElement('script');
+  el.type = 'application/ld+json';
+  el.textContent = JSON.stringify(objs);
+  document.head.appendChild(el);
+}
+
+function renderArticle(post, allPosts) {
+  const seoTitle = post.seoTitle || post.title;
+  const seoDesc = post.metaDescription || post.excerpt;
+  const pageUrl = 'https://www.robotist.com.au/blog/' + post.slug + '.html';
+  const ogImage = absUrl(coverUrlFor(post));
+  document.title = seoTitle + ' — Robotist Blog';
+  document.getElementById('page-title').textContent = seoTitle + ' — Robotist Blog';
+  document.getElementById('page-desc').setAttribute('content', seoDesc);
+  document.getElementById('page-canonical').setAttribute('href', pageUrl);
+  document.getElementById('og-title').setAttribute('content', seoTitle);
+  document.getElementById('og-desc').setAttribute('content', seoDesc);
+  document.getElementById('og-url').setAttribute('content', pageUrl);
+  document.getElementById('og-image').setAttribute('content', ogImage);
+  document.getElementById('tw-title').setAttribute('content', seoTitle);
+  document.getElementById('tw-desc').setAttribute('content', seoDesc);
+  document.getElementById('tw-image').setAttribute('content', ogImage);
+  seoJsonLd(post);
+
+  const tocResult = buildTOC(post.content);
+  const faqHtml = (post.faq && post.faq.length)
+    ? `<section class="article-faq"><h2>Frequently asked questions</h2>${post.faq.map(f => `<div class="faq-item"><h3>${f.q}</h3><p>${f.a}</p></div>`).join('')}</section>`
+    : '';
+  
+  document.getElementById('article-container').innerHTML = `
+    <div class="article-cover"><img src="${coverUrlFor(post)}" alt=""></div>
+    <div class="article-wrap">
+      ${tocResult.toc || ''}
+      <article class="article">
+        <div class="article-category">${post.category}</div>
+        <h1>${post.title}</h1>
+        <div class="article-meta"><span>${post.date}</span><span class="article-meta-dot"></span><span>${post.readTime} read</span></div>
+        <div class="article-content">${tocResult.content || post.content}</div>
+        ${faqHtml}
+        <div class="article-cta">
+          <h3>Ready to deploy?</h3>
+          <p>Tell us about your use case and we'll recommend the right robot — with pricing, lead time, and deployment requirements.</p>
+          <a href="/contact.html">Request a Quote</a>
+        </div>
+      </article>
+    </div>`;
+
+  // Related posts (3 random, excluding current)
+  const others = allPosts.filter(p => p.slug !== post.slug);
+  const related = others.sort(() => Math.random() - 0.5).slice(0, 3);
+  document.getElementById('related-container').innerHTML = `
+    <section class="related">
+      <h2>Related Articles</h2>
+      <div class="related-grid">
+        ${related.map(r => `
+          <a href="/blog/${r.slug}.html" class="related-card">
+            <div class="related-card-category">${r.category}</div>
+            <div class="related-card-title">${r.title}</div>
+            <div class="related-card-meta">${r.date} · ${r.readTime} read</div>
+          </a>
+        `).join('')}
+      </div>
+    </section>`;
+
+  // Active TOC tracking
+  if (tocResult.toc) {
+    const links = document.querySelectorAll('.toc-list a');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          links.forEach(l => l.classList.remove('active'));
+          const active = document.querySelector(`.toc-list a[href="#${e.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-80px 0px -60% 0px' });
+    document.querySelectorAll('.article-content h3, .article-content h4').forEach(h => observer.observe(h));
+  }
+}
+
+function renderNotFound() {
+  document.getElementById('article-container').innerHTML = `
+    <div class="article-not-found">
+      <h2>Article not found</h2>
+      <p>The article you're looking for doesn't exist or has moved.</p>
+      <a href="/blog.html">← Back to Blog</a>
+    </div>`;
+}
+
+if (!slug) {
+  renderNotFound();
+} else {
+  fetch('/blog-posts.json')
+    .then(r => r.json())
+    .then(posts => {
+      const published = posts.filter(p => p.status !== 'draft');
+      const post = published.find(p => p.slug === slug);
+      if (post) renderArticle(post, published);
+      else renderNotFound();
+    })
+    .catch(() => renderNotFound());
+}
+</script>
+<!-- Cookie Consent -->
+<!-- Analytics (privacy-friendly beacon — always active, no cookies) -->
+<script>
+(function(){var u="https://ROBOTIST_LEADS_URL/a/ping";fetch(u+"?p="+encodeURIComponent(location.pathname)+"&r="+encodeURIComponent(document.referrer),{method:"POST"}).catch(function(){});})();
+</script>
+
+<!-- Inquiry Modal -->
+<div id="inquiry-modal" class="modal-overlay" style="display:none">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeInquiry()" aria-label="Close">&times;</button>
+    <div class="inquiry-eyebrow">Send an Inquiry</div>
+    <h2 class="inquiry-title">Tell us what you're<br><em>looking for.</em></h2>
+    <p class="inquiry-desc">Share a few details and we'll get back to you within one business day.</p>
+    <form class="inquiry-form">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="inquiry-row">
+        <div class="inquiry-field">
+          <label for="m-name">Name</label>
+          <input type="text" id="m-name" name="name" placeholder="Your full name" required>
+        </div>
+        <div class="inquiry-field">
+          <label for="m-email">Email</label>
+          <input type="email" id="m-email" name="email" placeholder="you@company.com" required>
+        </div>
+      </div>
+      <div class="inquiry-row">
+        <div class="inquiry-field">
+          <label for="m-company">Company</label>
+          <input type="text" id="m-company" name="company" placeholder="Your organisation">
+        </div>
+        <div class="inquiry-field">
+          <label for="m-interest">Area of Interest</label>
+          <select id="m-interest" name="interest">
+            <option value="">Select an option</option>
+            <option value="humanoid">Humanoid Robots</option>
+            <option value="quadruped">Quadruped Robots</option>
+            <option value="cleaning">Commercial Cleaning</option>
+            <option value="industrial">Industrial Automation</option>
+            <option value="multiple">Multiple Categories</option>
+            <option value="rental">Rental / Trial</option>
+            <option value="other">Other / General Inquiry</option>
+          </select>
+        </div>
+      </div>
+      <div class="inquiry-field">
+        <label for="m-message">Message</label>
+        <textarea id="m-message" name="message" placeholder="Tell us about your requirements, timeline, budget range, or any specific machines you're interested in…" required></textarea>
+      </div>
+      <div class="inquiry-submit-wrap">
+        <button type="submit" class="btn-primary">Send Inquiry</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="/assets/form-workflow.js"></script>
+
+</body>
+</html>

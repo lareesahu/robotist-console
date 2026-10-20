@@ -1,0 +1,16 @@
+.inquiry-cart-link{position:fixed;bottom:22px;right:24px;z-index:599;background:#a8dcef;color:#060d18!important;border:1px solid #4aa8c8;border-radius:30px;padding:14px 24px;font:500 13px/1.5 'Segoe UI',Roboto,-apple-system,BlinkMacSystemFont,sans-serif;text-decoration:none;box-shadow:0 4px 25px #0005}.add-to-cart{margin:18px 0 0;position:relative;z-index:3}.add-to-cart button{border:1px solid #4aa8c8;border-radius:3px;background:#102c3d;color:#cbeaf5;padding:11px 16px;min-height:44px;font:500 12px/1.5 'Segoe UI',Roboto,-apple-system,BlinkMacSystemFont,sans-serif;cursor:pointer}.add-to-cart button:hover{background:#4aa8c8;color:#060d18}.robot-info .add-to-cart button{width:100%;font-size:11px}.add-to-cart button:focus-visible{outline:3px solid #a8dcef;outline-offset:3px}.cart-columns{display:grid;grid-template-columns:1.1fr 1fr;gap:65px;margin-top:42px}.cart-item{display:flex;gap:25px;padding:26px 0;border-top:1px solid var(--line)}.cart-item img{width:140px;height:160px;object-fit:contain;background:#0c1828}.cart-item h2{font-size:22px;margin:0 0 8px}.cart-item p{font-size:12px;margin-bottom:14px}.cart-item>div{flex:1;min-width:0}.cart-item label{font-size:11px;margin-bottom:6px}.cart-item input{max-width:95px;min-height:42px;font-size:14px}.cart-item .text-button{font-size:11px;min-height:35px;color:#b2c7d8}.cart-contact{border:1px solid var(--line);border-radius:8px;background:#0c1828;padding:30px}.cart-contact h2{font-size:24px}.cart-contact label{font-size:12px;margin-bottom:17px}.cart-contact input,.cart-contact textarea{font-size:14px}.cart-page .form-actions{display:flex;align-items:center;gap:20px;margin-top:20px}.cart-page .form-actions a{font-size:12px}.cart-page .micro{font-size:12px}.cart-contact button{width:100%}.cart-item a{text-decoration:none}.cart-page .empty{padding:40px 0}
+@media(max-width:950px){.cart-columns{grid-template-columns:1fr;gap:35px}.cart-contact{max-width:650px}.cart-item img{width:110px;height:125px}}
+@media(max-width:600px){.cart-contact{padding:22px}.cart-item{gap:16px}.cart-item img{width:85px;height:105px}.cart-item h2{font-size:19px}.cart-page .form-actions{flex-wrap:wrap}.inquiry-cart-link{right:16px;bottom:16px;padding:12px 19px}.cart-contact input,.cart-contact textarea{font-size:16px}}
+
+/* Maxx chat launcher owns the bottom-right corner. The inquiry pill stacks above
+   the launcher (56px desktop / 50px mobile, +16px breathing room) and hides while
+   the chat window is open, so the two never sit on top of each other. Pages with
+   no .chatbot-widget keep the original 22px/24px corner. */
+.inquiry-cart-link{transition:opacity .2s ease}
+body:has(.chatbot-widget) .inquiry-cart-link{bottom:100px;right:28px}
+@media(max-width:900px){body:has(.chatbot-widget) .inquiry-cart-link{bottom:92px;right:20px}}
+@media(max-width:640px){body:has(.chatbot-widget) .inquiry-cart-link{bottom:82px;right:16px}}
+body:has(.chatbot-window.open) .inquiry-cart-link{opacity:0;pointer-events:none}
+
+/* Narrow phones: keep the cart button on one line inside a 178px card. */
+@media(max-width:560px){.add-to-cart button{font-size:10px;padding:9px 8px;white-space:nowrap;letter-spacing:0;min-height:44px}}

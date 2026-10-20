@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}Blog · Robotist Admin{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="/manage/catalog/static/admin.css">
+<script src="/manage/blog/static/blog.js" defer></script>
+<style>
+.catalog-content .blog-toolbar{display:flex;flex-wrap:wrap;gap:16px;align-items:end;justify-content:space-between;border-top:1px solid #24364b;padding-top:18px;margin:6px 0 20px}
+.catalog-content .blog-filters{display:flex;gap:8px;flex-wrap:wrap}
+.catalog-content .blog-filters .chip{background:transparent;color:#c8dcea;border:1px solid #40556b;padding:9px 14px;border-radius:3px;font-size:12px;letter-spacing:.04em;min-height:40px}
+.catalog-content .blog-filters .chip[aria-pressed="true"]{border-color:#4aa8c8;color:#03121b;background:#4aa8c8;font-weight:650}
+.catalog-content .blog-filters .chip span{opacity:.72;margin-left:4px}
+.catalog-content .catalog-search{max-width:280px}
+.catalog-content .blog-list{display:grid;gap:14px}
+.catalog-content .blog-row{display:grid;grid-template-columns:150px minmax(0,1fr) minmax(150px,auto);gap:18px;align-items:start;border:1px solid #24364b;background:#0c1828;padding:16px}
+.catalog-content .blog-row img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;border:1px solid #26384d;background:#060d18}
+.catalog-content .blog-row h3{font-size:17px;margin:0 0 6px;letter-spacing:-.2px;line-height:1.35}
+.catalog-content .blog-row .m{color:#aabacb;font-size:12px;margin:0 0 8px}
+.catalog-content .blog-row .x{font-size:12.5px;color:#c6d4e2;margin:0;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.catalog-content .badge2{display:inline-block;font-size:9px;letter-spacing:.16em;text-transform:uppercase;padding:3px 7px;border-radius:2px;margin-bottom:8px}
+.catalog-content .draft-b{color:#0a1622;background:#7fd8f0}
+.catalog-content .pub-b{color:#0a1622;background:#8fe3a8}
+.catalog-content .blog-row .acts{display:grid;gap:8px;min-width:160px}
+.catalog-content .blog-row .acts a,.catalog-content .blog-row .acts button{width:100%;text-align:center;font-size:13px}
+@media(max-width:900px){.catalog-content .blog-row{grid-template-columns:120px minmax(0,1fr)}.catalog-content .blog-row .acts{grid-column:1/-1;grid-template-columns:1fr 1fr;display:grid}}
+@media(max-width:560px){.catalog-content .blog-row{grid-template-columns:1fr}.catalog-content .blog-row img{aspect-ratio:16/7}}
+</style>
+{% endblock %}
+{% block content %}
+<div class="catalog-content">
+  <div class="intro">
+    <div>
+      <p class="eyebrow">WEBSITE CONTENT / BLOG</p>
+      <h1 class="page-title">Blog.</h1>
+      <p class="lede">Drafts written for review. Read one exactly as it will appear, then publish it to the live site.</p>
+    </div>
+  </div>
+  <p id="message" role="status" aria-live="polite"></p>
+  <div class="blog-toolbar">
+    <div class="blog-filters">
+      <button type="button" class="chip" data-filter="draft" aria-pressed="true">Drafts <span id="count-draft">0</span></button>
+      <button type="button" class="chip" data-filter="published" aria-pressed="false">Published <span id="count-published">0</span></button>
+      <button type="button" class="chip" data-filter="all" aria-pressed="false">All posts</button>
+    </div>
+    <label class="catalog-search">Find a post<input id="blog-search" type="search" placeholder="Search title"></label>
+  </div>
+  <div id="posts" class="blog-list"><p class="note">Loading posts…</p></div>
+</div>
+{% endblock %}
