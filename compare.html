@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+
+
+
+
+
+<!-- ═══════════════════════════════════════════════
+     SEO / GEO — PRIMARY META
+     ═══════════════════════════════════════════════ -->
+<title>Compare Robots — Robotist | Global Robotics Platform</title>
+<meta name="description" content="Compare 24 commercial robots side by side. Humanoid, quadruped, cleaning, industrial, and companion robots from leading manufacturers. Find the right robot for your business." />
+<meta name="keywords" content="compare robots Australia, robot comparison, humanoid robot comparison, quadruped robot comparison, companion robot comparison, cleaning robot comparison, PNDbotics, Fourier, UniX AI, LimX, MagicDog, Genisom, Gausium, Keenon" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+<meta name="author" content="Robotist Pty Ltd" />
+<meta name="geo.region" content="AU-NSW" />
+<meta name="geo.placename" content="Sydney, New South Wales, Australia" />
+<link rel="canonical" href="https://www.robotist.com.au/compare.html" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.robotist.com.au/compare.html" />
+<meta property="og:title" content="Compare Robots — Robotist | Global Robotics Platform" />
+<meta property="og:description" content="Compare 24 commercial robots side by side across humanoid, quadruped, cleaning, industrial, and companion categories." />
+<meta property="og:image" content="https://www.robotist.com.au/robotist-og.jpg" />
+<meta property="og:image:width" content="2819" />
+<meta property="og:image:height" content="1344" />
+<meta property="og:image:alt" content="Side-by-side robot comparison — Robotist" />
+<meta property="og:site_name" content="Robotist" />
+<meta property="og:locale" content="en_AU" />
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Compare Robots — Robotist | Global Robotics Platform" />
+<meta name="twitter:description" content="Compare 24 commercial robots side by side across humanoid, quadruped, cleaning, industrial, and companion categories." />
+<meta name="twitter:image" content="https://www.robotist.com.au/robotist-og.jpg" />
+<meta name="twitter:image:alt" content="Side-by-side robot comparison — Robotist" />
+
+<style>
+/* ═══════════════════════════════════════════════
+   ROBOTIST — DESIGN SYSTEM (NO CDN)
+   Fonts: system stack only. No external dependencies.
+   ═══════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg-0: #030810;
+  --bg-1: #060D18;
+  --bg-2: #0C1828;
+  --bg-3: #142035;
+  --bg-4: #1E3550;
+  --accent: #4AA8C8;
+  --accent-dim: #2E8FB5;
+  --accent-light: #A8DCEF;
+  --accent-glow: rgba(74, 168, 200, 0.12);
+  --accent-glow-strong: rgba(74, 168, 200, 0.22);
+  --white: #F0F4F8;
+  --grey-1: #8A9BB0;
+  --grey-2: #4A5A6A;
+  --grey-3: #1E2D3D;
+  --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --nav-h: 72px;
+  --section-pad: clamp(100px, 12vw, 160px);
+  --container: 1400px;
+  --gutter: clamp(24px, 6vw, 80px);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  height: 100%;
+}
+
+body {
+  background: var(--bg-0);
+  color: var(--white);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── GRAIN OVERLAY ── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ══════════════════════════════════════════════
+   NAVIGATION
+   ══════════════════════════════════════════════ */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 500;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--gutter);
+  transition: background 0.4s, border-color 0.4s;
+}
+
+.nav.scrolled {
+  background: rgba(3, 8, 16, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(74, 168, 200, 0.08);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  min-height: 44px;
+}
+.nav-logo img {
+  height: 28px;
+  width: auto;
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--font-main);
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--grey-1);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--white); }
+.nav-links a.active { color: var(--accent); }
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  box-sizing: border-box;
+  line-height: 1;
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bg-0);
+  background: var(--accent);
+  padding: 0 26px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+.nav-cta--ghost {
+  min-height: 42px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--grey-1);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  padding: 0 22px;
+}
+.nav-cta--ghost:hover { color: var(--white); border-color: rgba(255, 255, 255, 0.45); }
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+
+
+
+.nav-cta:hover { background: var(--accent-light); transform: translateY(-1px); }
+
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--grey-1);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translateY(12px); }
+.nav-hamburger.active span:nth-child(2) { opacity: 0; }
+.nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translateY(-12px); }
+
+.nav-links.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: var(--nav-h);
+  left: 0;
+  right: 0;
+  background: rgba(3, 8, 16, 0.95);
+  backdrop-filter: blur(24px);
+  padding: 20px var(--gutter);
+  gap: 16px;
+  z-index: 400;
+  border-bottom: 1px solid rgba(74, 168, 200, 0.08);
+}
+
+/* ══════════════════════════════════════════════
+   HERO
+   ══════════════════════════════════════════════ */
+.hero {
+  padding: calc(var(--nav-h) + 80px) var(--gutter) 48px;
+  position: relative;
+  z-index: 2;
+  background: var(--bg-1);
+}
+
+.hero-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-main);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 36px;
+  height: 1px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.hero-h1 {
+  font-family: var(--font-main);
+  font-size: clamp(36px, 4.8vw, 64px);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+
+.hero-h1 strong {
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.hero-sub {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--grey-1);
+  max-width: 600px;
+}
+
+/* ══════════════════════════════════════════════
+   COMPARISON MATRIX
+   Rows carry the machine itself, so the page reads as a product comparison
+   rather than a spreadsheet: render, name, the numbers that differ, and the
+   one fact that decides the choice.
+   ══════════════════════════════════════════════ */
+.compare-section {
+  background: var(--bg-0);
+  padding: 24px var(--gutter) var(--section-pad);
+  position: relative;
+  z-index: 2;
+}
+
+.compare-inner { max-width: var(--container); margin: 0 auto; }
+
+.cmp-legend {
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--grey-1);
+  max-width: 70ch;
+  margin: 0 0 28px;
+}
+
+.cmp { border-top: 1px solid rgba(74, 168, 200, 0.16); }
+
+.cmp-head,
+.cmp-row {
+  display: grid;
+  grid-template-columns: 72px minmax(200px, 1.15fr) 132px minmax(170px, 1.05fr) minmax(170px, 1.05fr) 128px 96px;
+  gap: 20px;
+  align-items: center;
+}
+
+.cmp-head {
+  position: sticky;
+  top: 72px;
+  z-index: 3;
+  padding: 12px 18px;
+  background: rgba(3, 8, 16, 0.94);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(74, 168, 200, 0.16);
+  font-family: var(--font-main);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: var(--grey-1);
+}
+.cmp-head .c-name { color: var(--accent); }
+/* the header's leading cell is a spacer, not a thumbnail well */
+.cmp-head .c-media { width: auto; height: auto; background: none; border: 0; box-shadow: none; }
+.cmp-head .c-price { justify-self: end; text-align: right; }
+.cmp-head .c-dof { line-height: 1.35; }
+.c-go { margin-left: 10px; }
+
+.cmp-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 16px;
+  padding: 30px 18px 10px;
+  font-family: var(--font-main);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--white);
+  border-bottom: 1px solid rgba(74, 168, 200, 0.1);
+}
+.cmp-group em {
+  font-style: normal;
+  font-family: var(--font-body);
+  font-size: 11.5px;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  color: var(--grey-1);
+}
+
+.cmp-row {
+  position: relative;
+  padding: 18px;
+  border-bottom: 1px solid rgba(74, 168, 200, 0.07);
+  text-decoration: none;
+  color: inherit;
+  transition: background 0.25s ease;
+}
+.cmp-row::before {
+  content: '';
+  position: absolute;
+  left: 0; top: 0; bottom: 0;
+  width: 2px;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+.cmp-row:hover { background: linear-gradient(90deg, rgba(74, 168, 200, 0.08), rgba(74, 168, 200, 0.01)); }
+.cmp-row:hover::before { opacity: 1; }
+.cmp-row:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+.c-media {
+  position: relative;
+  width: 72px; height: 72px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: linear-gradient(170deg, rgba(96, 126, 160, 0.42), rgba(28, 48, 72, 0.50));
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  border-radius: 4px;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.12);
+}
+/* the near-black shells need a rim glow to hold their silhouette at thumbnail size */
+.cmp-row.tone-dark .c-media::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 4px;
+  background: radial-gradient(circle at 50% 44%, rgba(74, 168, 200, 0.22), rgba(74, 168, 200, 0) 64%);
+  pointer-events: none;
+}
+.c-media img {
+  /* Absolute 84% box: percentage heights do not resolve inside a grid item, which is why
+     a tall cut-out used to grow past the plate and hang its legs out of it. */
+  position: absolute;
+  top: 8%; left: 8%;
+  width: 84%; height: 84%;
+  max-width: none; max-height: none;
+  object-fit: contain;
+  object-position: center;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.45));
+}
+
+/* A humanoid is far taller than the square, so a whole-body fit renders about 20px wide and
+   reads as a smudge. The humanoid rows show head to hips instead: the figure is anchored to
+   the top of the plate and the plate clips it just below the hips. */
+.g-humanoid .c-media img {
+  top: 3%; left: 14%;
+  width: 72%; height: 170%;
+  object-position: center top;
+}
+
+.c-name { display: flex; flex-direction: column; gap: 5px; min-width: 0; }
+.c-name .n {
+  font-family: var(--font-main);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: -0.01em;
+}
+.c-name .t {
+  align-self: flex-start;
+  font-family: var(--font-main);
+  font-size: 9.5px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: rgba(74, 168, 200, 0.10);
+  border: 1px solid rgba(74, 168, 200, 0.26);
+  padding: 3px 8px;
+  border-radius: 2px;
+}
+.g-quadruped .c-name .t { background: rgba(168, 220, 239, 0.08); border-color: rgba(168, 220, 239, 0.24); }
+.g-industrial .c-name .t { background: rgba(239, 181, 92, 0.10); border-color: rgba(239, 181, 92, 0.28); }
+.g-companion .c-name .t { background: rgba(217, 168, 235, 0.10); border-color: rgba(217, 168, 235, 0.28); }
+.g-cleaning .c-name .t { background: rgba(138, 155, 176, 0.10); border-color: rgba(138, 155, 176, 0.28); }
+.g-quadruped .c-name .t { color: var(--accent-light); }
+.g-industrial .c-name .t { color: #efb55c; }
+.g-companion .c-name .t { color: #d9a8eb; }
+.g-cleaning .c-name .t { color: var(--grey-1); }
+
+.c-dof {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  gap: 4px;
+  font-family: var(--font-main);
+  font-size: 18px;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  color: var(--white);
+}
+.c-dof .v.blank { color: var(--grey-3); }
+.c-dof .u {
+  font-size: 10px;
+  font-variant-numeric: normal;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--grey-1);
+}
+
+.c-cap, .c-use {
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--grey-1);
+}
+
+.c-price {
+  justify-self: end;
+  text-align: right;
+  font-family: var(--font-main);
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--white);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.c-go svg { width: 13px; height: 13px; }
+.c-go {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  justify-self: end;
+  font-family: var(--font-main);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--grey-1);
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+.cmp-row:hover .c-go { color: var(--accent); }
+
+/* Laptop: the capability line is supporting detail, so it drops before the numbers do */
+@media (max-width: 1150px) {
+  .cmp-head, .cmp-row {
+    grid-template-columns: 64px minmax(160px, 1.2fr) 116px minmax(150px, 1fr) 116px 78px;
+  }
+  .cmp-head .c-cap, .c-cap { display: none; }
+}
+
+/* Phone: one machine per card, every fact labelled */
+@media (max-width: 900px) {
+  .cmp-head { display: none; }
+  .cmp-row {
+    grid-template-columns: 64px 1fr;
+    grid-template-areas:
+      "media name"
+      "media dof"
+      "cap   cap"
+      "use   use"
+      "price price"
+      "go    go";
+    gap: 12px 14px;
+    padding: 20px 16px 22px;
+    border-bottom: 1px solid rgba(74, 168, 200, 0.12);
+  }
+  .c-media { grid-area: media; width: 64px; height: 64px; }
+  .c-name { grid-area: name; }
+  .c-dof { grid-area: dof; display: block; font-size: 17px; }
+  .c-price { justify-self: start; text-align: left; }
+  .c-cap { grid-area: cap; display: block; }
+  .c-use { grid-area: use; }
+  .c-price { grid-area: price; }
+  .c-go { grid-area: go; justify-self: start; }
+  .c-cap::before, .c-use::before {
+    display: block;
+    margin-bottom: 4px;
+    font-family: var(--font-main);
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--grey-1);
+  }
+  .c-cap::before { content: 'Key capability'; }
+  .c-dof::before {
+    content: 'Degrees of freedom';
+    display: block;
+    margin-bottom: 4px;
+    font-family: var(--font-main);
+    font-size: 9.5px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--grey-1);
+  }
+  .c-use::before { content: 'Best for'; }
+  .c-dof .v.blank { color: var(--grey-3); }
+.c-dof .u { font-size: 9.5px; }
+  .cmp-group { padding: 26px 16px 10px; }
+}
+
+/* Narrow phones: the price moves under the name */
+@media (max-width: 420px) {
+  .cmp-row { grid-template-columns: 56px 1fr; }
+  .c-media { width: 56px; height: 56px; }
+}
+
+/* ══════════════════════════════════════════════
+   FOOTER
+   ══════════════════════════════════════════════ */
+.footer {
+  background: var(--bg-0);
+  border-top: 1px solid rgba(74, 168, 200, 0.06);
+  padding: 80px var(--gutter) 40px;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2.5fr 1fr 1fr 1fr;
+  gap: 80px;
+  margin-bottom: 64px;
+}
+
+.footer-logo {
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 20px;
+}
+
+.footer-tagline {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--grey-1);
+  max-width: 300px;
+  margin-bottom: 32px;
+}
+
+.footer-col-title {
+  font-family: var(--font-main);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--grey-1);
+  margin-bottom: 24px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+}
+
+.footer-links a {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--grey-1);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: var(--white); }
+
+.footer-bottom {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-top: 32px;
+  border-top: 1px solid var(--grey-3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footer-copy {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--grey-1);
+  letter-spacing: 0.04em;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 28px;
+}
+
+.footer-legal a {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--grey-1);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-legal a:hover { color: var(--grey-1); }
+
+/* ══════════════════════════════════════════════
+   CTA BANNER
+   ══════════════════════════════════════════════ */
+.cta-banner {
+  background: var(--bg-1);
+  text-align: center;
+  padding: var(--section-pad) var(--gutter);
+  z-index: 2;
+  position: relative;
+}
+
+.cta-banner-title {
+  font-family: var(--font-main);
+  font-size: clamp(24px, 3vw, 40px);
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.cta-banner-desc {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--grey-1);
+  max-width: 560px;
+  margin: 0 auto 32px;
+  line-height: 1.7;
+}
+
+.btn-primary {
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bg-0);
+  background: var(--accent);
+  padding: 17px 40px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  display: inline-block;
+}
+
+.btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); }
+
+.btn-ghost {
+  font-family: var(--font-main);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--grey-1);
+  background: transparent;
+  padding: 17px 40px;
+  text-decoration: none;
+  border: 1px solid var(--grey-3);
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  display: inline-block;
+}
+
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ══════════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════════ */
+
+/* Tablet / narrow desktop (max 1100px) */
+@media (max-width: 1100px) {
+  .footer-inner { grid-template-columns: 2fr 1fr 1fr; gap: 48px; }
+  .footer-inner > div:last-child { grid-column: span 1; }
+}
+
+/* Tablet portrait (max 900px) */
+@media (max-width: 900px) {
+  :root { --section-pad: 100px; }
+
+  /* Nav */
+  .nav-links { display: none; flex-direction: column; }
+  .nav-hamburger { display: flex; }
+  .nav-cta { display: none; }
+  .nav-links.open .nav-cta { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; box-sizing: border-box; padding: 0 22px; margin-top: 8px; }
+
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 48px; }
+  .footer-inner > div:first-child { grid-column: 1 / -1; }
+}
+
+/* Mobile (max 640px) */
+@media (max-width: 640px) {
+  :root { --gutter: 20px; --section-pad: 80px; }
+
+  .hero {
+    padding: calc(var(--nav-h) + 48px) var(--gutter) 56px;
+  }
+
+  .hero-h1 { font-size: clamp(28px, 7vw, 40px); }
+
+  .footer { padding: 48px var(--gutter) 24px; }
+  .footer-inner { grid-template-columns: 1fr; gap: 28px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .footer-legal { flex-wrap: wrap; gap: 16px; }
+}
+
+/* ── Inquiry Modal ── */
+.modal-overlay{
+  position:fixed;inset:0;z-index:10000;
+  background:rgba(0,0,0,.82);backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  display:flex;align-items:center;justify-content:center;padding:20px;
+  animation:modalFadeIn .25s ease;
+}
+@keyframes modalFadeIn{from{opacity:0}to{opacity:1}}
+
+.modal-box{
+  position:relative;
+  background:var(--bg-0,#030810);
+  border:1px solid rgba(74,168,200,.12);
+  border-radius:6px;
+  padding:clamp(28px,4vw,48px);
+  width:100%;max-width:540px;
+  max-height:90vh;overflow-y:auto;
+  animation:modalSlideUp .3s ease;
+}
+@keyframes modalSlideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+
+.modal-close{
+  position:absolute;top:14px;right:18px;
+  background:none;border:none;
+  color:var(--grey-1,#8A9BB0);font-size:24px;
+  cursor:pointer;line-height:1;padding:4px;
+  transition:color .2s;
+}
+.modal-close:hover{color:var(--white,#F0F4F8)}
+
+/* ── Form Typography ── */
+.inquiry-eyebrow{
+  font-family:var(--font-main);font-size:10px;font-weight:500;
+  letter-spacing:.3em;text-transform:uppercase;
+  color:var(--accent,#4AA8C8);margin-bottom:12px;
+}
+.inquiry-title{
+  font-family:var(--font-main);font-size:clamp(22px,3vw,32px);
+  font-weight:300;line-height:1.2;letter-spacing:-.02em;
+  color:var(--white,#F0F4F8);margin-bottom:14px;
+}
+.inquiry-title em{font-style:normal;color:var(--accent,#4AA8C8);font-weight:600}
+.inquiry-desc{
+  font-family:var(--font-body);font-size:14px;font-weight:300;
+  line-height:1.7;color:var(--grey-1,#8A9BB0);margin-bottom:28px;
+}
+
+/* ── Form Fields ── */
+.inquiry-form{display:flex;flex-direction:column;gap:14px;text-align:left}
+.inquiry-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.inquiry-field{display:flex;flex-direction:column;gap:5px}
+.inquiry-field label{
+  font-family:var(--font-main);font-size:10px;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;color: var(--grey-1);
+}
+.inquiry-field input,
+.inquiry-field select,
+.inquiry-field textarea{
+  font-family:var(--font-body);font-size:15px;font-weight:300;
+  color:var(--white,#F0F4F8);background:var(--bg-1,#060D18);
+  border:1px solid rgba(255,255,255,.07);padding:12px 14px;
+  outline:none;transition:border-color .2s,background .2s;
+}
+.inquiry-field input:focus,
+.inquiry-field select:focus,
+.inquiry-field textarea:focus{
+  border-color:rgba(74,168,200,.35);background:var(--bg-2,#0C1828);
+}
+.inquiry-field input::placeholder,
+.inquiry-field textarea::placeholder{color: var(--grey-1)}
+
+.inquiry-field select{
+  appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%238A9BB0' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;
+  padding-right:38px;
+}
+.inquiry-field select option{background:var(--bg-2,#0C1828);color:var(--white,#F0F4F8)}
+.inquiry-field textarea{resize:vertical;min-height:110px}
+
+.inquiry-submit-wrap{display:flex;justify-content:flex-start;margin-top:4px}
+
+/* ── Modal button ── */
+.modal-box .btn-primary{
+  font-family:var(--font-main);font-weight:500;font-size:12px;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--bg-0,#030810);background:var(--accent,#4AA8C8);
+  padding:14px 32px;border:none;cursor:pointer;
+  transition:background .2s,transform .15s;
+}
+.modal-box .btn-primary:hover{background:var(--accent-light,#A8DCEF);transform:translateY(-1px)}
+.modal-box .btn-primary:disabled{opacity:.6;cursor:not-allowed;transform:none}
+
+/* ── Mobile ── */
+@media(max-width:600px){
+  .modal-overlay{padding:12px;align-items:flex-end}
+  .modal-box{border-radius:12px 12px 0 0;max-height:92vh;padding:24px 20px 32px}
+  .inquiry-row{grid-template-columns:1fr}
+  .inquiry-submit-wrap{justify-content:stretch}
+  .modal-box .btn-primary{width:100%;text-align:center}
+}
+</style>
+<link rel="stylesheet" href="/mobile-usability.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     NAVIGATION
+     ══════════════════════════════════════════════ -->
+<nav class="nav" id="mainNav">
+  <a href="index.html" class="nav-logo"><img src="images/logo.svg" alt="Robotist" style="height:clamp(24px, 3.5vw, 36px);width:auto;"></a>
+    <ul class="nav-links">
+    <li><a href="index.html#catalogue">Catalogue</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="compare.html">Compare</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="/grn/" class="nav-cta nav-cta--ghost">Join us</a>
+    <a href="/contact.html" onclick="openInquiry();return false" class="nav-cta">Get Started</a>
+  </div>
+  <button class="nav-hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ══════════════════════════════════════════════
+     HERO
+     ══════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Robot Comparison</div>
+    <h1 class="hero-h1">
+      Compare <strong>Robots</strong><br>Side by Side
+    </h1>
+    <p class="hero-sub">
+      Browse our full catalogue of commercial robots. Compare specifications, use cases,
+      and find the right machine for your business. Each robot links to its detailed
+      product page with full specs, pricing, and deployment information.
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     COMPARISON TABLE
+     ══════════════════════════════════════════════ -->
+<section class="compare-section">
+  <div class="compare-inner">
+    <p class="cmp-legend">All 24 machines in the catalogue, grouped by family. Degrees of freedom (DoF) are shown where the manufacturer publishes them — a dash means the figure is not part of the published specification. Prices are the catalogue prices, in US dollars.</p>
+      <div class="cmp">
+<div class="cmp-head" aria-hidden="true">
+<span class="c-media"></span><span class="c-name">Machine</span><span class="c-dof">Degrees of freedom</span>
+<span class="c-cap">Key capability</span><span class="c-use">Best for</span><span class="c-price">From</span><span class="c-go"></span>
+</div>
+<div class="cmp-group"><span>Humanoid robots</span><em>12 machines</em></div>
+<a class="cmp-row tone-dark g-humanoid" href="products/pndbotics-adam.html"><span class="c-media"><img loading="lazy" src="robots-cut/pnd_robotics_adam.webp" alt="ADAM SP"></span><span class="c-name"><span class="n">ADAM SP</span><span class="t">Humanoid</span></span><span class="c-dof"><span class="v">41</span></span><span class="c-cap">Modular PSA actuators</span><span class="c-use">AI Research &amp; Industrial Automation</span><span class="c-price">USD 89,000</span><span class="c-go">View<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+<a class="cmp-row g-humanoid" href="products/fourier-gr-3.html"><span class="c-media"><img loading="lazy" src="robots-cut/fourier_gr3_upscale.webp" alt="Fourier GR-3"></span><span class="c-name"><span class="n">Fourier GR-3</span><span class="t">Humanoid</span></span><span class="c-dof"><span class="v">55</span></span><span class="c-cap">12-DOF dexterous hands</span><span class="c-use">Care &amp; Healthcare</span><span class="c-price">USD 188,000</span><span class="c-go">View<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+<a class="cmp-row tone-dark g-humanoid" href="products/unix-ai-panther.html"><span class="c-media"><img loading="lazy" src="robots-cut/unix_panther.webp" alt="UniX AI Panther"></span><span class="c-name"><span class="n">UniX AI Panther</span><span class="t">Wheeled Humanoid</span></span><span class="c-dof"><span class="v">34</span></span><span class="c-cap">8-DoF bionic arms, 16 hr battery</span><span class="c-use">Domestic Service &amp; Hospitality</span><span class="c-price">USD 55,000</span><span class="c-go">View<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+<a class="cmp-row g-humanoid" href="products/limx-oli.html"><span class="c-media"><img loading="lazy" src="robots-cut/limx_oli.webp" alt="LimX OLI"></span><span class="c-name"><span class="n">LimX OLI</span><span class="t">Bipedal Humanoid</span></span><span class="c-dof"><span class="v">33</span></span><span class="c-cap">NVIDIA Orin NX 157 TOPS</span><span class="c-use">AI Research &amp; ROS2 Development</span><span class="c-price">USD 65,900</span><span class="c-go">View<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+<a class="cmp-row g-humanoid" href="products/unix-ai-wanda.html"><span class="c-media"><img loading="lazy" src="robots-cut/unix_wanda.webp" alt="UniX AI Wanda 2.0"></span><span class="c-name"><span class="n">UniX AI Wanda 2.0</span><span class="t">Wheeled Humanoid</span></span><span class="c-dof"><span class="v">23–33</span></span><span class="c-cap">1.5 m/s, 4–12 kg dual-arm payload</span><span class="c-use">Industrial Manipulation &amp; AI Research</span><span class="c-price">USD 54,900</span><span class="c-go">View<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+<a class="cmp-row g-humanoid" href="products/adam-u.html"><span class="c-media"><img loading="lazy" src="robots-cut/adam_u.webp" alt="ADAM U"></span><span class="c-name"><span class="n">ADAM U</span><span class="t">Humanoid</span></span><span class="c-dof"><span class="v blank">—</span></span><span class="c-cap">Full-size research platform</span><span class="c-use">AI Research &amp; Education</span><span class="c-price">USD 45,000</span><span class="c-go">View<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+<a class="cmp-row g-humanoid" href="products/agibot-a3.html"><span class="c-media"><img loading="lazy" src="robots-cut/agibot_a3.webp" alt="AGIBOT A3 Ultra"></span><span class="c-name"><span class="n">AGIBOT A3 Ultra</span><span class="t">Humanoid</span></span><span class="c-dof"><span class="v blank">—</span></span><span class="c-cap">Full-size humanoid platform</span><span class="c-use">Embodied AI &amp; Performance</span><span class="c-price">USD 109,999</span><span class="c-go">View<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+<a class="cmp-row g-humanoid" href="products/agibot-x2.html"><span class="c-media"><img loading="lazy" src="robots-cut/agibot_x2.webp" alt="AGIBOT X2 Ultra"></span><span class="c-name"><span class="n">AGIBOT X2 Ultra</span><span class="t">Humanoid</span></span><span class="c-dof"><span class="v blank">—</span></span><span class="c-cap">Half-size humanoid platform</span><span class="c-use">Entertainment &amp; Prototyping</span><span class="c-price">USD 49,999</span><span class="c-go">View<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+<a class="cmp-row g-humanoid" href="products/casbot-02-edu.html"><span class="c-media"><img loading="lazy" src="robots-cut/casbot_02_edu.webp" alt="CASBOT 02 EDU"></span><span class="c-name"><span class="n">CASBOT 02 EDU</span><span class="t">Humanoid</span></span><span class="c-dof"><span class="v blank">—</span></span><span class="c-cap">Full-size biped platform</span><span class="c-use">University &amp; HRI Research</span><span class="c-price">USD 69,000</span><span class="c-go">View<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+<a class="cmp-row tone-dark g-humanoid" href="products/casbot-4-piece-band.html"><span class="c-media"><img loading="lazy" src="robots-cut/casbot_4_piece_band.webp" alt="CASBOT 4 Piece Band"></span><span class="c-name"><span class="n">CASBOT 4 Piece Band</span><span class="t">Humanoid Performance</span></span><span class="c-dof"><span class="v blank">—</span></span><span class="c-cap">Four-humanoid performance set</span><span class="c-use">Live Performance &amp; Exhibitions</span><span class="c-price">USD 333,000</span><span class="c-go">View<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+<a class="cmp-row g-humanoid" href="products/kepler-spe-bumblebee.html"><span class="c-media"><img loading="lazy" src="robots-cut/kepler_spe_bumblebee.webp" alt="Kepler S-PE BumbleBee"></span><span class="c-name"><span class="n">Kepler S-PE BumbleBee</span><span class="t">Humanoid</span></span><span class="c-dof"><span class="v">30</span></span><span class="c-cap">100 TOPS compute</span><span class="c-use">Research &amp; Industrial Pilots</span><span class="c-price">USD 88,000</span><span class="c-go">View<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+<a class="cmp-row g-humanoid" href="products/magiclab-magicbot-g1.html"><span class="c-media"><img loading="lazy" src="robots-cut/magiclab_magicbot_g1.webp" alt="MagicLab MagicBot G1"></span><span class="c-name"><span class="n">MagicLab MagicBot G1</span><span class="t">Humanoid</span></span><span class="c-dof"><span class="v blank">—</span></span><span class="c-cap">Full-size general-purpose humanoid</span><span class="c-use">Research, Manufacturing &amp; Service</span><span class="c-price">USD 120,000</span><span class="c-go">View<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+<div class="cmp-group"><span>Quadruped robots</span><em>6 machines</em></div>
+<a class="cmp-row g-quadruped" href="products/magiclab-magicdog-y1.html"><span class="c-media"><img loading="lazy" src="robots-cut/magiclab_magicdog_y1.webp" alt="MagicDog Y1"></span><span class="c-name"><span class="n">MagicDog Y1</span><span class="t">Industrial Quadruped</span></span><span class="c-dof"><span class="v blank">—</span></span><span class="c-cap">6 m/s, 45 kg payload</span><span class="c-use">Security Patrol &amp; Heavy Inspection</span><span class="c-price">USD 55,000</span><span class="c-go">View<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+<a class="cmp-row g-quadruped" href="products/genisom-m1.html"><span class="c-media"><img loading="lazy" src="robots-cut/genisum_m1.webp" alt="Genisom M1"></span><span class="c-name"><span class="n">Genisom M1</span><span class="t">Industrial Quadruped</span></span><span class="c-dof"><span class="v blank">—</span></span><span class="c-cap">80 cm obstacle clearance</span><span class="c-use">Rugged Industrial Inspection</span><span class="c-price">Price on request</span><span class="c-go">View<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+<a class="cmp-row g-quadruped" href="products/magiclab-magicdog.html"><span class="c-media"><img loading="lazy" src="robots-cut/magiclab_magicdog.webp" alt="MagicLab MagicDog"></span><span class="c-name"><span class="n">MagicLab MagicDog</span><span class="t">Education Quadruped</span></span><span class="c-dof"><span class="v">13</span></span><span class="c-cap">3 m/s, open SDK</span><span class="c-use">Education &amp; STEM</span><span class="c-price">USD 8,000</span><span class="c-go">View<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+<a class="cmp-row g-quadruped" href="products/genisom-l1.html"><span class="c-media"><img loading="lazy" src="robots-cut/genisom_l1.webp" alt="Genisom L1"></span><span class="c-name"><span class="n">Genisom L1</span><span class="t">Education Quadruped</span></span><span class="c-dof"><span class="v blank">—</span></span><span class="c-cap">6 km range, open API</span><span class="c-use">Education &amp; Robotics Research</span><span class="c-price">Price on request</span><span class="c-go">View<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+<a class="cmp-row g-quadruped" href="products/genisom-l1-edu.html"><span class="c-media"><img loading="lazy" src="robots-cut/genisum_l1_edu.webp" alt="Genisom L1 EDU"></span><span class="c-name"><span class="n">Genisom L1 EDU</span><span class="t">Education Quadruped</span></span><span class="c-dof"><span class="v blank">—</span></span><span class="c-cap">ROS-compatible open API</span><span class="c-use">Robotics Curriculum &amp; STEM Labs</span><span class="c-price">Price on request</span><span class="c-go">View<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+<a class="cmp-row g-quadruped" href="products/agibot-d1.html"><span class="c-media"><img loading="lazy" src="robots-cut/agibot_d1.webp" alt="AGIBOT D1 EDU"></span><span class="c-name"><span class="n">AGIBOT D1 EDU</span><span class="t">Education Quadruped</span></span><span class="c-dof"><span class="v blank">—</span></span><span class="c-cap">Education quadruped platform</span><span class="c-use">STEM &amp; Robotics Labs</span><span class="c-price">USD 7,999</span><span class="c-go">View<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+<div class="cmp-group"><span>Industrial and laboratory</span><em>1 machine</em></div>
+<a class="cmp-row g-industrial" href="products/isage-star-sageman.html"><span class="c-media"><img loading="lazy" src="robots-cut/isage_quad-armed_wheeled_robot.webp" alt="iSAGE STAR-SageMan"></span><span class="c-name"><span class="n">iSAGE STAR-SageMan</span><span class="t">Industrial Robot</span></span><span class="c-dof"><span class="v blank">—</span></span><span class="c-cap">Quad-armed, ±0.03 mm repeatability</span><span class="c-use">Biopharma Labs &amp; Precision Manufacturing</span><span class="c-price">Price on request</span><span class="c-go">View<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+<div class="cmp-group"><span>Companion and exhibition</span><em>3 machines</em></div>
+<a class="cmp-row g-companion" href="products/droidup-moya.html"><span class="c-media"><img loading="lazy" src="robots-cut/droidup_moya.webp" alt="DroidUp Moya"></span><span class="c-name"><span class="n">DroidUp Moya</span><span class="t">Companion Humanoid</span></span><span class="c-dof"><span class="v blank">—</span></span><span class="c-cap">Biomimetic humanoid</span><span class="c-use">Social Interaction &amp; Exhibitions</span><span class="c-price">Coming soon</span><span class="c-go">View<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+<a class="cmp-row g-companion" href="products/ldtech-intelligent-head.html"><span class="c-media"><img loading="lazy" src="robots-cut/ldtech_intelligent_head.webp" alt="LDTech Intelligent Head"></span><span class="c-name"><span class="n">LDTech Intelligent Head</span><span class="t">Companion Robot</span></span><span class="c-dof"><span class="v">9</span></span><span class="c-cap">Voice / app control</span><span class="c-use">Exhibitions &amp; Research</span><span class="c-price">USD 6,000</span><span class="c-go">View<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+<a class="cmp-row g-companion" href="products/tangible-future-xiaoling-3.html"><span class="c-media"><img loading="lazy" src="robots-cut/tangible_future_xiaoling_3.webp" alt="Tangible Future Xiaoling 3.0"></span><span class="c-name"><span class="n">Tangible Future Xiaoling 3.0</span><span class="t">Companion Robot</span></span><span class="c-dof"><span class="v blank">—</span></span><span class="c-cap">Expressive companion head</span><span class="c-use">Companion &amp; Exhibitions</span><span class="c-price">USD 5,000</span><span class="c-go">View<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+<div class="cmp-group"><span>Commercial cleaning</span><em>2 machines</em></div>
+<a class="cmp-row tone-dark g-cleaning" href="products/gausium-phantas.html"><span class="c-media"><img loading="lazy" src="robots-cut/gausium_phantas.webp" alt="Gausium Phantas"></span><span class="c-name"><span class="n">Gausium Phantas</span><span class="t">Commercial Cleaning</span></span><span class="c-dof"><span class="v blank">—</span></span><span class="c-cap">1,180 m²/hr coverage</span><span class="c-use">4-in-1 Commercial Floor Cleaning</span><span class="c-price">USD 9,250</span><span class="c-go">View<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+<a class="cmp-row g-cleaning" href="products/keenon-c40-p1.html"><span class="c-media"><img loading="lazy" src="robots-cut/keenon_c40-p1.webp" alt="Keenon C40-P1"></span><span class="c-name"><span class="n">Keenon C40-P1</span><span class="t">Commercial Cleaning</span></span><span class="c-dof"><span class="v blank">—</span></span><span class="c-cap">1,100 m²/hr, 15 hr runtime</span><span class="c-use">4-in-1 Compact Commercial Cleaning</span><span class="c-price">USD 10,700</span><span class="c-go">View<svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></a>
+</div>
+    
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     CTA BANNER
+     ══════════════════════════════════════════════ -->
+<section class="cta-banner">
+  <h2 class="cta-banner-title">Not sure which robot fits your business?</h2>
+  <p class="cta-banner-desc">Tell us about your use case and we'll recommend the right machine — with pricing, lead time, and deployment requirements. No obligations.</p>
+  <a href="/contact.html" onclick="openInquiry();return false" class="btn-primary">Send us an inquiry →</a>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     FOOTER
+     ══════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <span class="footer-logo">Robotist</span>
+      <p class="footer-tagline">A global robotics platform. We connect businesses with the machines that will define the next decade of commerce.</p>
+      <p style="font-family:var(--font-body);font-size:12px;font-weight:300;color: var(--grey-1);">Sydney, Australia</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Platform</div>
+      <ul class="footer-links">
+        <li><a href="index.html#catalogue">Robot Catalogue</a></li>
+        <li><a href="index.html#services">Integration Services</a></li>
+        <li><a href="index.html#services">Maintenance Plans</a></li>
+        <li><a href="index.html#services">Consultation</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="about.html">About Robotist</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="index.html#why">Why Robotist</a></li>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="index.html#leadership">Team</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="mailto:robert@robotist.com.au">robert@robotist.com.au</a></li>
+        <li><a href="mailto:lareesa@robotist.com.au">lareesa@robotist.com.au</a></li>
+        <li><a href="https://www.linkedin.com/company/robotist">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">&copy; 2026 Robotist Pty Ltd. All rights reserved.</span>
+    <span class="footer-legal" style="display:inline-flex;flex-wrap:wrap;gap:14px;font-size:12px;letter-spacing:.04em;"><a href="/faq.html">FAQ</a><a href="/terms.html">Terms</a><a href="/cookies.html">Cookies</a><a href="/privacy.html">Privacy</a></span>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════════
+     JAVASCRIPT
+     ══════════════════════════════════════════════ -->
+<script>
+// ── NAV SCROLL ──
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+// ── HAMBURGER MENU TOGGLE ──
+const hamburger = document.querySelector('.nav-hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+if (hamburger) {
+  hamburger.addEventListener('click', (e) => {
+    e.preventDefault();
+    navLinks.classList.toggle('open');
+    hamburger.classList.toggle('active');
+  });
+
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      hamburger.classList.remove('active');
+    });
+  });
+}
+</script>
+
+<!-- Inquiry Modal -->
+<div id="inquiry-modal" class="modal-overlay" style="display:none">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeInquiry()" aria-label="Close">&times;</button>
+    <div class="inquiry-eyebrow">Send an Inquiry</div>
+    <h2 class="inquiry-title">Tell us what you're<br><em>looking for.</em></h2>
+    <p class="inquiry-desc">Share a few details and we'll get back to you within one business day.</p>
+    <form class="inquiry-form">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="inquiry-row">
+        <div class="inquiry-field">
+          <label for="m-name">Name</label>
+          <input type="text" id="m-name" name="name" placeholder="Your full name" required>
+        </div>
+        <div class="inquiry-field">
+          <label for="m-email">Email</label>
+          <input type="email" id="m-email" name="email" placeholder="you@company.com" required>
+        </div>
+      </div>
+      <div class="inquiry-row">
+        <div class="inquiry-field">
+          <label for="m-company">Company</label>
+          <input type="text" id="m-company" name="company" placeholder="Your organisation">
+        </div>
+        <div class="inquiry-field">
+          <label for="m-interest">Area of Interest</label>
+          <select id="m-interest" name="interest">
+            <option value="">Select an option</option>
+            <option value="humanoid">Humanoid Robots</option>
+            <option value="quadruped">Quadruped Robots</option>
+            <option value="cleaning">Commercial Cleaning</option>
+            <option value="industrial">Industrial Automation</option>
+            <option value="multiple">Multiple Categories</option>
+            <option value="rental">Rental / Trial</option>
+            <option value="other">Other / General Inquiry</option>
+          </select>
+        </div>
+      </div>
+      <div class="inquiry-field">
+        <label for="m-message">Message</label>
+        <textarea id="m-message" name="message" placeholder="Tell us about your requirements, timeline, budget range, or any specific machines you're interested in…" required></textarea>
+      </div>
+      <div class="inquiry-submit-wrap">
+        <button type="submit" class="btn-primary">Send Inquiry</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="/assets/form-workflow.js"></script>
+
+</body>
+</html>

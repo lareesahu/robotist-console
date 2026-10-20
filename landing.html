@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robotist for Education — Bring real robots into your classroom</title>
+<meta name="description" content="Robotist supplies, integrates and supports commercial robots worldwide. For schools and training providers: real hardware, a curriculum-ready introduction, and support from selection onward.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.robotist.com.au/landing.html">
+<meta property="og:title" content="Robotist for Education — Bring real robots into your classroom">
+<meta property="og:description" content="Robotist supplies, integrates and supports commercial robots worldwide. For schools and training providers: real hardware, a curriculum-ready introduction, and support from selection onward.">
+<meta property="og:image" content="https://www.robotist.com.au/robotist-og.jpg">
+<meta property="og:image:alt" content="Robotist — global robotics platform">
+<meta property="og:site_name" content="Robotist">
+<meta property="og:locale" content="en_AU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Robotist for Education — Bring real robots into your classroom">
+<meta name="twitter:description" content="Robotist supplies, integrates and supports commercial robots worldwide. For schools and training providers: real hardware, a curriculum-ready introduction, and support from selection onward.">
+<meta name="twitter:image" content="https://www.robotist.com.au/robotist-og.jpg">
+
+<link rel="canonical" href="https://www.robotist.com.au/landing.html">
+<meta property="og:title" content="Robotist for Education — Bring real robots into your classroom">
+<meta property="og:description" content="Real hardware, integration and support for schools and training providers.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.robotist.com.au/landing.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "Robotist for Education",
+  "description": "Robotist supplies, integrates and supports commercial robots worldwide, including education deployments.",
+  "url": "https://www.robotist.com.au/landing.html",
+  "publisher": { "@type": "Organization", "name": "Robotist", "url": "https://www.robotist.com.au" }
+}
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg-0: #030810; --bg-1: #060D18; --bg-2: #0C1828; --bg-3: #142035; --bg-4: #1E3550;
+  --accent: #4AA8C8; --accent-dim: #2E8FB5; --accent-light: #A8DCEF;
+  --accent-glow: rgba(74,168,200,0.12); --white: #F0F4F8;
+  --grey-1: #8A9BB0; --grey-2: #4A5A6A; --grey-3: #1E2D3D;
+  --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --nav-h: 72px; --gutter: clamp(24px, 6vw, 80px);
+  --container: 1200px;
+}
+html { scroll-behavior: smooth; font-size: 16px; height: 100%; }
+body { background: var(--bg-0); color: var(--white); font-family: var(--font-body); overflow-x: hidden; }
+img { max-width: 100%; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 3px; }
+
+.skip { position: absolute; left: var(--gutter); top: -100px; z-index: 2000; background: var(--accent); color: var(--bg-0);
+  font-family: var(--font-main); font-size: 12px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+  padding: 12px 18px; text-decoration: none; border-radius: 2px; transition: top 0.2s; }
+.skip:focus { top: 12px; }
+
+/* Nav — inherited from the homepage shell */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; align-items: center; justify-content: space-between; padding: 0 var(--gutter); height: var(--nav-h); background: rgba(3,8,16,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(74,168,200,0.08); }
+.nav-logo { display:flex; align-items:center; text-decoration: none; }
+.nav-logo img { display:block; height:28px; width:auto; }
+.nav-links { display: flex; align-items: center; gap: 40px; list-style: none; }
+.nav-links a { font-family: var(--font-main); font-weight: 300; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey-1); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--white); }
+.nav-links a.active { color: var(--accent); }
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  box-sizing: border-box;
+  line-height: 1;
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bg-0);
+  background: var(--accent);
+  padding: 0 26px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+.nav-cta:hover { background: var(--accent-light); transform: translateY(-1px); }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+.nav-hamburger span { display: block; width: 24px; height: 1px; background: var(--grey-1); transition: transform 0.3s, opacity 0.3s; }
+.nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translateY(12px); }
+.nav-hamburger.active span:nth-child(2) { opacity: 0; }
+.nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translateY(-12px); }
+.nav-links.open { display: flex; flex-direction: column; position: absolute; top: var(--nav-h); left: 0; right: 0; background: rgba(3,8,16,0.95); backdrop-filter: blur(24px); padding: 20px var(--gutter); gap: 16px; z-index: 400; border-bottom: 1px solid rgba(74,168,200,0.08); }
+
+/* ── Landing hero ── */
+.lp-hero { padding: calc(var(--nav-h) + 96px) var(--gutter) 88px; max-width: var(--container); margin: 0 auto;
+  display: grid; grid-template-columns: 1.02fr 1fr; gap: var(--gutter); align-items: center; }
+.lp-eyebrow { font-family: var(--font-main); font-size: 10px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 18px; }
+.lp-h1 { font-family: var(--font-main); font-size: clamp(38px, 4.6vw, 68px); font-weight: 600; letter-spacing: -0.02em; line-height: 1.06; margin-bottom: 22px; }
+.lp-lead { font-size: 17px; font-weight: 400; color: var(--grey-1); line-height: 1.7; max-width: 48ch; margin-bottom: 32px; }
+.lp-ctas { display: flex; flex-wrap: wrap; gap: 14px; }
+.lp-btn { font-family: var(--font-main); font-weight: 500; font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--bg-0); background: var(--accent); padding: 15px 30px; text-decoration: none; border-radius: 2px; display: inline-block;
+  transition: background 0.2s, transform 0.15s; }
+.lp-btn:hover { background: var(--accent-light); transform: translateY(-1px); }
+.lp-btn.ghost { background: transparent; color: var(--white); border: 1px solid rgba(74,168,200,0.35); }
+.lp-btn.ghost:hover { border-color: var(--accent); color: var(--accent-light); background: rgba(74,168,200,0.06); }
+
+.lp-figure { border: 1px solid var(--grey-3); border-radius: 2px; overflow: hidden; background: var(--bg-1); }
+.lp-figure img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; }
+.lp-caption { font-size: 12px; font-weight: 300; color: var(--grey-1); padding: 12px 16px; border-top: 1px solid var(--grey-3); letter-spacing: 0.02em; }
+
+/* ── Shared section furniture ── */
+.lp-section { max-width: var(--container); margin: 0 auto; padding: 88px var(--gutter); }
+.lp-section.tight { padding-top: 0; }
+.lp-label { font-family: var(--font-main); font-size: 10px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--grey-2); margin-bottom: 14px; }
+.lp-h2 { font-family: var(--font-main); font-size: clamp(24px, 3vw, 38px); font-weight: 600; letter-spacing: -0.02em; line-height: 1.15; margin-bottom: 18px; max-width: 34ch; }
+.lp-p { font-size: 16px; font-weight: 400; color: var(--grey-1); line-height: 1.7; max-width: 60ch; }
+
+.lp-proof { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--grey-3); }
+.lp-proof div { padding: 22px 28px 0 0; border-right: 1px solid var(--grey-3); }
+.lp-proof div:last-child { border-right: none; }
+.lp-proof dt { font-family: var(--font-main); font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+.lp-proof dd { font-size: 14px; font-weight: 300; color: var(--grey-1); line-height: 1.6; }
+
+.lp-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--grey-3); margin-top: 40px; }
+.lp-step { padding: 26px 32px 0 0; border-right: 1px solid var(--grey-3); }
+.lp-step:last-child { border-right: none; }
+
+/* Lareesa's rule (2026-09-17): no text may sit flush against a border or an edge.
+   The divider is each cell's right border, so in the multi-column layout every
+   cell AFTER one needs its own left inset — without it the text starts exactly
+   on the line (the original defect). Scoped above the 768px stacking breakpoint:
+   stacked cells align to the section edge, not to a divider. */
+@media (min-width: 769px) {
+  .lp-proof div + div { padding-left: 28px; }
+  .lp-step + .lp-step { padding-left: 32px; }
+}
+.nav-cta--ghost {
+  min-height: 42px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--grey-1);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  padding: 0 22px;
+}
+.nav-cta--ghost:hover { color: var(--white); border-color: rgba(255, 255, 255, 0.45); }
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+
+
+.lp-step-num { font-family: var(--font-main); font-size: 11px; font-weight: 500; letter-spacing: 0.16em; color: var(--accent); margin-bottom: 12px; }
+.lp-step h3 { font-family: var(--font-main); font-size: 18px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 10px; }
+.lp-step p { font-size: 14px; font-weight: 300; color: var(--grey-1); line-height: 1.65; }
+
+.lp-cols { display: grid; grid-template-columns: 1fr 1fr; gap: var(--gutter); margin-top: 36px; }
+.lp-col { border: 1px solid var(--grey-3); background: var(--bg-1); padding: 32px; border-radius: 2px; }
+.lp-col h3 { font-family: var(--font-main); font-size: 19px; font-weight: 600; letter-spacing: -0.01em; margin-bottom: 10px; }
+.lp-col p { font-size: 14px; font-weight: 300; color: var(--grey-1); line-height: 1.7; margin-bottom: 18px; }
+.lp-list { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 22px; }
+.lp-list li { font-size: 14px; font-weight: 300; color: var(--grey-1); line-height: 1.6; padding-left: 18px; position: relative; }
+.lp-list li::before { content: ""; position: absolute; left: 0; top: 8px; width: 8px; height: 1px; background: var(--accent); }
+.lp-link { font-family: var(--font-main); font-size: 12px; font-weight: 500; letter-spacing: 0.06em; color: var(--accent); text-decoration: none; }
+.lp-link:hover { color: var(--accent-light); }
+
+.lp-band { background: var(--bg-1); border-top: 1px solid var(--grey-3); border-bottom: 1px solid var(--grey-3); }
+.lp-band-inner { max-width: var(--container); margin: 0 auto; padding: 80px var(--gutter); display: flex; align-items: center; justify-content: space-between; gap: 48px; flex-wrap: wrap; }
+.lp-band h2 { font-family: var(--font-main); font-size: clamp(22px, 2.6vw, 32px); font-weight: 600; letter-spacing: -0.02em; margin-bottom: 10px; }
+.lp-band p { font-size: 15px; font-weight: 300; color: var(--grey-1); line-height: 1.7; max-width: 52ch; }
+
+/* ── Blog cards (shared with blog.html) ── */
+.blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; margin-top: 28px; }
+.blog-card { background: var(--bg-1); border: 1px solid var(--grey-3); text-decoration: none; display: flex; flex-direction: column; transition: border-color 0.25s, background 0.25s; overflow: hidden; border-radius: 2px; }
+.blog-card:hover { border-color: var(--accent-dim); background: var(--bg-2); }
+.blog-card-cover { width: 100%; aspect-ratio: 16/9; background: var(--bg-2); overflow: hidden; }
+.blog-card-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.blog-card-body { padding: 26px 26px 30px; display: flex; flex-direction: column; flex: 1; }
+.blog-card-category { font-family: var(--font-main); font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+.blog-card-title { font-family: var(--font-main); font-size: 17px; font-weight: 600; letter-spacing: -0.01em; color: var(--white); line-height: 1.3; margin-bottom: 8px; }
+.blog-card-excerpt { font-size: 13px; font-weight: 400; color: var(--grey-1); line-height: 1.65; flex: 1; margin-bottom: 16px; }
+.blog-card-meta { font-family: var(--font-main); font-size: 10px; font-weight: 400; color: var(--grey-2); letter-spacing: 0.08em; display: flex; gap: 14px; }
+.blog-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.blog-loading { color: var(--grey-1); font-size: 14px; padding: 24px 0; }
+
+/* Footer — inherited from the homepage shell */
+.footer { background: var(--bg-0); border-top: 1px solid rgba(74,168,200,0.06); padding: 80px var(--gutter) 40px; }
+.footer-inner { max-width: var(--container); margin: 0 auto; display: grid; grid-template-columns: 2.5fr 1fr 1fr 1fr; gap: 80px; margin-bottom: 64px; }
+.footer-logo { font-family: var(--font-main); font-weight: 500; font-size: 16px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 20px; }
+.footer-tagline { font-family: var(--font-body); font-size: 13px; font-weight: 300; line-height: 1.75; color: var(--grey-1); max-width: 300px; margin-bottom: 32px; }
+.footer-col-title { font-family: var(--font-main); font-size: 10px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--grey-2); margin-bottom: 24px; }
+.footer-links { display: flex; flex-direction: column; gap: 14px; list-style: none; }
+.footer-links a { font-family: var(--font-body); font-size: 13px; font-weight: 300; color: var(--grey-1); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--white); }
+.footer-bottom { max-width: var(--container); margin: 0 auto; padding-top: 32px; border-top: 1px solid var(--grey-3); display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+.footer-copy { font-family: var(--font-body); font-size: 12px; font-weight: 300; color: var(--grey-2); letter-spacing: 0.04em; }
+
+@media (max-width: 1024px) {
+  .lp-hero { grid-template-columns: 1fr; gap: 48px; }
+  .lp-cols { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+  .lp-hero { padding: calc(var(--nav-h) + 56px) var(--gutter) 56px; }
+  .lp-section { padding: 64px var(--gutter); }
+  .lp-proof, .lp-steps { grid-template-columns: 1fr; }
+  .lp-proof div, .lp-step { border-right: none; border-bottom: 1px solid var(--grey-3); padding: 20px 0; }
+  .lp-proof div:last-child, .lp-step:last-child { border-bottom: none; }
+  .lp-band-inner { padding: 56px var(--gutter); flex-direction: column; align-items: flex-start; }
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+@media (max-width: 480px) {
+  .lp-h1 { font-size: 34px; }
+  .lp-btn { width: 100%; text-align: center; }
+  .footer-inner { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { transition: none !important; animation: none !important; }
+}
+</style>
+<link rel="stylesheet" href="/mobile-usability.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav" id="mainNav">
+  <a href="/" class="nav-logo"><img src="images/logo.svg" alt="Robotist" style="height:clamp(24px, 3.5vw, 36px);width:auto;"></a>
+  <ul class="nav-links">
+    <li><a href="index.html#catalogue">Catalogue</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="compare.html">Compare</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="/grn/" class="nav-cta nav-cta--ghost">Join us</a>
+    <a href="/contact.html" class="nav-cta">Get Started</a>
+  </div>
+  <button class="nav-hamburger" aria-label="Menu" aria-expanded="false" aria-controls="primary-navigation">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<main id="main">
+
+  <!-- ── Hero ── -->
+  <section class="lp-hero">
+    <div>
+      <div class="lp-eyebrow">Robotist for education</div>
+      <h1 class="lp-h1">Bring real robots into your classroom.</h1>
+      <p class="lp-lead">Robotist supplies, integrates and supports commercial robots worldwide. For schools and training providers that means real hardware in the room, a considered introduction for students, and support that continues past the first lesson.</p>
+      <div class="lp-ctas">
+        <a class="lp-btn" href="/contact.html">Book a classroom demo</a>
+        <a class="lp-btn ghost" href="/compare.html">See the range</a>
+      </div>
+    </div>
+    <figure class="lp-figure">
+      <img src="images/robotist-classroom-quadruped.webp" srcset="images/robotist-classroom-quadruped-900.webp 900w, images/robotist-classroom-quadruped.webp 1600w" sizes="(max-width: 1024px) 92vw, 560px" width="1600" height="900" alt="A quadruped robot demonstrated beside a lectern in a lecture hall" fetchpriority="high" decoding="async">
+      <figcaption class="lp-caption">A quadruped platform during a Robotist classroom session.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ── Proof strip ── -->
+  <section class="lp-section tight">
+    <dl class="lp-proof">
+      <div><dt>Real hardware</dt><dd>Platforms your students can operate, not simulations or slideware.</dd></div>
+      <div><dt>Matched to the room</dt><dd>Floor space, supervision and safety are checked before anything is recommended.</dd></div>
+      <div><dt>Support afterwards</dt><dd>Integration, training and maintenance guidance from one supplier.</dd></div>
+    </dl>
+  </section>
+
+  <!-- ── Why ── -->
+  <section class="lp-section">
+    <div class="lp-label">Why schools work with us</div>
+    <h2 class="lp-h2">Selection, integration and support from one place.</h2>
+    <p class="lp-p">Robotics programmes stall when the machine arrives without the setup, the lesson plan or the backup. We handle the whole path: what suits the room, how it gets deployed, and who to call when something needs attention.</p>
+    <div class="lp-steps">
+      <article class="lp-step">
+        <div class="lp-step-num">01</div>
+        <h3>Share the room and the outcome</h3>
+        <p>Tell us the space, the age group and what you want students to walk away understanding.</p>
+      </article>
+      <article class="lp-step">
+        <div class="lp-step-num">02</div>
+        <h3>We shortlist and quote</h3>
+        <p>A short, defensible recommendation with the trade-offs stated — no endless catalogue browsing.</p>
+      </article>
+      <article class="lp-step">
+        <div class="lp-step-num">03</div>
+        <h3>We deploy, train and stay on call</h3>
+        <p>Hardware and software configured together, staff walked through it, support available afterwards.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ── Audiences ── -->
+  <section class="lp-section">
+    <div class="lp-label">Who it's for</div>
+    <h2 class="lp-h2">Two ways we work with education.</h2>
+    <div class="lp-cols">
+      <div class="lp-col">
+        <h3>Schools &amp; educators</h3>
+        <p>For teachers and faculty introducing robotics into a programme or extending one that already exists.</p>
+        <ul class="lp-list">
+          <li>Classroom demonstrations and hands-on sessions</li>
+          <li>Robotics clubs and extracurricular programmes</li>
+          <li>Vocational and technical training equipment</li>
+        </ul>
+        <a class="lp-link" href="/contact.html">Start an enquiry →</a>
+      </div>
+      <div class="lp-col">
+        <h3>Suppliers &amp; integrators</h3>
+        <p>For organisations equipping institutions, running programmes, or adding robotics to an existing offer.</p>
+        <ul class="lp-list">
+          <li>Procurement and specification support</li>
+          <li>Multi-site deployment planning</li>
+          <li>Integration, spares and maintenance guidance</li>
+        </ul>
+        <a class="lp-link" href="/contact.html">Talk to us →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Blog ── -->
+  <section class="lp-section">
+    <div class="blog-head">
+      <div>
+        <div class="lp-label">From the blog</div>
+        <h2 class="lp-h2">Buying and deploying robots, written plainly.</h2>
+      </div>
+      <a class="lp-link" href="blog.html">All articles →</a>
+    </div>
+    <div class="blog-grid" id="blog-grid">
+      <div class="blog-loading">Loading articles…</div>
+    </div>
+  </section>
+
+  <!-- ── Closing band ── -->
+  <section class="lp-band">
+    <div class="lp-band-inner">
+      <div>
+        <h2>Have a classroom in mind?</h2>
+        <p>Tell us about the room, the students and the outcome you want. We'll come back with a short, specific recommendation.</p>
+      </div>
+      <a class="lp-btn" href="/contact.html">Start an enquiry</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <span class="footer-logo">Robotist</span>
+      <p class="footer-tagline">The global robotics platform. We connect businesses worldwide with the machines that will define the next decade of commerce.</p>
+      <p style="font-family:var(--font-body);font-size:12px;font-weight:300;color:var(--grey-2);">Shanghai · Hangzhou · Sydney</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Platform</div>
+      <ul class="footer-links">
+        <li><a href="/#catalogue">Robot Catalogue</a></li>
+        <li><a href="/compare.html">Compare Robots</a></li>
+        <li><a href="/#services">Integration Services</a></li>
+        <li><a href="/#services">Maintenance Plans</a></li>
+        <li><a href="/#services">Consultation</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="/about.html">About Robotist</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="mailto:robert@robotist.com.au">robert@robotist.com.au</a></li>
+        <li><a href="mailto:lareesa@robotist.com.au">lareesa@robotist.com.au</a></li>
+        <li><a href="https://www.linkedin.com/company/robotistworld/">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">&copy; 2026 Robotist Pty Ltd. All rights reserved.</span>
+    <span class="footer-legal" style="display:inline-flex;flex-wrap:wrap;gap:14px;font-size:12px;letter-spacing:.04em;"><a href="/faq.html">FAQ</a><a href="/terms.html">Terms</a><a href="/cookies.html">Cookies</a><a href="/privacy.html">Privacy</a></span>
+  </div>
+</footer>
+
+<script>
+// ── HAMBURGER MENU TOGGLE (same behaviour as the homepage) ──
+const hamburger = document.querySelector('.nav-hamburger');
+const navLinks = document.querySelector('.nav-links');
+if (hamburger) {
+  hamburger.addEventListener('click', (e) => {
+    e.preventDefault();
+    navLinks.classList.toggle('open');
+    hamburger.classList.toggle('active');
+    hamburger.setAttribute('aria-expanded', navLinks.classList.contains('open') ? 'true' : 'false');
+  });
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      hamburger.classList.remove('active');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && navLinks && navLinks.classList.contains('open')) {
+    navLinks.classList.remove('open');
+    hamburger.classList.remove('active');
+    hamburger.setAttribute('aria-expanded', 'false');
+    hamburger.focus();
+  }
+});
+
+// ── Latest three articles (same source and card markup as blog.html) ──
+fetch('blog-posts.json')
+  .then(r => r.json())
+  .then(posts => {
+    // Draft posts (status: "draft") stay in blog-posts.json but are never rendered publicly.
+    posts = posts.filter(p => p.status !== 'draft');
+    const coverPath = (p) => p.coverUrl || 'blog/covers/' + p.slug + '.jpg';
+    const grid = document.getElementById('blog-grid');
+    const latest = posts.slice(0, 3);
+    grid.innerHTML = latest.map(p => `
+      <a href="/blog/${p.slug}.html" class="blog-card">
+        <div class="blog-card-cover"><img src="${coverPath(p)}" alt="" loading="lazy"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-category">${p.category}</div>
+          <h3 class="blog-card-title">${p.title}</h3>
+          <p class="blog-card-excerpt">${p.excerpt}</p>
+          <div class="blog-card-meta"><span>${p.date}</span><span>${p.readTime} read</span></div>
+        </div>
+      </a>
+    `).join('');
+  })
+  .catch(() => {
+    document.getElementById('blog-grid').innerHTML = '<div class="blog-loading">Unable to load articles. Please try again.</div>';
+  });
+</script>
+<!-- Analytics (privacy-friendly beacon — always active, no cookies) -->
+<script>
+(function(){var u="https://ROBOTIST_LEADS_URL/a/ping";fetch(u+"?p="+encodeURIComponent(location.pathname)+"&r="+encodeURIComponent(document.referrer),{method:"POST"}).catch(function(){});})();
+</script>
+</body>
+</html>

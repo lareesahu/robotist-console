@@ -1,0 +1,1761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Robotist — Brand Book</title>
+  <style>
+    /* ─── RESET & BASE ─────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --accent:   #4AA8C8;
+      --accent-2: #A8DCEF;
+      --bg:       #060D18;
+      --bg-2:     #0C1828;
+      --layer:    #142035;
+      --mid:      #1E3550;
+      --text-1:   rgba(230,242,248,.94);
+      --text-2:   rgba(230,242,248,.52);
+      --text-3:   rgba(230,242,248,.28);
+      --radius-sm: 10px;
+      --radius-md: 18px;
+      --radius-lg: 28px;
+      --radius-xl: 40px;
+      --radius-pill: 100px;
+      --ease: cubic-bezier(.22,1,.36,1);
+      --dur: 320ms;
+    }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      background: var(--bg);
+      color: var(--text-1);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 400;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    ::selection { background: var(--accent); color: var(--bg); }
+
+    /* ─── SCROLLBAR ─────────────────────────────────────────────── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--mid); border-radius: 2px; }
+
+    /* ─── LAYOUT HELPERS ────────────────────────────────────────── */
+    .container {
+      width: 100%;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 clamp(24px, 6vw, 96px);
+    }
+    .section {
+      padding: clamp(80px, 12vw, 160px) 0;
+      border-top: 1px solid var(--mid);
+    }
+    .section-label {
+      font-size: clamp(9px, 1.2vw, 11px);
+      font-weight: 600;
+      letter-spacing: .18em;
+      color: var(--accent);
+      text-transform: uppercase;
+      margin-bottom: clamp(16px, 3vw, 32px);
+    }
+    .section-header {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(16px, 3vw, 32px);
+      margin-bottom: clamp(48px, 8vw, 96px);
+    }
+    @media (min-width: 768px) {
+      .section-header { grid-template-columns: 1fr 1fr; align-items: start; }
+    }
+    .section-title {
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 300;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      line-height: 1.1;
+      color: var(--text-1);
+    }
+    .section-desc {
+      font-size: clamp(14px, 1.5vw, 16px);
+      font-weight: 300;
+      color: var(--text-2);
+      line-height: 1.8;
+      padding-top: clamp(8px, 1.5vw, 16px);
+    }
+    .grid-2 { display: grid; grid-template-columns: 1fr; gap: clamp(16px, 2.5vw, 24px); }
+    @media (min-width: 600px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+    .grid-3 { display: grid; grid-template-columns: 1fr; gap: clamp(12px, 2vw, 20px); }
+    @media (min-width: 600px) { .grid-3 { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 900px) { .grid-3 { grid-template-columns: 1fr 1fr 1fr; } }
+    .card {
+      background: var(--layer);
+      border: 1px solid var(--mid);
+      border-radius: var(--radius-lg);
+      padding: clamp(24px, 3vw, 40px);
+      transition: border-color var(--dur) var(--ease), transform var(--dur) var(--ease);
+    }
+    .card:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid var(--mid);
+      color: var(--text-2);
+    }
+
+    /* ─── NAV ───────────────────────────────────────────────────── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(20px, 5vw, 64px);
+      background: rgba(6,13,24,.85);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(30,53,80,.6);
+    }
+    .nav-wordmark {
+      font-size: clamp(14px, 2vw, 17px);
+      font-weight: 500;
+      letter-spacing: .20em;
+      text-transform: uppercase;
+      color: var(--text-1);
+      text-decoration: none;
+      transition: color var(--dur) var(--ease);
+    }
+    .nav-wordmark:hover { color: var(--accent); }
+    .nav-links {
+      display: none;
+      list-style: none;
+      gap: clamp(16px, 3vw, 36px);
+    }
+    @media (min-width: 768px) { .nav-links { display: flex; } }
+    .nav-links a {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--text-2);
+      text-decoration: none;
+      transition: color var(--dur) var(--ease);
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+    }
+    @media (min-width: 768px) { .nav-hamburger { display: none; } }
+    .nav-hamburger span {
+      display: block;
+      width: 22px;
+      height: 1.5px;
+      background: var(--text-2);
+      border-radius: 2px;
+      transition: background var(--dur) var(--ease);
+    }
+    .nav-hamburger:hover span { background: var(--accent); }
+
+    /* ─── HERO ──────────────────────────────────────────────────── */
+    .hero {
+      min-height: 100svh;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding-bottom: clamp(48px, 8vw, 96px);
+      padding-top: 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 60% 40%, rgba(74,168,200,.07) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 10% 80%, rgba(74,168,200,.04) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-eyebrow {
+      font-size: clamp(9px, 1.2vw, 11px);
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: clamp(20px, 3vw, 32px);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: clamp(24px, 4vw, 48px);
+      height: 1px;
+      background: var(--accent);
+    }
+    .hero-wordmark {
+      font-size: clamp(52px, 13vw, 160px);
+      font-weight: 500;
+      letter-spacing: .20em;
+      text-transform: uppercase;
+      line-height: .9;
+      color: var(--text-1);
+      margin-bottom: clamp(24px, 4vw, 48px);
+    }
+    .hero-tagline {
+      font-size: clamp(11px, 1.5vw, 14px);
+      font-weight: 500;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--text-2);
+      margin-bottom: clamp(40px, 6vw, 80px);
+    }
+    .hero-tagline span { color: var(--accent); margin: 0 clamp(6px, 1vw, 12px); }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: clamp(24px, 4vw, 64px);
+      border-top: 1px solid var(--mid);
+      padding-top: clamp(24px, 3vw, 40px);
+    }
+    .hero-meta-item { display: flex; flex-direction: column; gap: 4px; }
+    .hero-meta-label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--text-3);
+    }
+    .hero-meta-value {
+      font-size: clamp(12px, 1.5vw, 14px);
+      font-weight: 500;
+      color: var(--text-1);
+      letter-spacing: .04em;
+    }
+
+    /* ─── LOGO SECTION ──────────────────────────────────────────── */
+    .logo-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(12px, 2vw, 20px);
+      margin-bottom: clamp(48px, 6vw, 80px);
+    }
+    @media (min-width: 600px) { .logo-grid { grid-template-columns: 1fr 1fr; } }
+    .logo-swatch {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--mid);
+    }
+    .logo-swatch-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: clamp(28px, 5vw, 56px) clamp(20px, 4vw, 40px);
+    }
+    .logo-swatch-inner img,
+    .logo-swatch-inner svg {
+      width: 100%;
+      max-width: 360px;
+      height: auto;
+    }
+    .logo-swatch-label {
+      padding: clamp(12px, 2vw, 16px) clamp(20px, 3vw, 28px);
+      background: var(--layer);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-top: 1px solid var(--mid);
+    }
+    .logo-swatch-name {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--text-2);
+    }
+    .logo-swatch-hex {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: .06em;
+      color: var(--text-3);
+      font-variant-numeric: tabular-nums;
+    }
+    .clearspace-demo {
+      background: var(--layer);
+      border: 1px solid var(--mid);
+      border-radius: var(--radius-lg);
+      padding: clamp(32px, 5vw, 64px);
+      margin-bottom: clamp(32px, 4vw, 48px);
+      text-align: center;
+    }
+    .clearspace-label {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: clamp(16px, 2.5vw, 24px);
+    }
+    .clearspace-desc {
+      font-size: clamp(12px, 1.4vw, 14px);
+      color: var(--text-2);
+      margin-bottom: clamp(24px, 3vw, 40px);
+      font-weight: 300;
+    }
+    .clearspace-box {
+      display: inline-block;
+      position: relative;
+      border: 1px dashed rgba(74,168,200,.35);
+      padding: clamp(20px, 4vw, 48px);
+    }
+    .clearspace-box::before,
+    .clearspace-box::after {
+      content: '1×';
+      position: absolute;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      color: rgba(74,168,200,.5);
+    }
+    .clearspace-box::before { top: 50%; left: -28px; transform: translateY(-50%) rotate(-90deg); }
+    .clearspace-box::after  { top: -20px; left: 50%; transform: translateX(-50%); }
+    .clearspace-wordmark {
+      font-size: clamp(22px, 4vw, 40px);
+      font-weight: 500;
+      letter-spacing: .20em;
+      text-transform: uppercase;
+      color: var(--text-1);
+    }
+    .misuse-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(10px, 1.5vw, 16px);
+    }
+    @media (min-width: 768px) { .misuse-grid { grid-template-columns: repeat(3, 1fr); } }
+    .misuse-card {
+      background: var(--layer);
+      border: 1px solid var(--mid);
+      border-radius: var(--radius-md);
+      padding: clamp(16px, 2.5vw, 28px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      text-align: center;
+    }
+    .misuse-wordmark { font-size: clamp(14px, 2.5vw, 22px); letter-spacing: .20em; text-transform: uppercase; }
+    .misuse-x {
+      width: 20px; height: 20px;
+      background: rgba(220,60,60,.15);
+      border: 1px solid rgba(220,60,60,.3);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px; color: rgba(220,80,80,.8);
+    }
+    .misuse-label { font-size: 9px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); }
+    .size-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(12px, 2vw, 16px);
+      margin-bottom: clamp(32px, 4vw, 48px);
+    }
+    @media (min-width: 600px) { .size-grid { grid-template-columns: 1fr 1fr 1fr; } }
+    .size-card {
+      background: var(--layer);
+      border: 1px solid var(--mid);
+      border-radius: var(--radius-md);
+      padding: clamp(20px, 3vw, 32px);
+    }
+    .size-card-label {
+      font-size: 9px; font-weight: 600; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 16px;
+    }
+    .size-card-wordmark {
+      font-weight: 500; letter-spacing: .20em; text-transform: uppercase;
+      color: var(--text-1); margin-bottom: 12px;
+    }
+    .size-card-note { font-size: 11px; color: var(--text-3); font-weight: 300; }
+    .monogram-box {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 40px; height: 40px;
+      background: var(--accent);
+      border-radius: 8px;
+      font-size: 22px; font-weight: 500;
+      color: var(--bg);
+      letter-spacing: 0;
+      margin-bottom: 12px;
+    }
+
+    /* ─── COLOUR SECTION ────────────────────────────────────────── */
+    .swatch-hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(12px, 2vw, 16px);
+      margin-bottom: clamp(32px, 4vw, 48px);
+    }
+    @media (min-width: 600px) { .swatch-hero { grid-template-columns: 2fr 1fr 1fr; } }
+    .swatch-block {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--mid);
+    }
+    .swatch-color {
+      height: clamp(100px, 15vw, 160px);
+    }
+    .swatch-info {
+      background: var(--layer);
+      padding: clamp(14px, 2vw, 20px);
+      border-top: 1px solid var(--mid);
+    }
+    .swatch-name { font-size: clamp(13px, 1.5vw, 15px); font-weight: 500; color: var(--text-1); margin-bottom: 2px; }
+    .swatch-hex { font-size: 12px; font-weight: 500; color: var(--accent); letter-spacing: .06em; margin-bottom: 4px; }
+    .swatch-role { font-size: 9px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); }
+    .palette-ramp {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: clamp(8px, 1.5vw, 12px);
+      margin-bottom: clamp(32px, 4vw, 48px);
+    }
+    .ramp-block { border-radius: var(--radius-md); overflow: hidden; border: 1px solid var(--mid); }
+    .ramp-color { height: clamp(60px, 8vw, 96px); }
+    .ramp-info { background: var(--layer); padding: clamp(10px, 1.5vw, 16px); border-top: 1px solid var(--mid); }
+    .ramp-token { font-size: 9px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); margin-bottom: 2px; }
+    .ramp-hex { font-size: clamp(10px, 1.2vw, 12px); font-weight: 500; color: var(--text-1); letter-spacing: .04em; margin-bottom: 2px; }
+    .ramp-name { font-size: 9px; color: var(--text-3); }
+    .text-hierarchy {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(10px, 1.5vw, 14px);
+      margin-bottom: clamp(32px, 4vw, 48px);
+    }
+    @media (min-width: 600px) { .text-hierarchy { grid-template-columns: 1fr 1fr 1fr; } }
+    .text-hier-card {
+      background: var(--layer);
+      border: 1px solid var(--mid);
+      border-radius: var(--radius-md);
+      padding: clamp(20px, 2.5vw, 28px);
+    }
+    .text-hier-sample { font-size: clamp(20px, 3vw, 28px); font-weight: 500; margin-bottom: 8px; }
+    .text-hier-label { font-size: 9px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); margin-bottom: 4px; }
+    .text-hier-value { font-size: 11px; color: var(--text-3); font-variant-numeric: tabular-nums; }
+    .token-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: clamp(12px, 1.4vw, 14px);
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--mid);
+    }
+    .token-table th {
+      background: var(--mid);
+      padding: clamp(10px, 1.5vw, 14px) clamp(16px, 2vw, 24px);
+      text-align: left;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--text-3);
+    }
+    .token-table td {
+      padding: clamp(12px, 1.5vw, 16px) clamp(16px, 2vw, 24px);
+      border-top: 1px solid var(--mid);
+      color: var(--text-2);
+      vertical-align: middle;
+    }
+    .token-table tr:hover td { background: rgba(255,255,255,.02); }
+    .token-dot {
+      display: inline-block;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      margin-right: 10px;
+      vertical-align: middle;
+      flex-shrink: 0;
+    }
+    .token-name { font-family: 'Poppins', monospace; color: var(--accent); font-size: 12px; }
+    .token-val { font-variant-numeric: tabular-nums; color: var(--text-1); }
+
+    /* ─── TYPOGRAPHY SECTION ────────────────────────────────────── */
+    .typeface-hero {
+      background: var(--layer);
+      border: 1px solid var(--mid);
+      border-radius: var(--radius-lg);
+      padding: clamp(32px, 5vw, 64px);
+      margin-bottom: clamp(32px, 4vw, 48px);
+      position: relative;
+      overflow: hidden;
+    }
+    .typeface-hero::after {
+      content: 'Pp';
+      position: absolute;
+      right: -20px; bottom: -40px;
+      font-size: clamp(120px, 20vw, 240px);
+      font-weight: 700;
+      color: rgba(74,168,200,.04);
+      line-height: 1;
+      pointer-events: none;
+      user-select: none;
+    }
+    .typeface-name {
+      font-size: clamp(40px, 8vw, 96px);
+      font-weight: 500;
+      letter-spacing: .20em;
+      text-transform: uppercase;
+      color: var(--text-1);
+      margin-bottom: clamp(24px, 3vw, 40px);
+      line-height: 1;
+    }
+    .typeface-meta {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(16px, 2vw, 24px);
+    }
+    @media (min-width: 600px) { .typeface-meta { grid-template-columns: repeat(5, 1fr); } }
+    .typeface-meta-item { display: flex; flex-direction: column; gap: 4px; }
+    .typeface-meta-label { font-size: 9px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); }
+    .typeface-meta-value { font-size: clamp(12px, 1.4vw, 14px); font-weight: 500; color: var(--text-1); }
+    .weight-scale {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(10px, 1.5vw, 14px);
+      margin-bottom: clamp(32px, 4vw, 48px);
+    }
+    @media (min-width: 600px) { .weight-scale { grid-template-columns: repeat(5, 1fr); } }
+    .weight-card {
+      background: var(--layer);
+      border: 1px solid var(--mid);
+      border-radius: var(--radius-md);
+      padding: clamp(16px, 2vw, 24px);
+      text-align: center;
+      transition: border-color var(--dur) var(--ease);
+    }
+    .weight-card.active { border-color: var(--accent); }
+    .weight-sample { font-size: clamp(28px, 4vw, 44px); color: var(--text-1); line-height: 1.2; margin-bottom: 8px; }
+    .weight-label { font-size: 9px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); }
+    .weight-badge {
+      display: inline-block;
+      margin-top: 6px;
+      font-size: 8px;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: var(--radius-pill);
+      background: rgba(74,168,200,.15);
+      color: var(--accent);
+      border: 1px solid rgba(74,168,200,.3);
+    }
+    .type-scale-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: clamp(32px, 4vw, 48px);
+      overflow: hidden;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--mid);
+    }
+    .type-scale-table th {
+      background: var(--mid);
+      padding: clamp(10px, 1.5vw, 14px) clamp(16px, 2vw, 24px);
+      text-align: left;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--text-3);
+    }
+    .type-scale-table td {
+      padding: clamp(14px, 2vw, 20px) clamp(16px, 2vw, 24px);
+      border-top: 1px solid var(--mid);
+      vertical-align: middle;
+    }
+    .type-scale-table tr:hover td { background: rgba(255,255,255,.02); }
+    .ts-role { font-size: 9px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); white-space: nowrap; }
+    .ts-spec { font-size: 11px; color: var(--text-3); white-space: nowrap; font-variant-numeric: tabular-nums; }
+    .charset-block {
+      background: var(--layer);
+      border: 1px solid var(--mid);
+      border-radius: var(--radius-lg);
+      padding: clamp(24px, 3.5vw, 48px);
+    }
+    .charset-label { font-size: 9px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--text-3); margin-bottom: 20px; }
+    .charset-text {
+      font-size: clamp(16px, 2.5vw, 24px);
+      font-weight: 500;
+      color: var(--text-1);
+      line-height: 1.9;
+      letter-spacing: .04em;
+      word-break: break-all;
+    }
+    .charset-nums { color: var(--accent); }
+    .charset-sym { color: var(--text-3); }
+
+    /* ─── SPACING SECTION ───────────────────────────────────────── */
+    .spacing-scale {
+      display: flex;
+      align-items: flex-end;
+      gap: clamp(8px, 1.5vw, 16px);
+      margin-bottom: clamp(32px, 4vw, 48px);
+      overflow-x: auto;
+      padding-bottom: 8px;
+    }
+    .spacing-item { display: flex; flex-direction: column; align-items: center; gap: 8px; flex-shrink: 0; }
+    .spacing-bar { background: var(--mid); border-radius: 4px; width: clamp(40px, 6vw, 72px); transition: background var(--dur) var(--ease); }
+    .spacing-item:hover .spacing-bar { background: var(--accent); }
+    .spacing-px { font-size: 10px; font-weight: 600; color: var(--text-1); }
+    .spacing-name { font-size: 9px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--text-3); }
+    .grid-demo {
+      background: var(--layer);
+      border: 1px solid var(--mid);
+      border-radius: var(--radius-lg);
+      padding: clamp(20px, 3vw, 36px);
+      margin-bottom: clamp(32px, 4vw, 48px);
+    }
+    .grid-demo-label { font-size: 9px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+    .grid-cols {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+    .grid-col {
+      height: 40px;
+      border-radius: 6px;
+    }
+    .grid-col:nth-child(-n+4) { background: rgba(74,168,200,.35); }
+    .grid-col:nth-child(n+5) { background: rgba(74,168,200,.1); }
+    .grid-desc { font-size: 11px; color: var(--text-3); text-align: center; }
+    .radius-scale {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(10px, 1.5vw, 14px);
+    }
+    @media (min-width: 600px) { .radius-scale { grid-template-columns: repeat(5, 1fr); } }
+    .radius-card {
+      background: var(--layer);
+      border: 1px solid var(--mid);
+      border-radius: var(--radius-md);
+      padding: clamp(16px, 2vw, 24px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+    .radius-demo {
+      width: clamp(40px, 6vw, 60px);
+      height: clamp(40px, 6vw, 60px);
+      background: var(--mid);
+    }
+    .radius-label { font-size: 10px; font-weight: 600; letter-spacing: .1em; color: var(--text-2); text-align: center; }
+    .radius-val { font-size: 9px; color: var(--text-3); }
+
+    /* ─── COMPONENTS SECTION ────────────────────────────────────── */
+    .comp-block {
+      background: var(--layer);
+      border: 1px solid var(--mid);
+      border-radius: var(--radius-lg);
+      padding: clamp(24px, 3.5vw, 48px);
+      margin-bottom: clamp(16px, 2vw, 20px);
+    }
+    .comp-label {
+      font-size: 9px; font-weight: 600; letter-spacing: .18em;
+      text-transform: uppercase; color: var(--text-3);
+      margin-top: clamp(20px, 2.5vw, 28px);
+      padding-top: clamp(20px, 2.5vw, 28px);
+      border-top: 1px solid var(--mid);
+    }
+    .comp-label:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .btn {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      border-radius: var(--radius-pill);
+      padding: 12px 28px;
+      transition: all var(--dur) var(--ease);
+    }
+    .btn-primary { background: var(--accent); color: var(--bg); }
+    .btn-primary:hover { background: var(--accent-2); transform: translateY(-1px); }
+    .btn-secondary { background: transparent; color: var(--accent); border: 1px solid var(--accent); }
+    .btn-secondary:hover { background: rgba(74,168,200,.1); transform: translateY(-1px); }
+    .btn-ghost { background: transparent; color: var(--text-2); border: 1px solid var(--mid); }
+    .btn-ghost:hover { color: var(--text-1); border-color: var(--text-2); transform: translateY(-1px); }
+    .btn-sm { padding: 8px 18px; font-size: 10px; }
+    .btn-lg { padding: 16px 40px; font-size: 12px; }
+    .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .badge {
+      font-family: 'Poppins', sans-serif;
+      font-size: 10px; font-weight: 600;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: 4px 12px; border-radius: var(--radius-pill);
+      border: 1px solid;
+    }
+    .badge-active { background: rgba(74,168,200,.15); color: var(--accent); border-color: rgba(74,168,200,.3); }
+    .badge-new { background: rgba(74,168,200,.25); color: var(--accent-2); border-color: rgba(74,168,200,.5); }
+    .badge-draft { background: rgba(30,53,80,.6); color: var(--text-2); border-color: var(--mid); }
+    .badge-archived { background: transparent; color: var(--text-3); border-color: var(--mid); }
+    .badge-tag { background: rgba(30,53,80,.4); color: var(--text-2); border-color: var(--mid); }
+    .input-stack { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
+    .input-field {
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px; font-weight: 400;
+      background: var(--bg-2);
+      border: 1px solid var(--mid);
+      border-radius: var(--radius-sm);
+      padding: 12px 16px;
+      color: var(--text-1);
+      outline: none;
+      transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+      width: 100%;
+    }
+    .input-field::placeholder { color: var(--text-3); }
+    .input-field:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(74,168,200,.12); }
+    .input-field.focused { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(74,168,200,.12); }
+    .comp-grid-2 { display: grid; grid-template-columns: 1fr; gap: clamp(12px, 2vw, 16px); }
+    @media (min-width: 768px) { .comp-grid-2 { grid-template-columns: 1fr 1fr; } }
+    .card-demo {
+      background: var(--bg-2);
+      border: 1px solid var(--mid);
+      border-radius: var(--radius-lg);
+      padding: clamp(20px, 3vw, 32px);
+      transition: border-color var(--dur) var(--ease), transform var(--dur) var(--ease);
+    }
+    .card-demo:hover { border-color: var(--accent); transform: translateY(-2px); }
+    .card-demo-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+    .card-demo-title { font-size: clamp(14px, 1.8vw, 17px); font-weight: 500; color: var(--text-1); }
+    .card-demo-body { font-size: 13px; font-weight: 300; color: var(--text-2); line-height: 1.7; margin-bottom: 20px; }
+    .card-demo-footer { display: flex; justify-content: space-between; align-items: center; }
+    .card-demo-meta { font-size: 11px; color: var(--text-3); }
+    .nav-demo {
+      background: rgba(6,13,24,.9);
+      backdrop-filter: blur(20px);
+      border: 1px solid var(--mid);
+      border-radius: var(--radius-md);
+      padding: 0 clamp(16px, 2.5vw, 28px);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-demo-wordmark { font-size: clamp(12px, 1.5vw, 15px); font-weight: 500; letter-spacing: .20em; text-transform: uppercase; color: var(--text-1); }
+    .nav-demo-links { display: flex; gap: clamp(16px, 2.5vw, 28px); }
+    .nav-demo-links span { font-size: 10px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase; color: var(--text-2); }
+    .nav-demo-btn { font-family: 'Poppins', sans-serif; font-size: 10px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; background: var(--accent); color: var(--bg); border: none; border-radius: var(--radius-pill); padding: 8px 18px; cursor: pointer; }
+    .nav-demo-note { font-size: 10px; color: var(--text-3); text-align: center; margin-top: 12px; font-weight: 300; }
+
+    /* ─── VOICE SECTION ─────────────────────────────────────────── */
+    .voice-pillars { display: grid; grid-template-columns: 1fr; gap: clamp(12px, 2vw, 16px); margin-bottom: clamp(32px, 4vw, 48px); }
+    @media (min-width: 600px) { .voice-pillars { grid-template-columns: 1fr 1fr 1fr; } }
+    .pillar-card {
+      background: var(--layer);
+      border: 1px solid var(--mid);
+      border-radius: var(--radius-lg);
+      padding: clamp(24px, 3vw, 40px);
+      transition: border-color var(--dur) var(--ease);
+    }
+    .pillar-card:hover { border-color: var(--accent); }
+    .pillar-num { font-size: 9px; font-weight: 600; letter-spacing: .18em; color: var(--accent); margin-bottom: 12px; }
+    .pillar-title { font-size: clamp(20px, 3vw, 28px); font-weight: 500; letter-spacing: .1em; text-transform: uppercase; color: var(--text-1); margin-bottom: 12px; }
+    .pillar-desc { font-size: clamp(13px, 1.4vw, 14px); font-weight: 300; color: var(--text-2); line-height: 1.8; }
+    .do-dont { display: grid; grid-template-columns: 1fr; gap: clamp(12px, 2vw, 16px); margin-bottom: clamp(32px, 4vw, 48px); }
+    @media (min-width: 768px) { .do-dont { grid-template-columns: 1fr 1fr; } }
+    .do-card, .dont-card {
+      background: var(--layer);
+      border: 1px solid var(--mid);
+      border-radius: var(--radius-lg);
+      padding: clamp(24px, 3vw, 40px);
+    }
+    .do-header, .dont-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 20px;
+    }
+    .do-header { background: rgba(74,168,200,.12); color: var(--accent); border: 1px solid rgba(74,168,200,.25); }
+    .dont-header { background: rgba(220,60,60,.08); color: rgba(220,100,100,.8); border: 1px solid rgba(220,60,60,.2); }
+    .do-list, .dont-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .do-list li, .dont-list li {
+      font-size: clamp(13px, 1.4vw, 14px);
+      font-weight: 300;
+      color: var(--text-2);
+      line-height: 1.7;
+      padding-left: 20px;
+      position: relative;
+    }
+    .do-list li::before { content: '—'; position: absolute; left: 0; color: var(--accent); }
+    .dont-list li::before { content: '—'; position: absolute; left: 0; color: rgba(220,100,100,.6); }
+    .writing-examples { display: grid; grid-template-columns: 1fr; gap: clamp(12px, 2vw, 16px); }
+    @media (min-width: 768px) { .writing-examples { grid-template-columns: 1fr 1fr; } }
+    .writing-card {
+      background: var(--layer);
+      border: 1px solid var(--mid);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .writing-bad {
+      padding: clamp(16px, 2.5vw, 24px);
+      border-bottom: 1px solid var(--mid);
+      background: rgba(220,60,60,.04);
+    }
+    .writing-good {
+      padding: clamp(16px, 2.5vw, 24px);
+    }
+    .writing-tag {
+      font-size: 9px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .writing-tag.bad { color: rgba(220,100,100,.7); }
+    .writing-tag.good { color: var(--accent); }
+    .writing-text { font-size: clamp(13px, 1.4vw, 14px); font-weight: 300; color: var(--text-2); line-height: 1.7; }
+
+    /* ─── MOTION SECTION ────────────────────────────────────────── */
+    .motion-grid { display: grid; grid-template-columns: 1fr; gap: clamp(12px, 2vw, 16px); margin-bottom: clamp(32px, 4vw, 48px); }
+    @media (min-width: 600px) { .motion-grid { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 900px) { .motion-grid { grid-template-columns: 1fr 1fr 1fr; } }
+    .motion-card {
+      background: var(--layer);
+      border: 1px solid var(--mid);
+      border-radius: var(--radius-lg);
+      padding: clamp(20px, 2.5vw, 32px);
+    }
+    .motion-card-label { font-size: 9px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+    .motion-card-value { font-size: clamp(18px, 2.5vw, 24px); font-weight: 500; color: var(--text-1); margin-bottom: 8px; }
+    .motion-card-desc { font-size: clamp(12px, 1.3vw, 13px); font-weight: 300; color: var(--text-2); line-height: 1.7; }
+    .imagery-block {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(12px, 2vw, 16px);
+    }
+    @media (min-width: 768px) { .imagery-block { grid-template-columns: 1fr 1fr; } }
+    .imagery-placeholder {
+      background: var(--layer);
+      border: 1px solid var(--mid);
+      border-radius: var(--radius-lg);
+      aspect-ratio: 16/9;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    .imagery-icon { width: 32px; height: 32px; opacity: .3; }
+    .imagery-label { font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--text-3); }
+    .imagery-sub { font-size: 11px; color: var(--text-3); font-weight: 300; }
+    .imagery-rules { display: flex; flex-direction: column; gap: clamp(10px, 1.5vw, 14px); }
+    .imagery-rule {
+      background: var(--layer);
+      border: 1px solid var(--mid);
+      border-radius: var(--radius-md);
+      padding: clamp(14px, 2vw, 20px);
+    }
+    .imagery-rule-title { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--text-1); margin-bottom: 4px; }
+    .imagery-rule-desc { font-size: clamp(12px, 1.3vw, 13px); font-weight: 300; color: var(--text-2); line-height: 1.6; }
+
+    /* ─── FOOTER ────────────────────────────────────────────────── */
+    footer {
+      background: var(--bg-2);
+      border-top: 1px solid var(--mid);
+      padding: clamp(40px, 6vw, 80px) 0;
+    }
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: clamp(16px, 2.5vw, 24px);
+    }
+    @media (min-width: 768px) {
+      .footer-inner { flex-direction: row; justify-content: space-between; align-items: flex-start; }
+    }
+    .footer-wordmark { font-size: clamp(18px, 3vw, 26px); font-weight: 500; letter-spacing: .20em; text-transform: uppercase; color: var(--text-1); margin-bottom: 6px; }
+    .footer-tagline { font-size: 12px; font-weight: 300; color: var(--text-3); letter-spacing: .1em; }
+    .footer-meta { text-align: left; }
+    @media (min-width: 768px) { .footer-meta { text-align: right; } }
+    .footer-meta-row { font-size: 12px; color: var(--text-3); font-weight: 300; margin-bottom: 4px; }
+    .footer-meta-row span { color: var(--accent); }
+    .footer-copy {
+      border-top: 1px solid var(--mid);
+      padding-top: clamp(20px, 2.5vw, 28px);
+      margin-top: clamp(20px, 2.5vw, 28px);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--text-3);
+      font-weight: 300;
+    }
+    @media (min-width: 600px) { .footer-copy { flex-direction: row; justify-content: space-between; } }
+
+    /* ─── SCROLL REVEAL ─────────────────────────────────────────── */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 600ms var(--ease), transform 600ms var(--ease);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+  </style>
+<meta name="description" content="The Robotist brand centre: the wordmark, the colour system, the type system, spacing and grid, interface components, voice, and motion." />
+<link rel="canonical" href="https://www.robotist.com.au/brand-center" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Robotist — Brand Book" />
+<meta property="og:description" content="The Robotist brand centre: the wordmark, the colour system, the type system, spacing and grid, interface components, voice, and motion." />
+<meta property="og:url" content="https://www.robotist.com.au/brand-center" />
+<meta name="theme-color" content="#060D18" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<style>
+/* Poppins is served from this repository, never from a font CDN. */
+@font-face{font-family:'Poppins';font-style:normal;font-weight:300;font-display:swap;src:url('/assets/fonts/poppins/Poppins-Light.woff2') format('woff2')}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:400;font-display:swap;src:url('/assets/fonts/poppins/Poppins-Regular.woff2') format('woff2')}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/poppins/Poppins-Medium.woff2') format('woff2')}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/poppins/Poppins-SemiBold.woff2') format('woff2')}
+@font-face{font-family:'Poppins';font-style:normal;font-weight:700;font-display:swap;src:url('/assets/fonts/poppins/Poppins-Bold.woff2') format('woff2')}
+/*
+Publication overrides. The guide was drawn for a desktop screen, and two of its habits let a
+narrow viewport scroll sideways: grid cells sized `1fr` keep an automatic minimum, so one wide
+cell pushes the row past the screen, and its widest tables cannot shrink below their longest
+header. Both are corrected here rather than in the document, so the delivered guide stays as
+it was delivered.
+*/
+
+/*
+The hero wordmark is the logo, not a heading. The site makes every heading bold from one
+injected rule (catalog/site.py); that rule is right for text headings and wrong for this
+specimen, which the page itself documents as Medium 500 and which the guide says must never be
+altered. A class selector outranks the injected element selector, so this wins.
+*/
+.hero-wordmark { font-weight: 500 !important; }
+@media (max-width: 1200px) {
+  .section-header > *, .grid-2 > *, .grid-3 > *, .logo-grid > *, .misuse-grid > *,
+  .size-grid > *, .swatch-hero > *, .text-hierarchy > *, .typeface-meta > *, .weight-scale > *,
+  .radius-scale > *, .comp-grid-2 > *, .voice-pillars > *, .do-dont > *, .writing-examples > *,
+  .motion-grid > *, .imagery-block > * { min-width: 0; }
+  .imagery-placeholder { max-width: 100%; }
+  table { display: block; max-width: 100%; overflow-x: auto; }
+}
+@media (max-width: 520px) {
+  .nav-demo { padding: 0 clamp(10px, 3vw, 16px); gap: 8px; }
+  .nav-demo-links { gap: 10px; }
+  .nav-demo-links span { letter-spacing: .08em; }
+  .nav-demo-btn { padding: 7px 12px; letter-spacing: .08em; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ── NAV ──────────────────────────────────────────────────────── -->
+<nav>
+  <a class="nav-wordmark" href="#">ROBOTIST</a>
+  <ul class="nav-links">
+    <li><a href="#logo">Logo</a></li>
+    <li><a href="#colour">Colour</a></li>
+    <li><a href="#typography">Typography</a></li>
+    <li><a href="#components">Components</a></li>
+    <li><a href="#voice">Voice</a></li>
+    <li><a href="#motion">Motion</a></li>
+  </ul>
+  <div class="nav-hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ── HERO ─────────────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="container">
+    <p class="hero-eyebrow">Brand Identity System</p>
+    <h1 class="hero-wordmark">ROBOTIST</h1>
+    <p class="hero-tagline">
+      Cold<span>·</span>Precise<span>·</span>Infinite
+    </p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Typeface</span>
+        <span class="hero-meta-value">Poppins</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Wordmark Weight</span>
+        <span class="hero-meta-value">Medium · 500</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Letter-spacing</span>
+        <span class="hero-meta-value">0.20em — Wide</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Primary Accent</span>
+        <span class="hero-meta-value">#4AA8C8</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Background</span>
+        <span class="hero-meta-value">#060D18</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 01 LOGO ───────────────────────────────────────────────────── -->
+<section class="section" id="logo">
+  <div class="container">
+    <div class="section-header reveal">
+      <div>
+        <p class="section-label">01 — Logo</p>
+        <h2 class="section-title">The Wordmark</h2>
+      </div>
+      <p class="section-desc">The Robotist wordmark is set exclusively in Poppins Medium at 0.20em letter-spacing, all-caps. It is the primary brand identifier and must never be altered, redrawn, or substituted.</p>
+    </div>
+
+    <!-- Logo variations -->
+    <div class="logo-grid reveal">
+      <!-- Primary: white on dark -->
+      <div class="logo-swatch">
+        <div class="logo-swatch-inner" style="background:#060D18;">
+          <svg viewBox="0 0 560 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Robotist — Primary">
+            <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle"
+              font-family="'Poppins',sans-serif" font-weight="500" font-size="56"
+              letter-spacing="11.2" fill="#FFFFFF" text-rendering="geometricPrecision">ROBOTIST</text>
+          </svg>
+        </div>
+        <div class="logo-swatch-label">
+          <span class="logo-swatch-name">Primary — White on Dark</span>
+          <span class="logo-swatch-hex">bg: #060D18</span>
+        </div>
+      </div>
+      <!-- Accent: ocean blue on dark -->
+      <div class="logo-swatch">
+        <div class="logo-swatch-inner" style="background:#060D18;">
+          <svg viewBox="0 0 560 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Robotist — Accent">
+            <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle"
+              font-family="'Poppins',sans-serif" font-weight="500" font-size="56"
+              letter-spacing="11.2" fill="#4AA8C8" text-rendering="geometricPrecision">ROBOTIST</text>
+          </svg>
+        </div>
+        <div class="logo-swatch-label">
+          <span class="logo-swatch-name">Accent on Dark</span>
+          <span class="logo-swatch-hex">colour: #4AA8C8</span>
+        </div>
+      </div>
+      <!-- Dark on light -->
+      <div class="logo-swatch">
+        <div class="logo-swatch-inner" style="background:#F0F4F8;">
+          <svg viewBox="0 0 560 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Robotist — Light">
+            <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle"
+              font-family="'Poppins',sans-serif" font-weight="500" font-size="56"
+              letter-spacing="11.2" fill="#060D18" text-rendering="geometricPrecision">ROBOTIST</text>
+          </svg>
+        </div>
+        <div class="logo-swatch-label">
+          <span class="logo-swatch-name">Dark on Light</span>
+          <span class="logo-swatch-hex">bg: #F0F4F8</span>
+        </div>
+      </div>
+      <!-- Dark on accent -->
+      <div class="logo-swatch">
+        <div class="logo-swatch-inner" style="background:#4AA8C8;">
+          <svg viewBox="0 0 560 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Robotist — On Accent">
+            <text x="50%" y="50%" dominant-baseline="central" text-anchor="middle"
+              font-family="'Poppins',sans-serif" font-weight="500" font-size="56"
+              letter-spacing="11.2" fill="#060D18" text-rendering="geometricPrecision">ROBOTIST</text>
+          </svg>
+        </div>
+        <div class="logo-swatch-label">
+          <span class="logo-swatch-name">Dark on Accent</span>
+          <span class="logo-swatch-hex">bg: #4AA8C8</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Clearspace -->
+    <div class="clearspace-demo reveal">
+      <p class="clearspace-label">Clearspace</p>
+      <p class="clearspace-desc">Always maintain a minimum clearspace equal to the cap-height of the wordmark on all four sides. This zone must remain free of all other graphic elements, text, and imagery.</p>
+      <div class="clearspace-box">
+        <span class="clearspace-wordmark">ROBOTIST</span>
+      </div>
+    </div>
+
+    <!-- Size specs -->
+    <div class="size-grid reveal">
+      <div class="size-card">
+        <p class="size-card-label">Digital</p>
+        <p class="size-card-wordmark" style="font-size:clamp(16px,2.5vw,22px);">ROBOTIST</p>
+        <p class="size-card-note">Minimum 14px rendered height. Below this size, legibility is compromised.</p>
+      </div>
+      <div class="size-card">
+        <p class="size-card-label">Print</p>
+        <p class="size-card-wordmark" style="font-size:clamp(14px,2vw,18px);">ROBOTIST</p>
+        <p class="size-card-note">Minimum 8mm width. Ensure sufficient contrast against substrate.</p>
+      </div>
+      <div class="size-card" style="text-align:center;">
+        <p class="size-card-label">Favicon / App Icon</p>
+        <div class="monogram-box">R</div>
+        <p class="size-card-note">Use the "R" monogram on accent background for sub-32px contexts.</p>
+      </div>
+    </div>
+
+    <!-- Misuse -->
+    <p class="section-label reveal" style="margin-top:clamp(40px,6vw,80px);">Logo Misuse — Never Do This</p>
+    <div class="misuse-grid reveal">
+      <div class="misuse-card">
+        <span class="misuse-wordmark" style="font-weight:300;color:var(--text-2);">ROBOTIST</span>
+        <div class="misuse-x">✕</div>
+        <span class="misuse-label">Do not change the weight</span>
+      </div>
+      <div class="misuse-card">
+        <span class="misuse-wordmark" style="letter-spacing:.04em;color:var(--text-2);">ROBOTIST</span>
+        <div class="misuse-x">✕</div>
+        <span class="misuse-label">Do not alter letter-spacing</span>
+      </div>
+      <div class="misuse-card">
+        <span class="misuse-wordmark" style="text-transform:none;font-weight:500;color:var(--text-2);">Robotist</span>
+        <div class="misuse-x">✕</div>
+        <span class="misuse-label">Do not use mixed case</span>
+      </div>
+      <div class="misuse-card">
+        <span class="misuse-wordmark" style="font-family:serif;color:var(--text-2);">ROBOTIST</span>
+        <div class="misuse-x">✕</div>
+        <span class="misuse-label">Do not substitute the typeface</span>
+      </div>
+      <div class="misuse-card">
+        <span class="misuse-wordmark" style="color:#e05c3a;">ROBOTIST</span>
+        <div class="misuse-x">✕</div>
+        <span class="misuse-label">Do not use unapproved colours</span>
+      </div>
+      <div class="misuse-card">
+        <span class="misuse-wordmark" style="transform:skewX(-10deg);display:inline-block;color:var(--text-2);">ROBOTIST</span>
+        <div class="misuse-x">✕</div>
+        <span class="misuse-label">Do not distort or skew</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 02 COLOUR ─────────────────────────────────────────────────── -->
+<section class="section" id="colour">
+  <div class="container">
+    <div class="section-header reveal">
+      <div>
+        <p class="section-label">02 — Colour</p>
+        <h2 class="section-title">Colour System</h2>
+      </div>
+      <p class="section-desc">The Robotist palette is built on deep navy slate with a single precise accent — Ocean Blue. The system is intentionally restrained: colour is used to direct attention, not decorate.</p>
+    </div>
+
+    <!-- Hero swatches -->
+    <div class="swatch-hero reveal">
+      <div class="swatch-block">
+        <div class="swatch-color" style="background:#4AA8C8;"></div>
+        <div class="swatch-info">
+          <p class="swatch-name">Ocean Blue</p>
+          <p class="swatch-hex">#4AA8C8</p>
+          <p class="swatch-role">Primary Accent</p>
+        </div>
+      </div>
+      <div class="swatch-block">
+        <div class="swatch-color" style="background:#A8DCEF;"></div>
+        <div class="swatch-info">
+          <p class="swatch-name">Arctic Tint</p>
+          <p class="swatch-hex">#A8DCEF</p>
+          <p class="swatch-role">Secondary Accent</p>
+        </div>
+      </div>
+      <div class="swatch-block">
+        <div class="swatch-color" style="background:#060D18;border-bottom:1px solid var(--mid);"></div>
+        <div class="swatch-info">
+          <p class="swatch-name">Deep Navy Slate</p>
+          <p class="swatch-hex">#060D18</p>
+          <p class="swatch-role">Primary Background</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Palette ramp -->
+    <p class="section-label reveal">Full Palette Ramp</p>
+    <div class="palette-ramp reveal">
+      <div class="ramp-block">
+        <div class="ramp-color" style="background:#060D18;border-bottom:1px solid var(--mid);"></div>
+        <div class="ramp-info"><p class="ramp-token">BG-00</p><p class="ramp-hex">#060D18</p><p class="ramp-name">Base Background</p></div>
+      </div>
+      <div class="ramp-block">
+        <div class="ramp-color" style="background:#0C1828;"></div>
+        <div class="ramp-info"><p class="ramp-token">BG-01</p><p class="ramp-hex">#0C1828</p><p class="ramp-name">Surface Background</p></div>
+      </div>
+      <div class="ramp-block">
+        <div class="ramp-color" style="background:#142035;"></div>
+        <div class="ramp-info"><p class="ramp-token">BG-02</p><p class="ramp-hex">#142035</p><p class="ramp-name">Layer / Card</p></div>
+      </div>
+      <div class="ramp-block">
+        <div class="ramp-color" style="background:#1E3550;"></div>
+        <div class="ramp-info"><p class="ramp-token">BG-03</p><p class="ramp-hex">#1E3550</p><p class="ramp-name">Mid-tone / Border</p></div>
+      </div>
+      <div class="ramp-block">
+        <div class="ramp-color" style="background:#4AA8C8;"></div>
+        <div class="ramp-info"><p class="ramp-token">Accent</p><p class="ramp-hex">#4AA8C8</p><p class="ramp-name">Ocean Blue</p></div>
+      </div>
+    </div>
+
+    <!-- Text hierarchy -->
+    <p class="section-label reveal">Text Colour Hierarchy</p>
+    <div class="text-hierarchy reveal">
+      <div class="text-hier-card">
+        <p class="text-hier-sample" style="color:rgba(230,242,248,.94);">Primary</p>
+        <p class="text-hier-label">Headings, Key Labels</p>
+        <p class="text-hier-value">rgba(230,242,248, .94)</p>
+      </div>
+      <div class="text-hier-card">
+        <p class="text-hier-sample" style="color:rgba(230,242,248,.52);">Secondary</p>
+        <p class="text-hier-label">Body Text, Descriptions</p>
+        <p class="text-hier-value">rgba(230,242,248, .52)</p>
+      </div>
+      <div class="text-hier-card">
+        <p class="text-hier-sample" style="color:rgba(230,242,248,.28);">Tertiary</p>
+        <p class="text-hier-label">Placeholders, Metadata</p>
+        <p class="text-hier-value">rgba(230,242,248, .28)</p>
+      </div>
+    </div>
+
+    <!-- Token table -->
+    <div class="reveal">
+      <table class="token-table">
+        <thead>
+          <tr>
+            <th>Token</th>
+            <th>Value</th>
+            <th>Usage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="token-dot" style="background:#4AA8C8;"></span><span class="token-name">--accent</span></td><td class="token-val">#4AA8C8</td><td>CTAs, links, active states, highlights</td></tr>
+          <tr><td><span class="token-dot" style="background:#A8DCEF;"></span><span class="token-name">--accent-2</span></td><td class="token-val">#A8DCEF</td><td>Hover states, gradients, tinted surfaces</td></tr>
+          <tr><td><span class="token-dot" style="background:#060D18;border:1px solid var(--mid);"></span><span class="token-name">--bg</span></td><td class="token-val">#060D18</td><td>Page background, primary canvas</td></tr>
+          <tr><td><span class="token-dot" style="background:#0C1828;"></span><span class="token-name">--bg-2</span></td><td class="token-val">#0C1828</td><td>Elevated surfaces, section backgrounds</td></tr>
+          <tr><td><span class="token-dot" style="background:#142035;"></span><span class="token-name">--layer</span></td><td class="token-val">#142035</td><td>Cards, modals, panels</td></tr>
+          <tr><td><span class="token-dot" style="background:#1E3550;"></span><span class="token-name">--mid</span></td><td class="token-val">#1E3550</td><td>Borders, dividers, inactive states</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ── 03 TYPOGRAPHY ─────────────────────────────────────────────── -->
+<section class="section" id="typography">
+  <div class="container">
+    <div class="section-header reveal">
+      <div>
+        <p class="section-label">03 — Typography</p>
+        <h2 class="section-title">Type System</h2>
+      </div>
+      <p class="section-desc">A single typeface, Poppins, carries the entire system. Its geometric precision and clean geometry reflect the brand's core character. Weight and spacing do the work — never font substitution.</p>
+    </div>
+
+    <!-- Typeface hero -->
+    <div class="typeface-hero reveal">
+      <p class="typeface-name">POPPINS</p>
+      <div class="typeface-meta">
+        <div class="typeface-meta-item">
+          <span class="typeface-meta-label">Foundry</span>
+          <span class="typeface-meta-value">Indian Type Foundry</span>
+        </div>
+        <div class="typeface-meta-item">
+          <span class="typeface-meta-label">Classification</span>
+          <span class="typeface-meta-value">Geometric Sans-Serif</span>
+        </div>
+        <div class="typeface-meta-item">
+          <span class="typeface-meta-label">Wordmark Weight</span>
+          <span class="typeface-meta-value">Medium · 500</span>
+        </div>
+        <div class="typeface-meta-item">
+          <span class="typeface-meta-label">Wordmark Tracking</span>
+          <span class="typeface-meta-value">0.20em — Wide</span>
+        </div>
+        <div class="typeface-meta-item">
+          <span class="typeface-meta-label">License</span>
+          <span class="typeface-meta-value">Open Font License</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Weight scale -->
+    <p class="section-label reveal">Weight Scale</p>
+    <div class="weight-scale reveal">
+      <div class="weight-card">
+        <p class="weight-sample" style="font-weight:300;">Aa</p>
+        <p class="weight-label">Light 300</p>
+      </div>
+      <div class="weight-card">
+        <p class="weight-sample" style="font-weight:400;">Aa</p>
+        <p class="weight-label">Regular 400</p>
+      </div>
+      <div class="weight-card active">
+        <p class="weight-sample" style="font-weight:500;">Aa</p>
+        <p class="weight-label">Medium 500</p>
+        <span class="weight-badge">Wordmark</span>
+      </div>
+      <div class="weight-card">
+        <p class="weight-sample" style="font-weight:600;">Aa</p>
+        <p class="weight-label">SemiBold 600</p>
+        <span class="weight-badge" style="opacity:.5;">UI Labels</span>
+      </div>
+      <div class="weight-card">
+        <p class="weight-sample" style="font-weight:700;">Aa</p>
+        <p class="weight-label">Bold 700</p>
+      </div>
+    </div>
+
+    <!-- Type scale -->
+    <p class="section-label reveal">Type Scale</p>
+    <div class="reveal" style="overflow-x:auto;">
+      <table class="type-scale-table">
+        <thead>
+          <tr>
+            <th>Role</th>
+            <th>Sample</th>
+            <th>Spec</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><span class="ts-role">Display</span></td>
+            <td><span style="font-size:clamp(28px,5vw,56px);font-weight:500;letter-spacing:.20em;text-transform:uppercase;">ROBOTIST</span></td>
+            <td><span class="ts-spec">clamp(28–56px) · 500 · 0.20em</span></td>
+          </tr>
+          <tr>
+            <td><span class="ts-role">H1</span></td>
+            <td><span style="font-size:clamp(24px,4vw,40px);font-weight:300;letter-spacing:.06em;text-transform:uppercase;">Section Heading</span></td>
+            <td><span class="ts-spec">clamp(24–40px) · 300 · 0.06em</span></td>
+          </tr>
+          <tr>
+            <td><span class="ts-role">H2</span></td>
+            <td><span style="font-size:clamp(18px,2.5vw,28px);font-weight:400;letter-spacing:.04em;">Subsection Title</span></td>
+            <td><span class="ts-spec">clamp(18–28px) · 400 · 0.04em</span></td>
+          </tr>
+          <tr>
+            <td><span class="ts-role">H3</span></td>
+            <td><span style="font-size:clamp(15px,2vw,20px);font-weight:500;letter-spacing:.04em;">Card or Panel Title</span></td>
+            <td><span class="ts-spec">clamp(15–20px) · 500 · 0.04em</span></td>
+          </tr>
+          <tr>
+            <td><span class="ts-role">Body</span></td>
+            <td><span style="font-size:clamp(13px,1.5vw,16px);font-weight:300;letter-spacing:.01em;color:var(--text-2);">Poppins at Light weight reads with clarity across long-form content.</span></td>
+            <td><span class="ts-spec">clamp(13–16px) · 300 · 0.01em · lh 1.75</span></td>
+          </tr>
+          <tr>
+            <td><span class="ts-role">Caption</span></td>
+            <td><span style="font-size:11px;font-weight:400;letter-spacing:.04em;color:var(--text-3);">Supporting metadata, timestamps, footnotes</span></td>
+            <td><span class="ts-spec">11–12px · 400 · 0.04em</span></td>
+          </tr>
+          <tr>
+            <td><span class="ts-role">Label</span></td>
+            <td><span style="font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);">UI Label / Eyebrow</span></td>
+            <td><span class="ts-spec">9–10px · 600 · 0.18em · uppercase</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Character set -->
+    <div class="charset-block reveal" style="margin-top:clamp(24px,3vw,40px);">
+      <p class="charset-label">Character Set — Poppins Medium 500</p>
+      <p class="charset-text">
+        A B C D E F G H I J K L M N O P Q R S T U V W X Y Z<br>
+        a b c d e f g h i j k l m n o p q r s t u v w x y z<br>
+        <span class="charset-nums">0 1 2 3 4 5 6 7 8 9</span><br>
+        <span class="charset-sym">! @ # $ % &amp; * ( ) — + = [ ] { } | ; : ' " , . / ? &lt; &gt;</span>
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- ── 04 SPACING ────────────────────────────────────────────────── -->
+<section class="section" id="spacing">
+  <div class="container">
+    <div class="section-header reveal">
+      <div>
+        <p class="section-label">04 — Spacing</p>
+        <h2 class="section-title">Spacing &amp; Grid</h2>
+      </div>
+      <p class="section-desc">Spacing is built on an 8px base unit. All layout decisions — padding, margin, gap — should be multiples of 8. This creates visual rhythm and predictability across all surfaces.</p>
+    </div>
+
+    <!-- Spacing scale -->
+    <div class="spacing-scale reveal">
+      <div class="spacing-item"><div class="spacing-bar" style="height:8px;"></div><span class="spacing-px">8px</span><span class="spacing-name">xs</span></div>
+      <div class="spacing-item"><div class="spacing-bar" style="height:16px;"></div><span class="spacing-px">16px</span><span class="spacing-name">sm</span></div>
+      <div class="spacing-item"><div class="spacing-bar" style="height:24px;"></div><span class="spacing-px">24px</span><span class="spacing-name">md</span></div>
+      <div class="spacing-item"><div class="spacing-bar" style="height:32px;"></div><span class="spacing-px">32px</span><span class="spacing-name">lg</span></div>
+      <div class="spacing-item"><div class="spacing-bar" style="height:48px;"></div><span class="spacing-px">48px</span><span class="spacing-name">xl</span></div>
+      <div class="spacing-item"><div class="spacing-bar" style="height:64px;"></div><span class="spacing-px">64px</span><span class="spacing-name">2xl</span></div>
+      <div class="spacing-item"><div class="spacing-bar" style="height:96px;"></div><span class="spacing-px">96px</span><span class="spacing-name">3xl</span></div>
+      <div class="spacing-item"><div class="spacing-bar" style="height:128px;"></div><span class="spacing-px">128px</span><span class="spacing-name">4xl</span></div>
+    </div>
+
+    <!-- Grid demo -->
+    <div class="grid-demo reveal">
+      <p class="grid-demo-label">12-Column Grid — 1280px Max Width</p>
+      <div class="grid-cols">
+        <div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div>
+        <div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div>
+        <div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div><div class="grid-col"></div>
+      </div>
+      <p class="grid-desc">12 columns · 24px gutter · 96px horizontal padding · 1280px max-width</p>
+    </div>
+
+    <!-- Border radius -->
+    <p class="section-label reveal">Border Radius Scale</p>
+    <div class="radius-scale reveal">
+      <div class="radius-card">
+        <div class="radius-demo" style="border-radius:10px;"></div>
+        <span class="radius-label">Small</span>
+        <span class="radius-val">10px</span>
+      </div>
+      <div class="radius-card">
+        <div class="radius-demo" style="border-radius:18px;"></div>
+        <span class="radius-label">Medium</span>
+        <span class="radius-val">18px</span>
+      </div>
+      <div class="radius-card">
+        <div class="radius-demo" style="border-radius:28px;"></div>
+        <span class="radius-label">Large</span>
+        <span class="radius-val">28px</span>
+      </div>
+      <div class="radius-card">
+        <div class="radius-demo" style="border-radius:40px;"></div>
+        <span class="radius-label">XL</span>
+        <span class="radius-val">40px</span>
+      </div>
+      <div class="radius-card">
+        <div class="radius-demo" style="border-radius:100px;"></div>
+        <span class="radius-label">Pill</span>
+        <span class="radius-val">100px</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 05 COMPONENTS ──────────────────────────────────────────────── -->
+<section class="section" id="components">
+  <div class="container">
+    <div class="section-header reveal">
+      <div>
+        <p class="section-label">05 — Components</p>
+        <h2 class="section-title">UI Components</h2>
+      </div>
+      <p class="section-desc">Every component is built from the same design tokens. Consistency is non-negotiable — the same border radius, the same colour logic, the same type treatment, everywhere.</p>
+    </div>
+
+    <div class="comp-grid-2 reveal">
+      <!-- Buttons -->
+      <div class="comp-block">
+        <p class="comp-label">Buttons — Primary / Secondary / Ghost</p>
+        <div class="btn-row">
+          <button class="btn btn-primary">Get Started</button>
+          <button class="btn btn-secondary">Learn More</button>
+          <button class="btn btn-ghost">Cancel</button>
+        </div>
+        <p class="comp-label">Size Variants</p>
+        <div class="btn-row">
+          <button class="btn btn-primary btn-sm">Small</button>
+          <button class="btn btn-primary">Default</button>
+          <button class="btn btn-primary btn-lg">Large</button>
+        </div>
+      </div>
+
+      <!-- Badges -->
+      <div class="comp-block">
+        <p class="comp-label">Badges &amp; Tags</p>
+        <div class="badge-row" style="margin-top:16px;">
+          <span class="badge badge-active">Active</span>
+          <span class="badge badge-new">New</span>
+          <span class="badge badge-draft">Draft</span>
+          <span class="badge badge-archived">Archived</span>
+        </div>
+        <div class="badge-row">
+          <span class="badge badge-tag">Brand System</span>
+          <span class="badge badge-tag">v1.0</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="comp-grid-2 reveal">
+      <!-- Form inputs -->
+      <div class="comp-block">
+        <p class="comp-label">Form Inputs</p>
+        <div class="input-stack">
+          <input class="input-field" type="text" placeholder="Enter your name" />
+          <input class="input-field" type="email" placeholder="hello@robotist.com" />
+          <input class="input-field focused" type="text" value="Focused state" readonly />
+        </div>
+      </div>
+
+      <!-- Card -->
+      <div class="comp-block">
+        <p class="comp-label">Card Component</p>
+        <div class="card-demo" style="margin-top:16px;">
+          <div class="card-demo-header">
+            <span class="card-demo-title">Precision by Design</span>
+            <span class="badge badge-active">Active</span>
+          </div>
+          <p class="card-demo-body">Every decision in the Robotist system is intentional. Clarity over decoration. Signal over noise.</p>
+          <div class="card-demo-footer">
+            <span class="card-demo-meta">Robotist · 2025</span>
+            <button class="btn btn-secondary btn-sm">View</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nav bar -->
+    <div class="reveal">
+      <div class="nav-demo">
+        <span class="nav-demo-wordmark">ROBOTIST</span>
+        <div class="nav-demo-links">
+          <span>Products</span>
+          <span>About</span>
+          <span>Contact</span>
+        </div>
+        <button class="nav-demo-btn">Sign In</button>
+      </div>
+      <p class="nav-demo-note">Navigation bar — 64px height · Poppins 500 · 0.20em wordmark tracking · blur backdrop</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── 06 VOICE ───────────────────────────────────────────────────── -->
+<section class="section" id="voice">
+  <div class="container">
+    <div class="section-header reveal">
+      <div>
+        <p class="section-label">06 — Voice</p>
+        <h2 class="section-title">Voice &amp; Tone</h2>
+      </div>
+      <p class="section-desc">Robotist speaks with the confidence of a precision instrument. The voice is direct, considered, and never performative. Every word earns its place.</p>
+    </div>
+
+    <div class="voice-pillars reveal">
+      <div class="pillar-card">
+        <p class="pillar-num">01</p>
+        <p class="pillar-title">Cold</p>
+        <p class="pillar-desc">Unemotional precision. We do not inflate or over-promise. We state facts with clarity and let the work speak for itself.</p>
+      </div>
+      <div class="pillar-card">
+        <p class="pillar-num">02</p>
+        <p class="pillar-title">Precise</p>
+        <p class="pillar-desc">Every word is deliberate. We favour the specific over the general, the concrete over the abstract. Vague language is a failure of craft.</p>
+      </div>
+      <div class="pillar-card">
+        <p class="pillar-num">03</p>
+        <p class="pillar-title">Infinite</p>
+        <p class="pillar-desc">We think in systems, not moments. Our language reflects long-term thinking — expansive, forward-looking, and without artificial limits.</p>
+      </div>
+    </div>
+
+    <div class="do-dont reveal">
+      <div class="do-card">
+        <div class="do-header">Do</div>
+        <ul class="do-list">
+          <li>Write in short, declarative sentences. State what is true.</li>
+          <li>Use active voice. "Robotist processes data in real time." Not "Data is processed."</li>
+          <li>Be specific. "Latency under 12ms" beats "ultra-fast performance."</li>
+          <li>Speak to capability, not aspiration. Show, don't promise.</li>
+          <li>Use technical language accurately when the audience warrants it.</li>
+          <li>Let silence work. White space in copy is as important as white space in design.</li>
+        </ul>
+      </div>
+      <div class="dont-card">
+        <div class="dont-header">Don't</div>
+        <ul class="dont-list">
+          <li>Use superlatives without evidence. "World-class," "best-in-class," "revolutionary."</li>
+          <li>Pad sentences with filler. "In order to," "it is important to note that."</li>
+          <li>Use exclamation marks. Enthusiasm is expressed through precision, not punctuation.</li>
+          <li>Anthropomorphise the product unnecessarily. We are a tool, not a companion.</li>
+          <li>Use jargon to impress. Clarity is always the goal.</li>
+          <li>Write in passive voice. It dilutes accountability and authority.</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="section-label reveal" style="margin-bottom:clamp(16px,2vw,24px);">Writing in Practice</p>
+    <div class="writing-examples reveal">
+      <div class="writing-card">
+        <div class="writing-bad">
+          <p class="writing-tag bad">Not This</p>
+          <p class="writing-text">"Our revolutionary AI-powered platform leverages cutting-edge technology to deliver world-class automation solutions that will transform your business!"</p>
+        </div>
+        <div class="writing-good">
+          <p class="writing-tag good">This</p>
+          <p class="writing-text">"Robotist automates complex workflows with sub-second response times. No configuration required."</p>
+        </div>
+      </div>
+      <div class="writing-card">
+        <div class="writing-bad">
+          <p class="writing-tag bad">Not This</p>
+          <p class="writing-text">"We're super excited to announce our amazing new feature that you're going to absolutely love!"</p>
+        </div>
+        <div class="writing-good">
+          <p class="writing-tag good">This</p>
+          <p class="writing-text">"New: parallel task execution. Up to 8× throughput on multi-step pipelines."</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── 07 MOTION ─────────────────────────────────────────────────── -->
+<section class="section" id="motion">
+  <div class="container">
+    <div class="section-header reveal">
+      <div>
+        <p class="section-label">07 — Motion</p>
+        <h2 class="section-title">Motion &amp; Animation</h2>
+      </div>
+      <p class="section-desc">Motion in the Robotist system is purposeful and restrained. Transitions communicate state changes, not personality. Fast, precise, and never decorative.</p>
+    </div>
+
+    <div class="motion-grid reveal">
+      <div class="motion-card">
+        <p class="motion-card-label">Primary Easing</p>
+        <p class="motion-card-value" style="font-size:clamp(12px,1.5vw,15px);letter-spacing:.02em;">cubic-bezier(.22, 1, .36, 1)</p>
+        <p class="motion-card-desc">A deceleration curve that starts fast and settles with precision. Used for all enter and appear transitions.</p>
+      </div>
+      <div class="motion-card">
+        <p class="motion-card-label">Duration — Micro</p>
+        <p class="motion-card-value">160ms</p>
+        <p class="motion-card-desc">Immediate feedback: button presses, toggle switches, focus rings. Imperceptible lag.</p>
+      </div>
+      <div class="motion-card">
+        <p class="motion-card-label">Duration — Default</p>
+        <p class="motion-card-value">320ms</p>
+        <p class="motion-card-desc">Standard transition for UI state changes, hover effects, and interactive feedback.</p>
+      </div>
+      <div class="motion-card">
+        <p class="motion-card-label">Duration — Page</p>
+        <p class="motion-card-value">600ms</p>
+        <p class="motion-card-desc">Page-level transitions, modal entrances, and full-screen overlays. Deliberate and measured.</p>
+      </div>
+      <div class="motion-card">
+        <p class="motion-card-label">Scroll Reveal</p>
+        <p class="motion-card-value" style="font-size:clamp(12px,1.5vw,15px);">opacity + translateY(24px)</p>
+        <p class="motion-card-desc">Elements enter from 24px below at 0 opacity. Staggered by 80ms per element in groups.</p>
+      </div>
+      <div class="motion-card">
+        <p class="motion-card-label">Hover Lift</p>
+        <p class="motion-card-value" style="font-size:clamp(12px,1.5vw,15px);">translateY(−2px) + shadow</p>
+        <p class="motion-card-desc">Cards and interactive surfaces lift 2px on hover. Shadow deepens to signal interactivity.</p>
+      </div>
+    </div>
+
+    <!-- Imagery -->
+    <p class="section-label reveal" style="margin-bottom:clamp(16px,2vw,24px);">Imagery Direction</p>
+    <p class="section-desc reveal" style="margin-bottom:clamp(24px,3vw,40px);max-width:640px;">Robotist imagery favours depth of field and controlled lighting over wide-angle drama. Monochromatic or cool-toned palettes. Technical, precise, and purposeful.</p>
+    <div class="imagery-block reveal">
+      <div class="imagery-placeholder">
+        <svg class="imagery-icon" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="2" y="6" width="28" height="20" rx="3" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="16" cy="16" r="5" stroke="currentColor" stroke-width="1.5"/>
+          <circle cx="25" cy="10" r="1.5" fill="currentColor"/>
+        </svg>
+        <span class="imagery-label">Hero / Feature Image</span>
+        <span class="imagery-sub">Dark · Technical · Precise</span>
+      </div>
+      <div class="imagery-rules">
+        <div class="imagery-rule">
+          <p class="imagery-rule-title">Tone</p>
+          <p class="imagery-rule-desc">Dark backgrounds. Cool, desaturated colour grading. Avoid warm tones, bright whites, or high-saturation colour.</p>
+        </div>
+        <div class="imagery-rule">
+          <p class="imagery-rule-title">Subject</p>
+          <p class="imagery-rule-desc">Technology, precision engineering, data, abstract systems. Human subjects should be purposeful and unposed.</p>
+        </div>
+        <div class="imagery-rule">
+          <p class="imagery-rule-title">Composition</p>
+          <p class="imagery-rule-desc">Asymmetric. Generous negative space. Allow the subject to breathe. Avoid busy or cluttered frames.</p>
+        </div>
+        <div class="imagery-rule">
+          <p class="imagery-rule-title">Treatment</p>
+          <p class="imagery-rule-desc">A subtle blue-teal colour grade aligning to the Ocean Blue accent is acceptable. Avoid filters that warm or yellow the image.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ────────────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <p class="footer-wordmark">ROBOTIST</p>
+        <p class="footer-tagline">Cold · Precise · Infinite</p>
+      </div>
+      <div class="footer-meta">
+        <p class="footer-meta-row">Poppins · <span>#4AA8C8</span> · <span>#060D18</span></p>
+        <p class="footer-meta-row">Brand Identity System · Version 1.0</p>
+      </div>
+    </div>
+    <div class="footer-copy">
+      <span>© Robotist. All rights reserved.</span>
+      <span>For internal and licensed use only.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 40);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => observer.observe(el));
+
+  // Active nav link on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const scrollSpy = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(a => a.style.color = '');
+        const active = document.querySelector(`.nav-links a[href="#${entry.target.id}"]`);
+        if (active) active.style.color = 'var(--accent)';
+      }
+    });
+  }, { rootMargin: '-40% 0px -55% 0px' });
+  sections.forEach(s => scrollSpy.observe(s));
+
+  // Focus ring on inputs
+  document.querySelectorAll('.input-field').forEach(input => {
+    input.addEventListener('focus', () => input.classList.add('focused'));
+    input.addEventListener('blur', () => {
+      if (!input.value) input.classList.remove('focused');
+    });
+  });
+</script>
+</body>
+</html>

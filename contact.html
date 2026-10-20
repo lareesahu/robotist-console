@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+
+
+
+
+<!-- ═══════════════════════════════════════════════
+     SEO / GEO — PRIMARY META
+     ═══════════════════════════════════════════════ -->
+<title>Contact — Robotist | Global Robotics Platform</title>
+<meta name="description" content="Get in touch with Robotist. Email Robert or Lareesa directly, connect on LinkedIn, or send an inquiry. Sydney-based robotics platform with direct China supply access." />
+<meta name="keywords" content="contact robotist, email robotist, robotics inquiry Australia, robot consultation Sydney, Robert Vicencio, Lareesa Hu" />
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+<meta name="author" content="Robotist Pty Ltd" />
+<meta name="geo.region" content="AU-NSW" />
+<meta name="geo.placename" content="Sydney, New South Wales, Australia" />
+<link rel="canonical" href="https://www.robotist.com.au/contact.html" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.robotist.com.au/contact.html" />
+<meta property="og:title" content="Contact — Robotist | Global Robotics Platform" />
+<meta property="og:description" content="Get in touch with Robotist. Email Robert or Lareesa directly, or send an inquiry. Sydney-based robotics platform with direct China supply access." />
+<meta property="og:image" content="https://www.robotist.com.au/images/og-contact.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Contact Robotist — global robotics procurement and deployment platform" />
+<meta property="og:site_name" content="Robotist" />
+<meta property="og:locale" content="en_AU" />
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Contact — Robotist | Global Robotics Platform" />
+<meta name="twitter:description" content="Get in touch with Robotist. Email Robert or Lareesa directly, or send an inquiry. Sydney-based robotics platform with direct China supply access." />
+<meta name="twitter:image" content="https://www.robotist.com.au/images/og-contact.jpg" />
+<meta name="twitter:image:alt" content="Contact Robotist — global robotics procurement and deployment platform" />
+
+<!-- JSON-LD: ContactPage -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact Robotist",
+  "url": "https://www.robotist.com.au/contact.html",
+  "description": "Get in touch with Robotist — global robotics platform.",
+  "about": {
+    "@type": "Organization",
+    "name": "Robotist",
+    "url": "https://www.robotist.com.au",
+    "logo": "https://www.robotist.com.au/images/logo.png",
+    "description": "A trusted global robotics platform. We connect businesses with commercial robots for hospitality, logistics, security, and medical environments.",
+    "foundingDate": "2025",
+    "founders": [
+      { "@type": "Person", "name": "Robert Vicencio", "jobTitle": "Founder & CEO" },
+      { "@type": "Person", "name": "Lareesa Hu", "jobTitle": "Co-Founder & CMO" }
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Sydney",
+      "addressRegion": "NSW",
+      "addressCountry": "AU"
+    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "email": "robert@robotist.com.au",
+        "contactType": "sales",
+        "areaServed": "AU",
+        "availableLanguage": "English"
+      },
+      {
+        "@type": "ContactPoint",
+        "email": "lareesa@robotist.com.au",
+        "contactType": "customer service",
+        "areaServed": "AU",
+        "availableLanguage": "English"
+      }
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/company/robotist"
+    ]
+  }
+}
+</script>
+
+<style>
+/* ═══════════════════════════════════════════════
+   ROBOTIST — DESIGN SYSTEM (NO CDN)
+   Fonts: system stack only. No external dependencies.
+   ═══════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg-0: #030810;
+  --bg-1: #060D18;
+  --bg-2: #0C1828;
+  --bg-3: #142035;
+  --bg-4: #1E3550;
+  --accent: #4AA8C8;
+  --accent-dim: #2E8FB5;
+  --accent-light: #A8DCEF;
+  --accent-glow: rgba(74, 168, 200, 0.12);
+  --accent-glow-strong: rgba(74, 168, 200, 0.22);
+  --white: #F0F4F8;
+  --grey-1: #8A9BB0;
+  --grey-2: #4A5A6A;
+  --grey-3: #1E2D3D;
+  --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --nav-h: 72px;
+  --section-pad: clamp(100px, 12vw, 160px);
+  --container: 1400px;
+  --gutter: clamp(24px, 6vw, 80px);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  height: 100%;
+}
+
+body {
+  background: var(--bg-0);
+  color: var(--white);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── GRAIN OVERLAY ── */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+a { color: var(--accent); text-decoration: none; transition: color 0.2s; }
+a:hover { color: var(--accent-light); }
+img { max-width: 100%; height: auto; display: block; }
+
+/* ══════════════════════════════════════════════
+   NAVIGATION
+   ══════════════════════════════════════════════ */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 500;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--gutter);
+  transition: background 0.4s, border-color 0.4s;
+}
+
+.nav.scrolled {
+  background: rgba(3, 8, 16, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(74, 168, 200, 0.08);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  min-height: 44px;
+}
+.nav-logo img {
+  height: 24px;
+  width: auto;
+  display: block;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--font-main);
+  font-weight: 300;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--grey-1);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover { color: var(--white); }
+.nav-links a.active { color: var(--accent); }
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  box-sizing: border-box;
+  line-height: 1;
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bg-0);
+  background: var(--accent);
+  padding: 0 26px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+.nav-cta--ghost {
+  min-height: 42px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--grey-1);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  padding: 0 22px;
+}
+.nav-cta--ghost:hover { color: var(--white); border-color: rgba(255, 255, 255, 0.45); }
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+
+
+
+.nav-cta:hover { background: var(--accent-light); transform: translateY(-1px); color: var(--bg-0); }
+
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--grey-1);
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translateY(12px); }
+.nav-hamburger.active span:nth-child(2) { opacity: 0; }
+.nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translateY(-12px); }
+
+.nav-links.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: var(--nav-h);
+  left: 0;
+  right: 0;
+  background: rgba(3, 8, 16, 0.95);
+  backdrop-filter: blur(24px);
+  padding: 20px var(--gutter);
+  gap: 16px;
+  z-index: 400;
+  border-bottom: 1px solid rgba(74, 168, 200, 0.08);
+}
+
+/* ══════════════════════════════════════════════
+   CONTACT HERO
+   ══════════════════════════════════════════════ */
+.contact-hero {
+  position: relative;
+  padding: calc(var(--nav-h) + 80px) var(--gutter) 80px;
+  background: var(--bg-0);
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Animated grid background matching homepage */
+.contact-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(74, 168, 200, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(74, 168, 200, 0.025) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 0%, transparent 70%);
+}
+
+.contact-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  font-family: var(--font-main);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.contact-hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 36px;
+  height: 1px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.contact-hero-title {
+  font-family: var(--font-main);
+  font-size: clamp(36px, 4.2vw, 64px);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 28px;
+}
+
+.contact-hero-title em {
+  font-style: normal;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.contact-hero-sub {
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--grey-1);
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+/* ══════════════════════════════════════════════
+   CONTACT CARDS
+   ══════════════════════════════════════════════ */
+.contact-cards {
+  padding: 80px var(--gutter) 40px;
+  background: var(--bg-0);
+  position: relative;
+  z-index: 2;
+}
+
+.contact-cards-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+}
+
+.contact-card {
+  background: var(--bg-1);
+  border: 1px solid rgba(255,255,255,0.04);
+  padding: 40px 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.contact-card:hover {
+  background: var(--bg-3);
+  transform: translateY(-2px);
+}
+
+.contact-card-icon {
+  margin-bottom: 20px;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent-glow);
+  border: 1px solid rgba(74,168,200,0.15);
+}
+
+.contact-card-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 1.5;
+}
+
+.contact-card-name {
+  font-family: var(--font-main);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  margin-bottom: 6px;
+}
+
+.contact-card-role {
+  font-family: var(--font-main);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.contact-card-detail {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--grey-1);
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.contact-card-link {
+  font-family: var(--font-main);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+  margin-top: auto;
+  min-height: 44px;
+}
+
+.contact-card-link:hover { color: var(--accent-light); }
+
+.contact-card-link svg {
+  width: 12px;
+  height: 12px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  transition: transform 0.2s;
+}
+
+.contact-card-link:hover svg { transform: translateX(2px); }
+
+/* ══════════════════════════════════════════════
+   INQUIRY SECTION
+   ══════════════════════════════════════════════ */
+.inquiry {
+  padding: 100px var(--gutter);
+  background: var(--bg-0);
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid rgba(74,168,200,0.06);
+}
+
+.inquiry-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.inquiry-eyebrow {
+  font-family: var(--font-main);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.inquiry-title {
+  font-family: var(--font-main);
+  font-size: clamp(24px, 3vw, 40px);
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.inquiry-title em {
+  font-style: normal;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.inquiry-desc {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--grey-1);
+  margin-bottom: 40px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.inquiry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+}
+
+.inquiry-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.inquiry-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.inquiry-field label {
+  font-family: var(--font-main);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--grey-1);
+}
+
+.inquiry-field input,
+.inquiry-field select,
+.inquiry-field textarea {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--white);
+  background: var(--bg-1);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 14px 16px;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.inquiry-field input:focus,
+.inquiry-field select:focus,
+.inquiry-field textarea:focus {
+  border-color: rgba(74,168,200,0.4);
+  background: var(--bg-2);
+}
+
+.inquiry-field input::placeholder,
+.inquiry-field textarea::placeholder {
+  color: var(--grey-1);
+}
+
+.inquiry-field select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%238A9BB0' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  padding-right: 40px;
+}
+
+.inquiry-field select option {
+  background: var(--bg-2);
+  color: var(--white);
+}
+
+.inquiry-field textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.btn-primary {
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bg-0);
+  background: var(--accent);
+  padding: 17px 40px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  display: inline-block;
+  align-self: flex-start;
+}
+
+.btn-primary:hover { background: var(--accent-light); transform: translateY(-2px); color: var(--bg-0); }
+
+/* ══════════════════════════════════════════════
+   CONTACT CTA
+   ══════════════════════════════════════════════ */
+.cta-section {
+  background: var(--bg-0);
+  padding: 100px var(--gutter);
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid rgba(74,168,200,0.06);
+}
+
+.cta-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-title {
+  font-family: var(--font-main);
+  font-size: clamp(24px, 3vw, 40px);
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 16px;
+  color: var(--white);
+}
+
+.cta-title em {
+  font-style: normal;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.cta-desc {
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--grey-1);
+  margin-bottom: 36px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-ghost {
+  font-family: var(--font-main);
+  font-weight: 400;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--grey-1);
+  background: transparent;
+  padding: 15px 36px;
+  text-decoration: none;
+  border: 1px solid var(--grey-3);
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+  display: inline-block;
+  margin-left: 16px;
+}
+
+.btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ══════════════════════════════════════════════
+   FOOTER
+   ══════════════════════════════════════════════ */
+.footer {
+  background: var(--bg-0);
+  border-top: 1px solid rgba(74, 168, 200, 0.06);
+  padding: 80px var(--gutter) 40px;
+  margin-bottom: 0;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 2.5fr 1fr 1fr 1fr;
+  gap: 80px;
+  margin-bottom: 64px;
+}
+
+.footer-logo {
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 20px;
+}
+
+.footer-tagline {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--grey-1);
+  max-width: 300px;
+  margin-bottom: 32px;
+}
+
+.footer-col-title {
+  font-family: var(--font-main);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--grey-1);
+  margin-bottom: 24px;
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  list-style: none;
+}
+
+.footer-links a {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--grey-1);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover { color: var(--white); }
+
+.footer-bottom {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-top: 32px;
+  border-top: 1px solid var(--grey-3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.footer-copy {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--grey-1);
+  letter-spacing: 0.04em;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 28px;
+}
+
+.footer-legal a {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--grey-1);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-legal a:hover { color: var(--grey-1); }
+
+/* ══════════════════════════════════════════════
+   SCROLL REVEAL
+   ══════════════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* ══════════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════════ */
+
+/* ── TABLET / NARROW DESKTOP (max 1024px) ── */
+@media (max-width: 1024px) {
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 48px; }
+  .contact-cards-inner { grid-template-columns: 1fr 1fr; }
+  .inquiry-row { grid-template-columns: 1fr; }
+}
+
+/* ── TABLET (max 768px) ── */
+@media (max-width: 768px) {
+  .nav-links { display: none; flex-direction: column; }
+  .nav-hamburger { display: flex; }
+  .nav-cta { display: none; }
+
+  .nav-links.open .nav-cta {
+    display: inline-block;
+    margin-top: 8px;
+  }
+
+  .contact-hero { padding: calc(var(--nav-h) + 56px) var(--gutter) 56px; }
+  .contact-hero-title { font-size: clamp(28px, 6vw, 42px); }
+  .contact-hero-sub { font-size: 15px; }
+
+  .contact-cards { padding: 60px var(--gutter) 20px; }
+  .contact-cards-inner { grid-template-columns: 1fr; }
+  .contact-card { padding: 32px 28px; }
+
+  .inquiry { padding: 72px var(--gutter); }
+
+  .cta-section { padding: 72px var(--gutter); }
+
+  .footer { padding: 64px var(--gutter) 32px; }
+  .footer-inner { grid-template-columns: 1fr 1fr; gap: 40px; }
+}
+
+/* ── MOBILE (max 375px) ── */
+@media (max-width: 375px) {
+  :root { --gutter: 16px; }
+
+  .contact-hero { padding: calc(var(--nav-h) + 40px) var(--gutter) 48px; }
+  .contact-hero-title { font-size: 26px; }
+  .contact-hero-sub { font-size: 14px; }
+
+  .contact-cards { padding: 48px var(--gutter) 12px; }
+  .contact-cards-inner { grid-template-columns: 1fr; }
+  .contact-card { padding: 28px 20px; }
+  .contact-card-name { font-size: 14px; }
+  .contact-card-detail { font-size: 12px; }
+
+  .inquiry { padding: 56px var(--gutter); }
+  .inquiry-title { font-size: 22px; }
+  .inquiry-desc { font-size: 14px; }
+  .inquiry-form { gap: 12px; }
+  .inquiry-field input,
+  .inquiry-field select,
+  .inquiry-field textarea { padding: 12px 14px; font-size: 16px; }
+
+  .cta-section { padding: 56px var(--gutter); }
+  .cta-title { font-size: 22px; }
+  .btn-ghost { margin-left: 0; margin-top: 12px; }
+  .cta-inner .btn-primary,
+  .cta-inner .btn-ghost { display: block; width: 100%; text-align: center; }
+
+  .footer { padding: 48px var(--gutter) 24px; }
+  .footer-inner { grid-template-columns: 1fr; gap: 28px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .footer-legal { flex-wrap: wrap; gap: 16px; }
+}
+</style>
+<link rel="stylesheet" href="/mobile-usability.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     NAVIGATION
+     ══════════════════════════════════════════════ -->
+<nav class="nav" id="mainNav">
+  <a href="/" class="nav-logo"><img src="images/logo.svg" alt="Robotist" style="height:24px;width:auto;"></a>
+    <ul class="nav-links">
+    <li><a href="index.html#catalogue">Catalogue</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="compare.html">Compare</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="/grn/" class="nav-cta nav-cta--ghost">Join us</a>
+    <a href="mailto:robert@robotist.com.au" class="nav-cta">Get Started</a>
+  </div>
+  <button class="nav-hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ══════════════════════════════════════════════
+     CONTACT HERO
+     ══════════════════════════════════════════════ -->
+<section class="contact-hero">
+  <div class="contact-hero-inner">
+    <div class="contact-hero-eyebrow">Let's Talk</div>
+    <h1 class="contact-hero-title">Start the <em>conversation.</em></h1>
+    <p class="contact-hero-sub">Whether you're exploring a specific machine, planning a fleet deployment, or just curious about what's possible — reach out directly. We'll respond within 24 hours.</p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     CONTACT CARDS
+     ══════════════════════════════════════════════ -->
+<section class="contact-cards">
+  <div class="contact-cards-inner">
+
+    <!-- Robert -->
+    <div class="contact-card reveal">
+      <div class="contact-card-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 21h8M12 17v4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="contact-card-name">Robert Vicencio</div>
+      <div class="contact-card-role">Founder &amp; CEO</div>
+      <p class="contact-card-detail">Sales, procurement, strategic partnerships, and enterprise deployments. Based between Sydney and Shanghai.</p>
+      <a href="mailto:robert@robotist.com.au" class="contact-card-link">
+        robert@robotist.com.au
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <!-- Lareesa -->
+    <div class="contact-card reveal reveal-delay-1">
+      <div class="contact-card-icon">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M8 21h8M12 17v4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="contact-card-name">Lareesa Hu</div>
+      <div class="contact-card-role">Co-Founder &amp; CMO</div>
+      <p class="contact-card-detail">Marketing, brand strategy, go-to-market, and customer experience. For media inquiries and partnership proposals.</p>
+      <a href="mailto:lareesa@robotist.com.au" class="contact-card-link">
+        lareesa@robotist.com.au
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+    <!-- LinkedIn -->
+    <div class="contact-card reveal reveal-delay-2">
+      <div class="contact-card-icon">
+        <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" stroke-linecap="round" stroke-linejoin="round"/><rect x="2" y="9" width="4" height="12" stroke-linecap="round" stroke-linejoin="round"/><circle cx="4" cy="4" r="2"/></svg>
+      </div>
+      <div class="contact-card-name">LinkedIn</div>
+      <div class="contact-card-role">Follow Robotist</div>
+      <p class="contact-card-detail">Stay updated on new machine arrivals, deployment case studies, and robotics insights from the Robotist team.</p>
+      <a href="https://www.linkedin.com/company/robotist" target="_blank" rel="noopener" class="contact-card-link">
+        Connect on LinkedIn
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     INQUIRY FORM
+     ══════════════════════════════════════════════ -->
+<section class="inquiry">
+  <div class="inquiry-inner">
+    <div class="inquiry-eyebrow reveal">Send an Inquiry</div>
+    <h2 class="inquiry-title reveal">Tell us what you're<br><em>looking for.</em></h2>
+    <p class="inquiry-desc reveal">Share a few details and we'll get back to you with relevant options and pricing within one business day.</p>
+
+    <form class="inquiry-form reveal reveal-delay-2" id="inquiry-form">
+        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="inquiry-row">
+        <div class="inquiry-field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required>
+        </div>
+        <div class="inquiry-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@company.com" required>
+        </div>
+      </div>
+      <div class="inquiry-row">
+        <div class="inquiry-field">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" placeholder="Your organisation">
+        </div>
+        <div class="inquiry-field">
+          <label for="interest">Area of Interest</label>
+          <select id="interest" name="interest">
+            <option value="">Select an option</option>
+            <option value="humanoid">Humanoid Robots</option>
+            <option value="quadruped">Quadruped Robots</option>
+            <option value="cleaning">Commercial Cleaning</option>
+            <option value="industrial">Industrial Automation</option>
+            <option value="multiple">Multiple Categories</option>
+            <option value="rental">Rental / Trial</option>
+            <option value="other">Other / General Inquiry</option>
+          </select>
+        </div>
+      </div>
+      <div class="inquiry-field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" placeholder="Tell us about your requirements, timeline, budget range, or any specific machines you're interested in…" required></textarea>
+      </div>
+      <button type="submit" class="btn-primary">Send Inquiry</button>
+    </form>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     CONTACT CTA
+     ══════════════════════════════════════════════ -->
+<section class="cta-section">
+  <div class="cta-inner reveal">
+    <h2 class="cta-title">Prefer to <em>browse</em><br>the catalogue first?</h2>
+    <p class="cta-desc">Explore all 13 machines across humanoid, quadruped, cleaning, and industrial categories. Find the right robot for your operation.</p>
+    <a href="/#catalogue" class="btn-primary">Explore Catalogue</a>
+    <a href="/compare.html" class="btn-ghost">Compare Robots</a>
+    <a href="/requirements.html" class="btn-ghost">Share Requirements</a>
+    <a href="mailto:robert@robotist.com.au" class="btn-ghost">Email Directly</a>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     FOOTER
+     ══════════════════════════════════════════════ -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <span class="footer-logo">Robotist</span>
+      <p class="footer-tagline">A global robotics platform. We connect businesses with the machines that will define the next decade of commerce.</p>
+      <p style="font-family:var(--font-body);font-size:12px;font-weight:300;color: var(--grey-1);">Sydney, Australia</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Platform</div>
+      <ul class="footer-links">
+        <li><a href="/#catalogue">Robot Catalogue</a></li>
+        <li><a href="/compare.html">Compare Robots</a></li>
+        <li><a href="/#services">Integration Services</a></li>
+        <li><a href="/#services">Maintenance Plans</a></li>
+        <li><a href="/#services">Consultation</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="/about.html">About Robotist</a>
+        <li><a href="/blog.html">Blog</a></li></li>
+        <li><a href="/#why">Why Robotist</a></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/about.html#who-we-are">Team</a></li>
+        <li><a href="/contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="mailto:robert@robotist.com.au">robert@robotist.com.au</a></li>
+        <li><a href="mailto:lareesa@robotist.com.au">lareesa@robotist.com.au</a></li>
+        <li><a href="https://www.linkedin.com/company/robotist">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">&copy; 2026 Robotist Pty Ltd. All rights reserved.</span>
+    <span class="footer-legal" style="display:inline-flex;flex-wrap:wrap;gap:14px;font-size:12px;letter-spacing:.04em;"><a href="/faq.html">FAQ</a><a href="/terms.html">Terms</a><a href="/cookies.html">Cookies</a><a href="/privacy.html">Privacy</a></span>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════════════════
+     JAVASCRIPT
+     ══════════════════════════════════════════════ -->
+<script>
+// ── NAV SCROLL ──
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+// ── SCROLL REVEAL ──
+const revealEls = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+revealEls.forEach(el => revealObserver.observe(el));
+
+// ── HAMBURGER MENU TOGGLE ──
+const hamburger = document.querySelector('.nav-hamburger');
+const navLinks = document.querySelector('.nav-links');
+
+if (hamburger) {
+  hamburger.addEventListener('click', (e) => {
+    e.preventDefault();
+    navLinks.classList.toggle('open');
+    hamburger.classList.toggle('active');
+  });
+
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      hamburger.classList.remove('active');
+    });
+  });
+}
+
+</script>
+<script src="/assets/form-workflow.js"></script>
+
+</body>
+</html>

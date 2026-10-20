@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "order": [
+    "BRAND",
+    "TASTE",
+    "IMPECCABLE",
+    "MOTION",
+    "VERIFY"
+  ],
+  "documents": {
+    "brand": "docs/brand/BRAND_CENTER.md",
+    "design": "docs/design/DESIGN_SYSTEM.md",
+    "motion": "docs/design/MOTION_SYSTEM.md",
+    "quality": "docs/design/UI_QUALITY_STATE.md"
+  },
+  "state": "docs/design/UI_QUALITY_STATE.json"
+}

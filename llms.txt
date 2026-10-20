@@ -1,0 +1,51 @@
+# Robotist
+
+> Robotist is a global robotics platform that sources commercial and humanoid robots directly from manufacturers and manages the full deployment path — quoting, import compliance, installation, training and after-sales support.
+
+## What Robotist does
+- Sources commercial and humanoid robots directly from manufacturers, so buyers avoid layered reseller margins.
+- Supplies robots for hospitality, logistics, security, education, medical and industrial environments.
+- Supports the whole deployment path: sourcing, import compliance, site assessment, setup, staff training and ongoing service.
+- Publishes a public catalogue with per-robot specifications, USD list prices and a side-by-side comparison tool.
+
+## How deployment works
+- Tell us your site and use case — share the operational environment, goals and constraints.
+- We shortlist suitable robots — two or three machines recommended with clear trade-offs on capability, cost and deployment complexity.
+- We verify supplier specifications and availability directly with the factory, including lead times and configuration options.
+- We assess compliance and deployment requirements — site, safety, import and operational review before any commitment.
+- You receive a fixed-price quote with line items, a delivery timeline and your selected support tier.
+- We coordinate import, setup, training and maintenance — customs clearance, installation, staff training and support.
+
+## Support
+- Tier 1 Essential Support: on-call via WeChat or phone, response within 24 hours, basic troubleshooting and usage advice.
+- Tier 2 Priority Support: response in 4–8 hours, operational guidance, remote diagnostics and a monthly remote check-in.
+- Tier 3 Premium Command Support: same-day or under 4-hour response, a priority line, monthly performance review and supplier escalation handling.
+
+## Citable facts
+- **What it is:** A global robotics platform connecting businesses with commercial robots for purchase, rental and deployment
+- **Catalogue:** Machines across five categories — humanoid, quadruped, cleaning, industrial and companion
+- **Pricing:** USD list prices published on each product page, from USD 5,000 to USD 333,000
+- **Quote basis:** Robots are quoted on a WDP (wholesale/dealer price) basis
+- **Supply chain:** Direct sourcing from Chinese manufacturers, with a 40+ partner ecosystem
+- **Deployment:** Sourcing, import compliance, site assessment, installation, staff training and maintenance handled end to end
+- **Buyer journey:** Six steps from first inquiry to an operational robot, managed by the team
+- **Support tiers:** Essential (24-hour response), Priority (4–8 hours) and Premium Command (same day or under 4 hours)
+- **Included:** A 12-month maintenance and support arrangement with each purchase or rental
+- **Comparison:** A public comparison tool evaluates robots side by side on specifications and deployment fit
+- **Operations:** Shanghai, Hangzhou and Sydney — shipping worldwide
+- **Use cases:** Hospitality, healthcare, security, logistics, agriculture, commercial cleaning and live performance
+
+## Important URLs
+- [Robotist — buy, rent and deploy commercial robots](https://www.robotist.com.au/): Homepage and platform overview
+- [Compare robots](https://www.robotist.com.au/compare.html): Side-by-side specifications for the machines
+- [About Robotist](https://www.robotist.com.au/about.html): The company, its partners and its team
+- [Robotist blog](https://www.robotist.com.au/blog.html): Articles on commercial robotics
+- [Contact](https://www.robotist.com.au/contact.html): Start a deployment inquiry
+
+## Answers to common questions
+- **What types of robots does Robotist sell?** Robotist offers commercial robots across humanoid, quadruped, cleaning, industrial and companion categories, all sourced directly from manufacturers with global shipping and support.
+- **Can I rent a robot instead of buying?** Yes. Robotist facilitates robot rental arrangements for businesses that want to trial before committing to a purchase, including hospitality, events and commercial deployments.
+- **Does Robotist provide installation and support?** Yes. Every Robotist purchase or rental includes site assessment, import compliance, physical installation, staff training and a 12-month maintenance and support arrangement.
+- **Where does Robotist operate?** Operations are based in Shanghai, Hangzhou and Sydney, and the platform ships worldwide.
+
+Contact: contact@robotist.com.au

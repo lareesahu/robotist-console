@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" width="1000" height="1000" role="img" aria-label="Chris Liu, Chief Technology Officer of Robotist">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="38%" r="62%">
+      <stop offset="0%" stop-color="#12263C"/>
+      <stop offset="100%" stop-color="#0C1828"/>
+    </radialGradient>
+  </defs>
+  <rect width="1000" height="1000" fill="url(#glow)"/>
+  <g stroke="#1E2D3D" stroke-width="1" opacity="0.9">
+    <line x1="0" y1="250" x2="1000" y2="250"/>
+    <line x1="0" y1="500" x2="1000" y2="500"/>
+    <line x1="0" y1="750" x2="1000" y2="750"/>
+    <line x1="250" y1="0" x2="250" y2="1000"/>
+    <line x1="500" y1="0" x2="500" y2="1000"/>
+    <line x1="750" y1="0" x2="750" y2="1000"/>
+  </g>
+  <g fill="none" stroke="#4AA8C8" stroke-width="3" opacity="0.55">
+    <rect x="180" y="180" width="640" height="640" rx="6"/>
+  </g>
+  <text x="500" y="625" text-anchor="middle" font-family="Poppins, Helvetica, Arial, sans-serif"
+        font-size="300" font-weight="500" letter-spacing="6" fill="#4AA8C8">CL</text>
+</svg>

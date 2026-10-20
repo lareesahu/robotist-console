@@ -1,0 +1,44 @@
+@media (max-width: 900px) {
+  .nav-hamburger {
+    width: 44px;
+    height: 44px;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-links.open a,
+  .nav-cta,
+  .btn-primary,
+  .btn-ghost,
+  .btn-text,
+  .filter-pill,
+  .robot-info-inquire,
+  .footer-links a,
+  .footer-legal a {
+    min-height: 44px;
+    box-sizing: border-box;
+  }
+
+  .nav-links.open a,
+  .btn-primary,
+  .btn-ghost,
+  .btn-text,
+  .robot-info-inquire,
+  .footer-links a,
+  .footer-legal a {
+    display: flex;
+    align-items: center;
+  }
+
+  .btn-primary,
+  .btn-ghost,
+  .btn-text,
+  .robot-info-inquire {
+    justify-content: center;
+  }
+
+  .robot-info-inquire {
+    min-width: 44px;
+  }
+}

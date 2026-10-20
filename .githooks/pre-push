@@ -1,0 +1,23 @@
+#!/bin/sh
+# Refuse a push whose generated content is out of step with its live source.
+# Regenerates it first, so the commit that goes out carries the update.
+# A crash or a missing interpreter passes the push: automation must not block work.
+set -u
+repo=$(git rev-parse --show-toplevel)
+sync="C:/Users/hunin/AppData/Local/hermes/scripts/project-sync.py"
+
+# The runner probes interpreters itself; pick any python able to start it.
+runner=''
+for candidate in "python3" "python"; do
+  if "$candidate" -c 'import json' >/dev/null 2>&1; then runner=$candidate; break; fi
+done
+[ -n "$runner" ] || exit 0
+
+if "$runner" "$sync" --repo "$repo" --check --fail-open >/dev/null 2>&1; then
+  exit 0
+fi
+
+printf '%s\n' "site-sync: generated content is stale and has been regenerated:" >&2
+"$runner" "$sync" --repo "$repo" --write-only >&2 || true
+printf '%s\n' "site-sync: commit those files and push again." >&2
+exit 1

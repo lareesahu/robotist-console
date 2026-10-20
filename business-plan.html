@@ -1,0 +1,3570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Robotist — Business Plan | Investor Document</title>
+
+
+
+
+<meta name="description" content="Robotist investor business plan — global robotics platform raising AUD 205k. Traction, financials, team, and strategic roadmap." />
+<meta name="robots" content="noindex, nofollow" />
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.robotist.com.au/business-plan.html">
+<meta property="og:title" content="Robotist — Business Plan | Investor Document">
+<meta property="og:description" content="Robotist investor business plan — global robotics platform raising AUD 205k. Traction, financials, team, and strategic roadmap.">
+<meta property="og:image" content="https://www.robotist.com.au/robotist-og.jpg">
+<meta property="og:image:alt" content="Robotist — global robotics platform">
+<meta property="og:site_name" content="Robotist">
+<meta property="og:locale" content="en_AU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Robotist — Business Plan | Investor Document">
+<meta name="twitter:description" content="Robotist investor business plan — global robotics platform raising AUD 205k. Traction, financials, team, and strategic roadmap.">
+<meta name="twitter:image" content="https://www.robotist.com.au/robotist-og.jpg">
+
+<link rel="canonical" href="https://www.robotist.com.au/business-plan.html" />
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.robotist.com.au/business-plan.html" />
+<meta property="og:title" content="Robotist — Business Plan" />
+<meta property="og:description" content="Robotist investor business plan — global robotics platform raising AUD 205k." />
+<meta property="og:site_name" content="Robotist" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,300&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+/* ═══════════════════════════════════════════════
+   ROBOTIST — BUSINESS PLAN
+   Design system: identical to index.html
+   ═══════════════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg-0: #030810;
+  --bg-1: #060D18;
+  --bg-2: #0C1828;
+  --bg-3: #142035;
+  --bg-4: #1E3550;
+  --accent: #4AA8C8;
+  --accent-dim: #2E8FB5;
+  --accent-light: #A8DCEF;
+  --accent-glow: rgba(74, 168, 200, 0.12);
+  --accent-glow-strong: rgba(74, 168, 200, 0.22);
+  --white: #F0F4F8;
+  --grey-1: #8A9BB0;
+  --grey-2: #4A5A6A;
+  --grey-3: #1E2D3D;
+  --font-main: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --nav-h: 72px;
+  --section-pad: clamp(100px, 12vw, 160px);
+  --container: 1400px;
+  --gutter: clamp(24px, 6vw, 80px);
+}
+
+html { scroll-behavior: smooth; font-size: 16px; height: 100%; }
+
+body {
+  background: var(--bg-0);
+  color: var(--white);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Grain overlay */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ══════════════════════════════════════════════
+   NAVIGATION
+   ══════════════════════════════════════════════ */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 500;
+  height: var(--nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--gutter);
+  transition: background 0.4s, border-color 0.4s;
+}
+
+.nav.scrolled {
+  background: rgba(3, 8, 16, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-bottom: 1px solid rgba(74, 168, 200, 0.08);
+}
+
+.nav-logo {
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 17px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--grey-1);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  box-sizing: border-box;
+  line-height: 1;
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bg-0);
+  background: var(--accent);
+  padding: 0 26px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.nav-cta:hover { background: var(--accent-light); transform: translateY(-1px); }
+
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 4px;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--grey-1);
+  transition: all 0.3s;
+}
+
+.nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translateY(12px); }
+.nav-hamburger.active span:nth-child(2) { opacity: 0; }
+.nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translateY(-12px); }
+
+.nav-links.open {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: var(--nav-h);
+  left: 0; right: 0;
+  background: rgba(3, 8, 16, 0.95);
+  backdrop-filter: blur(24px);
+  padding: 20px var(--gutter);
+  gap: 16px;
+  z-index: 400;
+  border-bottom: 1px solid rgba(74, 168, 200, 0.08);
+}
+
+/* ══════════════════════════════════════════════
+   HERO
+   ══════════════════════════════════════════════ */
+.bp-hero {
+  position: relative;
+  padding: calc(var(--nav-h) + 100px) var(--gutter) 100px;
+  background: var(--bg-0);
+  overflow: hidden;
+}
+
+.bp-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(74, 168, 200, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(74, 168, 200, 0.025) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 30%, black 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.bp-hero::after {
+  content: '';
+  position: absolute;
+  top: -200px; right: -200px;
+  width: 700px; height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74, 168, 200, 0.05) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.bp-hero-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.section-eyebrow {
+  font-family: var(--font-main);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.section-eyebrow::before {
+  content: '';
+  display: block;
+  width: 36px;
+  height: 1px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.bp-hero-h1 {
+  font-family: var(--font-main);
+  font-size: clamp(48px, 7vw, 110px);
+  font-weight: 600;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--white);
+  margin-bottom: 40px;
+}
+
+.bp-hero-h1 em {
+  font-style: normal;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.bp-hero-sub {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--grey-1);
+  max-width: 600px;
+  margin-bottom: 64px;
+}
+
+.bp-hero-meta {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+  padding-top: 48px;
+  border-top: 1px solid var(--grey-3);
+}
+
+.bp-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bp-meta-label {
+  font-family: var(--font-main);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--grey-1);
+}
+
+.bp-meta-value {
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: 0.04em;
+}
+
+/* ══════════════════════════════════════════════
+   SHARED SECTION LAYOUT
+   ══════════════════════════════════════════════ */
+.bp-section {
+  padding: var(--section-pad) var(--gutter);
+  position: relative;
+}
+
+.bp-section.alt { background: var(--bg-1); }
+
+.bp-section-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+}
+
+.bp-section-header {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 80px;
+  align-items: start;
+  margin-bottom: 72px;
+}
+
+.bp-section-label {
+  font-family: var(--font-main);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.bp-section-h2 {
+  font-family: var(--font-main);
+  font-size: clamp(28px, 3.5vw, 52px);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--white);
+}
+
+.bp-section-desc {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--grey-1);
+  border-left: 2px solid var(--grey-3);
+  padding-left: 28px;
+  align-self: end;
+}
+
+/* ══════════════════════════════════════════════
+   STAT GRID (4-up KPIs)
+   ══════════════════════════════════════════════ */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  margin-bottom: 2px;
+}
+
+.stat-block {
+  background: var(--bg-1);
+  padding: 48px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-top: 2px solid transparent;
+  transition: border-color 0.3s, background 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-block:hover { border-top-color: var(--accent); background: var(--bg-2); }
+
+.stat-num {
+  font-family: var(--font-main);
+  font-size: clamp(32px, 4vw, 56px);
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.stat-title {
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: 0.02em;
+  line-height: 1.3;
+}
+
+.stat-body {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--grey-1);
+  line-height: 1.7;
+}
+
+.stat-note {
+  font-family: var(--font-main);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.55;
+  margin-top: auto;
+}
+
+/* ══════════════════════════════════════════════
+   MANIFESTO / BIG QUOTE
+   ══════════════════════════════════════════════ */
+.bp-manifesto {
+  background: var(--bg-1);
+  border: 1px solid rgba(74, 168, 200, 0.14);
+  padding: clamp(40px, 6vw, 80px);
+  font-family: var(--font-main);
+  font-size: clamp(22px, 3vw, 42px);
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.bp-manifesto::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent) 0%, transparent 60%);
+}
+
+.bp-manifesto strong { color: var(--accent); font-weight: 600; }
+
+/* ══════════════════════════════════════════════
+   2-COL CONTENT GRID
+   ══════════════════════════════════════════════ */
+.content-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-bottom: 2px;
+}
+
+.content-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  margin-bottom: 2px;
+}
+
+/* ══════════════════════════════════════════════
+   CONTENT BLOCK (replaces "card")
+   ══════════════════════════════════════════════ */
+.cb {
+  background: var(--bg-1);
+  padding: 48px 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+
+.cb::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s;
+}
+
+.cb:hover::before { transform: scaleX(1); }
+.cb:hover { background: var(--bg-2); }
+
+.cb-tag {
+  font-family: var(--font-main);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.cb-title {
+  font-family: var(--font-main);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.cb-body {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--grey-1);
+  line-height: 1.75;
+}
+
+.cb-num {
+  font-family: var(--font-main);
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+/* ══════════════════════════════════════════════
+   LIST ITEMS
+   ══════════════════════════════════════════════ */
+.bp-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.bp-list li {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--grey-1);
+  line-height: 1.7;
+  padding-left: 20px;
+  position: relative;
+}
+
+.bp-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.75em;
+  width: 10px;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.6;
+}
+
+/* ══════════════════════════════════════════════
+   TABLE
+   ══════════════════════════════════════════════ */
+.bp-table-wrap {
+  overflow-x: auto;
+  margin-bottom: 2px;
+}
+
+.bp-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+}
+
+.bp-table th {
+  font-family: var(--font-main);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding: 16px 24px;
+  text-align: left;
+  border-bottom: 1px solid rgba(74, 168, 200, 0.2);
+  background: var(--bg-2);
+  white-space: nowrap;
+}
+
+.bp-table td {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--grey-1);
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--grey-3);
+  vertical-align: top;
+  line-height: 1.65;
+}
+
+.bp-table tr:hover td { background: rgba(74, 168, 200, 0.03); color: var(--white); }
+
+.bp-table td:first-child { color: var(--white); font-weight: 400; }
+
+.status-good {
+  font-family: var(--font-main);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-glow);
+  padding: 4px 10px;
+  white-space: nowrap;
+}
+
+.status-pending {
+  font-family: var(--font-main);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--grey-1);
+  background: rgba(138, 155, 176, 0.08);
+  padding: 4px 10px;
+  white-space: nowrap;
+}
+
+.status-missing {
+  font-family: var(--font-main);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #C87A4A;
+  background: rgba(200, 122, 74, 0.08);
+  padding: 4px 10px;
+  white-space: nowrap;
+}
+
+/* ══════════════════════════════════════════════
+   TRACTION FEATURED BLOCK
+   ══════════════════════════════════════════════ */
+.traction-featured {
+  background: var(--bg-1);
+  border: 1px solid rgba(74, 168, 200, 0.14);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  padding: 72px 64px;
+  margin-bottom: 2px;
+  position: relative;
+  overflow: hidden;
+}
+
+.traction-featured::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent) 0%, transparent 60%);
+}
+
+.traction-featured-label {
+  font-family: var(--font-main);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.traction-featured-label::before {
+  content: '';
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.7); }
+}
+
+/* ── Source tooltips ── */
+.stat-source {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid var(--accent-dim);
+  color: var(--accent-dim);
+  font-size: 9px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  cursor: default;
+  margin-left: 6px;
+  vertical-align: middle;
+  flex-shrink: 0;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.stat-source:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.stat-source .tooltip-text {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: 280px;
+  background: var(--bg-3);
+  border: 1px solid var(--grey-3);
+  padding: 14px 16px;
+  font-size: 11px;
+  line-height: 1.6;
+  color: var(--grey-1);
+  font-family: var(--font-body);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 100;
+  white-space: normal;
+  text-align: left;
+}
+
+.stat-source:hover .tooltip-text {
+  opacity: 1;
+}
+
+/* ── BP Team cards ── */
+.bp-team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(74, 168, 200, 0.08);
+  border: 1px solid rgba(74, 168, 200, 0.08);
+  margin-bottom: 32px;
+}
+
+.bp-leader-card {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  background: var(--bg-1);
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+.bp-leader-card:hover { background: var(--bg-2); }
+
+.bp-leader-photo {
+  overflow: hidden;
+  background: var(--bg-3);
+}
+
+.bp-leader-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.5s ease;
+  filter: grayscale(0.15);
+}
+
+.bp-leader-card:hover .bp-leader-photo img { transform: scale(1.04); }
+
+.bp-leader-info {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bp-leader-role {
+  font-family: var(--font-main);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.bp-leader-name {
+  font-family: var(--font-main);
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--white);
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+}
+
+.bp-leader-bio {
+  font-family: var(--font-body);
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--grey-1);
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.bp-leader-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.bp-leader-tag {
+  font-family: var(--font-main);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-glow);
+  border: 1px solid rgba(74,168,200,0.18);
+  padding: 4px 10px;
+}
+
+@media (max-width: 900px) {
+  .bp-team-grid { grid-template-columns: 1fr; }
+  .bp-leader-card { grid-template-columns: 140px 1fr; }
+}
+
+@media (max-width: 600px) {
+  .bp-leader-card { grid-template-columns: 1fr; }
+  .bp-leader-photo { aspect-ratio: 4/3; }
+}
+  font-family: var(--font-main);
+  font-size: clamp(22px, 2.5vw, 36px);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--white);
+  letter-spacing: -0.01em;
+  margin-bottom: 20px;
+}
+
+.traction-featured-body {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--grey-1);
+  margin-bottom: 36px;
+}
+
+.traction-stats-row {
+  display: flex;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+
+.traction-stat-num {
+  font-family: var(--font-main);
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: -0.03em;
+  display: block;
+}
+
+.traction-stat-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--grey-1);
+  letter-spacing: 0.06em;
+  display: block;
+  margin-top: 4px;
+}
+
+.traction-featured-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+}
+
+.milestone {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--grey-3);
+}
+
+.milestone:last-child { border-bottom: none; }
+
+.milestone-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  margin-top: 6px;
+  flex-shrink: 0;
+}
+
+.milestone-date {
+  font-family: var(--font-main);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  margin-bottom: 4px;
+}
+
+.milestone-text {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--grey-1);
+  line-height: 1.6;
+}
+
+/* ══════════════════════════════════════════════
+   USE OF FUNDS ROWS
+   ══════════════════════════════════════════════ */
+.use-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--grey-3);
+}
+
+.use-row:first-child { border-top: 1px solid var(--grey-3); }
+
+.use-num {
+  font-family: var(--font-main);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--accent);
+  opacity: 0.45;
+  min-width: 36px;
+  padding-top: 3px;
+}
+
+.use-content { flex: 1; }
+
+.use-title {
+  font-family: var(--font-main);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--white);
+  letter-spacing: 0.02em;
+  margin-bottom: 6px;
+}
+
+.use-body {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--grey-1);
+  line-height: 1.65;
+}
+
+.use-pct {
+  font-family: var(--font-main);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--accent);
+  min-width: 44px;
+  text-align: right;
+  padding-top: 3px;
+}
+
+/* ══════════════════════════════════════════════
+   DECISION BLOCKS (replaces fill-cards)
+   ══════════════════════════════════════════════ */
+.decision-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+  margin-bottom: 2px;
+}
+
+.decision-block {
+  background: var(--bg-1);
+  padding: 48px 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+  transition: background 0.3s;
+}
+
+.decision-block:hover { background: var(--bg-2); }
+
+.decision-block::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s;
+}
+
+.decision-block:hover::before { transform: scaleX(1); }
+
+.decision-label {
+  font-family: var(--font-main);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.decision-title {
+  font-family: var(--font-main);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--white);
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+.decision-confirmed {
+  font-family: var(--font-main);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  background: var(--accent-glow);
+  border: 1px solid rgba(74, 168, 200, 0.18);
+}
+
+.decision-confirmed::before {
+  content: '✓';
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.decision-body {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--grey-1);
+  line-height: 1.75;
+}
+
+.decision-question {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--grey-1);
+  line-height: 1.75;
+  padding: 16px 20px;
+  border-left: 2px solid rgba(74, 168, 200, 0.3);
+  background: rgba(74, 168, 200, 0.03);
+}
+
+.decision-question-label {
+  font-family: var(--font-main);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--grey-1);
+  margin-bottom: 8px;
+}
+
+/* ══════════════════════════════════════════════
+   SOURCES
+   ══════════════════════════════════════════════ */
+.source-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.source-item {
+  background: var(--bg-1);
+  padding: 28px 36px;
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  border-left: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.source-item:hover { border-left-color: var(--accent); }
+
+.source-tag {
+  font-family: var(--font-main);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+  min-width: 140px;
+  padding-top: 2px;
+}
+
+.source-text {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--grey-1);
+  line-height: 1.7;
+}
+
+.source-text a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.source-text a:hover { opacity: 0.7; }
+
+/* ══════════════════════════════════════════════
+   LEADERSHIP
+   ══════════════════════════════════════════════ */
+.leadership-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2px;
+}
+
+.leader-card {
+  background: var(--bg-1);
+  border: 1px solid rgba(255,255,255,0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.leader-card.horizontal {
+  display: flex;
+  flex-direction: column;
+}
+
+.leader-img-wrap {
+  width: 100%;
+  overflow: hidden;
+  background: #000;
+  aspect-ratio: 4/5;
+  max-height: 480px;
+}
+
+.leader-img-wrap.horiz {
+  aspect-ratio: 4/5;
+  max-height: 480px;
+}
+
+.leader-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 0.6s ease;
+}
+
+.leader-card:hover .leader-img-wrap img { transform: scale(1.04); }
+
+.leader-content {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+}
+
+.leader-role {
+  font-family: var(--font-main);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.leader-name {
+  font-family: var(--font-main);
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--white);
+  margin-bottom: 18px;
+  letter-spacing: -0.01em;
+}
+
+.leader-bio {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--grey-1);
+  margin-bottom: 24px;
+}
+
+.leader-linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-main);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.leader-linkedin:hover { opacity: 0.7; }
+
+.leader-linkedin svg {
+  width: 15px;
+  height: 15px;
+  fill: currentColor;
+}
+
+.leader-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.leader-tag {
+  font-family: var(--font-main);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  background: var(--accent-glow);
+  border: 1px solid rgba(74, 168, 200, 0.22);
+  padding: 5px 12px;
+  border-radius: 2px;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.leader-tag:hover {
+  background: var(--accent-glow-strong);
+  border-color: rgba(74, 168, 200, 0.45);
+}
+/* ══════════════════════════════════════════════
+   BRANDS MARQUEE
+   ══════════════════════════════════════════════ */
+/* ══════════════════════════════════════════════
+   BRANDS & PARTNERS
+   ══════════════════════════════════════════════ */
+.brands-marquee {
+  background: var(--bg-1);
+  padding: var(--section-pad) 0 0;
+  border-top: 1px solid rgba(74, 168, 200, 0.06);
+  overflow: hidden;
+  position: relative;
+}
+
+.brands-marquee::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 1000px; height: 500px;
+  background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(74,168,200,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.brands-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--gutter) 64px;
+  position: relative;
+}
+
+.brands-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.brands-eyebrow {
+  display: block;
+  font-family: var(--font-main);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+  opacity: 0.8;
+}
+
+.brands-heading {
+  font-family: var(--font-main);
+  font-size: clamp(22px, 2.6vw, 38px);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.brands-heading em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+/* ── Logo grid — seamless 1px border tile ── */
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1px;
+  background: rgba(74, 168, 200, 0.08);
+  border: 1px solid rgba(74, 168, 200, 0.08);
+}
+
+.logo-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 40px;
+  background: var(--bg-1);
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+.logo-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--accent) 50%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.logo-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 90% 80% at 50% 0%, rgba(74,168,200,0.1) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.logo-card:hover { background: var(--bg-2); }
+.logo-card:hover::before { opacity: 1; }
+.logo-card:hover::after  { opacity: 1; }
+
+.logo-card > a {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.logo-card img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 42px;
+  object-fit: contain;
+  object-position: center;
+  filter: brightness(0) invert(1);
+  opacity: 0.65;
+  display: block;
+  position: relative;
+  z-index: 1;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+.logo-card:hover img { opacity: 1; transform: scale(1.05); }
+
+@media (max-width: 800px) {
+  .logo-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 480px) {
+  .logo-grid { grid-template-columns: repeat(2, 1fr); }
+  .logo-card { padding: 32px 24px; }
+}
+
+/* ── Divider ── */
+.brands-divider {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.brands-divider::before,
+.brands-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--grey-3);
+}
+
+.brands-divider-text {
+  font-family: var(--font-main);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--grey-1);
+  white-space: nowrap;
+}
+
+/* ── 3-row multi-speed marquee ── */
+.marquee-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 40px 0 56px;
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.marquee-row {
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+}
+
+.marquee-content {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  min-width: max-content;
+  animation: marqueeLeft 45s linear infinite;
+}
+
+.marquee-row-2 .marquee-content { animation-duration: 65s; }
+.marquee-row-3 .marquee-content { animation-duration: 52s; }
+
+.brand-item {
+  font-family: var(--font-main);
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--grey-1);
+  white-space: nowrap;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 0 32px;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.brand-item:hover { color: var(--accent); }
+
+.brand-item::after {
+  content: '·';
+  margin-left: 32px;
+  color: var(--grey-3);
+  font-size: 20px;
+}
+
+@keyframes marqueeLeft {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+/* Footer and sticky-badge removed — not needed for investor document */
+
+/* ══════════════════════════════════════════════
+   SCROLL ANIMATIONS
+   ══════════════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+
+/* ══════════════════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════════════════ */
+@media (max-width: 1100px) {
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+  .bp-section-header { grid-template-columns: 1fr; gap: 24px; }
+  .bp-section-desc { border-left: none; padding-left: 0; border-top: 1px solid var(--grey-3); padding-top: 24px; }
+}
+
+@media (max-width: 900px) {
+  .content-grid-2 { grid-template-columns: 1fr; }
+  .content-grid-3 { grid-template-columns: 1fr; }
+  .decision-grid { grid-template-columns: 1fr; }
+  .traction-featured { grid-template-columns: 1fr; gap: 40px; padding: 44px 32px; }
+  .leadership-grid { grid-template-columns: 1fr; }
+  .leader-card.horizontal { grid-template-columns: 1fr; }
+  .leader-img-wrap.horiz { aspect-ratio: 4/3; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+}
+
+@media (max-width: 640px) {
+  :root { --gutter: 20px; --section-pad: 80px; }
+  .bp-hero-h1 { font-size: 52px; }
+  .bp-section-h2 { font-size: 36px; }
+  .stat-grid { grid-template-columns: 1fr; }
+  .bp-hero-meta { gap: 20px; flex-direction: column; }
+  .source-item { flex-direction: column; gap: 8px; }
+  .source-tag { min-width: auto; }
+  .traction-stats-row { flex-wrap: wrap; gap: 24px; }
+  .cb { padding: 32px 24px; }
+  .decision-block { padding: 32px 24px; }
+  .logo-grid { grid-template-columns: 1fr; }
+  .logo-card img { width: auto; height: auto; max-width: 100%; max-height: 48px; }
+  .brand-item { font-size: 14px; padding: 0 20px; }
+  .brand-item::after { margin-left: 20px; }
+}
+
+/* ── NDA Gate ── */
+.nda-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--bg-0);
+  display: flex;
+  align-items: flex-start;       /* prevents card clipping on short viewports */
+  justify-content: center;
+  padding: 24px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.nda-overlay.hidden { display: none; }
+
+/* iOS scroll lock — position:fixed preserves scroll, JS restores it on close */
+body.nda-active {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
+.nda-card {
+  width: 100%;
+  max-width: 580px;
+  background: var(--bg-1);
+  border: 1px solid rgba(74, 168, 200, 0.15);
+  padding: clamp(28px, 5vw, 56px) clamp(20px, 5vw, 48px);
+  position: relative;
+  margin: auto 0;                /* centres vertically when viewport is tall enough */
+}
+
+.nda-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--accent) 50%, transparent 100%);
+}
+
+.nda-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 36px;
+}
+
+.nda-logo {
+  font-family: var(--font-main);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white);
+}
+
+.nda-badge {
+  font-family: var(--font-main);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--accent);
+  border: 1px solid rgba(74, 168, 200, 0.25);
+  padding: 5px 10px;
+}
+
+.nda-title {
+  font-family: var(--font-main);
+  font-size: clamp(26px, 3vw, 38px);
+  font-weight: 300;
+  color: var(--white);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+
+.nda-intro {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--grey-1);
+  line-height: 1.7;
+  margin-bottom: 28px;
+}
+
+.nda-terms-box {
+  background: var(--bg-0);
+  border: 1px solid var(--grey-3);
+  padding: 20px 22px;
+  max-height: 148px;
+  overflow-y: auto;
+  margin-bottom: 28px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--grey-3) transparent;
+}
+
+.nda-terms-box p {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--grey-1);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 12px;
+}
+
+.nda-terms-box ol {
+  padding-left: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.nda-terms-box li {
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 300;
+  color: var(--grey-1);
+  line-height: 1.6;
+}
+
+.nda-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+/* ── NDA responsive ── */
+@media (max-width: 600px) {
+  /* Collapse fields to single column */
+  .nda-fields { grid-template-columns: 1fr; }
+
+  /* Shrink terms box so form stays on screen */
+  .nda-terms-box { max-height: 110px; }
+
+  /* Tighten up vertical rhythm */
+  .nda-header  { margin-bottom: 24px; }
+  .nda-title   { margin-bottom: 10px; }
+  .nda-intro   { font-size: 13px; margin-bottom: 20px; }
+}
+
+@media (max-width: 400px) {
+  /* Near-full-bleed card on 320–400px screens */
+  .nda-overlay { padding: 0; }
+  .nda-card {
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    min-height: 100dvh;
+    min-height: 100vh;           /* fallback for browsers without dvh */
+  }
+}
+
+/* Tooltip: prevent horizontal overflow on narrow screens */
+@media (max-width: 640px) {
+  .stat-source .tooltip-text {
+    left: auto;
+    right: 0;
+    transform: none;
+    max-width: min(280px, calc(100vw - 32px));
+  }
+}
+
+.nda-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.nda-field label {
+  font-family: var(--font-main);
+  font-size: 9px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--grey-1);
+}
+
+.nda-field input {
+  background: var(--bg-0);
+  border: 1px solid var(--grey-3);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 16px;               /* 16px minimum prevents iOS auto-zoom on focus */
+  font-weight: 300;
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+}
+
+.nda-field input::placeholder { color: var(--grey-1); }
+.nda-field input:focus { border-color: var(--accent-dim); }
+.nda-field input.nda-input-error { border-color: #c0392b; }
+
+.nda-checkbox-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  cursor: pointer;
+  margin-bottom: 8px;
+  user-select: none;
+}
+
+.nda-checkbox-row input[type="checkbox"] { display: none; }
+
+.nda-checkbox-custom {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  border: 1px solid var(--grey-3);
+  background: var(--bg-0);
+  margin-top: 2px;
+  position: relative;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.nda-checkbox-row input[type="checkbox"]:checked + .nda-checkbox-custom {
+  border-color: var(--accent);
+  background: var(--accent-glow);
+}
+
+.nda-checkbox-row input[type="checkbox"]:checked + .nda-checkbox-custom::after {
+  content: '';
+  position: absolute;
+  left: 5px; top: 1px;
+  width: 5px; height: 10px;
+  border: 2px solid var(--accent);
+  border-top: none;
+  border-left: none;
+  transform: rotate(45deg);
+}
+
+.nda-checkbox-label {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--grey-1);
+  line-height: 1.55;
+}
+
+.nda-error {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: #c0392b;
+  min-height: 20px;
+  margin-bottom: 16px;
+  padding-left: 2px;
+}
+
+.nda-submit {
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.nda-legal {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 300;
+  color: var(--grey-1);
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* ── Password Gate ── */
+.pw-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: var(--bg-0);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 24px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.pw-overlay.hidden { display: none; }
+.pw-card {
+  width: 100%;
+  max-width: 420px;
+  background: var(--bg-1);
+  border: 1px solid rgba(74, 168, 200, 0.15);
+  padding: clamp(28px, 5vw, 48px) clamp(20px, 5vw, 40px);
+  margin: auto 0;
+  position: relative;
+}
+.pw-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, var(--accent) 50%, transparent 100%);
+}
+.pw-logo {
+  font-family: var(--font-main);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--white);
+  text-align: center;
+  margin-bottom: 28px;
+  display: block;
+}
+.pw-title {
+  font-family: var(--font-main);
+  font-size: clamp(18px, 3vw, 24px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--white);
+  text-align: center;
+  margin-bottom: 8px;
+}
+.pw-sub {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--grey-1);
+  text-align: center;
+  margin-bottom: 28px;
+}
+.pw-field { margin-bottom: 20px; }
+.pw-field input {
+  width: 100%;
+  background: var(--bg-0);
+  border: 1px solid var(--grey-3);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 300;
+  padding: 14px 16px;
+  outline: none;
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+  text-align: center;
+  letter-spacing: 0.06em;
+}
+.pw-field input:focus { border-color: var(--accent); }
+.pw-field input.pw-input-error { border-color: #cc4444; }
+.pw-error {
+  font-family: var(--font-body);
+  font-size: 12px;
+  color: #cc4444;
+  text-align: center;
+  min-height: 18px;
+  margin-bottom: 14px;
+}
+.pw-submit {
+  width: 100%;
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bg-0);
+  background: var(--accent);
+  border: none;
+  padding: 16px 28px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+  text-align: center;
+}
+.pw-submit:hover { background: var(--accent-light); transform: translateY(-1px); }
+@media (max-width: 400px) {
+  .pw-overlay { padding: 0; }
+  .pw-card { border-left: none; border-right: none; min-height: 100dvh; min-height: 100vh; }
+}
+
+/* ── Inquiry Modal ── */
+.modal-overlay{
+  position:fixed;inset:0;z-index:10000;
+  background:rgba(0,0,0,.82);backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  display:flex;align-items:center;justify-content:center;padding:20px;
+  animation:modalFadeIn .25s ease;
+}
+@keyframes modalFadeIn{from{opacity:0}to{opacity:1}}
+
+.modal-box{
+  position:relative;
+  background:var(--bg-0,#030810);
+  border:1px solid rgba(74,168,200,.12);
+  border-radius:6px;
+  padding:clamp(28px,4vw,48px);
+  width:100%;max-width:540px;
+  max-height:90vh;overflow-y:auto;
+  animation:modalSlideUp .3s ease;
+}
+@keyframes modalSlideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+
+.modal-close{
+  position:absolute;top:14px;right:18px;
+  background:none;border:none;
+  color:var(--grey-1,#8A9BB0);font-size:24px;
+  cursor:pointer;line-height:1;padding:4px;
+  transition:color .2s;
+}
+.modal-close:hover{color:var(--white,#F0F4F8)}
+
+/* ── Form Typography ── */
+.inquiry-eyebrow{
+  font-family:var(--font-main);font-size:10px;font-weight:500;
+  letter-spacing:.3em;text-transform:uppercase;
+  color:var(--accent,#4AA8C8);margin-bottom:12px;
+}
+.inquiry-title{
+  font-family:var(--font-main);font-size:clamp(22px,3vw,32px);
+  font-weight:300;line-height:1.2;letter-spacing:-.02em;
+  color:var(--white,#F0F4F8);margin-bottom:14px;
+}
+.inquiry-title em{font-style:normal;color:var(--accent,#4AA8C8);font-weight:600}
+.inquiry-desc{
+  font-family:var(--font-body);font-size:14px;font-weight:300;
+  line-height:1.7;color:var(--grey-1,#8A9BB0);margin-bottom:28px;
+}
+
+/* ── Form Fields ── */
+.inquiry-form{display:flex;flex-direction:column;gap:14px;text-align:left}
+.inquiry-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.inquiry-field{display:flex;flex-direction:column;gap:5px}
+.inquiry-field label{
+  font-family:var(--font-main);font-size:10px;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;color: var(--grey-1);
+}
+.inquiry-field input,
+.inquiry-field select,
+.inquiry-field textarea{
+  font-family:var(--font-body);font-size:15px;font-weight:300;
+  color:var(--white,#F0F4F8);background:var(--bg-1,#060D18);
+  border:1px solid rgba(255,255,255,.07);padding:12px 14px;
+  outline:none;transition:border-color .2s,background .2s;
+}
+.inquiry-field input:focus,
+.inquiry-field select:focus,
+.inquiry-field textarea:focus{
+  border-color:rgba(74,168,200,.35);background:var(--bg-2,#0C1828);
+}
+.inquiry-field input::placeholder,
+.inquiry-field textarea::placeholder{color: var(--grey-1)}
+
+.inquiry-field select{
+  appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%238A9BB0' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;
+  padding-right:38px;
+}
+.inquiry-field select option{background:var(--bg-2,#0C1828);color:var(--white,#F0F4F8)}
+.inquiry-field textarea{resize:vertical;min-height:110px}
+
+.inquiry-submit-wrap{display:flex;justify-content:flex-start;margin-top:4px}
+
+/* ── Modal button ── */
+.modal-box .btn-primary{
+  font-family:var(--font-main);font-weight:500;font-size:12px;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--bg-0,#030810);background:var(--accent,#4AA8C8);
+  padding:14px 32px;border:none;cursor:pointer;
+  transition:background .2s,transform .15s;
+}
+.modal-box .btn-primary:hover{background:var(--accent-light,#A8DCEF);transform:translateY(-1px)}
+.modal-box .btn-primary:disabled{opacity:.6;cursor:not-allowed;transform:none}
+
+/* ── Mobile ── */
+@media(max-width:600px){
+  .modal-overlay{padding:12px;align-items:flex-end}
+  .modal-box{border-radius:12px 12px 0 0;max-height:92vh;padding:24px 20px 32px}
+  .inquiry-row{grid-template-columns:1fr}
+  .inquiry-submit-wrap{justify-content:stretch}
+  .modal-box .btn-primary{width:100%;text-align:center}
+}
+</style>
+<link rel="stylesheet" href="/mobile-usability.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     PASSWORD GATE
+     ══════════════════════════════════════════════ -->
+<div id="pw-gate" class="pw-overlay" role="dialog" aria-modal="true" aria-label="Password required">
+  <div class="pw-card">
+    <span class="pw-logo">Robotist</span>
+    <h2 class="pw-title">Confidential Document</h2>
+    <p class="pw-sub">This business plan is protected. Enter the access password to continue.</p>
+    <div class="pw-field">
+      <input type="password" id="pw-input" placeholder="Enter password" autocomplete="off" autofocus>
+    </div>
+    <div class="pw-error" id="pw-error" aria-live="polite"></div>
+    <button class="pw-submit" id="pw-submit">Access Document</button>
+    <p class="nda-legal" style="margin-top:20px;">Authorised recipients only.<br>Robotist Pty Ltd · Sydney, Australia</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     NDA GATE
+     ══════════════════════════════════════════════ -->
+<div id="nda-gate" class="nda-overlay" role="dialog" aria-modal="true" aria-labelledby="nda-title">
+  <div class="nda-card">
+    <div class="nda-header">
+      <span class="nda-logo">Robotist</span>
+      <span class="nda-badge">Confidential</span>
+    </div>
+
+    <h2 class="nda-title" id="nda-title">Non-Disclosure<br>Agreement</h2>
+    <p class="nda-intro">This document contains confidential business information prepared exclusively for qualified investors and strategic partners. Access requires your agreement to the terms below.</p>
+
+    <div class="nda-terms-box">
+      <p>Confidentiality Terms</p>
+      <ol>
+        <li>This document is strictly confidential and prepared solely for the named recipient.</li>
+        <li>You will not reproduce, distribute, screenshot, forward, or disclose its contents to any third party without prior written consent from Robotist Pty Ltd.</li>
+        <li>You will use the information solely to evaluate a potential investment or strategic business relationship with Robotist.</li>
+        <li>This confidentiality obligation survives any decision not to proceed with such a relationship and has no expiry date.</li>
+        <li>Unauthorised disclosure may constitute a breach of confidence and result in legal action and damages under Australian law.</li>
+      </ol>
+    </div>
+
+    <div class="nda-fields">
+      <div class="nda-field">
+        <label for="nda-name">Full Name</label>
+        <input type="text" id="nda-name" placeholder="Your full name" autocomplete="name">
+      </div>
+      <div class="nda-field">
+        <label for="nda-email">Email Address</label>
+        <input type="email" id="nda-email" placeholder="you@company.com" autocomplete="email">
+      </div>
+    </div>
+
+    <label class="nda-checkbox-row">
+      <input type="checkbox" id="nda-agree">
+      <span class="nda-checkbox-custom"></span>
+      <span class="nda-checkbox-label">I have read, understood, and agree to the confidentiality terms above.</span>
+    </label>
+
+    <div class="nda-error" id="nda-error" aria-live="polite"></div>
+
+    <button class="btn-primary nda-submit" id="nda-submit">I Agree — View Document</button>
+
+    <p class="nda-legal">Your name, email, and timestamp are recorded as evidence of your agreement.<br>Robotist Pty Ltd · Sydney, Australia</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════
+     NAVIGATION
+     ══════════════════════════════════════════════ -->
+<nav class="nav" id="mainNav">
+  <a href="index.html" class="nav-logo">Robotist</a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#summary">Summary</a></li>
+    <li><a href="#problem">Problem</a></li>
+    <li><a href="#model">Model</a></li>
+    <li><a href="/#why">Why Robotist</a></li>
+    <li><a href="#financials">Financials</a></li>
+    <li><a href="#ask">Ask</a></li>
+    <li><a href="#decisions">Decisions</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <!-- <a href="/contact.html" onclick="openInquiry();return false" class="nav-cta">Request Investor Pack</a> -->
+  <button class="nav-hamburger" id="navHamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ══════════════════════════════════════════════
+     HERO
+     ══════════════════════════════════════════════ -->
+<section class="bp-hero" id="top">
+  <div class="bp-hero-inner">
+    <div class="section-eyebrow reveal">Business Plan &nbsp;·&nbsp; Investor Document</div>
+    <h1 class="bp-hero-h1 reveal">
+      ROBOTIST<br/>
+      <em>Business Plan.</em>
+    </h1>
+    <p class="bp-hero-sub reveal reveal-delay-1">
+      A business plan for Robotist’s next stage of growth. Updated to reflect the finalized pre-seed raise, a capital-light sales-and-services model, and a humanoid and quadruped-led B2B launch strategy for Australia and New Zealand.
+    </p>
+    <div class="bp-hero-meta reveal reveal-delay-2">
+      <div class="bp-meta-item">
+        <span class="bp-meta-label">Stage</span>
+        <span class="bp-meta-value">Year 1 Launch</span>
+      </div>
+      <div class="bp-meta-item">
+        <span class="bp-meta-label">Business Model</span>
+        <span class="bp-meta-value">Commerce + Services + RaaS</span>
+      </div>
+      <div class="bp-meta-item">
+        <span class="bp-meta-label">Market Thesis</span>
+        <span class="bp-meta-value">Robotics is infrastructure now</span>
+      </div>
+      <div class="bp-meta-item">
+        <span class="bp-meta-label">Version</span>
+        <span class="bp-meta-value">6.0 — April 2026</span>
+      </div>
+      <div class="bp-meta-item">
+        <span class="bp-meta-label">Status</span>
+        <span class="bp-meta-value">Working Document</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     01 — EXECUTIVE SUMMARY
+     ══════════════════════════════════════════════ -->
+<section class="bp-section" id="summary">
+  <div class="bp-section-inner">
+    <div class="bp-section-header reveal">
+      <div>
+        <p class="bp-section-label">01 — Executive Summary</p>
+        <h2 class="bp-section-h2">The Business<br/>in One View.</h2>
+      </div>
+      <p class="bp-section-desc">Robotist is an Australia-registered robotics commerce and services company with Shanghai supply access, launching online-first across Australia and New Zealand. The model combines hardware sales, secondary development, after-service, rentals, and a future secondary market so the business can stay capital-light while building high-trust recurring value.</p>
+    </div>
+
+    <div class="stat-grid reveal">
+      <div class="stat-block">
+        <span class="stat-num">$38B</span>
+        <span class="stat-title">Humanoid TAM by 2035</span>
+        <p class="stat-body">Goldman Sachs Research projects the humanoid robot total addressable market could reach US$38 billion by 2035, with shipment forecasts of 1.4 million units.</p>
+        <span class="stat-note">Source [1]</span>
+      </div>
+      <div class="stat-block">
+        <span class="stat-num">18+</span>
+        <span class="stat-title">Suppliers in discussion</span>
+        <p class="stat-body">Phase 1 commercial readiness is supported by an active supplier pipeline spanning humanoids, quadrupeds, and fun-and-functional robots.</p>
+        <span class="stat-note">Internal BP · April 2026</span>
+      </div>
+      <div class="stat-block">
+        <span class="stat-num">7</span>
+        <span class="stat-title">Potential commercial clients</span>
+        <p class="stat-body">Early buyer conversations already span security, facilities, and other commercial deployment contexts that fit a capital-light launch model.</p>
+        <span class="stat-note">Internal BP · April 2026</span>
+      </div>
+      <div class="stat-block">
+        <span class="stat-num">A$205K</span>
+        <span class="stat-title">Pre-seed raise</span>
+        <p class="stat-body">The current round is structured as A$205,000 for 10% equity, funding a six-month runway to launch the platform and validate the model.</p>
+      </div>
+    </div>
+
+    <div class="bp-manifesto reveal">
+      Robotist aims to become <strong>the trusted robotics deployment, monetization, and support layer</strong> between Chinese supply and Australia–New Zealand demand.
+    </div>
+
+    <div class="content-grid-3 reveal" style="margin-top:2px;">
+      <div class="cb">
+        <span class="cb-tag">Mission</span>
+        <h3 class="cb-title">Connecting the right robots with humans</h3>
+        <p class="cb-body">The mission is to make robotics legible, trusted, and commercially useful by matching the right robot, workflow, and support layer to each buyer and environment.</p>
+      </div>
+      <div class="cb">
+        <span class="cb-tag">3 Pillars</span>
+        <h3 class="cb-title">Sales, Service, and S&amp;S</h3>
+        <p class="cb-body">Robotist is designed around three operating pillars: sales across B2B, B2C, and rentals; service through secondary development and aftercare; and S&amp;S through salvage and secondary market activity.</p>
+      </div>
+      <div class="cb">
+        <span class="cb-tag">Core Products</span>
+        <h3 class="cb-title">Humanoids, quadrupeds, and fun &amp; functional robots</h3>
+        <p class="cb-body">The catalogue strategy spans high-interest humanoids, commercially useful quadrupeds, and accessible fun-and-functional robots that help build both demand and brand familiarity over time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     02 — PROBLEM
+     ══════════════════════════════════════════════ -->
+<section class="bp-section alt" id="problem">
+  <div class="bp-section-inner">
+    <div class="bp-section-header reveal">
+      <div>
+        <p class="bp-section-label">02 — Problem</p>
+        <h2 class="bp-section-h2">Why the Market<br/>Needs This.</h2>
+      </div>
+      <p class="bp-section-desc">The robotics market is not failing because robots are bad. It is failing because the buying, deployment, and support experience is broken for most businesses. Robotist exists to fix that layer.</p>
+    </div>
+
+    <div class="content-grid-3 reveal">
+      <div class="cb">
+        <span class="cb-tag">Access Gap</span>
+        <h3 class="cb-title">No trusted local access point</h3>
+        <p class="cb-body">Australian businesses wanting to deploy robotics have no credible, local, English-first buying and advisory layer. Most manufacturers are China-based, most documentation is technical, and most buyers have no idea where to start.</p>
+      </div>
+      <div class="cb">
+        <span class="cb-tag">Trust Gap</span>
+        <h3 class="cb-title">Hype without deployment reality</h3>
+        <p class="cb-body">The IFR's 2025 humanoid position paper highlights the tension between market hype and practical deployment reality. Buyers are excited but uncertain. The gap between a robot demo and a robot actually working in a facility, patrol route, showroom, or industrial workflow is enormous.</p>
+      </div>
+      <div class="cb">
+        <span class="cb-tag">Support Gap</span>
+        <h3 class="cb-title">The support experience isn't broken — it's vacant</h3>
+        <p class="cb-body">The experience doesn't fail because it's bad. It fails because it doesn't exist. There is no local integration layer, no repair pathway, no one to call. Businesses are left managing Chinese-language warranty claims and flying in technicians. The vacancy is the opportunity.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     03 — SOLUTION
+     ══════════════════════════════════════════════ -->
+<section class="bp-section" id="solution">
+  <div class="bp-section-inner">
+    <div class="bp-section-header reveal">
+      <div>
+        <p class="bp-section-label">03 — Solution</p>
+        <h2 class="bp-section-h2">What Robotist<br/>Actually Does.</h2>
+      </div>
+      <p class="bp-section-desc">Robotist is the trust layer between Chinese robotics supply and Australia–New Zealand demand. Not a manufacturer and not a generic reseller, but a curated commerce, deployment, and support platform for buyers who need robots to work in the real world, not just look impressive in a demo.</p>
+    </div>
+
+    <div class="content-grid-2 reveal">
+      <div class="cb">
+        <span class="cb-tag">Year 1 Model</span>
+        <h3 class="cb-title">Capital-light commerce plus services</h3>
+        <p class="cb-body">Robotist combines curated hardware sales with secondary development, after-service, rentals, and rollout support. The company stays capital-light by avoiding heavy owned inventory while monetizing the trust, deployment, and customer-success layer around each sale.</p>
+      </div>
+      <div class="cb">
+        <span class="cb-tag">Longer-Term Direction</span>
+        <h3 class="cb-title">Deployment and monetization platform</h3>
+        <p class="cb-body">As the model proves out, Robotist expands into a deeper platform with local support capacity, training, rentals, secondary market infrastructure, and stronger integration workflows that make robotics easier to deploy, monetize, service, and resell.</p>
+      </div>
+    </div>
+
+    <div class="content-grid-3 reveal" style="margin-top:2px;">
+      <div class="cb">
+        <span class="cb-tag">Supply</span>
+        <h3 class="cb-title">Direct China access</h3>
+        <p class="cb-body">Robert's 21 years in China translate into direct manufacturer access, relationship depth, and faster commercial coordination at source. That gives Robotist a structural advantage in sourcing, pricing, and supplier responsiveness.</p>
+      </div>
+      <div class="cb">
+        <span class="cb-tag">Brand</span>
+        <h3 class="cb-title">Premium positioning</h3>
+        <p class="cb-body">Robotist is not a grey-market importer. It is a curated, brand-first platform. Lareesa's neuro-branding background means the customer experience is designed to build trust from first contact — not just close a transaction.</p>
+      </div>
+      <div class="cb">
+        <span class="cb-tag">Support</span>
+        <h3 class="cb-title">Local deployment layer</h3>
+        <p class="cb-body">The plan is to build a Sydney-based support, training, and deployment layer — starting with contractors and technical partners, then maturing into a dedicated team that can handle rollout quality, after-service, and customer success.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ══════════════════════════════════════════════
+     08 — BRANDS & PARTNERS
+     ══════════════════════════════════════════════ -->
+<section class="brands-marquee">
+  <div class="brands-inner">
+    <div class="brands-header">
+      <span class="brands-eyebrow">Supply Chain &amp; Partners</span>
+      <h2 class="brands-heading">Direct access to the world's leading<br><em>robotics manufacturers.</em></h2>
+    </div>
+
+    <div class="logo-grid">
+      <div class="logo-card"><img src="robotist-ecommerce/images/logos/unitree.svg" alt="Unitree Robotics" loading="lazy"></div>
+      <div class="logo-card"><img src="robotist-ecommerce/images/logos/keenon.png" alt="Keenon Robotics" loading="lazy"></div>
+      <div class="logo-card"><a href="https://www.unix-group.ai/" target="_blank" rel="noopener noreferrer"><img src="robotist-ecommerce/images/logos/unix-group.png" alt="UNIX Group" loading="lazy"></a></div>
+      <div class="logo-card"><a href="https://www.casbot.tech/" target="_blank" rel="noopener noreferrer"><img src="robotist-ecommerce/images/logos/casbot.png" alt="Casbot" loading="lazy"></a></div>
+      <div class="logo-card"><img src="robotist-ecommerce/images/logos/fourier.png" alt="Fourier Intelligence" loading="lazy"></div>
+      <div class="logo-card"><a href="https://www.magiclab.top/en/" target="_blank" rel="noopener noreferrer"><img src="robotist-ecommerce/images/logos/magiclab.png" alt="Magiclab" loading="lazy"></a></div>
+    </div>
+
+    <div class="brands-divider">
+      <span class="brands-divider-text">40+ ecosystem partners</span>
+    </div>
+  </div>
+
+  <div class="marquee-rows">
+    <!-- Row 1 — 45s -->
+    <div class="marquee-row marquee-row-1">
+      <div class="marquee-content">
+        <span class="brand-item">BOOSTER ROBOTICS</span>
+        <span class="brand-item">HI TORQUE ROBOTICS</span>
+        <span class="brand-item">ENGINE AI</span>
+        <span class="brand-item">LIMX DYNAMICS</span>
+        <span class="brand-item">ZEROTH0</span>
+        <span class="brand-item">ROBOTERA</span>
+        <span class="brand-item">UNIX AI</span>
+        <span class="brand-item">UBTECH</span>
+        <span class="brand-item">AGIBOT</span>
+        <span class="brand-item">SALCOMP</span>
+        <span class="brand-item">Ti5 ROBOTICS</span>
+        <span class="brand-item">NOETIX</span>
+        <span class="brand-item">PND BOTICS</span>
+        <span class="brand-item">BEIJING HUMANOID INNOVATION CTR</span>
+      </div>
+      <div class="marquee-content" aria-hidden="true">
+        <span class="brand-item">BOOSTER ROBOTICS</span>
+        <span class="brand-item">HI TORQUE ROBOTICS</span>
+        <span class="brand-item">ENGINE AI</span>
+        <span class="brand-item">LIMX DYNAMICS</span>
+        <span class="brand-item">ZEROTH0</span>
+        <span class="brand-item">ROBOTERA</span>
+        <span class="brand-item">UNIX AI</span>
+        <span class="brand-item">UBTECH</span>
+        <span class="brand-item">AGIBOT</span>
+        <span class="brand-item">SALCOMP</span>
+        <span class="brand-item">Ti5 ROBOTICS</span>
+        <span class="brand-item">NOETIX</span>
+        <span class="brand-item">PND BOTICS</span>
+        <span class="brand-item">BEIJING HUMANOID INNOVATION CTR</span>
+      </div>
+    </div>
+    <!-- Row 2 — 65s (slowest) -->
+    <div class="marquee-row marquee-row-2">
+      <div class="marquee-content">
+        <span class="brand-item">GALBOT</span>
+        <span class="brand-item">PAXINI</span>
+        <span class="brand-item">QINGYUN</span>
+        <span class="brand-item">KEPLER ROBOTS</span>
+        <span class="brand-item">ASTRIBOT</span>
+        <span class="brand-item">ZOOMLION</span>
+        <span class="brand-item">DEEP ROBOTICS</span>
+        <span class="brand-item">DOBOT</span>
+        <span class="brand-item">ROKAE</span>
+        <span class="brand-item">DROIDUP</span>
+        <span class="brand-item">MIRROR ME TECH</span>
+        <span class="brand-item">MATRIX ROBOTICS</span>
+        <span class="brand-item">MAGIC LAB</span>
+        <span class="brand-item">XPENG</span>
+      </div>
+      <div class="marquee-content" aria-hidden="true">
+        <span class="brand-item">GALBOT</span>
+        <span class="brand-item">PAXINI</span>
+        <span class="brand-item">QINGYUN</span>
+        <span class="brand-item">KEPLER ROBOTS</span>
+        <span class="brand-item">ASTRIBOT</span>
+        <span class="brand-item">ZOOMLION</span>
+        <span class="brand-item">DEEP ROBOTICS</span>
+        <span class="brand-item">DOBOT</span>
+        <span class="brand-item">ROKAE</span>
+        <span class="brand-item">DROIDUP</span>
+        <span class="brand-item">MIRROR ME TECH</span>
+        <span class="brand-item">MATRIX ROBOTICS</span>
+        <span class="brand-item">MAGIC LAB</span>
+        <span class="brand-item">XPENG</span>
+      </div>
+    </div>
+    <!-- Row 3 — 52s -->
+    <div class="marquee-row marquee-row-3">
+      <div class="marquee-content">
+        <span class="brand-item">REEMAN</span>
+        <span class="brand-item">CORENETIC AI</span>
+        <span class="brand-item">I SAGE BOT</span>
+        <span class="brand-item">ZERITH</span>
+        <span class="brand-item">SEVNCE ROBOTICS</span>
+        <span class="brand-item">ZHEJIANG HUMANOID ROBOT</span>
+        <span class="brand-item">GAUSIUM</span>
+        <span class="brand-item">CASBOT</span>
+        <span class="brand-item">DEXFORCE</span>
+        <span class="brand-item">AIRBOT</span>
+        <span class="brand-item">GENISOM AI</span>
+        <span class="brand-item">X2 ROBOT</span>
+        <span class="brand-item">XGSYNBOT</span>
+      </div>
+      <div class="marquee-content" aria-hidden="true">
+        <span class="brand-item">REEMAN</span>
+        <span class="brand-item">CORENETIC AI</span>
+        <span class="brand-item">I SAGE BOT</span>
+        <span class="brand-item">ZERITH</span>
+        <span class="brand-item">SEVNCE ROBOTICS</span>
+        <span class="brand-item">ZHEJIANG HUMANOID ROBOT</span>
+        <span class="brand-item">GAUSIUM</span>
+        <span class="brand-item">CASBOT</span>
+        <span class="brand-item">DEXFORCE</span>
+        <span class="brand-item">AIRBOT</span>
+        <span class="brand-item">GENISOM AI</span>
+        <span class="brand-item">X2 ROBOT</span>
+        <span class="brand-item">XGSYNBOT</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     04 — MARKET
+     ══════════════════════════════════════════════ -->
+<section class="bp-section alt" id="market">
+  <div class="bp-section-inner">
+    <div class="bp-section-header reveal">
+      <div>
+        <p class="bp-section-label">04 — Market</p>
+        <h2 class="bp-section-h2">The Size of<br/>the Opportunity.</h2>
+      </div>
+      <p class="bp-section-desc">The robotics market is entering infrastructure-scale relevance. The figures below combine external market data with Robotist’s Australia-focused sizing and the specific launch sequence that prioritizes clearer B2B use cases before broader consumer scale.</p>
+    </div>
+
+    <div class="content-grid-2 reveal">
+      <div class="cb">
+        <span class="cb-tag">Global TAM</span>
+        <span class="cb-num">$38B <span class="stat-source">?<span class="tooltip-text">Goldman Sachs Research, January 2024. Humanoid robot TAM projected at US$38 billion by 2035, based on 1.4M unit shipment forecast at average selling price. The robotics system integration market — more directly relevant to Robotist’s margin model — is already US$74.56B in 2024, projected to reach US$130.41B by 2030 (MarketsandMarkets).</span></span></span>
+        <h3 class="cb-title">Humanoid robot market by 2035</h3>
+        <p class="cb-body">Goldman Sachs projects the humanoid robot TAM at US$38 billion by 2035. The robotics system integration market — more relevant to Robotist’s longer-term margin logic — is already US$74.56 billion in 2024, projected to reach US$130.41 billion by 2030.</p>
+      </div>
+      <div class="cb">
+        <span class="cb-tag">Australia SAM</span>
+        <span class="cb-num">$940M <span class="stat-source">?<span class="tooltip-text">Derived from IBISWorld and IFR Australia industrial robotics data. Robotist estimates the ANZ serviceable addressable market at AUD 0.94B based on addressable commercial deployment verticals including hospitality, security, facilities, retail, and events. Year 5 SOM range of AUD 4.7M–9.4M is a 0.5–1% capture assumption.</span></span></span>
+        <h3 class="cb-title">Serviceable addressable market</h3>
+        <p class="cb-body">Robotist’s current Australia-focused planning model estimates the SAM at AUD 0.94 billion, with a Year 5 SOM range of AUD 4.7M–9.4M. These figures are directional and intended to frame near-term opportunity.</p>
+      </div>
+    </div>
+
+    <div class="content-grid-3 reveal" style="margin-top:2px;">
+      <div class="cb">
+        <span class="cb-tag">Ideal Customer 1</span>
+        <h3 class="cb-title">Hotels, venues &amp; hospitality — humanoid and quadruped</h3>
+        <p class="cb-body">Hotels, restaurants, event venues, and hospitality operators are the clearest near-term market. A humanoid deployed in a lobby or restaurant creates an immediate wow-factor response — driving guest engagement, differentiation, and earned media. The reality right now: the clients who move first are the ones who understand that commanding the room is a competitive advantage. Deal sizes typically run A$30K–120K per unit.</p>
+      </div>
+      <div class="cb">
+        <span class="cb-tag">Ideal Customer 2</span>
+        <h3 class="cb-title">Security, facilities &amp; patrol — quadruped-capable</h3>
+        <p class="cb-body">Security company owners and facility managers running perimeter checks, remote monitoring, and patrol automation. Quadrupeds are already commercially proven for this use case, with lower deployment risk, measurable labor cost reduction, and deal sizes in the A$80K–250K range. Clear ROI makes the buying conversation easier.</p>
+      </div>
+      <div class="cb">
+        <span class="cb-tag">Ideal Customer 3</span>
+        <h3 class="cb-title">Retail, events &amp; showrooms — humanoid brand activation</h3>
+        <p class="cb-body">Retail flagships, brand activation events, and showroom operators who want humanoids for greeting, lead capture, and presence. Humanoids are brand assets here — the goal is to own the room, not run a process. This segment grows with product availability and grows fastest with clients who already understand the value of spectacle.</p>
+      </div>
+    </div>
+
+    <div class="content-grid-2 reveal" style="margin-top:2px;">
+      <div class="cb">
+        <span class="cb-tag">Australia Takeaway</span>
+        <h3 class="cb-title">Consumer robotics drives speed; commercial robotics drives margin</h3>
+        <p class="cb-body">The strategic implication for Australia is clear: consumer robotics can accelerate attention and top-of-funnel demand, while commercial deployments and services create larger ticket sizes, stronger margins, and more defensible recurring value.</p>
+      </div>
+      <div class="cb">
+        <span class="cb-tag">Global Humanoid Market</span>
+        <h3 class="cb-title">A fast-scaling category with room for multiple winners</h3>
+        <p class="cb-body">The broader humanoid category is expanding rapidly, while Asia Pacific remains one of the fastest-growing regions. That makes local trust, support, and deployment capability increasingly valuable as hardware availability improves.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     05 — COMPETITION
+     ══════════════════════════════════════════════ -->
+<section class="bp-section" id="competition">
+  <div class="bp-section-inner">
+    <div class="bp-section-header reveal">
+      <div>
+        <p class="bp-section-label">05 — Competition</p>
+        <h2 class="bp-section-h2">Where Robotist<br/>Sits.</h2>
+      </div>
+      <p class="bp-section-desc">The competitive landscape is fragmented. There is no dominant Australian robotics platform. The risk is not that a competitor is better — it is that buyers default to doing nothing, or to direct manufacturer relationships that fail on support.</p>
+    </div>
+
+    <div class="bp-table-wrap reveal">
+      <table class="bp-table">
+        <thead>
+          <tr>
+            <th>Competitor Type</th>
+            <th>What They Do</th>
+            <th>Where They Fall Short</th>
+            <th>Robotist Advantage</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Direct manufacturer (e.g. UBTECH, Keenon)</td>
+            <td>Sell direct to large enterprise accounts</td>
+            <td>No local support, English-language gap, minimum order requirements</td>
+            <td>Local presence, consultation layer, accessible entry point</td>
+          </tr>
+          <tr>
+            <td>Grey-market importers</td>
+            <td>Low-price resale with no support</td>
+            <td>No brand, no trust, no after-sales, no deployment help</td>
+            <td>Premium brand, full support, integration capability</td>
+          </tr>
+          <tr>
+            <td>Industrial automation integrators</td>
+            <td>Large-scale factory automation</td>
+            <td>Not focused on flexible field deployment, service bundling, or SMB-accessible robotics rollouts</td>
+            <td>Deployment-first, service-attached, and more accessible for emerging commercial buyers</td>
+          </tr>
+          <tr>
+            <td>Do nothing</td>
+            <td>Businesses wait and watch</td>
+            <td>Losing competitive ground as early adopters deploy</td>
+            <td>Case studies and proof points that make the risk of waiting visible</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     06 — BUSINESS MODEL
+     ══════════════════════════════════════════════ -->
+<section class="bp-section alt" id="model">
+  <div class="bp-section-inner">
+    <div class="bp-section-header reveal">
+      <div>
+        <p class="bp-section-label">06 — Business Model</p>
+        <h2 class="bp-section-h2">How Robotist<br/>Makes Money.</h2>
+      </div>
+      <p class="bp-section-desc">The model is deliberately capital-light but broader than brokerage alone. Revenue comes from hardware sales, secondary development, after-service, rentals, and secondary-market activity, with services designed to lift blended margin over time.</p>
+    </div>
+
+    <div class="content-grid-2 reveal">
+      <div class="cb">
+        <span class="cb-tag">Revenue Stream 1</span>
+        <h3 class="cb-title">Hardware sales</h3>
+        <p class="cb-body">Robotist earns margin on curated hardware sales across consumer and business robotics, acting as the trusted commercial layer between manufacturers and local buyers.</p>
+      </div>
+      <div class="cb">
+        <span class="cb-tag">Revenue Stream 2</span>
+        <h3 class="cb-title">Secondary development projects</h3>
+        <p class="cb-body">Workflow mapping, SDK/API customization, rollout design, and systems integration create higher-margin project revenue around each robot deployment.</p>
+      </div>
+    </div>
+
+    <div class="content-grid-3 reveal" style="margin-top:2px;">
+      <div class="cb">
+        <span class="cb-tag">Revenue Stream 3</span>
+        <h3 class="cb-title">After-service contracts</h3>
+        <p class="cb-body">Ongoing support, training, warranty coordination, and customer-success services create defensible recurring revenue after the initial transaction.</p>
+      </div>
+      <div class="cb">
+        <span class="cb-tag">Revenue Stream 4</span>
+        <h3 class="cb-title">Rentals and RaaS-lite</h3>
+        <p class="cb-body">Rental, event, and pilot structures reduce adoption friction and give Robotist a flexible commercial offer for buyers who want proof before full purchase.</p>
+      </div>
+      <div class="cb">
+        <span class="cb-tag">Revenue Stream 5</span>
+        <h3 class="cb-title">Salvage and secondary market</h3>
+        <p class="cb-body">Refurbishment, buy-back, resale, and secondary market activity extend monetization beyond first sale and support longer-term margin resilience.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     07 — GO TO MARKET
+     ══════════════════════════════════════════════ -->
+<section class="bp-section" id="gtm">
+  <div class="bp-section-inner">
+    <div class="bp-section-header reveal">
+      <div>
+        <p class="bp-section-label">07 — Go To Market</p>
+        <h2 class="bp-section-h2">How Customers<br/>Arrive.</h2>
+      </div>
+      <p class="bp-section-desc">The GTM motion targets hospitality, security, facilities, and venue decision-makers first — led by humanoid wow-factor deployments and supported by operationally grounded quadruped use cases. The value proposition: lower deployment risk, measurable ROI, and a trust layer that makes robotics feel inevitable rather than experimental.</p>
+    </div>
+
+    <div class="content-grid-3 reveal">
+      <div class="cb">
+        <span class="cb-tag">Target Customer</span>
+        <h3 class="cb-title">Hospitality, security, and venue decision-makers</h3>
+        <ul class="bp-list">
+          <li>Hotel GMs, F&amp;B directors, and venue operators who want differentiation</li>
+          <li>Security company owners and site security managers</li>
+          <li>HSE, operations, and facility managers</li>
+          <li>Retail, events, and showroom operators seeking brand presence</li>
+          <li>Buyers who value lower deployment risk and end-to-end implementation support</li>
+        </ul>
+      </div>
+      <div class="cb">
+        <span class="cb-tag">Channels &amp; Sales Motion</span>
+        <h3 class="cb-title">Lead → qualify → demo → proposal → close → onboarding</h3>
+        <ul class="bp-list">
+          <li>Direct sales, ecommerce, partners, resellers, and selected marketplaces</li>
+          <li>Demand generation through content, SEO, ads, events, outbound, PR, and referrals</li>
+          <li>Flexible terms through bundled offers, installation, training, and subscription-style support</li>
+          <li>Customer success structured around SLA, training, upgrades, and renewals</li>
+        </ul>
+      </div>
+      <div class="cb">
+        <span class="cb-tag">Metrics &amp; Targets</span>
+        <h3 class="cb-title">The commercial engine that must become measurable</h3>
+        <ul class="bp-list">
+          <li>CAC, conversion rate, and sales cycle length</li>
+          <li>Win rate, LTV, and payback period</li>
+          <li>Churn and renewal quality on support or service contracts</li>
+          <li>8–12 deals and A$200K–300K revenue targeted within the first 6 months</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="content-grid-2 reveal" style="margin-top:2px;">
+      <div class="cb">
+        <span class="cb-tag">Ambassador Program</span>
+        <h3 class="cb-title">Brand ambassador onboarding</h3>
+        <ul class="bp-list">
+          <li>Robotics advocates, content creators, and industry connectors onboarded as brand ambassadors</li>
+          <li>Ambassadors create content, attend events, and introduce Robotist to their professional networks</li>
+          <li>Co-branded content opportunities for high-reach ambassadors</li>
+          <li>Tiered ambassador levels based on audience size and deal referral activity</li>
+        </ul>
+      </div>
+      <div class="cb">
+        <span class="cb-tag">Affiliate Program</span>
+        <h3 class="cb-title">Referral and affiliate network</h3>
+        <ul class="bp-list">
+          <li>Structured referral program for industry contacts who introduce qualified buyers</li>
+          <li>Commission-based incentives tied to deal close — not just lead submission</li>
+          <li>Partners include integrators, consultants, venue operators, and tech resellers</li>
+          <li>Program managed via tracked links and quarterly performance reviews</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     09 — TRACTION
+     ══════════════════════════════════════════════ -->
+<section class="bp-section alt" id="traction">
+  <div class="bp-section-inner">
+    <div class="bp-section-header reveal">
+      <div>
+        <p class="bp-section-label">08 — Traction</p>
+        <h2 class="bp-section-h2">What Exists<br/>Already.</h2>
+      </div>
+      <p class="bp-section-desc">Traction is now broader and more credible than a single named pilot. Robotist has an active supplier pipeline, early commercial conversations, and a defined six-month operating target that moves the story from concept into launch readiness.</p>
+    </div>
+
+    <div class="traction-featured reveal">
+      <div>
+        <div class="traction-featured-label">Launch Readiness · Current View</div>
+        <h3 class="traction-featured-title">Supplier depth plus early customer pipeline gives Robotist a real starting point.</h3>
+        <p class="traction-featured-body">The strongest current proof is not a single hospitality anecdote but a combined readiness picture: more than 18 suppliers in discussion, 7 potential commercial clients, and a six-month plan aimed at turning pipeline into live revenue and operating proof.</p>
+        <div class="traction-stats-row">
+          <div>
+            <span class="traction-stat-num">18+</span>
+            <span class="traction-stat-label">Suppliers in discussion</span>
+          </div>
+          <div>
+            <span class="traction-stat-num">7</span>
+            <span class="traction-stat-label">Potential clients</span>
+          </div>
+          <div>
+            <span class="traction-stat-num">6 mo</span>
+            <span class="traction-stat-label">Runway to proof</span>
+          </div>
+        </div>
+      </div>
+      <div class="traction-featured-right">
+        <div class="milestone">
+          <div class="milestone-dot"></div>
+          <div>
+            <div class="milestone-date">Now</div>
+            <div class="milestone-text">Supplier conversations active across humanoids, quadrupeds, and related robotics categories</div>
+          </div>
+        </div>
+        <div class="milestone" style="opacity:0.78;">
+          <div class="milestone-dot"></div>
+          <div>
+            <div class="milestone-date">Launch Window</div>
+            <div class="milestone-text">Commercial discussions underway with security, facilities, and deployment-ready business buyers</div>
+          </div>
+        </div>
+        <div class="milestone" style="opacity:0.6;">
+          <div class="milestone-dot" style="border-style:dashed;"></div>
+          <div>
+            <div class="milestone-date">6 Months</div>
+            <div class="milestone-text">Platform live, 8–12 deals closed, A$200K–300K revenue, and supplier network formalized</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-grid-3 reveal" style="margin-top:2px;">
+      <div class="cb">
+        <span class="cb-tag">Supplier Motion</span>
+        <h3 class="cb-title">18+ suppliers in discussion</h3>
+        <p class="cb-body">The supply pipeline is already forming around multiple robotics categories, which reduces concentration risk and gives Robotist more room to curate by use case rather than by single-brand dependency.</p>
+      </div>
+      <div class="cb">
+        <span class="cb-tag">Demand Signal</span>
+        <h3 class="cb-title">7 potential commercial clients</h3>
+        <p class="cb-body">Early conversations indicate interest from practical deployment categories rather than only speculative curiosity, which is exactly the kind of signal a launch-stage robotics platform needs.</p>
+      </div>
+      <div class="cb">
+        <span class="cb-tag">Investor Translation</span>
+        <h3 class="cb-title">From narrative to operating proof</h3>
+        <p class="cb-body">The story is now investable because it connects supply access, customer pipeline, and six-month milestones into one coherent commercial sequence.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     09 — OPERATIONS
+     ══════════════════════════════════════════════ -->
+<section class="bp-section" id="operations">
+  <div class="bp-section-inner">
+    <div class="bp-section-header reveal">
+      <div>
+        <p class="bp-section-label">09 — Operations</p>
+        <h2 class="bp-section-h2">How This<br/>Actually Runs.</h2>
+      </div>
+      <p class="bp-section-desc">Operational credibility should come from clarity, not from pretending to be full-stack on day one. What is live, what is partner-enabled, and what is on the roadmap must stay cleanly separated.</p>
+    </div>
+
+    <div class="content-grid-2 reveal">
+      <div class="cb">
+        <span class="cb-tag">Live or Near-Live</span>
+        <h3 class="cb-title">What exists today</h3>
+        <ul class="bp-list">
+          <li>Australia-facing brand and customer interface</li>
+          <li>China-side manufacturer and network access</li>
+          <li>Consultation, solution matching, and early commercial packaging</li>
+          <li>English-first communication, expectation management, and buyer education</li>
+        </ul>
+      </div>
+      <div class="cb">
+        <span class="cb-tag">Partner-Enabled / To Formalize</span>
+        <h3 class="cb-title">What gets built with the raise</h3>
+        <ul class="bp-list">
+          <li>Manufacturer selection, QA, and compliance workflows across import, safety, warranty, and insurance</li>
+          <li>Repair, warranty, spare-parts, and service delivery playbooks through partner networks</li>
+          <li>On-site deployment and customer success through local contractors, technicians, and advisors</li>
+          <li>Phase 1 hiring structure of one Shanghai-based operator and two Sydney-based hires</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="bp-table-wrap reveal" style="margin-top:2px;">
+      <table class="bp-table">
+        <thead>
+          <tr>
+            <th>Risk</th>
+            <th>Mitigation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Manufacturer volatility</td>
+            <td>Portfolio supplier strategy, scorecards, and no dependence on a single manufacturer</td>
+          </tr>
+          <tr>
+            <td>Regulatory and safety risk</td>
+            <td>Pre-checklists, insurance, training, and standardized operating procedures before deployment</td>
+          </tr>
+          <tr>
+            <td>Hardware margin compression</td>
+            <td>Attach services, aftercare, rentals, and secondary market value to lift blended profitability</td>
+          </tr>
+          <tr>
+            <td>Talent constraints</td>
+            <td>Keep a small senior core team and extend capacity through vetted contractors and technical partners</td>
+          </tr>
+          <tr>
+            <td>Adoption risk</td>
+            <td>Use pilot-first rentals, KPI-based rollout success measures, and phased onboarding support</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     10 — TEAM
+     ══════════════════════════════════════════════ -->
+<section class="bp-section alt" id="bpteam">
+  <div class="bp-section-inner">
+    <div class="bp-section-header reveal">
+      <div>
+        <p class="bp-section-label">10 — Team</p>
+        <h2 class="bp-section-h2">Why You,<br/>Why Now.</h2>
+      </div>
+      <p class="bp-section-desc">The right-to-win is not passion. It is network access, cross-border execution fluency, real sales ability, and brand-building capacity that can make robotics legible and trusted in market.</p>
+    </div>
+
+    <!-- Landing-page style editorial stagger cards -->
+    <div class="leadership-grid">
+      <!-- ROBERT -->
+      <div class="leader-card reveal">
+        <div class="leader-img-wrap">
+          <img src="images/robert.jpg" alt="Robert Vicencio, Founder &amp; CEO" loading="lazy" />
+        </div>
+        <div class="leader-content">
+          <div class="leader-role">Founder &amp; CEO</div>
+          <h3 class="leader-name">Robert Vicencio</h3>
+          <p class="leader-bio">Robert brings long-term China operating experience, importer-retailer instincts, and direct manufacturer relationships across the robotics ecosystem. His edge is structural: 21 years of source-side access combined with the commercial judgment to translate Chinese supply into trusted ANZ demand.</p>
+          <div class="leader-tags">
+            <span class="leader-tag">Entrepreneurship</span>
+            <span class="leader-tag">International Business</span>
+            <span class="leader-tag">China–Australia Bridge</span>
+            <span class="leader-tag">Brand Building</span>
+            <span class="leader-tag">Robotics</span>
+            <span class="leader-tag">Market Strategy</span>
+          </div>
+          <a href="https://www.linkedin.com/in/robertvicencio" target="_blank" class="leader-linkedin">
+            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      <!-- LAREESA -->
+      <div class="leader-card reveal reveal-delay-1">
+        <div class="leader-img-wrap">
+          <img src="images/lareesa.jpg" alt="Lareesa Hu, Co-Founder &amp; CMO" loading="lazy" />
+        </div>
+        <div class="leader-content">
+          <div class="leader-role">Co-Founder &amp; CMO</div>
+          <h3 class="leader-name">Lareesa Hu</h3>
+          <p class="leader-bio">Lareesa brings premium brand-building, cross-border positioning, and investor-facing narrative design. Her role is not decorative marketing — it is category-legibility and trust compression: making a complex, unfamiliar product feel inevitable to the right buyer.</p>
+          <div class="leader-tags">
+            <span class="leader-tag">Neuro-Branding</span>
+            <span class="leader-tag">Serial Entrepreneur</span>
+            <span class="leader-tag">Go-to-Market</span>
+            <span class="leader-tag">Market Intelligence</span>
+            <span class="leader-tag">Luxury &amp; Tech</span>
+            <span class="leader-tag">Brand Strategy</span>
+          </div>
+          <a href="https://www.linkedin.com/in/lareesahu" target="_blank" class="leader-linkedin">
+            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            LinkedIn
+          </a>
+        </div>
+      </div>
+      <!-- CHRIS -->
+      <div class="leader-card reveal reveal-delay-2">
+        <div class="leader-img-wrap">
+          <img src="images/chris-liu.webp" alt="Chris Liu, CTO" loading="lazy" />
+        </div>
+        <div class="leader-content">
+          <div class="leader-role">CTO</div>
+          <h3 class="leader-name">Chris Liu</h3>
+          <p class="leader-bio">Chris brings robotics research and hands-on engineering: a PhD in Robotics at Deakin University plus industry work at Samsung Research and Monash Robotics. His edge is translation — turning robot learning research into systems that work in the real world.</p>
+          <div class="leader-tags">
+            <span class="leader-tag">Robot Learning</span>
+            <span class="leader-tag">Embodied AI</span>
+            <span class="leader-tag">Humanoid Robots</span>
+            <span class="leader-tag">Robot Manipulation</span>
+            <span class="leader-tag">Real-World Deployment</span>
+            <span class="leader-tag">Published Research</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content-grid-3 reveal">
+      <div class="cb">
+        <span class="cb-tag">Confirmed Edge</span>
+        <h3 class="cb-title">What is already visible</h3>
+        <p class="cb-body">Cross-border fluency, China supplier access, premium brand positioning, and founder-led GTM capability are already visible and operating.</p>
+      </div>
+      <div class="cb">
+        <span class="cb-tag">Phase 1 Hiring</span>
+        <h3 class="cb-title">One in Shanghai, two in Sydney</h3>
+        <p class="cb-body">The next stage of team formation is intentionally lean: one Shanghai-based operator to coordinate supply-side execution, plus two Sydney-based hires to support commercial growth, deployment coordination, and customer-facing operations.</p>
+      </div>
+      <div class="cb">
+        <span class="cb-tag">Social Proof Path</span>
+        <h3 class="cb-title">Content as GTM asset</h3>
+        <p class="cb-body">Founder content, robotics commentary, and visible audience reach can strengthen investor confidence when tied to actual robotics content — not left as generic personal brand residue.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     11 — FINANCIALS
+     ══════════════════════════════════════════════ -->
+<section class="bp-section" id="financials">
+  <div class="bp-section-inner">
+    <div class="bp-section-header reveal">
+      <div>
+        <p class="bp-section-label">11 — Financials</p>
+        <h2 class="bp-section-h2">What the Model<br/>Can Say Now.</h2>
+      </div>
+      <p class="bp-section-desc">The model is now anchored by a defined pre-seed round, a six-month launch runway, a three-year forecast, and example unit economics that show why services and deployment support materially improve margin quality.</p>
+    </div>
+
+    <div class="content-grid-2 reveal" style="margin-bottom:2px;">
+      <div class="cb">
+        <span class="cb-tag">Round Structure</span>
+        <span class="cb-num">AUD 205k</span>
+        <h3 class="cb-title">Pre-seed / angel raise for 10% equity</h3>
+        <p class="cb-body">The current business plan now specifies a funding amount of RMB 1,000,000 / AUD 205,000 / USD 147,000 for 10% equity, with a minimum tranche of AUD 41,000 and an intended runway of six months.</p>
+      </div>
+      <div class="cb">
+        <span class="cb-tag">Three-Year Forecast</span>
+        <span class="cb-num">A$300K → A$3.2M</span>
+        <h3 class="cb-title">Revenue scales as services compound</h3>
+        <p class="cb-body">The current forecast shows Year 1 revenue at A$300K with A$100K gross profit and break-even, rising to A$1.2M revenue in Year 2 and A$3.2M in Year 3 as higher-margin deployment, support, and secondary development work expand.</p>
+      </div>
+    </div>
+
+    <div class="bp-table-wrap reveal">
+      <table class="bp-table">
+        <thead>
+          <tr>
+            <th>Financial Line Item</th>
+            <th>Status</th>
+            <th>Current BP Input</th>
+            <th>Why It Matters</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Average Order Value (AOV)</td>
+            <td><span class="status-good">Benchmarked</span></td>
+            <td>Example enterprise package totals A$39.6K, while security deployments are expected in the A$80K–250K range depending on robot count, deployment scope, and support.</td>
+            <td>This clarifies the revenue potential per deal and shows why Robotist can build around a relatively small number of high-value B2B transactions.</td>
+          </tr>
+          <tr>
+            <td>Gross Margin</td>
+            <td><span class="status-good">Defined</span></td>
+            <td>Hardware margins are modeled at roughly 30%, services at 60–80%+, and blended margin above 40% as deployment and after-service work grow.</td>
+            <td>This is the core profitability logic of the business and explains why Robotist is more than a low-margin reseller.</td>
+          </tr>
+          <tr>
+            <td>Monthly Burn</td>
+            <td><span class="status-good">Implied</span></td>
+            <td>AUD 205,000 over six months implies an operating burn of about A$34.2K per month under the launch plan.</td>
+            <td>This links the funding ask directly to runway and makes the operating cadence legible to investors.</td>
+          </tr>
+          <tr>
+            <td>Customer Acquisition Cost (CAC)</td>
+            <td><span class="status-pending">Directional</span></td>
+            <td>Initial acquisition will be driven by founder-led sales, direct outreach, content, events, partners, and referrals before paid CAC is formalized.</td>
+            <td>This keeps the model realistic: CAC becomes more measurable once repeatable paid demand generation starts.</td>
+          </tr>
+          <tr>
+            <td>Break-even Point</td>
+            <td><span class="status-good">Forecasted</span></td>
+            <td>The current plan targets break-even in Year 1, followed by net profit of A$150K–250K in Year 2 and A$400K–700K in Year 3.</td>
+            <td>This shows the raise is intended to validate an operating model that can become self-sustaining rather than permanently cash-dependent.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="content-grid-2 reveal" style="margin-top:2px;">
+      <div class="cb">
+        <span class="cb-tag">Robot Unit Economics</span>
+        <h3 class="cb-title">Example deal value: A$39.6K total package</h3>
+        <p class="cb-body">A representative deal combines A$20K robot hardware, A$4K deployment, A$12K commercial package work, and A$3.6K annual support. Gross profit per deal is modeled at roughly A$15K–20K, with services driving most of the margin quality.</p>
+      </div>
+      <div class="cb">
+        <span class="cb-tag">China Deployment Analogue</span>
+        <h3 class="cb-title">A real-world business case for ROI logic</h3>
+        <p class="cb-body">A comparable China deployment case points to a A$60K–80K total deal for three delivery or cleaning robots plus deployment, with A$10K+ in annual support and an estimated 12–18 month ROI through reduced staffing pressure and improved customer experience.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     12 — FUNDING ASK
+     ══════════════════════════════════════════════ -->
+<section class="bp-section alt" id="ask">
+  <div class="bp-section-inner">
+    <div class="bp-section-header reveal">
+      <div>
+        <p class="bp-section-label">12 — Funding Ask</p>
+        <h2 class="bp-section-h2">What the Round<br/>Is For.</h2>
+      </div>
+      <p class="bp-section-desc">The funding ask is now specific: a pre-seed / angel round sized to launch the platform, formalize the operating base, and convert early supplier and customer momentum into measurable commercial proof within six months.</p>
+    </div>
+
+    <div class="content-grid-3 reveal" style="margin-bottom:2px;">
+      <div class="cb">
+        <span class="cb-tag">Round Terms</span>
+        <span class="cb-num">AUD 205k</span>
+        <h3 class="cb-title">Pre-seed / angel round</h3>
+        <p class="cb-body">Robotist is raising RMB 1,000,000 / AUD 205,000 / USD 147,000 for 10% equity, with a minimum tranche of RMB 200,000 / AUD 41,000 / USD 30,000.</p>
+      </div>
+      <div class="cb">
+        <span class="cb-tag">What It Funds</span>
+        <h3 class="cb-title">Launch, setup, and operating readiness</h3>
+        <p class="cb-body">The round funds team buildout, company setup, legal and accounting, trademark and IP, ecommerce platform development, China–Australia travel, meetings, launch marketing, and operating software plus contingency.</p>
+      </div>
+      <div class="cb">
+        <span class="cb-tag">What It Should Unlock</span>
+        <h3 class="cb-title">Six-month operating proof</h3>
+        <p class="cb-body">By the end of the runway, the goal is to have the platform live, close 8–12 deals, generate A$200K–300K in revenue, secure the supplier network, and be ready for a larger seed round.</p>
+      </div>
+    </div>
+
+    <div class="content-grid-2 reveal">
+      <div>
+        <div class="use-row">
+          <span class="use-num">01</span>
+          <div class="use-content">
+            <div class="use-title">Team</div>
+            <div class="use-body">Initial team budget for launch execution and early operating capacity.</div>
+          </div>
+          <span class="use-pct">45.9%</span>
+        </div>
+        <div class="use-row">
+          <span class="use-num">02</span>
+          <div class="use-content">
+            <div class="use-title">Company Registration &amp; Setup</div>
+            <div class="use-body">Australian entity setup and foundational company formation costs.</div>
+          </div>
+          <span class="use-pct">2.4%</span>
+        </div>
+        <div class="use-row">
+          <span class="use-num">03</span>
+          <div class="use-content">
+            <div class="use-title">Legal &amp; Accounting</div>
+            <div class="use-body">Legal structuring, contracts, compliance, and financial administration.</div>
+          </div>
+          <span class="use-pct">7.8%</span>
+        </div>
+        <div class="use-row">
+          <span class="use-num">04</span>
+          <div class="use-content">
+            <div class="use-title">Trademark, IP, and Ecommerce Platform</div>
+            <div class="use-body">Brand protection plus the buildout of the ecommerce and operating interface.</div>
+          </div>
+          <span class="use-pct">15.1%</span>
+        </div>
+        <div class="use-row">
+          <span class="use-num">05</span>
+          <div class="use-content">
+            <div class="use-title">Travel, Meetings, and Events</div>
+            <div class="use-body">China–Australia coordination, supplier meetings, and market-facing commercial activity.</div>
+          </div>
+          <span class="use-pct">17.6%</span>
+        </div>
+        <div class="use-row">
+          <span class="use-num">06</span>
+          <div class="use-content">
+            <div class="use-title">Marketing Launch, Software, and Contingency</div>
+            <div class="use-body">Launch marketing, operating software, and contingency buffer for execution risk.</div>
+          </div>
+          <span class="use-pct">11.3%</span>
+        </div>
+      </div>
+      <div class="cb" style="justify-content:center;">
+        <span class="cb-tag">Six-Month Outcome Summary</span>
+        <h3 class="cb-title" style="font-size:clamp(18px,2.5vw,28px);line-height:1.35;">This AUD 205k round is designed to launch the platform, close 8–12 deals, generate A$200K–300K in revenue, lock in the supplier network, and prepare Robotist for a larger seed round.</h3>
+        <p class="cb-body">The milestone logic is now tied to concrete launch outcomes rather than an abstract fundraising band.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     13 — ROADMAP
+     ══════════════════════════════════════════════ -->
+<section class="bp-section" id="roadmap">
+  <div class="bp-section-inner">
+    <div class="bp-section-header reveal">
+      <div>
+        <p class="bp-section-label">13 — Roadmap</p>
+        <h2 class="bp-section-h2">How the Business<br/>Scales in Phases.</h2>
+      </div>
+      <p class="bp-section-desc">The roadmap now reflects a staged expansion path: launch online in Australia and New Zealand, prove services and supply-chain execution, then expand through retail, rentals, and selected international markets over time.</p>
+    </div>
+
+    <div class="bp-table-wrap reveal">
+      <table class="bp-table">
+        <thead>
+          <tr>
+            <th>Stage</th>
+            <th>Execution Focus</th>
+            <th>Status</th>
+            <th>Notes</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Stage 1</td>
+            <td>Australia &amp; New Zealand online-first launch focused on humanoids, quadrupeds, fun &amp; functional robots, and secondary development services.</td>
+            <td><span class="status-good">Immediate</span></td>
+            <td>Current targets include platform launch, supplier activation, and 10+ development projects.</td>
+          </tr>
+          <tr>
+            <td>Stage 2</td>
+            <td>Middle East expansion through enterprise partners, led by Robot-as-a-Service style pilots and commercial rollout support.</td>
+            <td><span class="status-good">Planned</span></td>
+            <td>This phase extends the operating model once AUNZ proof is visible.</td>
+          </tr>
+          <tr>
+            <td>Stage 3</td>
+            <td>Sydney retail flagship with demo lab, training center, service hub, and rental dispatch capability.</td>
+            <td><span class="status-pending">Execution dependent</span></td>
+            <td>This becomes the physical trust layer once the market and supplier base justify it.</td>
+          </tr>
+          <tr>
+            <td>Stage 4</td>
+            <td>Multi-regional scale including Dubai and Shanghai stores, franchise potential, and broader secondary market expansion.</td>
+            <td><span class="status-pending">Longer-term</span></td>
+            <td>The 2026–2035 vision compounds commerce, services, rentals, and secondary market infrastructure.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     14 — STRATEGIC DECISIONS
+     ══════════════════════════════════════════════ -->
+<section class="bp-section alt" id="decisions">
+  <div class="bp-section-inner">
+    <div class="bp-section-header reveal">
+      <div>
+        <p class="bp-section-label">14 — Strategic Decisions</p>
+        <h2 class="bp-section-h2">Strategic Positioning<br/>and Near-Term Priorities.</h2>
+      </div>
+      <p class="bp-section-desc">The business direction is now substantially clarified. The points below summarize the strategic positions shaping the launch model and the near-term priorities that will define the next stage of execution.</p>
+    </div>
+
+    <div class="decision-grid reveal">
+      <div class="decision-block">
+        <span class="decision-label">A — Fundraising Structure</span>
+        <h3 class="decision-title">Pre-seed / angel round with strategic value</h3>
+        <div class="decision-confirmed">Round structure and investor profile defined</div>
+        <p class="decision-body">The raise is now positioned as a pre-seed / angel round where investor fit matters: capital is important, but supply access, commercial introductions, and local operating leverage materially improve execution speed.</p>
+          </div>
+
+      <div class="decision-block">
+        <span class="decision-label">B — Raise Amount and Runway</span>
+        <h3 class="decision-title">AUD 205k raise for 10% equity and 6 months runway</h3>
+        <div class="decision-confirmed">Funding amount, equity, and runway defined</div>
+        <p class="decision-body">The ask is now specific rather than directional: AUD 205,000 for 10% equity, with a minimum tranche of AUD 41,000 and a six-month runway designed to create visible operating proof.</p>
+          </div>
+    </div>
+
+    <div class="decision-grid reveal" style="margin-top:2px;">
+      <div class="decision-block">
+        <span class="decision-label">C — Inventory Model</span>
+        <h3 class="decision-title">Capital-light commerce plus services model</h3>
+        <div class="decision-confirmed">Sales, service, and secondary-market pillars defined</div>
+        <p class="decision-body">The operating model now combines hardware sales, rentals, secondary development, after-service contracts, and salvage / secondary market activity, preserving capital discipline while improving long-term margin quality.</p>
+          </div>
+
+      <div class="decision-block">
+        <span class="decision-label">D — Primary Launch Segment</span>
+        <h3 class="decision-title">Quadruped-led B2B entry, humanoids later</h3>
+        <div class="decision-confirmed">ICP and sequencing defined</div>
+        <p class="decision-body">The first commercial focus is security and patrol plus industrial, mining, and utilities inspections, where quadrupeds can solve clearer labor, safety, and inspection problems; events, retail, and showroom humanoid use cases follow later.</p>
+          </div>
+    </div>
+
+    <div class="decision-grid reveal" style="margin-top:2px;">
+      <div class="decision-block">
+        <span class="decision-label">E — Traction Proof</span>
+        <h3 class="decision-title">Supplier and early-customer traction now quantified</h3>
+        <div class="decision-confirmed">18+ suppliers in discussion and 7 potential commercial clients</div>
+        <p class="decision-body">The business now has more than a narrative: supplier pipeline and early commercial interest are visible enough to support a real launch plan and a clearer go-to-market sequence.</p>
+   
+      </div>
+
+      <div class="decision-block">
+        <span class="decision-label">F — Founder Right-to-Win</span>
+        <h3 class="decision-title">Cross-border fluency and brand-building as the core edge</h3>
+        <div class="decision-confirmed">Cross-border China + AU business fluency and brand-building strength confirmed</div>
+        <p class="decision-body">The next step is to anchor the founders’ edge in visible operating proof, market access, and execution evidence.</p>
+          </div>
+    </div>
+
+    <div class="decision-grid reveal" style="margin-top:2px;">
+      <div class="decision-block">
+        <span class="decision-label">G — Use of Funds</span>
+        <h3 class="decision-title">Use of funds now specified by line item</h3>
+        <div class="decision-confirmed">Team, setup, legal, IP, platform, travel, events, marketing, and contingency allocated</div>
+        <p class="decision-body">The funding plan is now explicit enough for investor diligence, with team taking the largest share and platform, compliance, travel, and launch execution clearly budgeted.</p>
+   
+      </div>
+
+      <div class="decision-block">
+        <span class="decision-label">H — Milestone Unlock</span>
+        <h3 class="decision-title">Platform live, 8–12 deals, A$200K–300K revenue</h3>
+        <div class="decision-confirmed">Six-month outcome milestones defined</div>
+        <p class="decision-body">The raise is now tied to specific operating outputs: launch the platform, close 8–12 deals, secure the supplier network, generate A$200K–300K in revenue, and prepare for the next financing step.</p>
+   
+      </div>
+    </div>
+
+    <div class="decision-grid reveal" style="margin-top:2px;">
+      <div class="decision-block">
+        <span class="decision-label">I — Core Financial Assumptions</span>
+        <h3 class="decision-title">Core assumptions now have an initial operating model</h3>
+        <p class="decision-body">The BP now includes a three-year forecast, blended margin logic, implied monthly burn, and example unit economics of A$39.6K total deal value with roughly A$15K–20K gross profit per deployment.</p>
+          </div>
+
+      <div class="decision-block">
+        <span class="decision-label">J — Additional Strategic Notes</span>
+        <h3 class="decision-title">Risk picture now comes with mitigation logic</h3>
+        <p class="decision-body">Key risks now have explicit mitigations: portfolio supplier strategy for manufacturer volatility, pre-checklists and insurance for safety, service-heavy revenue to offset hardware margin compression, vetted contractors for talent constraints, and pilot-first rentals to reduce adoption risk.</p>
+   
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     15 — SOURCES
+     ══════════════════════════════════════════════ -->
+<section class="bp-section" id="sources">
+  <div class="bp-section-inner">
+    <div class="bp-section-header reveal">
+      <div>
+        <p class="bp-section-label">15 — Sources</p>
+        <h2 class="bp-section-h2">Market and<br/>Evidence Notes.</h2>
+      </div>
+      <p class="bp-section-desc">External market data supports the broader category case, while Australia-focused sizing and budgeting figures reflect Robotist’s current operating assumptions.</p>
+    </div>
+
+    <div class="source-list reveal">
+      <div class="source-item">
+        <span class="source-tag">[1] Goldman Sachs</span>
+        <p class="source-text">Goldman Sachs states the humanoid robot total addressable market could reach US$38 billion by 2035, with shipment estimates of 1.4 million units. Available on <a href="https://www.goldmansachs.com/insights/articles/the-global-market-for-robots-could-reach-38-billion-by-2035" target="_blank" rel="noopener noreferrer">Goldman Sachs Insights</a>.</p>
+      </div>
+      <div class="source-item">
+        <span class="source-tag">[2] IFR 2026</span>
+        <p class="source-text">The International Federation of Robotics reports industrial robot installations reached an all-time high market value of US$16.7 billion, while AI autonomy and real-world deployment are key 2026 trends. <a href="https://ifr.org/ifr-press-releases/news/top-5-global-robotics-trends-2026" target="_blank" rel="noopener noreferrer">View source</a>.</p>
+      </div>
+      <div class="source-item">
+        <span class="source-tag">[3] IFR Humanoids</span>
+        <p class="source-text">IFR's 2025 humanoid position paper emphasizes the tension between hype and practical deployment reality, supporting Robotist's trust-layer and rollout-support positioning. <a href="https://ifr.org/ifr-press-releases/news/new-ifr-position-paper-on-humanoid-robots-published" target="_blank" rel="noopener noreferrer">View source</a>.</p>
+      </div>
+      <div class="source-item">
+        <span class="source-tag">[4] Grand View Research</span>
+        <p class="source-text">Grand View Research estimates the global robotics system integration market at US$74.56 billion in 2024, projected to reach US$130.41 billion by 2030. Relevant because Robotist's longer-term margin logic depends partly on integration and support layers, not only hardware resale. <a href="https://www.grandviewresearch.com/industry-analysis/robotics-system-integration-market-report" target="_blank" rel="noopener noreferrer">View source</a>.</p>
+      </div>
+      <div class="source-item">
+        <span class="source-tag">[5] Robotist Planning Model</span>
+        <p class="source-text">Robotist planning model (2026). Internal BP figures include TAM AUD 2.12B, SAM AUD 0.94B, SOM AUD 4.7M–9.4M by Year 5, a pre-seed round of AUD 205K for 10% equity, and a Year 1–3 forecast of A$300K, A$1.2M, and A$3.2M revenue respectively.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     JAVASCRIPT
+     ══════════════════════════════════════════════ -->
+<script>
+// ── NAV SCROLL ──
+const nav = document.getElementById('mainNav');
+window.addEventListener('scroll', () => {
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+// ── SCROLL REVEAL ──
+const revealEls = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+revealEls.forEach(el => revealObserver.observe(el));
+
+// ── ACTIVE NAV LINKS ──
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+const sectionObserver = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navLinks.forEach(a => a.classList.remove('active'));
+      const link = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+      if (link) link.classList.add('active');
+    }
+  });
+}, { rootMargin: '-40% 0px -55% 0px' });
+sections.forEach(s => sectionObserver.observe(s));
+
+// ── HAMBURGER MENU ──
+const hamburger = document.getElementById('navHamburger');
+const navLinksList = document.getElementById('navLinks');
+
+if (hamburger) {
+  hamburger.addEventListener('click', (e) => {
+    e.preventDefault();
+    navLinksList.classList.toggle('open');
+    hamburger.classList.toggle('active');
+  });
+
+  navLinksList.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinksList.classList.remove('open');
+      hamburger.classList.remove('active');
+    });
+  });
+}
+
+// ── SMOOTH ANCHOR LINKS ──
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', (e) => {
+    const target = document.querySelector(anchor.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+
+<script>
+// ── PASSWORD GATE ──
+(function () {
+  const PW_KEY  = 'robotist_pw_v1';
+  const pwGate  = document.getElementById('pw-gate');
+  const pwInput = document.getElementById('pw-input');
+  const pwSubmit = document.getElementById('pw-submit');
+  const pwError  = document.getElementById('pw-error');
+  const ndaGate  = document.getElementById('nda-gate');
+
+  // If already entered this session, skip straight to NDA
+  if (sessionStorage.getItem(PW_KEY)) {
+    pwGate.classList.add('hidden');
+    return;
+  }
+
+  // Ensure NDA is hidden until password is correct
+  ndaGate.classList.add('hidden');
+
+  pwSubmit.addEventListener('click', function () {
+    if (pwInput.value === 'RobotMaxx') {
+      sessionStorage.setItem(PW_KEY, '1');
+      pwGate.style.transition = 'opacity 0.3s ease';
+      pwGate.style.opacity = '0';
+      setTimeout(function () {
+        pwGate.classList.add('hidden');
+        ndaGate.classList.remove('hidden');
+        // Lock scroll now that NDA is visible
+        var sy = window.scrollY;
+        document.body.style.top = '-' + sy + 'px';
+        document.body.classList.add('nda-active');
+      }, 300);
+    } else {
+      pwInput.classList.add('pw-input-error');
+      pwError.textContent = 'Incorrect password. Please try again.';
+      pwInput.value = '';
+      pwInput.focus();
+    }
+  });
+
+  // Also trigger on Enter key
+  pwInput.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') pwSubmit.click();
+  });
+
+  // Clear error on typing
+  pwInput.addEventListener('input', function () {
+    pwInput.classList.remove('pw-input-error');
+    pwError.textContent = '';
+  });
+}());
+
+// ── NDA GATE ──
+(function () {
+  const STORAGE_KEY = 'robotist_nda_v1';
+  const gate        = document.getElementById('nda-gate');
+  const nameInput   = document.getElementById('nda-name');
+  const emailInput  = document.getElementById('nda-email');
+  const agreeBox    = document.getElementById('nda-agree');
+  const submitBtn   = document.getElementById('nda-submit');
+  const errorEl     = document.getElementById('nda-error');
+
+  // Already agreed — hide immediately
+  if (localStorage.getItem(STORAGE_KEY)) {
+    gate.classList.add('hidden');
+    return;
+  }
+
+  // Only lock scroll if the NDA gate is actually visible (password already entered)
+  if (!gate.classList.contains('hidden')) {
+    const scrollY = window.scrollY;
+    document.body.style.top = '-' + scrollY + 'px';
+    document.body.classList.add('nda-active');
+  }
+
+  function isValidEmail(v) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  }
+
+  function setError(msg) {
+    errorEl.textContent = msg;
+  }
+
+  function clearErrors() {
+    errorEl.textContent = '';
+    nameInput.classList.remove('nda-input-error');
+    emailInput.classList.remove('nda-input-error');
+  }
+
+  submitBtn.addEventListener('click', function () {
+    clearErrors();
+    const name  = nameInput.value.trim();
+    const email = emailInput.value.trim();
+
+    if (!name) {
+      nameInput.classList.add('nda-input-error');
+      setError('Please enter your full name.');
+      nameInput.focus();
+      return;
+    }
+    if (!email || !isValidEmail(email)) {
+      emailInput.classList.add('nda-input-error');
+      setError('Please enter a valid email address.');
+      emailInput.focus();
+      return;
+    }
+    if (!agreeBox.checked) {
+      setError('You must agree to the confidentiality terms to proceed.');
+      return;
+    }
+
+    // Record acceptance locally
+    const ts = new Date().toISOString();
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({
+      name,
+      email,
+      agreed: true,
+      timestamp: ts,
+      url: window.location.href
+    }));
+
+    // Send to Web3Forms — fire-and-forget, never blocks the UX
+    // Replace WEB3FORMS_ACCESS_KEY with your key from web3forms.com
+    var WEB3FORMS_KEY = 'WEB3FORMS_ACCESS_KEY';
+    if (WEB3FORMS_KEY !== 'WEB3FORMS_ACCESS_KEY') {
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          access_key: WEB3FORMS_KEY,
+          subject:    'Robotist Business Plan — NDA Signed',
+          from_name:  name,
+          email:      email,
+          message:    'NDA agreed by:\n\nName:      ' + name +
+                      '\nEmail:     ' + email +
+                      '\nTime:      ' + ts +
+                      '\nPage:      ' + window.location.href
+        })
+      }).catch(function () { /* silent fail — localStorage is the fallback record */ });
+    }
+
+    // Fade out, then restore scroll position (required after iOS position:fixed lock)
+    gate.style.transition = 'opacity 0.35s ease';
+    gate.style.opacity    = '0';
+    setTimeout(function () {
+      gate.classList.add('hidden');
+      const savedY = Math.abs(parseInt(document.body.style.top || '0', 10));
+      document.body.classList.remove('nda-active');
+      document.body.style.top = '';
+      window.scrollTo(0, savedY);
+    }, 350);
+  });
+
+  // Block Escape key
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !gate.classList.contains('hidden')) {
+      e.preventDefault();
+    }
+  });
+
+  // Block clicking outside the card
+  gate.addEventListener('click', function (e) {
+    if (e.target === gate) e.stopPropagation();
+  });
+}());
+</script>
+
+<!-- Inquiry Modal -->
+<div id="inquiry-modal" class="modal-overlay" style="display:none">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeInquiry()" aria-label="Close">&times;</button>
+    <div class="inquiry-eyebrow">Send an Inquiry</div>
+    <h2 class="inquiry-title">Tell us what you're<br><em>looking for.</em></h2>
+    <p class="inquiry-desc">Share a few details and we'll get back to you within one business day.</p>
+    <form class="inquiry-form">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="inquiry-row">
+        <div class="inquiry-field">
+          <label for="m-name">Name</label>
+          <input type="text" id="m-name" name="name" placeholder="Your full name" required>
+        </div>
+        <div class="inquiry-field">
+          <label for="m-email">Email</label>
+          <input type="email" id="m-email" name="email" placeholder="you@company.com" required>
+        </div>
+      </div>
+      <div class="inquiry-row">
+        <div class="inquiry-field">
+          <label for="m-company">Company</label>
+          <input type="text" id="m-company" name="company" placeholder="Your organisation">
+        </div>
+        <div class="inquiry-field">
+          <label for="m-interest">Area of Interest</label>
+          <select id="m-interest" name="interest">
+            <option value="">Select an option</option>
+            <option value="humanoid">Humanoid Robots</option>
+            <option value="quadruped">Quadruped Robots</option>
+            <option value="cleaning">Commercial Cleaning</option>
+            <option value="industrial">Industrial Automation</option>
+            <option value="multiple">Multiple Categories</option>
+            <option value="rental">Rental / Trial</option>
+            <option value="other">Other / General Inquiry</option>
+          </select>
+        </div>
+      </div>
+      <div class="inquiry-field">
+        <label for="m-message">Message</label>
+        <textarea id="m-message" name="message" placeholder="Tell us about your requirements, timeline, budget range, or any specific machines you're interested in…" required></textarea>
+      </div>
+      <div class="inquiry-submit-wrap">
+        <button type="submit" class="btn-primary">Send Inquiry</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="/assets/form-workflow.js"></script>
+
+</body>
+</html>

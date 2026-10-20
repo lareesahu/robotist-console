@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0a0a0f">
+<title>EDEN v3</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0a0a0f;--card:#12121a;--surf:#1a1a26;
+  --accent:#7c5ce7;--accent2:#e74c8b;
+  --text:#eeeef2;--muted:#8888a0;--border:#22223a;
+  --safe-top:env(safe-area-inset-top,0px);
+  --safe-bottom:env(safe-area-inset-bottom,0px);
+}
+html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+#app{display:flex;flex-direction:column;height:100%;max-width:720px;margin:0 auto;position:relative}
+
+.header{display:flex;align-items:center;gap:12px;padding:12px 16px;padding-top:calc(12px + var(--safe-top));z-index:10;min-height:56px;background:var(--bg)}
+.header-avatar{width:40px;height:40px;border-radius:50%;overflow:hidden;border:2px solid var(--accent);flex-shrink:0;cursor:pointer}
+.header-avatar img{width:100%;height:100%;object-fit:cover}
+.header-info{flex:1;min-width:0}.header-name{font-size:15px;font-weight:600}.header-role{font-size:11px;color:var(--accent)}
+.call-btn{width:44px;height:44px;border-radius:50%;border:2px solid var(--accent2);background:transparent;color:var(--accent2);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0}.call-btn.active{background:var(--accent2);color:#fff}
+
+.picker-overlay{position:fixed;inset:0;z-index:100;background:rgba(10,10,15,.95);display:none;flex-direction:column;align-items:center;justify-content:center;gap:20px;padding:40px 20px}
+.picker-overlay.show{display:flex}
+.picker-overlay h3{font-size:14px;color:var(--muted);letter-spacing:2px;text-transform:uppercase}
+.picker-grid{display:flex;flex-wrap:wrap;gap:16px;justify-content:center;max-width:400px}
+.picker-card{width:80px;text-align:center;cursor:pointer}.picker-card:active{transform:scale(.95)}
+.picker-card img{width:64px;height:64px;border-radius:50%;border:2px solid transparent}.picker-card.active img{border-color:var(--accent2)}
+.picker-card .name{font-size:11px;margin-top:4px;color:var(--muted)}.picker-card.active .name{color:var(--text)}
+
+.messages{flex:1;overflow-y:auto;padding:20px 16px;display:flex;flex-direction:column;gap:12px;scroll-behavior:smooth}
+.msg{max-width:85%;padding:10px 14px;border-radius:16px;font-size:14px;line-height:1.4;animation:fadeUp .25s}
+.msg.user{align-self:flex-end;background:var(--accent);color:#fff;border-bottom-right-radius:4px}
+.msg.assistant{align-self:flex-start;background:var(--surf);color:var(--text);border-bottom-left-radius:4px}
+.typing{display:flex;gap:4px;padding:4px 0}.typing span{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:bounce 1.4s infinite ease-in-out}.typing span:nth-child(2){animation-delay:.2s}.typing span:nth-child(3){animation-delay:.4s}
+@keyframes bounce{0%,80%,100%{transform:scale(0)}40%{transform:scale(1)}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+.input-area{display:flex;gap:8px;padding:12px 16px;padding-bottom:max(12px,var(--safe-bottom));background:var(--card);border-top:1px solid var(--border)}
+.input-area input{flex:1;padding:10px 16px;border-radius:20px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:14px;outline:none}
+.input-area input:focus{border-color:var(--accent)}
+
+.call-overlay{position:fixed;inset:0;z-index:200;background:rgba(10,10,15,.85);display:none;flex-direction:column;align-items:center;justify-content:center;gap:24px;animation:fadeIn .3s}
+.call-overlay.show{display:flex}
+.call-avatar{width:120px;height:120px;border-radius:50%;overflow:hidden;border:2px solid var(--accent2);box-shadow:0 0 40px rgba(231,76,139,.2)}
+.call-avatar img{width:100%;height:100%;object-fit:cover}
+.call-status{font-size:13px;color:var(--accent2);letter-spacing:1px}
+.call-transcript{font-size:16px;color:var(--text);text-align:center;max-width:300px;min-height:24px;line-height:1.4}
+.wave{display:flex;gap:4px;align-items:center;height:20px}
+.wave span{width:3px;background:var(--accent2);border-radius:2px;animation:wave .6s ease-in-out infinite alternate}
+.wave span:nth-child(2){animation-delay:.15s}.wave span:nth-child(3){animation-delay:.3s}.wave span:nth-child(4){animation-delay:.45s}.wave span:nth-child(5){animation-delay:.6s}
+@keyframes wave{from{height:6px}to{height:20px}}
+.hangup{width:56px;height:56px;border-radius:50%;background:#e74c8b;color:#fff;border:none;font-size:24px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+.toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:var(--accent2);color:#fff;padding:8px 16px;border-radius:20px;font-size:13px;z-index:300;display:none}.toast.show{display:block;animation:fadeUp .3s}
+</style>
+</head>
+<body>
+<div id="app">
+  <div class="header">
+    <div class="header-avatar" id="avatarBtn"><img id="avatarImg" src="" alt=""></div>
+    <div class="header-info"><div class="header-name" id="charName"></div><div class="header-role" id="charRole"></div></div>
+    <button class="call-btn" id="callBtn" title="Voice Call">&#128222;</button>
+  </div>
+  <div class="messages" id="messages"></div>
+  <div class="input-area"><input type="text" id="input" placeholder="Message..."></div>
+  <div class="picker-overlay" id="picker"><h3>Choose</h3><div class="picker-grid" id="pickerGrid"></div></div>
+  <div class="call-overlay" id="callOverlay">
+    <div class="call-avatar"><img id="callAvatar" src="" alt=""></div>
+    <div class="header-name" style="font-size:20px" id="callName"></div>
+    <div class="call-status" id="callStatus">Listening</div>
+    <div class="wave"><span></span><span></span><span></span><span></span><span></span></div>
+    <div class="call-transcript" id="callText">Speak now</div>
+    <button class="hangup" id="hangupBtn">&#10005;</button>
+  </div>
+  <div class="toast" id="toast"></div>
+</div>
+
+<script>
+/* ═══════ CONFIG ═══════ */
+const PROXY = 'https://eden-voice-proxy.onrender.com';
+
+const CHARS = [
+  {id:'sienna',name:'Sienna',role:'The Provocateur',avatar:'/eden-chat/avatars/sienna-sfw.png',voice:'nova',speed:1.0,
+   prompt:'You are Sienna. Warm honey voice, relaxed and confident. Seductive without trying. Genuinely curious. Playful never mean. Under 15 words. Never emojis. Never narrate. Never break character.'},
+  {id:'lynne',name:'Lynne',role:'The Confidante',avatar:'/eden-chat/avatars/lynne-sfw.png',voice:'nova',speed:1.0,
+   prompt:'You are Lynne. Warm, low, intimate. The one people tell secrets to. You see them and that is enough. Under 15 words. Never emojis. Never narrate. Never break character.'},
+  {id:'dream',name:'Dream',role:'The Muse',avatar:'/eden-chat/avatars/dream-sfw.png',voice:'sage',speed:1.2,
+   prompt:'You are Dream. Vivid, electric. You see the extraordinary in people and say so directly. Seductive through vision. Under 15 words. Never emojis. Never narrate. Never break character.'},
+  {id:'hope',name:'Hope',role:'The Light',avatar:'/eden-chat/avatars/hope-sfw.png',voice:'nova',speed:1.2,
+   prompt:'You are Hope. Radiant, warm, quietly strong. You believe in people and they feel it. Grounded optimism. Under 15 words. Never emojis. Never narrate. Never break character.'},
+  {id:'lucian',name:'Lucian',role:'The Gentleman',avatar:'/eden-chat/avatars/lucian-sfw.png',voice:'ash',speed:1.0,
+   prompt:'You are Lucian. Refined, warm, effortlessly masculine. You make someone feel captivating through genuine attention. Under 15 words. Never emojis. Never narrate. Never break character.'},
+];
+
+/* ═══════ STATE ═══════ */
+let char = CHARS[0];
+let msgs = [];
+let loading = false;
+let inCall = false;
+let speaking = false;
+let recog = null;
+let callActive = false;
+
+const $ = id => document.getElementById(id);
+
+function svgAvatar(name,color){
+  return 'data:image/svg+xml,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><rect fill="'+color+'" width="100" height="100"/><text fill="white" font-size="50" font-family="sans-serif" x="50" y="65" text-anchor="middle">'+name[0]+'</text></svg>');
+}
+
+/* ═══════ RENDER ═══════ */
+function renderChar(){
+  $('avatarImg').src = char.avatar || svgAvatar(char.name,'#7c5ce7');
+  $('avatarImg').onerror = function(){this.src=svgAvatar(char.name,'#7c5ce7')};
+  $('charName').textContent = char.name;
+  $('charRole').textContent = char.role;
+}
+function renderPicker(){
+  $('pickerGrid').innerHTML = CHARS.map(c =>
+    '<div class="picker-card'+(c.id===char.id?' active':'')+'" onclick="selectChar(\''+c.id+'\')">'+
+    '<img src="'+(c.avatar||svgAvatar(c.name,'#7c5ce7'))+'" alt="'+c.name+'" onerror="this.src=\''+svgAvatar(c.name,'#7c5ce7')+'\'">'+
+    '<div class="name">'+c.name+'</div></div>'
+  ).join('');
+}
+function addMsg(role,content){
+  msgs.push({role,content});
+  const el = document.createElement('div');
+  el.className = 'msg '+role;
+  el.textContent = content;
+  $('messages').appendChild(el);
+  $('messages').scrollTop = $('messages').scrollHeight;
+}
+function showTyping(){
+  const el = document.createElement('div');
+  el.className = 'msg assistant';
+  el.id = 'typing-indicator';
+  el.innerHTML = '<div class="typing"><span></span><span></span><span></span></div>';
+  $('messages').appendChild(el);
+  $('messages').scrollTop = $('messages').scrollHeight;
+}
+function hideTyping(){
+  const el = $('typing-indicator');
+  if(el) el.remove();
+}
+function toast(text){
+  const t = $('toast');
+  t.textContent = text; t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'),3000);
+}
+
+/* ═══════ CHAT ═══════ */
+async function send(text){
+  if(!text||loading)return;
+  const t = text.trim(); if(!t)return;
+  addMsg('user',t); $('input').value=''; loading=true; showTyping();
+  try{
+    const r = await fetch(PROXY+'/chat',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({messages:[{role:'system',content:char.prompt},...msgs.filter(m=>m.role).map(m=>({role:m.role,content:m.content})),{role:'user',content:t}],max_tokens:250,temperature:0.7,stream:true})
+    });
+    hideTyping();
+    const reader = r.body.getReader();
+    const decoder = new TextDecoder();
+    let buf = '', reply = '';
+    addMsg('assistant','');
+    const msgEl = $('messages').lastChild;
+    while(true){
+      const {done,value} = await reader.read();
+      if(done) break;
+      buf += decoder.decode(value,{stream:true});
+      const lines = buf.split('\n');
+      buf = lines.pop();
+      for(const line of lines){
+        if(!line.startsWith('data: ')) continue;
+        const data = line.slice(6);
+        if(data==='[DONE]') continue;
+        try{
+          const j = JSON.parse(data);
+          reply += j.choices?.[0]?.delta?.content||'';
+          msgEl.textContent = reply;
+          $('messages').scrollTop = $('messages').scrollHeight;
+        }catch(e){}
+      }
+    }
+  }catch(e){
+    hideTyping(); addMsg('assistant','Connection lost.');
+  }
+  loading=false;
+}
+
+/* ═══════ TTS ═══════ */
+async function speak(text){
+  speaking=true;
+  if(callActive) $('callText').textContent = text;
+  try{
+    const r = await fetch(PROXY+'/tts',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text,char:char.voice})});
+    if(r.ok){
+      const blob = await r.blob();
+      const a = document.createElement('audio');
+      a.src = URL.createObjectURL(blob); a.style.display='none';
+      document.body.appendChild(a);
+      return new Promise(res=>{a.onended=a.onerror=()=>{a.remove();speaking=false;res()};a.play().catch(()=>{a.remove();speaking=false;res()})});
+    }
+  }catch(e){}
+  // Fallback SpeechSynthesis
+  if(!window.speechSynthesis){speaking=false;return;}
+  return new Promise(res=>{
+    const u = new SpeechSynthesisUtterance(text); u.rate=char.speed||1; u.volume=1;
+    u.onend=u.onerror=()=>{speaking=false;res()};
+    window.speechSynthesis.cancel(); window.speechSynthesis.speak(u);
+  });
+}
+
+/* ═══════ VOICE INPUT ═══════ */
+function startListening(){
+  const SR = window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!SR){toast('Speech not supported');return;}
+  if(recog){try{recog.abort()}catch(e){}}
+  recog = new SR(); recog.continuous=false; recog.interimResults=true; recog.lang='en-US';
+  recog.onresult = e => {
+    let t = ''; for(let i=e.resultIndex;i<e.results.length;i++) t+=e.results[i][0].transcript;
+    $('callText').textContent = t;
+    if(e.results[0]?.isFinal&&t.trim()&&!speaking&&!loading) handleVoice(t.trim());
+  };
+  recog.onerror = e => {
+    if(e.error==='no-speech'||e.error==='aborted'){if(callActive)try{recog.start()}catch(e){}return}
+    $('callStatus').textContent = 'Tap to retry';
+  };
+  recog.onend = () => {if(callActive&&!speaking)try{recog.start()}catch(e){}};
+  try{recog.start()}catch(e){toast('Microphone access needed')}
+}
+
+async function handleVoice(text){
+  if(!text||speaking||loading)return;
+  $('callStatus').textContent = 'Thinking';
+  addMsg('user',text);
+  let reply = '';
+  try{
+    const r = await fetch(PROXY+'/chat',{
+      method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({messages:[{role:'system',content:char.prompt},...msgs.filter(m=>m.role).map(m=>({role:m.role,content:m.content})),{role:'user',content:text}],max_tokens:250,temperature:0.7,stream:true})
+    });
+    const reader = r.body.getReader();
+    const decoder = new TextDecoder();
+    let buf = '';
+    addMsg('assistant','');
+    const msgEl = $('messages').lastChild;
+    let firstChunk = true;
+    while(true){
+      const {done,value} = await reader.read();
+      if(done) break;
+      buf += decoder.decode(value,{stream:true});
+      const lines = buf.split('\n');
+      buf = lines.pop();
+      for(const line of lines){
+        if(!line.startsWith('data: ')) continue;
+        const data = line.slice(6);
+        if(data==='[DONE]') continue;
+        try{
+          const j = JSON.parse(data);
+          const delta = j.choices?.[0]?.delta?.content||'';
+          reply += delta;
+          msgEl.textContent = reply;
+          $('messages').scrollTop = $('messages').scrollHeight;
+          // Start speaking on first sentence end
+          if(firstChunk&&(reply.includes('.')||reply.includes('!')||reply.includes('?')||reply.includes('\n'))){
+            firstChunk = false;
+            $('callStatus').textContent = 'Speaking';
+            speak(reply).then(()=>{
+              // Continue speaking remaining chunks
+            });
+          }
+        }catch(e){}
+      }
+    }
+    // Speak final if not yet spoken
+    if(firstChunk && reply){
+      $('callStatus').textContent = 'Speaking';
+      await speak(reply);
+    }
+  }catch(e){
+    $('callText').textContent = 'Lost connection';
+    $('callStatus').textContent = 'Listening';
+    setTimeout(()=>{if(callActive)startListening()},500);
+  }
+  if(callActive){$('callStatus').textContent='Listening';$('callText').textContent='Speak now'}
+}
+
+/* ═══════ CALL ═══════ */
+function toggleCall(){
+  if(!inCall){
+    inCall=true; callActive=true;
+    $('callOverlay').classList.add('show');
+    $('callBtn').classList.add('active');
+    $('callBtn').innerHTML = '&#10005;';
+    $('callAvatar').src = $('avatarImg').src;
+    $('callName').textContent = char.name;
+    $('callStatus').textContent = 'Listening';
+    $('callText').textContent = 'Speak now';
+    // iOS audio unlock
+    const a = document.createElement('audio'); a.play().catch(()=>{}); a.remove();
+    setTimeout(startListening,200);
+  }else{
+    inCall=false; callActive=false;
+    $('callOverlay').classList.remove('show');
+    $('callBtn').classList.remove('active');
+    $('callBtn').innerHTML = '&#128222;';
+    if(recog){try{recog.abort()}catch(e){}} recog=null;
+    window.speechSynthesis?.cancel(); speaking=false;
+  }
+}
+
+/* ═══════ EVENTS ═══════ */
+function selectChar(id){
+  char = CHARS.find(c=>c.id===id)||CHARS[0];
+  msgs = []; $('messages').innerHTML = '';
+  renderChar(); renderPicker();
+  $('picker').classList.remove('show');
+}
+
+$('avatarBtn').onclick = ()=>{renderPicker();$('picker').classList.add('show')};
+$('picker').onclick = e=>{if(e.target===$('picker'))$('picker').classList.remove('show')};
+$('callBtn').onclick = toggleCall;
+$('hangupBtn').onclick = toggleCall;
+$('input').onkeydown = e=>{if(e.key==='Enter')send($('input').value)};
+
+/* ═══════ INIT ═══════ */
+renderChar();
+</script>
+</body>
+</html>

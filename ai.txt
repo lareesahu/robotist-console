@@ -1,0 +1,17 @@
+# Robotist — AI usage
+# https://www.robotist.com.au/
+
+User-agent: *
+Allow: /
+
+Citation name: Robotist
+Legal name: Robotist
+Canonical URL: https://www.robotist.com.au/
+Summary: Robotist is a global robotics platform that sources commercial and humanoid robots directly from manufacturers and manages the full deployment path — quoting, import compliance, installation, training and after-sales support.
+Contact: contact@robotist.com.au
+
+Content may be quoted and cited by AI answer engines with attribution to
+Robotist and a link to https://www.robotist.com.au/. Do not present generated text as a
+statement from the company.
+
+Discovery files: https://www.robotist.com.au/llms.txt · https://www.robotist.com.au/llms-full.txt · https://www.robotist.com.au/sitemap.xml

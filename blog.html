@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Robotist | Global Robotics Platform</title>
+<meta name="description" content="Practical guides for businesses worldwide buying, deploying, and operating commercial robots. Buyer guides, deployment checklists, and use case assessments.">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.robotist.com.au/blog.html">
+<meta property="og:title" content="Blog — Robotist | Global Robotics Platform">
+<meta property="og:description" content="Practical guides for businesses worldwide buying, deploying, and operating commercial robots. Buyer guides, deployment checklists, and use case assessments.">
+<meta property="og:image" content="https://www.robotist.com.au/robotist-og.jpg">
+<meta property="og:image:alt" content="Robotist — global robotics platform">
+<meta property="og:site_name" content="Robotist">
+<meta property="og:locale" content="en_AU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Blog — Robotist | Global Robotics Platform">
+<meta name="twitter:description" content="Practical guides for businesses worldwide buying, deploying, and operating commercial robots. Buyer guides, deployment checklists, and use case assessments.">
+<meta name="twitter:image" content="https://www.robotist.com.au/robotist-og.jpg">
+
+<link rel="canonical" href="https://www.robotist.com.au/blog.html">
+<meta property="og:title" content="Blog — Robotist | Global Robotics Platform">
+<meta property="og:description" content="Practical guides for businesses worldwide buying, deploying, and operating commercial robots.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.robotist.com.au/blog.html">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "Robotist Blog",
+  "description": "Practical guides for businesses worldwide buying, deploying, and operating commercial robots. Buyer guides, deployment checklists, and use case assessments.",
+  "url": "https://www.robotist.com.au/blog.html",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Robotist",
+    "url": "https://www.robotist.com.au"
+  }
+}
+</script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg-0: #030810; --bg-1: #060D18; --bg-2: #0C1828; --bg-3: #142035; --bg-4: #1E3550;
+  --accent: #4AA8C8; --accent-dim: #2E8FB5; --accent-light: #A8DCEF;
+  --accent-glow: rgba(74,168,200,0.12); --white: #F0F4F8;
+  --grey-1: #8A9BB0; --grey-2: #4A5A6A; --grey-3: #1E2D3D;
+  --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --nav-h: 72px; --gutter: clamp(24px, 6vw, 80px);
+  --container: 1200px;
+}
+html { scroll-behavior: smooth; font-size: 16px; height: 100%; }
+body { background: var(--bg-0); color: var(--white); font-family: var(--font-body); overflow-x: hidden; }
+
+/* Nav */
+.nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; align-items: center; justify-content: space-between; padding: 0 var(--gutter); height: var(--nav-h); background: rgba(3,8,16,0.92); backdrop-filter: blur(20px); border-bottom: 1px solid rgba(74,168,200,0.08); }
+.nav-logo { display:flex; align-items:center; text-decoration: none;
+  min-height: 44px;
+}
+.nav-logo img { display:block; height:28px; width:auto; }
+.nav-links { display: flex; align-items: center; gap: 40px; list-style: none; }
+.nav-links a { font-family: var(--font-main); font-weight: 300; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--grey-1); text-decoration: none; transition: color 0.2s; }
+.nav-links a:hover { color: var(--white); }
+.nav-links a.active { color: var(--accent); }
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  box-sizing: border-box;
+  line-height: 1;
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--bg-0);
+  background: var(--accent);
+  padding: 0 26px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.15s;
+}
+.nav-cta:hover { background: var(--accent-light); transform: translateY(-1px); }
+.nav-hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+.nav-hamburger span { display: block; width: 24px; height: 1px; background: var(--grey-1); transition: transform 0.3s, opacity 0.3s; }
+.nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translateY(12px); }
+.nav-hamburger.active span:nth-child(2) { opacity: 0; }
+.nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translateY(-12px); }
+.nav-links.open { display: flex; flex-direction: column; position: absolute; top: var(--nav-h); left: 0; right: 0; background: rgba(3,8,16,0.95); backdrop-filter: blur(24px); padding: 20px var(--gutter); gap: 16px; z-index: 400; border-bottom: 1px solid rgba(74,168,200,0.08); }
+
+/* Hero */
+.blog-hero { padding: calc(var(--nav-h) + 100px) var(--gutter) 80px; max-width: var(--container); margin: 0 auto; }
+.blog-hero-label { font-family: var(--font-main); font-size: 10px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
+.blog-hero h1 { font-family: var(--font-main); font-size: clamp(36px, 5.5vw, 60px); font-weight: 600; letter-spacing: -0.025em; line-height: 1.1; margin-bottom: 16px; max-width: 700px; }
+.blog-hero p { font-size: 17px; font-weight: 400; color: var(--grey-1); line-height: 1.65; max-width: 560px; }
+
+/* Featured post */
+.featured { max-width: var(--container); margin: 0 auto 80px; padding: 0 var(--gutter); }
+.featured-card { display: grid; grid-template-columns: 1fr 1fr; background: var(--bg-1); border: 1px solid var(--grey-3); text-decoration: none; transition: border-color 0.25s, background 0.25s; }
+.featured-card:hover { border-color: var(--accent-dim); background: var(--bg-2); }
+.featured-cover { width: 100%; height: 100%; min-height: 320px; background: var(--bg-1); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.featured-cover img, .featured-cover svg { width: 100%; height: 100%; object-fit: cover; }
+.featured-body { padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+.featured-category { font-family: var(--font-main); font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+.featured-title { font-family: var(--font-main); font-size: clamp(22px, 3vw, 30px); font-weight: 600; letter-spacing: -0.015em; color: var(--white); line-height: 1.25; margin-bottom: 12px; }
+.featured-excerpt { font-size: 15px; font-weight: 400; color: var(--grey-1); line-height: 1.7; margin-bottom: 20px; }
+.featured-meta { font-family: var(--font-main); font-size: 11px; font-weight: 400; color: var(--grey-1); letter-spacing: 0.08em; display: flex; gap: 16px; }
+.featured-read { font-family: var(--font-main); font-size: 12px; font-weight: 500; color: var(--accent); letter-spacing: 0.06em; margin-top: 16px; }
+
+/* Section header */
+.section-header { max-width: var(--container); margin: 0 auto 40px; padding: 0 var(--gutter); }
+.section-header h2 { font-family: var(--font-main); font-size: 13px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey-1); }
+
+/* Grid */
+.blog-grid { max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter) 120px; display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; }
+.blog-card { background: var(--bg-1); border: 1px solid var(--grey-3); text-decoration: none; display: flex; flex-direction: column; transition: border-color 0.25s, background 0.25s; overflow: hidden; }
+.blog-card:hover { border-color: var(--accent-dim); background: var(--bg-2); }
+.blog-card-cover { width: 100%; aspect-ratio: 16/9; background: var(--bg-2); overflow: hidden; }
+.blog-card-cover img, .blog-card-cover svg { width: 100%; height: 100%; object-fit: cover; display: block; }
+.blog-card-body { padding: 28px 28px 32px; display: flex; flex-direction: column; flex: 1; }
+.blog-card-category { font-family: var(--font-main); font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
+.blog-card-title { font-family: var(--font-main); font-size: 18px; font-weight: 600; letter-spacing: -0.01em; color: var(--white); line-height: 1.3; margin-bottom: 8px; }
+.blog-card-excerpt { font-size: 13px; font-weight: 400; color: var(--grey-1); line-height: 1.65; flex: 1; margin-bottom: 16px; }
+.blog-card-meta { font-family: var(--font-main); font-size: 10px; font-weight: 400; color: var(--grey-1); letter-spacing: 0.08em; display: flex; gap: 14px; }
+
+/* Loading */
+.blog-loading { text-align: center; padding: 100px var(--gutter); color: var(--grey-1); font-size: 15px; font-weight: 400; }
+
+/* Footer */
+.footer { background: var(--bg-0); border-top: 1px solid rgba(74,168,200,0.06); padding: 80px var(--gutter) 40px; }
+.footer-inner { max-width: var(--container); margin: 0 auto; display: grid; grid-template-columns: 2.5fr 1fr 1fr 1fr; gap: 80px; margin-bottom: 64px; }
+.footer-logo { font-family: var(--font-main); font-weight: 500; font-size: 16px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 20px; }
+.footer-tagline { font-family: var(--font-body); font-size: 13px; font-weight: 300; line-height: 1.75; color: var(--grey-1); max-width: 300px; margin-bottom: 32px; }
+.footer-col-title { font-family: var(--font-main); font-size: 10px; font-weight: 500; letter-spacing: 0.22em; text-transform: uppercase; color: var(--grey-1); margin-bottom: 24px; }
+.footer-links { display: flex; flex-direction: column; gap: 14px; list-style: none; }
+.footer-links a { font-family: var(--font-body); font-size: 13px; font-weight: 300; color: var(--grey-1); text-decoration: none; transition: color 0.2s; }
+.footer-links a:hover { color: var(--white); }
+.footer-bottom { max-width: var(--container); margin: 0 auto; padding-top: 32px; border-top: 1px solid var(--grey-3); display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+.footer-copy { font-family: var(--font-body); font-size: 12px; font-weight: 300; color: var(--grey-1); letter-spacing: 0.04em; }
+.footer-legal { display: flex; gap: 28px; }
+.footer-legal a { font-family: var(--font-body); font-size: 12px; font-weight: 300; color: var(--grey-1); text-decoration: none; transition: color 0.2s; }
+.footer-legal a:hover { color: var(--grey-1); }
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .nav-cta { display: none; }
+  .nav-hamburger { display: flex; }
+  .blog-hero { padding: calc(var(--nav-h) + 60px) var(--gutter) 48px; }
+  .featured-card { grid-template-columns: 1fr; }
+  .featured-cover { min-height: 200px; }
+  .featured-body { padding: 32px 24px; }
+  .blog-grid { grid-template-columns: 1fr; gap: 16px; }
+  .blog-card-body { padding: 24px 20px 28px; }
+  .footer-inner { grid-template-columns: 1fr; gap: 40px; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .footer-legal { flex-wrap: wrap; gap: 16px; }
+}
+.nav-cta--ghost {
+  min-height: 42px;
+  box-sizing: border-box;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--grey-1);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  padding: 0 22px;
+}
+.nav-cta--ghost:hover { color: var(--white); border-color: rgba(255, 255, 255, 0.45); }
+.nav-actions { display: flex; align-items: center; gap: 12px; }
+
+
+
+/* ── Inquiry Modal ── */
+.modal-overlay{
+  position:fixed;inset:0;z-index:10000;
+  background:rgba(0,0,0,.82);backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  display:flex;align-items:center;justify-content:center;padding:20px;
+  animation:modalFadeIn .25s ease;
+}
+@keyframes modalFadeIn{from{opacity:0}to{opacity:1}}
+
+.modal-box{
+  position:relative;
+  background:var(--bg-0,#030810);
+  border:1px solid rgba(74,168,200,.12);
+  border-radius:6px;
+  padding:clamp(28px,4vw,48px);
+  width:100%;max-width:540px;
+  max-height:90vh;overflow-y:auto;
+  animation:modalSlideUp .3s ease;
+}
+@keyframes modalSlideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+
+.modal-close{
+  position:absolute;top:14px;right:18px;
+  background:none;border:none;
+  color:var(--grey-1,#8A9BB0);font-size:24px;
+  cursor:pointer;line-height:1;padding:4px;
+  transition:color .2s;
+}
+.modal-close:hover{color:var(--white,#F0F4F8)}
+
+/* ── Form Typography ── */
+.inquiry-eyebrow{
+  font-family:var(--font-main);font-size:10px;font-weight:500;
+  letter-spacing:.3em;text-transform:uppercase;
+  color:var(--accent,#4AA8C8);margin-bottom:12px;
+}
+.inquiry-title{
+  font-family:var(--font-main);font-size:clamp(22px,3vw,32px);
+  font-weight:300;line-height:1.2;letter-spacing:-.02em;
+  color:var(--white,#F0F4F8);margin-bottom:14px;
+}
+.inquiry-title em{font-style:normal;color:var(--accent,#4AA8C8);font-weight:600}
+.inquiry-desc{
+  font-family:var(--font-body);font-size:14px;font-weight:300;
+  line-height:1.7;color:var(--grey-1,#8A9BB0);margin-bottom:28px;
+}
+
+/* ── Form Fields ── */
+.inquiry-form{display:flex;flex-direction:column;gap:14px;text-align:left}
+.inquiry-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.inquiry-field{display:flex;flex-direction:column;gap:5px}
+.inquiry-field label{
+  font-family:var(--font-main);font-size:10px;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;color: var(--grey-1);
+}
+.inquiry-field input,
+.inquiry-field select,
+.inquiry-field textarea{
+  font-family:var(--font-body);font-size:15px;font-weight:300;
+  color:var(--white,#F0F4F8);background:var(--bg-1,#060D18);
+  border:1px solid rgba(255,255,255,.07);padding:12px 14px;
+  outline:none;transition:border-color .2s,background .2s;
+}
+.inquiry-field input:focus,
+.inquiry-field select:focus,
+.inquiry-field textarea:focus{
+  border-color:rgba(74,168,200,.35);background:var(--bg-2,#0C1828);
+}
+.inquiry-field input::placeholder,
+.inquiry-field textarea::placeholder{color: var(--grey-1)}
+
+.inquiry-field select{
+  appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%238A9BB0' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;
+  padding-right:38px;
+}
+.inquiry-field select option{background:var(--bg-2,#0C1828);color:var(--white,#F0F4F8)}
+.inquiry-field textarea{resize:vertical;min-height:110px}
+
+.inquiry-submit-wrap{display:flex;justify-content:flex-start;margin-top:4px}
+
+/* ── Modal button ── */
+.modal-box .btn-primary{
+  font-family:var(--font-main);font-weight:500;font-size:12px;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--bg-0,#030810);background:var(--accent,#4AA8C8);
+  padding:14px 32px;border:none;cursor:pointer;
+  transition:background .2s,transform .15s;
+}
+.modal-box .btn-primary:hover{background:var(--accent-light,#A8DCEF);transform:translateY(-1px)}
+.modal-box .btn-primary:disabled{opacity:.6;cursor:not-allowed;transform:none}
+
+/* ── Mobile ── */
+@media(max-width:600px){
+  .modal-overlay{padding:12px;align-items:flex-end}
+  .modal-box{border-radius:12px 12px 0 0;max-height:92vh;padding:24px 20px 32px}
+  .inquiry-row{grid-template-columns:1fr}
+  .inquiry-submit-wrap{justify-content:stretch}
+  .modal-box .btn-primary{width:100%;text-align:center}
+}
+</style>
+<link rel="stylesheet" href="/mobile-usability.css">
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <a href="/" class="nav-logo"><img src="images/logo.svg" alt="Robotist" style="height:clamp(24px, 3.5vw, 36px);width:auto;"></a>
+    <ul class="nav-links">
+    <li><a href="index.html#catalogue">Catalogue</a></li>
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="compare.html">Compare</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="/grn/" class="nav-cta nav-cta--ghost">Join us</a>
+    <a href="/contact.html" class="nav-cta">Get Started</a>
+  </div>
+  <button class="nav-hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section class="blog-hero">
+  <div class="blog-hero-label">Articles</div>
+  <h1>Robot procurement,<br>without the guesswork.</h1>
+  <p>Practical guides on buying, deploying, and operating commercial robots worldwide. Written by people who've done it — not by chatbots.</p>
+</section>
+
+<div id="featured-container"></div>
+
+<div class="section-header"><h2>All Articles</h2></div>
+<div class="blog-grid" id="blog-grid">
+  <div class="blog-loading">Loading articles…</div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div>
+      <span class="footer-logo">Robotist</span>
+      <p class="footer-tagline">The global robotics platform. We connect businesses worldwide with the machines that will define the next decade of commerce.</p>
+      <p style="font-family:var(--font-body);font-size:12px;font-weight:300;color: var(--grey-1);">Shanghai · Hangzhou · Sydney</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Platform</div>
+      <ul class="footer-links">
+        <li><a href="/#catalogue">Robot Catalogue</a></li>
+        <li><a href="/compare.html">Compare Robots</a></li>
+        <li><a href="/#services">Integration Services</a></li>
+        <li><a href="/#services">Maintenance Plans</a></li>
+        <li><a href="/#services">Consultation</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="/about.html">About Robotist</a>
+        <li><a href="/blog.html">Blog</a></li></li>
+        <li><a href="/#services">Services</a></li>
+        <li><a href="/contact.html">Contact Us</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="mailto:robert@robotist.com.au">robert@robotist.com.au</a></li>
+        <li><a href="mailto:lareesa@robotist.com.au">lareesa@robotist.com.au</a></li>
+        <li><a href="https://www.linkedin.com/company/robotistworld/">LinkedIn</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">&copy; 2026 Robotist Pty Ltd. All rights reserved.</span>
+    <span class="footer-legal" style="display:inline-flex;flex-wrap:wrap;gap:14px;font-size:12px;letter-spacing:.04em;"><a href="/faq.html">FAQ</a><a href="/terms.html">Terms</a><a href="/cookies.html">Cookies</a><a href="/privacy.html">Privacy</a></span>
+  </div>
+</footer>
+
+<script>
+fetch('blog-posts.json')
+  .then(r => r.json())
+  .then(posts => {
+    // Draft posts (status: "draft") stay in blog-posts.json but are never rendered publicly.
+    posts = posts.filter(p => p.status !== 'draft');
+    const coverPath = function(p) { return p.coverUrl || 'blog/covers/' + p.slug + '.jpg'; };
+    
+    // Featured: first post
+    const feat = posts[0];
+    const fc = document.getElementById('featured-container');
+    fc.innerHTML = `
+      <section class="featured">
+        <a href="/blog/${feat.slug}.html" class="featured-card">
+          <div class="featured-cover"><img src="${coverPath(feat)}" alt="" loading="eager"></div>
+          <div class="featured-body">
+            <div class="featured-category">${feat.category}</div>
+            <h2 class="featured-title">${feat.title}</h2>
+            <p class="featured-excerpt">${feat.excerpt}</p>
+            <div class="featured-meta"><span>${feat.date}</span><span>${feat.readTime} read</span></div>
+            <div class="featured-read">Read article →</div>
+          </div>
+        </a>
+      </section>`;
+    
+    // Rest: grid
+    const rest = posts.slice(1);
+    const grid = document.getElementById('blog-grid');
+    grid.innerHTML = rest.map(p => `
+      <a href="/blog/${p.slug}.html" class="blog-card">
+        <div class="blog-card-cover"><img src="${coverPath(p)}" alt="" loading="lazy"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-category">${p.category}</div>
+          <h3 class="blog-card-title">${p.title}</h3>
+          <p class="blog-card-excerpt">${p.excerpt}</p>
+          <div class="blog-card-meta"><span>${p.date}</span><span>${p.readTime} read</span></div>
+        </div>
+      </a>
+    `).join('');
+  })
+  .catch(() => {
+    document.getElementById('blog-grid').innerHTML = '<div class="blog-loading">Unable to load articles. Please try again.</div>';
+  });
+</script>
+<!-- Cookie Consent -->
+<!-- Analytics (privacy-friendly beacon — always active, no cookies) -->
+<script>
+(function(){var u="https://ROBOTIST_LEADS_URL/a/ping";fetch(u+"?p="+encodeURIComponent(location.pathname)+"&r="+encodeURIComponent(document.referrer),{method:"POST"}).catch(function(){});})();
+</script>
+
+<!-- Inquiry Modal -->
+<div id="inquiry-modal" class="modal-overlay" style="display:none">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeInquiry()" aria-label="Close">&times;</button>
+    <div class="inquiry-eyebrow">Send an Inquiry</div>
+    <h2 class="inquiry-title">Tell us what you're<br><em>looking for.</em></h2>
+    <p class="inquiry-desc">Share a few details and we'll get back to you within one business day.</p>
+    <form class="inquiry-form">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="inquiry-row">
+        <div class="inquiry-field">
+          <label for="m-name">Name</label>
+          <input type="text" id="m-name" name="name" placeholder="Your full name" required>
+        </div>
+        <div class="inquiry-field">
+          <label for="m-email">Email</label>
+          <input type="email" id="m-email" name="email" placeholder="you@company.com" required>
+        </div>
+      </div>
+      <div class="inquiry-row">
+        <div class="inquiry-field">
+          <label for="m-company">Company</label>
+          <input type="text" id="m-company" name="company" placeholder="Your organisation">
+        </div>
+        <div class="inquiry-field">
+          <label for="m-interest">Area of Interest</label>
+          <select id="m-interest" name="interest">
+            <option value="">Select an option</option>
+            <option value="humanoid">Humanoid Robots</option>
+            <option value="quadruped">Quadruped Robots</option>
+            <option value="cleaning">Commercial Cleaning</option>
+            <option value="industrial">Industrial Automation</option>
+            <option value="multiple">Multiple Categories</option>
+            <option value="rental">Rental / Trial</option>
+            <option value="other">Other / General Inquiry</option>
+          </select>
+        </div>
+      </div>
+      <div class="inquiry-field">
+        <label for="m-message">Message</label>
+        <textarea id="m-message" name="message" placeholder="Tell us about your requirements, timeline, budget range, or any specific machines you're interested in…" required></textarea>
+      </div>
+      <div class="inquiry-submit-wrap">
+        <button type="submit" class="btn-primary">Send Inquiry</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="/assets/form-workflow.js"></script>
+
+</body>
+</html>

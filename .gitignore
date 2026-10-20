@@ -1,0 +1,44 @@
+# Raw/original images (compressed WebP versions should be used)
+images/*-main.png
+images/*-1.png
+images/*-2.png
+images/*-3.png
+images/*.jpg
+!images/eden-logo.jpg
+!images/lareesa.jpg
+!images/robert.jpg
+!images/garden-of-eden.jpg
+!images/partner-*.jpg
+!eden-chat/avatars/*.png
+
+# Eden raw images
+eden/images/
+
+# Playwright artifacts
+.playwright-cli/
+
+# Companion assets (separate project)
+companion-assets/
+companion-*.html
+companion-*.zip
+
+# Temp scripts
+scripts/
+_push*.py
+robots/*.png
+*.bak-*
+
+# Environment files — never commit
+.env
+.env.*
+__pycache__/
+
+# scratch/audit artefacts that must never reach the repo
+.git-corrupt-20260816/
+.codebase-memory/
+.ui-evidence/
+test-results/
+work/
+
+# Proposal feedback log (runtime data)
+data/proposal-feedback.jsonl

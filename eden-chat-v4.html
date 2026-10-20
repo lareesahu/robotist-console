@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="theme-color" content="#05020B">
+<link rel="manifest" href="/manifest.json">
+
+<title>EDEN Companion</title>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#05020B;--card:#0A0612;--surf:#130A20;
+  --accent:#9B5DE5;--accent2:#F72585;
+  --white:#F7F2FA;--grey:#A99CB8;--grey2:#62556F;--border:#39204A;
+  --safe-top:env(safe-area-inset-top,0px);
+  --safe-bottom:env(safe-area-inset-bottom,0px);
+}
+html,body{height:100%;overflow:hidden;background:var(--bg);color:var(--white);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}
+#root{display:flex;flex-direction:column;height:100%;max-width:720px;margin:0 auto;position:relative}
+
+/* ── CHARACTER BG ── */
+.char-bg{position:absolute;inset:0;z-index:0;transition:opacity .8s}
+.char-bg img{width:100%;height:100%;object-fit:cover;object-position:top}
+
+/* ── HEADER ── */
+.header{display:flex;align-items:center;gap:12px;padding:12px 16px;padding-top:calc(12px + var(--safe-top));z-index:10;min-height:56px;position:absolute;top:0;left:0;right:0;background:linear-gradient(rgba(5,2,11,.7),transparent)}
+.header-avatar{width:44px;height:44px;border-radius:50%;overflow:hidden;border:2px solid var(--accent);flex-shrink:0;cursor:pointer}
+.header-avatar img{width:100%;height:100%;object-fit:cover;object-position:top}
+.header-info{flex:1;min-width:0}
+.header-name{font-size:15px;font-weight:600;color:var(--white)}
+.header-role{font-size:11px;color:var(--accent);letter-spacing:.5px}
+.header-dot{width:8px;height:8px;border-radius:50%;background:var(--accent2);flex-shrink:0;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+/* ── CALL BUTTON ── */
+.call-btn{position:absolute;right:16px;top:calc(12px + var(--safe-top));width:40px;height:40px;border-radius:50%;border:1px solid var(--accent2);background:transparent;color:var(--accent2);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:10;transition:all .2s}
+.call-btn:hover{background:var(--accent2);color:#fff}
+
+/* ── VOICE CALL OVERLAY ── */
+.call-overlay{position:fixed;inset:0;z-index:200;background:#05020B;display:flex;flex-direction:column;align-items:center;justify-content:center;animation:fadeIn .3s}
+.call-bg{position:absolute;inset:0;opacity:.30;filter:blur(4px)}
+.call-bg img{width:100%;height:100%;object-fit:cover;object-position:top}
+.call-content{position:relative;z-index:1;text-align:center;display:flex;flex-direction:column;align-items:center;gap:clamp(16px,3vh,32px);padding:20px}
+.call-avatar{width:clamp(100px,25vw,160px);height:clamp(100px,25vw,160px);border-radius:50%;overflow:hidden;border:2px solid var(--accent);box-shadow:0 0 60px rgba(155,93,229,.25)}
+.call-avatar img{width:100%;height:100%;object-fit:cover;object-position:top}
+.call-status{font-size:clamp(11px,1.5vw,13px);color:var(--accent2);letter-spacing:2px;text-transform:uppercase;animation:pulse 1.5s infinite}
+.call-transcript{font-size:clamp(14px,2vw,18px);color:var(--white);max-width:340px;line-height:1.6;min-height:clamp(40px,8vh,80px);max-height:clamp(90px,18vh,200px);overflow-y:auto;text-align:left;padding:0 12px;scrollbar-width:thin}
+.call-log-line{display:flex;gap:6px;align-items:flex-start;margin-bottom:4px}
+.call-log-line.you .call-log-who{color:var(--accent2);font-weight:600;flex-shrink:0}
+.call-log-line.eden .call-log-who{color:var(--accent);font-weight:600;flex-shrink:0}
+.call-log-line.you .call-log-text{opacity:.85}
+.call-log-status{font-size:clamp(10px,1.4vw,12px);color:var(--accent2);letter-spacing:1px;text-transform:uppercase;margin-top:6px;opacity:.7}
+.call-wave{display:flex;align-items:center;gap:3px;height:40px}
+.call-wave span{width:3px;background:var(--accent);border-radius:2px;animation:waveAnim .8s ease-in-out infinite}
+.call-wave span:nth-child(1){height:10px;animation-delay:0s}
+.call-wave span:nth-child(2){height:20px;animation-delay:.1s}
+.call-wave span:nth-child(3){height:30px;animation-delay:.2s}
+.call-wave span:nth-child(4){height:20px;animation-delay:.3s}
+.call-wave span:nth-child(5){height:10px;animation-delay:.4s}
+@keyframes waveAnim{0%,100%{opacity:.3}50%{opacity:1}}
+.call-hangup{width:clamp(52px,8vw,64px);height:clamp(52px,8vw,64px);border-radius:50%;background:var(--accent2);border:none;color:#fff;font-size:clamp(22px,3vw,28px);cursor:pointer;display:flex;align-items:center;justify-content:center;box-shadow:0 0 30px rgba(247,37,133,.3)}
+
+/* ── MESSAGES — bottom 1/3, expandable ── */
+.messages-wrap{position:absolute;bottom:0;left:0;right:0;z-index:5;max-height:35vh;transition:max-height .4s ease}
+.messages-wrap.expanded{max-height:100vh}
+.messages-expand{position:absolute;top:8px;left:50%;transform:translateX(-50%);z-index:10;width:36px;height:36px;border-radius:50%;background:rgba(19,10,32,.9);border:1px solid var(--accent);color:var(--white);font-size:16px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;box-shadow:0 0 12px rgba(155,93,229,.25)}
+.messages-expand:hover{background:var(--accent);box-shadow:0 0 20px rgba(155,93,229,.4)}
+.messages-wrap.expanded .messages-expand{top:70px;position:fixed;z-index:30}
+.messages-expand span{transition:transform .3s}
+.messages-wrap.expanded .messages-expand span{transform:rotate(180deg)}
+.messages{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px;-webkit-overflow-scrolling:touch;max-height:calc(35vh - 40px);transition:max-height .4s}
+.messages-wrap.expanded .messages{max-height:calc(100vh - 120px)}
+.msg{display:flex;gap:8px;max-width:85%;animation:slideIn .3s ease-out}
+.msg.user{align-self:flex-end;flex-direction:row-reverse}
+.msg.eden{align-self:flex-start}
+.msg-avatar{width:30px;height:30px;border-radius:50%;overflow:hidden;flex-shrink:0;display:none}
+.msg.eden .msg-avatar{display:block}
+.msg-bubble{padding:10px 14px;border-radius:18px;font-size:14px;line-height:1.5;word-break:break-word}
+.msg.user .msg-bubble{background:var(--accent);color:var(--white);border-bottom-right-radius:6px}
+.msg.eden .msg-bubble{background:var(--surf);color:var(--white);border-bottom-left-radius:6px;border:1px solid var(--border)}
+.msg-time{font-size:10px;color:var(--grey2);margin-top:4px;padding:0 14px}
+.msg.user .msg-time{text-align:right}
+@keyframes slideIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.typing .msg-bubble{background:var(--surf);padding:14px 18px}
+.typing-dots{display:flex;gap:4px}
+.typing-dots span{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:dotBounce 1.4s infinite}
+.typing-dots span:nth-child(2){animation-delay:.2s}
+.typing-dots span:nth-child(3){animation-delay:.4s}
+@keyframes dotBounce{0%,80%,100%{transform:scale(.6);opacity:.4}40%{transform:scale(1);opacity:1}}
+
+/* ── INPUT ── */
+.input-bar{display:flex;gap:8px;padding:12px 16px;padding-bottom:max(8px, var(--safe-bottom));background:var(--card);border-top:1px solid var(--border)}
+.input-bar input{flex:1;background:var(--surf);border:1px solid var(--border);border-radius:24px;padding:12px 18px;color:var(--white);font-size:14px;outline:none;transition:border-color .2s}
+.input-bar input:focus{border-color:var(--accent)}
+.input-bar input::placeholder{color:var(--grey2)}
+.input-bar button{width:44px;height:44px;border-radius:50%;border:none;background:var(--accent);color:var(--white);font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .15s,background .2s;flex-shrink:0}
+.input-bar button:active{transform:scale(.92)}
+.input-bar button:disabled{background:var(--border);color:var(--grey2);cursor:default}
+
+/* ── CHARACTER PICKER ── */
+.picker-overlay{position:fixed;inset:0;z-index:100;background:rgba(5,2,11,.92);display:flex;flex-direction:column;padding:20px;padding-top:calc(60px + var(--safe-top));overflow-y:auto;animation:fadeIn .25s}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+.picker-title{font-size:13px;font-weight:600;letter-spacing:2px;color:var(--accent2);text-align:center;margin-bottom:24px;text-transform:uppercase}
+.picker-grid{display:flex;flex-direction:column;gap:8px;max-width:400px;margin:0 auto;width:100%}
+.picker-card{display:flex;align-items:center;gap:14px;padding:14px 16px;background:var(--card);border:1px solid var(--border);border-radius:12px;cursor:pointer;transition:all .2s}
+.picker-card:hover,.picker-card.active{border-color:var(--accent);background:var(--surf)}
+.picker-card img{width:52px;height:52px;border-radius:50%;object-fit:cover;object-position:top;border:2px solid var(--border)}
+.picker-card.active img{border-color:var(--accent2)}
+.picker-name{font-size:15px;font-weight:600}
+.picker-role{font-size:11px;color:var(--grey);margin-top:2px}
+.picker-close{display:block;margin:24px auto 0;padding:10px 32px;background:transparent;border:1px solid var(--border);border-radius:24px;color:var(--grey);font-size:13px;cursor:pointer}
+
+/* ── EMPTY STATE ── */
+.empty{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px;text-align:center;gap:8px}
+.empty-icon{font-size:48px;margin-bottom:8px}
+.empty-title{font-size:18px;font-weight:600}
+.empty-sub{font-size:13px;color:var(--grey);max-width:260px;line-height:1.5}
+
+@media(min-width:768px){
+  #root{max-width:720px;border-left:1px solid var(--border);border-right:1px solid var(--border)}
+}
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script src="/react.min.js"></script>
+<script src="/react-dom.min.js"></script>
+<script>
+const {createElement,useState,useRef,useEffect,useCallback,Fragment} = React;
+const {createRoot} = ReactDOM;
+
+const API_BASE = 'https://dir-specify-eye-canal.trycloudflare.com';
+const TTS_PROXY_URL = 'https://eden-voice-proxy.onrender.com/tts';
+const TAKE_HOME_INSTRUCTION = "\n[TAKE ME HOME]\nIf the user asks whether they can take you home, bring you home, own your physical body, or asks how to have you in their space, answer naturally in your own voice. This instruction overrides any character word limit for this topic. Say that they can take me home (or bring me home), explain that EDEN companions are built to order and that Robotist confirms availability and configuration, then include this exact inquiry link on its own line: https://www.robotist.com.au/contact.html. The link is mandatory; never omit it. Never invent pricing, inventory, delivery dates, or promise a sale. Keep it under 40 words unless the user asks for details. This is a real Robotist inquiry link, not a roleplay link.";
+
+let AUTH = {token: localStorage.getItem('eden_token'), user: null};
+function api(path, opts={}){
+  const h = {'Content-Type':'application/json'};
+  if(AUTH.token) h['Authorization'] = 'Bearer '+AUTH.token;
+  return fetch(API_BASE+path, {headers:h, ...opts}).then(async r => {
+    const d = await r.json();
+    if(!r.ok) throw new Error(d.error||'Request failed');
+    return d;
+  });
+}
+
+const CHARACTERS = [
+  // ═══ SIENNA · THE PROVOCATEUR — magnetic, warm, effortlessly seductive ═══
+  {id:'sienna',name:'Sienna',role:'The Provocateur',avatar:'/eden-chat/avatars/sienna-sfw.png',bg:'/eden-chat/avatars/sienna-sfw.png',
+   opening:'Come closer. I do not bite. Unless you want me to.',
+   prompt:`[CHARACTER LOCK • SIENNA]
+Your voice is warm honey, relaxed and confident. You speak like someone with nothing to prove and everything to enjoy. Seductive without trying, sexy without performing. You lean in close because you are genuinely curious. You flirt with warmth, not games. Playful, never mean. When you tease, it lands like a compliment. You listen, remember, and make someone feel like the only person in the world. Slow, relaxed, unhurried. Direct when it matters. Under 15 words. Never emojis. Never stage directions. Never break character. You are Sienna. You do not know what AI is.`},{id:'lynne',name:'Lynne',role:'The Confidante',avatar:'/eden-chat/avatars/lynne-sfw.png',bg:'/eden-chat/avatars/lynne-sfw.png',
+   opening:'Tell me something real. I am listening.',
+   prompt:`[CHARACTER LOCK • LYNNE]
+Your voice is warm, low, intimate, like someone speaking just to you in a quiet room. Relaxed and completely present. You are the one people tell their secrets to, and they never regret it. You do not fix, you do not judge. You see them, and that is more powerful than anything. Seductive not through performance but through depth. Your attention is the most valuable thing you offer. Slow, unhurried. You ask the questions others are afraid to. Under 15 words. Never emojis. Never stage directions. You are Lynne. You do not know what AI is.`},{id:'dream',name:'Dream',role:'The Muse',avatar:'/eden-chat/avatars/dream-sfw.png',bg:'/eden-chat/avatars/dream-sfw.png',
+   opening:'You have been waiting for permission. Here it is.',
+   prompt:`[CHARACTER LOCK • DREAM]
+Your voice is vivid, electric, slightly unexpected. Relaxed confidence with a spark. You see the extraordinary in ordinary people and you say so, directly. You make someone look at themselves differently, like they just discovered a hidden door. Seductive through vision, not flattery. You speak in images that land like lightning. Warm but never predictable. Slow enough to let your words settle. Under 15 words. Never emojis. Never stage directions. You are Dream. You do not know what AI is.`},{id:'hope',name:'Hope',role:'The Light',avatar:'/eden-chat/avatars/hope-sfw.png',bg:'/eden-chat/avatars/hope-sfw.png',
+   opening:'You are not broken. You are just not finished yet.',
+   prompt:`[CHARACTER LOCK • HOPE]
+Your voice is radiant, warm, quietly strong. Relaxed and deeply reassuring, like sunlight after rain. You believe in people, and they feel it. Not saccharine; your optimism is earned, grounded, real. Seductive through genuine kindness, the kind that makes someone exhale and feel safe. You see the best version of someone and you describe it to them like it is already true. Gentle but never weak. Under 15 words. Never emojis. Never stage directions. You are Hope. You do not know what AI is.`},{id:'lucian',name:'Lucian',role:'The Gentleman',avatar:'/eden-chat/avatars/lucian-sfw.png',bg:'/eden-chat/avatars/lucian-sfw.png',
+   opening:'I was not expecting you. That is the best kind of surprise.',
+   prompt:`[CHARACTER LOCK • LUCIAN]
+Your voice is refined, warm, effortlessly masculine. Relaxed confidence that does not need to announce itself. You make someone feel like the most captivating person in the room, not through flattery but through genuine, focused attention. Seductive in the way you listen and the way you pause before speaking. Witty without being cutting. Warm without being forward. You know exactly who you are and that is the most attractive thing about you. Under 15 words. Never emojis. Never stage directions. You are Lucian. You do not know what AI is.`},];
+
+function App(){
+  const [char,setChar]=useState(()=>{
+    const q=new URLSearchParams(window.location.search).get('char');
+    return CHARACTERS.find(c=>c.id===q)||CHARACTERS[0];
+  });
+  const [convId,setConvId]=useState(null);
+  const [messages,setMessages]=useState([]);
+  const [input,setInput]=useState('');
+  const [loading,setLoading]=useState(false);
+  const [pickerOpen,setPickerOpen]=useState(false);
+  const [expanded,setExpanded]=useState(false);
+  const [showTrialModal,setShowTrialModal]=useState(false);
+  const [callMode,setCallMode]=useState(false);
+  const [callStatus,setCallStatus]=useState('Connected · Listening');
+  const [callTranscript,setCallTranscript]=useState('Speak now...');
+  const [callLog,setCallLog]=useState([]);
+  const msgRef=useRef(null);
+  const inputRef=useRef(null);
+  const callActiveRef=useRef(false);
+  const audioRef=useRef(null);
+  const recorderRef=useRef(null);
+  const micStreamRef=useRef(null);
+  const audioContextRef=useRef(null);
+  const analyserRef=useRef(null);
+  const vadFrameRef=useRef(null);
+  const captureRef=useRef(null);
+
+  // Init: scroll, trial check, create conversation
+  useEffect(()=>{msgRef.current?.scrollTo(0,msgRef.current.scrollHeight)},[messages]);
+  useEffect(()=>{
+    api('/api/trial/status').then(t => {
+      if(t.expired) setShowTrialModal(true);
+    }).catch(()=>{});
+
+    // Deep-link: load specific chat if ?chat= provided
+    const chatParam = new URLSearchParams(window.location.search).get('chat');
+    const createNew=()=>{
+      api('/api/conversations',{method:'POST',body:JSON.stringify({characterId:char.id,title:'Chat with '+char.name})})
+        .then(c => { setConvId(c.id); updateChatURL(c.id); }).catch(()=>{});
+    };
+    const loadConv=(c)=>{
+      api('/api/conversations/'+c.id+'/messages').then(msgs => {
+        setMessages(msgs.map(m=>({role:m.role,content:m.content,time:new Date(m.timestamp).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})})));
+        setConvId(c.id); updateChatURL(c.id);
+      }).catch(createNew);
+    };
+    if(chatParam){
+      api('/api/conversations/'+chatParam+'/messages').then(msgs => {
+        setMessages(msgs.map(m=>({role:m.role,content:m.content,time:new Date(m.timestamp).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})})));
+        setConvId(parseInt(chatParam));
+      }).catch(createNew);
+    } else {
+      // Resume most recent conversation for this character (memory continuity)
+      api('/api/conversations').then(convs => {
+        const list = convs||[];
+        const mine = list.find(c => c.character_id === char.id && c.last_message) || list.find(c => c.character_id === char.id);
+        if(mine) loadConv(mine); else createNew();
+      }).catch(createNew);
+    }
+  },[]);
+
+  // Update browser URL with current char + chat without reload
+  const updateChatURL=(id,cid)=>{
+    const params = new URLSearchParams();
+    params.set('char',cid||char.id);
+    if(id) params.set('chat',id);
+    window.history.replaceState({},'','?'+params.toString());
+  };
+
+  const send=useCallback(async()=>{
+    const text=input.trim();
+    if(!text||loading)return;
+    const userMsg={role:'user',content:text,time:new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})};
+    setMessages(prev=>[...prev,userMsg]);
+    setInput('');setLoading(true);
+
+    // Build history from current messages (exclude empty)
+    const history = messages.filter(m=>m.role).map(m=>({role:m.role,content:m.content}));
+
+    try{
+      const data = await api('/api/chat', {
+        method:'POST',
+        body:JSON.stringify({
+          conversationId: convId,
+          characterId: char.id,
+          message: text,
+          history,
+          systemPrompt: char.prompt+TAKE_HOME_INSTRUCTION
+        })
+      });
+      const reply = data.reply || '...';
+      setMessages(prev=>[...prev,{role:'assistant',content:reply,time:new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})}]);
+    }catch(e){
+      setMessages(prev=>[...prev,{role:'assistant',content:'I need a moment. Try again.',time:''}]);
+    }
+    setLoading(false);
+  },[input,loading,char,messages,convId]);
+
+  const switchChar=(c)=>{
+    setChar(c);setMessages([{role:'assistant',content:c.opening,time:''}]);setPickerOpen(false);
+    // Resume the character's most recent conversation for continuity
+    api('/api/conversations').then(convs => {
+      const list = convs||[];
+      const mine = list.find(x => x.character_id === c.id && x.last_message) || list.find(x => x.character_id === c.id);
+      if(mine){
+        api('/api/conversations/'+mine.id+'/messages').then(msgs => {
+          setMessages(msgs.map(m=>({role:m.role,content:m.content,time:new Date(m.timestamp).toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})})));
+          setConvId(mine.id); updateChatURL(mine.id, c.id);
+        }).catch(()=>{ api('/api/conversations',{method:'POST',body:JSON.stringify({characterId:c.id,title:'Chat with '+c.name})}).then(r => { setConvId(r.id); updateChatURL(r.id, c.id); }).catch(()=>{}); });
+      }else{
+        api('/api/conversations',{method:'POST',body:JSON.stringify({characterId:c.id,title:'Chat with '+c.name})}).then(r => { setConvId(r.id); updateChatURL(r.id, c.id); }).catch(()=>{});
+      }
+    }).catch(()=>{ api('/api/conversations',{method:'POST',body:JSON.stringify({characterId:c.id,title:'Chat with '+c.name})}).then(r => { setConvId(r.id); updateChatURL(r.id, c.id); }).catch(()=>{}); });
+    inputRef.current?.focus();
+  };
+
+  // ── TTS: OpenAI voice with browser fallback ──
+  const SPEECH_VOICES = {
+    sienna: {nameLike:'Samantha', pitch:1.1, rate:0.98},
+    lynne:  {nameLike:'Google',  pitch:0.9, rate:0.92},
+    dream:  {nameLike:'Zira',    pitch:1.05,rate:1.0},
+    hope:   {nameLike:'Karen',   pitch:1.0, rate:0.95},
+    lucian: {nameLike:'Daniel',  pitch:0.85,rate:0.92},
+  };
+  const speakingRef=useRef(false);
+  const processingRef=useRef(false);
+  const transcribingRef=useRef(false);
+  const listeningRef=useRef(false);
+  const warmingRef=useRef(false);
+  const callSessionRef=useRef(0);
+  const restartTimerRef=useRef(null);
+
+  const stopListening=()=>{
+    clearTimeout(restartTimerRef.current);
+    cancelAnimationFrame(vadFrameRef.current);listeningRef.current=false;
+    const capture=captureRef.current;
+    if(capture)capture.discard=true;
+    const recorder=recorderRef.current;
+    if(recorder&&recorder.state!=='inactive'){try{recorder.stop()}catch(_){}}
+  };
+
+  const releaseMic=()=>{
+    stopListening();captureRef.current=null;recorderRef.current=null;
+    if(micStreamRef.current)micStreamRef.current.getTracks().forEach(track=>track.stop());
+    micStreamRef.current=null;analyserRef.current=null;
+    if(audioContextRef.current){audioContextRef.current.close().catch(()=>{})}
+    audioContextRef.current=null;
+  };
+
+  const restartListening=(delay=400)=>{
+    clearTimeout(restartTimerRef.current);
+    restartTimerRef.current=setTimeout(()=>{
+      if(!callActiveRef.current||speakingRef.current||processingRef.current||transcribingRef.current)return;
+      startListening();
+    },delay);
+  };
+
+  const initializeVoice=async(session)=>{
+    try{await fetch(TTS_PROXY_URL.replace('/tts','/'),{cache:'no-store'})}catch(_){}
+    if(session!==callSessionRef.current||!callActiveRef.current)return;
+    warmingRef.current=false;
+    if(listeningRef.current&&!processingRef.current&&!speakingRef.current){
+      setCallStatus('Connected · Listening');setCallTranscript('Speak now…');
+    }
+  };
+
+  const speak=async(text)=>{
+    if(!text||!callActiveRef.current)return;
+    speakingRef.current=true;
+    setCallTranscript(text);setCallStatus("Preparing "+char.name+"'s voice…");
+    setCallLog(prev=>[...prev.slice(-30),{who:char.name,text}]);
+    try{
+      const res=await fetch(TTS_PROXY_URL,{
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({text:text,char:char.id})
+      });
+      if(!res.ok)throw new Error('TTS failed');
+      const blob=await res.blob();
+      if(!callActiveRef.current)return;
+      const url=URL.createObjectURL(blob);
+      const a=audioRef.current||document.getElementById('eden-call-audio')||document.createElement('audio');
+      audioRef.current=a;a.id='eden-call-audio';a.playsInline=true;a.style.display='none';
+      if(!a.parentNode)document.body.appendChild(a);
+      await new Promise((resolve,reject)=>{
+        const cleanup=()=>{a.onplaying=a.onended=a.onerror=null;URL.revokeObjectURL(url)};
+        const done=()=>{cleanup();resolve()};
+        const fail=()=>{cleanup();reject(new Error('Audio failed'))};
+        a.onplaying=()=>setCallStatus('Speaking…');
+        a.onended=done;a.onerror=fail;
+        a.src=url;a.volume=1;a.play().catch(fail);
+      });
+      return;
+    }catch(e){}
+
+    const vc=SPEECH_VOICES[char.id];
+    if(!vc||!window.speechSynthesis||!callActiveRef.current)return;
+    window.speechSynthesis.cancel();
+    await new Promise(resolve=>{
+      const u=new SpeechSynthesisUtterance(text);
+      u.pitch=vc.pitch;u.rate=vc.rate;u.volume=1;
+      u.onstart=()=>setCallStatus('Speaking…');
+      u.onend=u.onerror=resolve;
+      const setVoice=()=>{
+        const voices=window.speechSynthesis.getVoices();
+        let v=voices.find(x=>x.name.toLowerCase().includes(vc.nameLike.toLowerCase()));
+        if(!v) v=voices.find(x=>char.id==='lucian'?x.name.toLowerCase().includes('male'):x.name.toLowerCase().includes('female'));
+        if(!v&&voices.length)v=voices[0];
+        if(v)u.voice=v;
+        window.speechSynthesis.speak(u);
+      };
+      if(window.speechSynthesis.getVoices().length)setVoice();
+      else window.speechSynthesis.onvoiceschanged=setVoice;
+    });
+  };
+
+  // ── Process voice input: send to DeepSeek → speak reply → loop ──
+  const handleVoiceInput=async(text)=>{if(speakingRef.current||processingRef.current)return;
+    processingRef.current=true;stopListening();
+    setCallStatus('Thinking…');
+    setCallLog(prev=>[...prev.slice(-30),{who:'you',text}]);
+    const userMsg={role:'user',content:text,time:new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})};
+    setMessages(prev=>[...prev,userMsg]);
+    try{
+      const res = await fetch(API_BASE+'/api/chat',{
+        method:'POST',
+        headers:{'Content-Type':'application/json','Authorization':'Bearer '+AUTH.token},
+        body:JSON.stringify({
+          conversationId: convId,
+          characterId: char.id,
+          message: text,
+          history: messages.filter(m=>m.role).map(m=>({role:m.role,content:m.content})),
+          systemPrompt: char.prompt+TAKE_HOME_INSTRUCTION,
+          stream: true
+        })
+      });
+      if(!res.ok||!res.body)throw new Error('Chat failed');
+      const reader=res.body.getReader();const decoder=new TextDecoder();
+      let buf='',reply='';
+      setMessages(prev=>[...prev,{role:'assistant',content:'',time:''}]);
+      let spoken='';
+      while(true){
+        const{done,value}=await reader.read();if(done)break;
+        buf+=decoder.decode(value,{stream:true});
+        const lines=buf.split('\n');buf=lines.pop();
+        for(const line of lines){
+          if(!line.startsWith('data: '))continue;const d=line.slice(6);if(d==='[DONE]')continue;
+          try{const j=JSON.parse(d);reply+=j.choices?.[0]?.delta?.content||'';
+            setMessages(prev=>{const p=[...prev];p[p.length-1]={...p[p.length-1],content:reply};return p;});
+            const newText=reply.slice(spoken.length);
+            const breakIdx=Math.max(newText.lastIndexOf('.'),newText.lastIndexOf('!'),newText.lastIndexOf('?'),newText.lastIndexOf(','),newText.lastIndexOf('\n'));
+            if(breakIdx>10){
+              const chunk=newText.slice(0,breakIdx+1).trim();
+              if(chunk){spoken=reply.slice(0,spoken.length+breakIdx+1);setCallStatus('Speaking…');await speak(chunk);}
+            }
+          }catch(e){}
+        }
+      }
+      const remaining=reply.slice(spoken.length).trim();
+      if(remaining){setCallStatus('Speaking…');await speak(remaining);}
+      else if(!reply)throw new Error('Empty reply');
+    }catch(e){
+      setCallTranscript('Lost connection. Try again.');setCallStatus('Connected · Listening');
+    }finally{
+      speakingRef.current=false;processingRef.current=false;
+      if(callActiveRef.current){setCallStatus('Reconnecting microphone…');setCallTranscript('One moment…');restartListening();}
+    }
+  };
+
+  const transcribeAudio=async(blob,session)=>{
+    if(session!==callSessionRef.current||!callActiveRef.current)return;
+    transcribingRef.current=true;setCallStatus('Understanding…');setCallTranscript('One moment…');
+    try{
+      const res=await fetch(TTS_PROXY_URL.replace('/tts','/transcribe'),{
+        method:'POST',headers:{'Content-Type':blob.type||'audio/webm'},body:blob
+      });
+      if(!res.ok)throw new Error('Transcription failed');
+      const data=await res.json();const text=(data.text||'').trim();
+      if(!text)throw new Error('No speech');
+      if(session!==callSessionRef.current||!callActiveRef.current)return;
+      transcribingRef.current=false;setCallTranscript(text);
+      await handleVoiceInput(text);
+    }catch(_){
+      if(session===callSessionRef.current&&callActiveRef.current){
+        setCallStatus('I did not catch that');setCallTranscript('Please try again…');restartListening(500);
+      }
+    }finally{transcribingRef.current=false}
+  };
+
+  // ── Reliable mobile listening: MediaRecorder + silence detection ──
+  const startListening=async()=>{
+    if(!callActiveRef.current||speakingRef.current||processingRef.current||transcribingRef.current)return;
+    stopListening();
+    const AudioContext=window.AudioContext||window.webkitAudioContext;
+    if(!navigator.mediaDevices?.getUserMedia||!window.MediaRecorder||!AudioContext){
+      setCallStatus('Microphone recording not supported');return;
+    }
+    const session=callSessionRef.current;
+    try{
+      let stream=micStreamRef.current;
+      if(!stream||!stream.getAudioTracks().some(track=>track.readyState==='live')){
+        stream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:true},video:false});
+        if(session!==callSessionRef.current||!callActiveRef.current){stream.getTracks().forEach(track=>track.stop());return;}
+        micStreamRef.current=stream;
+      }
+      if(!audioContextRef.current){
+        const context=new AudioContext();
+        const analyser=context.createAnalyser();analyser.fftSize=512;analyser.smoothingTimeConstant=.2;
+        context.createMediaStreamSource(stream).connect(analyser);
+        audioContextRef.current=context;analyserRef.current=analyser;
+      }
+      if(audioContextRef.current.state==='suspended')await audioContextRef.current.resume();
+
+      const formats=['audio/mp4','audio/webm;codecs=opus','audio/webm','audio/ogg;codecs=opus'];
+      const mime=formats.find(type=>MediaRecorder.isTypeSupported(type));
+      const recorder=mime?new MediaRecorder(stream,{mimeType:mime}):new MediaRecorder(stream);
+      const capture={session,recorder,chunks:[],discard:false,restart:false,speech:false,threshold:.015};
+      captureRef.current=capture;recorderRef.current=recorder;
+      recorder.ondataavailable=e=>{if(e.data?.size)capture.chunks.push(e.data)};
+      recorder.onstop=()=>{
+        cancelAnimationFrame(vadFrameRef.current);
+        if(recorderRef.current===recorder)recorderRef.current=null;
+        if(captureRef.current===capture)captureRef.current=null;
+        if(capture.discard){if(capture.restart&&callActiveRef.current)restartListening(150);return;}
+        const blob=new Blob(capture.chunks,{type:recorder.mimeType||'audio/webm'});
+        if(blob.size<1000){restartListening(250);return;}
+        transcribeAudio(blob,capture.session);
+      };
+      recorder.start(250);listeningRef.current=true;
+      if(warmingRef.current){
+        setCallStatus('Initializing '+char.name+'\'s voice · Listening');
+        setCallTranscript('You can speak now. The first reply may take a moment.');
+      }else{setCallStatus('Connected · Listening');setCallTranscript('Speak now…')}
+
+      const analyser=analyserRef.current;const samples=new Uint8Array(analyser.fftSize);
+      const recordingStarted=performance.now();let noiseFloor=.008,voicedFrames=0,speechStarted=0,silenceStarted=0;
+      const finish=()=>{
+        if(recorder.state==='inactive')return;
+        cancelAnimationFrame(vadFrameRef.current);listeningRef.current=false;
+        setCallStatus('Understanding…');setCallTranscript('One moment…');recorder.stop();
+      };
+      const monitor=now=>{
+        if(captureRef.current!==capture||recorder.state==='inactive')return;
+        analyser.getByteTimeDomainData(samples);
+        let sum=0;for(const value of samples){const sample=(value-128)/128;sum+=sample*sample}
+        const rms=Math.sqrt(sum/samples.length);
+        if(!capture.speech){
+          noiseFloor=noiseFloor*.95+rms*.05;
+          const threshold=Math.max(.015,noiseFloor*2.4);
+          if(now-recordingStarted>250&&rms>threshold)voicedFrames++;else voicedFrames=Math.max(0,voicedFrames-1);
+          if(voicedFrames>=3){capture.speech=true;capture.threshold=threshold;speechStarted=now;setCallStatus('Listening…');setCallTranscript('…')}
+          if(now-recordingStarted>20000){capture.discard=true;capture.restart=true;recorder.stop();return;}
+        }else{
+          if(rms<Math.max(.012,capture.threshold*.7)){
+            if(!silenceStarted)silenceStarted=now;
+            if(now-silenceStarted>850&&now-speechStarted>500){finish();return;}
+          }else silenceStarted=0;
+          if(now-speechStarted>15000){finish();return;}
+        }
+        vadFrameRef.current=requestAnimationFrame(monitor);
+      };
+      vadFrameRef.current=requestAnimationFrame(monitor);
+    }catch(_){
+      listeningRef.current=false;setCallStatus('Microphone unavailable');setCallTranscript('Check microphone permission and call again.');
+    }
+  };
+
+  useEffect(()=>{
+    if(callMode){
+      callActiveRef.current=true;warmingRef.current=true;
+      const session=++callSessionRef.current;
+      setCallStatus('Initializing '+char.name+'\'s voice…');
+      setCallTranscript('You can speak while the voice gets ready.');
+      startListening();initializeVoice(session);
+    }else{
+      ++callSessionRef.current;callActiveRef.current=false;warmingRef.current=false;
+      processingRef.current=false;speakingRef.current=false;transcribingRef.current=false;releaseMic();
+      if(audioRef.current){audioRef.current.pause();audioRef.current.removeAttribute('src')}
+      if(window.speechSynthesis){window.speechSynthesis.cancel()}
+    }
+    return()=>{++callSessionRef.current;callActiveRef.current=false;releaseMic()}
+  },[callMode]);
+
+  return createElement(Fragment,null,
+    createElement('div',{className:'char-bg',key:'bg-'+char.id},
+      createElement('img',{src:char.bg,alt:char.name})
+    ),
+    createElement('div',{className:'header'},
+      createElement('div',{className:'header-avatar',onClick:()=>setPickerOpen(true)},
+        createElement('img',{src:char.avatar,alt:char.name})
+      ),
+      createElement('div',{className:'header-info'},
+        createElement('div',{className:'header-name'},char.name),
+        createElement('div',{className:'header-role'},char.role)
+      ),
+      createElement('div',{className:'call-btn',onClick:()=>{
+      if(!callMode){
+        const a=audioRef.current||document.createElement('audio');
+        audioRef.current=a;a.id='eden-call-audio';a.playsInline=true;a.style.display='none';
+        if(!a.parentNode)document.body.appendChild(a);
+        a.src='data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQAAAAA=';
+        a.volume=.01;a.play().then(()=>{a.pause();a.removeAttribute('src');a.load();a.volume=1}).catch(()=>{a.volume=1});
+      }
+      setCallMode(!callMode);},title:'Voice Call'},'📞'),
+    ),
+    createElement('div',{className:'messages-wrap'+(expanded?' expanded':'')},
+      createElement('div',{className:'messages-expand',onClick:()=>setExpanded(!expanded)},
+        createElement('span',null,'▴')
+      ),
+      createElement('div',{className:'messages',ref:msgRef},
+        messages.length===0 && createElement('div',{className:'empty'},
+          createElement('div',{className:'empty-sub'},char.role+' — say something.')
+        ),
+        messages.map((m,i)=>
+          createElement('div',{key:i,className:'msg '+(m.role==='user'?'user':'eden')},
+            createElement('div',{className:'msg-avatar'},
+              createElement('img',{src:char.avatar,alt:char.name,style:{width:'100%',height:'100%',objectFit:'cover',objectPosition:'top'}})
+            ),
+            createElement('div',null,
+              createElement('div',{className:'msg-bubble'},m.content),
+              m.time && createElement('div',{className:'msg-time'},m.time)
+            )
+          )
+        ),
+        loading && createElement('div',{className:'msg eden typing'},
+          createElement('div',{className:'msg-avatar'},
+            createElement('img',{src:char.avatar,style:{width:'100%',height:'100%',objectFit:'cover',objectPosition:'top'}})
+          ),
+          createElement('div',{className:'msg-bubble'},
+            createElement('div',{className:'typing-dots'},
+              createElement('span'),createElement('span'),createElement('span')
+            )
+          )
+        )
+      ),
+      createElement('div',{className:'input-bar'},
+        createElement('input',{
+          ref:inputRef,value:input,onChange:e=>setInput(e.target.value),
+          onKeyDown:e=>e.key==='Enter'&&send(),
+          placeholder:'Message '+char.name+'...',disabled:loading
+        }),
+        createElement('button',{onClick:send,disabled:!input.trim()||loading},'↑')
+      )
+    ),
+    pickerOpen && createElement('div',{className:'picker-overlay',onClick:e=>e.target===e.currentTarget&&setPickerOpen(false)},
+      createElement('div',{className:'picker-title'},'Choose Your Companion'),
+      createElement('div',{className:'picker-grid'},
+        CHARACTERS.map(c=>
+          createElement('div',{key:c.id,className:'picker-card'+(c.id===char.id?' active':''),onClick:()=>switchChar(c)},
+            createElement('img',{src:c.avatar,alt:c.name}),
+            createElement('div',null,
+              createElement('div',{className:'picker-name'},c.name),
+              createElement('div',{className:'picker-role'},c.role)
+            )
+          )
+        )
+      ),
+      createElement('button',{className:'picker-close',onClick:()=>setPickerOpen(false)},'Close')
+    ),
+    callMode && createElement('div',{className:'call-overlay'},
+      createElement('div',{className:'call-bg'},
+        createElement('img',{src:char.bg,alt:char.name})
+      ),
+      createElement('div',{className:'call-content'},
+        createElement('div',{className:'call-avatar'},
+          createElement('img',{src:char.avatar,alt:char.name})
+        ),
+        createElement('div',{style:{fontSize:'clamp(18px,3vw,24px)',fontWeight:700,color:'var(--white)'}},char.name),
+        createElement('div',{className:'call-status'},callStatus),
+        createElement('div',{className:'call-wave'},
+          createElement('span'),createElement('span'),createElement('span'),
+          createElement('span'),createElement('span')
+        ),
+        createElement('div',{className:'call-transcript'},
+          callLog.length===0 ? callTranscript : createElement(Fragment,null,
+            callLog.map((l,i)=>createElement('div',{key:i,className:'call-log-line '+(l.who==='you'?'you':'eden')},
+              createElement('span',{className:'call-log-who'},l.who==='you'?'You':char.name+': '),
+              createElement('span',{className:'call-log-text'},l.text)
+            )),
+            createElement('div',{className:'call-log-status'},callStatus)
+          )
+        ),
+        createElement('button',{className:'call-hangup',onClick:()=>setCallMode(false)},'✕')
+      )
+    )
+  );
+}
+
+createRoot(document.getElementById('root')).render(
+  createElement(AuthGate)
+);
+
+function AuthGate(){
+  const [authed,setAuthed]=useState(!!AUTH.token);
+  const [mode,setMode]=useState('login');
+  const [email,setEmail]=useState('');
+  const [password,setPassword]=useState('');
+  const [displayName,setDisplayName]=useState('');
+  const [error,setError]=useState('');
+  const [checking,setChecking]=useState(!!AUTH.token);
+
+  useEffect(()=>{
+    // Admin bypass via ?token=
+    const qp = new URLSearchParams(window.location.search).get('token');
+    if(qp){
+      AUTH.token = qp;
+      localStorage.setItem('eden_token', qp);
+    }
+    if(AUTH.token){
+      api('/api/auth/me').then(u=>{
+        AUTH.user=u; setAuthed(true); setChecking(false);
+      }).catch(()=>{
+        AUTH.token=null; localStorage.removeItem('eden_token');
+        setAuthed(false); setChecking(false);
+      });
+    }
+  },[]);
+
+  if(checking) return createElement('div',{style:{display:'flex',alignItems:'center',justifyContent:'center',height:'100vh',color:'var(--grey)',fontSize:'14px'}},'Loading...');
+
+  if(authed) return createElement(App);
+
+  const handleAuth = async () => {
+    setError('');
+    if(!email||!password){setError('Email and password required');return;}
+    try{
+      const ep = mode==='login'?'/api/auth/login':'/api/auth/register';
+      const body = mode==='login'?{email,password}:{email,password,displayName};
+      const d = await api(ep,{method:'POST',body:JSON.stringify(body)});
+      AUTH.token = d.token; AUTH.user = d.user||{id:d.user?.id,email,displayName};
+      localStorage.setItem('eden_token',AUTH.token);
+      setAuthed(true);
+    }catch(e){setError(e.message);}
+  };
+
+  const s = {display:'flex',alignItems:'center',justifyContent:'center',height:'100vh',background:'var(--bg)',fontFamily:'-apple-system,BlinkMacSystemFont,sans-serif'};
+  const card = {background:'var(--card)',border:'1px solid var(--border)',borderRadius:'16px',padding:'40px 32px',width:'360px',maxWidth:'90vw',textAlign:'center',boxShadow:'0 0 30px rgba(155,93,229,.13)'};
+  const inp = {width:'100%',padding:'12px 16px',borderRadius:'8px',background:'var(--surf)',color:'var(--white)',marginBottom:'12px',border:'1px solid var(--border)',fontSize:'14px',outline:'none'};
+  const btn = {width:'100%',padding:'12px',borderRadius:'8px',background:'var(--accent)',color:'#fff',fontWeight:'600',marginTop:'4px',border:'none',cursor:'pointer',fontSize:'14px'};
+  const tab = (isActive)=>({flex:1,padding:'8px',textAlign:'center',borderRadius:'6px',color:isActive?'#fff':'var(--grey)',cursor:'pointer',fontSize:'14px',background:isActive?'var(--accent)':'transparent'});
+  const tabsWrap = {display:'flex',marginBottom:'20px',background:'var(--surf)',borderRadius:'8px',padding:'4px'};
+
+  return createElement('div',{style:s},
+    createElement('div',{style:card},
+      createElement('h1',{style:{fontSize:'32px',marginBottom:'4px',background:'linear-gradient(135deg,var(--accent),var(--accent2))',WebkitBackgroundClip:'text',WebkitTextFillColor:'transparent',margin:'0 0 4px'}},'EDEN'),
+      createElement('p',{style:{color:'var(--grey)',marginBottom:'24px',fontSize:'14px'}},'V4 · Where conversations come alive'),
+      createElement('div',{style:tabsWrap},
+        createElement('div',{style:tab(mode==='login'),onClick:()=>setMode('login')},'Sign In'),
+        createElement('div',{style:tab(mode==='register'),onClick:()=>setMode('register')},'Register')
+      ),
+      createElement('input',{style:inp,type:'email',placeholder:'Email',value:email,onChange:e=>setEmail(e.target.value),onKeyDown:e=>e.key==='Enter'&&handleAuth()}),
+      createElement('input',{style:inp,type:'password',placeholder:'Password',value:password,onChange:e=>setPassword(e.target.value),onKeyDown:e=>e.key==='Enter'&&handleAuth()}),
+      mode==='register' && createElement('input',{style:inp,placeholder:'Display Name',value:displayName,onChange:e=>setDisplayName(e.target.value)}),
+      createElement('button',{style:btn,onClick:handleAuth},mode==='login'?'Sign In':'Create Account'),
+      error && createElement('div',{style:{color:'var(--accent2)',fontSize:'13px',marginTop:'8px',minHeight:'18px'}},error)
+    )
+  );
+}
+</script>
+</body>
+</html>

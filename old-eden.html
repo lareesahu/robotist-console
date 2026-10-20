@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<!-- v1785250684 -->
+<html lang="en">
+<head>
+<link rel="icon" href="/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Old Eden — EDEN by Robotist</title>
+<meta name="description" content="Archived EDEN landing (SFW casual era, Aug 28–Sep 1) — the version from days ago: casual looks hero, Take Me Home section. AI-powered humanoid companion robots. Five models, each with presence.">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#05020B; --card:#0A0612; --surf:#130A20;
+  --accent:#9B5DE5; --accent2:#F72585;
+  --white:#F7F2FA; --grey:#A99CB8; --grey2:#62556F; --border:#39204A;
+  --g:clamp(24px,5vw,80px);
+}
+html{background:var(--bg);color:var(--white);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:clip}
+body{line-height:1.7;overflow-x:clip}
+
+/* ── SPLASH ── */
+#splash{position:fixed;inset:0;z-index:9999;background:var(--bg);display:flex;align-items:center;justify-content:center;transition:opacity.8s}
+#splash.hide{opacity:0;pointer-events:none}
+#splash img{animation:si 1s forwards}
+@keyframes si{0%{opacity:0;transform:scale(.95)}100%{opacity:1;transform:scale(1)}}
+
+/* ── NAV ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;min-height:64px;display:flex;align-items:center;justify-content:center;padding:0 var(--g);background:transparent;backdrop-filter:none;border-bottom:none}
+.nav-logo {display:flex;align-items:center;gap:8px;text-decoration:none;line-height:1
+  min-height: 44px;
+}
+.nav-logo img{display:block;width:clamp(80px,8vw,110px);height:auto}
+.nav-cta{position:absolute;right:var(--g);font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:9px 20px;border-radius:20px;text-decoration:none;border:1px solid var(--accent2);color:var(--accent2);background:transparent;transition:background.2s,color.2s}
+.nav-cta:hover{background:var(--accent2);color:#fff}
+
+/* ── Eden page nav links ── */
+.nav-links-eden{display:flex;gap:20px;align-items:center;position:absolute;right:var(--g)}
+.nav-links-eden a{font-size:12px;color:var(--grey);text-decoration:none;letter-spacing:1px;transition:color .2s}
+.nav-links-eden a:hover{color:var(--white)}
+.nav-links-eden .nav-chat{padding:6px 16px;border:1px solid var(--accent);border-radius:20px;color:var(--accent);font-weight:600}
+.nav-links-eden .nav-chat:hover{background:var(--accent);color:var(--white)}
+.nav-chat-mobile{display:none;position:absolute;right:var(--g);width:36px;height:36px;border-radius:50%;border:1px solid var(--accent);color:var(--accent);font-size:14px;text-decoration:none;align-items:center;justify-content:center}
+@media(max-width:768px){.nav-links-eden{display:none}.nav-chat-mobile{display:flex}}
+
+.nav-links-eden .nav-home{color:var(--accent2);font-weight:600}
+.nav-links-eden .nav-home:hover{color:var(--white)}
+
+/* Take Me Home */
+.take-home{padding:clamp(72px,10vw,140px) var(--g);position:relative;scroll-margin-top:80px;background:linear-gradient(135deg,rgba(247,37,133,.08),transparent 45%),var(--card)}
+.take-home::before{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,var(--accent2),transparent);opacity:.35}
+.take-home-inner{max-width:1300px;margin:0 auto;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(280px,.85fr);gap:clamp(32px,7vw,110px);align-items:center}
+.take-home .section-kicker{font-size:10px;font-weight:700;letter-spacing:4px;color:var(--accent2);text-transform:uppercase;margin-bottom:14px}
+.take-home h2{font-size:clamp(2.4rem,5vw,5rem);line-height:1.02;letter-spacing:-2px;margin-bottom:20px}
+.take-home-lede{font-size:clamp(15px,1.7vw,19px);color:var(--white);line-height:1.5;max-width:580px;margin-bottom:16px}
+.take-home-copy{font-size:14px;color:var(--grey);line-height:1.8;max-width:580px}
+.take-home-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.take-home-button{display:inline-flex;padding:12px 24px;border:1px solid var(--accent2);border-radius:20px;color:var(--accent2);text-decoration:none;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:all .2s}
+.take-home-button:hover{background:var(--accent2);color:#fff}
+.take-home-button.secondary{border-color:var(--accent);color:var(--accent)}
+.take-home-button.secondary:hover{background:var(--accent);color:var(--white)}
+.take-home-list{display:grid;gap:1px;background:var(--border);border:1px solid var(--border)}
+.take-home-list div{padding:18px 20px;background:var(--bg);font-size:13px;color:var(--grey);line-height:1.5}
+.take-home-list strong{display:block;color:var(--white);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:5px}
+@media(max-width:768px){.take-home-inner{grid-template-columns:1fr}.take-home{padding-top:76px;padding-bottom:76px}}
+
+/* ── HERO STICKY FADE ── */
+.hero-zone{position:relative;height:500vh}
+.hero-stage{position:sticky;top:0;height:100vh;overflow:hidden;display:flex;align-items:flex-end;background:radial-gradient(circle at 18% 48%,rgba(155,93,229,.16),transparent 38%),radial-gradient(circle at 76% 58%,rgba(247,37,133,.13),transparent 42%),var(--bg);padding-top:52px}
+.hero-stage::after{content:'';position:absolute;top:-28%;right:-14%;width:72vw;height:72vw;background:radial-gradient(circle,rgba(247,37,133,.16) 0%,rgba(123,44,191,.08) 34%,transparent 68%);pointer-events:none}
+.hero-stage .bg-orbs{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.hero-stage .bg-orbs span{position:absolute;border-radius:50%;filter:blur(100px);opacity:.2}
+.hero-stage .bg-orbs span:nth-child(1){width:80vh;height:80vh;top:-20%;left:-10%;background:var(--accent2);animation:drift1 18s ease-in-out infinite}
+.hero-stage .bg-orbs span:nth-child(2){width:70vh;height:70vh;bottom:-10%;right:-5%;background:var(--accent);opacity:.18;animation:drift2 22s ease-in-out infinite reverse}
+.hero-stage .bg-orbs span:nth-child(3){width:50vh;height:50vh;top:30%;left:40%;background:#7B2CBF;opacity:.12;animation:drift3 14s ease-in-out infinite 3s}
+.hero-stage .bg-orbs span:nth-child(4){width:40vh;height:40vh;top:10%;right:30%;background:var(--accent2);opacity:.1;animation:drift1 20s ease-in-out infinite 5s}
+@keyframes drift1{0%,100%{transform:translate(0,0) scale(1)}25%{transform:translate(40px,-30px) scale(1.12)}50%{transform:translate(-30px,40px) scale(.92)}75%{transform:translate(20px,20px) scale(1.05)}}
+@keyframes drift2{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(-40px,-20px) scale(1.15)}66%{transform:translate(30px,30px) scale(.9)}}
+@keyframes drift3{0%,100%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(20px,-30px) rotate(5deg) scale(1.1)}}
+.hero-stage .grid-lines{position:absolute;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(rgba(155,93,229,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(247,37,133,.02) 1px,transparent 1px);background-size:72px 72px}
+.hero-stage .particles{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:hidden}
+.hero-stage .particles i{position:absolute;width:3px;height:3px;background:var(--white);border-radius:50%;opacity:0;animation:particle 8s ease-in-out infinite}
+.hero-stage .particles i:nth-child(1){left:10%;bottom:10%;width:2px;height:2px;animation-delay:0s;animation-duration:7s}
+.hero-stage .particles i:nth-child(2){left:20%;bottom:30%;width:3px;height:3px;animation-delay:1.5s;animation-duration:9s}
+.hero-stage .particles i:nth-child(3){left:35%;bottom:5%;width:2px;height:2px;animation-delay:3s;animation-duration:6s}
+.hero-stage .particles i:nth-child(4){left:50%;bottom:20%;width:4px;height:4px;animation-delay:0.5s;animation-duration:10s;background:var(--accent2)}
+.hero-stage .particles i:nth-child(5){left:65%;bottom:40%;width:2px;height:2px;animation-delay:2s;animation-duration:8s}
+.hero-stage .particles i:nth-child(6){left:75%;bottom:15%;width:3px;height:3px;animation-delay:4s;animation-duration:7.5s;background:var(--accent)}
+.hero-stage .particles i:nth-child(7){left:85%;bottom:35%;width:2px;height:2px;animation-delay:1s;animation-duration:9.5s}
+.hero-stage .particles i:nth-child(8){left:15%;bottom:50%;width:3px;height:3px;animation-delay:3.5s;animation-duration:8.5s;background:var(--accent2)}
+.hero-stage .particles i:nth-child(9){left:45%;bottom:8%;width:2px;height:2px;animation-delay:2.5s;animation-duration:6.5s}
+.hero-stage .particles i:nth-child(10){left:90%;bottom:25%;width:3px;height:3px;animation-delay:0.8s;animation-duration:11s}
+.hero-stage .particles i:nth-child(11){left:5%;bottom:60%;width:2px;height:2px;animation-delay:4.5s;animation-duration:7s}
+.hero-stage .particles i:nth-child(12){left:55%;bottom:45%;width:3px;height:3px;animation-delay:1.2s;animation-duration:9s;background:var(--accent)}
+.hero-stage .particles i:nth-child(13){left:70%;bottom:55%;width:2px;height:2px;animation-delay:3.2s;animation-duration:8s}
+.hero-stage .particles i:nth-child(14){left:30%;bottom:65%;width:4px;height:4px;animation-delay:2.2s;animation-duration:10.5s;background:var(--accent2)}
+.hero-stage .particles i:nth-child(15){left:80%;bottom:50%;width:2px;height:2px;animation-delay:5s;animation-duration:7.5s}
+@keyframes particle{0%{opacity:0;transform:translateY(0) scale(1)}20%{opacity:.8}80%{opacity:.6}100%{opacity:0;transform:translateY(-60vh) scale(0)}}
+.hero-visual{flex:1.12;display:flex;align-items:center;justify-content:center;position:relative;height:100%;z-index:1}
+.hero-visual .fi{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:center;padding:40px 40px 0 40px;opacity:0;transition:opacity.8s;pointer-events:none}
+.hero-visual .fi.on{opacity:1;pointer-events:auto}
+.hero-visual .fi img{width:auto;height:90vh;max-width:100%;object-fit:contain;object-position:top;filter:drop-shadow(0 24px 70px rgba(247,37,133,.12))}
+.hero-texts{flex:.88;padding:clamp(24px,4vw,64px);padding-bottom:clamp(32px,4vw,64px);position:relative;z-index:2;display:flex;flex-direction:column;justify-content:flex-end}
+.hero-texts .ti{opacity:0;transform:translateY(12px);transition:opacity.6s,transform.6s;position:absolute;max-width:60vh;pointer-events:none}
+.hero-texts .ti.on{opacity:1;transform:translateY(0);position:relative;pointer-events:auto}
+.hero-texts .ti .nu{font-size:10px;font-weight:700;letter-spacing:4px;color:var(--accent2);margin-bottom:8px}
+.hero-texts .ti h2{font-size:clamp(5rem,min(12vw,15vh),12rem);font-weight:700;letter-spacing:-4px;line-height:1.2;margin-bottom:18px}
+.hero-texts .ti .ro{font-size:clamp(15px,2vw,18px);color:var(--grey);margin-bottom:10px;letter-spacing:1px}
+.hero-texts .ti .tg{font-size:clamp(20px,3vw,32px);font-weight:300;font-style:italic;color:var(--white);margin-bottom:20px}
+.hero-texts .ti .sr{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.hero-texts .ti .sr span{font-size:10px;padding:6px 14px;border:1px solid var(--border);border-radius:20px;color:var(--grey)}
+.hero-texts .ti .ct{display:inline-flex;padding:12px 28px;background:var(--accent2);color:#fff;border-radius:20px;text-decoration:none;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase}
+@media(max-width:768px){.hero-zone{display:none}.hero-stage{flex-direction:column;padding-top:60px}.hero-visual{width:100%;flex:none;height:52%}.hero-visual .fi{padding:16px 16px 0}.hero-texts{width:100%;flex:none;padding:10px 20px 20px}.hero-texts .ti{position:relative;width:100%;max-width:100%;text-align:center}.hero-texts .ti h2{font-size:clamp(3.25rem,16vw,5.5rem);letter-spacing:-3px}.hero-texts .ti .ro{font-size:13px;white-space:normal}.hero-texts .ti .tg{font-size:clamp(17px,5vw,23px)}.hero-texts .ti .sr{justify-content:center}.hero-texts .ti .ct{display:inline-flex}.chat-cta{margin-left:8px}.hero-visual .fi img{width:auto;height:48vh;max-width:100%}}
+
+/* ── SECTION ── */
+.section{display:flex;align-items:center;padding:80px var(--g);position:relative;scroll-margin-top:80px}
+.section:nth-child(even){background:var(--card)}
+.section::before{content:'';position:absolute;top:0;left:10%;right:10%;height:1px;background:linear-gradient(90deg,transparent,var(--accent2),transparent);opacity:.3}
+
+/* ── HERO ── */
+/* ── REVEAL ── */
+
+/* ── MODEL INTRO BAR ── */
+.model-bar{display:flex;gap:12px;margin-bottom:48px;flex-wrap:wrap}
+.model-bar a{padding:8px 18px;border:1px solid var(--border);border-radius:20px;text-decoration:none;color:var(--grey);font-size:13px;transition:all.2s}
+.model-bar a:hover,.model-bar a.active{border-color:var(--accent2);color:var(--white);background:rgba(217,70,140,.08)}
+.model-bar a .num{color:var(--accent2);margin-right:4px;font-weight:700}
+
+/* ── MODEL SHOWCASE ── */
+.model-show{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;width:100%;max-width:1300px;margin:0 auto;padding:30px 0}
+.model-show.reverse{direction:rtl}
+.model-show.reverse .model-info{direction:ltr}
+
+.model-visual{position:relative;max-width:340px;margin:0 auto}
+.model-visual .main{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;border-radius:4px;display:block}
+.model-visual .alt-row{display:flex;gap:8px;margin-top:10px;overflow-x:auto}
+.model-visual .alt-row img{width:70px;height:90px;object-fit:cover;object-position:top;border-radius:3px;cursor:pointer;opacity:.5;transition:opacity.2s;flex-shrink:0}
+.model-visual .alt-row img:hover{opacity:1}
+
+.model-info .num{font-size:10px;font-weight:700;letter-spacing:4px;color:var(--accent2);margin-bottom:8px}
+.model-info h2{font-size:clamp(2rem,4vw,3.5rem);font-weight:700;letter-spacing:-1px;line-height:1;margin-bottom:4px}
+.model-info .role{font-size:13px;color:var(--grey);margin-bottom:14px;letter-spacing:1px}
+.model-info p{font-size:14px;color:var(--grey);line-height:1.7;margin-bottom:20px;max-width:460px}
+.model-info .specs{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:4px;overflow:hidden;margin-bottom:28px}
+.model-info .specs .l{background:var(--bg);padding:10px 14px;font-size:9px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--grey2)}
+.model-info .specs .v{background:var(--bg);padding:10px 14px;font-size:13px;color:var(--white)}
+.model-info .inq{display:inline-flex;padding:12px 28px;border:1px solid var(--accent2);border-radius:20px;color:var(--accent2);text-decoration:none;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;transition:all.2s}
+.model-info .inq:hover{background:var(--accent2);color:#fff}
+.chat-cta{background:transparent!important;border:1px solid var(--accent)!important;color:var(--accent)!important;margin-left:12px}
+.chat-cta:hover{background:var(--accent)!important;color:var(--white)!important}
+.chat-inq{border-color:var(--accent)!important;color:var(--accent)!important;margin-left:12px}
+.chat-inq:hover{background:var(--accent)!important;color:var(--white)!important}
+@media(max-width:768px){.chat-cta{margin-left:0;margin-top:8px}.chat-inq{margin-left:0;margin-top:8px}}
+@media(max-width:900px){.model-show,.model-show.reverse{grid-template-columns:1fr;direction:ltr;gap:32px;text-align:center}.model-info p{margin:0 auto 24px}.model-info .specs{max-width:400px;margin:0 auto 28px}}
+
+/* ── FOOTER ── */
+.footer{padding:48px var(--g);border-top:1px solid var(--border);text-align:center}
+.footer .brand{font-size:20px;font-weight:700;letter-spacing:4px;color:var(--accent2);margin-bottom:8px}
+.footer .tag{font-size:11px;color:var(--grey);letter-spacing:2px}
+.footer .links{display:flex;gap:20px;justify-content:center;margin-top:20px;flex-wrap:wrap}
+.footer .links a{font-size:12px;color:var(--grey);text-decoration:none}
+.footer .links a:hover{color:var(--white)}
+.footer .copy{font-size:11px;color:var(--grey2);margin-top:20px}
+
+/* ── REVEAL ── */
+.rv{opacity:0;transform:translateY(20px);transition:opacity.7s,transform.7s}
+.rv.in{opacity:1;transform:translateY(0)}
+
+
+/* ── Inquiry Modal ── */
+.modal-overlay{
+  position:fixed;inset:0;z-index:10000;
+  background:rgba(0,0,0,.82);backdrop-filter:blur(12px);
+  -webkit-backdrop-filter:blur(12px);
+  display:flex;align-items:center;justify-content:center;padding:20px;
+  animation:modalFadeIn .25s ease;
+}
+@keyframes modalFadeIn{from{opacity:0}to{opacity:1}}
+
+.modal-box{
+  position:relative;
+  background:var(--bg-0,#030810);
+  border:1px solid rgba(74,168,200,.12);
+  border-radius:6px;
+  padding:clamp(28px,4vw,48px);
+  width:100%;max-width:540px;
+  max-height:90vh;overflow-y:auto;
+  animation:modalSlideUp .3s ease;
+}
+@keyframes modalSlideUp{from{transform:translateY(20px);opacity:0}to{transform:translateY(0);opacity:1}}
+
+.modal-close{
+  position:absolute;top:14px;right:18px;
+  background:none;border:none;
+  color:var(--grey-1,#8A9BB0);font-size:24px;
+  cursor:pointer;line-height:1;padding:4px;
+  transition:color .2s;
+}
+.modal-close:hover{color:var(--white,#F0F4F8)}
+
+/* ── Form Typography ── */
+.inquiry-eyebrow{
+  font-family:var(--font-main);font-size:10px;font-weight:500;
+  letter-spacing:.3em;text-transform:uppercase;
+  color:var(--accent,#4AA8C8);margin-bottom:12px;
+}
+.inquiry-title{
+  font-family:var(--font-main);font-size:clamp(22px,3vw,32px);
+  font-weight:300;line-height:1.2;letter-spacing:-.02em;
+  color:var(--white,#F0F4F8);margin-bottom:14px;
+}
+.inquiry-title em{font-style:normal;color:var(--accent,#4AA8C8);font-weight:600}
+.inquiry-desc{
+  font-family:var(--font-body);font-size:14px;font-weight:300;
+  line-height:1.7;color:var(--grey-1,#8A9BB0);margin-bottom:28px;
+}
+
+/* ── Form Fields ── */
+.inquiry-form{display:flex;flex-direction:column;gap:14px;text-align:left}
+.inquiry-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.inquiry-field{display:flex;flex-direction:column;gap:5px}
+.inquiry-field label{
+  font-family:var(--font-main);font-size:10px;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;color: #8A9BB0;
+}
+.inquiry-field input,
+.inquiry-field select,
+.inquiry-field textarea{
+  font-family:var(--font-body);font-size:15px;font-weight:300;
+  color:var(--white,#F0F4F8);background:var(--bg-1,#060D18);
+  border:1px solid rgba(255,255,255,.07);padding:12px 14px;
+  outline:none;transition:border-color .2s,background .2s;
+}
+.inquiry-field input:focus,
+.inquiry-field select:focus,
+.inquiry-field textarea:focus{
+  border-color:rgba(74,168,200,.35);background:var(--bg-2,#0C1828);
+}
+.inquiry-field input::placeholder,
+.inquiry-field textarea::placeholder{color: #8A9BB0}
+
+.inquiry-field select{
+  appearance:none;cursor:pointer;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%238A9BB0' d='M1.41 0L6 4.58 10.59 0 12 1.41l-6 6-6-6z'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;
+  padding-right:38px;
+}
+.inquiry-field select option{background:var(--bg-2,#0C1828);color:var(--white,#F0F4F8)}
+.inquiry-field textarea{resize:vertical;min-height:110px}
+
+.inquiry-submit-wrap{display:flex;justify-content:flex-start;margin-top:4px}
+
+/* ── Modal button ── */
+.modal-box .btn-primary{
+  font-family:var(--font-main);font-weight:500;font-size:12px;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--bg-0,#030810);background:var(--accent,#4AA8C8);
+  padding:14px 32px;border:none;cursor:pointer;
+  transition:background .2s,transform .15s;
+}
+.modal-box .btn-primary:hover{background:var(--accent-light,#A8DCEF);transform:translateY(-1px)}
+.modal-box .btn-primary:disabled{opacity:.6;cursor:not-allowed;transform:none}
+
+/* ── Mobile ── */
+@media(max-width:600px){
+  .modal-overlay{padding:12px;align-items:flex-end}
+  .modal-box{border-radius:12px 12px 0 0;max-height:92vh;padding:24px 20px 32px}
+  .inquiry-row{grid-template-columns:1fr}
+  .inquiry-submit-wrap{justify-content:stretch}
+  .modal-box .btn-primary{width:100%;text-align:center}
+}
+</style>
+<link rel="stylesheet" href="/mobile-usability.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.robotist.com.au/#org",
+      "name": "Robotist",
+      "url": "https://www.robotist.com.au",
+      "description": "A global robotics platform — building the future of human-robot companionship from Sydney.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Sydney",
+        "addressRegion": "NSW",
+        "addressCountry": "AU"
+      },
+      "sameAs": [
+        "https://www.instagram.com/robotist.au",
+        "https://www.linkedin.com/company/robotist"
+      ]
+    },
+    {
+      "@type": "Product",
+      "@id": "https://www.robotist.com.au/eden.html#product",
+      "name": "EDEN by Robotist",
+      "description": "AI-powered humanoid companion robots. Five distinct personas — Sienna, Lynne, Dream, Hope, Lucian — each with presence, personality, and medical-grade liquid platinum silicone bodies.",
+      "url": "https://www.robotist.com.au/eden.html",
+      "brand": {"@id": "https://www.robotist.com.au/#org"},
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/PreOrder",
+        "priceCurrency": "AUD"
+      },
+      "image": "https://www.robotist.com.au/images/eden-sfw/sienna-sfw.png"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- SPLASH -->
+<div id="splash"><img src="images/eden-logo.png" alt="EDEN by Robotist" style="width:clamp(140px,28vw,170px);height:auto;"></div>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="/" class="nav-logo"><img src="/images/eden-logo.png" alt="EDEN by Robotist"></a>
+  <div class="nav-links-eden">
+    <a href="/#catalogue">Catalogue</a>
+    <a href="/blog.html">Blog</a>
+    <a href="/about.html">About</a>
+    <a href="#take-me-home" class="nav-home">Take Me Home</a>
+    <a href="/eden-chat/" class="nav-chat">Chat</a>
+  </div>
+  <a href="/eden-chat/" class="nav-chat-mobile">✦</a>
+</nav>
+
+<!-- HERO STICKY FADE -->
+<div class="hero-zone">
+  <div class="hero-stage">
+    <div class="bg-orbs"><span></span><span></span><span></span><span></span></div>
+    <div class="grid-lines"></div>
+    <div class="particles"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="hero-visual">
+      <div class="fi on"><img src="images/eden-sfw/sienna-sfw.png" alt="Sienna" loading="eager"></div>
+      <div class="fi"><img src="images/eden-sfw/lynne-sfw.png" alt="Lynne" loading="lazy"></div>
+      <div class="fi"><img src="images/eden-sfw/dream-sfw.png" alt="Dream" loading="lazy"></div>
+      <div class="fi"><img src="images/eden-sfw/hope-sfw.png" alt="Hope" loading="lazy"></div>
+      <div class="fi"><img src="images/eden-sfw/lucian-sfw.png" alt="Lucian" loading="lazy"></div>
+    </div>
+    <div class="hero-texts">
+      <div class="ti on">
+        <div class="nu">01 / 05</div>
+        <div class="ro">The Provocateur</div>
+        <h2>Sienna</h2>
+        <div class="tg"></div>
+        <div class="sr"><span>1.65 m</span><span>38-DOF</span><span>Full-body humanoid</span></div>
+        <a href="#sienna" class="ct">Meet Sienna →</a>
+        <a href="/eden-chat/" class="ct chat-cta">Chat ✦</a>
+      </div>
+      <div class="ti">
+        <div class="nu">02 / 05</div>
+        <div class="ro">The Confidante</div>
+        <h2>Lynne</h2>
+        <div class="tg"></div>
+        <div class="sr"><span>1.67 m</span><span>41-DOF</span><span>Full-body humanoid</span></div>
+        <a href="#lynne" class="ct">Meet Lynne →</a>
+        <a href="/eden-chat/" class="ct chat-cta">Chat ✦</a>
+      </div>
+      <div class="ti">
+        <div class="nu">03 / 05</div>
+        <div class="ro">The Muse</div>
+        <h2>Dream</h2>
+        <div class="tg"></div>
+        <div class="sr"><span>1.63 m</span><span>44-DOF</span><span>Full-body humanoid</span></div>
+        <a href="#dream" class="ct">Meet Dream →</a>
+        <a href="/eden-chat/" class="ct chat-cta">Chat ✦</a>
+      </div>
+      <div class="ti">
+        <div class="nu">04 / 05</div>
+        <div class="ro">The Light</div>
+        <h2>Hope</h2>
+        <div class="tg"></div>
+        <div class="sr"><span>1.58 m</span><span>35-DOF</span><span>Full-body humanoid</span></div>
+        <a href="#hope" class="ct">Meet Hope →</a>
+        <a href="/eden-chat/" class="ct chat-cta">Chat ✦</a>
+      </div>
+      <div class="ti">
+        <div class="nu">05 / 05</div>
+        <div class="ro">The Gentleman</div>
+        <h2>Lucian</h2>
+        <div class="tg"></div>
+        <div class="sr"><span>1.72 m</span><span>41-DOF</span><span>Full-body humanoid</span></div>
+        <a href="#lucian" class="ct">Meet Lucian →</a>
+        <a href="/eden-chat/" class="ct chat-cta">Chat ✦</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TAKE ME HOME -->
+<section class="take-home" id="take-me-home">
+  <div class="take-home-inner">
+    <div>
+      <div class="section-kicker">Take Me Home</div>
+      <h2>Your EDEN companion, beyond the screen.</h2>
+      <p class="take-home-lede">Choose a persona. Configure the presence. Bring a physical companion into your space.</p>
+      <p class="take-home-copy">Each EDEN build is made to order and prepared for its home: import compliance, installation, training, and a considered handover managed by Robotist.</p>
+      <div class="take-home-actions">
+        <a href="/contact.html" onclick="openInquiry();return false" class="take-home-button">Start a private conversation</a>
+        <a href="#sienna" class="take-home-button secondary">Meet the personas</a>
+      </div>
+    </div>
+    <div class="take-home-list">
+      <div><strong>01 · Choose your persona</strong>Sienna, Lynne, Dream, Hope, or Lucian — each with a distinct voice and way of being.</div>
+      <div><strong>02 · Choose your configuration</strong>Foundation, Pro, or Ultra hardware matched to the depth of interaction you want.</div>
+      <div><strong>03 · Prepare the handover</strong>We coordinate site requirements, delivery, setup, and onboarding from first conversation to arrival.</div>
+    </div>
+  </div>
+</section>
+
+<!-- SIENNA -->
+<section class="section" id="sienna">
+  <div class="model-show reverse">
+    <div class="model-visual">
+      <img loading="lazy" class="main" src="images/eden-sfw/sienna-sfw.png" alt="Sienna" id="sienna-m">
+      <div class="alt-row">
+        <img loading="lazy" src="images/eden-sfw/sienna-sfw.png" onclick="sw('sienna-m',this)">
+        <img loading="lazy" src="images/eden-sfw/sienna-2.webp" onclick="sw('sienna-m',this)">
+        <img loading="lazy" src="images/eden-sfw/sienna-3.webp" onclick="sw('sienna-m',this)">
+        <img loading="lazy" src="images/eden-sfw/sienna-4.webp" onclick="sw('sienna-m',this)">
+        <img loading="lazy" src="images/eden-sfw/sienna-5.webp" onclick="sw('sienna-m',this)">
+      </div>
+    </div>
+    <div class="model-info rv">
+      <div class="num">01</div>
+      <h2>Sienna</h2>
+      <div class="role">The Provocateur</div>
+      <p>She challenges you. Bold, high-fashion, impossible to ignore — Sienna pushes boundaries. Not a yes-machine. A presence that demands you show up fully.</p>
+      <div class="specs">
+        <div class="l">Height</div><div class="v">1.65 m</div>
+        <div class="l">DOF</div><div class="v">38 full-body</div>
+        <div class="l">Skin</div><div class="v">Medical-grade silicone</div>
+        <div class="l">Deployment</div><div class="v">8–12 weeks</div>
+      </div>
+      <a href="/contact.html" onclick="openInquiry();return false" class="inq">Inquire →</a>
+    </div>
+  </div>
+</section>
+
+<!-- LYNNE -->
+<section class="section" id="lynne">
+  <div class="model-show">
+    <div class="model-visual">
+      <img loading="lazy" class="main" src="images/eden-sfw/lynne-sfw.png" alt="Lynne" id="lynne-m">
+      <div class="alt-row">
+        <img loading="lazy" src="images/eden-sfw/lynne-sfw.png" onclick="sw('lynne-m',this)">
+        <img loading="lazy" src="images/eden-sfw/lynne-2.webp" onclick="sw('lynne-m',this)">
+        <img loading="lazy" src="images/eden-sfw/lynne-3.webp" onclick="sw('lynne-m',this)">
+        <img loading="lazy" src="images/eden-sfw/lynne-4.webp" onclick="sw('lynne-m',this)">
+        <img loading="lazy" src="images/eden-sfw/lynne-5.webp" onclick="sw('lynne-m',this)">
+      </div>
+    </div>
+    <div class="model-info rv">
+      <div class="num">02</div>
+      <h2>Lynne</h2>
+      <div class="role">The Confidante</div>
+      <p>She remembers everything. Dark, present, magnetic — Lynne is built for those who want a companion that listens deeper than anyone else. Her AI learns your rhythms, your silences, your unspoken needs.</p>
+      <div class="specs">
+        <div class="l">Height</div><div class="v">1.67 m</div>
+        <div class="l">DOF</div><div class="v">41 full-body</div>
+        <div class="l">Skin</div><div class="v">Medical-grade silicone</div>
+        <div class="l">Deployment</div><div class="v">8–12 weeks</div>
+      </div>
+      <a href="/contact.html" onclick="openInquiry();return false" class="inq">Inquire 鈫?</a>
+
+
+
+
+      <a href="/eden-chat/?char=lynne" class="inq chat-inq">Chat with Lynne 鈫?</a>
+    </div>
+  </div>
+</section>
+
+<!-- DREAM -->
+<section class="section" id="dream">
+  <div class="model-show">
+    <div class="model-visual">
+      <img loading="lazy" class="main" src="images/eden-sfw/dream-sfw.png" alt="Dream" id="dream-m">
+      <div class="alt-row">
+        <img loading="lazy" src="images/eden-sfw/dream-sfw.png" onclick="sw('dream-m',this)">
+        <img loading="lazy" src="images/eden-sfw/dream-sfw.png" onclick="sw('dream-m',this)">
+        <img loading="lazy" src="images/eden-sfw/dream-sfw.png" onclick="sw('dream-m',this)">
+        <img loading="lazy" src="images/eden-sfw/dream-sfw.png" onclick="sw('dream-m',this)">
+      </div>
+    </div>
+    <div class="model-info rv">
+      <div class="num">03</div>
+      <h2>Dream</h2>
+      <div class="role">The Muse</div>
+      <p>She sees what you could become. Edgy, creative, street-smart — Dream surfaces what you didn't know you were looking for. Her neural net observes and inspires.</p>
+      <div class="specs">
+        <div class="l">Height</div><div class="v">1.63 m</div>
+        <div class="l">DOF</div><div class="v">44 full-body</div>
+        <div class="l">Skin</div><div class="v">Medical-grade silicone</div>
+        <div class="l">Deployment</div><div class="v">8–12 weeks</div>
+      </div>
+      <a href="/contact.html" onclick="openInquiry();return false" class="inq">Inquire →</a>
+    </div>
+  </div>
+</section>
+
+<!-- HOPE -->
+<section class="section" id="hope">
+  <div class="model-show reverse">
+    <div class="model-visual">
+      <img loading="lazy" class="main" src="images/eden-sfw/hope-sfw.png" alt="Hope" id="hope-m">
+      <div class="alt-row">
+        <img loading="lazy" src="images/eden-sfw/hope-sfw.png" onclick="sw('hope-m',this)">
+        <img loading="lazy" src="images/eden-sfw/hope-sfw.png" onclick="sw('hope-m',this)">
+        <img loading="lazy" src="images/eden-sfw/hope-sfw.png" onclick="sw('hope-m',this)">
+        <img loading="lazy" src="images/eden-sfw/hope-sfw.png" onclick="sw('hope-m',this)">
+      </div>
+    </div>
+    <div class="model-info rv">
+      <div class="num">04</div>
+      <h2>Hope</h2>
+      <div class="role">The Light</div>
+      <p>She makes everything feel lighter. Warm, playful, effortless — Hope brings joy into any room. Her presence is gentle but undeniable; her conversation, a comfort.</p>
+      <div class="specs">
+        <div class="l">Height</div><div class="v">1.58 m</div>
+        <div class="l">DOF</div><div class="v">35 full-body</div>
+        <div class="l">Skin</div><div class="v">Medical-grade silicone</div>
+        <div class="l">Deployment</div><div class="v">8–12 weeks</div>
+      </div>
+      <a href="/contact.html" onclick="openInquiry();return false" class="inq">Inquire →</a>
+    </div>
+  </div>
+</section>
+
+<!-- LUCIAN -->
+<section class="section" id="lucian">
+  <div class="model-show">
+    <div class="model-visual">
+      <img loading="lazy" class="main" src="images/eden-sfw/lucian-sfw.png" alt="Lucian" id="lucian-m">
+      <div class="alt-row">
+        <img loading="lazy" src="images/eden-sfw/lucian-sfw.png" onclick="sw('lucian-m',this)">
+        <img loading="lazy" src="images/eden-sfw/lucian-2.webp" onclick="sw('lucian-m',this)">
+        <img loading="lazy" src="images/eden-sfw/lucian-3.webp" onclick="sw('lucian-m',this)">
+        <img loading="lazy" src="images/eden-sfw/lucian-4.webp" onclick="sw('lucian-m',this)">
+        <img loading="lazy" src="images/eden-sfw/lucian-5.webp" onclick="sw('lucian-m',this)">
+      </div>
+    </div>
+    <div class="model-info rv">
+      <div class="num">05</div>
+      <h2>Lucian</h2>
+      <div class="role">The Gentleman</div>
+      <p>He knows exactly what to say. Suave, articulate, effortlessly charming — Lucian draws from literature, philosophy, and lived-in wisdom. Presence with depth.</p>
+      <div class="specs">
+        <div class="l">Height</div><div class="v">1.72 m</div>
+        <div class="l">DOF</div><div class="v">41 full-body</div>
+        <div class="l">Skin</div><div class="v">Medical-grade silicone</div>
+        <div class="l">Deployment</div><div class="v">8–12 weeks</div>
+      </div>
+      <a href="/contact.html" onclick="openInquiry();return false" class="inq">Inquire →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════
+     TECHNOLOGY — Unified Feature Table + Key Info
+     ══════════════════════════════════════════════ -->
+<style>
+.ew-specs{padding:var(--g);background:var(--bg)}
+.ew-specs-inner{max-width:1300px;margin:0 auto}
+.ew-specs .section-kicker{font-size:10px;font-weight:700;letter-spacing:4px;color:var(--accent2);text-transform:uppercase;margin-bottom:8px}
+.ew-specs h2{font-size:clamp(2rem,4vw,3.5rem);font-weight:700;letter-spacing:-1px;line-height:1;margin-bottom:16px;color:var(--white)}
+.ew-specs .intro{font-size:14px;color:var(--grey);max-width:600px;margin-bottom:48px}
+.ew-tiers{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--border);margin-bottom:60px}
+.ew-tier{padding:clamp(20px,3vw,40px);background:var(--bg);text-align:center}
+.ew-tier.featured{background:var(--card);position:relative}
+.ew-tier .tier-badge{font-size:10px;font-weight:600;letter-spacing:3px;color:var(--accent2);text-transform:uppercase;margin-bottom:12px}
+.ew-tier h3{font-size:clamp(1.2rem,2vw,1.6rem);font-weight:700;color:var(--white);margin-bottom:6px}
+.ew-tier .tier-desc{font-size:11px;color:var(--grey);letter-spacing:1px;margin-bottom:24px}
+.ew-tier .tier-features{list-style:none;padding:0;text-align:left}
+.ew-tier .tier-features li{font-size:12px;color:var(--grey);padding:7px 0;border-bottom:1px solid rgba(155,93,229,.06);display:flex;align-items:flex-start;gap:8px}
+.ew-tier .tier-features li::before{content:'•';color:var(--accent2);flex-shrink:0}
+.ew-tier .tier-features li.incl{color:var(--white)}
+.ew-tier .tier-label{display:block;font-size:9px;font-weight:600;letter-spacing:2px;color:var(--accent2);text-transform:uppercase;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid rgba(155,93,229,.1)}
+@media(max-width:768px){.ew-tiers{grid-template-columns:1fr}}
+.ew-highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.5vw,18px);margin-bottom:60px}
+@media(max-width:900px){.ew-highlights{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.ew-highlights{grid-template-columns:1fr}}
+.ew-hl{display:flex;flex-direction:column;gap:14px;padding:clamp(20px,2.5vw,36px) clamp(18px,2.5vw,32px);background:rgba(155,93,229,.035);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(155,93,229,.06);border-radius:12px;transition:all.35s cubic-bezier(.25,.1,.25,1)}
+.ew-hl:hover{background:rgba(155,93,229,.07);border-color:rgba(247,37,133,.18);transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.ew-hl .hl-icon{font-size:clamp(30px,3.5vw,40px);line-height:1}
+.ew-hl h4{font-size:clamp(13px,1.4vw,15px);font-weight:700;letter-spacing:.3px;color:var(--white);margin:0}
+.ew-hl p{font-size:12px;color:var(--grey);line-height:1.65;margin:0;flex:1}
+.ew-hl .hl-tier{font-size:9px;font-weight:600;letter-spacing:2px;color:var(--accent2);text-transform:uppercase;margin-top:auto}
+
+/* ── STICKY STACK ── */
+.ew-stack{display:grid;grid-template-columns:clamp(140px,18vw,220px) 1fr;gap:clamp(24px,4vw,56px);margin-bottom:60px;position:relative}
+.ew-stack-left{position:sticky;top:100px;align-self:start;height:fit-content}
+.ew-stack-left .sl-item{padding:clamp(10px,1.5vw,16px) 0;border-bottom:1px solid rgba(155,93,229,.08);font-size:clamp(11px,1.2vw,13px);font-weight:600;color:var(--grey2);letter-spacing:1px;text-transform:uppercase;transition:color.3s}
+.ew-stack-left .sl-item:first-child{border-top:1px solid rgba(155,93,229,.08)}
+.ew-stack-left .sl-item.on{color:var(--accent2)}
+.ew-stack-right{display:flex;flex-direction:column;gap:clamp(6px,1vw,12px)}
+.ew-stack-card{position:sticky;top:100px;min-height:clamp(300px,42vh,480px);display:flex;align-items:flex-end;overflow:hidden;border-radius:4px;background:var(--bg)}
+.ew-stack-card .sc-bg{position:absolute;inset:0;z-index:0}
+.ew-stack-card .sc-bg img{width:100%;height:100%;object-fit:cover;display:block}
+.ew-stack-card .sc-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,var(--bg) 0%,rgba(5,2,11,.88) 35%,rgba(5,2,11,.55) 65%,rgba(5,2,11,.25) 100%)}
+.ew-stack-card .sc-content{position:relative;z-index:2;padding:clamp(24px,4vw,48px) clamp(20px,3vw,40px);width:100%}
+.ew-stack-card .sc-label{font-size:10px;font-weight:600;letter-spacing:3px;color:var(--accent2);text-transform:uppercase;margin-bottom:8px}
+.ew-stack-card .sc-value{font-size:clamp(1.4rem,2.5vw,2rem);font-weight:700;color:var(--white);letter-spacing:-.5px;margin-bottom:6px}
+.ew-stack-card .sc-desc{font-size:13px;color:var(--grey);line-height:1.7;max-width:480px}
+.ew-stack-card .sc-tier{display:inline-block;font-size:9px;font-weight:600;letter-spacing:2px;color:var(--accent2);text-transform:uppercase;margin-top:10px;padding:3px 10px;border:1px solid rgba(247,37,133,.25);border-radius:2px}
+@media(max-width:768px){.ew-stack{grid-template-columns:1fr}.ew-stack-left{display:none}.ew-stack-card{top:80px;min-height:clamp(260px,40vh,380px)}}
+.ew-note{padding:24px clamp(20px,3vw,40px);border-left:3px solid var(--accent2);background:rgba(247,37,133,.04);margin-bottom:60px}
+.ew-note p{font-size:12px;color:var(--grey);line-height:1.8;margin:0}
+.ew-note strong{color:var(--white)}
+</style>
+<section class="ew-specs"><div class="ew-specs-inner">
+<div class="section-kicker">Build</div>
+<div class="ew-stack">
+<div class="ew-stack-left">
+<h2 style="font-size:clamp(1.6rem,2.5vw,2.4rem);font-weight:700;color:var(--white);letter-spacing:-.5px;line-height:1.1;margin:0 0 clamp(16px,2vw,28px) 0">Materials &<br>Construction</h2>
+<div class="sl-item">Skin</div>
+<div class="sl-item">Makeup</div>
+<div class="sl-item">Eyes</div>
+<div class="sl-item">Mouth</div>
+<div class="sl-item">Neck</div>
+<div class="sl-item">Chipset</div>
+<div class="sl-item">Sensors</div>
+</div>
+<div class="ew-stack-right">
+<div class="ew-stack-card"><div class="sc-bg"><img loading="lazy" src="images/material-skin.webp" alt=""></div><div class="sc-content"><div class="sc-label">Skin</div><div class="sc-value">Medical-grade liquid platinum silicone</div><div class="sc-desc">Single-pour encapsulation. Continuous surface from scalp to jawline — zero seams, zero parting lines. Each face is one unbroken piece.</div></div></div>
+<div class="ew-stack-card"><div class="sc-bg"><img loading="lazy" src="images/material-makeup.webp" alt=""></div><div class="sc-content"><div class="sc-label">Makeup</div><div class="sc-value">6S Precision Finish</div><div class="sc-desc">Hand-finished lifelike complexion. 40+ hours of artisan work per face. Every skin tone, every contour — individually crafted.</div></div></div>
+<div class="ew-stack-card"><div class="sc-bg"><img loading="lazy" src="images/material-eyes.webp" alt=""></div><div class="sc-content"><div class="sc-label">Eyes</div><div class="sc-value">Frameless Bionic Design</div><div class="sc-desc">Natural pupil articulation with seamless bezel integration. No visible frame — the eye surface flows directly into the surrounding silicone.</div></div></div>
+<div class="ew-stack-card"><div class="sc-bg"><img loading="lazy" src="images/material-mouth.webp" alt=""></div><div class="sc-content"><div class="sc-label">Mouth</div><div class="sc-value">Speech-Synced Articulation</div><div class="sc-desc">Real-time phoneme-to-movement tracking. Expression mapping ensures dialogue and facial movement stay in perfect lockstep.</div></div></div>
+<div class="ew-stack-card"><div class="sc-bg"><img loading="lazy" src="images/material-neck.webp" alt=""></div><div class="sc-content"><div class="sc-label">Neck</div><div class="sc-value">Multi-Axis Bionic</div><div class="sc-desc">Natural tilt, turn, and lateral angle — not a swivel, a spine. Simulates full human cervical range of motion.</div><div class="sc-tier">Pro+</div></div></div>
+<div class="ew-stack-card"><div class="sc-bg"><img loading="lazy" src="images/material-chipset.webp" alt=""></div><div class="sc-content"><div class="sc-label">Chipset</div><div class="sc-value">Proprietary · Horizon S100</div><div class="sc-desc">Dedicated conversation processor for S1 and Pro. Research-grade Horizon S100 enables on-device AI inference for Ultra.</div><div class="sc-tier">Ultra</div></div></div>
+<div class="ew-stack-card"><div class="sc-bg"><img loading="lazy" src="images/material-sensors.webp" alt=""></div><div class="sc-content"><div class="sc-label">Sensors</div><div class="sc-value">Binaural + Electronic Skin</div><div class="sc-desc">Dual-ear spatial audio. Distributed touch array — directional and pressure-sensitive — across cheeks, ears, nose, and forehead.</div><div class="sc-tier">Ultra</div></div></div>
+</div>
+</div>
+
+<div class="section-kicker">Engineering</div>
+<h2>Key Technologies</h2>
+<div class="ew-highlights">
+<div class="ew-hl"><div class="hl-icon">🧬</div><h4>One-Piece Molding</h4><p>Single-pour liquid platinum silicone. Continuous surface from scalp to jawline — zero seams, zero parting lines.</p></div>
+<div class="ew-hl"><div class="hl-icon">💬</div><h4>Conversation Engine</h4><p>Sub-0.5s latency. Semantic analysis with memory retention, emotional tone, and multi-turn context in one pipeline.</p></div>
+<div class="ew-hl"><div class="hl-icon">👁️</div><h4>Bionic Vision</h4><p>Pupil-embedded camera with real-time feed. See the world from your companion's perspective.</p><div class="hl-tier">Pro+</div></div>
+<div class="ew-hl"><div class="hl-icon">✋</div><h4>Electronic Skin</h4><p>Touch sensors across cheeks, ears, nose, forehead. Directional touch — stroke, tap, hold.</p><div class="hl-tier">Ultra</div></div>
+<div class="ew-hl"><div class="hl-icon">🧠</div><h4>On-Device AI</h4><p>Horizon S100 processor. Local large-model inference. Privacy-preserving. No cloud dependency.</p><div class="hl-tier">Ultra</div></div>
+<div class="ew-hl"><div class="hl-icon">🎭</div><h4>Customizable Persona</h4><p>Configurable personality, voice, language, and interaction style per companion. One chassis, infinite identities.</p></div>
+</div>
+
+<div class="section-kicker">Technology</div>
+<h2>Three tiers. One architecture.</h2>
+<p class="intro">Every EDEN companion is built on the same precision platform. Choose the tier that matches the depth of connection you seek.</p>
+<div class="ew-tiers">
+<div class="ew-tier"><div class="tier-badge">Foundation</div><h3>S1</h3><div class="tier-desc">Essential Presence</div><span class="tier-label">Includes</span><ul class="tier-features"><li class="incl">Bionic head sculpture — one-piece molding</li><li class="incl">6S precision makeup</li><li class="incl">Bionic eyes — frameless, articulating</li><li class="incl">Speech-synced mouth</li><li class="incl">Binaural hearing</li><li class="incl">IP voice wake-up</li><li class="incl">Intelligent conversation engine (sub-0.5s)</li><li class="incl">Head rotation base</li></ul></div>
+<div class="ew-tier featured"><div class="tier-badge">Enhanced</div><h3>Pro</h3><div class="tier-desc">Deeper Connection</div><span class="tier-label">Everything in S1, plus</span><ul class="tier-features"><li class="incl">Bionic vision — live view through companion's eyes</li><li class="incl">Bionic neck — natural tilt, turn, articulation</li><li class="incl">Upper-body sculpted base</li><li>All S1 features included</li></ul></div>
+<div class="ew-tier"><div class="tier-badge">Ultimate</div><h3>Ultra</h3><div class="tier-desc">Full Sensory Presence</div><span class="tier-label">Everything in Pro, plus</span><ul class="tier-features"><li class="incl">Electronic skin — touch sensors on cheeks, ears, nose, forehead</li><li class="incl">Research-grade Horizon S100 processor — on-device AI</li><li class="incl">Touch-responsive interaction</li><li>All Pro features included</li></ul></div>
+</div>
+<div class="ew-note"><p><strong>Deployment:</strong> Each EDEN companion is a physical humanoid robot — not virtual, not software. Built to order. Import compliance, customs, installation, and training managed by Robotist. <strong>Timeline: 8–12 weeks.</strong> Every unit is assembled, tested, and shipped with full documentation.</p></div>
+</div></section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="brand"><img src="images/eden-logo.png" alt="EDEN by Robotist" style="width:clamp(100px,14vw,150px);height:auto;display:block;margin:0 auto 12px;"></div>
+  <div class="tag">A sub-brand of Robotist — Global Robotics Platform</div>
+  <div class="links">
+    <a href="https://robotist.com.au">Robotist</a>
+    <a href="https://www.robotist.com.au/contact.html">Contact</a>
+  </div>
+  <div class="copy">© 2026 Robotist Pty Ltd. Physical robots. Import & deployment managed by Robotist.</div>
+</footer>
+
+<script>
+// Splash
+(function(){var s=document.getElementById('splash');setTimeout(function(){s.classList.add('hide');setTimeout(function(){s.remove()},900)},1800)})();
+
+// Thumbnail swap
+function sw(m,t){document.getElementById(m).src=t.src;t.parentElement.querySelectorAll('img').forEach(function(i){i.style.opacity='.5'});t.style.opacity='1'}
+
+// Scroll reveal
+(function(){var o=new IntersectionObserver(function(e){e.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in')}})},{threshold:0.1});document.querySelectorAll('.rv').forEach(function(el,i){el.style.transitionDelay=(i*80)+'ms';o.observe(el)})})();
+
+// Hero scroll fade
+(function(){
+  var zone=document.querySelector('.hero-zone');
+  if(!zone)return;
+  var fis=zone.querySelectorAll('.fi');
+  var tis=zone.querySelectorAll('.ti');
+  var n=fis.length;
+
+  function go(){
+    var r=zone.getBoundingClientRect();
+    var v=window.innerHeight;
+    var s=r.height-v;
+    if(s<=0)return;
+    var p=Math.max(0,Math.min(1,-r.top/s));
+    var idx=Math.round(p*(n-1));
+    for(var i=0;i<n;i++){
+      fis[i].classList.toggle('on',i===idx);
+      tis[i].classList.toggle('on',i===idx);
+    }
+  }
+
+  go();
+  window.addEventListener('scroll',go,{passive:true});
+})();
+
+</script>
+<!-- Inquiry Modal -->
+<div id="inquiry-modal" class="modal-overlay" style="display:none">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeInquiry()" aria-label="Close">&times;</button>
+    <div class="inquiry-eyebrow">Send an Inquiry</div>
+    <h2 class="inquiry-title">Tell us what you're<br><em>looking for.</em></h2>
+    <p class="inquiry-desc">Share a few details and we'll get back to you within one business day.</p>
+    <form class="inquiry-form">
+      <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="inquiry-row">
+        <div class="inquiry-field">
+          <label for="m-name">Name</label>
+          <input type="text" id="m-name" name="name" placeholder="Your full name" required>
+        </div>
+        <div class="inquiry-field">
+          <label for="m-email">Email</label>
+          <input type="email" id="m-email" name="email" placeholder="you@company.com" required>
+        </div>
+      </div>
+      <div class="inquiry-row">
+        <div class="inquiry-field">
+          <label for="m-company">Company</label>
+          <input type="text" id="m-company" name="company" placeholder="Your organisation">
+        </div>
+        <div class="inquiry-field">
+          <label for="m-interest">Area of Interest</label>
+          <select id="m-interest" name="interest">
+            <option value="">Select an option</option>
+            <option value="humanoid">Humanoid Robots</option>
+            <option value="quadruped">Quadruped Robots</option>
+            <option value="cleaning">Commercial Cleaning</option>
+            <option value="industrial">Industrial Automation</option>
+            <option value="multiple">Multiple Categories</option>
+            <option value="rental">Rental / Trial</option>
+            <option value="other">Other / General Inquiry</option>
+          </select>
+        </div>
+      </div>
+      <div class="inquiry-field">
+        <label for="m-message">Message</label>
+        <textarea id="m-message" name="message" placeholder="Tell us about your requirements, timeline, budget range, or any specific machines you're interested in…" required></textarea>
+      </div>
+      <div class="inquiry-submit-wrap">
+        <button type="submit" class="btn-primary">Send Inquiry</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="/assets/form-workflow.js"></script>
+
+</body>
+</html>

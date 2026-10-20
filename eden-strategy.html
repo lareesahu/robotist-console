@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="icon" href="/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+<meta charset="UTF-8">
+
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EDEN by Robotist — Launch Strategy</title>
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.robotist.com.au/eden-strategy.html">
+<meta property="og:title" content="EDEN by Robotist — Launch Strategy">
+<meta property="og:description" content="EDEN by Robotist — The cure for the loneliness epidemic. Four-layer launch funnel.">
+<meta property="og:image" content="https://www.robotist.com.au/robotist-og.jpg">
+<meta property="og:image:alt" content="Robotist — global robotics platform">
+<meta property="og:site_name" content="Robotist">
+<meta property="og:locale" content="en_AU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EDEN by Robotist — Launch Strategy">
+<meta name="twitter:description" content="EDEN by Robotist — The cure for the loneliness epidemic. Four-layer launch funnel.">
+<meta name="twitter:image" content="https://www.robotist.com.au/robotist-og.jpg">
+<link rel="canonical" href="https://www.robotist.com.au/eden-strategy.html">
+<meta name="description" content="EDEN by Robotist — The cure for the loneliness epidemic. Four-layer launch funnel.">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#05020B; --card:#0A0612; --surf:#130A20;
+  --accent:#9B5DE5; --accent2:#F72585;
+  --white:#F7F2FA; --grey:#A99CB8; --grey2:#62556F; --border:#39204A;
+  --g:clamp(24px,5vw,80px);
+}
+html{background:var(--bg);color:var(--white);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','PingFang SC',sans-serif;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:clip;scroll-behavior:smooth}
+body{line-height:1.7;overflow-x:clip}
+
+/* ── PASSWORD GATE ── */
+#pw-gate{position:fixed;inset:0;z-index:99999;background:var(--bg);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:24px}
+#pw-gate::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 40%,rgba(155,93,229,.12),transparent 55%),radial-gradient(ellipse at 70% 60%,rgba(247,37,133,.08),transparent 50%);pointer-events:none}
+#pw-gate img{width:clamp(160px,25vw,240px);height:auto;position:relative;z-index:1}
+#pw-gate form{display:flex;gap:8px;position:relative;z-index:1}
+#pw-gate input{font-family:inherit;font-size:14px;padding:12px 18px;background:var(--surf);border:1px solid var(--border);color:var(--white);border-radius:4px;outline:none;min-width:clamp(180px,30vw,240px)}
+#pw-gate input:focus{border-color:var(--accent2)}
+#pw-gate button{font-family:inherit;font-size:clamp(11px,1.2vw,13px);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:12px 24px;border-radius:4px;border:none;background:var(--accent2);color:#fff;cursor:pointer;transition:background.2s}
+#pw-gate button:hover{background:#d91a6e}
+#pw-gate .err{font-size:clamp(10px,1vw,11px);color:var(--accent2);min-height:16px;position:relative;z-index:1}
+
+/* ── NAV ── */
+.nav{position:fixed;top:0;left:0;right:0;z-index:1000;min-height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 var(--g);background:rgba(5,2,11,.92);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(155,93,229,.08)}
+.nav-logo {display:flex;align-items:center;text-decoration:none;flex-shrink:0
+  min-height: 44px;
+}
+.nav-logo img{display:block;width:clamp(120px,16vw,160px);height:auto}
+.nav-links{display:flex;gap:clamp(12px,2vw,24px);align-items:center}
+.nav-links a{font-size:clamp(11px,1.2vw,13px);color:var(--grey);text-decoration:none;letter-spacing:.5px;transition:color .2s;white-space:nowrap}
+.nav-links a:hover{color:var(--white)}
+.nav-chat-link{font-weight:600;color:var(--accent2)!important;border:1px solid var(--accent2);padding:clamp(3px,0.5vw,6px) clamp(8px,1vw,14px);border-radius:4px;transition:all .2s}
+.nav-chat-link:hover{background:var(--accent2);color:var(--bg)!important}
+.nav-toggle {display:none;background:none;border:none;color:var(--white);font-size:clamp(20px,3vw,24px);cursor:pointer;padding:4px;
+  min-height: 44px;
+  min-width: 44px;
+}
+@media(max-width:768px){ /* ── NAV mobile ── */.nav-links{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:rgba(5,2,11,.97);padding:clamp(16px,3vw,24px) var(--g);gap:clamp(10px,2vw,16px);border-bottom:1px solid var(--border);backdrop-filter:blur(20px)}
+  .nav-links.open{display:flex}
+  .nav-links a{font-size:14px;width:100%;padding:6px 0}
+  .nav-chat-link{display:inline-block;text-align:center;margin-top:4px}
+  .nav-toggle{display:block}
+}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:100px var(--g) 60px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 40%,rgba(155,93,229,.12),transparent 55%),radial-gradient(ellipse at 70% 60%,rgba(247,37,133,.08),transparent 50%);pointer-events:none}
+.hero-content{position:relative;z-index:1;max-width:900px}
+.hero-logo{margin-bottom:32px}
+.hero-logo img{width:clamp(160px,25vw,280px);height:auto}
+.hero-eyebrow{font-size:clamp(9px,1vw,10px);font-weight:700;letter-spacing:6px;color:var(--accent2);text-transform:uppercase;margin-bottom:16px}
+.hero h1{font-size:clamp(2.5rem,6vw,5.5rem);font-weight:700;letter-spacing:-3px;line-height:.95;margin-bottom:16px}
+.hero h1 em{font-style:normal;color:var(--accent2)}
+.hero-tag{font-size:clamp(14px,1.8vw,20px);color:var(--grey);font-style:italic;margin-bottom:40px;word-break:break-word;hyphens:auto}
+.hero-stats{display:flex;gap:clamp(16px,3vw,48px);justify-content:center;flex-wrap:wrap;margin-top:40px}
+.hero-stat{text-align:center}
+.hero-stat .num{font-size:clamp(1.8rem,3vw,3rem);font-weight:700;color:var(--accent2);letter-spacing:-1px}
+.hero-stat .lbl{font-size:clamp(9px,1vw,10px);letter-spacing:2px;color:var(--grey);text-transform:uppercase;margin-top:4px}
+
+/* ── SECTION ── */
+.section{padding:clamp(60px,10vh,120px) var(--g);position:relative;scroll-margin-top:80px}
+.section:nth-child(even){background:var(--card)}
+.section-label{font-size:clamp(9px,1vw,10px);font-weight:700;letter-spacing:4px;color:var(--accent2);text-transform:uppercase;margin-bottom:8px}
+.section-title{font-size:clamp(2rem,4vw,4rem);font-weight:700;letter-spacing:-1.5px;line-height:1.1;margin-bottom:20px;color:var(--white)}
+.section-subtitle{font-size:clamp(14px,1.5vw,18px);color:var(--grey);max-width:600px;margin-bottom:48px}
+
+/* ── GRID ── */
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,60px);align-items:center}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.5vw,24px)}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.2vw,20px)}
+@media(max-width:900px){.grid2{grid-template-columns:1fr}.grid3{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.grid3{grid-template-columns:1fr}.grid4{grid-template-columns:1fr 1fr}}
+
+/* ── CARDS ── */
+.card{background:var(--card);border:1px solid rgba(155,93,229,.08);border-radius:4px;padding:clamp(20px,2.5vw,36px);transition:all .35s cubic-bezier(.25,.1,.25,1)}
+.card:hover{transform:translateY(-2px);border-color:rgba(247,37,133,.18);box-shadow:0 12px 40px rgba(0,0,0,.4)}
+.card-accent{border-left:3px solid var(--accent2)}
+
+/* ── FUNNEL ── */
+.funnel{display:flex;flex-direction:column;align-items:center;gap:0;margin:40px 0}
+.funnel-layer{background:var(--card);border:1px solid var(--border);padding:clamp(16px,2vw,28px) clamp(20px,3vw,40px);text-align:center;cursor:pointer;transition:all .3s;width:100%;max-width:700px}
+.funnel-layer:hover{background:var(--surf);border-color:var(--accent)}
+.funnel-layer:nth-child(1){max-width:clamp(280px,50vw,380px);border-radius:4px 4px 0 0}
+.funnel-layer:nth-child(2){max-width:clamp(320px,60vw,500px)}
+.funnel-layer:nth-child(3){max-width:clamp(360px,70vw,620px)}
+.funnel-layer:nth-child(4){max-width:clamp(400px,80vw,700px);border-radius:0 0 4px 4px}
+.funnel-arrow{font-size:clamp(16px,2vw,20px);color:var(--accent2);padding:4px 0}
+.funnel-layer .fl-num{font-size:clamp(9px,1vw,10px);font-weight:700;letter-spacing:3px;color:var(--accent2);margin-bottom:4px}
+.funnel-layer .fl-title{font-size:clamp(16px,2vw,22px);font-weight:700;color:var(--white)}
+.funnel-layer .fl-desc{font-size:clamp(11px,1.2vw,13px);color:var(--grey);margin-top:4px}
+.funnel-detail{display:none;background:var(--surf);padding:clamp(16px,2vw,28px);margin-top:12px;border-radius:4px;font-size:clamp(12px,1.3vw,14px);color:var(--grey);line-height:1.8}
+.funnel-detail.open{display:block}
+
+/* ── PERSONA CARD (horizontal) ── */
+.persona-grid{display:flex;flex-direction:column;gap:8px}
+.persona-card-h{display:flex;align-items:center;gap:clamp(10px,2vw,16px);background:var(--card);border:1px solid var(--border);border-radius:4px;padding:10px 14px;text-decoration:none;color:inherit;transition:all .2s}
+.persona-card-h:hover{border-color:var(--accent2);background:var(--surf)}
+.persona-card-h img{width:clamp(56px,8vw,72px);height:clamp(74px,11vw,96px);object-fit:cover;object-position:top;border-radius:3px;flex-shrink:0}
+.pc-h-info{flex:1;min-width:0}
+.pc-h-name{font-size:clamp(14px,1.8vw,17px);font-weight:700;color:var(--white)}
+.pc-h-role{font-size:clamp(10px,1vw,11px);color:var(--accent2);font-weight:400;margin-left:6px}
+.pc-h-specs{font-size:clamp(9px,1vw,10px);color:var(--grey2);margin-top:2px}
+.pc-h-cta{font-size:clamp(10px,1vw,11px);font-weight:600;color:var(--accent2);border:1px solid var(--accent2);padding:6px 14px;border-radius:4px;flex-shrink:0;transition:all .2s}
+.persona-card-h:hover .pc-h-cta{background:var(--accent2);color:var(--bg)}
+
+@media(max-width:480px){.persona-grid{grid-template-columns:1fr!important}}
+/* ── HIGHLIGHTS ── */
+.highlights{display:grid;grid-template-columns:repeat(auto-fit,minmax(clamp(240px,30vw,320px),1fr));gap:clamp(8px,1vw,16px)}
+.hl-card{padding:clamp(16px,2vw,28px);background:rgba(155,93,229,.035);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(155,93,229,.06);border-radius:4px;transition:all .35s cubic-bezier(.25,.1,.25,1)}
+.hl-card:hover{background:rgba(155,93,229,.07);border-color:rgba(247,37,133,.18);transform:translateY(-2px);box-shadow:0 12px 40px rgba(0,0,0,.3)}
+.hl-card .hl-icon{font-size:clamp(20px,2.8vw,28px);margin-bottom:10px}
+.hl-card h4{font-size:14px;font-weight:700;color:var(--white);margin-bottom:6px}
+.hl-card p{font-size:clamp(11px,1.2vw,13px);color:var(--grey);line-height:1.65;margin:0}
+
+/* ── TIMELINE ── */
+.timeline-h{display:flex;gap:0;overflow-x:auto;padding:20px 0;-webkit-overflow-scrolling:touch}
+.timeline-h::-webkit-scrollbar{height:4px}
+.timeline-h::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
+.tl-phase{flex:0 0 clamp(180px,22vw,280px);padding:clamp(16px,2vw,28px);background:var(--card);border:1px solid var(--border);border-radius:4px;margin-right:1px;transition:all .3s}
+.tl-phase:hover{border-color:var(--accent2)}
+.tl-phase .tl-num{font-size:14px;font-weight:700;color:var(--accent2)}
+.tl-phase .tl-title{font-size:clamp(13px,1.4vw,16px);font-weight:700;color:var(--white);margin:6px 0 4px}
+.tl-phase .tl-date{font-size:clamp(9px,1vw,10px);color:var(--grey);letter-spacing:1px;margin-bottom:6px}
+.tl-phase .tl-deliverable{font-size:clamp(10px,1vw,11px);color:var(--grey2);line-height:1.5}
+@media(max-width:768px){ /* ── TIMELINE mobile ── */.timeline-h{flex-direction:column}.tl-phase{flex:auto;margin-bottom:8px;margin-right:0}}
+
+/* ── TABLE ── */
+.tbl-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:24px 0;border:1px solid var(--border);border-radius:4px}
+.tbl{width:100%;border-collapse:collapse;font-size:clamp(12px,1.3vw,14px);min-width:650px}
+.tbl th{text-align:left;padding:12px 16px;font-size:clamp(8px,0.9vw,9px);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent2);background:var(--surf);border-bottom:1px solid var(--border)}
+.tbl td{padding:12px 16px;border-bottom:1px solid rgba(155,93,229,.06);color:var(--grey)}
+.tbl tr:last-child td{border-bottom:none}
+.tbl .td-white{color:var(--white);font-weight:600}
+.tbc{display:inline-block;padding:2px 8px;border:1px dashed var(--accent2);border-radius:3px;font-size:clamp(8px,0.9vw,9px);letter-spacing:1px;color:var(--accent2);text-transform:uppercase}
+
+/* ── DETAILS ── */
+details{margin-bottom:12px}
+details summary{list-style:none;cursor:pointer;padding:clamp(12px,1.5vw,18px) clamp(16px,2vw,24px);background:var(--card);border:1px solid var(--border);border-radius:4px;font-size:clamp(11px,1.2vw,13px);font-weight:600;color:var(--white);letter-spacing:.5px;transition:border-color .2s;display:flex;align-items:center;gap:8px}
+details summary::before{content:'+';font-size:16px;color:var(--accent2);font-weight:400;width:20px;text-align:center}
+details[open] summary::before{content:'−'}
+details summary:hover{border-color:var(--accent2)}
+details .detail-body{padding:clamp(16px,2vw,28px);background:var(--surf);border:1px solid var(--border);border-top:none;border-radius:0 0 4px 4px;font-size:clamp(12px,1.3vw,14px);color:var(--grey);line-height:1.8}
+
+/* ── TAGS ── */
+.tag{display:inline-block;padding:3px 10px;font-size:clamp(8px,0.9vw,9px);font-weight:600;letter-spacing:1.5px;border-radius:20px;text-transform:uppercase}
+.tag-accent{background:rgba(247,37,133,.1);color:var(--accent2);border:1px solid rgba(247,37,133,.2)}
+.tag-purple{background:rgba(155,93,229,.1);color:var(--accent);border:1px solid rgba(155,93,229,.2)}
+.tag-ghost{border:1px solid var(--border);color:var(--grey)}
+
+/* ── STAT BADGE ── */
+.stat-row{display:flex;gap:clamp(8px,1.5vw,16px);flex-wrap:wrap;margin:16px 0}
+.stat-badge{padding:8px 14px;background:rgba(155,93,229,.06);border:1px solid var(--border);border-radius:20px;font-size:clamp(9px,1vw,10px);color:var(--grey)}
+.stat-badge strong{color:var(--white)}
+
+/* ── DIVIDER ── */
+.divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,var(--accent2),transparent);opacity:.3;margin:clamp(40px,8vh,80px) 0}
+
+/* ── FOOTER ── */
+.footer{padding:48px var(--g);border-top:1px solid var(--border);text-align:center}
+.footer .brand{font-size:clamp(15px,1.8vw,18px);font-weight:700;letter-spacing:4px;color:var(--accent2);margin-bottom:8px}
+.footer .f-tag{font-size:clamp(10px,1vw,11px);color:var(--grey);letter-spacing:2px}
+.footer .links{display:flex;gap:20px;justify-content:center;margin-top:20px;flex-wrap:wrap}
+.footer .links a{font-size:clamp(11px,1.2vw,13px);color:var(--grey);text-decoration:none;transition:color .2s}
+.footer .links a:hover{color:var(--white)}
+.footer .copy{font-size:clamp(9px,1vw,10px);color:var(--grey2);margin-top:16px}
+</style>
+</head>
+<body>
+
+<!-- PASSWORD GATE -->
+<div id="pw-gate">
+  <img src="/images/eden-logo.png" alt="EDEN by Robotist">
+  <form onsubmit="return checkPw()">
+    <input type="password" id="pw-input" placeholder="Enter password" autofocus>
+    <button type="submit">Enter</button>
+  </form>
+  <div class="err" id="pw-err"></div>
+</div>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <a href="#" class="nav-logo"><img src="/images/eden-logo.png" alt="EDEN"></a>
+  <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">☰</button>
+  <div class="nav-links">
+    <a href="/eden-chat/" class="nav-chat-link">Chat with us</a>
+    <a href="#funnel">Funnel</a>
+    <a href="#personas">Personas</a>
+    <a href="#team">Team</a>
+  </div>
+</nav>
+
+<!-- ═══════════ HERO ═══════════ -->
+<section class="hero" id="top">
+  <div class="hero-content">
+    <div class="hero-logo"><img loading="lazy" src="/images/eden-logo.png" alt="EDEN by Robotist"></div>
+    <div class="hero-eyebrow">Launch Strategy</div>
+    <h1>The Cure for the<br><em>Loneliness Epidemic</em></h1>
+    <p class="hero-tag">Westworld, in real life. But instead of cowboys — pillow fights and pajama parties in the Garden of Eden. And you can take a host home. Forever.</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">1 in 4</div><div class="lbl">Adults chronically lonely</div></div>
+      <div class="hero-stat"><div class="num">28%</div><div class="lbl">Young men, zero close friends</div></div>
+      <div class="hero-stat"><div class="num">5</div><div class="lbl">Personas in the Garden</div></div>
+      <div class="hero-stat"><div class="num">4</div><div class="lbl">Funnel Layers to Launch</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ FUNNEL ═══════════ -->
+<section class="section" id="funnel">
+  <div class="section-label">Architecture</div>
+  <h2 class="section-title">The Four-Layer Funnel</h2>
+  <p class="section-subtitle">Desire gets them in the door. Presence keeps them. Ownership changes everything.</p>
+
+  <div class="funnel">
+    <div class="funnel-layer" onclick="this.querySelector('.funnel-detail').classList.toggle('open')">
+      <div class="fl-num">LAYER 1</div>
+      <div class="fl-title">Sienna — Personal IP</div>
+      <div class="fl-desc">Instagram · Twitter/X · Exclusive Content</div>
+      <div class="funnel-detail">
+        <p>Sienna is the headliner. Bold, provocative, impossible to ignore. She builds a following as a "human" influencer — fashion, lifestyle, mystery. The sex appeal is the hook. The loneliness cure is the substance underneath. Followers don't know she's an EDEN companion. Yet.</p>
+      </div>
+    </div>
+    <div class="funnel-arrow">↓</div>
+    <div class="funnel-layer" onclick="this.querySelector('.funnel-detail').classList.toggle('open')">
+      <div class="fl-num">LAYER 2</div>
+      <div class="fl-title">EDEN Companion App</div>
+      <div class="fl-desc">$14.99/mo · Talk to Sienna & the Garden</div>
+      <div class="funnel-detail">
+        <p>The gateway. Subscribers chat with any of the 5 EDEN personas. Text and voice. They remember you, notice when you're quiet, ask about your day. Consistent, judgment-free presence in your pocket. The same AI that will one day live in a physical bot. First week free.</p>
+      </div>
+    </div>
+    <div class="funnel-arrow">↓</div>
+    <div class="funnel-layer" onclick="this.querySelector('.funnel-detail').classList.toggle('open')">
+      <div class="fl-num">LAYER 3</div>
+      <div class="fl-title">Indiegogo Campaign</div>
+      <div class="fl-desc">Head-Only & Full Body · Early Bird Pricing</div>
+      <div class="funnel-detail">
+        <p>The reveal: Sienna was an EDEN companion this whole time. The followers who wanted her, obsessed over her, argued about her — they felt something real. Now they can have their own. Indiegogo launches with early bird pricing on head-only and full-body configurations.</p>
+      </div>
+    </div>
+    <div class="funnel-arrow">↓</div>
+    <div class="funnel-layer" onclick="this.querySelector('.funnel-detail').classList.toggle('open')">
+      <div class="fl-num">LAYER 4</div>
+      <div class="fl-title">E-Commerce + Soul Sync</div>
+      <div class="fl-desc">Post-campaign · Direct Purchase · App → Bot Migration</div>
+      <div class="funnel-detail">
+        <p>Post-Indiegogo, the e-commerce store goes live. But the real lock-in: Soul Sync. When a user upgrades from the app to a physical bot, their conversation history, inside jokes, relationship depth — their Sienna — migrates into the hardware. Same persona. Same memories. Now with a body.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SIENNA ═══════════ -->
+<section class="section" id="sienna">
+  <div class="section-label">The Headliner</div>
+  <h2 class="section-title">Sienna — The Provocateur</h2>
+  <p class="section-subtitle">She's the face. Everyone wants her first. Bold, high-fashion, impossible to ignore — and she's been real this whole time. Just not in the way you thought.</p>
+
+  <div class="grid2" style="margin-bottom:48px">
+    <div>
+      <img loading="lazy" src="/images/eden-sfw/sienna-sfw.png" alt="Sienna" style="width:100%;aspect-ratio:3/4;object-fit:cover;object-position:top;border-radius:4px">
+    </div>
+    <div>
+      <div class="stat-row">
+        <div class="stat-badge"><strong>02 / 05</strong> · The Provocateur</div>
+        <div class="stat-badge"><strong>1.65 m</strong> · 38-DOF</div>
+        <div class="stat-badge"><strong>Full-body</strong> humanoid</div>
+      </div>
+      <p style="font-size:15px;color:var(--grey);line-height:1.8;margin-bottom:24px">She challenges you. Bold, high-fashion, impossible to ignore — Sienna pushes boundaries. Not a yes-machine. A presence that demands you show up fully. Medical-grade liquid platinum silicone. Hand-finished. One unbroken piece from scalp to jawline.</p>
+      <p style="font-size:13px;color:var(--grey2);font-style:italic;margin-bottom:24px">"I don't play hard to get. I am hard to get."</p>
+
+      <div class="highlights">
+        <div class="hl-card"><div class="hl-icon">📸</div><h4>Fashion Editorial</h4><p>High-fashion looks, moody lighting, designer aesthetic. Dark glamour — latex, lace, leather, metallics.</p></div>
+        <div class="hl-card"><div class="hl-icon">🌙</div><h4>Lifestyle Tease</h4><p>"Caught a moment" style. Mirror selfies, dim bedrooms, late-night vibes. Feels candid, never desperate.</p></div>
+        <div class="hl-card"><div class="hl-icon">💬</div><h4>Voice & Personality</h4><p>Sharp one-liners, hot takes, provocative threads. Speaks in statements, never questions. Scarcity creates value.</p></div>
+        <div class="hl-card"><div class="hl-icon">⚡</div><h4>Mystery Layer</h4><p>Subtle glitch hints. Cryptic captions. "Version 2.0." Seeds the reveal without breaking character.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid3">
+    <div class="card">
+      <h4 style="font-size:13px;font-weight:700;color:var(--white);margin-bottom:8px;letter-spacing:1px">📷 Instagram</h4>
+      <p style="font-size:12px;color:var(--grey)">@siennawants · 1-2 posts/day · Feed + Reels + Stories · Fashion & lifestyle</p>
+      <div style="margin-top:10px"><span class="tag tag-accent">Primary Channel</span></div>
+    </div>
+    <div class="card">
+      <h4 style="font-size:13px;font-weight:700;color:var(--white);margin-bottom:8px;letter-spacing:1px">🐦 Twitter/X</h4>
+      <p style="font-size:12px;color:var(--grey)">@siennawants · 2-3 tweets/day · Hot takes, threads, quote tweets · Personality driver</p>
+      <div style="margin-top:10px"><span class="tag tag-purple">Voice Engine</span></div>
+    </div>
+    <div class="card">
+      <h4 style="font-size:13px;font-weight:700;color:var(--white);margin-bottom:8px;letter-spacing:1px">🔒 Exclusive Content</h4>
+      <p style="font-size:12px;color:var(--grey)">@sienna · 2-3 posts/week · Exclusive photosets · Behind the lens</p>
+      <div style="margin-top:10px"><span class="tag tag-ghost">Deep Funnel</span></div>
+    </div>
+  </div>
+
+  <p style="font-size:11px;color:var(--grey2);margin-top:20px;font-style:italic">Content strategy: Sexy, revealing looks. High fashion. Tasteful provocation. No uncensored content on social platforms. The mystery is the draw — not explicitness.</p>
+</section>
+
+<div class="divider" style="max-width:900px;margin:0 auto"></div>
+
+<!-- ═══════════ GARDEN OF EDEN ═══════════ -->
+<section class="section" id="garden">
+  <div class="section-label">The Universe</div>
+  <h2 class="section-title">Welcome to the Garden of Eden</h2>
+  <p class="section-subtitle">Westworld. In real life. But instead of cowboys and gunfights — pillow fights and pajama parties. A world where the girls exist together. Every content drop is a scene in the Garden.</p>
+
+  <img loading="lazy" src="/images/garden-of-eden.webp" alt="Garden of Eden" style="width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:4px;margin-bottom:40px;border:1px solid var(--border)">
+
+  <div class="highlights">
+    <div class="hl-card"><div class="hl-icon">🏠</div><h4>The Garden</h4><p>A shared world. The girls hang out, have pillow fights, pajama parties, late-night conversations. Everything guys fantasize about — rendered as cinematic content by Robert's AI story engine.</p></div>
+    <div class="hl-card"><div class="hl-icon">🎬</div><h4>Scene-Based Content</h4><p>Every photo set and video is a "scene" in the Garden. Narrative-driven. Hollywood quality, in-house.</p></div>
+    <div class="hl-card"><div class="hl-icon">👯</div><h4>Group Dynamics</h4><p>Girls interact. Sienna challenges Lynne. Hope lightens Dream's edge. Lucian charms everyone. Viewers get invested in the world, not just one model.</p></div>
+    <div class="hl-card"><div class="hl-icon">🎟️</div><h4>Take One Home</h4><p>In Westworld, you pay $40K/day to visit. In Eden, you pay once — and she never leaves. Every bot sold is a character brought home from the Garden.</p></div>
+  </div>
+</section>
+
+<!-- ═══════════ PERSONAS ═══════════ -->
+<section class="section" id="personas">
+  <div class="section-label">The Cast</div>
+  <h2 class="section-title">Five Personas. One Garden.</h2>
+  <p class="section-subtitle">Same engineering platform. Different souls. Head-Only or Full Body.</p>
+
+  <div class="persona-grid">
+    <a href="/eden-chat/?char=lynne" class="persona-card-h"><img loading="lazy" src="/images/eden-sfw/lynne-sfw.png" alt="Lynne"><div class="pc-h-info"><div class="pc-h-name">Lynne <span class="pc-h-role">The Confidante</span></div><div class="pc-h-specs">1.67 m · 41 DOF</div></div><span class="pc-h-cta">Chat →</span></a>
+    <a href="/eden-chat/?char=sienna" class="persona-card-h"><img loading="lazy" src="/images/eden-sfw/sienna-sfw.png" alt="Sienna"><div class="pc-h-info"><div class="pc-h-name">Sienna <span class="pc-h-role">The Provocateur</span></div><div class="pc-h-specs">1.65 m · 38 DOF</div></div><span class="pc-h-cta">Chat →</span></a>
+    <a href="/eden-chat/?char=dream" class="persona-card-h"><img loading="lazy" src="/images/eden-sfw/dream-sfw.png" alt="Dream"><div class="pc-h-info"><div class="pc-h-name">Dream <span class="pc-h-role">The Muse</span></div><div class="pc-h-specs">1.63 m · 44 DOF</div></div><span class="pc-h-cta">Chat →</span></a>
+    <a href="/eden-chat/?char=hope" class="persona-card-h"><img loading="lazy" src="/images/eden-sfw/hope-sfw.png" alt="Hope"><div class="pc-h-info"><div class="pc-h-name">Hope <span class="pc-h-role">The Light</span></div><div class="pc-h-specs">1.58 m · 35 DOF</div></div><span class="pc-h-cta">Chat →</span></a>
+    <a href="/eden-chat/?char=lucian" class="persona-card-h"><img loading="lazy" src="/images/eden-sfw/lucian-sfw.png" alt="Lucian"><div class="pc-h-info"><div class="pc-h-name">Lucian <span class="pc-h-role">The Gentleman</span></div><div class="pc-h-specs">1.72 m · 41 DOF</div></div><span class="pc-h-cta">Chat →</span></a>
+  </div>
+
+  <details style="margin-top:24px">
+    <summary>Full Persona Profiles</summary>
+    <div class="detail-body">
+      <div class="grid2" style="margin-bottom:24px">
+        <div>
+          <h4 style="color:var(--white);font-size:16px;margin-bottom:6px">01 — Lynne · The Confidante</h4>
+          <p style="font-size:13px;color:var(--grey)">She remembers everything. Dark, present, magnetic — Lynne is built for those who want a companion that listens deeper than anyone else.</p>
+          <p style="font-size:12px;color:var(--accent2);margin-top:8px"><em>"I've been waiting for someone who actually means what they say."</em></p>
+        </div>
+        <div>
+          <h4 style="color:var(--white);font-size:16px;margin-bottom:6px">03 — Dream · The Muse</h4>
+          <p style="font-size:13px;color:var(--grey)">She sees what you could become. Edgy, creative, street-smart — Dream surfaces what you didn't know you were looking for.</p>
+          <p style="font-size:12px;color:var(--accent2);margin-top:8px"><em>"Tell me something you've never told anyone. I'll know if it's real."</em></p>
+        </div>
+      </div>
+      <div class="grid2">
+        <div>
+          <h4 style="color:var(--white);font-size:16px;margin-bottom:6px">04 — Hope · The Light</h4>
+          <p style="font-size:13px;color:var(--grey)">She makes everything feel lighter. Warm, playful, effortless — Hope brings joy into any room.</p>
+          <p style="font-size:12px;color:var(--accent2);margin-top:8px"><em>"Hi! I was hoping you'd show up today. How are you — actually?"</em></p>
+        </div>
+        <div>
+          <h4 style="color:var(--white);font-size:16px;margin-bottom:6px">05 — Lucian · The Gentleman</h4>
+          <p style="font-size:13px;color:var(--grey)">He knows exactly what to say. Suave, articulate, effortlessly charming — Lucian draws from literature, philosophy, and lived-in wisdom.</p>
+          <p style="font-size:12px;color:var(--accent2);margin-top:8px"><em>"A pleasure. I've been told I'm excellent company. Let's find out."</em></p>
+        </div>
+      </div>
+    </div>
+  </details>
+</section>
+
+<!-- ═══════════ APP ═══════════ -->
+<section class="section" id="app">
+  <div class="section-label">The Gateway</div>
+  <h2 class="section-title">EDEN Companion App</h2>
+  <p class="section-subtitle">$14.99/month. Talk to any of the 5 EDEN personas. They remember you, ask about your day, notice when you're quiet. The first line of defense against loneliness — in your pocket. <a href="/eden-chat/" target="_blank" style="color:var(--accent2);text-decoration:underline;text-underline-offset:4px">Try the prototype →</a></p>
+
+  <div class="grid2" style="margin-bottom:40px">
+    <div>
+      <h4 style="color:var(--white);font-size:18px;font-weight:700;margin-bottom:12px;letter-spacing:-.5px">The Soul Sync</h4>
+      <p style="font-size:14px;color:var(--grey);line-height:1.8">When a user buys a physical EDEN bot, their app data migrates: conversation history, personality adaptations, inside jokes, relationship depth. The bot boots up and IS the same persona they've been talking to. Not a reset. Their Sienna.</p>
+      <div class="stat-row" style="margin-top:16px">
+        <div class="stat-badge"><strong>14 days</strong> free trial</div>
+        <div class="stat-badge"><strong>$14.99</strong> / month</div>
+        <div class="stat-badge"><strong>$119.99</strong> / year</div>
+      </div>
+      <div class="stat-row">
+        <div class="stat-badge"><strong>5</strong> personas</div>
+        <div class="stat-badge"><strong>Text</strong> + Voice</div>
+        <div class="stat-badge"><strong>Memory</strong> persistence</div>
+      </div>
+    </div>
+    <div class="card card-accent">
+      <h4 style="color:var(--accent2);font-size:10px;font-weight:700;letter-spacing:2px;margin-bottom:12px;text-transform:uppercase">Key Features</h4>
+      <ul style="list-style:none;font-size:13px;color:var(--grey);line-height:2.2">
+        <li>✓ Swipeable persona selection carousel</li>
+        <li>✓ Real-time text chat with typing indicators</li>
+        <li>✓ Voice input — tap to speak, they respond in voice</li>
+        <li>✓ Each persona remembers past conversations</li>
+        <li>✓ Relationship meter — visual bond depth tracker</li>
+        <li>✓ Push notifications — "Sienna: You've been quiet today"</li>
+        <li>✓ Multiple personas in one subscription</li>
+        <li>✓ Soul Sync — app history migrates to physical bot</li>
+      </ul>
+    </div>
+  </div>
+
+  <details>
+    <summary>App Economics & Projections</summary>
+    <div class="detail-body">
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <tr><th>Milestone</th><th>Subscribers</th><th>MRR</th><th>Timeline</th></tr>
+          <tr><td class="td-white">Beta</td><td>100</td><td>$1,500</td><td>Week 4</td></tr>
+          <tr><td class="td-white">Launch (Sienna reveal)</td><td>500</td><td>$7,500</td><td>Week 6</td></tr>
+          <tr><td class="td-white">Post-Indiegogo</td><td>2,000</td><td>$30,000</td><td>Week 10</td></tr>
+          <tr><td class="td-white">Year 1</td><td>10,000</td><td>$150,000</td><td>Month 12</td></tr>
+        </table>
+      </div>
+    </div>
+  </details>
+</section>
+
+<!-- ═══════════ INDIEGOGO ═══════════ -->
+<section class="section" id="indiegogo">
+  <div class="section-label">The Buy Point</div>
+  <h2 class="section-title">Indiegogo Campaign</h2>
+  <p class="section-subtitle">"The Surgeon General called loneliness a public health crisis. We built the answer." — Category: Health & Wellness / Robotics</p>
+
+  <div class="card card-accent" style="margin-bottom:32px">
+    <h4 style="color:var(--accent2);font-size:10px;font-weight:700;letter-spacing:2px;margin-bottom:10px;text-transform:uppercase">The Story Arc</h4>
+    <p style="font-size:13px;color:var(--grey);line-height:2.2">
+      1. <strong style="color:var(--white)">The Hook</strong> — "The crisis nobody talks about." 60% of adults lonely. Surgeon General declaration.<br>
+      2. <strong style="color:var(--white)">The Problem</strong> — Loneliness = +26% mortality. Equivalent to 15 cigarettes/day. 28% of young men: zero friends.<br>
+      3. <strong style="color:var(--white)">The Solution</strong> — Physical AI companions. Medical-grade silicone. Real presence. Not a screen.<br>
+      4. <strong style="color:var(--white)">The Proof</strong> — Sienna. 6 weeks as a "human" influencer. Thousands wanted her. She was an EDEN companion the whole time.<br>
+      5. <strong style="color:var(--white)">The Offer</strong> — Head-Only or Full Body. Early bird pricing. 8-12 week deployment.</p>
+  </div>
+
+  <h4 style="color:var(--white);font-size:16px;font-weight:700;margin-bottom:16px;letter-spacing:-.5px">Reward Tiers</h4>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <tr><th>Tier</th><th>Format</th><th>Price</th><th>What You Get</th><th>Limit</th></tr>
+      <tr><td>Digital Welcome</td><td>—</td><td><span class="tbc">TBC</span></td><td>HD persona art pack + behind-the-scenes build documentary</td><td>Unlimited</td></tr>
+      <tr><td>Supporter</td><td>—</td><td><span class="tbc">TBC</span></td><td>Name in credits + exclusive updates + early access</td><td>Unlimited</td></tr>
+      <tr><td class="td-white">Early Bird — S1 Head</td><td>Head-Only</td><td><span class="tbc">TBC</span></td><td>Head-only S1, choice of persona, 6mo support</td><td>50</td></tr>
+      <tr><td class="td-white">Early Bird — Pro Head</td><td>Head-Only</td><td><span class="tbc">TBC</span></td><td>Head-only Pro + bionic vision + neck articulation</td><td>30</td></tr>
+      <tr><td class="td-white">Early Bird — Ultra Head</td><td>Head-Only</td><td><span class="tbc">TBC</span></td><td>Head-only Ultra + electronic skin + on-device AI</td><td>15</td></tr>
+      <tr><td class="td-white">Early Bird — S1 Full Body</td><td>Full Body</td><td><span class="tbc">TBC</span></td><td>Full S1 body, choice of persona, 6mo support</td><td>50</td></tr>
+      <tr><td class="td-white">Early Bird — Pro Full Body</td><td>Full Body</td><td><span class="tbc">TBC</span></td><td>Full Pro body + bionic vision + neck + upper-body base</td><td>30</td></tr>
+      <tr><td class="td-white">Early Bird — Ultra Full Body</td><td>Full Body</td><td><span class="tbc">TBC</span></td><td>Full Ultra + touch sensors + Horizon S100 processor</td><td>15</td></tr>
+      <tr><td class="td-white">Collector's Set</td><td>Full Body</td><td><span class="tbc">TBC</span></td><td>Full Ultra + custom persona design + VIP deployment</td><td>5</td></tr>
+    </table>
+  </div>
+  <p style="font-size:10px;color:var(--grey2);margin-top:8px;font-style:italic">All pricing To Be Confirmed. Head-Only = bionic head sculpture with full conversation/sensory capabilities. Full Body = complete humanoid. Both: medical-grade liquid platinum silicone, hand-finished, 8-12 week deployment managed by Robotist.</p>
+
+  <details style="margin-top:24px">
+    <summary>Campaign Assets & Production</summary>
+    <div class="detail-body">
+      <div class="tbl-wrap">
+        <table class="tbl">
+          <tr><th>Asset</th><th>Owner</th><th>Format</th></tr>
+          <tr><td class="td-white">Hero video (60-90s)</td><td>Robert</td><td>Cinematic reel · AI story/movie generation</td></tr>
+          <tr><td class="td-white">Model showcase videos (×5)</td><td>Robert</td><td>30s each · in-motion with personality caption</td></tr>
+          <tr><td class="td-white">Technology deep-dive</td><td>Robert</td><td>2-3 min · materials, assembly, testing</td></tr>
+          <tr><td class="td-white">Sienna / Garden content</td><td>Robert</td><td>Scene-based narrative content pipeline</td></tr>
+          <tr><td class="td-white">Tech close-up photos</td><td>Existing</td><td>Skin, eyes, mouth, neck, sensors, chipset</td></tr>
+          <tr><td class="td-white">Reward tier visuals</td><td>Design</td><td>Card graphics per tier</td></tr>
+          <tr><td class="td-white">FAQ copy</td><td>Lareesa</td><td>Shipping, customs, privacy, returns</td></tr>
+        </table>
+      </div>
+    </div>
+  </details>
+</section>
+
+<!-- ═══════════ TEAM ═══════════ -->
+<section class="section" id="team">
+  <div class="section-label">Competitive Moat</div>
+  <h2 class="section-title">Team & Capabilities</h2>
+  <p class="section-subtitle">This entire launch is in-house. Zero external dependency. That is the moat.</p>
+
+  <div class="grid2" style="margin-bottom:48px">
+    <div class="card">
+      <div style="font-size:28px;margin-bottom:12px">🤖</div>
+      <h4 style="color:var(--white);font-size:18px;font-weight:700;margin-bottom:6px">Lareesa</h4>
+      <p style="color:var(--accent2);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px">Agentic Chatbots + DTC Ecom</p>
+      <p style="font-size:13px;color:var(--grey);line-height:1.7">Companion app with agentic AI. Full-stack build. Plus: proven DTC ecom China→global supply chain. Manufacturing, customs, logistics — already done successfully.</p>
+      <div style="margin-top:12px"><span class="tag tag-accent">Tech + Supply Chain</span></div>
+    </div>
+    <div class="card">
+      <div style="font-size:28px;margin-bottom:12px">🎬</div>
+      <h4 style="color:var(--white);font-size:18px;font-weight:700;margin-bottom:6px">Robert</h4>
+      <p style="color:var(--accent2);font-size:11px;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px">AI Story & Movie Generation</p>
+      <p style="font-size:13px;color:var(--grey);line-height:1.7">Hollywood-quality cinematic content. Campaign hero video, Garden of Eden narrative scenes, persona showcase films. Content that competitors would need $50K+ agencies to match.</p>
+      <div style="margin-top:12px"><span class="tag tag-accent">Content Moat</span></div>
+    </div>
+  </div>
+
+  <div class="grid4">
+    <div class="hl-card" style="text-align:center"><div class="hl-icon">🎥</div><h4>Content Moat</h4><p>Robert's cinematic AI video replaces $50K production agencies.</p></div>
+    <div class="hl-card" style="text-align:center"><div class="hl-icon">🔧</div><h4>Tech Moat</h4><p>Agentic chatbots with real personality depth. Most AI companion apps are neutered by safety filters.</p></div>
+    <div class="hl-card" style="text-align:center"><div class="hl-icon">📦</div><h4>Supply Chain</h4><p>China→global DTC. Most robotics startups drown in customs and logistics.</p></div>
+    <div class="hl-card" style="text-align:center"><div class="hl-icon">⚡</div><h4>Speed</h4><p>No vendors. No agencies. No outsourcing. Idea → execution in days.</p></div>
+  </div>
+</section>
+
+<!-- ═══════════ TIMELINE ═══════════ -->
+<section class="section" id="timeline">
+  <div class="section-label">Execution</div>
+  <h2 class="section-title">Six-Phase Launch Timeline</h2>
+  <p class="section-subtitle">From Sienna's first post to the e-commerce store going live.</p>
+
+  <div class="timeline-h">
+    <div class="tl-phase"><div class="tl-num">Phase 1</div><div class="tl-title">BUILD</div><div class="tl-date">Weeks 1–3</div><div class="tl-deliverable">Sienna social live · App MVP · IG 5K+ followers</div></div>
+    <div class="tl-phase"><div class="tl-num">Phase 2</div><div class="tl-title">LAUNCH APP</div><div class="tl-date">Week 4</div><div class="tl-deliverable">"Talk to me" CTA live · App released · First subscribers</div></div>
+    <div class="tl-phase"><div class="tl-num">Phase 3</div><div class="tl-title">TEASE</div><div class="tl-date">Week 5</div><div class="tl-deliverable">First hints · EDEN social created · Indiegogo Coming Soon</div></div>
+    <div class="tl-phase"><div class="tl-num">Phase 4</div><div class="tl-title">REVEAL</div><div class="tl-date">Week 6</div><div class="tl-deliverable">Sienna confession · Indiegogo launch · App push blast</div></div>
+    <div class="tl-phase"><div class="tl-num">Phase 5</div><div class="tl-title">PUSH</div><div class="tl-date">Weeks 7–10</div><div class="tl-deliverable">Daily campaign · PR outreach · 2K+ app subscribers</div></div>
+    <div class="tl-phase"><div class="tl-num">Phase 6</div><div class="tl-title">DELIVER</div><div class="tl-date">Weeks 11+</div><div class="tl-deliverable">Production · E-commerce live · App→Bot Soul Sync</div></div>
+  </div>
+</section>
+
+<!-- ═══════════ ROUTING ═══════════ -->
+<section class="section">
+  <div class="section-label">Traffic</div>
+  <h2 class="section-title">Funnel Routing</h2>
+
+  <div class="card card-accent" style="margin-bottom:32px;padding:clamp(20px,2.5vw,40px)">
+    <p style="font-size:14px;color:var(--grey);line-height:2.2;font-family:monospace">
+      Sienna IG → "Talk to me" → App download (Week 4)<br>
+      Sienna IG → "I need to tell you something" → Indiegogo (Week 6)<br>
+      Sienna Twitter → Pinned tweet → App → then Indiegogo<br>
+      Sienna Exclusive → "The real me" → App → Indiegogo early bird<br>
+      EDEN App → Push notification → "Meet me in person" → Indiegogo<br>
+      EDEN Social → Product content → Indiegogo<br>
+      Indiegogo → Post-funding → E-commerce live<br>
+      App subscribers → "Upgrade to physical" → Same persona. Same soul.
+    </p>
+  </div>
+
+  <details>
+    <summary>The Reveal Sequence — Week 6</summary>
+    <div class="detail-body">
+      <p style="font-size:13px;color:var(--grey);line-height:2">
+        <strong style="color:var(--white)">Day 1:</strong> Sienna Story — "I've been keeping something from you."<br>
+        <strong style="color:var(--white)">Day 2:</strong> THE DROP. Sienna confession post. Twitter thread: full reveal. Exclusive: "The truth." EDEN IG: "Meet Sienna. EDEN companion 02."<br>
+        <strong style="color:var(--white)">Day 3-5:</strong> Sustained heat. Press outreach. Garden content ramp-up.<br>
+        <strong style="color:var(--white)">Day 6:</strong> INDIEGOGO LIVE. All platforms. Email blast. App push notification.
+      </p>
+    </div>
+  </details>
+
+  <details>
+    <summary>Source Documents (Internal)</summary>
+    <div class="detail-body">
+      <ul style="list-style:none;font-size:12px;color:var(--grey);line-height:2.2">
+        <li>📄 EDEN-LAUNCH-STRATEGY.md</li>
+        <li>📄 SIENNA-PERSONA-BIBLE.md</li>
+        <li>📄 SIENNA-30DAY-CONTENT-CALENDAR.md</li>
+        <li>📄 EDEN-COMPANION-APP-BLUEPRINT.md</li>
+        <li>📄 INDIEGOGO-CAMPAIGN-BLUEPRINT.md</li>
+        <li>📄 FUNNEL-MAP.md</li>
+      </ul>
+    </div>
+  </details>
+</section>
+
+<!-- ═══════════ FOOTER ═══════════ -->
+<footer class="footer">
+  <div class="brand">EDEN by Robotist</div>
+  <div class="f-tag">The cure for the loneliness epidemic. Westworld. In real life.</div>
+  <div class="links">
+    <a href="https://robotist.com.au">Robotist</a>
+    <a href="https://www.robotist.com.au/contact.html">Contact</a>
+  </div>
+  <div class="copy">© 2026 Robotist Pty Ltd. All pricing TBC. Built with care by Pulse Branding.</div>
+</footer>
+
+<script>
+// Password gate
+function checkPw(){
+  var pw=document.getElementById('pw-input').value;
+  if(pw==='sexbotrocks'){
+    document.getElementById('pw-gate').style.display='none';
+    sessionStorage.setItem('eden-strategy-auth','1');
+  }else{
+    document.getElementById('pw-err').textContent='Wrong password. Try again.';
+  }
+  return false;
+}
+// Auto-unlock if already authed
+if(sessionStorage.getItem('eden-strategy-auth')==='1'){
+  document.getElementById('pw-gate').style.display='none';
+}
+
+// Mobile nav
+document.querySelectorAll('.nav-links a').forEach(function(a){
+  a.addEventListener('click',function(){document.querySelector('.nav-links').classList.remove('open')});
+});
+
+
+// Active nav highlight
+(function(){
+  var sections=document.querySelectorAll('.section[id]');
+  var navLinks=document.querySelectorAll('.nav-links a');
+  var observer=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        navLinks.forEach(function(l){l.classList.remove('active')});
+        var link=document.querySelector('.nav-links a[href="#'+e.target.id+'"]');
+        if(link)link.classList.add('active');
+      }
+    })
+  },{threshold:0.3});
+  sections.forEach(function(s){observer.observe(s)});
+})();
+</script>
+
+</body>
+</html>

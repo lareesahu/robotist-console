@@ -1,0 +1,38 @@
+{
+  "status": "agent-verified implementation baseline; user requested it be the future extension reference",
+  "date": "2026-09-08",
+  "source_commit": "89db6028f55f13bbe9d07e839407b31743119949",
+  "url": "https://www.robotist.com.au/grn/",
+  "assets": {
+    "images/logo.svg": "6585272b58e73cbbd3186204423bb64258b48993a456fe6007d855978e867290",
+    "grn/static/grn-robot.png": "b04e80593d8f7ac14f0611e7be7ac07ae5f22249dc3c3843bb45a578b3b6a970"
+  },
+  "captures": [
+    {
+      "file": "final-desktop.jpg",
+      "viewport": [
+        1584,
+        990
+      ],
+      "sha256": "5de80333f3307101c3ce14f940e3cfb42f377365fac33fed0eb9593465480756"
+    },
+    {
+      "file": "final-laptop.jpg",
+      "viewport": [
+        1280,
+        800
+      ],
+      "sha256": "05874bcdca08b8aaf5b597db6335326c7589f53133017e8abaf8532d3e8876b9"
+    },
+    {
+      "file": "final-mobile.jpg",
+      "viewport": [
+        390,
+        844
+      ],
+      "sha256": "b4b36c677c2272d8231971cf95d32ac6acde1549933a2d84c89069e83a143bcc"
+    }
+  ],
+  "human_visual_approval": false,
+  "user_lock_source": "C:\\Users\\hunin\\.codex\\sessions\\2026\\09\\07\\rollout-2026-09-07T16-41-31-01a07b07-9ba3-7ea3-a615-2f5c7adcbcb9.jsonl:5372 (2026-09-08T05:50:35.455Z)"
+}
