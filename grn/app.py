@@ -18,6 +18,8 @@ from flask import Flask, abort, flash, g, redirect, render_template, request, se
 from PIL import Image, UnidentifiedImageError
 from .database import connect
 from .files import Files
+from .profile_fields import (LANGUAGE_MAX, LEVELS, language_rows, languages_json, languages_of, parse_languages,
+                             parse_skills, public_scope, skills_field, skills_json, skills_of, with_public_fields)
 from werkzeug.security import check_password_hash, generate_password_hash
 from werkzeug.exceptions import BadRequest
 
@@ -68,6 +70,8 @@ def create_app(config=None):
               title TEXT NOT NULL DEFAULT '', location TEXT NOT NULL DEFAULT '', bio TEXT NOT NULL DEFAULT '',
               website TEXT NOT NULL DEFAULT '', photo TEXT NOT NULL DEFAULT '', consent INTEGER NOT NULL DEFAULT 0,
               published INTEGER NOT NULL DEFAULT 0, sort_order INTEGER NOT NULL DEFAULT 0,
+              skills TEXT NOT NULL DEFAULT '[]', languages TEXT NOT NULL DEFAULT '[]',
+              consent_scope TEXT NOT NULL DEFAULT '',
               version INTEGER NOT NULL DEFAULT 1, updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP);
             CREATE TABLE IF NOT EXISTS audit (
               id INTEGER PRIMARY KEY, object_id TEXT NOT NULL, action TEXT NOT NULL,
@@ -79,7 +83,7 @@ def create_app(config=None):
             for name in ('academic_background', 'credentials'):
                 if name not in columns:
                     con.execute(f"ALTER TABLE profiles ADD COLUMN {name} TEXT NOT NULL DEFAULT ''")
-            for name, definition in {'consent_proposals':'INTEGER NOT NULL DEFAULT 0','consent_materials':'INTEGER NOT NULL DEFAULT 0','consent_reference':"TEXT NOT NULL DEFAULT ''",'consent_date':"TEXT NOT NULL DEFAULT ''",'agreement_status':"TEXT NOT NULL DEFAULT 'not_started'",'agreement_reference':"TEXT NOT NULL DEFAULT ''"}.items():
+            for name, definition in {'skills':"TEXT NOT NULL DEFAULT '[]'",'languages':"TEXT NOT NULL DEFAULT '[]'",'consent_scope':"TEXT NOT NULL DEFAULT ''",'consent_proposals':'INTEGER NOT NULL DEFAULT 0','consent_materials':'INTEGER NOT NULL DEFAULT 0','consent_reference':"TEXT NOT NULL DEFAULT ''",'consent_date':"TEXT NOT NULL DEFAULT ''",'agreement_status':"TEXT NOT NULL DEFAULT 'not_started'",'agreement_reference':"TEXT NOT NULL DEFAULT ''"}.items():
                 if name not in columns:
                     con.execute(f'ALTER TABLE profiles ADD COLUMN {name} {definition}')
             application_columns = {row[1] for row in con.execute('PRAGMA table_info(applications)')}
@@ -87,6 +91,15 @@ def create_app(config=None):
                 if name not in application_columns:
                     con.execute(f"ALTER TABLE applications ADD COLUMN {name} TEXT NOT NULL DEFAULT ''")
             con.commit()
+
+    if app.config['DATABASE_URL']:
+        # Fail closed: new code must never serve against a schema missing these columns.
+        try:
+            with closing(connect(db_path, app.config['DATABASE_URL'])) as check:
+                check.execute('SELECT skills, languages, consent_scope FROM profiles LIMIT 1').fetchone()
+        except Exception as error:
+            raise RuntimeError('GRN database is missing the profile skills/languages/consent_scope columns. '
+                               'Apply grn/migrations/2026-10-21-profile-skills-languages.sql before deploying.') from error
 
     def db():
         if 'db' not in g:
@@ -186,7 +199,7 @@ def create_app(config=None):
         return row
 
     def public_profiles():
-        return db().execute("SELECT p.* FROM profiles p LEFT JOIN applications a ON a.id=p.application_id WHERE p.published=1 AND p.consent=1 AND (p.application_id IS NULL OR a.status='approved') ORDER BY p.sort_order, p.name").fetchall()
+        return [with_public_fields(row) for row in db().execute("SELECT p.* FROM profiles p LEFT JOIN applications a ON a.id=p.application_id WHERE p.published=1 AND p.consent=1 AND (p.application_id IS NULL OR a.status='approved') ORDER BY p.sort_order, p.name").fetchall()]
 
     @app.route('/grn/', methods=['GET','POST'])
     def landing():
@@ -336,7 +349,7 @@ def create_app(config=None):
                 con.execute('INSERT INTO profiles(id,name) VALUES (?,?)', (ident, name))
                 audit(ident, 'Team profile draft created by administrator')
             return redirect(url_for('profile', ident=ident), code=303)
-        return render_template('team.html', profiles=db().execute('SELECT * FROM profiles ORDER BY sort_order,name').fetchall())
+        return render_template('team.html', profiles=[with_public_fields(row) for row in db().execute('SELECT * FROM profiles ORDER BY sort_order,name').fetchall()])
 
     @app.route('/grn/admin/team/<ident>', methods=['GET', 'POST'])
     @admin_required
@@ -344,6 +357,8 @@ def create_app(config=None):
         row = record('profiles', ident)
         application = record('applications', row['application_id']) if row['application_id'] else None
         errors = []
+        skill_text = skills_field(row)
+        lang_rows = language_rows(row)
         if request.method == 'POST':
             try:
                 values = dict(name=field('name', 120, True), title=field('title', 120, True), location=field('location', 160, True),
@@ -366,6 +381,9 @@ def create_app(config=None):
                         raise ValueError('Approval date cannot be in the future.')
                 if not -999 <= values['sort_order'] <= 999:
                     raise ValueError('Display order must be between -999 and 999.')
+                skills = parse_skills(request.form.get('skills'))
+                languages = parse_languages([request.form.get(f'language_name_{index}', '') for index in range(1, LANGUAGE_MAX + 1)],
+                                            [request.form.get(f'language_level_{index}', '') for index in range(1, LANGUAGE_MAX + 1)])
                 if values['published'] and (not values['consent'] or (application and application['status'] != 'approved')):
                     raise ValueError('Publication requires approval and permission to show this profile publicly.')
                 upload = request.files.get('photo')
@@ -384,17 +402,33 @@ def create_app(config=None):
                     except (UnidentifiedImageError, OSError, Image.DecompressionBombError):
                         raise ValueError('This file is not a supported image.')
                     values['photo'] = uuid.uuid4().hex + '.jpg'
-                values.update(id=ident, version=request.form.get('version'))
+                values.update(id=ident, version=request.form.get('version'), skills=skills_json(skills),
+                              languages=languages_json(languages))
+                values['consent_scope'] = public_scope(values, skills, languages)
                 with db() as con:
                     con.execute('BEGIN IMMEDIATE')
+                    stored = con.execute('SELECT published,consent_scope,consent_reference,skills,languages FROM profiles WHERE id=?', (ident,)).fetchone()
+                    if stored is None:
+                        abort(404)
+                    if values['published'] and values['consent_scope'] != (stored['consent_scope'] or '') \
+                            and values['consent_reference'] == (stored['consent_reference'] or ''):
+                        raise ValueError('This changes what is shown publicly. Record the new approval evidence reference for this change, or unpublish the profile.')
                     if application and values['published']:
                         current = con.execute('SELECT status,public_consent FROM applications WHERE id=?', (row['application_id'],)).fetchone()
                         if current['status'] != 'approved':
                             abort(409, 'Application approval changed. Reload before publishing.')
-                    result = con.execute('UPDATE profiles SET name=:name,title=:title,location=:location,bio=:bio,academic_background=:academic_background,credentials=:credentials,website=:website,photo=:photo,consent=:consent,published=:published,sort_order=:sort_order,version=version+1,updated_at=CURRENT_TIMESTAMP WHERE id=:id AND version=:version', values)
+                    result = con.execute('UPDATE profiles SET name=:name,title=:title,location=:location,bio=:bio,academic_background=:academic_background,credentials=:credentials,website=:website,photo=:photo,consent=:consent,published=:published,sort_order=:sort_order,skills=:skills,languages=:languages,version=version+1,updated_at=CURRENT_TIMESTAMP WHERE id=:id AND version=:version', values)
                     if result.rowcount != 1:
                         abort(409, 'Another reviewer changed this profile. Reload before saving.')
                     con.execute('UPDATE profiles SET consent_proposals=:consent_proposals,consent_materials=:consent_materials,consent_reference=:consent_reference,consent_date=:consent_date,agreement_status=:agreement_status,agreement_reference=:agreement_reference WHERE id=:id',values)
+                    if values['published']:
+                        con.execute('UPDATE profiles SET consent_scope=? WHERE id=?', (values['consent_scope'], ident))
+                    if (stored['skills'] or '') != values['skills'] or (stored['languages'] or '') != values['languages']:
+                        before = ', '.join(skills_of(stored)) or 'none'
+                        after = ', '.join(skills) or 'none'
+                        before_lang = '; '.join(f"{item['name']} ({item['level']})" for item in languages_of(stored)) or 'none'
+                        after_lang = '; '.join(f"{item['name']} ({item['level']})" for item in languages) or 'none'
+                        audit(ident, ('Skills: ' + before + ' -> ' + after + '; languages: ' + before_lang + ' -> ' + after_lang)[:600])
                     if photo_bytes:
                         (photos / values['photo']).write_bytes(photo_bytes)
                     audit(ident, 'Public profile saved' if values['published'] else 'Private draft saved / unpublished')
@@ -403,6 +437,9 @@ def create_app(config=None):
                 return redirect(url_for('profile', ident=ident), code=303)
             except ValueError as error:
                 errors.append(str(error))
+                skill_text = request.form.get('skills', '')
+                lang_rows = [(request.form.get(f'language_name_{index}', ''), request.form.get(f'language_level_{index}', ''))
+                             for index in range(1, LANGUAGE_MAX + 1)]
         values = dict(row)
         if errors:
             values.update({k: request.form.get(k, '') for k in ('name', 'title', 'location', 'bio', 'academic_background', 'credentials', 'website', 'sort_order')})
@@ -410,7 +447,8 @@ def create_app(config=None):
             values.update({k:request.form.get(k,'') for k in ('consent_reference','consent_date','agreement_status','agreement_reference')})
             values.update({k:request.form.get(k)=='yes' for k in ('consent_proposals','consent_materials')})
         history=db().execute('SELECT * FROM audit WHERE object_id=? ORDER BY id DESC',(ident,)).fetchall()
-        return render_template('profile.html', profile=values, application=application, errors=errors,history=history), 400 if errors else 200
+        return render_template('profile.html', profile=values, application=application, errors=errors, history=history,
+                               skill_text=skill_text, lang_rows=lang_rows, levels=LEVELS), 400 if errors else 200
 
     @app.route('/grn/photos/<filename>')
     def photo(filename):
