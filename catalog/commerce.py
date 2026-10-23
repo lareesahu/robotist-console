@@ -160,7 +160,7 @@ def register_commerce(app, site):
         asks for one first. The cookie from this response is what makes the
         later POST check out.
         """
-        return jsonify(ok=True, token=token())
+        return jsonify(ok=True, token=token(), csrf=session.get('csrf',''))
 
     @app.post('/inquiries')
     def contact_submit():
