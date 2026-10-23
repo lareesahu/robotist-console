@@ -138,6 +138,8 @@ def create_app(config=None):
     site=Site(ROOT,service.store)
     from .commerce import register_commerce
     register_commerce(app,site)
+    from .mailforward import register_mailforward
+    register_mailforward(app)
 
 
     def catalogue_rows(documents=None):
