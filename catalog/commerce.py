@@ -152,6 +152,16 @@ def register_commerce(app, site):
         if not ident:return redirect(url_for('cart'))
         return render_template('inquiry-received.html',reference=ident)
 
+    @app.get('/inquiry/token')
+    def inquiry_token():
+        """Issue the session token a form needs before it posts to /inquiries.
+
+        Static pages cannot carry a token injected at render time, so the form
+        asks for one first. The cookie from this response is what makes the
+        later POST check out.
+        """
+        return jsonify(ok=True, token=token())
+
     @app.post('/inquiries')
     def contact_submit():
         try:
