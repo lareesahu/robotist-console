@@ -196,3 +196,12 @@ def register_mailforward(app):
     if os.environ.get('MAIL_FORWARD_ENABLED', '').strip() == '1' and not app.testing:
         hour = int(os.environ.get('MAIL_FORWARD_HOUR', '8'))
         threading.Thread(target=_loop, args=(hour,), daemon=True, name='mail-forward').start()
+
+    if os.environ.get('MAIL_FORWARD_ON_START', '').strip() == '1' and not app.testing:
+        def _once():
+            time.sleep(15)
+            try:
+                LOG.warning('mail forward on start: %s', json.dumps(run(dry=os.environ.get('MAIL_FORWARD_DRY') == '1'))[:1500])
+            except Exception as error:
+                LOG.warning('mail forward on start crashed: %s', error)
+        threading.Thread(target=_once, daemon=True, name='mail-forward-once').start()
