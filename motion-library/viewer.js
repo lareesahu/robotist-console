@@ -316,7 +316,12 @@ async function select(id) {
   // a lost race can never leave the previous skeleton standing.
   const token = ++selectToken;
   state.selected = meta.id;
-  document.querySelectorAll('.row').forEach((r) => r.setAttribute('aria-selected', String(r.dataset.id === meta.id)));
+  // aria-selected is only valid inside a listbox; these are plain buttons, so the
+  // current row is announced with aria-current.
+  document.querySelectorAll('.row').forEach((r) => {
+    if (r.dataset.id === meta.id) r.setAttribute('aria-current', 'true');
+    else r.removeAttribute('aria-current');
+  });
   const row = document.querySelector(`.row[data-id="${meta.id}"]`);
   const list = row && row.parentElement;
   if (row && list && list.scrollHeight > list.clientHeight) {
@@ -334,7 +339,17 @@ async function select(id) {
   } catch (err) {
     // A dropped fetch must say so; leaving the old clip under a highlighted row
     // claims a clip is loaded when it is not.
-    if (token === selectToken) $('#stage-meta').textContent = `Could not load this clip (${err.message}). Try again.`;
+    if (token === selectToken) {
+      // Empty the stage with it: a failed load showing the previous clip under the new
+      // title claims a clip arrived when none did.
+      for (const mesh of [...(state.links || []), ...(state.joints || [])]) {
+        if (mesh && mesh.mesh) { mesh.mesh.geometry.dispose(); state.group3d.remove(mesh.mesh); }
+      }
+      state.group3d.clear();
+      state.links = []; state.joints = []; state.dirty = true;
+      $('#stage-name').textContent = meta.name;
+      $('#stage-meta').textContent = `Could not load this clip (${err.message}). Try again.`;
+    }
     return;
   }
   if (token !== selectToken) return;  // a newer clip superseded this one
