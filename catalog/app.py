@@ -1,5 +1,5 @@
 """Robotist website and internal CMS share one origin and the GRN admin session."""
-import argparse,json,os,secrets,sqlite3,time,urllib.error,urllib.request
+import argparse,json,mimetypes,os,secrets,sqlite3,time,urllib.error,urllib.request
 from pathlib import Path
 from urllib.parse import urlsplit
 from functools import wraps
@@ -596,6 +596,17 @@ def create_app(config=None):
             # Unknown slug or a draft: hand over to the dynamic article route (which never
             # renders drafts either).
             return redirect('/blog-post.html?slug='+path.stem,code=302)
+        # Model files are plain text (OBJ, MTL, URDF, Collada) and compress about six
+        # times. tools/deploy_to_site.sh leaves a .gz beside each one, so send the
+        # compressed copy to any browser that accepts it and let it cache the result.
+        if path.suffix.lower() in ('.obj','.mtl','.urdf','.dae','.json','.js','.css','.txt','.stl'):
+            gz=ROOT/(filename+'.gz')
+            if gz.is_file() and 'gzip' in (request.headers.get('Accept-Encoding') or '').lower():
+                response=send_from_directory(ROOT,filename+'.gz',mimetype=mimetypes.guess_type(filename)[0] or 'application/octet-stream')
+                response.headers['Content-Encoding']='gzip'
+                response.headers['Vary']='Accept-Encoding'
+                response.headers['Cache-Control']='public, max-age=604800'
+                return response
         return send_from_directory(ROOT,filename)
 
     # A visitor who mistypes an address gets the public page, not the console's error screen,
