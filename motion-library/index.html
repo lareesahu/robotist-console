@@ -15,7 +15,7 @@
 <meta property="og:description" content="26 captured human performances, retargeted to a humanoid and published as joint-space animation." />
 <meta property="og:image" content="https://www.robotist.com.au/robotist-og.jpg" />
 <meta property="og:site_name" content="Robotist" />
-<link rel="stylesheet" href="library.css?v=20261026c" />
+<link rel="stylesheet" href="library.css?v=20261026i" />
 <script type="importmap">
 { "imports": { "three": "./vendor/three.module.js", "three/addons/": "./vendor/" } }
 </script>
@@ -66,6 +66,7 @@
         <input class="scrub" id="scrub" type="range" min="0" max="1" step="0.001" value="0" aria-label="Scrub the clip" />
         <span class="time" id="time">0.00 / 0.00 s</span>
         <button class="ghost" id="mode" aria-pressed="false">links</button>
+        <a class="ghost payload" id="payload" href="data/index.json" download>JSON</a>
       </div>
     </div>
 
@@ -74,7 +75,7 @@
         <div class="rail-title"><span id="count">26 of 26</span> clips</div>
         <div class="chips" id="chips"></div>
       </div>
-      <div class="rows" id="rows" role="listbox" aria-label="Clips"></div>
+      <div class="rows" id="rows" aria-label="Clips"></div>
     </aside>
   </section>
 
@@ -83,6 +84,18 @@
     <div class="fact"><b>17</b><span>degrees of freedom the retarget drives</span></div>
     <div class="fact"><b>50</b><span>frames a second, quaternion per joint</span></div>
     <div class="fact"><b>0</b><span>meshes — every clip is joint data only</span></div>
+  </section>
+
+  <section class="spec wrap">
+    <div class="spec-label">What a controller receives</div>
+    <dl class="spec-grid">
+      <div><dt>Format</dt><dd>glTF 2.0 node graph, one quaternion (x, y, z, w) and one offset per joint</dd></div>
+      <div><dt>Rate</dt><dd>50 fps, fixed step — 0.02 s per frame, no dropped or interpolated frames</dd></div>
+      <div><dt>Frame</dt><dd>Right-handed, +Y up, metres, figure facing +Z, origin between the feet</dd></div>
+      <div><dt>Chain</dt><dd>23 named joints, 17 articulate, clamped where the hardware has a limit</dd></div>
+      <div><dt>Payload</dt><dd><a id="payload-link" href="data/index.json" download>Open the selected clip as JSON</a> — the same stream this viewer plays</dd></div>
+      <div><dt>Source</dt><dd>Captured human performance, retargeted to a 17-degree-of-freedom humanoid</dd></div>
+    </dl>
   </section>
 
   <section class="note-section wrap">
@@ -107,7 +120,7 @@
   </footer>
 </main>
 
-<script type="module" src="viewer.js?v=20261026c"></script>
+<script type="module" src="viewer.js?v=20261026i"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

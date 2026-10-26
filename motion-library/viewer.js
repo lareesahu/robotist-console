@@ -142,6 +142,7 @@ function initScene() {
 
   state.renderer = renderer; state.scene = scene; state.camera = camera;
   state.controls = controls; state.group3d = group3d;
+  controls.addEventListener('change', () => { state.dirty = true; });
 
   const resize = () => {
     const w = canvas.clientWidth, h = canvas.clientHeight;
@@ -149,6 +150,7 @@ function initScene() {
     renderer.setSize(w, h, false);
     camera.aspect = w / h;
     camera.updateProjectionMatrix();
+    state.dirty = true;
   };
   new ResizeObserver(resize).observe(canvas);
   resize();
@@ -177,25 +179,59 @@ function groundRig() {
 }
 
 function frameCamera() {
-  const box = state.bounds ? state.bounds.clone() : new THREE.Box3();
-  if (box.isEmpty()) {
-    const p = new THREE.Vector3();
-    for (const { bone } of state.joints) {
-      bone.getWorldPosition(p);
-      box.expandByPoint(p);
-    }
+  const body = state.body || { w: 1, h: 1.7, d: 0.8 };
+  // The figure is pinned to the origin, so the target is the body's middle, not the
+  // runway's. Width uses the horizontal axis of the body, whichever it is.
+  const bw = Math.max(body.w, body.d * 1.15);
+  const bh = body.h;
+  // Aim at the body where it actually stands at the first frame: a clip can start
+  // anywhere in the room, so a hard-coded origin leaves the figure off to one side.
+  const poseBox = new THREE.Box3();
+  const p = new THREE.Vector3();
+  for (const { bone } of state.joints) {
+    bone.getWorldPosition(p);
+    poseBox.expandByPoint(p);
   }
-  const h = Math.max(1.2, box.max.y - Math.max(0, box.min.y));
-  const spread = Math.max(box.max.x - box.min.x, box.max.z - box.min.z);
-  const cy = (box.max.y + Math.max(0, box.min.y)) * 0.5;
-  const cx = (box.max.x + box.min.x) * 0.5;
-  const cz = (box.max.z + box.min.z) * 0.5;
+  const cy = poseBox.isEmpty() ? bh * 0.52 : (poseBox.max.y + Math.max(0, poseBox.min.y)) * 0.5;
+  const cx = poseBox.isEmpty() ? 0 : (poseBox.max.x + poseBox.min.x) * 0.5;
+  const cz = poseBox.isEmpty() ? 0 : (poseBox.max.z + poseBox.min.z) * 0.5;
   // Three-quarter view: straight-on foreshortens any pose that moves along Z
   // (push-ups, crawls) into an unreadable knot.
-  const dist = Math.max(2.4, h * 2.16, spread * 1.9);
+  // Fit both axes from the real field of view, so a phone in portrait frames the body
+  // as tightly as a laptop does instead of shrinking it into the middle of the canvas.
+  const fov = THREE.MathUtils.degToRad(state.camera.fov || 38);
+  const aspect = state.camera.aspect || 1.82;
+  const fitY = (bh * 1.22) / (2 * Math.tan(fov / 2));
+  const fitX = (bw * 1.30) / (2 * Math.tan(fov / 2) * aspect);
+  const dist = Math.max(1.7, fitY, fitX);
   const az = 0.56;  // ~32 degrees
-  state.camera.position.set(cx + Math.sin(az) * dist, cy + h * 0.10, cz + Math.cos(az) * dist);
+  state.camera.position.set(cx + Math.sin(az) * dist, cy + bh * 0.14, cz + Math.cos(az) * dist);
   state.controls.target.set(cx, cy, cz);
+  state.controls.update();
+  state.camBase = {
+    pos: state.camera.position.clone(),
+    target: state.controls.target.clone(),
+  };
+  // The travel offset is measured from the pose the camera was framed on, not from
+  // whenever the first animation frame happens to land.
+  state.hipBase = state.anchor ? state.anchor.getWorldPosition(new THREE.Vector3()).clone() : null;
+  state.dirty = true;
+}
+
+/* Keep the travelling figure in the middle of the frame. The camera follows the hips
+   along the ground instead of the rig being teleported: moving the group fought the
+   pose data and ran away, and shifting the camera leaves every joint where the clip
+   put it. */
+const _hipWorld = new THREE.Vector3();
+function followHip() {
+  if (!state.anchor || !state.camBase) return;
+  state.anchor.getWorldPosition(_hipWorld);
+  if (!Number.isFinite(_hipWorld.x)) return;
+  if (!state.hipBase) { state.hipBase = _hipWorld.clone(); return; }
+  const dx = _hipWorld.x - state.hipBase.x;
+  const dz = _hipWorld.z - state.hipBase.z;
+  state.camera.position.set(state.camBase.pos.x + dx, state.camBase.pos.y, state.camBase.pos.z + dz);
+  state.controls.target.set(state.camBase.target.x + dx, state.camBase.target.y, state.camBase.target.z + dz);
   state.controls.update();
 }
 
@@ -205,10 +241,12 @@ function setTime(t) {
   if (!state.clip) return;
   samplePose(state.clip, state.t);
   state.group3d.updateMatrixWorld(true);
+  followHip();
   updateRig();
   const scrub = $('#scrub');
   if (scrub && document.activeElement !== scrub) scrub.value = String(state.duration ? state.t / state.duration : 0);
   $('#time').textContent = `${state.t.toFixed(2)} / ${state.duration.toFixed(2)} s`;
+  state.dirty = true;
 }
 
 let last = performance.now();
@@ -220,8 +258,13 @@ function tick(now) {
     if (t > state.duration) t -= state.duration;
     setTime(t);
   }
-  state.controls.update();
-  state.renderer.render(state.scene, state.camera);
+  // Redraw while playing, or once after any change. A static skeleton redrawn at
+  // 60 Hz keeps the GPU busy for no reason and drains a laptop battery.
+  if (state.playing || state.dirty) {
+    state.dirty = false;
+    state.controls.update();
+    state.renderer.render(state.scene, state.camera);
+  }
   requestAnimationFrame(tick);
 }
 
@@ -236,8 +279,7 @@ function renderRows() {
     const row = document.createElement('button');
     row.className = 'row';
     row.type = 'button';
-    row.setAttribute('role', 'option');
-    row.setAttribute('aria-selected', String(clip.id === state.selected));
+    row.setAttribute('aria-current', String(clip.id === state.selected));
     row.dataset.id = clip.id;
     row.innerHTML = `<img src="thumbs/${clip.id}.webp" alt="" width="62" height="40" loading="lazy" decoding="async">
       <span><span class="name"></span><span class="sub">${clip.joints} joints · ${Math.round(clip.fps)} fps</span></span>
@@ -269,7 +311,17 @@ async function select(id) {
     }
   }
 
-  const clip = await (await fetch(`data/${meta.id}.json`)).json();
+  let clip;
+  try {
+    const res = await fetch(`data/${meta.id}.json`);
+    if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+    clip = await res.json();
+  } catch (err) {
+    // A dropped fetch must say so; leaving the old clip under a highlighted row
+    // claims a clip is loaded when it is not.
+    if (token === selectToken) $('#stage-meta').textContent = `Could not load this clip (${err.message}). Try again.`;
+    return;
+  }
   if (token !== selectToken) return;  // a newer clip superseded this one
 
   const stale = [...(state.links || []).map((l) => l && l.mesh), ...(state.joints || []).map((j) => j && j.mesh)];
@@ -284,6 +336,13 @@ async function select(id) {
   state.rootBone = rig.rootBone;
   state.links = rig.links;
   state.joints = rig.joints;
+  state.anchor = rig.bones.find((b) => /hips|pelvis/i.test(b.name)) || rig.bones[0];
+  state.group3d.position.set(0, 0, 0);
+  state.camBase = null;
+  state.hipBase = null;
+  // The rig is rebuilt with links visible; if the reader chose joint-only mode, the
+  // new clip has to honour it instead of quietly switching the button's promise.
+  for (const { mesh } of state.links) mesh.visible = state.mode === 'links';
   state.clip = clip;
   state.duration = clip.seconds;
 
@@ -297,16 +356,43 @@ async function select(id) {
   groundRig();
   $('#stage-name').textContent = clip.name;
   $('#stage-meta').textContent = `${clip.seconds.toFixed(1)} s · ${clip.joints} joints · ${Math.round(clip.fps)} fps`;
+  // The payload link follows the selection: an engineer should be able to read the exact
+  // data the viewer is playing without asking anyone for it.
+  const href = `data/${meta.id}.json`;
+  $('#payload').setAttribute('href', href);
+  $('#payload').setAttribute('download', `${meta.id}.json`);
+  $('#payload-link').setAttribute('href', href);
+  $('#payload-link').setAttribute('download', `${meta.id}.json`);
   setTime(0);
   frameCamera();
   history.replaceState(null, '', `?clip=${meta.id}`);
   document.title = `${clip.name} — Motion Library — Robotist`;
 }
 
+function syncPlay() {
+  const btn = $('#play');
+  btn.setAttribute('aria-pressed', String(state.playing));
+  btn.setAttribute('aria-label', state.playing ? 'Pause' : 'Play');
+  btn.innerHTML = state.playing
+    ? '<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><rect x="2" y="1.5" width="3" height="9" rx="1" fill="currentColor"/><rect x="7" y="1.5" width="3" height="9" rx="1" fill="currentColor"/></svg>'
+    : '<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.8v8.4L10.2 6z" fill="currentColor"/></svg>';
+}
+
 async function boot() {
   initScene();
-  const index = await (await fetch('data/index.json')).json();
+  let index;
+  try {
+    const res = await fetch('data/index.json');
+    if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+    index = await res.json();
+  } catch (err) {
+    $('#stage-meta').textContent = `The clip index did not load (${err.message}). Reload the page.`;
+    return;
+  }
   state.clips = index.clips;
+  // Someone who asked the system for less motion should get a still frame and a
+  // play button, not a loop they have to stop.
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) state.playing = false;
 
   const chipHost = $('#chips');
   for (const g of GROUPS) {
@@ -330,14 +416,14 @@ async function boot() {
 
   $('#play').addEventListener('click', () => {
     state.playing = !state.playing;
-    $('#play').setAttribute('aria-pressed', String(state.playing));
-    $('#play').innerHTML = state.playing
-      ? '<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><rect x="2" y="1.5" width="3" height="9" rx="1" fill="currentColor"/><rect x="7" y="1.5" width="3" height="9" rx="1" fill="currentColor"/></svg>'
-      : '<svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1.8v8.4L10.2 6z" fill="currentColor"/></svg>';
+    state.dirty = true;
+    syncPlay();
   });
   $('#scrub').addEventListener('input', (e) => {
+    // Scrubbing pauses the clip, so the button has to show the play triangle at once —
+    // otherwise it keeps showing pause bars over a clip that is standing still.
     state.playing = false;
-    $('#play').setAttribute('aria-pressed', 'false');
+    syncPlay();
     setTime(Number(e.target.value) * state.duration);
   });
   $('#mode').addEventListener('click', (e) => {
@@ -346,8 +432,12 @@ async function boot() {
     for (const { mesh } of state.links) mesh.visible = linksOnly;
     e.currentTarget.setAttribute('aria-pressed', String(!linksOnly));
     e.currentTarget.textContent = linksOnly ? 'links' : 'joints';
+    state.dirty = true;
   });
-  $('#nav-toggle').addEventListener('click', () => $('.nav').classList.toggle('open'));
+  $('#nav-toggle').addEventListener('click', () => {
+    const open = $('.nav').classList.toggle('open');
+    $('#nav-toggle').setAttribute('aria-expanded', String(open));
+  });
   addEventListener('scroll', () => $('.nav').classList.toggle('scrolled', scrollY > 40), { passive: true });
 
   // debug handle for the thumbnail pass and for her to poke at
