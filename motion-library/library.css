@@ -246,7 +246,11 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space
   .hero p { font-size: 14px; margin-top: 10px; }
   .viewer-spec { padding: 8px 14px 10px; font-size: 9.5px; letter-spacing: .02em; }
   /* One scrollable chip row beats two ragged rows pushing the list down. */
-  .chips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  /* The fade is the affordance: without it the last chip just looks chopped off. */
+  .chips {
+    flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none;
+    mask-image: linear-gradient(90deg, #000 88%, transparent 100%);
+  }
   .chips::-webkit-scrollbar { display: none; }
   .chip { flex: 0 0 auto; }
   /* One line of transport, never two: play, scrub, time, mode and payload share the row. */
