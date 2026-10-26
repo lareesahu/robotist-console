@@ -283,7 +283,7 @@ async function select(id) {
 
   groundRig();
   $('#stage-name').textContent = clip.name;
-  $('#stage-meta').textContent = `${clip.seconds.toFixed(2)} s · ${clip.nodes.length} joints · ${Math.round(clip.fps)} fps`;
+  $('#stage-meta').textContent = `${clip.seconds.toFixed(2)} s · ${clip.nodes.length} bones · ${Math.round(clip.fps)} fps`;
   setTime(0);
   frameCamera();
   history.replaceState(null, '', `?clip=${meta.id}`);
