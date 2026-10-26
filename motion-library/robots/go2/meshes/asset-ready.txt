@@ -1,1 +1,0 @@
-ready: go2 from unitreerobotics/unitree_ros@15ebe53f4cd77e7d745ae83b9d7ff90e685e8998
