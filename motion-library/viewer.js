@@ -157,24 +157,33 @@ function initScene() {
 }
 
 function groundRig() {
-  // Feet on the grid, and the clip's whole footprint measured once so the camera
-  // can hold a travelling figure in frame instead of chasing frame zero.
+  // Two different measurements. The box is everywhere the figure travels; the body is
+  // how big the figure itself gets. Framing on the box leaves a crawling body a splinter
+  // in the middle of its own runway, so the camera sizes on the body.
   const p = new THREE.Vector3();
   const box = new THREE.Box3();
+  const one = new THREE.Box3();
   const step = Math.max(1, Math.floor(state.clip.frames / 16));
+  let w = 0, h = 0, d = 0;
   state.group3d.position.y = 0;
   for (let f = 0; f < state.clip.frames; f += step) {
     samplePose(state.clip, f / state.clip.fps);
     state.group3d.updateMatrixWorld(true);
+    one.makeEmpty();
     for (const { bone } of state.joints) {
       bone.getWorldPosition(p);
       box.expandByPoint(p);
+      one.expandByPoint(p);
     }
+    w = Math.max(w, one.max.x - one.min.x);
+    h = Math.max(h, one.max.y - one.min.y);
+    d = Math.max(d, one.max.z - one.min.z);
   }
   if (Number.isFinite(box.min.y)) state.group3d.position.y = -box.min.y;
   box.min.y += state.group3d.position.y;
   box.max.y += state.group3d.position.y;
   state.bounds = box;
+  state.body = { w: Math.max(w, 0.8), h: Math.max(h, 0.6), d: Math.max(d, 0.8) };
   state.group3d.updateMatrixWorld(true);
 }
 
@@ -371,7 +380,7 @@ async function select(id) {
   $('#payload-link').setAttribute('href', href);
   $('#payload-link').setAttribute('download', `${meta.id}.json`);
   $('#viewer-spec').textContent =
-    `glTF 2.0 · +Y up · metres · ${Math.round(clip.fps)} fps fixed step · ${clip.joints} joints · JSON`;
+    `joint-space JSON · +Y up · metres · ${Math.round(clip.fps)} fps fixed step · ${clip.joints} joints`;
   // The first frame, decoded, printed where the reader already is. Anyone judging the
   // data can see the bone order and the numbers before they download anything.
   const q = decode(clip.quats, clip.frames * clip.nodes.length * 4);
@@ -412,7 +421,7 @@ async function boot() {
   state.clips = index.clips;
   // Someone who asked the system for less motion should get a still frame and a
   // play button, not a loop they have to stop.
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) state.playing = false;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) { state.playing = false; syncPlay(); }
 
   const chipHost = $('#chips');
   for (const g of GROUPS) {

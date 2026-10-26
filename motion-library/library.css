@@ -270,6 +270,13 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space
   .transport { flex-wrap: nowrap; }
   .time { min-width: 0; }
 }
+/* Laptop screens: keep the transport and the spec line above the fold. A viewer taller
+   than the window hides its own controls. */
+@media (min-width: 901px) and (max-height: 950px) {
+  .hero { padding-block: 26px 18px; }
+  .hero h1 { font-size: clamp(30px, 4vw, 48px); }
+  .viewer canvas { max-height: 46vh; }
+}
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   * { transition: none !important; }
