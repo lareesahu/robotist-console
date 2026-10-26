@@ -1,0 +1,2 @@
+# Robot model assets are binary or byte-exact; never rewrite line endings.
+motion-library/robots/** -text
