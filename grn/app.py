@@ -149,7 +149,10 @@ def create_app(config=None):
 
     @app.after_request
     def headers(response):
-        response.headers['Cache-Control'] = 'no-store'
+        # Pages stay uncached; responses that set their own policy (the compressed
+        # model files under motion-library/robots) keep it.
+        if 'Cache-Control' not in response.headers:
+            response.headers['Cache-Control'] = 'no-store'
         response.headers['X-Content-Type-Options'] = 'nosniff'
         response.headers['X-Frame-Options'] = 'DENY'
         response.headers['Referrer-Policy'] = 'same-origin'
