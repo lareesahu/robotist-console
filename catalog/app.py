@@ -585,7 +585,10 @@ def create_app(config=None):
         if not path.suffix and (ROOT/path/'index.html').is_file():
             if not request.path.endswith('/'):return redirect(request.path+'/',code=308)
             return public_response((ROOT/path/'index.html').read_text(encoding='utf-8'))
-        if path.suffix.lower() not in ('.html','.js','.css','.png','.jpg','.jpeg','.webp','.svg','.woff2','.woff','.ttf','.ico','.json','.txt','.mp4','.webm','.gif'):abort(404)
+        # Robot geometry under motion-library/robots is served as-is: URDF descriptions,
+        # OBJ/MTL and Collada meshes, and the STL parts of the LimX humanoids.
+        if path.suffix.lower() not in ('.html','.js','.css','.png','.jpg','.jpeg','.webp','.svg','.woff2','.woff','.ttf','.ico','.json','.txt','.mp4','.webm','.gif',
+                                       '.urdf','.obj','.mtl','.dae','.stl','.glb','.gltf'):abort(404)
         if path.suffix=='.html' and (ROOT/path).is_file():return public_response((ROOT/path).read_text(encoding='utf-8'))
         if path.suffix=='.html' and len(path.parts)==2 and path.parts[0]=='blog':
             page=render_blog_page(path.stem)
