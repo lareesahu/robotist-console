@@ -15,7 +15,7 @@
 <meta property="og:description" content="26 captured human performances, retargeted to a humanoid and published as joint-space animation." />
 <meta property="og:image" content="https://www.robotist.com.au/robotist-og.jpg" />
 <meta property="og:site_name" content="Robotist" />
-<link rel="stylesheet" href="library.css?v=20261026i" />
+<link rel="stylesheet" href="library.css?v=20261026j" />
 <script type="importmap">
 { "imports": { "three": "./vendor/three.module.js", "three/addons/": "./vendor/" } }
 </script>
@@ -68,6 +68,7 @@
         <button class="ghost" id="mode" aria-pressed="false">links</button>
         <a class="ghost payload" id="payload" href="data/index.json" download>JSON</a>
       </div>
+      <div class="viewer-spec" id="viewer-spec">glTF 2.0 · +Y up · metres · 50 fps fixed step · 23 joints</div>
     </div>
 
     <aside class="panel rail">
@@ -96,6 +97,10 @@
       <div><dt>Payload</dt><dd><a id="payload-link" href="data/index.json" download>Open the selected clip as JSON</a> — the same stream this viewer plays</dd></div>
       <div><dt>Source</dt><dd>Captured human performance, retargeted to a 17-degree-of-freedom humanoid</dd></div>
     </dl>
+    <details class="schema">
+      <summary>See one decoded frame</summary>
+      <pre id="schema-pre" aria-live="polite">Select a clip to read its first frame.</pre>
+    </details>
   </section>
 
   <section class="note-section wrap">
@@ -120,7 +125,7 @@
   </footer>
 </main>
 
-<script type="module" src="viewer.js?v=20261026i"></script>
+<script type="module" src="viewer.js?v=20261026j"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>

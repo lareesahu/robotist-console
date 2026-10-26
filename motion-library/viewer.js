@@ -208,13 +208,9 @@ function frameCamera() {
   state.camera.position.set(cx + Math.sin(az) * dist, cy + bh * 0.14, cz + Math.cos(az) * dist);
   state.controls.target.set(cx, cy, cz);
   state.controls.update();
-  state.camBase = {
-    pos: state.camera.position.clone(),
-    target: state.controls.target.clone(),
-  };
-  // The travel offset is measured from the pose the camera was framed on, not from
-  // whenever the first animation frame happens to land.
-  state.hipBase = state.anchor ? state.anchor.getWorldPosition(new THREE.Vector3()).clone() : null;
+  // The follow offset restarts from the pose the camera was framed on, so a new clip
+  // opens exactly where frameCamera put it.
+  _hasHip = false;
   state.dirty = true;
 }
 
@@ -223,16 +219,26 @@ function frameCamera() {
    pose data and ran away, and shifting the camera leaves every joint where the clip
    put it. */
 const _hipWorld = new THREE.Vector3();
+const _lastHip = new THREE.Vector3();
+let _hasHip = false;
 function followHip() {
-  if (!state.anchor || !state.camBase) return;
+  if (!state.anchor) return;
   state.anchor.getWorldPosition(_hipWorld);
   if (!Number.isFinite(_hipWorld.x)) return;
-  if (!state.hipBase) { state.hipBase = _hipWorld.clone(); return; }
-  const dx = _hipWorld.x - state.hipBase.x;
-  const dz = _hipWorld.z - state.hipBase.z;
-  state.camera.position.set(state.camBase.pos.x + dx, state.camBase.pos.y, state.camBase.pos.z + dz);
-  state.controls.target.set(state.camBase.target.x + dx, state.camBase.target.y, state.camBase.target.z + dz);
-  state.controls.update();
+  // Move the camera by the step the figure took, never to an absolute position: the
+  // reader's own orbit drag has to survive the next frame.
+  if (_hasHip) {
+    const dx = _hipWorld.x - _lastHip.x;
+    const dz = _hipWorld.z - _lastHip.z;
+    if (Math.abs(dx) > 1e-6 || Math.abs(dz) > 1e-6) {
+      state.camera.position.x += dx;
+      state.camera.position.z += dz;
+      state.controls.target.x += dx;
+      state.controls.target.z += dz;
+    }
+  }
+  _lastHip.copy(_hipWorld);
+  _hasHip = true;
 }
 
 /* ── transport ────────────────────────────────────────────── */
@@ -338,8 +344,7 @@ async function select(id) {
   state.joints = rig.joints;
   state.anchor = rig.bones.find((b) => /hips|pelvis/i.test(b.name)) || rig.bones[0];
   state.group3d.position.set(0, 0, 0);
-  state.camBase = null;
-  state.hipBase = null;
+  _hasHip = false;
   // The rig is rebuilt with links visible; if the reader chose joint-only mode, the
   // new clip has to honour it instead of quietly switching the button's promise.
   for (const { mesh } of state.links) mesh.visible = state.mode === 'links';
@@ -363,6 +368,19 @@ async function select(id) {
   $('#payload').setAttribute('download', `${meta.id}.json`);
   $('#payload-link').setAttribute('href', href);
   $('#payload-link').setAttribute('download', `${meta.id}.json`);
+  $('#viewer-spec').textContent =
+    `glTF 2.0 · +Y up · metres · ${Math.round(clip.fps)} fps fixed step · ${clip.joints} joints · JSON`;
+  // The first frame, decoded, printed where the reader already is. Anyone judging the
+  // data can see the bone order and the numbers before they download anything.
+  const q = decode(clip.quats, clip.frames * clip.nodes.length * 4);
+  const lines = clip.nodes.slice(0, 8).map((nd, i) => {
+    // Stored as int16 at scale 32767, so print what they mean, not the storage.
+    const o = Array.from(q.slice(i * 4, i * 4 + 4), (n) => (n / 32767).toFixed(3)).join(', ');
+    return `${String(i).padStart(2, '0')} ${nd.n.padEnd(14)} quat ${o}`;
+  });
+  $('#schema-pre').textContent =
+    `${clip.id} · frame 0 of ${clip.frames} · ${clip.fps} fps · ${clip.nodes.length} nodes, ${clip.joints} joints\n`
+    + lines.join('\n') + `\n… ${clip.nodes.length - 8} more nodes`;
   setTime(0);
   frameCamera();
   history.replaceState(null, '', `?clip=${meta.id}`);

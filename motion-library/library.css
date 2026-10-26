@@ -185,6 +185,20 @@ body {
 .spec-grid dt { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--accent); opacity: .82; }
 .spec-grid dd { margin: 7px 0 0; font-size: 14px; line-height: 1.6; color: var(--grey-1); }
 .spec-grid a { color: var(--accent-light); text-decoration: none; border-bottom: 1px solid rgba(168, 220, 239, .35); }
+.viewer-spec {
+  padding: 9px 18px 12px; font-family: var(--mono); font-size: 10.5px; letter-spacing: .05em;
+  text-transform: uppercase; color: var(--grey-2); border-top: 1px solid rgba(74, 168, 200, .08);
+}
+.schema { margin-top: 20px; }
+.schema summary {
+  cursor: pointer; font-family: var(--mono); font-size: 11px; letter-spacing: .12em;
+  text-transform: uppercase; color: var(--accent-light);
+}
+.schema pre {
+  margin: 12px 0 0; padding: 14px 16px; overflow-x: auto; background: rgba(12, 24, 40, .72);
+  border: 1px solid rgba(74, 168, 200, .14); border-radius: 10px;
+  font-family: var(--mono); font-size: 11.5px; line-height: 1.7; color: var(--grey-1);
+}
 .payload { text-decoration: none; }
 .payload:hover { color: var(--accent-light); }
 
@@ -221,8 +235,14 @@ footer .wrap { display: flex; flex-wrap: wrap; gap: 14px; justify-content: space
      are horizontal, and a portrait box shrinks a crawling body to a splinter. */
   .viewer canvas { aspect-ratio: 16 / 11; max-height: 56vh; }
   .viewer-head { inset: 10px 12px auto 12px; }
-  .hero h1 { font-size: clamp(27px, 8vw, 36px); max-width: 24ch; }
-  .hero p { font-size: 14.5px; }
+  .hero { padding-block: 22px 18px; }
+  .hero h1 { font-size: clamp(26px, 7.4vw, 33px); max-width: 24ch; }
+  .hero p { font-size: 14px; margin-top: 10px; }
+  .viewer-spec { padding: 8px 14px 10px; font-size: 9.5px; letter-spacing: .02em; }
+  /* One scrollable chip row beats two ragged rows pushing the list down. */
+  .chips { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; }
+  .chips::-webkit-scrollbar { display: none; }
+  .chip { flex: 0 0 auto; }
   /* One line of transport, never two: play, scrub, time, mode and payload share the row. */
   .transport { gap: 8px; padding: 10px 12px; flex-wrap: nowrap; }
   .time { min-width: 0; font-size: 10.5px; white-space: nowrap; }
