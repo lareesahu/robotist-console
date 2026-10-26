@@ -239,7 +239,7 @@ function renderRows() {
     row.setAttribute('aria-selected', String(clip.id === state.selected));
     row.dataset.id = clip.id;
     row.innerHTML = `<img src="thumbs/${clip.id}.webp" alt="" width="62" height="40" loading="lazy" decoding="async">
-      <span><span class="name"></span><span class="sub">${clip.nodes} joints · ${Math.round(clip.fps)} fps</span></span>
+      <span><span class="name"></span><span class="sub">${clip.nodes} bones · ${Math.round(clip.fps)} fps</span></span>
       <span class="len">${clip.seconds.toFixed(1)}s</span>`;
     row.querySelector('.name').textContent = clip.name;
     row.addEventListener('click', () => select(clip.id));
