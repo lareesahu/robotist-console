@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Motion Library — Robotist</title>
+<link rel="icon" href="/favicon.svg" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="description" content="A library of captured human motion, retargeted to a 17-degree-of-freedom humanoid and published as joint-space animation — quaternions per bone, 50 frames a second, ready for a simulator or a robot controller." />
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://www.robotist.com.au/motion-library/" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.robotist.com.au/motion-library/" />
+<meta property="og:title" content="Motion Library — Robotist" />
+<meta property="og:description" content="26 captured human performances, retargeted to a humanoid and published as joint-space animation." />
+<meta property="og:image" content="https://www.robotist.com.au/robotist-og.jpg" />
+<meta property="og:site_name" content="Robotist" />
+<link rel="stylesheet" href="library.css" />
+<script type="importmap">
+{ "imports": { "three": "./vendor/three.module.js", "three/addons/": "./vendor/" } }
+</script>
+</head>
+<body>
+
+<nav class="nav" id="mainNav">
+  <a href="/" class="nav-logo"><img src="/images/logo.svg" alt="Robotist"></a>
+  <ul class="nav-links">
+    <li><a href="/#catalogue">Catalogue</a></li>
+    <li><a href="/#services">Services</a></li>
+    <li><a href="/compare.html">Compare</a></li>
+    <li><a href="/motion-library/" aria-current="page">Motion library</a></li>
+    <li><a href="/about.html">About</a></li>
+    <li><a href="/contact.html">Contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <a href="/grn/" class="nav-cta nav-cta--ghost">Join us</a>
+    <a href="/contact.html" class="nav-cta">Get Started</a>
+  </div>
+  <button class="nav-hamburger" id="nav-toggle" aria-label="Menu" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<main class="page">
+  <section class="hero wrap">
+    <div class="eyebrow">Motion Library</div>
+    <h1>Human motion, ready to <em>run on a robot</em></h1>
+    <p>
+      Twenty-six captured performances, retargeted to a seventeen-degree-of-freedom humanoid and published
+      as joint-space animation: quaternions per bone, fifty frames a second, no mesh to re-import. Scrub a
+      clip below to see exactly what a controller receives.
+    </p>
+  </section>
+
+  <section class="stage wrap">
+    <div class="panel viewer">
+      <canvas id="stage-canvas" aria-label="Retargeted humanoid motion"></canvas>
+      <div class="viewer-head">
+        <div class="viewer-title" id="stage-name">Loading</div>
+        <div class="viewer-meta" id="stage-meta"></div>
+      </div>
+      <div class="transport">
+        <button class="play" id="play" aria-pressed="true" aria-label="Play or pause">
+          <svg width="12" height="12" viewBox="0 0 12 12" aria-hidden="true"><rect x="2" y="1.5" width="3" height="9" rx="1" fill="currentColor"/><rect x="7" y="1.5" width="3" height="9" rx="1" fill="currentColor"/></svg>
+        </button>
+        <input class="scrub" id="scrub" type="range" min="0" max="1" step="0.001" value="0" aria-label="Scrub the clip" />
+        <span class="time" id="time">0.00 / 0.00 s</span>
+        <button class="ghost" id="mode" aria-pressed="false">links</button>
+      </div>
+    </div>
+
+    <aside class="panel rail">
+      <div class="rail-head">
+        <div class="rail-title"><span id="count">26 of 26</span> clips</div>
+        <div class="chips" id="chips"></div>
+      </div>
+      <div class="rows" id="rows" role="listbox" aria-label="Clips"></div>
+    </aside>
+  </section>
+
+  <section class="facts wrap">
+    <div class="fact"><b>26</b><span>clips, sport to combat to daily movement</span></div>
+    <div class="fact"><b>17</b><span>degrees of freedom the retarget drives</span></div>
+    <div class="fact"><b>50</b><span>frames a second, quaternion per joint</span></div>
+    <div class="fact"><b>0</b><span>meshes — every clip is joint data only</span></div>
+  </section>
+
+  <section class="note-section wrap">
+    <div class="note-label">Technical note</div>
+    <p>
+      Each clip is joint-space animation derived from captured human performance, retargeted to a
+      seventeen-degree-of-freedom humanoid and clamped to its mechanical limits. No mesh, texture or
+      capture file is served by this page — the browser plays quaternions, which is the same stream a
+      controller or simulator consumes.
+    </p>
+    <p>
+      Need the clips as BVH, as a per-frame angle table, or retargeted to your own kinematic chain?
+      <a href="/contact.html">Talk to the team</a>.
+    </p>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <span>© <span id="year">2026</span> Robotist Pty Ltd</span>
+      <span>Motion Library · joint-space clips for humanoid deployment</span>
+    </div>
+  </footer>
+</main>
+
+<script type="module" src="viewer.js"></script>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>

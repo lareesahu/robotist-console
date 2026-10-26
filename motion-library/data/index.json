@@ -1,0 +1,212 @@
+{
+ "clips": [
+  {
+   "id": "badminton",
+   "name": "Badminton rally",
+   "group": "sport",
+   "seconds": 10.0,
+   "fps": 50.0,
+   "nodes": 25
+  },
+  {
+   "id": "stair_climb",
+   "name": "Stair climb",
+   "group": "locomotion",
+   "seconds": 10.0,
+   "fps": 50.0,
+   "nodes": 25
+  },
+  {
+   "id": "tai_chi",
+   "name": "Tai chi form",
+   "group": "form",
+   "seconds": 10.0,
+   "fps": 50.0,
+   "nodes": 25
+  },
+  {
+   "id": "jog_slow",
+   "name": "Slow jog",
+   "group": "locomotion",
+   "seconds": 10.0,
+   "fps": 50.0,
+   "nodes": 25
+  },
+  {
+   "id": "walk_to_sit",
+   "name": "Walk to sit",
+   "group": "daily",
+   "seconds": 10.0,
+   "fps": 50.0,
+   "nodes": 25
+  },
+  {
+   "id": "jumping_jacks",
+   "name": "Jumping jacks",
+   "group": "fitness",
+   "seconds": 10.52,
+   "fps": 50.0,
+   "nodes": 25
+  },
+  {
+   "id": "warmup",
+   "name": "Warm-up",
+   "group": "fitness",
+   "seconds": 10.0,
+   "fps": 50.0,
+   "nodes": 25
+  },
+  {
+   "id": "pushup",
+   "name": "Push-up",
+   "group": "fitness",
+   "seconds": 10.62,
+   "fps": 50.0,
+   "nodes": 25
+  },
+  {
+   "id": "shuttle_run",
+   "name": "Shuttle run",
+   "group": "sport",
+   "seconds": 12.56,
+   "fps": 50.0,
+   "nodes": 25
+  },
+  {
+   "id": "squat_turn",
+   "name": "Squat with turn",
+   "group": "fitness",
+   "seconds": 9.32,
+   "fps": 50.0,
+   "nodes": 25
+  },
+  {
+   "id": "standing_jump",
+   "name": "Standing jump",
+   "group": "sport",
+   "seconds": 10.34,
+   "fps": 50.0,
+   "nodes": 25
+  },
+  {
+   "id": "wave",
+   "name": "Wave",
+   "group": "gesture",
+   "seconds": 10.0,
+   "fps": 50.0,
+   "nodes": 25
+  },
+  {
+   "id": "windmill",
+   "name": "Windmill stretch",
+   "group": "fitness",
+   "seconds": 10.38,
+   "fps": 50.0,
+   "nodes": 25
+  },
+  {
+   "id": "squat",
+   "name": "Squat",
+   "group": "fitness",
+   "seconds": 19.98,
+   "fps": 50.0,
+   "nodes": 25
+  },
+  {
+   "id": "sprint",
+   "name": "Sprint",
+   "group": "locomotion",
+   "seconds": 12.0,
+   "fps": 50.0,
+   "nodes": 25
+  },
+  {
+   "id": "pushup_wide",
+   "name": "Push-up, wide stance",
+   "group": "fitness",
+   "seconds": 10.0,
+   "fps": 50.0,
+   "nodes": 25
+  },
+  {
+   "id": "prone_to_stand",
+   "name": "Prone to stand",
+   "group": "daily",
+   "seconds": 9.98,
+   "fps": 50.0,
+   "nodes": 25
+  },
+  {
+   "id": "crawl",
+   "name": "Low crawl",
+   "group": "locomotion",
+   "seconds": 10.0,
+   "fps": 50.0,
+   "nodes": 25
+  },
+  {
+   "id": "triple_jump",
+   "name": "Triple jump",
+   "group": "sport",
+   "seconds": 10.0,
+   "fps": 50.0,
+   "nodes": 25
+  },
+  {
+   "id": "burpee",
+   "name": "Burpee",
+   "group": "fitness",
+   "seconds": 14.0,
+   "fps": 50.0,
+   "nodes": 25
+  },
+  {
+   "id": "kick_knee_sweep",
+   "name": "Knee strike into sweep",
+   "group": "combat",
+   "seconds": 11.98,
+   "fps": 50.0,
+   "nodes": 25
+  },
+  {
+   "id": "kick_flying",
+   "name": "Flying kick",
+   "group": "combat",
+   "seconds": 6.98,
+   "fps": 50.0,
+   "nodes": 25
+  },
+  {
+   "id": "kick_flying_knee",
+   "name": "Flying knee and kick",
+   "group": "combat",
+   "seconds": 9.98,
+   "fps": 50.0,
+   "nodes": 25
+  },
+  {
+   "id": "punch_hook",
+   "name": "Hook punch",
+   "group": "combat",
+   "seconds": 10.98,
+   "fps": 50.0,
+   "nodes": 25
+  },
+  {
+   "id": "kick_spinning",
+   "name": "Spinning kick",
+   "group": "combat",
+   "seconds": 4.98,
+   "fps": 50.0,
+   "nodes": 25
+  },
+  {
+   "id": "strike_combo",
+   "name": "Punch and kick combination",
+   "group": "combat",
+   "seconds": 11.98,
+   "fps": 50.0,
+   "nodes": 25
+  }
+ ]
+}
