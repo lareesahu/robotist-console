@@ -1613,6 +1613,28 @@ body::after {
 }
 
 /* Category tag — top-left corner, never overlaps badge */
+.tag-3d {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-main);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #06121E;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  padding: 4px 9px;
+  z-index: 4;
+  box-shadow: 0 6px 18px rgba(74, 168, 200, 0.28);
+}
+.tag-3d svg { width: 9px; height: 9px; }
+
 .robot-cat-tag {
   position: absolute;
   top: 14px;
@@ -4076,6 +4098,7 @@ body::after {
 <div class="robot-card-img-wrap">
 <img alt="LimX OLI bipedal humanoid robot — 33-DOF, NVIDIA Orin NX 157 TOPS, ROS2 support, USD 65,900" class="robot-card-img" loading="lazy" src="robots-cut/limx_oli.webp"/>
 </div>
+<span class="tag-3d" title="Interactive 3D preview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5z"/><path d="M3 7l9 5 9-5"/><path d="M12 12v10"/></svg>3D</span>
 <span class="robot-cat-tag">Humanoid</span>
 <div class="robot-info">
 <a href="products/limx-oli.html" style="text-decoration:none;color:inherit;display:block;"><div class="robot-info-name">LimX OLI</div></a>
@@ -4138,6 +4161,7 @@ body::after {
 <div class="robot-card-img-wrap">
 <img alt="MagicLab MagicDog emotion-expressing quadruped — 13-DOF, 3 m/s, open SDK, USD 8,000" class="robot-card-img" loading="lazy" src="robots-cut/magiclab_magicdog.webp"/>
 </div>
+<span class="tag-3d" title="Interactive 3D preview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5z"/><path d="M3 7l9 5 9-5"/><path d="M12 12v10"/></svg>3D</span>
 <span class="robot-cat-tag">Quadruped</span>
 <div class="robot-info">
 <a href="products/magiclab-magicdog.html" style="text-decoration:none;color:inherit;display:block;"><div class="robot-info-name">MagicLab MagicDog</div></a>

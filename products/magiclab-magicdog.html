@@ -342,6 +342,38 @@ body::after {
   height: 16px;
 }
 
+.preview-strip {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 16px;
+  margin-bottom: 22px;
+  background: rgba(74, 168, 200, 0.07);
+  border: 1px solid rgba(74, 168, 200, 0.32);
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+.preview-strip:hover { background: rgba(74, 168, 200, 0.11); border-color: rgba(74, 168, 200, 0.5); }
+.preview-strip .preview-cube {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 30px; height: 30px; flex: 0 0 auto;
+  border: 1px solid rgba(74, 168, 200, 0.45);
+  color: var(--accent-light);
+}
+.preview-strip .preview-cube svg { width: 16px; height: 16px; }
+.preview-strip .preview-copy { display: flex; flex-direction: column; gap: 2px; flex: 1 1 auto; min-width: 0; }
+.preview-strip .preview-copy strong {
+  font-family: var(--font-main); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent);
+}
+.preview-strip .preview-copy em {
+  font-style: normal; font-family: var(--font-body);
+  font-size: 12px; font-weight: 300; color: var(--grey-1);
+}
+.preview-strip .preview-go { color: var(--accent); flex: 0 0 auto; display: inline-flex; }
+.preview-strip .preview-go svg { width: 16px; height: 16px; }
+
 .btn-ghost {
   font-family: var(--font-main);
   font-weight: 400;
@@ -935,6 +967,14 @@ body::after {
           Education Ready
         </span>
       </div>
+      <a class="preview-strip" href="/motion-library/robots/?robot=magicdog">
+        <span class="preview-cube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5z"/><path d="M3 7l9 5 9-5"/><path d="M12 12v10"/></svg></span>
+        <span class="preview-copy">
+          <strong>View in interactive 3D</strong>
+          <em>Orbit the real MagicDog model and scrub its motions</em>
+        </span>
+        <span class="preview-go"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg></span>
+      </a>
       <div class="product-actions">
         <a href="/contact.html" onclick="openInquiry();return false" class="btn-primary">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
