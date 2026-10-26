@@ -359,6 +359,8 @@ async function select(id) {
   state.group3d.position.set(0, 0, 0);
 
   groundRig();
+  const status = $('#stage-status');
+  if (status) status.remove();
   $('#stage-name').textContent = clip.name;
   $('#stage-meta').textContent = `${clip.seconds.toFixed(1)} s · ${clip.joints} joints · ${Math.round(clip.fps)} fps`;
   // The payload link follows the selection: an engineer should be able to read the exact

@@ -15,7 +15,7 @@
 <meta property="og:description" content="26 captured human performances, retargeted to a humanoid and published as joint-space animation." />
 <meta property="og:image" content="https://www.robotist.com.au/robotist-og.jpg" />
 <meta property="og:site_name" content="Robotist" />
-<link rel="stylesheet" href="library.css?v=20261026j" />
+<link rel="stylesheet" href="library.css?v=20261026l" />
 <script type="importmap">
 { "imports": { "three": "./vendor/three.module.js", "three/addons/": "./vendor/" } }
 </script>
@@ -55,6 +55,7 @@
   <section class="stage wrap">
     <div class="panel viewer">
       <canvas id="stage-canvas" aria-label="Retargeted humanoid motion"></canvas>
+      <div class="stage-status" id="stage-status" role="status">Loading the first clip…</div>
       <div class="viewer-head">
         <div class="viewer-title" id="stage-name">Loading</div>
         <div class="viewer-meta" id="stage-meta"></div>
@@ -125,7 +126,7 @@
   </footer>
 </main>
 
-<script type="module" src="viewer.js?v=20261026j"></script>
+<script type="module" src="viewer.js?v=20261026l"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
 </body>
 </html>
