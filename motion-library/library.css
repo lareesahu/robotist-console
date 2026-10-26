@@ -99,7 +99,7 @@ body {
 }
 
 .viewer { position: relative; }
-.viewer canvas { display: block; width: 100%; aspect-ratio: 16 / 9.4; height: auto; max-height: 66vh; }
+.viewer canvas { display: block; width: 100%; aspect-ratio: 16 / 8.8; max-height: 58vh; }
 .viewer-head {
   position: absolute; inset: 14px 16px auto 16px; display: flex; align-items: baseline;
   justify-content: space-between; gap: 12px; pointer-events: none;
@@ -148,13 +148,13 @@ body {
 .rows::-webkit-scrollbar { width: 8px; }
 .rows::-webkit-scrollbar-thumb { background: var(--bg-3); border-radius: 8px; }
 .row {
-  display: grid; grid-template-columns: 82px minmax(0, 1fr) auto; align-items: center; gap: 12px;
+  display: grid; grid-template-columns: 92px minmax(0, 1fr) auto; align-items: center; gap: 12px;
   padding: 7px 12px; background: none; border: 0; width: 100%; text-align: left; cursor: pointer;
   border-left: 2px solid transparent; color: inherit;
 }
 .row:hover { background: rgba(74, 168, 200, 0.06); }
 .row[aria-selected="true"] { background: var(--accent-glow); border-left-color: var(--accent); }
-.row img { width: 82px; height: 54px; object-fit: cover; border-radius: 6px; background: var(--bg-3); display: block; }
+.row img { width: 92px; height: 60px; object-fit: cover; border-radius: 6px; background: var(--bg-3); display: block; }
 .row .name { display: block; font-size: 13px; line-height: 1.25; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .row .sub { display: block; font-family: var(--mono); font-size: 10.5px; color: var(--grey-2); margin-top: 2px; }
 .row .len { font-family: var(--mono); font-size: 11px; color: var(--grey-1); }

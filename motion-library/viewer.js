@@ -191,7 +191,7 @@ function frameCamera() {
   const cz = (box.max.z + box.min.z) * 0.5;
   // Three-quarter view: straight-on foreshortens any pose that moves along Z
   // (push-ups, crawls) into an unreadable knot.
-  const dist = Math.max(2.1, h * 1.92, spread * 1.9);
+  const dist = Math.max(2.4, h * 2.16, spread * 1.9);
   const az = 0.56;  // ~32 degrees
   state.camera.position.set(cx + Math.sin(az) * dist, cy + h * 0.10, cz + Math.cos(az) * dist);
   state.controls.target.set(cx, cy, cz);
@@ -240,7 +240,7 @@ function renderRows() {
     row.dataset.id = clip.id;
     row.innerHTML = `<img src="thumbs/${clip.id}.webp" alt="" width="62" height="40" loading="lazy" decoding="async">
       <span><span class="name"></span><span class="sub">${clip.nodes} bones · ${Math.round(clip.fps)} fps</span></span>
-      <span class="len">${clip.seconds.toFixed(1)}s</span>`;
+      <span class="len">${clip.seconds.toFixed(1)} s</span>`;
     row.querySelector('.name').textContent = clip.name;
     row.addEventListener('click', () => select(clip.id));
     host.append(row);
@@ -283,7 +283,7 @@ async function select(id) {
 
   groundRig();
   $('#stage-name').textContent = clip.name;
-  $('#stage-meta').textContent = `${clip.seconds.toFixed(2)} s · ${clip.nodes.length} bones · ${Math.round(clip.fps)} fps`;
+  $('#stage-meta').textContent = `${clip.seconds.toFixed(1)} s · ${clip.nodes.length} bones · ${Math.round(clip.fps)} fps`;
   setTime(0);
   frameCamera();
   history.replaceState(null, '', `?clip=${meta.id}`);
