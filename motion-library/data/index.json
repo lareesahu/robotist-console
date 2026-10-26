@@ -6,7 +6,7 @@
    "group": "sport",
    "seconds": 10.0,
    "fps": 50.0,
-   "nodes": 25
+   "joints": 23
   },
   {
    "id": "stair_climb",
@@ -14,7 +14,7 @@
    "group": "locomotion",
    "seconds": 10.0,
    "fps": 50.0,
-   "nodes": 25
+   "joints": 23
   },
   {
    "id": "tai_chi",
@@ -22,7 +22,7 @@
    "group": "form",
    "seconds": 10.0,
    "fps": 50.0,
-   "nodes": 25
+   "joints": 23
   },
   {
    "id": "jog_slow",
@@ -30,7 +30,7 @@
    "group": "locomotion",
    "seconds": 10.0,
    "fps": 50.0,
-   "nodes": 25
+   "joints": 23
   },
   {
    "id": "walk_to_sit",
@@ -38,7 +38,7 @@
    "group": "daily",
    "seconds": 10.0,
    "fps": 50.0,
-   "nodes": 25
+   "joints": 23
   },
   {
    "id": "jumping_jacks",
@@ -46,7 +46,7 @@
    "group": "fitness",
    "seconds": 10.52,
    "fps": 50.0,
-   "nodes": 25
+   "joints": 23
   },
   {
    "id": "warmup",
@@ -54,7 +54,7 @@
    "group": "fitness",
    "seconds": 10.0,
    "fps": 50.0,
-   "nodes": 25
+   "joints": 23
   },
   {
    "id": "pushup",
@@ -62,7 +62,7 @@
    "group": "fitness",
    "seconds": 10.62,
    "fps": 50.0,
-   "nodes": 25
+   "joints": 23
   },
   {
    "id": "shuttle_run",
@@ -70,7 +70,7 @@
    "group": "sport",
    "seconds": 12.56,
    "fps": 50.0,
-   "nodes": 25
+   "joints": 23
   },
   {
    "id": "squat_turn",
@@ -78,7 +78,7 @@
    "group": "fitness",
    "seconds": 9.32,
    "fps": 50.0,
-   "nodes": 25
+   "joints": 23
   },
   {
    "id": "standing_jump",
@@ -86,7 +86,7 @@
    "group": "sport",
    "seconds": 10.34,
    "fps": 50.0,
-   "nodes": 25
+   "joints": 23
   },
   {
    "id": "wave",
@@ -94,7 +94,7 @@
    "group": "gesture",
    "seconds": 10.0,
    "fps": 50.0,
-   "nodes": 25
+   "joints": 23
   },
   {
    "id": "windmill",
@@ -102,7 +102,7 @@
    "group": "fitness",
    "seconds": 10.38,
    "fps": 50.0,
-   "nodes": 25
+   "joints": 23
   },
   {
    "id": "squat",
@@ -110,7 +110,7 @@
    "group": "fitness",
    "seconds": 19.98,
    "fps": 50.0,
-   "nodes": 25
+   "joints": 23
   },
   {
    "id": "sprint",
@@ -118,7 +118,7 @@
    "group": "locomotion",
    "seconds": 12.0,
    "fps": 50.0,
-   "nodes": 25
+   "joints": 23
   },
   {
    "id": "pushup_wide",
@@ -126,7 +126,7 @@
    "group": "fitness",
    "seconds": 10.0,
    "fps": 50.0,
-   "nodes": 25
+   "joints": 23
   },
   {
    "id": "prone_to_stand",
@@ -134,7 +134,7 @@
    "group": "daily",
    "seconds": 9.98,
    "fps": 50.0,
-   "nodes": 25
+   "joints": 23
   },
   {
    "id": "crawl",
@@ -142,7 +142,7 @@
    "group": "locomotion",
    "seconds": 10.0,
    "fps": 50.0,
-   "nodes": 25
+   "joints": 23
   },
   {
    "id": "triple_jump",
@@ -150,7 +150,7 @@
    "group": "sport",
    "seconds": 10.0,
    "fps": 50.0,
-   "nodes": 25
+   "joints": 23
   },
   {
    "id": "burpee",
@@ -158,7 +158,7 @@
    "group": "fitness",
    "seconds": 14.0,
    "fps": 50.0,
-   "nodes": 25
+   "joints": 23
   },
   {
    "id": "kick_knee_sweep",
@@ -166,7 +166,7 @@
    "group": "combat",
    "seconds": 11.98,
    "fps": 50.0,
-   "nodes": 25
+   "joints": 23
   },
   {
    "id": "kick_flying",
@@ -174,7 +174,7 @@
    "group": "combat",
    "seconds": 6.98,
    "fps": 50.0,
-   "nodes": 25
+   "joints": 23
   },
   {
    "id": "kick_flying_knee",
@@ -182,7 +182,7 @@
    "group": "combat",
    "seconds": 9.98,
    "fps": 50.0,
-   "nodes": 25
+   "joints": 23
   },
   {
    "id": "punch_hook",
@@ -190,7 +190,7 @@
    "group": "combat",
    "seconds": 10.98,
    "fps": 50.0,
-   "nodes": 25
+   "joints": 23
   },
   {
    "id": "kick_spinning",
@@ -198,7 +198,7 @@
    "group": "combat",
    "seconds": 4.98,
    "fps": 50.0,
-   "nodes": 25
+   "joints": 23
   },
   {
    "id": "strike_combo",
@@ -206,7 +206,7 @@
    "group": "combat",
    "seconds": 11.98,
    "fps": 50.0,
-   "nodes": 25
+   "joints": 23
   }
  ]
 }

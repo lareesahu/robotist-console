@@ -36,7 +36,8 @@ function buildSkeleton(clip) {
   const links = [], joints = [];
 
   clip.nodes.forEach((b, i) => {
-    if (b.p >= 0) {
+    if (b.v === false) return;  // armature root and helper empties: transform only
+    if (b.p >= 0 && clip.nodes[b.p].v !== false) {
       const mesh = new THREE.Mesh(linkGeo, b.n.endsWith('_r') ? matLinkDim : matLink);
       state.group3d.add(mesh);
       links.push({ bone: bones[i], parent: bones[b.p], mesh });
@@ -239,7 +240,7 @@ function renderRows() {
     row.setAttribute('aria-selected', String(clip.id === state.selected));
     row.dataset.id = clip.id;
     row.innerHTML = `<img src="thumbs/${clip.id}.webp" alt="" width="62" height="40" loading="lazy" decoding="async">
-      <span><span class="name"></span><span class="sub">${clip.nodes} bones · ${Math.round(clip.fps)} fps</span></span>
+      <span><span class="name"></span><span class="sub">${clip.joints} joints · ${Math.round(clip.fps)} fps</span></span>
       <span class="len">${clip.seconds.toFixed(1)} s</span>`;
     row.querySelector('.name').textContent = clip.name;
     row.addEventListener('click', () => select(clip.id));
@@ -248,9 +249,15 @@ function renderRows() {
   $('#count').textContent = `${list.length} of ${state.clips.length}`;
 }
 
+let selectToken = 0;
+
 async function select(id) {
   const meta = state.clips.find((c) => c.id === id) || state.clips[0];
   if (!meta) return;
+  // Two selects can overlap (a fast second click lands while the first fetch is
+  // still open). Only the newest one may draw, and it clears the stage first, so
+  // a lost race can never leave the previous skeleton standing.
+  const token = ++selectToken;
   state.selected = meta.id;
   document.querySelectorAll('.row').forEach((r) => r.setAttribute('aria-selected', String(r.dataset.id === meta.id)));
   const row = document.querySelector(`.row[data-id="${meta.id}"]`);
@@ -263,9 +270,15 @@ async function select(id) {
   }
 
   const clip = await (await fetch(`data/${meta.id}.json`)).json();
-  for (const { mesh } of [...state.links.map((l) => l.mesh), ...state.joints.map((j) => j.mesh)]) {
+  if (token !== selectToken) return;  // a newer clip superseded this one
+
+  const stale = [...(state.links || []).map((l) => l && l.mesh), ...(state.joints || []).map((j) => j && j.mesh)];
+  for (const mesh of stale) {
+    if (!mesh) continue;
+    mesh.geometry.dispose();
     state.group3d.remove(mesh);
   }
+  state.group3d.clear();
   const rig = buildSkeleton(clip);
   state.bones = rig.bones;
   state.rootBone = rig.rootBone;
@@ -283,7 +296,7 @@ async function select(id) {
 
   groundRig();
   $('#stage-name').textContent = clip.name;
-  $('#stage-meta').textContent = `${clip.seconds.toFixed(1)} s · ${clip.nodes.length} bones · ${Math.round(clip.fps)} fps`;
+  $('#stage-meta').textContent = `${clip.seconds.toFixed(1)} s · ${clip.joints} joints · ${Math.round(clip.fps)} fps`;
   setTime(0);
   frameCamera();
   history.replaceState(null, '', `?clip=${meta.id}`);
