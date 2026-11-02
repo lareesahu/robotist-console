@@ -1,5 +1,83 @@
 [
   {
+    "slug": "made-to-order-lead-times-robot-programme",
+    "title": "Eight to Twelve Weeks: Robot Lead Times Decide the Programme, Not the Purchase Order",
+    "excerpt": "Robotist catalogue machines ship made to order, most with an eight to twelve week lead time. That interval, not the invoice date, is what decides whether a robot arrives in time for the season it was bought for — and what has to be locked before the order goes in.",
+    "category": "Robotics in Business",
+    "date": "November 2, 2026",
+    "readTime": "4 min",
+    "coverUrl": "blog/covers/made-to-order-lead-times-robot-programme.jpg",
+    "keywords": [
+      "robot lead time",
+      "made to order industrial robot",
+      "robot procurement planning",
+      "industrial quadruped deployment timeline",
+      "robot import customs compliance"
+    ],
+    "seoTitle": "Robot Lead Times: Eight to Twelve Weeks",
+    "metaDescription": "Most catalogue robots ship made to order in eight to twelve weeks. What to lock before ordering, and why lead time is a programme date, not a shipping detail.",
+    "faq": [
+      {
+        "q": "Why do robots ship made to order instead of from stock?",
+        "a": "Because configuration, not volume, drives production. Payload, sensor set, mounting and software options are set per order, so the factory builds to the specification you sign rather than shipping a generic unit that then needs reworking. The trade-off is that the clock starts at order confirmation, not at your enquiry."
+      },
+      {
+        "q": "What should be confirmed before the purchase order goes out?",
+        "a": "Four things: the final payload and sensor configuration, who maps and commissions the site, the spare-part list with local lead times, and the acceptance test the machine must pass on arrival. Change any of the first two after the order and the eight to twelve week interval restarts."
+      },
+      {
+        "q": "Does a long lead time mean I should order before the site is ready?",
+        "a": "Sometimes, deliberately. If a season or an audit date is fixed, order against the date and schedule the site works backwards from the delivery week. What you should never do is order early and leave the machine in a box, because the warranty clock and the commissioning window both start before it is earning."
+      }
+    ],
+    "source": "catalogue",
+    "sourcePost": null,
+    "status": "draft",
+    "draftedAt": "2026-11-02",
+    "publishedAt": null,
+    "dateModified": "2026-11-02",
+    "content": "<p>Every catalogue entry on Robotist carries an availability line, and most of them read the same: made to order, eight to twelve weeks. Buyers treat that as a shipping detail. It is a programme date. A robot ordered for a season, an audit or a contract renewal either lands inside those twelve weeks or the plan around it changes.</p><p>The interval exists because these machines are configured, not picked off a shelf. The <a href=\"/products/magiclab-magicdog-y1.html\">MagicLab MagicDog Y1</a>, for instance, is specified with a 45 kg payload, a 6 m/s top speed and an all-terrain chassis, and lists at USD 64,900 WDP (wholesale distributor price). Payload mounts, sensor packages and software options are set per order, so production starts on the specification you sign.</p><img src=\"https://www.robotist.com.au/robots-cut/magiclab_magicdog_y1.webp\" alt=\"MagicLab MagicDog Y1 industrial quadruped robot\"><h3>The clock starts at order confirmation, not at enquiry</h3><p>Between a first enquiry and a confirmed order sits site assessment, specification, budget approval and, often, a procurement review. That period is not part of the eight to twelve weeks, and it is usually longer than the factory interval. Teams that plan a quarter for the robot and a week for approval get their dates backwards.</p><p>The practical fix is to run the two tracks in parallel. Start the site assessment and the specification while the commercial approval is moving, so the order confirmation is a signature on a document that already exists rather than the start of writing it.</p><h3>What has to be locked before the order goes out</h3><p>Four items, and two of them are the ones that quietly reset the clock. The final configuration — payload, sensors, mounting — must be frozen. The commissioning plan must name who maps the site, who trains the first shift and who trains the second. The spare-part list must be agreed with local lead times, not factory lead times. And the acceptance test must be written down before delivery, so the machine is signed off against a spec rather than against a demonstration.</p><p>Changes to configuration or commissioning after the order restarts the factory interval. That is the most expensive kind of delay, because it is self-inflicted and invisible on the purchase order.</p><p>One more thing belongs on the pre-order checklist: the maintenance plan. Support tiers are specified per robot and per site, and the difference between a remote-only tier and an on-site tier is the difference between a fault cleared in an afternoon and a machine idle for a week waiting on a visit. Decide that at order, because retrofitting a support level after commissioning usually means paying twice.</p><h3>Lead time does not end at the loading dock</h3><p>Import, customs and compliance handling sit between the factory gate and the floor. A <a href=\"/products/keenon-c40-p1.html\">cleaning robot</a> and an <a href=\"/products/agibot-a3.html\">industrial humanoid</a> do not clear the same way, and the paperwork is country-specific. Budget the clearance window separately from the factory window, and keep the two from being conflated in a plan that only has one date on it.</p><p>With a twelve-month standard warranty and support tiers that start after commissioning, the warranty clock and the earning clock both start before most buyers expect. Order against the date you need the machine working, work the site backwards from the delivery week, and freeze the specification early enough that nobody has to reopen it.</p>"
+  },
+  {
+    "slug": "cleaning-robot-cost-per-shift",
+    "title": "Cleaning Robots: What They Cost Per Shift and Per Square Metre",
+    "excerpt": "Two robots in the Robotist catalogue list at USD 9,250 and USD 10,700. Price is the easy number; the one that decides whether a cleaning robot pays is cost per square metre actually cleaned per shift, and that is a question about runtime, coverage and floor layout.",
+    "category": "Robotics in Business",
+    "date": "November 2, 2026",
+    "readTime": "4 min",
+    "coverUrl": "blog/covers/cleaning-robot-cost-per-shift.jpg",
+    "keywords": [
+      "commercial cleaning robot cost",
+      "cleaning robot cost per square metre",
+      "autonomous floor scrubber roi",
+      "cleaning robot runtime",
+      "facility cleaning robot sizing"
+    ],
+    "seoTitle": "Cleaning Robot Cost Per Shift and Per Square Metre",
+    "metaDescription": "Two Robotist cleaning robots list at USD 9,250 and USD 10,700. The number that decides the deal is cost per square metre cleaned per shift. Here is the maths.",
+    "faq": [
+      {
+        "q": "How many square metres can one cleaning robot do in a shift?",
+        "a": "Multiply the published coverage rate by the hours the machine actually works. The Keenon C40-P1 is rated at 1,100 m² per hour, so a five-hour overnight window is about 5,500 m² if the floor is open enough to run the pattern without constant rerouting. Dense furniture, multiple levels and lift travel all cut that figure, which is why a site assessment comes before a quote."
+      },
+      {
+        "q": "Is a cheaper cleaning robot always the better buy?",
+        "a": "No. A lower purchase price with a shorter runtime can need two units to cover what one longer-runtime machine covers in a single shift. Compare cost per square metre per shift, not sticker price: purchase price divided by the area one unit cleans in your actual operating window."
+      },
+      {
+        "q": "What usually breaks the business case after installation?",
+        "a": "Three things. Floors that are not mapped cleanly, so the robot spends the night recovering instead of cleaning; no plan for water, waste and battery turnaround between shifts; and nobody on staff trained to clear a fault at 2am. Each of those turns a machine with a 15-hour runtime into one that runs five."
+      }
+    ],
+    "source": "catalogue",
+    "sourcePost": null,
+    "status": "draft",
+    "draftedAt": "2026-11-02",
+    "publishedAt": null,
+    "dateModified": "2026-11-02",
+    "content": "<p>A cleaning robot is quoted as a machine and judged as a labour decision. That is why list price arguments go nowhere: two units from the same catalogue can differ by less than fifteen per cent on price and by more than a third on how much floor they cover in a night.</p><p>Robotist lists two cleaning machines in its <a href=\"/products/\">catalogue</a>: the <a href=\"/products/gausium-phantas.html\">Gausium Phantàs</a> at USD 9,250 WDP (wholesale distributor price) with a rated coverage of 1,180 m² per hour, and the <a href=\"/products/keenon-c40-p1.html\">Keenon C40-P1</a> at USD 10,700 WDP with 1,100 m² per hour and a 15-hour runtime. Read those four numbers together and the cheaper machine is not automatically the cheaper floor.</p><img src=\"https://www.robotist.com.au/robots-cut/gausium_phantas.webp\" alt=\"Gausium Phantàs commercial cleaning robot\"><h3>The number to compare: cost per square metre per shift</h3><p>Take the purchase price and divide it by the area one unit can clean inside your operating window. A machine rated at 1,100 m² per hour running a five-hour overnight window covers roughly 5,500 m². At USD 10,700 that is close to USD 1.95 per square metre of capacity, not per cleaning event. If the same unit runs a full 15-hour continuous shift because your site is a shopping centre that cleans through the day, the denominator triples and the per-metre figure falls toward 65 cents.</p><p>The mistake buyers make is using the rated coverage rate as if it were a duty cycle. It is a peak figure on an open floor. Furniture, aisle width, lift travel between levels and staff moving through the space all reduce it. A robot that covers 1,100 m² per hour in a warehouse aisle pattern may cover far less in a hotel lobby with pillars every twelve metres.</p><h3>Runtime decides how many units you actually need</h3><p>The C40-P1's 15-hour runtime is the specification with the most commercial weight, because it changes the unit count. If your cleaning window is eight hours and the allocation inside it is four hours per floor, one long-runtime machine can take two areas per night without a battery change. A shorter-runtime unit needs either a swap battery, a second machine, or a second night.</p><p>That is where the quote stops being comparable. Two units at USD 9,250 is USD 18,500 and two sets of spares, two site setups and two training sessions. One unit at USD 10,700 with a longer runtime and the same coverage is less money, less integration and one fewer thing to fail.</p><h3>What to fix before you sign</h3><p>Ask for the coverage figure in writing next to the runtime, because the two are quoted separately and quietly multiplied by whoever is selling. Ask who maps the floor and how many mapping passes are included. Ask what happens at 2am when the machine faults — remote reset, or a technician visit — and what the spare-part lead time is for a squeegee assembly or a drive wheel.</p><p>Both robots ship made to order with an eight to twelve week lead time and a twelve-month standard warranty, so the ordering decision and the support decision are the same decision: a machine that arrives in ten weeks with no local spares has a longer real lead time than its order date suggests. Match the runtime to the shift, price the floor not the machine, and size the order on the second site you already know is coming.</p>"
+  },
+  {
     "slug": "repeat-robot-deployments-second-site",
     "title": "The Second Site Is the Real Test: What Repeat Robot Deployments Require",
     "excerpt": "Factories now run humanoids in the hundreds and quadrupeds log thousands of inspections a week, so the argument has moved from whether robots work to whether a deployment can be repeated. The checks that decide whether site two happens without the vendor camped in your office.",
