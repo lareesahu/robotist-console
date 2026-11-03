@@ -209,10 +209,6 @@ def create_app(config=None):
         if request.method=='POST':return apply()
         return render_template('landing.html', profiles=public_profiles(),errors=[],values={},submitted=request.args.get('submitted')=='1' and session.get('receipt'))
 
-    @app.route('/grn/network')
-    def network():
-        return render_template('network.html', profiles=public_profiles())
-
     @app.route('/grn/apply', methods=['GET', 'POST'])
     def apply():
         if request.method=='GET':return redirect(url_for('landing')+'#application')
