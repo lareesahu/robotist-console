@@ -71,8 +71,8 @@ body { background: var(--bg-0); color: var(--white); font-family: var(--font-bod
 .nav-links.open { display: flex; flex-direction: column; position: absolute; top: var(--nav-h); left: 0; right: 0; background: rgba(3,8,16,0.95); backdrop-filter: blur(24px); padding: 20px var(--gutter); gap: 16px; z-index: 400; border-bottom: 1px solid rgba(74,168,200,0.08); }
 
 /* Cover */
-.article-cover { margin-top: var(--nav-h); width: 100%; max-height: 420px; overflow: hidden; background: var(--bg-2); display: flex; align-items: center; justify-content: center; }
-.article-cover img { width: 100%; height: auto; max-height: 420px; object-fit: contain; display: block; }
+.article-cover { margin-top: var(--nav-h); width: 100%; aspect-ratio: 16 / 9; max-height: min(76vh, 760px); overflow: hidden; background: var(--bg-2); }
+.article-cover img { width: 100%; height: 100%; object-fit: cover; object-position: center; display: block; }
 
 /* Article layout */
 .article-wrap { display: grid; grid-template-columns: 200px 1fr; max-width: 1000px; margin: 0 auto; padding: 0 var(--gutter); gap: 60px; }
@@ -103,6 +103,31 @@ body { background: var(--bg-0); color: var(--white); font-family: var(--font-bod
 .article-content li { margin-bottom: 12px; line-height: 1.7; }
 .article-content li strong { color: var(--white); font-weight: 600; }
 .article-content em { color: var(--accent-light); font-style: normal; }
+.article-content h2 { font-family: var(--font-main); font-size: 30px; font-weight: 600; color: var(--white); margin: 64px 0 20px; letter-spacing: -0.02em; line-height: 1.25; scroll-margin-top: calc(var(--nav-h) + 20px); }
+.article-content a { color: var(--accent-light); text-decoration: none; border-bottom: 1px solid rgba(74,168,200,0.35); }
+.article-content a:hover { border-bottom-color: var(--accent-light); }
+.article-content .lede { font-size: 19px; line-height: 1.75; color: #D6DEE6; }
+.article-content .lede::first-letter { }
+.article-content figure { margin: 44px 0; }
+.article-content figure img { width: 100%; height: auto; display: block; border-radius: 14px; border: 1px solid rgba(74,168,200,0.14); }
+.article-content figcaption { margin-top: 12px; font-size: 12.5px; line-height: 1.6; color: var(--grey-1); letter-spacing: 0.01em; }
+.article-content .cut { display: block; width: 100%; max-width: 420px; margin: 36px auto; background: linear-gradient(180deg, rgba(12,24,40,0.9), rgba(6,13,24,0.9)); border-radius: 18px; padding: 26px; border: 1px solid rgba(74,168,200,0.12); }
+.article-content table { display: table; max-width: 100%; width: 100%; border-collapse: collapse; margin: 34px 0; font-size: 15px; }
+.article-content thead th { text-align: left; font-family: var(--font-main); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey-1); font-weight: 400; padding: 0 18px 12px 0; border-bottom: 1px solid rgba(74,168,200,0.25); }
+.article-content tbody td { padding: 14px 18px 14px 0; border-bottom: 1px solid rgba(74,168,200,0.10); vertical-align: top; line-height: 1.6; }
+.article-content tbody td:first-child { color: var(--white); font-weight: 500; }
+.article-content tbody tr:last-child td { border-bottom: 0; }
+.article-content .callout { margin: 38px 0; padding: 22px 26px; border-left: 3px solid var(--accent); background: rgba(74,168,200,0.07); border-radius: 0 14px 14px 0; font-size: 16px; line-height: 1.7; color: #CBD5DE; }
+.article-content .callout .callout-title { display: block; font-family: var(--font-main); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-light); margin-bottom: 8px; }
+.article-content .pullquote { margin: 46px 0; padding: 28px 0; border-top: 1px solid rgba(74,168,200,0.2); border-bottom: 1px solid rgba(74,168,200,0.2); font-family: var(--font-main); font-size: 23px; font-weight: 300; line-height: 1.45; color: var(--white); letter-spacing: -0.01em; }
+.article-content hr { border: 0; border-top: 1px solid rgba(74,168,200,0.14); margin: 48px 0; }
+.article-content .note { font-size: 13px; line-height: 1.65; color: var(--grey-1); margin-top: 14px; }
+.article-content .checklist { list-style: none; margin: 0 0 28px; padding: 0; }
+.article-content .checklist li { position: relative; padding-left: 30px; margin-bottom: 14px; line-height: 1.7; }
+.article-content .checklist li::before { content: ""; position: absolute; left: 0; top: 9px; width: 14px; height: 14px; border: 1px solid var(--accent); border-radius: 3px; }
+.article-content .cta-block { margin: 44px 0 8px; padding: 26px 28px; border: 1px solid rgba(74,168,200,0.18); border-radius: 16px; background: rgba(12,24,40,0.6); }
+.article-content .cta-block p { margin-bottom: 14px; }
+.article-content .cta-block a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 22px; border-radius: 999px; background: var(--accent); color: #04121B; font-family: var(--font-main); font-size: 13px; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; border-bottom: 0; }
 .article-content strong { color: var(--white); font-weight: 600; }
 
 /* Key takeaway */
@@ -284,9 +309,12 @@ body { background: var(--bg-0); color: var(--white); font-family: var(--font-bod
   .modal-box .btn-primary{width:100%;text-align:center}
 }
 /* ── Article media (responsive) ── */
-.article-cover img,.article-content img{max-width:100%;height:auto}
+.article-cover img{max-width:100%}
+.article-content img{max-width:100%;height:auto}
 .article-content iframe{max-width:100%}
-.article-content table{display:block;max-width:100%;overflow-x:auto}
+.article-content table{display:table;max-width:100%}
+@media (max-width:720px){.article-content table{display:block;overflow-x:auto}}
+@media (max-width:700px){.article-cover{aspect-ratio:4/3;max-height:58vh}}
 .article-wrap>*{min-width:0}
 /* ── SEO FAQ ── */
 .article-faq{margin-top:44px;padding-top:28px;border-top:1px solid rgba(74,168,200,.14)}
@@ -341,15 +369,20 @@ body { background: var(--bg-0); color: var(--white); font-family: var(--font-bod
     <section class="related">
       <h2>Related Articles</h2>
       <div class="related-grid">
+          <a href="/blog/repeat-robot-deployments-second-site.html" class="related-card">
+            <div class="related-card-category">Robotics in Business</div>
+            <div class="related-card-title">The Second Site Is the Real Test: What Repeat Robot Deployments Require</div>
+            <div class="related-card-meta">October 30, 2026 · 4 min read</div>
+          </a>
+          <a href="/blog/european-quadruped-supply-buyers-guide.html" class="related-card">
+            <div class="related-card-category">Robotics in Business</div>
+            <div class="related-card-title">Europe's First Dutch Quadruped: What It Changes for Robot Buyers</div>
+            <div class="related-card-meta">October 15, 2026 · 4 min read</div>
+          </a>
           <a href="/blog/robots-in-industrial-automation-key-trends.html" class="related-card">
             <div class="related-card-category">Robotics in Business</div>
             <div class="related-card-title">Robots in Industrial Automation: Key Trends 2026</div>
             <div class="related-card-meta">August 14, 2026 · 13 min read</div>
-          </a>
-          <a href="/blog/factory-robots-where-automation-delivers-value.html" class="related-card">
-            <div class="related-card-category">Automation Use Cases</div>
-            <div class="related-card-title">Factory Robots: Where Automation Delivers Value</div>
-            <div class="related-card-meta">August 13, 2026 · 14 min read</div>
           </a>
       </div>
     </section>
