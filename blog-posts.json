@@ -149,10 +149,10 @@
     ],
     "source": "linkedin",
     "sourcePost": "https://www.linkedin.com/feed/update/urn:li:activity:7520857210265108490/",
-    "status": "published",
+    "status": "draft",
     "draftedAt": "2026-10-30",
     "publishedAt": "2026-10-30T04:15:20Z",
-    "dateModified": "2026-10-30",
+    "dateModified": "2026-11-03",
     "content": "<p>A robot in front of a camera and a robot working a shift on your floor are two different products. The gap is not the machine. It is everything around it: power, spares, software, and the technician who already knows which joint fails first.</p>\n<p>The industry has moved onto that ground. The talk is no longer about walking demonstrations but repeat deployments: the second site, the third, the fifth, each standing up without the vendor's engineers camped in your office. It is a fair test: only a system that survives contact with operations twice can pass it.</p>\n<h3>What the deployment numbers now look like</h3>\n<p>UBTECH shipped 1,079 Walker S2 humanoids across 2025, running at BYD, Geely, FAW-Volkswagen and Foxconn. Its BYD work, at roughly 100 to 200 units, is the largest commercial humanoid deployment on public record. AGIBOT passed 5,000 production units in December 2025 and its 10,000th humanoid in March 2026. On the quadruped side the numbers are quieter but older: ANYbotics has around 200 ANYmal units in industrial service logging thousands of inspections a week, including explosion-protected work offshore.</p>\n<p>Behind those figures sits capacity that did not exist two years ago: Agility Robotics' RoboFab in Salem, Oregon is built for up to 10,000 robots a year.</p>\n<h3>Throughput is the number that survives scrutiny</h3>\n<p>UBTECH has been direct about the current limit: the Walker S2 runs at most half as efficiently as a human worker. That reads as failure until you price the alternative: hazardous, confined-space or overnight work where the alternative is no worker at all. On a consumer-electronics line, AGIBOT's G2 has been reported at 310 units an hour on 18 to 20 second cycles.</p>\n<p>The buyer's version of that number is not the vendor's cycle time. It is your takt time, your shift pattern, and the hours the robot is genuinely available: a machine at half human speed running two unstaffed shifts beats a human-rate machine that needs a fortnight of integration at every new task.</p>\n<h3>Four things that decide whether site two happens</h3>\n<ul>\n<li><strong>Uptime and energy.</strong> Autonomous battery swap and hot-swappable packs decide whether a unit works a 24-hour schedule or a demonstration window.</li>\n<li><strong>Fleet software.</strong> A platform that manages one robot is a product. One that manages a fleet, pushes task updates and reports failures is infrastructure; Agility Arc is the clearest case of a vendor selling that layer on its own.</li>\n<li><strong>Spares and service footprint.</strong> Where the technician, the joint and the sensor physically live matters more than the spec sheet when a site is 900 km from a port.</li>\n<li><strong>Replayable integration.</strong> Vision-language-action stacks turn a new box size or SKU into a spoken instruction rather than a re-engineering project. If every task change is a project, site two will not happen.</li>\n</ul>\n<h3>Reading the price you were quoted</h3>\n<p>Published robot prices are starting points, not deployment costs. Boston Dynamics' Spot is quoted from about $74,500 for a base kit, with configured deployments commonly reported above $150,000 once sensors, software and service are added. Our catalogue shows where entry points sit: the <a href=\"/products/adam-u.html\">ADAM U</a> humanoid platform at USD 45,000, the <a href=\"/products/agibot-a3.html\">AGIBOT A3 Ultra</a> at USD 109,999, and the <a href=\"/products/magiclab-magicdog-y1.html\">MagicLab MagicDog Y1</a> industrial quadruped, configured per job, 45 kg payload, 6 m/s top speed.</p>\n<p><img src=\"/robots-cut/agibot_a3.webp\" alt=\"Full-size AGIBOT humanoid platform used for supervised industrial deployment\" loading=\"lazy\" style=\"width:100%;height:auto\"></p>\n<p>Ask for three-year total cost of ownership: integration, training, spares, software licences and the labour the robot replaces. Where volume is uncertain, robots-as-a-service prices the deployment per hour and keeps the capital risk on the vendor's side; where the duty cycle is steady, buying usually wins.</p>\n<h3>What to ask before you commit</h3>\n<p>Demand a reference site that has reordered, not one with a video. Ask what happens when a joint fails on a Saturday, and who trains the second shift. Then pilot the task that already hurts: the overnight patrol round, the line nobody wants to staff.</p>\n<p>The platforms we ship are chosen for that second-site problem: units that arrive configured, with setup, training and maintenance handled on site rather than left with your team. <a href=\"/contact.html\">Tell us the duty cycle you need to cover</a> and we will map it to a <a href=\"/products/agibot-a3.html\">full-size humanoid</a> or an industrial quadruped, and say which of your tasks it should not be doing yet.</p>"
   },
   {
@@ -547,5 +547,1058 @@
     "draftedAt": "2026-10-13",
     "publishedAt": null,
     "dateModified": "2026-10-13"
+  },
+  {
+    "slug": "floor-scrubber-robot-which-floor",
+    "title": "Floor Scrubber Robot: Which Model Fits Which Floor",
+    "excerpt": "Scrubber, sweeper or combination: the floor type and the narrowest doorway decide which cleaning robot a building actually needs.",
+    "category": "Deployment",
+    "date": "2026-11-03",
+    "readTime": "4 min",
+    "coverUrl": "blog/covers/floor-scrubber-robot-which-floor.jpg",
+    "keywords": [
+      "floor scrubber robot",
+      "cleaning robot types",
+      "commercial floor scrubber"
+    ],
+    "seoTitle": "Floor Scrubber Robot",
+    "metaDescription": "Scrubber, sweeper or combination? How floor type and deck width decide which cleaning robot a building actually needs.",
+    "faq": [
+      {
+        "q": "Do I need a scrubber or a sweeper?",
+        "a": "A scrubber for wet-washable floors with film and grease; a sweeper for dry debris on floors that should not get wet. A combination unit where both happen on the same night."
+      },
+      {
+        "q": "Does deck width really matter?",
+        "a": "Yes. Measure the narrowest gap on the route before choosing. A wide deck that cannot reach a floor sends a person to do it by hand."
+      },
+      {
+        "q": "Can one machine clean carpet and hard floor?",
+        "a": "Not properly. Neither a scrubber nor a sweeper is a carpet extractor, so carpeted areas stay with people or with separate equipment."
+      }
+    ],
+    "source": "robotist editorial",
+    "sourcePost": "",
+    "status": "draft",
+    "draftedAt": "2026-11-03T13:00:00Z",
+    "publishedAt": null,
+    "dateModified": "2026-11-03T13:00:00Z",
+    "content": "<p class=\"lede\">A scrubber and a sweeper do different jobs, and most buildings buy the wrong one because the machine that looks bigger looks more capable. The question is not which robot is best. It is what is on your floor at the hour the machine runs.</p>\n\n<div class=\"callout\">\n  <div class=\"callout-title\">THE CHOICE IN ONE LINE</div>\n  <p>Scrub when the floor is wet-washable and soiled with film. Sweep when the debris is dry and the floor cannot take water. Buy the combination only if both are true on the same night.</p>\n</div>\n\n<h2>What each machine actually does</h2>\n<p><strong>Scrubbers</strong> lay solution, agitate it, and vacuum it back up. They remove film, tyre marks and grease from sealed hard floors — tile, vinyl, polished concrete, stone. They need a water source, a drain, and a floor that tolerates moisture.</p>\n<p><strong>Sweepers</strong> pick up dry debris with brushes and suction. They handle dust, packaging, leaves and grit, and they are the right tool for warehouses, car parks and loading docks where water would be a hazard or a nuisance.</p>\n<p><strong>Combination units</strong> such as the Keenon C40-P1 do four jobs in one pass — sweep, scrub, vacuum and dry — which is what makes a long runtime and roughly 1,100 square metres an hour meaningful on a mixed site. The trade-off is maintenance: more systems means more to clean at the end of a shift.</p>\n\n<h2>Deck width decides the round, not the spec sheet</h2>\n<p>A wider deck covers more floor per pass and fits through fewer doors. The practical test is the narrowest gap on the route — a service corridor, a toilet block entrance, a lift lobby — and the answer usually lands between 400 and 550 millimetres for a machine that has to work an entire hotel floor.</p>\n<p>Measure the pinch points before the model list. A machine that cannot reach a floor is not cheaper than the one that can; it is the one you send a person to do by hand while it sits charged.</p>\n\n<h2>Floor types and where each machine fails</h2>\n<table>\n  <thead><tr><th>Floor</th><th>Works well</th><th>Fails because</th></tr></thead>\n  <tbody>\n    <tr><td>Polished concrete</td><td>Scrubber, combination</td><td>Dust film returns within a day if the squeegee blade is worn</td></tr>\n    <tr><td>Vinyl and safety flooring</td><td>Scrubber at low solution flow</td><td>Too much water sits in the texture and dries streaky</td></tr>\n    <tr><td>Carpet and matting</td><td>Neither</td><td>Neither machine is a carpet extractor; edges stay with people</td></tr>\n    <tr><td>Warehouse slab with pallet gaps</td><td>Sweeper, combination</td><td>Debris collects where the brush cannot reach</td></tr>\n    <tr><td>Stone and terrazzo</td><td>Scrubber with the right pad</td><td>Wrong pad dulls the finish and nobody notices for a month</td></tr>\n  </tbody>\n</table>\n\n<figure>\n  <img src=\"/robots-cut/gausium_phantas.webp\" alt=\"Gausium Phantas floor cleaning robot\" style=\"max-width:300px;display:block;margin:0 auto;\">\n  <figcaption>The Gausium Phantas is the compact end of the range: lobbies, corridors and retail floors where the route is tight.</figcaption>\n</figure>\n\n<h2>What to test on your own floor</h2>\n<ul class=\"checklist\">\n  <li>The narrowest doorway on the route, measured, not estimated</li>\n  <li>One full pass on the dirtiest floor at the hour it will actually run</li>\n  <li>Where the machine will be filled and emptied — distance to a tap and a drain</li>\n  <li>Whether the floor dries before anyone walks on it</li>\n  <li>Who cleans the machine at the end of the shift, and how long that takes</li>\n</ul>\n\n<h2>Where we start</h2>\n<p>Send us the floor plan and the hours the building is empty. We will tell you whether a scrubber, a sweeper or a combination unit fits, and which of the two we stock — the <a href=\"/products/gausium-phantas\">Gausium Phantas</a> for tight routes and lobbies, or the <a href=\"/products/keenon-c40-p1\">Keenon C40-P1</a> where one machine has to sweep and scrub the same floor.</p>\n\n<div class=\"cta-block\">\n  <p>Two questions decide it: what is on the floor, and how narrow is the narrowest gap on the way there.</p>\n</div>\n",
+    "targetQuery": "floor scrubber robot",
+    "pillar": "clean"
+  },
+  {
+    "slug": "are-cleaning-robots-worth-it",
+    "title": "Are Cleaning Robots Worth It: Three Tests Before You Buy",
+    "excerpt": "Three tests decide whether a cleaning robot is worth it for your building: floor regularity, an unsupervised round, and a daily check.",
+    "category": "Deployment",
+    "date": "2026-11-03",
+    "readTime": "3 min",
+    "coverUrl": "blog/covers/are-cleaning-robots-worth-it.jpg",
+    "keywords": [
+      "are cleaning robots worth it",
+      "cleaning robot roi",
+      "cleaning automation australia"
+    ],
+    "seoTitle": "Are Cleaning Robots Worth It",
+    "metaDescription": "Three tests decide whether a cleaning robot is worth it: floor regularity, an unsupervised round, and a daily inspection.",
+    "faq": [
+      {
+        "q": "How do I know if my building suits a cleaning robot?",
+        "a": "Count the share of floor that is regular — corridors, lobbies, open retail. When most of it is regular, a robot covers most of the problem."
+      },
+      {
+        "q": "Do cleaning robots replace staff?",
+        "a": "They replace the walking of the round. Edges, spills, judgement and the final inspection stay with people."
+      },
+      {
+        "q": "What is the most common failure?",
+        "a": "No named person checking the result each morning. The machine reports coverage and nobody verifies it."
+      }
+    ],
+    "source": "robotist editorial",
+    "sourcePost": "",
+    "status": "draft",
+    "draftedAt": "2026-11-03T13:00:00Z",
+    "publishedAt": null,
+    "dateModified": "2026-11-03T13:00:00Z",
+    "content": "<p class=\"lede\">Every facilities manager asks the same question in the first meeting, and it is the wrong first question. Worth is not a property of the robot. It is a property of the round you are trying to cover.</p>\n\n<div class=\"callout\">\n  <div class=\"callout-title\">THREE TESTS, IN ORDER</div>\n  <p>Is the floor regular? Is the round unsupervised? Does anyone check the result? Two yes answers make a robot plausible. All three make it useful.</p>\n</div>\n\n<h2>Test one: is the floor regular</h2>\n<p>A cleaning robot follows a map. Corridors, lobbies, open retail floors, hospital wards and airport concourses are regular: same shape every night, few surprises. Storerooms, plant rooms, stairwells and staff kitchens are not, and no machine we sell is honest about handling them.</p>\n<p>Count the share of cleanable floor that is regular. When most of it is, the machine covers most of the problem. When half of it is, you have bought a machine that cleans the easy half of a building whose cost sits in the hard half.</p>\n\n<h2>Test two: is the round unsupervised</h2>\n<p>A robot that needs someone walking behind it has replaced a scrubber, not a shift. The economics change completely when the machine runs after hours with nobody on the floor — that is the configuration where a night round stops being a headcount question.</p>\n<p>Ask what has to be true for an unattended run: doors that stay open or integrate with access control, a charging position, a route that does not cross a loading dock at 4am. Those are building decisions, and they get made before delivery or not at all.</p>\n\n<h2>Test three: does anyone check the result</h2>\n<p>The inspection is the part people skip. A robot produces coverage; a person decides whether the floor is clean. Sites that skip the check discover a month later that the machine has been skipping a corridor since the second week, and nobody noticed because the report said the round completed.</p>\n\n<h2>Where it goes wrong</h2>\n<ul class=\"checklist\">\n  <li>Buying for the dirtiest floor instead of the average one</li>\n  <li>Expecting edges, skirting and cubicles to be handled</li>\n  <li>No named person responsible for the daily check</li>\n  <li>Charging position chosen after delivery</li>\n  <li>Route designed by the vendor without walking it with the cleaners</li>\n</ul>\n\n<figure>\n  <img src=\"/robots-cut/keenon_c40-p1.webp\" alt=\"Keenon C40-P1 commercial cleaning robot\" style=\"max-width:320px;display:block;margin:0 auto;\">\n  <figcaption>The Keenon C40-P1 sweeps, scrubs, vacuums and dries in one pass — built for continuous operation in hotels, offices, hospitals and retail.</figcaption>\n</figure>\n\n<p>When the three tests pass, the machine we would look at first is the <a href=\"/products/keenon-c40-p1\">Keenon C40-P1</a> for mixed floors, or the <a href=\"/products/gausium-phantas\">Gausium Phantas</a> where the routes are tight and the floor is uniform.</p>\n\n<div class=\"cta-block\">\n  <p>Walk us through the building and we will run the three tests with you — including the one where the answer is no.</p>\n</div>",
+    "targetQuery": "are cleaning robots worth it",
+    "pillar": "clean"
+  },
+  {
+    "slug": "floor-cleaning-robot-australia",
+    "title": "Floor Cleaning Robot Australia: Hotels, Airports and Malls",
+    "excerpt": "Hotels, airports and shopping centres buy floor robots for different reasons. The building decides the machine, not the budget.",
+    "category": "Deployment",
+    "date": "2026-11-03",
+    "readTime": "3 min",
+    "coverUrl": "blog/covers/floor-cleaning-robot-australia.jpg",
+    "keywords": [
+      "floor cleaning robot australia",
+      "cleaning robot hotels",
+      "airport cleaning robot"
+    ],
+    "seoTitle": "Floor Cleaning Robot Australia",
+    "metaDescription": "Hotels need quiet routes, airports need endurance, malls need a robot that works around the public. The building picks the machine.",
+    "faq": [
+      {
+        "q": "Which building type is easiest to automate?",
+        "a": "Hotels and offices with regular corridors and an empty night. Airports are harder because the quiet window is short."
+      },
+      {
+        "q": "Can a robot clean a shopping centre during trading hours?",
+        "a": "Some can, where the routes are wide and the machine is quiet. Narrow formats are a different problem."
+      },
+      {
+        "q": "What stays manual in a hotel?",
+        "a": "Room interiors, bathrooms, turndown, and the edges where the machine cannot reach past door frames."
+      }
+    ],
+    "source": "robotist editorial",
+    "sourcePost": "",
+    "status": "draft",
+    "draftedAt": "2026-11-03T13:00:00Z",
+    "publishedAt": null,
+    "dateModified": "2026-11-03T13:00:00Z",
+    "content": "<p class=\"lede\">A hotel, an airport and a shopping centre all buy floor robots, and they are not buying the same thing. The building decides the machine far more than the budget does.</p>\n\n<div class=\"callout\">\n  <div class=\"callout-title\">THE PATTERN</div>\n  <p>Hotels need quiet and tight routes. Airports need coverage and endurance. Malls need a route that works while the public is still there.</p>\n</div>\n\n<h2>Hotels: silence, lifts and edges</h2>\n<p>A hotel floor at 2am is a corridor with doors on both sides, carpet in the rooms, hard floor in the lobby, and guests who will complain about noise before they complain about dust. The machine has to be quiet enough to run on a guest floor, narrow enough for the service corridor, and predictable around the lift lobby where the floor changes material.</p>\n<p>What stays human in a hotel: room interiors, bathrooms, turndown, and the corridor edges where the machine cannot reach past the door frames.</p>\n\n<h2>Airports: endurance and a terminal that never empties</h2>\n<p>An airport does not have an empty hour. It has a quiet hour, and the round has to fit inside it. That puts a premium on runtime, tank capacity and a route that can be interrupted without restarting the night.</p>\n<p>The failure mode is different too: in a terminal, a machine stopped in a walkway is a safety and reputation problem within minutes, not by morning.</p>\n\n<h2>Shopping centres: cleaning around the public</h2>\n<p>A mall runs its round while people are still walking through it, which makes obstacle handling and courtesy the specification. Speed matters less than behaving well in a crowd — slowing, stopping, and resuming without drama.</p>\n\n<table>\n  <thead><tr><th>Building</th><th>The binding constraint</th><th>What it rules out</th></tr></thead>\n  <tbody>\n    <tr><td>Hotel</td><td>Noise on guest floors</td><td>Loud scrubbers, wide decks, anything that cannot take a service corridor</td></tr>\n    <tr><td>Airport</td><td>Runtime inside a short window</td><td>Small tanks and short endurance machines</td></tr>\n    <tr><td>Shopping centre</td><td>Public presence during the round</td><td>Machines that need a cleared floor</td></tr>\n  </tbody>\n</table>\n\n<figure>\n  <img src=\"/robots-cut/gausium_phantas.webp\" alt=\"Gausium Phantas cleaning robot in a commercial lobby\" style=\"max-width:300px;display:block;margin:0 auto;\">\n  <figcaption>Phantas suits the hotel and retail end: compact, quiet enough for occupied floors, and built for repeating a mapped route.</figcaption>\n</figure>\n\n<h2>What all three should check</h2>\n<ul class=\"checklist\">\n  <li>The quietest hour is really quiet — walk it before believing the schedule</li>\n  <li>Floor transitions on the route: carpet to tile, tile to stone, ramp to lift lobby</li>\n  <li>Where the machine empties and refills without crossing a public area</li>\n  <li>Who is called when it stops at 3am</li>\n  <li>Whether the report tells you which zones were missed</li>\n</ul>\n\n<p>For tight hotel routes the <a href=\"/products/gausium-phantas\">Gausium Phantas</a> is the sensible first trial. Where one machine has to sweep and scrub a mixed retail floor, the <a href=\"/products/keenon-c40-p1\">Keenon C40-P1</a> covers more ground in a shorter window.</p>\n\n<div class=\"cta-block\">\n  <p>Tell us the building type and the quiet hour. That narrows the list faster than any specification.</p>\n</div>",
+    "targetQuery": "floor cleaning robot australia",
+    "pillar": "clean"
+  },
+  {
+    "slug": "gausium-phantas-mapping",
+    "title": "Gausium Phantas Mapping: How the Robot Learns Your Floor",
+    "excerpt": "The first mapping run decides coverage for the life of the map. Do it on an empty floor, walk it with the machine, and name the zones.",
+    "category": "Deployment",
+    "date": "2026-11-03",
+    "readTime": "3 min",
+    "coverUrl": "blog/covers/gausium-phantas-mapping.jpg",
+    "keywords": [
+      "gausium phantas mapping",
+      "cleaning robot mapping",
+      "robot route setup"
+    ],
+    "seoTitle": "Gausium Phantas Mapping",
+    "metaDescription": "Why the first mapping run decides coverage for the life of a cleaning robot's map, and the corrections worth making immediately.",
+    "faq": [
+      {
+        "q": "When should the first map be made?",
+        "a": "On the emptiest possible floor, with no trolleys, stacked chairs or delivery pallets that would become permanent obstacles."
+      },
+      {
+        "q": "What does mapping usually miss?",
+        "a": "Glass and mirrors, very dark flooring, and lifts, which need separate handling rather than a mapped corridor."
+      },
+      {
+        "q": "How often should the map be redone?",
+        "a": "After any physical change to the building, after a contractor change, and once a year regardless."
+      }
+    ],
+    "source": "robotist editorial",
+    "sourcePost": "",
+    "status": "draft",
+    "draftedAt": "2026-11-03T13:00:00Z",
+    "publishedAt": null,
+    "dateModified": "2026-11-03T13:00:00Z",
+    "content": "<p class=\"lede\">The first mapping run is the most important thing that happens to a cleaning robot, and almost nobody watches it properly. Everything afterwards — coverage, reporting, the route that gets skipped — is decided in that half hour.</p>\n\n<div class=\"callout\">\n  <div class=\"callout-title\">WHAT MAPPING IS</div>\n  <p>The robot drives the floor with its sensors on and builds a map of walls, doors and obstacles. It learns geometry, not dirt.</p>\n</div>\n\n<h2>Do it on the emptiest possible floor</h2>\n<p>Map when the building is empty and the floor is clear. Trolleys, stacked chairs and a delivery pallet in a corridor become permanent obstacles in the map, and the robot will avoid that spot for the life of the map even after the pallet is gone.</p>\n<p>Walk the route with the machine the first time. Not to supervise it — to see what it sees. The places where it slows, hesitates or takes a wide line are the places your cleaners will complain about in week three.</p>\n\n<h2>What the first map usually misses</h2>\n<p>Glass walls and mirrors, because they return no useful signal. Dark flooring in a service corridor, which some sensor stacks read as a hole. Lifts, which need separate handling and are not a floor you can map like a corridor.</p>\n<p>None of these are failures of the robot. They are the reason commissioning exists, and the reason a vendor who ships a machine without a site visit is selling you a project rather than a product.</p>\n\n<h2>The corrections worth making immediately</h2>\n<ul class=\"checklist\">\n  <li>Name the zones in language your team uses — lobby, east corridor, food court</li>\n  <li>Set no-go zones around glass, mirrors and temporary storage</li>\n  <li>Split long corridors into named segments so a missed section is visible in the report</li>\n  <li>Re-map after any renovation, not after the complaints start</li>\n  <li>Record the mapping date somewhere the next manager will find it</li>\n</ul>\n\n<figure>\n  <img src=\"/robots-cut/gausium_phantas.webp\" alt=\"Gausium Phantas mapping a commercial floor\" style=\"max-width:300px;display:block;margin:0 auto;\">\n  <figcaption>Phantas builds and stores site maps; the quality of the first pass sets the quality of every round after it.</figcaption>\n</figure>\n\n<div class=\"pullquote\">A map is a decision about what the robot will never clean again. Make it deliberately.</div>\n\n<p>Mapping is included in commissioning on the <a href=\"/products/gausium-phantas\">Gausium Phantas</a> deployments we run, and it is the part of the first week we insist on attending. On larger sites the <a href=\"/products/keenon-c40-p1\">Keenon C40-P1</a> needs the same care across more floor area.</p>\n\n<h2>How long a map stays valid</h2>\n<p>A map is a snapshot of a building at a moment. Renovations, a new fit-out, a rearranged food court or a wall that appears over a weekend all make it wrong, and the robot will keep faithfully avoiding a doorway that no longer has a door in it.</p>\n<p>Treat re-mapping as maintenance: after any physical change, after a change of cleaning contractor, and once a year regardless. Write the map date on the site sheet so the next person knows what they are working from.</p>\n\n<div class=\"cta-block\">\n  <p>If a vendor will not walk the first map with you, ask why. It is usually because they know what it will show.</p>\n</div>",
+    "targetQuery": "gausium phantas mapping",
+    "pillar": "clean"
+  },
+  {
+    "slug": "keenon-c40-datasheet",
+    "title": "Keenon C40 Datasheet: What the Numbers Do Not Say",
+    "excerpt": "Coverage and runtime are the two datasheet numbers that move most in real use. Here is which line to discount, and by how much.",
+    "category": "Deployment",
+    "date": "2026-11-03",
+    "readTime": "3 min",
+    "coverUrl": "blog/covers/keenon-c40-datasheet.jpg",
+    "keywords": [
+      "keenon c40 datasheet",
+      "cleaning robot runtime",
+      "cleaning robot coverage"
+    ],
+    "seoTitle": "Keenon C40 Datasheet",
+    "metaDescription": "Coverage and runtime are the datasheet numbers that move most in real use. Which lines to discount before you rely on them.",
+    "faq": [
+      {
+        "q": "Is the quoted coverage per hour realistic?",
+        "a": "It is achievable on an empty floor with a straight route. Measure a real pass in your own building during the first week."
+      },
+      {
+        "q": "Why does runtime vary so much?",
+        "a": "Combination mode drains faster than a single mode, and a full solution flow means more refill stops."
+      },
+      {
+        "q": "What is not on the datasheet?",
+        "a": "Refill time, fault turnaround, noise at night mode, and which parts the warranty excludes."
+      }
+    ],
+    "source": "robotist editorial",
+    "sourcePost": "",
+    "status": "draft",
+    "draftedAt": "2026-11-03T13:00:00Z",
+    "publishedAt": null,
+    "dateModified": "2026-11-03T13:00:00Z",
+    "content": "<p class=\"lede\">A datasheet is written for a clean floor and a new battery. Your building is neither, so the useful skill is knowing which line to discount and by how much.</p>\n\n<div class=\"callout\">\n  <div class=\"callout-title\">READ IT LIKE THIS</div>\n  <p>Runtime and coverage are the two numbers that move most in real use. Treat them as ceilings, then subtract for mode, floor and tank stops.</p>\n</div>\n\n<h2>Coverage per hour is a laboratory figure</h2>\n<p>The Keenon C40-P1 is quoted at roughly 1,100 square metres an hour and a 15-hour runtime. Both are true in the sense that they are achievable — and both assume a floor with nothing on it, a straight route, and a machine that never has to detour.</p>\n<p>In a real building, the same machine competes with chairs, trolleys, guests and doors. The number that matters is the one you measure on your own floor in week one: how much of the route finished before the shift ended.</p>\n\n<h2>Runtime depends on the mode you actually run</h2>\n<p>Scrubbing uses water and vacuum, sweeping uses brushes, and drying adds a third load. Running combination mode drains faster than any single mode, and a machine that scrubs at full solution flow will stop to refill sooner than one running a lighter pass.</p>\n<p>So the question is not \"how long does it run\". It is \"how long does it run in the mode I need, on the floor I have, before it needs me\".</p>\n\n<table>\n  <thead><tr><th>Spec line</th><th>What it means</th><th>What to check</th></tr></thead>\n  <tbody>\n    <tr><td>Coverage per hour</td><td>Best-case throughput</td><td>Measure a real pass on the busiest floor</td></tr>\n    <tr><td>Runtime</td><td>Battery endurance in a light mode</td><td>Runtime in the mode you will actually run</td></tr>\n    <tr><td>Battery capacity</td><td>Stored energy</td><td>Charging time and whether it can opportunity-charge</td></tr>\n    <tr><td>Tank volume</td><td>Water carried</td><td>How many refills a full round needs</td></tr>\n  </tbody>\n</table>\n\n<figure>\n  <img src=\"/robots-cut/keenon_c40-p1.webp\" alt=\"Keenon C40-P1 commercial cleaning robot\" style=\"max-width:320px;display:block;margin:0 auto;\">\n  <figcaption>The C40-P1 does four jobs in one pass. That is the point, and also the reason its endurance depends on which of the four you are running.</figcaption>\n</figure>\n\n<h2>The lines nobody prints</h2>\n<ul class=\"checklist\">\n  <li>Refill and empty time, and where that happens relative to the route</li>\n  <li>Turnaround after a fault, and whether it resumes where it stopped</li>\n  <li>Noise level at the mode you will use at night</li>\n  <li>What the warranty excludes — brushes, squeegees and batteries are consumables</li>\n</ul>\n\n<p>The <a href=\"/products/keenon-c40-p1\">Keenon C40-P1</a> is the machine we quote most for mixed floors. Where the floor is uniform and the route tight, the <a href=\"/products/gausium-phantas\">Gausium Phantas</a> gives up some coverage and gains simplicity.</p>\n\n<div class=\"cta-block\">\n  <p>Bring us the datasheet and the floor plan. We will mark the three lines that will not hold on your site.</p>\n</div>",
+    "targetQuery": "keenon c40 datasheet",
+    "pillar": "clean"
+  },
+  {
+    "slug": "robots-that-clean-where-they-stop",
+    "title": "Robots That Clean: Where They Stop and People Start",
+    "excerpt": "Coverage is machine work. Judgement is human work. Most disappointing deployments moved something across that line by accident.",
+    "category": "Deployment",
+    "date": "2026-11-03",
+    "readTime": "3 min",
+    "coverUrl": "blog/covers/robots-that-clean-where-they-stop.jpg",
+    "keywords": [
+      "robots that clean",
+      "cleaning automation limits",
+      "cleaning robot edges"
+    ],
+    "seoTitle": "Robots That Clean",
+    "metaDescription": "Coverage is machine work and judgement is human work. The line between them explains most cleaning robot disappointments.",
+    "faq": [
+      {
+        "q": "What can a cleaning robot not do?",
+        "a": "Edges, skirting, glass, toilets and anything unpredictable. It will drive around a spill; it will not decide what to do about it."
+      },
+      {
+        "q": "What changes for the cleaning team?",
+        "a": "The walking disappears and the detail work remains. Decide in advance what the freed hours are for."
+      },
+      {
+        "q": "Does the robot replace the final inspection?",
+        "a": "No. Somebody has to look at the floor and decide it is clean, which is the product the client pays for."
+      }
+    ],
+    "source": "robotist editorial",
+    "sourcePost": "",
+    "status": "draft",
+    "draftedAt": "2026-11-03T13:00:00Z",
+    "publishedAt": null,
+    "dateModified": "2026-11-03T13:00:00Z",
+    "content": "<p class=\"lede\">The honest version of automation is not a robot that cleans a building. It is a robot that removes the walking from cleaning, and leaves every decision exactly where it was.</p>\n\n<div class=\"callout\">\n  <div class=\"callout-title\">THE DIVIDING LINE</div>\n  <p>Coverage is machine work. Judgement is human work. Almost every disappointment comes from moving something across that line by accident.</p>\n</div>\n\n<h2>What the machine takes</h2>\n<p>Long, repeated, geometric passes over regular floor. That is what a mapped route is good at, and it is also the most tiring part of a night shift: hours of pushing a scrubber up and down a corridor that looks the same at 1am as it did at midnight.</p>\n<p>Taking that away is not a small thing. It changes how a shift feels, and it changes what a team can be asked to do with the hours it gets back.</p>\n\n<h2>What it cannot take</h2>\n<p><strong>Edges and vertical surfaces.</strong> Skirting, door frames, the last ten centimetres along a wall, glass, stainless steel, toilets, basins.</p>\n<p><strong>Anything unpredictable.</strong> A spill, a broken glass, a leaking bin, a guest who was sick in a lift lobby. The machine will drive around it or stop; it will not decide what to do.</p>\n<p><strong>The inspection.</strong> Somebody has to look at the floor and decide it is clean. That judgement is the product the client is paying for, and it does not transfer to software.</p>\n\n<figure>\n  <img src=\"/robots-cut/gausium_phantas.webp\" alt=\"Gausium Phantas working a commercial floor\" style=\"max-width:300px;display:block;margin:0 auto;\">\n  <figcaption>The machine covers the open floor. The person covers what the map cannot describe.</figcaption>\n</figure>\n\n<h2>What changes for the team</h2>\n<table>\n  <thead><tr><th>Before</th><th>After</th></tr></thead>\n  <tbody>\n    <tr><td>Six hours of pushing a scrubber</td><td>Six hours of edges, detail, spills and checks</td></tr>\n    <tr><td>Coverage decided by how fast people walk</td><td>Coverage decided by the map, checked by a person</td></tr>\n    <tr><td>Quality judged by feel</td><td>Quality judged against a report and a walk-through</td></tr>\n    <tr><td>One person knows the building</td><td>The map knows the building; the person still knows the exceptions</td></tr>\n  </tbody>\n</table>\n\n<h2>The question to ask before buying</h2>\n<p>If the machine does the walking, what will the people do with the hours? Sites that answer that question clearly get a better result than sites that answer it with a headcount reduction. The second answer usually returns a month later as a quality complaint.</p>\n\n<ul class=\"checklist\">\n  <li>Write down the split of machine work and human work before the trial</li>\n  <li>Name the person who checks the result each morning</li>\n  <li>Decide in advance what happens to the hours the robot frees</li>\n</ul>\n\n<p>The machines we sell make that split visible: <a href=\"/products/gausium-phantas\">Gausium Phantas</a> for lobbies and corridors, <a href=\"/products/keenon-c40-p1\">Keenon C40-P1</a> where one unit has to cover sweep and scrub across a mixed floor.</p>\n\n<div class=\"cta-block\">\n  <p>Ask us which parts of your building a robot should never touch. We will answer before we quote.</p>\n</div>",
+    "targetQuery": "robots that clean",
+    "pillar": "clean"
+  },
+  {
+    "slug": "humanoid-robot-research-projects",
+    "title": "Humanoid Robot Research: Six Projects One Platform Unlocks",
+    "excerpt": "Six research projects a single humanoid platform can carry, from bipedal locomotion to data collection and undergraduate teaching.",
+    "category": "Research",
+    "date": "2026-11-03",
+    "readTime": "3 min",
+    "coverUrl": "blog/covers/humanoid-robot-research-projects.jpg",
+    "keywords": [
+      "humanoid robot research",
+      "humanoid research platform",
+      "robotics lab projects"
+    ],
+    "seoTitle": "Humanoid Robot Research",
+    "metaDescription": "Six research projects one humanoid platform can carry: locomotion, manipulation, interaction, teleoperation, teaching, demonstration.",
+    "faq": [
+      {
+        "q": "Which platform suits locomotion research?",
+        "a": "One with joint-level control, torque feedback and ROS2 support, such as LimX OLI with 33 degrees of freedom."
+      },
+      {
+        "q": "Do I need dexterous hands for manipulation work?",
+        "a": "If the study involves real objects rather than foam blocks, hand degrees of freedom and grip force control decide what is possible."
+      },
+      {
+        "q": "Can one robot serve teaching and research?",
+        "a": "Sometimes, but teaching needs repairability and documentation while research needs payload and logging. They pull in different directions."
+      }
+    ],
+    "source": "robotist editorial",
+    "sourcePost": "",
+    "status": "draft",
+    "draftedAt": "2026-11-03T13:00:00Z",
+    "publishedAt": null,
+    "dateModified": "2026-11-03T13:00:00Z",
+    "content": "<p class=\"lede\">A humanoid in a lab is a research instrument, and instruments are judged by the questions they let you ask. Here are six that a single platform can carry from a first semester to a published result.</p>\n\n<div class=\"callout\">\n  <div class=\"callout-title\">PICK THE PROJECT FIRST</div>\n  <p>The project decides the degrees of freedom, the SDK and the payload. Choosing the robot first is how labs end up with an expensive demonstration.</p>\n</div>\n\n<h2>1. Bipedal locomotion and balance</h2>\n<p>Walking is still an open problem. A platform with exposed joint control and honest torque feedback lets a student work on gait generation, push recovery and terrain handling — published work that does not depend on the vendor's own controller.</p>\n<p>The LimX OLI is the clearest fit here: 33 degrees of freedom, ROS2 support and an NVIDIA Orin NX onboard, which means the perception stack runs on the machine rather than on a laptop on a trolley.</p>\n\n<h2>2. Manipulation with real objects</h2>\n<p>Hands decide this project. Degrees of freedom in the hand, grip force control and the ability to hold something that is not a foam block are the difference between a demonstration and a study. Systems with 41 degrees of freedom and five-finger hands, such as ADAM PRO, exist for exactly this work.</p>\n\n<h2>3. Human-robot interaction</h2>\n<p>This is where the body matters more than the brain. A full-size platform with a face, a voice and predictable movement around untrained people supports studies that a tabletop arm cannot — proxemics, trust, response to failure, and what people do when a robot hesitates.</p>\n\n<h2>4. Teleoperation and data collection</h2>\n<p>Every embodied AI project eventually needs demonstrations. A platform with motion capture, kinesthetic teaching or a video-to-motion toolchain turns a person's movement into training data, and that dataset becomes the lab's asset.</p>\n\n<h2>5. Teaching a cohort</h2>\n<p>Undergraduate teaching has a different constraint: the machine has to survive being used badly. Repairability, documentation and the availability of spares matter more than peak performance, which is why education-specific units exist alongside research platforms.</p>\n\n<h2>6. Public demonstration and recruitment</h2>\n<p>A humanoid that works in front of an audience brings students, industry partners and media. It is a legitimate reason to buy — as long as the platform doing the demonstrating is the same one doing the research, and not a stage prop with a different stack.</p>\n\n<figure>\n  <img src=\"/robots-cut/limx_oli.webp\" alt=\"LimX OLI humanoid robot\" style=\"max-width:280px;display:block;margin:0 auto;\">\n  <figcaption>LimX OLI: 33 degrees of freedom, ROS2, Orin NX onboard. The research default in this range.</figcaption>\n</figure>\n\n<table>\n  <thead><tr><th>Project</th><th>What the platform must expose</th></tr></thead>\n  <tbody>\n    <tr><td>Locomotion</td><td>Joint-level control, torque feedback, IMU access</td></tr>\n    <tr><td>Manipulation</td><td>Dexterous hands, grip force, wrist compliance</td></tr>\n    <tr><td>Interaction</td><td>Face or voice, safe speed limits, force sensing</td></tr>\n    <tr><td>Data collection</td><td>Teleop or mocap, timestamped sensor streams</td></tr>\n    <tr><td>Teaching</td><td>Documentation, spares, repairable joints</td></tr>\n  </tbody>\n</table>\n\n<p>Two platforms cover most of this list for us: <a href=\"/products/limx-oli\">LimX OLI</a> for locomotion and ROS2 development, and <a href=\"/products/pndbotics-adam\">ADAM PRO</a> where the work is manipulation-heavy.</p>\n\n<div class=\"cta-block\">\n  <p>Tell us the paper you are trying to write. We will tell you which platform gives you the data for it.</p>\n</div>",
+    "targetQuery": "humanoid robot research",
+    "pillar": "humanoid"
+  },
+  {
+    "slug": "human-robot-interaction-research",
+    "title": "Human Robot Interaction Research: Design the Study Before the Robot",
+    "excerpt": "Human-robot interaction studies fail on protocol, environment and logging long before they fail on hardware. Design those first.",
+    "category": "Research",
+    "date": "2026-11-03",
+    "readTime": "3 min",
+    "coverUrl": "blog/covers/human-robot-interaction-research.jpg",
+    "keywords": [
+      "human robot interaction research",
+      "hri study design",
+      "social robotics research"
+    ],
+    "seoTitle": "Human Robot Interaction Research",
+    "metaDescription": "Human-robot interaction studies fail on protocol, environment and logging before hardware. What the platform must expose, and why.",
+    "faq": [
+      {
+        "q": "What must the robot log for an HRI study?",
+        "a": "Timestamped movement, distance to the participant, speech events and failures, exportable without a researcher holding a stopwatch."
+      },
+      {
+        "q": "Why does the room matter?",
+        "a": "Because the setting often explains more variance than the condition being tested. Fix it, or control for it explicitly."
+      },
+      {
+        "q": "Is safety part of the protocol?",
+        "a": "Yes. Speed limits, a defined operating envelope and a stop procedure a participant can use without training."
+      }
+    ],
+    "source": "robotist editorial",
+    "sourcePost": "",
+    "status": "draft",
+    "draftedAt": "2026-11-03T13:00:00Z",
+    "publishedAt": null,
+    "dateModified": "2026-11-03T13:00:00Z",
+    "content": "<p class=\"lede\">Human-robot interaction studies fail for reasons that have nothing to do with the robot: an unclear protocol, an environment that changes between sessions, and a platform that cannot log what actually happened.</p>\n\n<div class=\"callout\">\n  <div class=\"callout-title\">DESIGN THE STUDY FIRST</div>\n  <p>Write the protocol, the measures and the consent process before the platform shortlist. The hardware requirement falls out of those three documents.</p>\n</div>\n\n<h2>What the platform has to expose</h2>\n<p>An HRI study needs a record: when the robot moved, how close it came, what it said, how the participant responded, and what failed. If the platform cannot export a timestamped log, the study depends on a researcher with a stopwatch and a video nobody can align.</p>\n<p>Ask for the log format before purchase. Ask whether sensor streams can be recorded alongside the robot's own state.</p>\n\n<h2>The environment is a variable</h2>\n<p>Run sessions in the same room, at the same noise level, with the same lighting, or treat the room as a variable and control for it. Labs that move between a corridor, a lounge and a foyer discover halfway through that the setting explains more variance than the condition they are testing.</p>\n<p>Population matters too. Staff and students who see the robot daily stop reacting to it. Recruit participants who have not met it before, and say so in the method.</p>\n\n<h2>Safety is part of the protocol</h2>\n<p>A full-size humanoid moving near untrained volunteers needs speed limits, a defined operating envelope and a stop procedure that a participant can execute without training. That is a design requirement, not a disclaimer.</p>\n\n<table>\n  <thead><tr><th>Study element</th><th>What it needs from the robot</th></tr></thead>\n  <tbody>\n    <tr><td>Proxemics</td><td>Controlled approach speed, distance logging</td></tr>\n    <tr><td>Trust after failure</td><td>Reproducible failure modes, honest error states</td></tr>\n    <tr><td>Gaze and attention</td><td>Head and eye control, expression layer</td></tr>\n    <tr><td>Voice interaction</td><td>Open audio pipeline, no locked cloud dependency</td></tr>\n    <tr><td>Longitudinal exposure</td><td>Runtime, charging, and a robot that behaves the same in week eight</td></tr>\n  </tbody>\n</table>\n\n<figure>\n  <img src=\"/robots-cut/fourier_gr3_upscale.webp\" alt=\"Fourier GR-3 humanoid robot\" style=\"max-width:280px;display:block;margin:0 auto;\">\n  <figcaption>The Fourier GR-3 carries an expression layer and 55 degrees of freedom; it exists for studies where the participant's response to the body is the measurement.</figcaption>\n</figure>\n\n<h2>Before you book the first session</h2>\n<ul class=\"checklist\">\n  <li>Protocol and measures written and reviewed</li>\n  <li>Consent, withdrawal and data handling approved by the ethics committee</li>\n  <li>One pilot session with a colleague, timed end to end</li>\n  <li>Log export tested and read by someone who did not write it</li>\n  <li>A plan for the session where the robot does something unexpected</li>\n</ul>\n\n<p>Where the study is about response rather than motion, the <a href=\"/products/fourier-gr-3\">Fourier GR-3</a> is built for it. Where the study is about interaction during movement, the <a href=\"/products/luna-limx\">LimX LUNA</a> pairs an expressive body with the tooling to script behaviour quickly.</p>\n\n<div class=\"cta-block\">\n  <p>Send the protocol. We will tell you what the platform cannot log before your ethics submission, not after.</p>\n</div>",
+    "targetQuery": "human robot interaction research",
+    "pillar": "humanoid"
+  },
+  {
+    "slug": "cost-to-build-a-humanoid-robot",
+    "title": "How Much Does It Cost to Build a Humanoid Robot",
+    "excerpt": "The parts of a humanoid are purchasable. The integration is the year nobody budgets, and it is where most build projects die.",
+    "category": "Research",
+    "date": "2026-11-03",
+    "readTime": "3 min",
+    "coverUrl": "blog/covers/cost-to-build-a-humanoid-robot.jpg",
+    "keywords": [
+      "cost to build a humanoid robot",
+      "humanoid development",
+      "build vs buy robot"
+    ],
+    "seoTitle": "How Much Does It Cost To Build A Humanoid Robot",
+    "metaDescription": "Building a humanoid: where the money goes, why integration is the real cost, and when building is still the right answer.",
+    "faq": [
+      {
+        "q": "Is building cheaper than buying?",
+        "a": "Rarely. The bill of materials is the small half; integration, team time and spares run for years."
+      },
+      {
+        "q": "When is building the right choice?",
+        "a": "When the research contribution is the mechanism itself — a new actuator, hand or structure that nobody sells."
+      },
+      {
+        "q": "What does buying remove?",
+        "a": "Body engineering. The lab still builds applications, but the first result arrives in months rather than years."
+      }
+    ],
+    "source": "robotist editorial",
+    "sourcePost": "",
+    "status": "draft",
+    "draftedAt": "2026-11-03T13:00:00Z",
+    "publishedAt": null,
+    "dateModified": "2026-11-03T13:00:00Z",
+    "content": "<p class=\"lede\">Building a humanoid is a procurement problem disguised as an engineering project. The parts are purchasable. The integration is the part that eats a year.</p>\n\n<div class=\"callout\">\n  <div class=\"callout-title\">WHERE THE MONEY GOES</div>\n  <p>Actuators, hands, batteries, structure, sensors — then a team of people for as long as it takes to make them work together.</p>\n</div>\n\n<h2>The bill of materials is the small half</h2>\n<p>A full-size humanoid needs high-torque actuators at every joint, a battery pack that can deliver bursts without sagging, hands that can grip without crushing, and a structure stiff enough that the control loop is fighting the world rather than the frame. Each of those is a specialist purchase with its own lead time.</p>\n<p>Then the parts arrive and the real work starts: the actuator controllers have to talk to the motion stack, the sensors have to be time-aligned, the thermal design has to survive a continuous run, and the safety case has to satisfy whoever owns the building.</p>\n\n<h2>What a commercial platform gives you that a build does not</h2>\n<ul class=\"checklist\">\n  <li>A control stack that already runs a walking gait</li>\n  <li>Spare parts with a part number and a lead time</li>\n  <li>A safety design with an emergency stop that has been tested</li>\n  <li>A warranty and someone to call</li>\n  <li>Documentation written for people who did not build it</li>\n</ul>\n\n<h2>The team is the biggest line</h2>\n<p>Building a humanoid means hiring, or borrowing, mechanical, electrical, firmware and controls engineers at once. That team has to stay together through the integration phase, which is the least rewarding part of the project and the easiest place for a grant cycle to end.</p>\n<p>Buying does not remove engineering. It moves it: instead of building a body, the lab builds applications on top of one, and the first result arrives in months rather than years.</p>\n\n<table>\n  <thead><tr><th>Decision</th><th>Build</th><th>Buy</th></tr></thead>\n  <tbody>\n    <tr><td>Time to first experiment</td><td>Long: integration first</td><td>Short: commissioning first</td></tr>\n    <tr><td>Team needed</td><td>Mechanical, electrical, controls, firmware</td><td>Software and research</td></tr>\n    <tr><td>Spares</td><td>Fabricate or re-source</td><td>Order by part number</td></tr>\n    <tr><td>Differentiation</td><td>High: you own the body</td><td>Lower: shared platform</td></tr>\n    <tr><td>Risk</td><td>Concentrated in integration</td><td>Concentrated in the vendor</td></tr>\n  </tbody>\n</table>\n\n<figure>\n  <img src=\"/robots-cut/pnd_robotics_adam.webp\" alt=\"PNDbotics ADAM PRO humanoid robot\" style=\"max-width:280px;display:block;margin:0 auto;\">\n  <figcaption>ADAM PRO: 41 degrees of freedom, modular actuators, integrated motion capture. The kind of machine a build project is trying to reach.</figcaption>\n</figure>\n\n<h2>When building is still the right answer</h2>\n<p>When the research contribution is the mechanism itself — a new actuator, a novel hand, a structural approach nobody sells — building is the point, and buying would remove the contribution. For every other lab, buying moves the contribution to where it can be published.</p>\n\n<p>If the goal is embodied AI rather than mechanism design, start with a platform: <a href=\"/products/pndbotics-adam\">ADAM PRO</a> for manipulation-heavy work, or <a href=\"/products/magiclab-magicbot-g1\">MagicLab MagicBot G1</a> as a general-purpose body.</p>\n\n<div class=\"cta-block\">\n  <p>Tell us what your contribution is meant to be. If it is not the mechanism, we will say so plainly.</p>\n</div>",
+    "targetQuery": "how much does it cost to build a humanoid robot",
+    "pillar": "humanoid"
+  },
+  {
+    "slug": "humanoid-robot-examples",
+    "title": "Humanoid Robot Examples: What Each One Is Actually For",
+    "excerpt": "A roll call of humanoids is useless. What each machine is for, from locomotion research to care studies and public performance.",
+    "category": "Research",
+    "date": "2026-11-03",
+    "readTime": "3 min",
+    "coverUrl": "blog/covers/humanoid-robot-examples.jpg",
+    "keywords": [
+      "humanoid robot examples",
+      "humanoid robots list",
+      "humanoid robot types"
+    ],
+    "seoTitle": "Humanoid Robot Examples",
+    "metaDescription": "What each humanoid is actually for: research platforms, care robots, performance units and wheeled humanoids for logistics.",
+    "faq": [
+      {
+        "q": "Is a wheeled humanoid still a humanoid?",
+        "a": "Yes — the upper body is humanoid and the base is wheeled. On flat floors it is often the better engineering decision."
+      },
+      {
+        "q": "Which humanoid is best for care research?",
+        "a": "One built for it, with an expression layer and dexterous hands, such as the Fourier GR-3."
+      },
+      {
+        "q": "Why are performance robots cheaper?",
+        "a": "They need expressive motion and choreography tooling, not joint-level research control or payload capacity."
+      }
+    ],
+    "source": "robotist editorial",
+    "sourcePost": "",
+    "status": "draft",
+    "draftedAt": "2026-11-03T13:00:00Z",
+    "publishedAt": null,
+    "dateModified": "2026-11-03T13:00:00Z",
+    "content": "<p class=\"lede\">Most \"humanoid robot\" lists are a roll call of the same five names. The useful question is narrower: what is this specific machine for, and what would you do with it on Monday morning.</p>\n\n<div class=\"callout\">\n  <div class=\"callout-title\">THE PATTERN</div>\n  <p>Purpose follows the body. A performance robot is not a research platform, and a care robot is not a demonstration unit, whatever the brochure implies.</p>\n</div>\n\n<h2>Research and locomotion</h2>\n<p>The <strong>LimX OLI</strong> is purpose-built for robotics research: 33 degrees of freedom, ROS2, and an NVIDIA Orin NX onboard so perception runs on the robot. It is the machine a lab buys when the contribution is about walking, control or embodied AI.</p>\n<p>The <strong>ADAM U</strong> and <strong>ADAM PRO</strong> sit in the same territory with more degrees of freedom and five-finger hands — the difference being how much manipulation the study needs.</p>\n\n<h2>Performance and public-facing work</h2>\n<p>The <strong>LimX LUNA</strong> is 160 cm with 27 degrees of freedom and tooling for choreography: an AI task editor, video-to-motion, kinesthetic teaching and preloaded routines. That is not a research stack. It is a machine for malls, attractions and trade shows where the deliverable is a crowd.</p>\n<p>The <strong>AGIBOT X2 Ultra</strong> occupies the compact end of the same idea — a smaller body for prototyping, demonstrations and early interaction work.</p>\n\n<h2>Care and companionship</h2>\n<p>The <strong>Fourier GR-3</strong> is a care robot: 55 degrees of freedom including dexterous hands, an emotion engine and micro-expression recognition, aimed at hospitals and aged care. Its purpose is the participant's response, not locomotion research.</p>\n<p>The <strong>DroidUp Moya</strong> takes the same premise further into expressiveness — a bionic companion platform for exhibitions and social interaction.</p>\n\n<figure>\n  <img src=\"/robots-cut/unix_panther.webp\" alt=\"UniX AI Panther humanoid robot\" style=\"max-width:260px;display:block;margin:0 auto;\">\n  <figcaption>UniX AI Panther: a wheeled humanoid aimed at logistics and service work, where rolling beats walking on a flat floor.</figcaption>\n</figure>\n\n<h2>The category people leave out</h2>\n<p>Not every service humanoid walks. The <strong>UniX AI Panther</strong> and <strong>Wanda 2.0</strong> use a wheeled base under a humanoid upper body, which is a deliberate trade: stable platform, longer runtime, and manipulation where it is needed. On a flat warehouse or retail floor that is often the better engineering decision, and it costs less complexity than a biped.</p>\n\n<table>\n  <thead><tr><th>Machine</th><th>Form</th><th>What it is for</th></tr></thead>\n  <tbody>\n    <tr><td>LimX OLI</td><td>Biped, 33 DOF</td><td>Locomotion and ROS2 research</td></tr>\n    <tr><td>LimX LUNA</td><td>Biped, 160 cm, 27 DOF</td><td>Performance, events, interaction at scale</td></tr>\n    <tr><td>ADAM PRO</td><td>Biped, 41 DOF</td><td>Manipulation research and industrial work</td></tr>\n    <tr><td>Fourier GR-3</td><td>Biped, 55 DOF</td><td>Care and companionship studies</td></tr>\n    <tr><td>AGIBOT X2 Ultra</td><td>Compact biped</td><td>Prototyping, demonstrations</td></tr>\n    <tr><td>UniX AI Panther</td><td>Wheeled humanoid</td><td>Logistics, service, industrial automation</td></tr>\n  </tbody>\n</table>\n\n<p>We stock all of these, which means we have no reason to push one. Tell us the job and we will name the machine — including the ones that are wrong for it. Two starting points: <a href=\"/products/limx-oli\">LimX OLI</a> for locomotion research and <a href=\"/products/fourier-gr-3\">Fourier GR-3</a> where the participant's response is the measurement.</p>\n\n<div class=\"cta-block\">\n  <p>The right question is never which humanoid is best. It is which humanoid is right for the thing you are actually doing.</p>\n</div>",
+    "targetQuery": "humanoid robot examples",
+    "pillar": "humanoid"
+  },
+  {
+    "slug": "humanoid-robot-jobs",
+    "title": "Humanoid Robot Jobs: Roles That Appear After Deployment",
+    "excerpt": "A humanoid creates four roles: operator, maintainer, data steward and safety lead. Sites that skip naming them switch the robot off.",
+    "category": "Deployment",
+    "date": "2026-11-03",
+    "readTime": "3 min",
+    "coverUrl": "blog/covers/humanoid-robot-jobs.jpg",
+    "keywords": [
+      "humanoid robot jobs",
+      "robot operator role",
+      "robot deployment roles"
+    ],
+    "seoTitle": "Humanoid Robot Jobs",
+    "metaDescription": "A humanoid creates four roles: operator, maintainer, data steward and safety lead. Name them before the machine arrives.",
+    "faq": [
+      {
+        "q": "Who operates a humanoid day to day?",
+        "a": "Usually an existing team member with an added duty. The failure mode is nobody being formally responsible."
+      },
+      {
+        "q": "What does a data steward do?",
+        "a": "Decides what the robot records, how long it is kept, who can see it, and what happens when a camera captures a customer."
+      },
+      {
+        "q": "Why train two people?",
+        "a": "Because one trained operator means the robot idles whenever that person is on leave."
+      }
+    ],
+    "source": "robotist editorial",
+    "sourcePost": "",
+    "status": "draft",
+    "draftedAt": "2026-11-03T13:00:00Z",
+    "publishedAt": null,
+    "dateModified": "2026-11-03T13:00:00Z",
+    "content": "<p class=\"lede\">A humanoid does not arrive and start working. It arrives and creates work: operators, maintainers, data handlers and a safety role that did not exist in the job description last year.</p>\n\n<div class=\"callout\">\n  <div class=\"callout-title\">THE SHIFT</div>\n  <p>Automation moves jobs from doing to supervising, and supervision is a skill that has to be trained rather than assumed.</p>\n</div>\n\n<h2>The operator</h2>\n<p>Someone has to start the round, watch the first ten minutes, respond when the machine stops, and decide whether the stop is a fault or a floor hazard. In practice this is an existing team member with an added duty, and the failure mode is that nobody is formally responsible for it.</p>\n\n<h2>The maintainer</h2>\n<p>Batteries age, joints wear, sensors drift out of calibration. A humanoid fleet needs someone who can read a fault log, replace a module and know when to escalate. On single-unit sites this is usually a technician with training from the vendor; on multi-site deployments it becomes a role.</p>\n\n<h2>The data steward</h2>\n<p>Robots produce logs, images and sensor streams. Someone has to decide what is kept, for how long, who can see it, and what happens when a camera records a customer. That is a governance job, and it lands on whoever owns privacy in the organisation.</p>\n\n<h2>The safety lead</h2>\n<p>A full-size machine moving near people needs a documented operating envelope, a risk assessment and a stop procedure. Regulators increasingly expect a named person behind that document, and internal auditors ask for it before insurers do.</p>\n\n<table>\n  <thead><tr><th>Role</th><th>Appears when</th><th>Usually filled by</th></tr></thead>\n  <tbody>\n    <tr><td>Operator</td><td>Day one</td><td>Existing front-line staff with added duty</td></tr>\n    <tr><td>Maintainer</td><td>First fault, or month three</td><td>Facilities technician, vendor-trained</td></tr>\n    <tr><td>Data steward</td><td>Before the first camera goes live</td><td>Privacy or IT owner</td></tr>\n    <tr><td>Safety lead</td><td>Before the first public deployment</td><td>Operations manager or WHS officer</td></tr>\n  </tbody>\n</table>\n\n<figure>\n  <img src=\"/robots-cut/casbot_02_edu.webp\" alt=\"CASBOT 02 EDU humanoid robot\" style=\"max-width:260px;display:block;margin:0 auto;\">\n  <figcaption>Education platforms such as CASBOT 02 EDU exist partly to grow the operators and maintainers the next deployment will need.</figcaption>\n</figure>\n\n<h2>What to do before the robot arrives</h2>\n<ul class=\"checklist\">\n  <li>Name the operator in writing, with the duty in their role description</li>\n  <li>Book vendor training for at least two people, not one</li>\n  <li>Decide the data retention rule before the first recording</li>\n  <li>Write the stop procedure and rehearse it once</li>\n  <li>Agree who is called at 3am, and what they are allowed to do</li>\n</ul>\n\n<p>For sites building that capability ahead of deployment, education platforms such as <a href=\"/products/casbot-02-edu\">CASBOT 02 EDU</a> and <a href=\"/products/adam-u\">ADAM U</a> are how a team learns the stack before the operational machine lands.</p>\n\n<div class=\"cta-block\">\n  <p>Ask who does each of those four jobs on your site. If the answer is nobody, that is the finding.</p>\n</div>",
+    "targetQuery": "humanoid robot jobs",
+    "pillar": "humanoid"
+  },
+  {
+    "slug": "humanoid-robot-price-what-moves-it",
+    "title": "Humanoid Robot Price: What Moves the Number",
+    "excerpt": "A humanoid quote is a set of engineering decisions with a number attached: degrees of freedom, hands, battery, sensors and support.",
+    "category": "Research",
+    "date": "2026-11-03",
+    "readTime": "3 min",
+    "coverUrl": "blog/covers/humanoid-robot-price-what-moves-it.jpg",
+    "keywords": [
+      "humanoid robot price",
+      "humanoid robot cost",
+      "humanoid quote"
+    ],
+    "seoTitle": "Humanoid Robot Price",
+    "metaDescription": "What moves a humanoid quote: degrees of freedom, dexterous hands, battery sizing, sensor payload and the support tier.",
+    "faq": [
+      {
+        "q": "What is the largest cost step after the body?",
+        "a": "Dexterous hands with force control. A gripper picks up a box; a hand picks up a cup."
+      },
+      {
+        "q": "Does more degrees of freedom always cost more?",
+        "a": "Yes — every joint is an actuator, a controller and calibration time, and more joints mean more to maintain."
+      },
+      {
+        "q": "How do I compare two quotes honestly?",
+        "a": "Compare commissioning, training, spare parts stock, response time and warranty exclusions, not just the headline figure."
+      }
+    ],
+    "source": "robotist editorial",
+    "sourcePost": "",
+    "status": "draft",
+    "draftedAt": "2026-11-03T13:00:00Z",
+    "publishedAt": null,
+    "dateModified": "2026-11-03T13:00:00Z",
+    "content": "<p class=\"lede\">A humanoid quote is not a price. It is a set of engineering decisions with a number attached, and understanding the decisions is the only way to compare two quotes honestly.</p>\n\n<div class=\"callout\">\n  <div class=\"callout-title\">WHAT MOVES THE NUMBER</div>\n  <p>Degrees of freedom, hands, battery, sensors, and what the vendor promises after delivery.</p>\n</div>\n\n<h2>Degrees of freedom, and where they are</h2>\n<p>Every joint is an actuator, a controller and a calibration. A 27-degree performance robot and a 55-degree care robot are not in the same cost class because of what the extra joints do, not because one is better built.</p>\n<p>Ask which joints exist. Arms and legs are the visible ones; hands are where the price climbs fastest, because a five-finger hand with force control costs more than several limbs.</p>\n\n<h2>Hands decide the work</h2>\n<p>A gripper can pick up a box. A dexterous hand can pick up a cup. If the research or the deployment needs the second, the hand specification drives the quote more than the body does.</p>\n\n<h2>Battery, and the cost of running</h2>\n<p>A battery pack sized for continuous operation costs more than one sized for a demonstration, and it ages regardless of use. Ask the replacement interval and the cost of the pack, because it recurs.</p>\n\n<h2>What the vendor promises after delivery</h2>\n<p>Commissioning on site, training, spare parts stock, response time and warranty exclusions are all priced somewhere. A quote that is lower and silent on those four points is not lower; it is incomplete.</p>\n\n<table>\n  <thead><tr><th>Decision</th><th>Effect on the quote</th></tr></thead>\n  <tbody>\n    <tr><td>Degrees of freedom</td><td>More joints, more actuators, more calibration time</td></tr>\n    <tr><td>Dexterous hands</td><td>The single largest step in cost after the body</td></tr>\n    <tr><td>Battery and runtime</td><td>Higher up front, lower per year if sized correctly</td></tr>\n    <tr><td>Sensor payload</td><td>Adds cost and adds weight, which adds actuator cost</td></tr>\n    <tr><td>Support tier</td><td>Converts a capital question into an annual one</td></tr>\n  </tbody>\n</table>\n\n<figure>\n  <img src=\"/robots-cut/adam_u.webp\" alt=\"ADAM U humanoid robot\" style=\"max-width:260px;display:block;margin:0 auto;\">\n  <figcaption>ADAM U is a full-size research platform: the cost sits in the body and the control stack, not in a hand option.</figcaption>\n</figure>\n\n<h2>The three questions that shrink a quote</h2>\n<ul class=\"checklist\">\n  <li>Which joints does the study actually use, and can we buy fewer</li>\n  <li>Does the work need dexterous hands or a gripper</li>\n  <li>What support tier do we genuinely need in year two</li>\n</ul>\n\n<p>We quote <a href=\"/products/adam-u\">ADAM U</a> and <a href=\"/products/agibot-x2\">AGIBOT X2 Ultra</a> on opposite ends of this ladder, and we will tell you when the cheaper one does the job — which is more often than most quote requests assume.</p>\n\n<div class=\"cta-block\">\n  <p>Send the use case, not the wishlist. The number follows the decisions, and we can name them one by one.</p>\n</div>",
+    "targetQuery": "humanoid robot price",
+    "pillar": "humanoid"
+  },
+  {
+    "slug": "quadruped-robot-dog-models",
+    "title": "Quadruped Robot Dog: Six Models and Who Each One Suits",
+    "excerpt": "Six quadrupeds, and the honest answer for each is a type of buyer rather than a list of specifications.",
+    "category": "Deployment",
+    "date": "2026-11-03",
+    "readTime": "3 min",
+    "coverUrl": "blog/covers/quadruped-robot-dog-models.jpg",
+    "keywords": [
+      "quadruped robot dog",
+      "quadruped robot models",
+      "robot dog comparison"
+    ],
+    "seoTitle": "Quadruped Robot Dog",
+    "metaDescription": "Six quadruped models and who each one actually suits: education kits, research units and industrial inspection machines.",
+    "faq": [
+      {
+        "q": "Which quadruped suits teaching?",
+        "a": "An education class unit such as MagicDog, AGIBOT D1 EDU or Genisom L1 EDU, chosen for documentation and repairability."
+      },
+      {
+        "q": "Which suits a night patrol?",
+        "a": "An industrial unit with payload, runtime and ingress protection, such as MagicDog Y1 or Genisom M1."
+      },
+      {
+        "q": "What separates the classes in practice?",
+        "a": "Payload, runtime, environmental sealing, spares and support — not the leg mechanism itself."
+      }
+    ],
+    "source": "robotist editorial",
+    "sourcePost": "",
+    "status": "draft",
+    "draftedAt": "2026-11-03T13:00:00Z",
+    "publishedAt": null,
+    "dateModified": "2026-11-03T13:00:00Z",
+    "content": "<p class=\"lede\">Quadrupeds look alike in a video and differ enormously in a spreadsheet. Six models, and the honest answer for each is a type of buyer rather than a list of specifications.</p>\n\n<div class=\"callout\">\n  <div class=\"callout-title\">HOW TO READ THIS</div>\n  <p>Nobody buys a quadruped for its gait. They buy it for the payload it carries, the ground it crosses, and who has to keep it running.</p>\n</div>\n\n<h2>The education end</h2>\n<p>The <strong>MagicLab MagicDog</strong> is the entry point: a small quadruped for teaching, STEM programs and hobbyist work, where the value is an open platform a student can program and repair. The <strong>AGIBOT D1 EDU</strong> and <strong>Genisom L1 EDU</strong> occupy the same space with more documentation and a support structure behind them.</p>\n<p>Buy this class when the objective is learning. Do not buy it for a security round; it will not carry the sensors or last the night.</p>\n\n<h2>The industrial end</h2>\n<p>The <strong>MagicLab MagicDog Y1</strong> is built for inspection and patrol: payload capacity, runtime and a body intended to work outside a lab. The <strong>Genisom M1</strong> targets security patrol and site monitoring, with the integration work that implies.</p>\n<p>This class is bought by facilities and security teams, and the decisive questions are about support and spares rather than peak performance.</p>\n\n<h2>The research middle</h2>\n<p>Between them sit platforms bought by universities that need a real payload and a real SDK without an industrial support contract. That is where most labs land, and where the specification conversation is longest.</p>\n\n<table>\n  <thead><tr><th>Model</th><th>Class</th><th>Built for</th></tr></thead>\n  <tbody>\n    <tr><td>MagicLab MagicDog</td><td>Education</td><td>Teaching, STEM, hobbyist projects</td></tr>\n    <tr><td>AGIBOT D1 EDU</td><td>Education</td><td>Courses and lab work with documentation</td></tr>\n    <tr><td>Genisom L1 / L1 EDU</td><td>Education, research</td><td>Teaching and research labs</td></tr>\n    <tr><td>MagicLab MagicDog Y1</td><td>Industrial</td><td>Inspection and patrol rounds</td></tr>\n    <tr><td>Genisom M1</td><td>Industrial</td><td>Security patrol and site monitoring</td></tr>\n  </tbody>\n</table>\n\n<figure>\n  <img src=\"/robots-cut/magiclab_magicdog_y1.webp\" alt=\"MagicLab MagicDog Y1 quadruped robot\" style=\"max-width:340px;display:block;margin:0 auto;\">\n  <figcaption>MagicDog Y1 sits at the industrial end: payload, runtime and a body meant to work a night round.</figcaption>\n</figure>\n\n<h2>What separates the classes in practice</h2>\n<ul class=\"checklist\">\n  <li>Payload: a camera versus a camera, thermal and additional compute</li>\n  <li>Runtime: a demonstration versus a two-hour round</li>\n  <li>Ingress protection: a corridor versus a loading dock</li>\n  <li>Support: documentation versus a service response</li>\n  <li>Spares: order by part number, or fabricate</li>\n</ul>\n\n<p>We stock <a href=\"/products/magiclab-magicdog-y1\">MagicDog Y1</a> for inspection work and <a href=\"/products/magiclab-magicdog\">MagicDog</a> for teaching, and we will say when the cheaper one is the honest recommendation.</p>\n\n<h2>What the class does not tell you</h2>\n<p>Within a class, models still differ in ways that only surface in use: how the SDK is documented, whether the battery is swappable, how the machine behaves on a wet ramp, and whether the vendor answers a support email in a day or a fortnight.</p>\n<p>Ask each vendor for the same three things — a sample API call, a spare parts list, and the name of a customer running the same model — and compare those, not the marketing pages.</p>\n\n<div class=\"cta-block\">\n  <p>Tell us what the robot has to carry and where it has to walk. The class follows from those two answers.</p>\n</div>",
+    "targetQuery": "quadruped robot dog",
+    "pillar": "quadruped"
+  },
+  {
+    "slug": "quadruped-robot-kit-teaching-research",
+    "title": "Quadruped Robot Kit: Teaching vs Research Buying",
+    "excerpt": "A quadruped for a classroom and one for a research group diverge in week six, when something breaks and a course is waiting.",
+    "category": "Research",
+    "date": "2026-11-03",
+    "readTime": "3 min",
+    "coverUrl": "blog/covers/quadruped-robot-kit-teaching-research.jpg",
+    "keywords": [
+      "quadruped robot kit",
+      "robot dog education",
+      "quadruped research platform"
+    ],
+    "seoTitle": "Quadruped Robot Kit",
+    "metaDescription": "Teaching needs repairability and documentation; research needs an SDK and payload. Buying one class for the other is the common mistake.",
+    "faq": [
+      {
+        "q": "What matters most for a classroom robot?",
+        "a": "Repairability and documentation, plus parts on the shelf so a fault does not stop a semester."
+      },
+      {
+        "q": "What matters most for research?",
+        "a": "Payload for the sensors the study needs, an open control interface and logging fast enough for analysis."
+      },
+      {
+        "q": "How many units does a class need?",
+        "a": "One per class or a shared pool is workable, as long as the exercises are designed around availability."
+      }
+    ],
+    "source": "robotist editorial",
+    "sourcePost": "",
+    "status": "draft",
+    "draftedAt": "2026-11-03T13:00:00Z",
+    "publishedAt": null,
+    "dateModified": "2026-11-03T13:00:00Z",
+    "content": "<p class=\"lede\">A quadruped kit bought for a classroom and one bought for a research group look similar in a catalogue and behave completely differently in week six, when something breaks and a course is waiting.</p>\n\n<div class=\"callout\">\n  <div class=\"callout-title\">THE DIFFERENCE</div>\n  <p>Teaching needs repairability and documentation. Research needs an SDK and a payload. Buying one for the other is the most common mistake in this category.</p>\n</div>\n\n<h2>What teaching actually requires</h2>\n<p>Twenty students, one robot, a timetable. The machine has to survive being handled by people who have never touched one, and it has to be fixable by a technician without a return-to-base shipment in the middle of semester.</p>\n<p>Documentation matters more than capability: a course needs exercises that work, an SDK a student can read, and a fault that produces a message rather than a mystery.</p>\n\n<h2>What research actually requires</h2>\n<p>One robot, one question, and a need to record everything. Payload for the sensors the study needs, an open control interface, and the ability to log at a rate that makes analysis possible.</p>\n<p>Research groups often buy the education class and then discover the payload mounting and the logging rate are the limiting factors — after the grant has been spent.</p>\n\n<table>\n  <thead><tr><th>Requirement</th><th>Teaching</th><th>Research</th></tr></thead>\n  <tbody>\n    <tr><td>Repairability</td><td>Essential: parts on the shelf</td><td>Useful</td></tr>\n    <tr><td>Documentation</td><td>Essential: exercises and examples</td><td>Useful: API reference matters more</td></tr>\n    <tr><td>Payload</td><td>Minimal</td><td>Decisive</td></tr>\n    <tr><td>Logging</td><td>Nice to have</td><td>Decisive</td></tr>\n    <tr><td>Quantity</td><td>One per class, or a shared pool</td><td>One per project</td></tr>\n  </tbody>\n</table>\n\n<figure>\n  <img src=\"/robots-cut/agibot_d1.webp\" alt=\"AGIBOT D1 EDU quadruped robot\" style=\"max-width:300px;display:block;margin:0 auto;\">\n  <figcaption>AGIBOT D1 EDU: the education class, built to be taught with and repaired rather than impressed by.</figcaption>\n</figure>\n\n<h2>The questions that decide it</h2>\n<ul class=\"checklist\">\n  <li>How many students will touch it in a semester</li>\n  <li>What has to mount on it, in grams</li>\n  <li>Who repairs it when a leg actuator fails on a Tuesday</li>\n  <li>What the course needs to demonstrate by week twelve</li>\n  <li>Whether the SDK has examples a student can run unassisted</li>\n</ul>\n\n<p>For teaching we point at <a href=\"/products/agibot-d1-edu\">AGIBOT D1 EDU</a> and the <a href=\"/products/genisom-l1-edu\">Genisom L1 EDU</a>; for research with a payload, the industrial class is usually cheaper over three years than replacing education units that cannot carry the experiment.</p>\n\n<h2>The cost of getting it wrong</h2>\n<p>Buy an education unit for research and the payload limit shows up in month two, when the sensor mount does not fit and the logging rate is too slow for the analysis. Buy an industrial unit for teaching and the machine sits unused because nobody has time to learn a support contract.</p>\n<p>Both mistakes cost a full budget cycle. The cheap correction is a short conversation with the people who will actually use it, before the purchase order.</p>\n\n<div class=\"cta-block\">\n  <p>Tell us the syllabus or the study. They point at different machines, and we stock both.</p>\n</div>",
+    "targetQuery": "quadruped robot kit",
+    "pillar": "quadruped"
+  },
+  {
+    "slug": "quadruped-robot-price-decisions",
+    "title": "Quadruped Robot Price: Four Decisions That Set It",
+    "excerpt": "Four decisions set a quadruped's price: payload class, sensor load, ingress protection and support tier. Each one can be declined.",
+    "category": "Deployment",
+    "date": "2026-11-03",
+    "readTime": "3 min",
+    "coverUrl": "blog/covers/quadruped-robot-price-decisions.jpg",
+    "keywords": [
+      "quadruped robot price",
+      "robot dog cost drivers",
+      "industrial quadruped"
+    ],
+    "seoTitle": "Quadruped Robot Price",
+    "metaDescription": "Payload class, sensor load, ingress protection and support tier are the four decisions that set a quadruped robot's price.",
+    "faq": [
+      {
+        "q": "Why do similar quadrupeds differ so much in price?",
+        "a": "Payload class and environmental sealing change the structure and actuators, not just the options list."
+      },
+      {
+        "q": "Is support tier worth paying for?",
+        "a": "On a single-unit site it is often the difference between a working robot and an expensive object in a cupboard."
+      },
+      {
+        "q": "When is the cheaper machine right?",
+        "a": "When the round is a camera along a corridor and a person reviews the images. Not when a thermal finding at 2am is the deliverable."
+      }
+    ],
+    "source": "robotist editorial",
+    "sourcePost": "",
+    "status": "draft",
+    "draftedAt": "2026-11-03T13:00:00Z",
+    "publishedAt": null,
+    "dateModified": "2026-11-03T13:00:00Z",
+    "content": "<p class=\"lede\">Two quadrupeds with similar proportions can differ by a factor of eight, and the reasons are specific. None of them is \"better robot\".</p>\n\n<div class=\"callout\">\n  <div class=\"callout-title\">FOUR DECISIONS</div>\n  <p>Payload class, sensor load, ingress protection, support tier. Each one moves the number, and each one is a choice you can decline.</p>\n</div>\n\n<h2>1. Payload class</h2>\n<p>A frame that carries a small camera and a frame that carries thermal, acoustic and additional compute are different machines underneath: actuators, structure, thermal design. Payload is the first divider in this category and the one buyers underestimate.</p>\n\n<h2>2. Sensor load</h2>\n<p>The sensors themselves are often a modest part of the cost and a large part of the value. A thermal camera changes what a round can report; it also changes the software that has to ingest the stream. Budget the integration, not just the camera.</p>\n\n<h2>3. Ingress protection</h2>\n<p>An indoor corridor and an outdoor loading dock are different environments. Sealing against dust and water costs engineering, and it is not a feature you can add later with a cover.</p>\n\n<h2>4. Support tier</h2>\n<p>The gap between \"documentation\" and \"a response within a working day, with spares on the shelf\" is a real part of the price, and it is the part that decides whether the robot is working in year two. On a single-unit site it is often the difference between a deployed robot and an expensive object in a cupboard.</p>\n\n<table>\n  <thead><tr><th>Decision</th><th>Cheaper choice</th><th>What it costs later</th></tr></thead>\n  <tbody>\n    <tr><td>Payload class</td><td>Camera-only frame</td><td>Cannot carry the sensors the round needs</td></tr>\n    <tr><td>Sensor load</td><td>Visible light only</td><td>Reports describe, they do not diagnose</td></tr>\n    <tr><td>Ingress protection</td><td>Indoor spec</td><td>Fails at the dock, or needs a shelter</td></tr>\n    <tr><td>Support tier</td><td>Documentation only</td><td>Weeks of downtime on a single fault</td></tr>\n  </tbody>\n</table>\n\n<figure>\n  <img src=\"/robots-cut/magiclab_magicdog_y1.webp\" alt=\"MagicLab MagicDog Y1 industrial quadruped\" style=\"max-width:340px;display:block;margin:0 auto;\">\n  <figcaption>The industrial class exists because a night round outside a lab has payload, weather and consequence.</figcaption>\n</figure>\n\n<h2>Where a cheaper machine is the right answer</h2>\n<p>If the robot carries a camera along a corridor and a person reviews the images, an education-class unit does the job. If the round has to produce a thermal finding at 2am in a plant room, it does not — and buying the cheap one twice is how a project loses a year.</p>\n\n<ul class=\"checklist\">\n  <li>Weigh the payload, including mounts and cabling</li>\n  <li>Name the sensors the report has to include</li>\n  <li>Match ingress protection to the worst point on the route, not the average</li>\n  <li>Price the support tier over three years, not one</li>\n</ul>\n\n<p>We quote <a href=\"/products/magiclab-magicdog-y1\">MagicDog Y1</a> and <a href=\"/products/genisom-m1\">Genisom M1</a> for industrial rounds, and we will say when a cheaper class covers the same route honestly.</p>\n\n<div class=\"cta-block\">\n  <p>Send the route and the report you want at the end of it. That is the specification, and the number follows it.</p>\n</div>",
+    "targetQuery": "quadruped robot price",
+    "pillar": "quadruped"
+  },
+  {
+    "slug": "how-much-is-a-robot-dog",
+    "title": "How Much Is a Robot Dog: What Each Step Buys",
+    "excerpt": "Toy, education, industrial: what each step buys, and how to tell which step you are actually on.",
+    "category": "Awareness",
+    "date": "2026-11-03",
+    "readTime": "3 min",
+    "coverUrl": "blog/covers/how-much-is-a-robot-dog.jpg",
+    "keywords": [
+      "how much is a robot dog",
+      "robot dog price",
+      "robot dog buying guide"
+    ],
+    "seoTitle": "How Much Is A Robot Dog",
+    "metaDescription": "What a robot dog buys at each step — toy, education, industrial — and how to tell which step your site is actually on.",
+    "faq": [
+      {
+        "q": "Is a toy robot dog a small industrial robot?",
+        "a": "No. It has no meaningful payload, no logging and no support. It is a different product with the same silhouette."
+      },
+      {
+        "q": "What does the education step add?",
+        "a": "An SDK, documentation and a repairable body — the things that let a person program and fix it."
+      },
+      {
+        "q": "What does the industrial step add?",
+        "a": "Payload, runtime, ingress protection and a service relationship with response commitments."
+      }
+    ],
+    "source": "robotist editorial",
+    "sourcePost": "",
+    "status": "draft",
+    "draftedAt": "2026-11-03T13:00:00Z",
+    "publishedAt": null,
+    "dateModified": "2026-11-03T13:00:00Z",
+    "content": "<p class=\"lede\">The question people ask in a showroom is not the question they should ask, but it is a fair one. The useful answer is not a figure. It is what changes between the cheap end and the working end.</p>\n\n<div class=\"callout\">\n  <div class=\"callout-title\">THE STEPS</div>\n  <p>Toy, education, industrial. Each step buys a capability, not a look.</p>\n</div>\n\n<h2>Step one: the toy</h2>\n<p>A toy quadruped walks, responds to a remote and impresses a room. It has no meaningful payload, no logging and no support. It is not a small industrial robot; it is a different product with the same silhouette.</p>\n\n<h2>Step two: education</h2>\n<p>An education unit adds an SDK, documentation and repairability — the things that let a person program it and fix it. This is the class where most first purchases should land, because it teaches the buyer what the next purchase needs to do.</p>\n\n<h2>Step three: industrial</h2>\n<p>An industrial unit adds payload, runtime, ingress protection and a support contract. At that point the robot is a tool with an operating cost and a service relationship, and the questions change from \"what can it do\" to \"what happens when it stops\".</p>\n\n<table>\n  <thead><tr><th>Step</th><th>What you get</th><th>What you do not</th></tr></thead>\n  <tbody>\n    <tr><td>Toy</td><td>Movement, novelty, remote control</td><td>SDK, payload, support</td></tr>\n    <tr><td>Education</td><td>SDK, documentation, repairable body</td><td>Weather sealing, long runtime</td></tr>\n    <tr><td>Industrial</td><td>Payload, runtime, sealing, service</td><td>Cheap entry, simple ownership</td></tr>\n  </tbody>\n</table>\n\n<figure>\n  <img src=\"/robots-cut/magiclab_magicdog.webp\" alt=\"MagicLab MagicDog quadruped robot\" style=\"max-width:300px;display:block;margin:0 auto;\">\n  <figcaption>MagicDog is the education class: the step where a buyer learns what the working machine has to do.</figcaption>\n</figure>\n\n<h2>How to decide which step you are on</h2>\n<ul class=\"checklist\">\n  <li>Is the robot a demonstration or a tool</li>\n  <li>Does anything have to mount on it</li>\n  <li>Does it have to work when nobody is watching</li>\n  <li>Who repairs it, and how long can it be down</li>\n  <li>Will there be a second unit in two years</li>\n</ul>\n\n<p>If the answers point at a tool, the honest conversation is about the industrial class — <a href=\"/products/magiclab-magicdog-y1\">MagicDog Y1</a> or <a href=\"/products/genisom-m1\">Genisom M1</a>. If they point at learning, <a href=\"/products/magiclab-magicdog\">MagicDog</a> is the right first purchase and a good one.</p>\n\n<h2>What a second purchase looks like</h2>\n<p>Almost nobody buys one quadruped. If the first one earns its keep, a second arrives within two years — often a different class, because the first taught the buyer what the round really needs.</p>\n<p>That is worth planning for: choose a vendor and a support arrangement that can scale from one unit to a small fleet, rather than one that treats each robot as a separate relationship.</p>\n\n<div class=\"cta-block\">\n  <p>Buy the step you are on. Buying two steps ahead usually means a machine nobody is trained to run.</p>\n</div>",
+    "targetQuery": "how much is a robot dog",
+    "pillar": "quadruped"
+  },
+  {
+    "slug": "what-is-a-robot-dog",
+    "title": "What Is a Robot Dog: the Capability Line People Miss",
+    "excerpt": "Mobility is solved; payload, endurance and reporting are not. The capability line people miss when they buy a robot dog.",
+    "category": "Awareness",
+    "date": "2026-11-03",
+    "readTime": "3 min",
+    "coverUrl": "blog/covers/what-is-a-robot-dog.jpg",
+    "keywords": [
+      "what is a robot dog",
+      "quadruped robot explained",
+      "robot dog capabilities"
+    ],
+    "seoTitle": "What Is A Robot Dog",
+    "metaDescription": "A robot dog is not a dog or a vacuum. The line sits between it can walk over there and it can do something useful when it arrives.",
+    "faq": [
+      {
+        "q": "Why legs instead of wheels?",
+        "a": "Legs handle stairs, kerbs, gravel and cable trays. On a smooth corridor a wheeled platform is cheaper and simpler."
+      },
+      {
+        "q": "Does a robot dog replace a person on a round?",
+        "a": "It replaces the walking and produces a record. It does not decide, open doors or handle a spill."
+      },
+      {
+        "q": "What should I ask first?",
+        "a": "What it can carry and for how long, what it records and in what format, and what happens when it cannot complete the route."
+      }
+    ],
+    "source": "robotist editorial",
+    "sourcePost": "",
+    "status": "draft",
+    "draftedAt": "2026-11-03T13:00:00Z",
+    "publishedAt": null,
+    "dateModified": "2026-11-03T13:00:00Z",
+    "content": "<p class=\"lede\">A robot dog is not a dog and not a vacuum. The capability line people miss sits between \"it can walk over there\" and \"it can do something useful when it arrives\".</p>\n\n<div class=\"callout\">\n  <div class=\"callout-title\">THE LINE</div>\n  <p>Mobility is solved. Payload, endurance and reporting are not.</p>\n</div>\n\n<h2>Why legs at all</h2>\n<p>Wheels are efficient on flat, prepared ground. Legs exist for the places wheels cannot go: stairs, kerbs, gravel, cable trays, the gap between a pallet and a wall. If the route is a smooth corridor, a wheeled platform is cheaper and simpler, and nobody should apologise for choosing it.</p>\n\n<h2>What \"robot dog\" actually describes</h2>\n<p>A quadruped with a sensor head, a compute payload and a control interface. The leg mechanism is the visible part; the useful part is what hangs off it and what it can record.</p>\n<p>That is why two machines that look identical in a photograph can be entirely different products: one carries a camera for a classroom, the other carries thermal and acoustic sensors for a plant room at night.</p>\n\n<h2>What it does not do</h2>\n<p>It does not decide. It does not open doors, climb ladders or handle a spill. It does not replace a person on a round; it replaces the walking of the round and produces a record of it.</p>\n\n<table>\n  <thead><tr><th>Expectation</th><th>Reality</th></tr></thead>\n  <tbody>\n    <tr><td>It patrols the site</td><td>It repeats a mapped route and stops at set points</td></tr>\n    <tr><td>It spots problems</td><td>It captures what its sensors can see; a person interprets</td></tr>\n    <tr><td>It works outdoors</td><td>Only models rated for it, and only within their limits</td></tr>\n    <tr><td>It runs all night</td><td>It runs a round, then charges</td></tr>\n  </tbody>\n</table>\n\n<figure>\n  <img src=\"/robots-cut/magiclab_magicdog_y1.webp\" alt=\"MagicLab MagicDog Y1 quadruped robot\" style=\"max-width:340px;display:block;margin:0 auto;\">\n  <figcaption>The industrial class of quadruped is defined by payload and endurance, not by the fact that it walks on four legs.</figcaption>\n</figure>\n\n<h2>The three questions that reveal the real product</h2>\n<ul class=\"checklist\">\n  <li>What can it carry, and for how long at that weight</li>\n  <li>What does it record, and in what format does that land</li>\n  <li>What happens when it cannot complete the route</li>\n</ul>\n\n<p>Answer those three and the category becomes obvious: <a href=\"/products/magiclab-magicdog\">MagicDog</a> for learning, <a href=\"/products/magiclab-magicdog-y1\">MagicDog Y1</a> when the round has to produce evidence.</p>\n\n<h2>The maintenance reality</h2>\n<p>Legs wear. Feet take the impact, joints take the load, and the machine that walks 8 kilometres a night for a year will need attention that a wheeled platform does not. Ask what the service interval is, what a leg assembly costs, and whether a site technician can fit one.</p>\n<p>This is not a reason to avoid quadrupeds. It is a reason to price ownership honestly rather than comparing purchase prices only.</p>\n\n<div class=\"cta-block\">\n  <p>If the route is flat and the job is inspection, ask us whether wheels would do it better and cheaper. Sometimes they would.</p>\n</div>",
+    "targetQuery": "what is a robot dog",
+    "pillar": "quadruped"
+  },
+  {
+    "slug": "service-robot-after-the-demo",
+    "title": "Service Robot: What Actually Runs After the Demo",
+    "excerpt": "Uptime, spares, consumables and training decide whether a service robot was a good purchase. None are visible in a showroom.",
+    "category": "Deployment",
+    "date": "2026-11-03",
+    "readTime": "3 min",
+    "coverUrl": "blog/covers/service-robot-after-the-demo.jpg",
+    "keywords": [
+      "service robot",
+      "service robot uptime",
+      "robot maintenance"
+    ],
+    "seoTitle": "Service Robot",
+    "metaDescription": "Uptime, spares, consumables and training decide whether a service robot was a good purchase. What to measure in the first quarter.",
+    "faq": [
+      {
+        "q": "What is the right uptime question?",
+        "a": "Not will it break, but how long will it be broken and who fixes it. Ask for the response commitment in writing."
+      },
+      {
+        "q": "Which consumables should I price?",
+        "a": "Brushes, squeegees, filters, wheels and batteries, with replacement intervals, before you sign."
+      },
+      {
+        "q": "Why is the first month not the test?",
+        "a": "Routines settle because everyone is paying attention. The test is the quarter after, when the robot is just equipment."
+      }
+    ],
+    "source": "robotist editorial",
+    "sourcePost": "",
+    "status": "draft",
+    "draftedAt": "2026-11-03T13:00:00Z",
+    "publishedAt": null,
+    "dateModified": "2026-11-03T13:00:00Z",
+    "content": "<p class=\"lede\">Every service robot looks convincing in a demonstration. The question that decides whether it was a good purchase is duller: what happens in week nine, when the novelty is gone and something has stopped working.</p>\n\n<div class=\"callout\">\n  <div class=\"callout-title\">WHAT RUNS AFTER THE DEMO</div>\n  <p>Uptime, spares, consumables and training. Four things, none of them visible in a showroom.</p>\n</div>\n\n<h2>Uptime is the product</h2>\n<p>A robot that works 90 per cent of the time sounds fine until the missing 10 per cent lands on the busiest night of the week. Ask what the vendor's response commitment is, and what the site is expected to do while waiting.</p>\n<p>The honest question is not \"will it break\" but \"how long will it be broken, and who fixes it\".</p>\n\n<h2>Spares and consumables</h2>\n<p>Brushes, squeegees, filters, wheels, batteries. Every service robot consumes something, and the consumption rate is the operating cost nobody quotes at the start. Ask for the list and the interval.</p>\n\n<h2>Training, and who actually gets it</h2>\n<p>Sites that train one person end up with one person who can run the robot, and a machine that idles whenever that person is on leave. Train at least two, and put the operating procedure somewhere it can be found by a night shift supervisor who was not in the room.</p>\n\n<h2>The first month is not the test</h2>\n<p>Routines settle in the first month because everyone is paying attention. The test is the quarter after, when the robot is another piece of equipment and the person who championed it has moved on.</p>\n\n<table>\n  <thead><tr><th>What to measure</th><th>Why it matters</th></tr></thead>\n  <tbody>\n    <tr><td>Rounds completed vs scheduled</td><td>Reveals quiet failure before a complaint does</td></tr>\n    <tr><td>Mean time to repair</td><td>Decides whether one fault ruins a week</td></tr>\n    <tr><td>Consumable spend per month</td><td>The real operating cost</td></tr>\n    <tr><td>Number of trained operators</td><td>Cover for leave and turnover</td></tr>\n  </tbody>\n</table>\n\n<figure>\n  <img src=\"/robots-cut/keenon_c40-p1.webp\" alt=\"Keenon C40-P1 service robot\" style=\"max-width:320px;display:block;margin:0 auto;\">\n  <figcaption>The C40-P1 is built for continuous operation in hotels, offices, hospitals and retail — which is a claim about uptime, not about features.</figcaption>\n</figure>\n\n<ul class=\"checklist\">\n  <li>Response time in writing, not in conversation</li>\n  <li>Consumables list with prices and intervals</li>\n  <li>Two trained operators minimum</li>\n  <li>A named person who owns the daily check</li>\n  <li>A first-quarter review with the numbers above</li>\n</ul>\n\n<p>For a single-unit deployment we usually start with the <a href=\"/products/keenon-c40-p1\">Keenon C40-P1</a>; for lobbies and corridors where the round is simpler, the <a href=\"/products/gausium-phantas\">Gausium Phantas</a> has fewer systems to maintain.</p>\n\n<h2>The handover problem</h2>\n<p>Service robots outlive the person who championed them. When that person leaves, the operating knowledge usually leaves with them unless it was written down: the route, the charging routine, the fault codes, and the name of the person at the vendor who answers.</p>\n<p>Write a one-page operating sheet, keep it where the night shift can find it, and review it when anything about the building changes. It is the cheapest uptime improvement available.</p>\n\n<div class=\"cta-block\">\n  <p>Ask any vendor for their mean time to repair before you ask for the price. The answer tells you what ownership looks like.</p>\n</div>",
+    "targetQuery": "service robot",
+    "pillar": "service"
+  },
+  {
+    "slug": "delivery-robots-australia",
+    "title": "Delivery Robots Australia: Indoor, Outdoor, and the Line",
+    "excerpt": "Indoor delivery robots integrate with a building. Outdoor robots integrate with a street that is not yours, and that changes everything.",
+    "category": "Deployment",
+    "date": "2026-11-03",
+    "readTime": "3 min",
+    "coverUrl": "blog/covers/delivery-robots-australia.jpg",
+    "keywords": [
+      "delivery robots australia",
+      "indoor delivery robot",
+      "service robot deployment"
+    ],
+    "seoTitle": "Delivery Robots Australia",
+    "metaDescription": "Delivery robots in Australia: the dividing line is not indoor versus outdoor, it is whether the machine shares space with the public.",
+    "faq": [
+      {
+        "q": "What is hardest about an indoor deployment?",
+        "a": "Lift and door integration, plus a drop-off the guest or patient can use without training."
+      },
+      {
+        "q": "What is hardest about an outdoor deployment?",
+        "a": "Footpaths, kerbs, weather, public consent, local regulation and insurance — not navigation."
+      },
+      {
+        "q": "Can a pilot prove too much?",
+        "a": "Yes. A perfect summer pilot says nothing about a wet Tuesday, and a quiet-fortnight pilot says nothing about peak."
+      }
+    ],
+    "source": "robotist editorial",
+    "sourcePost": "",
+    "status": "draft",
+    "draftedAt": "2026-11-03T13:00:00Z",
+    "publishedAt": null,
+    "dateModified": "2026-11-03T13:00:00Z",
+    "content": "<p class=\"lede\">Australia is a difficult place for delivery robots and an easy place to be misled about them. The line that matters is not indoor versus outdoor. It is whether the machine has to share space with the public.</p>\n\n<div class=\"callout\">\n  <div class=\"callout-title\">THE DIVIDING LINE</div>\n  <p>Indoors, the building is the environment. Outdoors, the street is — and the street is not yours.</p>\n</div>\n\n<h2>Indoor delivery: the building is the constraint</h2>\n<p>A hotel, hospital or office tower gives a delivery robot a floor plan, lifts, doors and a predictable population. The hard parts are integration, not navigation: lift control, secure drop-off, and a guest or patient who has never met the machine.</p>\n<p>This is where delivery robots work today, and where the ROI conversation is simplest, because the alternative is a person walking a tray across a lobby at 11pm.</p>\n\n<h2>Outdoor delivery: the street is the constraint</h2>\n<p>Footpaths, kerbs, weather, traffic, dogs, and a public that did not agree to any of it. Australian cities are also not uniform: a wide Melbourne footpath and a narrow Sydney one are different operating environments, and a machine rated for one may be unacceptable on the other.</p>\n<p>Then there is the regulatory layer, which is local, and the insurance layer, which is yours.</p>\n\n<table>\n  <thead><tr><th>Consideration</th><th>Indoor</th><th>Outdoor</th></tr></thead>\n  <tbody>\n    <tr><td>Environment owner</td><td>You, or the building</td><td>The public</td></tr>\n    <tr><td>Biggest integration</td><td>Lifts and doors</td><td>Kerbs, crossings, weather</td></tr>\n    <tr><td>Regulatory burden</td><td>Low</td><td>Local, variable</td></tr>\n    <tr><td>Insurance</td><td>Standard</td><td>Needs explicit cover</td></tr>\n    <tr><td>Failure visibility</td><td>Internal</td><td>Public</td></tr>\n  </tbody>\n</table>\n\n<figure>\n  <img src=\"/robots-cut/droidup_moya.webp\" alt=\"DroidUp Moya service robot\" style=\"max-width:280px;display:block;margin:0 auto;\">\n  <figcaption>Moya sits in the social and exhibition space: a platform built for public-facing interaction rather than carrying loads through a city.</figcaption>\n</figure>\n\n<h2>What to settle before a pilot</h2>\n<ul class=\"checklist\">\n  <li>Who owns the floor the robot drives on, and who insures it</li>\n  <li>Lift integration, or a manual workaround that survives a busy night</li>\n  <li>What happens when a guest refuses to interact with it</li>\n  <li>Whether the route crosses any public land</li>\n  <li>Who is called when it stops in a corridor at peak hour</li>\n</ul>\n\n<div class=\"pullquote\">An indoor pilot can fail quietly. An outdoor pilot fails in front of everyone, which is why the insurance question comes first.</div>\n\n<p>Where the deployment is hospitality or exhibition-facing, the platform conversation usually starts with something like <a href=\"/products/droidup-moya\">DroidUp Moya</a>. Where the robot is moving through a building to keep it running rather than to greet anyone, the <a href=\"/products/keenon-c40-p1\">Keenon C40-P1</a> does the same routing work with a cleaning payload instead.</p>\n\n<h2>The pilot that proves too much</h2>\n<p>A pilot that runs perfectly in summer tells you nothing about a wet Tuesday in July. Where a machine will operate outdoors, run it through the worst week available, not the best one.</p>\n<p>Indoors the equivalent is the peak: run the pilot during the busiest period the building has, with the public present, rather than in a quiet fortnight when everyone is on leave.</p>\n\n<div class=\"cta-block\">\n  <p>Tell us whether the route leaves the building. That single answer changes the machine, the insurance and the timeline.</p>\n</div>",
+    "targetQuery": "delivery robots australia",
+    "pillar": "service"
+  },
+  {
+    "slug": "restaurant-service-robot-floor-plan",
+    "title": "Restaurant Service Robot: the Floor Plan Decides",
+    "excerpt": "A restaurant service robot is decided by aisle width, turning space and whether a plate of soup survives the floor. Measure first.",
+    "category": "Deployment",
+    "date": "2026-11-03",
+    "readTime": "3 min",
+    "coverUrl": "blog/covers/restaurant-service-robot-floor-plan.jpg",
+    "keywords": [
+      "restaurant service robot",
+      "food service robot",
+      "hospitality robot floor plan"
+    ],
+    "seoTitle": "Restaurant Service Robot",
+    "metaDescription": "Restaurant service robots are decided by aisle width, turning space and tray stability. Measure the room before choosing the machine.",
+    "faq": [
+      {
+        "q": "What should I measure first?",
+        "a": "The narrowest gap between a table and a wall, and the turning space at the end of each run."
+      },
+      {
+        "q": "How do I test tray stability?",
+        "a": "A demonstration with liquid, at service speed, on your own floor, including any lips between tiles."
+      },
+      {
+        "q": "Who should be asked?",
+        "a": "The floor team. They know which aisle is already a problem at 7pm on a Friday."
+      }
+    ],
+    "source": "robotist editorial",
+    "sourcePost": "",
+    "status": "draft",
+    "draftedAt": "2026-11-03T13:00:00Z",
+    "publishedAt": null,
+    "dateModified": "2026-11-03T13:00:00Z",
+    "content": "<p class=\"lede\">Restaurants buy service robots for the labour they think they will save, then discover the floor plan decides whether the machine is useful. Aisles, turning circles and tray stability are the specification.</p>\n\n<div class=\"callout\">\n  <div class=\"callout-title\">THE FLOOR PLAN DECIDES</div>\n  <p>A robot that cannot pass between two tables at peak service is not a service robot. It is a conversation piece.</p>\n</div>\n\n<h2>Aisle width and turning circles</h2>\n<p>Measure the tightest gap between a table and a wall, and the space needed to turn at the end of a run. Most restaurants have one aisle that works and two that do not, and the robot will spend its life in the one that does.</p>\n<p>Where the floor plan is tight, the platform choice narrows quickly — which is better discovered before purchase than after.</p>\n\n<h2>Tray stability is the real test</h2>\n<p>Carrying a plate is easy. Carrying a bowl of soup across a floor with a 3mm lip between tiles is the test. Ask for a demonstration with liquid, at service speed, on your own floor.</p>\n\n<h2>Pickup and delivery windows</h2>\n<p>A service robot exists to move something from the pass to a table and back. If the kitchen has to change its workflow to load the machine, the labour saving disappears into a new bottleneck at the pass.</p>\n\n<table>\n  <thead><tr><th>Constraint</th><th>What to measure</th></tr></thead>\n  <tbody>\n    <tr><td>Aisle width</td><td>Narrowest gap between table and wall</td></tr>\n    <tr><td>Turning space</td><td>Room to turn at the end of each run</td></tr>\n    <tr><td>Floor transitions</td><td>Tiles, lips, carpet edges, ramps</td></tr>\n    <tr><td>Pass layout</td><td>Where the machine docks without blocking service</td></tr>\n    <tr><td>Peak density</td><td>Guests and staff moving at the same time</td></tr>\n  </tbody>\n</table>\n\n<figure>\n  <img src=\"/robots-cut/droidup_moya.webp\" alt=\"DroidUp Moya service robot\" style=\"max-width:280px;display:block;margin:0 auto;\">\n  <figcaption>Service platforms are bought for the room they will work in. The room is the specification.</figcaption>\n</figure>\n\n<h2>What staff actually think</h2>\n<p>Ask the floor team, not the owner. They will tell you which aisle is already a problem at 7pm on a Friday, and whether an extra body in that aisle is help or obstruction. That answer is worth more than any demonstration.</p>\n\n<ul class=\"checklist\">\n  <li>Measure the aisles at peak, with chairs out</li>\n  <li>Test with liquid, at service speed</li>\n  <li>Walk the pass workflow with the kitchen</li>\n  <li>Ask two servers whether the route helps or blocks</li>\n  <li>Decide who clears a stopped robot during service</li>\n</ul>\n\n<p>Where the room is generous and the job is carrying, a service platform such as <a href=\"/products/droidup-moya\">DroidUp Moya</a> fits the brief. Where the floor is tight and the need turns out to be cleaning rather than carrying, the compact end of the range — the <a href=\"/products/gausium-phantas\">Gausium Phantas</a> — is the more honest answer.</p>\n\n<div class=\"cta-block\">\n  <p>Send a floor plan with the table layout. We can tell you in five minutes whether a robot fits the room.</p>\n</div>",
+    "targetQuery": "restaurant service robot",
+    "pillar": "service"
+  },
+  {
+    "slug": "hotel-delivery-robot",
+    "title": "Hotel Delivery Robot: Lifts, Privacy and the Night Desk",
+    "excerpt": "Hotels are the natural home of the delivery robot and where they fail most visibly. Lifts, privacy and the night desk decide it.",
+    "category": "Deployment",
+    "date": "2026-11-03",
+    "readTime": "3 min",
+    "coverUrl": "blog/covers/hotel-delivery-robot.jpg",
+    "keywords": [
+      "hotel delivery robot",
+      "hotel service robot",
+      "robot lift integration"
+    ],
+    "seoTitle": "Hotel Delivery Robot",
+    "metaDescription": "Hotel delivery robots live or die on lift integration, guest privacy and who is on the night desk when the machine stops.",
+    "faq": [
+      {
+        "q": "Can a robot use a hotel lift?",
+        "a": "Only with an interface, or a staff workaround that costs minutes on every trip and erodes the labour saving."
+      },
+      {
+        "q": "What must guests be told?",
+        "a": "What the robot records, who sees it and what happens to the data. A plain notice at check-in solves most of it."
+      },
+      {
+        "q": "What should a first pilot cover?",
+        "a": "One floor, one shift, one purpose — and a stop procedure the night desk has rehearsed."
+      }
+    ],
+    "source": "robotist editorial",
+    "sourcePost": "",
+    "status": "draft",
+    "draftedAt": "2026-11-03T13:00:00Z",
+    "publishedAt": null,
+    "dateModified": "2026-11-03T13:00:00Z",
+    "content": "<p class=\"lede\">Hotels are the natural home of the delivery robot and the place where they fail most visibly. The reasons are lifts, privacy and the night desk.</p>\n\n<div class=\"callout\">\n  <div class=\"callout-title\">THREE INTEGRATIONS</div>\n  <p>Lift control, door access and guest communication. Each one is a building decision, not a robot decision.</p>\n</div>\n\n<h2>Lifts</h2>\n<p>A delivery robot that cannot call a lift is a trolley that cannot leave the ground floor. Lift integration is either a supported interface or a manual workaround where a staff member presses a button — and the workaround erodes the labour saving with every trip.</p>\n\n<h2>Privacy and the guest</h2>\n<p>A machine arriving at a door at 10pm with a camera on it raises questions the hotel has to answer before it deploys: what is recorded, who sees it, and what the guest is told. A short, plain notice at check-in solves most of it, and the absence of one creates the complaint.</p>\n\n<h2>The night desk</h2>\n<p>The person on the desk becomes the robot's operator by default. If the machine stops in a corridor at 2am, they are the one who deals with it — and if nobody decided that in advance, it becomes a reason to switch the robot off.</p>\n\n<table>\n  <thead><tr><th>Integration</th><th>What it needs</th><th>Who owns it</th></tr></thead>\n  <tbody>\n    <tr><td>Lifts</td><td>Interface or a staff workaround</td><td>Building systems</td></tr>\n    <tr><td>Room doors</td><td>Access method for drop-off</td><td>Front office and security</td></tr>\n    <tr><td>Guest notice</td><td>Plain-language disclosure</td><td>Operations</td></tr>\n    <tr><td>Night escalation</td><td>A named person and a procedure</td><td>Duty manager</td></tr>\n  </tbody>\n</table>\n\n<figure>\n  <img src=\"/robots-cut/droidup_moya.webp\" alt=\"DroidUp Moya hotel service robot\" style=\"max-width:280px;display:block;margin:0 auto;\">\n  <figcaption>Public-facing platforms live or die on how they behave in a corridor with a guest in it.</figcaption>\n</figure>\n\n<h2>What a hotel should pilot</h2>\n<ul class=\"checklist\">\n  <li>One floor, one shift, one purpose — toothbrushes and towels, not room service</li>\n  <li>Lift integration confirmed, or the workaround costed in staff minutes</li>\n  <li>Guest notice written and approved</li>\n  <li>Night desk given a stop procedure they have rehearsed</li>\n  <li>A weekly review of trips completed versus trips attempted</li>\n</ul>\n\n<p>For hospitality deployments the platform conversation usually starts with something like <a href=\"/products/droidup-moya\">DroidUp Moya</a>. Where the hotel's real problem is floors rather than deliveries, the <a href=\"/products/keenon-c40-p1\">Keenon C40-P1</a> addresses a larger share of the night.</p>\n\n<h2>What guests actually notice</h2>\n<p>Guests do not mind a robot in a corridor. They mind a robot that blocks the corridor, arrives at the wrong door, or makes a noise outside their room at 10.40pm.</p>\n<p>That makes the schedule a hospitality decision rather than a technical one: which floors, which hours, and what the machine does when a request is urgent and a lift is busy.</p>\n\n<div class=\"cta-block\">\n  <p>Start with one floor and one purpose. The lift integration is the project, not the robot.</p>\n</div>",
+    "targetQuery": "hotel delivery robot",
+    "pillar": "service"
+  },
+  {
+    "slug": "service-robots-examples",
+    "title": "Service Robots Examples: Six Deployments That Hold Up",
+    "excerpt": "Six service robot deployments that survive a real building, and the habit each one depends on to keep working.",
+    "category": "Deployment",
+    "date": "2026-11-03",
+    "readTime": "3 min",
+    "coverUrl": "blog/covers/service-robots-examples.jpg",
+    "keywords": [
+      "service robots examples",
+      "robot deployment examples",
+      "service robotics australia"
+    ],
+    "seoTitle": "Service Robots Examples",
+    "metaDescription": "Six service robot deployments that hold up in real buildings: cleaning, patrol, research, retail, demonstration and lab support.",
+    "faq": [
+      {
+        "q": "Which deployment is most reliable?",
+        "a": "Night cleaning in a hotel or office: regular floors, an empty building and one person checking the result."
+      },
+      {
+        "q": "Why do deployments quietly fail?",
+        "a": "Because nobody reads the output each morning, so the floor degrades and the machine is blamed."
+      },
+      {
+        "q": "Which deployment is easiest to cost?",
+        "a": "Lab and manufacturing support: controlled environment, repeatable task, measurable output."
+      }
+    ],
+    "source": "robotist editorial",
+    "sourcePost": "",
+    "status": "draft",
+    "draftedAt": "2026-11-03T13:00:00Z",
+    "publishedAt": null,
+    "dateModified": "2026-11-03T13:00:00Z",
+    "content": "<p class=\"lede\">Six deployments that survive contact with a real building, and what each one is actually good at. None of them is a demo.</p>\n\n<div class=\"callout\">\n  <div class=\"callout-title\">WHAT MAKES A DEPLOYMENT HOLD</div>\n  <p>A regular environment, a clear owner, and a job the machine can finish without a person standing next to it.</p>\n</div>\n\n<h2>1. Night cleaning in a hotel or office</h2>\n<p>The classic case, and still the strongest: a mapped route on regular floors, run when the building is empty, checked each morning by one person. Coverage is the deliverable and the map does the work.</p>\n\n<h2>2. Perimeter and plant-room patrol</h2>\n<p>A quadruped carrying a camera and thermal sensor along a fixed route, producing a report a supervisor reads at 7am. The value is the record, not the walking.</p>\n\n<h2>3. Research and teaching</h2>\n<p>A humanoid platform in a lab, where the deployment is measured in papers and student projects rather than hours saved. This one holds because the output is knowledge, and knowledge does not care about ROI.</p>\n\n<h2>4. Retail floor maintenance during trading hours</h2>\n<p>Cleaning while the public walks around it. This works best where the route is wide and the machine is quiet, and it fails in narrow formats where staff and shoppers compete for the same aisle.</p>\n\n<h2>5. Public-facing demonstration</h2>\n<p>A performance humanoid in a mall or exhibition. The deliverable is attention, and the deployment is judged on whether it ran all day without an incident — which is a real engineering test even when the purpose is marketing.</p>\n\n<h2>6. Laboratory and manufacturing support</h2>\n<p>Wheeled humanoid platforms moving material or holding position in a controlled environment. Less glamorous, more repeatable, and the easiest case to cost honestly.</p>\n\n<table>\n  <thead><tr><th>Deployment</th><th>Machine class</th><th>Why it holds</th></tr></thead>\n  <tbody>\n    <tr><td>Night cleaning</td><td>Cleaning robot</td><td>Regular floor, empty building, one checker</td></tr>\n    <tr><td>Patrol round</td><td>Quadruped</td><td>Fixed route, report output</td></tr>\n    <tr><td>Research</td><td>Humanoid platform</td><td>Output is knowledge</td></tr>\n    <tr><td>Retail during trade</td><td>Cleaning robot</td><td>Wide routes, quiet operation</td></tr>\n    <tr><td>Public demonstration</td><td>Performance humanoid</td><td>Attention is the product</td></tr>\n    <tr><td>Lab support</td><td>Wheeled humanoid</td><td>Controlled environment, repeatable task</td></tr>\n  </tbody>\n</table>\n\n<figure>\n  <img src=\"/robots-cut/gausium_phantas.webp\" alt=\"Gausium Phantas cleaning robot deployment\" style=\"max-width:300px;display:block;margin:0 auto;\">\n  <figcaption>Cleaning remains the deployment with the fewest surprises: regular floors, empty hours, a checkable result.</figcaption>\n</figure>\n\n<p>We stock across these classes — <a href=\"/products/gausium-phantas\">Gausium Phantas</a> for cleaning rounds, <a href=\"/products/magiclab-magicdog-y1\">MagicDog Y1</a> for patrol — which means the recommendation is about the building rather than the catalogue.</p>\n\n<h2>The deployment that quietly fails</h2>\n<p>The one nobody complains about. The robot runs, the report is filed, and nobody reads it — so a floor degrades slowly and the machine is blamed when the client finally notices.</p>\n<p>Every deployment on this list depends on one human habit: somebody opening the output each morning and acting on it. Without that, the machine is producing evidence for an audience of nobody.</p>\n\n<div class=\"cta-block\">\n  <p>Tell us which of the six looks like your building. The other five are probably a distraction.</p>\n</div>",
+    "targetQuery": "service robots examples",
+    "pillar": "service"
+  },
+  {
+    "slug": "how-to-buy-commercial-robot-australia",
+    "title": "How to Buy a Commercial Robot in Australia: the Sequence",
+    "excerpt": "Buying a commercial robot in Australia is a sequence: brief, survey, trial, terms, commissioning, review. Order matters.",
+    "category": "Buying",
+    "date": "2026-11-03",
+    "readTime": "3 min",
+    "coverUrl": "blog/covers/how-to-buy-commercial-robot-australia.jpg",
+    "keywords": [
+      "how to buy commercial robot australia",
+      "robot procurement",
+      "robot site survey"
+    ],
+    "seoTitle": "How To Buy Commercial Robot Australia",
+    "metaDescription": "The sequence for buying a commercial robot in Australia: brief, site survey, trial, commercial terms, commissioning and review.",
+    "faq": [
+      {
+        "q": "What should the brief contain?",
+        "a": "One page: what the machine must do, where, who runs it, and what result counts as success. Not a feature wishlist."
+      },
+      {
+        "q": "How long should a trial run?",
+        "a": "At least a week, on the real route, at the real hour. Anything shorter measures enthusiasm rather than fit."
+      },
+      {
+        "q": "What does commissioning include?",
+        "a": "Mapping, route design, training for two people and a written operating procedure the night shift can find."
+      }
+    ],
+    "source": "robotist editorial",
+    "sourcePost": "",
+    "status": "draft",
+    "draftedAt": "2026-11-03T13:00:00Z",
+    "publishedAt": null,
+    "dateModified": "2026-11-03T13:00:00Z",
+    "content": "<p class=\"lede\">Buying a commercial robot in Australia is a sequence, and the failures happen when the steps arrive out of order: a quote before a site survey, a trial after a decision, a support arrangement nobody wrote down.</p>\n\n<div class=\"callout\">\n  <div class=\"callout-title\">THE SEQUENCE</div>\n  <p>Brief, site survey, trial, commercial terms, commissioning, review. Skip one and the project pays for it later.</p>\n</div>\n\n<h2>1. The brief</h2>\n<p>One page: what the machine has to do, where it has to do it, who will run it, and what result counts as success. Not a wishlist of features. Sites that write this page make every later conversation shorter.</p>\n\n<h2>2. The site survey</h2>\n<p>Walk the building with the vendor. Aisles, thresholds, charging position, floor transitions, network coverage, and the loading route for delivery. Survey findings change the shortlist more often than the shortlist changes the survey.</p>\n\n<h2>3. The trial</h2>\n<p>A trial that runs the actual round, at the actual hour, for at least a week. Anything shorter measures enthusiasm rather than fit.</p>\n\n<h2>4. Commercial terms</h2>\n<p>Purchase, hire or staged deployment. What is included, what is a consumable, what the support tier covers, and what happens at the end of the warranty.</p>\n\n<h2>5. Commissioning</h2>\n<p>Mapping, route design, training for at least two people, and a documented operating procedure. This is where the deployment becomes real.</p>\n\n<h2>6. The review</h2>\n<p>Thirty days after go-live: rounds completed, faults, consumable spend, and whether the hours freed were used as intended. The review is the step everyone skips and the one that decides whether a second unit follows.</p>\n\n<table>\n  <thead><tr><th>Step</th><th>Output</th><th>Who signs off</th></tr></thead>\n  <tbody>\n    <tr><td>Brief</td><td>One page of requirements</td><td>Operations</td></tr>\n    <tr><td>Site survey</td><td>Route and constraints map</td><td>Vendor and facilities</td></tr>\n    <tr><td>Trial</td><td>Measured performance on the real route</td><td>Operations</td></tr>\n    <tr><td>Terms</td><td>Written inclusions and exclusions</td><td>Finance</td></tr>\n    <tr><td>Commissioning</td><td>Mapped route, trained operators</td><td>Vendor and site lead</td></tr>\n    <tr><td>Review</td><td>Numbers, not impressions</td><td>Operations</td></tr>\n  </tbody>\n</table>\n\n<figure>\n  <img src=\"/robots-cut/keenon_c40-p1.webp\" alt=\"Keenon C40-P1 commercial robot\" style=\"max-width:320px;display:block;margin:0 auto;\">\n  <figcaption>The machine is one line in a project plan. The survey, the trial and the commissioning are the rest of it.</figcaption>\n</figure>\n\n<h2>What buyers in Australia should ask specifically</h2>\n<ul class=\"checklist\">\n  <li>Who provides service, and from where</li>\n  <li>Spare parts stock held locally, or shipped per order</li>\n  <li>Lead time, which is often the real constraint on a programme</li>\n  <li>Whether the vendor commissions on site or ships a box</li>\n  <li>What the warranty excludes</li>\n</ul>\n\n<p>We run that sequence on every deployment, including the parts where the answer is that a robot is not the right purchase. It is the same path for a <a href=\"/products/gausium-phantas\">Gausium Phantas</a> as for a <a href=\"/products/keenon-c40-p1\">Keenon C40-P1</a>.</p>\n\n<div class=\"cta-block\">\n  <p>Send the brief and the floor plan. We will run the survey before we quote, which is the point of the sequence.</p>\n</div>",
+    "targetQuery": "how to buy commercial robot australia",
+    "pillar": "buy"
+  },
+  {
+    "slug": "robot-hire-australia",
+    "title": "Robot Hire Australia: When Renting Beats Owning",
+    "excerpt": "Hiring a robot is a different instrument, not a discount. Short demand, an unproven site, or capital that has somewhere better to go.",
+    "category": "Buying",
+    "date": "2026-11-03",
+    "readTime": "3 min",
+    "coverUrl": "blog/covers/robot-hire-australia.jpg",
+    "keywords": [
+      "robot hire australia",
+      "robot rental vs purchase",
+      "cleaning robot hire"
+    ],
+    "seoTitle": "Robot Hire Australia",
+    "metaDescription": "When hiring a robot beats buying one: seasonal demand, an unproven route, or capital timing. What the hire agreement must say.",
+    "faq": [
+      {
+        "q": "When is hire the better choice?",
+        "a": "Seasonal peaks, an unproven site, or a capital delay. Buy when the round is stable and long term."
+      },
+      {
+        "q": "Does hire avoid the setup work?",
+        "a": "No. A hire still needs a survey, a mapped route, trained operators and a charging position."
+      },
+      {
+        "q": "What must the agreement cover?",
+        "a": "Maintenance responsibility, damage versus wear, consumables, exit condition and what happens if the site does not suit the machine."
+      }
+    ],
+    "source": "robotist editorial",
+    "sourcePost": "",
+    "status": "draft",
+    "draftedAt": "2026-11-03T13:00:00Z",
+    "publishedAt": null,
+    "dateModified": "2026-11-03T13:00:00Z",
+    "content": "<p class=\"lede\">Hiring a robot is not a discount version of buying one. It is a different financial instrument for a different problem, and it is usually right in three situations.</p>\n\n<div class=\"callout\">\n  <div class=\"callout-title\">WHEN HIRE WINS</div>\n  <p>Short demand, an unproven site, or capital that has somewhere better to go.</p>\n</div>\n\n<h2>Seasonal and short-term demand</h2>\n<p>A venue with a three-month peak, an event, a temporary facility: the machine is needed hard and then not at all. Hiring turns a depreciating asset into an operating cost that ends with the season.</p>\n\n<h2>The unproven site</h2>\n<p>When nobody is sure the round works — the floor is irregular, the night window is short, the team is sceptical — hire is the honest way to find out. Six weeks of hire buys evidence that a purchase decision otherwise guesses at.</p>\n\n<h2>Capital timing</h2>\n<p>Sometimes the site is ready and the capital is not. A hire period can bridge a financial year without delaying the operational change, and the decision about ownership can be made later with better information.</p>\n\n<table>\n  <thead><tr><th>Situation</th><th>Hire</th><th>Buy</th></tr></thead>\n  <tbody>\n    <tr><td>Seasonal peak</td><td>Yes</td><td>Only if the peak repeats annually for years</td></tr>\n    <tr><td>Unproven route</td><td>Yes: it is a trial with a cost</td><td>Only after evidence</td></tr>\n    <tr><td>Capital constrained</td><td>Possible bridge</td><td>When cash allows</td></tr>\n    <tr><td>Long-term steady state</td><td>Expensive over years</td><td>Yes</td></tr>\n    <tr><td>Multi-site rollout</td><td>Rarely</td><td>Yes, after one site proves the model</td></tr>\n  </tbody>\n</table>\n\n<figure>\n  <img src=\"/robots-cut/gausium_phantas.webp\" alt=\"Gausium Phantas cleaning robot\" style=\"max-width:300px;display:block;margin:0 auto;\">\n  <figcaption>Hire works best where the round is uncertain. The machine is the same; the commitment is not.</figcaption>\n</figure>\n\n<h2>What a hire agreement must say</h2>\n<ul class=\"checklist\">\n  <li>Who maintains the machine during the hire, and how fast</li>\n  <li>What counts as damage versus wear</li>\n  <li>Whether consumables are included</li>\n  <li>What happens if the site turns out not to suit the machine</li>\n  <li>The exit date and the condition it has to be returned in</li>\n</ul>\n\n<h2>The test of whether hire was right</h2>\n<p>At the end of the period, can you answer whether the round works, with numbers? If yes, the hire did its job whether or not you buy. If no, the period was a rental, not a decision.</p>\n\n<p>We arrange both paths for the machines we stock, including the <a href=\"/products/gausium-phantas\">Gausium Phantas</a> and the <a href=\"/products/keenon-c40-p1\">Keenon C40-P1</a>, and we will say when a hire is the better commercial answer.</p>\n\n<h2>What hire does not solve</h2>\n<p>It does not remove the site work. A hire still needs a survey, a mapped route, trained operators and a charging position. Some sites expect the short commitment to mean a lighter setup, discover the same commissioning effort, and conclude the machine was not worth it.</p>\n<p>The setup is the project whether the term is six weeks or six years.</p>\n\n<div class=\"cta-block\">\n  <p>Tell us the period and the uncertainty. Hire is a decision tool before it is a financial one.</p>\n</div>",
+    "targetQuery": "robot hire australia",
+    "pillar": "buy"
+  },
+  {
+    "slug": "autonomous-mobile-robots-vocabulary",
+    "title": "Autonomous Mobile Robots: the Vocabulary Buyers Get Wrong",
+    "excerpt": "AGV, AMR, cobot, humanoid: four terms used as one. The vocabulary determines the quote, and most specifications get it wrong.",
+    "category": "Buying",
+    "date": "2026-11-03",
+    "readTime": "3 min",
+    "coverUrl": "blog/covers/autonomous-mobile-robots-vocabulary.jpg",
+    "keywords": [
+      "autonomous mobile robots",
+      "amr vs agv",
+      "robot terminology"
+    ],
+    "seoTitle": "Autonomous Mobile Robots",
+    "metaDescription": "AGV follows a path, AMR decides a path, a cobot shares a workspace, a humanoid is shaped like a person. Why the words matter.",
+    "faq": [
+      {
+        "q": "What is the difference between an AGV and an AMR?",
+        "a": "An AGV follows a fixed path. An AMR builds a map and reroutes, so it survives a layout change."
+      },
+      {
+        "q": "Is a cobot mobile?",
+        "a": "Usually not. A cobot is an arm working at a station, designed to share space with a person."
+      },
+      {
+        "q": "Why does the vocabulary change the price?",
+        "a": "Because vendors quote what the specification describes. Mixing classes produces quotes that are not comparable."
+      }
+    ],
+    "source": "robotist editorial",
+    "sourcePost": "",
+    "status": "draft",
+    "draftedAt": "2026-11-03T13:00:00Z",
+    "publishedAt": null,
+    "dateModified": "2026-11-03T13:00:00Z",
+    "content": "<p class=\"lede\">Autonomous mobile robot, AGV, cobot, humanoid. Four terms used interchangeably in procurement documents and meaning four different things. The confusion costs money at the specification stage.</p>\n\n<div class=\"callout\">\n  <div class=\"callout-title\">THE SHORT VERSION</div>\n  <p>AGV follows a path. AMR decides a path. A cobot shares a workspace with a person. A humanoid is shaped like one.</p>\n</div>\n\n<h2>AGV: automated guided vehicle</h2>\n<p>Follows a fixed route — tape, wire, markers, or a defined lane. Extremely reliable, extremely inflexible. Change the layout and the installation changes with it. Still the right answer in high-throughput, fixed-flow environments.</p>\n\n<h2>AMR: autonomous mobile robot</h2>\n<p>Builds a map and navigates it, rerouting around obstacles. The difference from an AGV is not intelligence for its own sake; it is that the installation survives a layout change. This is the class most warehouses and hospitals are actually buying.</p>\n\n<h2>Cobot: collaborative robot</h2>\n<p>An arm designed to work alongside a person, usually with force limits and safety-rated monitoring. A cobot does not move through a building; it works at a station. Mixing the term up with AMR leads to specifications that ask for both mobility and manipulation from one purchase.</p>\n\n<h2>Humanoid: a body, not a capability</h2>\n<p>A humanoid describes a shape. It may walk, it may roll. What it can do depends on its hands and its software, which is why two humanoids can be entirely different products.</p>\n\n<table>\n  <thead><tr><th>Term</th><th>What moves</th><th>Typical job</th></tr></thead>\n  <tbody>\n    <tr><td>AGV</td><td>Along a fixed path</td><td>Repetitive transport, fixed flow</td></tr>\n    <tr><td>AMR</td><td>Anywhere on a map</td><td>Transport in changing layouts</td></tr>\n    <tr><td>Cobot</td><td>An arm, at a station</td><td>Assembly, inspection, machine tending</td></tr>\n    <tr><td>Humanoid</td><td>A biped or wheeled body</td><td>Manipulation, interaction, research</td></tr>\n  </tbody>\n</table>\n\n<figure>\n  <img src=\"/robots-cut/unix_panther.webp\" alt=\"UniX AI Panther wheeled humanoid robot\" style=\"max-width:280px;display:block;margin:0 auto;\">\n  <figcaption>Panther shows the overlap: a humanoid upper body on a wheeled base — mobility and manipulation in one frame, neither of them an AGV.</figcaption>\n</figure>\n\n<h2>Why the vocabulary matters commercially</h2>\n<ul class=\"checklist\">\n  <li>A specification that says \"autonomous\" but describes a fixed route will be quoted twice</li>\n  <li>Asking for manipulation and mobility in one unit narrows the market sharply</li>\n  <li>Safety cases differ by class, and the class is determined by how it moves</li>\n  <li>Support models differ: a fleet of AGVs and one humanoid are not the same service relationship</li>\n</ul>\n\n<p>Most of what we sell is in the AMR and humanoid classes; <a href=\"/products/unix-ai-panther\">UniX AI Panther</a> and <a href=\"/products/magiclab-magicbot-g1\">MagicLab MagicBot G1</a> show the range between them.</p>\n\n<h2>How the vocabulary reaches the quote</h2>\n<p>Vendors quote what the specification asks for. A document that mixes classes will produce quotes that are not comparable, and the cheapest will usually be the one that quietly answered a narrower question.</p>\n<p>Write the movement, the payload and the environment in plain words. Let the vendor attach the acronym, and check that every quote describes the same job.</p>\n\n<div class=\"cta-block\">\n  <p>Write the job, not the acronym. The acronym is where specifications go wrong.</p>\n</div>",
+    "targetQuery": "autonomous mobile robots",
+    "pillar": "buy"
+  },
+  {
+    "slug": "warehouse-robot-cleaner",
+    "title": "Warehouse Robot Cleaner: Dust, Pallet Gaps, Night Windows",
+    "excerpt": "A warehouse floor is not a lobby with pallets. Dust load, pallet gaps and a short night window change the machine and the round.",
+    "category": "Deployment",
+    "date": "2026-11-03",
+    "readTime": "3 min",
+    "coverUrl": "blog/covers/warehouse-robot-cleaner.jpg",
+    "keywords": [
+      "warehouse robot cleaner",
+      "warehouse cleaning robot",
+      "industrial floor cleaning"
+    ],
+    "seoTitle": "Warehouse Robot Cleaner",
+    "metaDescription": "Warehouses need sweeping before scrubbing, plan for pallet gaps and racking, and work inside a quiet window shorter than expected.",
+    "faq": [
+      {
+        "q": "Why is sweeping usually first?",
+        "a": "Cardboard dust, wrap and strapping dominate. A combination unit sweeps, scrubs, vacuums and dries in one pass."
+      },
+      {
+        "q": "Who cleans under racking and between pallets?",
+        "a": "A person. The robot covers open aisle, and that division should be planned rather than discovered."
+      },
+      {
+        "q": "What decides the machine in a warehouse?",
+        "a": "The quiet window and aisle width before floor area, plus filtration if dust is the main problem."
+      }
+    ],
+    "source": "robotist editorial",
+    "sourcePost": "",
+    "status": "draft",
+    "draftedAt": "2026-11-03T13:00:00Z",
+    "publishedAt": null,
+    "dateModified": "2026-11-03T13:00:00Z",
+    "content": "<p class=\"lede\">A warehouse floor is not a lobby with pallets on it. Dust loads, pallet gaps, forklift traffic and a night window that is shorter than anyone planned make it a different cleaning problem.</p>\n\n<div class=\"callout\">\n  <div class=\"callout-title\">WHAT CHANGES</div>\n  <p>Debris type, floor condition, and when the machine is allowed to be there.</p>\n</div>\n\n<h2>Dust and debris are the primary load</h2>\n<p>Warehouses produce cardboard dust, shrink wrap, strapping, grit from tyres and whatever the yard brings in. That is a sweeping problem before it is a scrubbing problem, which is why combination machines dominate this category.</p>\n\n<h2>Pallet gaps and racking legs</h2>\n<p>A robot cleans the open aisle. It does not clean under racking, between pallets, or around the legs where debris accumulates. Plan for a person with a blower or a walk-behind in those zones, and do not count that time as a failure of the machine.</p>\n\n<h2>The night window</h2>\n<p>Warehouses often run 24 hours with a short quiet period. That window is the machine's entire opportunity, and it determines runtime and charging strategy more than floor area does.</p>\n\n<table>\n  <thead><tr><th>Warehouse condition</th><th>What it demands</th></tr></thead>\n  <tbody>\n    <tr><td>Cardboard dust and wrap</td><td>Sweeping first, then scrubbing</td></tr>\n    <tr><td>Pallet gaps and racking</td><td>Human detail work alongside the robot</td></tr>\n    <tr><td>Forklift traffic</td><td>Obstacle handling and clear operating rules</td></tr>\n    <tr><td>Short quiet window</td><td>Runtime and opportunity charging</td></tr>\n    <tr><td>Concrete slab</td><td>Scrubbing with the right pad, and dust control</td></tr>\n  </tbody>\n</table>\n\n<figure>\n  <img src=\"/robots-cut/keenon_c40-p1.webp\" alt=\"Keenon C40-P1 warehouse cleaning robot\" style=\"max-width:320px;display:block;margin:0 auto;\">\n  <figcaption>Combination machines like the C40-P1 suit warehouse floors: sweep, scrub, vacuum and dry in one pass inside a short window.</figcaption>\n</figure>\n\n<h2>What to settle with the operations team first</h2>\n<ul class=\"checklist\">\n  <li>The quiet window, agreed with shift supervisors rather than assumed</li>\n  <li>Forklift exclusion zones and how they are enforced</li>\n  <li>Who clears debris the machine cannot reach</li>\n  <li>Charging position that does not block a traffic lane</li>\n  <li>What the report has to show for a manager to trust it</li>\n</ul>\n\n<p>For warehouse floors we usually quote the <a href=\"/products/keenon-c40-p1\">Keenon C40-P1</a>, whose four-in-one pass matches the debris mix. Where the floor is clean and the issue is dust film rather than debris, the <a href=\"/products/gausium-phantas\">Gausium Phantas</a> does the job with fewer systems to maintain.</p>\n\n<h2>Air quality is part of floor cleaning</h2>\n<p>In a warehouse, sweeping lifts dust that then settles on racking and stock. A machine with poor filtration moves the problem rather than solving it, and the dust returns within the shift.</p>\n<p>Ask about filtration and about where the exhaust goes. It is rarely in the brochure and it is the difference between a cleaner floor and a dustier one.</p>\n\n<div class=\"cta-block\">\n  <p>Send the window and the aisle width. Those two decide the machine before floor area does.</p>\n</div>",
+    "targetQuery": "warehouse robot cleaner",
+    "pillar": "buy"
+  },
+  {
+    "slug": "inspection-robot-price",
+    "title": "Inspection Robot Price: Sensors Set the Number",
+    "excerpt": "An inspection robot's cost is mostly its sensors: visible light describes, thermal diagnoses, acoustic and gas predict.",
+    "category": "Deployment",
+    "date": "2026-11-03",
+    "readTime": "3 min",
+    "coverUrl": "blog/covers/inspection-robot-price.jpg",
+    "keywords": [
+      "inspection robot price",
+      "inspection robot sensors",
+      "thermal inspection robot"
+    ],
+    "seoTitle": "Inspection Robot Price",
+    "metaDescription": "An inspection robot's price is mostly its sensors. Visible light describes, thermal diagnoses, acoustic and gas predict.",
+    "faq": [
+      {
+        "q": "Which sensor should come first?",
+        "a": "Visible light. It answers whether something looks different, at the lowest cost and with the least integration work."
+      },
+      {
+        "q": "What does thermal require beyond the camera?",
+        "a": "A stable position, a consistent angle and a baseline to compare against — a process requirement, not just hardware."
+      },
+      {
+        "q": "How do I keep sensor costs honest?",
+        "a": "Start from the finding you need at 7am, then work backwards. Ask what the integration costs, not just the camera."
+      }
+    ],
+    "source": "robotist editorial",
+    "sourcePost": "",
+    "status": "draft",
+    "draftedAt": "2026-11-03T13:00:00Z",
+    "publishedAt": null,
+    "dateModified": "2026-11-03T13:00:00Z",
+    "content": "<p class=\"lede\">An inspection robot's price is mostly its sensors. The body, the legs and the software matter, but the number moves with what the machine can see.</p>\n\n<div class=\"callout\">\n  <div class=\"callout-title\">SENSORS SET THE NUMBER</div>\n  <p>Visible light describes. Thermal diagnoses. Acoustic predicts. Each layer changes what the report can claim.</p>\n</div>\n\n<h2>Visible light: description</h2>\n<p>A camera records what a person would have seen. It answers \"is the door open\", \"is there a spill\", \"did something fall\". It is the cheapest layer and the one every platform has.</p>\n\n<h2>Thermal: diagnosis</h2>\n<p>A thermal camera answers a different question: is this panel hotter than it was last week. That requires a stable camera position, a consistent angle and a comparison against a baseline — which is a software and process requirement as much as a hardware one.</p>\n\n<h2>Acoustic and gas: prediction</h2>\n<p>Sound and gas sensors move the round from inspection to early warning. They also add integration work: capturing the stream, aligning it in time, and setting thresholds that do not cry wolf.</p>\n\n<table>\n  <thead><tr><th>Sensor</th><th>What the report can say</th><th>What it adds</th></tr></thead>\n  <tbody>\n    <tr><td>Visible light</td><td>Something looks different</td><td>Baseline cost, minimal integration</td></tr>\n    <tr><td>Thermal</td><td>This asset is running hot</td><td>Camera, calibration, baseline process</td></tr>\n    <tr><td>Acoustic</td><td>This machine sounds different</td><td>Capture, thresholds, false-positive tuning</td></tr>\n    <tr><td>Gas</td><td>Something is present in the air</td><td>Certification, alarm logic</td></tr>\n  </tbody>\n</table>\n\n<figure>\n  <img src=\"/robots-cut/magiclab_magicdog_y1.webp\" alt=\"MagicLab MagicDog Y1 inspection robot\" style=\"max-width:340px;display:block;margin:0 auto;\">\n  <figcaption>The industrial class carries the payload; the sensors decide what the night round can actually report.</figcaption>\n</figure>\n\n<h2>How to keep the number honest</h2>\n<ul class=\"checklist\">\n  <li>Start with the finding you want at 7am, then work backwards to the sensor</li>\n  <li>Ask what the integration costs, not just the camera</li>\n  <li>Require a sample report from a live site with a real anomaly</li>\n  <li>Check whether the sensor data is exportable for your own analysis</li>\n  <li>Decide who tunes thresholds so the alarms stay credible</li>\n</ul>\n\n<div class=\"pullquote\">A thermal camera on a robot that stands in a different place each night produces noise. Repeatability is what turns a sensor into evidence.</div>\n\n<p>For a first round the <a href=\"/products/magiclab-magicdog-y1\">MagicDog Y1</a> with a camera payload will answer most facility questions. Add sensing when the question requires it, not because the brochure lists it — and if the site is a fixed security post rather than a moving route, a patrol platform such as the <a href=\"/products/genisom-m1\">Genisom M1</a> is the cheaper shape of the same answer.</p>\n\n<h2>The question before the sensor list</h2>\n<p>What decision will this report change? If the answer is \"we would send someone to look\", a camera payload is enough. If the answer is \"we would shut down an asset\", the sensor and the baseline process both have to be right, and the cost sits in the process rather than the hardware.</p>\n<p>Start with the decision. The sensor list writes itself after that.</p>\n\n<div class=\"cta-block\">\n  <p>Name the finding you need. The sensor list and the number follow from it.</p>\n</div>",
+    "targetQuery": "inspection robot price",
+    "pillar": "buy"
   }
 ]
