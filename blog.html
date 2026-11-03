@@ -93,18 +93,21 @@ body { background: var(--bg-0); color: var(--white); font-family: var(--font-bod
 .nav-links.open { display: flex; flex-direction: column; position: absolute; top: var(--nav-h); left: 0; right: 0; background: rgba(3,8,16,0.95); backdrop-filter: blur(24px); padding: 20px var(--gutter); gap: 16px; z-index: 400; border-bottom: 1px solid rgba(74,168,200,0.08); }
 
 /* Hero */
-.blog-hero { padding: calc(var(--nav-h) + 100px) var(--gutter) 80px; max-width: var(--container); margin: 0 auto; }
-.blog-hero-label { font-family: var(--font-main); font-size: 10px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; }
-.blog-hero h1 { font-family: var(--font-main); font-size: clamp(36px, 5.5vw, 60px); font-weight: 600; letter-spacing: -0.025em; line-height: 1.1; margin-bottom: 16px; max-width: 700px; }
-.blog-hero p { font-size: 17px; font-weight: 400; color: var(--grey-1); line-height: 1.65; max-width: 560px; }
+.blog-hero { padding: calc(var(--nav-h) + 92px) var(--gutter) 56px; max-width: 1440px; margin: 0 auto; display: grid; grid-template-columns: minmax(0,1.1fr) minmax(0,0.9fr); gap: 64px; align-items: end; }
+.blog-hero-label { font-family: var(--font-main); font-size: 10px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 16px; grid-column: 1 / -1; }
+.blog-hero h1 { font-family: var(--font-main); font-size: clamp(38px, 4.6vw, 64px); font-weight: 600; letter-spacing: -0.03em; line-height: 1.04; margin: 0; max-width: 760px; }
+.blog-hero-aside { border-left: 1px solid var(--grey-3); padding-left: 40px; }
+.blog-hero p { font-size: 16px; font-weight: 400; color: var(--grey-1); line-height: 1.7; margin: 0 0 18px; max-width: 460px; }
+.blog-hero-stat { font-family: var(--font-main); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey-1); display: flex; gap: 28px; }
+.blog-hero-stat strong { color: var(--accent); font-weight: 600; }
 
 /* Featured post */
-.featured { max-width: var(--container); margin: 0 auto 80px; padding: 0 var(--gutter); }
+.featured { max-width: 1440px; margin: 0 auto 84px; padding: 0 var(--gutter); }
 .featured-card { display: grid; grid-template-columns: 1fr 1fr; background: var(--bg-1); border: 1px solid var(--grey-3); text-decoration: none; transition: border-color 0.25s, background 0.25s; }
 .featured-card:hover { border-color: var(--accent-dim); background: var(--bg-2); }
-.featured-cover { width: 100%; height: 100%; min-height: 320px; background: var(--bg-1); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+.featured-cover { width: 100%; height: 100%; min-height: 320px; max-height: 400px; background: var(--bg-1); display: flex; align-items: center; justify-content: center; overflow: hidden; }
 .featured-cover img, .featured-cover svg { width: 100%; height: 100%; object-fit: cover; }
-.featured-body { padding: 48px 40px; display: flex; flex-direction: column; justify-content: center; }
+.featured-body { padding: 40px 44px; display: flex; flex-direction: column; justify-content: center; }
 .featured-category { font-family: var(--font-main); font-size: 10px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
 .featured-title { font-family: var(--font-main); font-size: clamp(22px, 3vw, 30px); font-weight: 600; letter-spacing: -0.015em; color: var(--white); line-height: 1.25; margin-bottom: 12px; }
 .featured-excerpt { font-size: 15px; font-weight: 400; color: var(--grey-1); line-height: 1.7; margin-bottom: 20px; }
@@ -112,19 +115,20 @@ body { background: var(--bg-0); color: var(--white); font-family: var(--font-bod
 .featured-read { font-family: var(--font-main); font-size: 12px; font-weight: 500; color: var(--accent); letter-spacing: 0.06em; margin-top: 16px; }
 
 /* Section header */
-.section-header { max-width: var(--container); margin: 0 auto 40px; padding: 0 var(--gutter); }
+.section-header { max-width: 1440px; margin: 0 auto 40px; padding: 0 var(--gutter); }
 .section-header h2 { font-family: var(--font-main); font-size: 13px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey-1); }
 
 /* Grid */
-.blog-grid { max-width: var(--container); margin: 0 auto; padding: 0 var(--gutter) 120px; display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; }
+.blog-grid { max-width: 1440px; margin: 0 auto; padding: 0 var(--gutter) 120px; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px; }
+@media (min-width: 1500px) { .blog-grid { grid-template-columns: repeat(4, minmax(0,1fr)); } }
 .blog-card { background: var(--bg-1); border: 1px solid var(--grey-3); text-decoration: none; display: flex; flex-direction: column; transition: border-color 0.25s, background 0.25s; overflow: hidden; }
 .blog-card:hover { border-color: var(--accent-dim); background: var(--bg-2); }
 .blog-card-cover { width: 100%; aspect-ratio: 16/9; background: var(--bg-2); overflow: hidden; }
 .blog-card-cover img, .blog-card-cover svg { width: 100%; height: 100%; object-fit: cover; display: block; }
-.blog-card-body { padding: 28px 28px 32px; display: flex; flex-direction: column; flex: 1; }
+.blog-card-body { padding: 24px 24px 26px; display: flex; flex-direction: column; flex: 1; }
 .blog-card-category { font-family: var(--font-main); font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px; }
-.blog-card-title { font-family: var(--font-main); font-size: 18px; font-weight: 600; letter-spacing: -0.01em; color: var(--white); line-height: 1.3; margin-bottom: 8px; }
-.blog-card-excerpt { font-size: 13px; font-weight: 400; color: var(--grey-1); line-height: 1.65; flex: 1; margin-bottom: 16px; }
+.blog-card-title { font-family: var(--font-main); font-size: 19px; font-weight: 600; letter-spacing: -0.01em; color: var(--white); line-height: 1.3; margin-bottom: 8px; }
+.blog-card-excerpt { font-size: 14px; font-weight: 400; color: var(--grey-1); line-height: 1.6; flex: 1; margin-bottom: 16px; }
 .blog-card-meta { font-family: var(--font-main); font-size: 10px; font-weight: 400; color: var(--grey-1); letter-spacing: 0.08em; display: flex; gap: 14px; }
 
 /* Loading */
@@ -149,11 +153,13 @@ body { background: var(--bg-0); color: var(--white); font-family: var(--font-bod
   .nav-links { display: none; }
   .nav-cta { display: none; }
   .nav-hamburger { display: flex; }
-  .blog-hero { padding: calc(var(--nav-h) + 60px) var(--gutter) 48px; }
+  .blog-hero { padding: calc(var(--nav-h) + 56px) var(--gutter) 40px; grid-template-columns: 1fr; gap: 24px; }
+  .blog-hero-aside { border-left: 0; padding-left: 0; }
+  .blog-hero h1 br { display: none; }
   .featured-card { grid-template-columns: 1fr; }
   .featured-cover { min-height: 200px; }
   .featured-body { padding: 32px 24px; }
-  .blog-grid { grid-template-columns: 1fr; gap: 16px; }
+  .blog-grid { grid-template-columns: 1fr; gap: 18px; }
   .blog-card-body { padding: 24px 20px 28px; }
   .footer-inner { grid-template-columns: 1fr; gap: 40px; }
   .footer-bottom { flex-direction: column; align-items: flex-start; gap: 16px; }
@@ -303,7 +309,10 @@ body { background: var(--bg-0); color: var(--white); font-family: var(--font-bod
 <section class="blog-hero">
   <div class="blog-hero-label">Articles</div>
   <h1>Robot procurement,<br>without the guesswork.</h1>
-  <p>Practical guides on buying, deploying, and operating commercial robots worldwide. Written by people who've done it — not by chatbots.</p>
+  <div class="blog-hero-aside">
+    <p>Practical guides on buying, deploying, and operating commercial robots worldwide. Written by people who've done it — not by chatbots.</p>
+    <div class="blog-hero-stat"><span><strong id="stat-count">—</strong> articles</span><span><strong>5</strong> topics</span></div>
+  </div>
 </section>
 
 <div id="featured-container"></div>
@@ -359,7 +368,10 @@ fetch('blog-posts.json')
   .then(r => r.json())
   .then(posts => {
     // Draft posts (status: "draft") stay in blog-posts.json but are never rendered publicly.
-    posts = posts.filter(p => p.status !== 'draft');
+    posts = posts.filter(p => p.status !== 'draft')
+      .sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
+    const stat = document.getElementById('stat-count');
+    if (stat) stat.textContent = posts.length;
     const coverPath = function(p) { return p.coverUrl || 'blog/covers/' + p.slug + '.jpg'; };
     
     // Featured: first post

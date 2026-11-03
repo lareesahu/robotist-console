@@ -233,5 +233,44 @@ class IntegratedCatalogTest(unittest.TestCase):
         self.assertEqual(self.client.post('/manage/blog/api/posts/'+draft['slug']+'/bogus',headers=self.headers,json={}).status_code,404)
         self.assertEqual(self.client.post('/manage/blog/api/posts/not-a-post/publish',headers=self.headers,json={}).status_code,404)
 
+    def test_blog_manager_edits_creates_and_deletes(self):
+        """Create, edit, delete and bulk actions all persist to blog-posts.json."""
+        import json
+        store=Path(self.tmp.name)/'blog-posts.json'
+        before=json.loads(store.read_text(encoding='utf-8'))
+        draft={'title':'A test article about floor robots','slug':'a-test-article-about-floor-robots',
+               'category':'Deployment','date':'November 04, 2026','readTime':'4 min',
+               'excerpt':'A short excerpt that a blog card can show.','coverUrl':'blog/covers/test.jpg',
+               'seoTitle':'A test article','metaDescription':'A meta description under the limit.',
+               'keywords':['floor robot','test'],'status':'draft','faq':[{'q':'Why?','a':'Because.'}],
+               'content':'<p>'+('Robot body copy. '*60)+'</p><h2>Section</h2><p>More copy.</p>'}
+        created=self.client.post('/manage/blog/api/posts/save',headers=self.headers,json={'originalSlug':None,'post':draft})
+        self.assertEqual(created.status_code,200,created.get_data(as_text=True))
+        self.assertEqual(created.get_json()['post']['slug'],draft['slug'])
+        on_disk=json.loads(store.read_text(encoding='utf-8'))
+        self.assertEqual(len(on_disk),len(before)+1)
+        duplicate=self.client.post('/manage/blog/api/posts/save',headers=self.headers,json={'originalSlug':None,'post':draft})
+        self.assertEqual(duplicate.status_code,400)
+        too_long=dict(draft,slug='another-slug',metaDescription='x'*200)
+        self.assertEqual(self.client.post('/manage/blog/api/posts/save',headers=self.headers,json={'originalSlug':None,'post':too_long}).status_code,400)
+        short=dict(draft,slug='short-body',content='<p>Too short.</p>')
+        self.assertEqual(self.client.post('/manage/blog/api/posts/save',headers=self.headers,json={'originalSlug':None,'post':short}).status_code,400)
+        edited=self.client.post('/manage/blog/api/posts/save',headers=self.headers,
+            json={'originalSlug':draft['slug'],'post':dict(draft,title='An edited test article',slug='an-edited-test-article')})
+        self.assertEqual(edited.status_code,200,edited.get_data(as_text=True))
+        on_disk=json.loads(store.read_text(encoding='utf-8'))
+        self.assertFalse(any(p['slug']==draft['slug'] for p in on_disk))
+        self.assertTrue(any(p['slug']=='an-edited-test-article' for p in on_disk))
+        bulk=self.client.post('/manage/blog/api/bulk',headers=self.headers,json={'slugs':['an-edited-test-article'],'action':'publish'})
+        self.assertEqual(bulk.status_code,200,bulk.get_data(as_text=True))
+        on_disk=json.loads(store.read_text(encoding='utf-8'))
+        self.assertEqual(next(p for p in on_disk if p['slug']=='an-edited-test-article')['status'],'published')
+        removed=self.client.post('/manage/blog/api/posts/an-edited-test-article/delete',headers=self.headers,json={})
+        self.assertEqual(removed.status_code,200,removed.get_data(as_text=True))
+        on_disk=json.loads(store.read_text(encoding='utf-8'))
+        self.assertEqual(len(on_disk),len(before))
+        bulk_delete=self.client.post('/manage/blog/api/bulk',headers=self.headers,json={'slugs':[],'action':'delete'})
+        self.assertEqual(bulk_delete.status_code,400)
+
 
 if __name__=='__main__':unittest.main(verbosity=2)

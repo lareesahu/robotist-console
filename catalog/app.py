@@ -1,5 +1,5 @@
 """Robotist website and internal CMS share one origin and the GRN admin session."""
-import argparse,json,mimetypes,os,secrets,sqlite3,time,urllib.error,urllib.request
+import argparse,json,mimetypes,os,re,secrets,sqlite3,time,urllib.error,urllib.request
 from pathlib import Path
 from urllib.parse import urlsplit
 from functools import wraps
@@ -62,6 +62,46 @@ def _blog_posts(app):
 def _blog_status_counts(posts):
     drafts=sum(1 for p in posts if p.get('status')=='draft')
     return drafts,len(posts)-drafts
+
+# ── Blog editor: create, edit, delete, bulk ──────────────────────────────────
+BLOG_SLUG=re.compile(r'^[a-z0-9]+(?:-[a-z0-9]+)*$')
+
+def _blog_normalise(raw):
+    """Turn an editor payload into a post dict, collecting what is wrong with it."""
+    errors=[]
+    def text(key,limit=None):
+        value=' '.join(str(raw.get(key) or '').split())
+        return value[:limit] if limit else value
+    title=text('title')
+    if len(title)<4 or len(title)>160:errors.append('Title needs 4 to 160 characters.')
+    slug=text('slug').lower()
+    if not slug:slug=(re.sub(r'[^a-z0-9]+','-',title.lower()).strip('-') or 'article')[:70]
+    if not BLOG_SLUG.match(slug):errors.append('Slug can only use lowercase letters, numbers and single hyphens.')
+    excerpt=text('excerpt')
+    if len(excerpt)>300:errors.append('The excerpt must stay under 300 characters.')
+    if not excerpt:errors.append('Write a one-sentence excerpt; it is what the blog cards show.')
+    meta=text('metaDescription')
+    if len(meta)>158:errors.append('Meta description must stay under 158 characters (it is %s).' % len(meta))
+    content=str(raw.get('content') or '').strip()
+    if len(re.sub(r'<[^>]+>','',content).split())<150:
+        errors.append('The article body needs at least 150 words of text.')
+    keywords=[str(k).strip() for k in (raw.get('keywords') or []) if str(k).strip()][:6]
+    faq=[]
+    for item in (raw.get('faq') or [])[:6]:
+        question=' '.join(str(item.get('q') or '').split())
+        answer=' '.join(str(item.get('a') or '').split())
+        if question and answer:faq.append({'q':question,'a':answer})
+    word_count=len(re.sub(r'<[^>]+>',' ',content).split())
+    post={
+        'title':title,'slug':slug,'category':text('category') or 'Deployment',
+        'date':text('date') or time.strftime('%B %d, %Y'),
+        'readTime':text('readTime') or ('%d min' % max(3,round(word_count/200))),
+        'excerpt':excerpt,'coverUrl':text('coverUrl') or ('blog/covers/%s.jpg' % slug),
+        'seoTitle':text('seoTitle') or title[:60],'metaDescription':meta or excerpt[:150],
+        'keywords':keywords,'faq':faq,'content':content,
+        'status':'published' if raw.get('status')=='published' else 'draft',
+    }
+    return post,errors
 
 def _blog_github(app,method,path,body=None):
     token=os.getenv('GITHUB_TOKEN','')
@@ -448,6 +488,90 @@ def create_app(config=None):
             return jsonify(error='Could not save the change: %s' % error),502
         drafts,published=_blog_status_counts(posts)
         return jsonify(slug=slug,status=post['status'],drafts=drafts,published=published)
+
+    @app.route('/manage/blog/api/posts/save',methods=['POST'])
+    @admin
+    def blog_api_save():
+        payload=request.get_json(silent=True) or {}
+        original=(payload.get('originalSlug') or '').strip()
+        post,errors=_blog_normalise(payload.get('post') or {})
+        if errors:return jsonify(error=errors[0],errors=errors),400
+        posts=_blog_posts(app)
+        clash=next((p for p in posts if p.get('slug')==post['slug'] and p.get('slug')!=original),None)
+        if clash:return jsonify(error='Another post already uses the slug "%s".' % post['slug']),400
+        current=next((p for p in posts if p.get('slug')==original),None) if original else None
+        if original and current is None:
+            return jsonify(error='That post is no longer in blog-posts.json. Reload the page and try again.'),404
+        if current is None:
+            post['draftedAt']=time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime())
+            post['publishedAt']=time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime()) if post['status']=='published' else None
+            post['source']='robotist editorial'
+            posts.insert(0,post)
+            message="blog: add '%s' via Content Manager" % post['title']
+        else:
+            merged=dict(current);merged.update(post)
+            merged['dateModified']=time.strftime('%Y-%m-%d')
+            if post['status']=='published' and not current.get('publishedAt'):
+                merged['publishedAt']=time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime())
+            post=merged
+            posts[posts.index(current)]=merged
+            message="blog: edit '%s' via Content Manager" % post['title']
+        try:
+            _blog_commit(app,posts,message)
+        except RuntimeError as error:
+            return jsonify(error='Could not save the change: %s' % error),502
+        if original and original!=post['slug']:_blog_drop_page(app,original)
+        drafts,published=_blog_status_counts(posts)
+        return jsonify(post=post,drafts=drafts,published=published)
+
+    @app.route('/manage/blog/api/posts/<slug>/delete',methods=['POST'])
+    @admin
+    def blog_api_delete(slug):
+        posts=_blog_posts(app)
+        post=next((p for p in posts if p.get('slug')==slug),None)
+        if not post:return jsonify(error='That post is not in blog-posts.json.'),404
+        remaining=[p for p in posts if p.get('slug')!=slug]
+        try:
+            _blog_commit(app,remaining,"blog: delete '%s' via Content Manager" % post.get('title',''))
+        except RuntimeError as error:
+            return jsonify(error='Could not delete: %s' % error),502
+        _blog_drop_page(app,slug)
+        drafts,published=_blog_status_counts(remaining)
+        return jsonify(deleted=slug,drafts=drafts,published=published)
+
+    @app.route('/manage/blog/api/bulk',methods=['POST'])
+    @admin
+    def blog_api_bulk():
+        payload=request.get_json(silent=True) or {}
+        action=payload.get('action')
+        slugs=[str(s) for s in (payload.get('slugs') or []) if str(s).strip()]
+        if action not in ('publish','unpublish','delete'):return jsonify(error='Unknown bulk action.'),400
+        if not slugs:return jsonify(error='Nothing is selected.'),400
+        posts=_blog_posts(app)
+        wanted=set(slugs)
+        hits=[p for p in posts if p.get('slug') in wanted]
+        if not hits:return jsonify(error='Those posts are no longer in blog-posts.json.'),404
+        if action=='delete':
+            posts=[p for p in posts if p.get('slug') not in wanted]
+            verb='delete'
+        else:
+            for post in hits:
+                post['status']='published' if action=='publish' else 'draft'
+                post['dateModified']=time.strftime('%Y-%m-%d')
+                if action=='publish' and not post.get('publishedAt'):
+                    post['publishedAt']=time.strftime('%Y-%m-%dT%H:%M:%SZ',time.gmtime())
+            verb='publish' if action=='publish' else 'unpublish'
+        try:
+            _blog_commit(app,posts,"blog: %s %d post(s) via Content Manager" % (verb,len(hits)))
+        except RuntimeError as error:
+            return jsonify(error='Could not save the change: %s' % error),502
+        if action in ('delete','unpublish'):
+            for post in hits:_blog_drop_page(app,post['slug'])
+        drafts,published=_blog_status_counts(posts)
+        summary={'publish':'Published %d article(s). Live within about a minute.' % len(hits),
+                 'unpublish':'Returned %d article(s) to draft and removed the live pages.' % len(hits),
+                 'delete':'Deleted %d article(s).' % len(hits)}[action]
+        return jsonify(action=action,count=len(hits),drafts=drafts,published=published,summary=summary)
 
     @app.route('/manage/blog/preview/<slug>')
     @admin
