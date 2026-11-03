@@ -1,5 +1,44 @@
 [
   {
+    "slug": "inspection-robot-dog-patrol-round",
+    "title": "Inspection Robot Dog: What a Patrol Round Actually Tests",
+    "excerpt": "A patrol robot is judged by the report it leaves behind, not by the route it walked. What to test before a quadruped earns a night round.",
+    "category": "Deployment",
+    "date": "2026-11-03",
+    "readTime": "6 min",
+    "coverUrl": "blog/covers/inspection-robot-dog-patrol-round.jpg",
+    "keywords": [
+      "inspection robot dog",
+      "quadruped robot inspection",
+      "robot dog patrol"
+    ],
+    "seoTitle": "Inspection Robot Dog",
+    "metaDescription": "What an inspection robot dog is tested on: repeatable waypoints, floor transitions, the sensor payload, and the report a supervisor reads.",
+    "faq": [
+      {
+        "q": "Can a robot dog replace night security?",
+        "a": "It replaces the walking of the round, not the judgement. Most sites run it as a sensor carrier that produces evidence, with a person reviewing the report and responding to anomalies."
+      },
+      {
+        "q": "What matters more: legs or sensors?",
+        "a": "Sensors. The payload decides what the report can contain, which is the only thing the site actually uses the next morning."
+      },
+      {
+        "q": "How do we test one before buying?",
+        "a": "Five nights at the same waypoint, comparing the images side by side, plus one real report from an operating site. Repeatability first, agility second."
+      }
+    ],
+    "source": "robotist editorial",
+    "sourcePost": "",
+    "status": "draft",
+    "draftedAt": "2026-11-03T12:00:00Z",
+    "publishedAt": null,
+    "dateModified": "2026-11-03T12:00:00Z",
+    "content": "<p class=\"lede\">An inspection round looks simple until you watch one run at night. The robot has to find the same door, stop at the same panel, hold a steady angle for the same photograph, and produce something a supervisor can read the next morning. Most of the difficulty is in that last part, and almost none of it is about legs.</p>\n\n<div class=\"callout\">\n  <div class=\"callout-title\">THE TEST IN ONE LINE</div>\n  <p>A patrol robot is judged by the report it leaves behind, not by the route it walked.</p>\n</div>\n\n<h2>A round is a sequence of fixed positions, not a wander</h2>\n<p>What a site actually deploys is a list: waypoint one is the plant room door at 2100, waypoint two is the switchboard at 2135, waypoint three is the loading dock at 2210. The robot repeats that list every night, at the same angle, in the same light, and the value comes from the repetition. A machine that arrives at the right place from a slightly different direction produces a photograph nobody can compare to last week's.</p>\n<p>So the first thing to test is not agility. It is repeatability: five nights, the same waypoint, and a comparison of the five images. If they differ, the platform is not ready for inspection work regardless of how well it handles stairs.</p>\n\n<h2>Four things the round actually tests</h2>\n<p><strong>Floor transitions.</strong> Carpet to tile, tile to a ramp, ramp to a dock plate. Each seam is where a quadruped stumbles or re-plans, and each one costs time on a round that has to finish before the morning shift arrives.</p>\n<p><strong>Door and threshold handling.</strong> A closed fire door stops the round. Either the site integrates access control, or the round is designed around it. Both are decisions, and neither is made by the robot.</p>\n<p><strong>The sensor payload.</strong> A visible-light camera answers \"is the door open\". A thermal sensor answers \"is that panel hot\". An acoustic sensor answers \"is that pump running louder than last week\". The payload decides what the report can contain, so it is the specification that matters most — more than payload capacity in kilograms.</p>\n<p><strong>The output.</strong> Every platform claims a report. Ask to see one from a real site, with real timestamps and a real anomaly in it. If the vendor cannot produce a sample report, the software is a demo.</p>\n\n<h2>Where the price difference actually comes from</h2>\n<p>Quadrupeds span a wide range for a reason that is easy to see once you look at the two ends of it. An education unit at the entry level teaches gait, control and programming with an open SDK and a body that a student can repair. An industrial inspection unit carries the payload, the ingress protection and the runtime that a cold storage aisle and a plant room demand — and costs several times as much for capabilities that only matter at night, outdoors, in dust, over a two-hour round.</p>\n\n<table>\n  <thead>\n    <tr><th>What changes</th><th>Education unit</th><th>Industrial inspection unit</th></tr>\n  </thead>\n  <tbody>\n    <tr><td>Round length</td><td>Short demonstrations</td><td>Two hours, dock to dock, unattended</td></tr>\n    <tr><td>Environment</td><td>Lab floor, hallways</td><td>Dust, ramps, loading docks, weather</td></tr>\n    <tr><td>Payload</td><td>Camera and a laptop link</td><td>Thermal, acoustic, gas, additional compute</td></tr>\n    <tr><td>Failure cost</td><td>A lesson</td><td>A missed round and an unreviewed site</td></tr>\n    <tr><td>Support</td><td>Documentation</td><td>Spares, service response, replacement body</td></tr>\n  </tbody>\n</table>\n\n<figure>\n  <img src=\"/robots-cut/magiclab_magicdog_y1.webp\" alt=\"MagicLab MagicDog Y1 quadruped robot\" style=\"max-width:360px;display:block;margin:0 auto;\">\n  <figcaption>MagicDog Y1 is the industrial end of that range: inspection and patrol work, with the payload and runtime a night round needs.</figcaption>\n</figure>\n\n<h2>The failure that matters most</h2>\n<p>Not falling over. Missing a round quietly.</p>\n<p>A robot that stops in the middle of a building is an inconvenience. A robot that walks the round but fails to capture one waypoint, then files a report that looks complete, is a safety problem: the site believes it was inspected. Ask how the platform handles a partial round — whether it names the waypoints it missed, and whether a supervisor sees that clearly.</p>\n\n<div class=\"pullquote\">A single missed waypoint reported honestly is worth more than a hundred images nobody reviews.</div>\n\n<h2>What to check before a pilot</h2>\n<ul class=\"checklist\">\n  <li>Five nights at the same waypoint, images compared side by side</li>\n  <li>A sample report from an operating site, anomalies included</li>\n  <li>How a partial round is recorded and who is told</li>\n  <li>Runtime measured with the real payload, not the brochure number</li>\n  <li>Ingress protection matched to where the round actually goes</li>\n  <li>Which parts a site technician can replace, and which need return to base</li>\n</ul>\n\n<h2>The two ends of the range in our catalogue</h2>\n<p>The <a href=\"/products/magiclab-magicdog-y1\">MagicLab MagicDog Y1</a> is the industrial unit: inspection and patrol, payload and runtime for a working night round. The <a href=\"/products/magiclab-magicdog\">MagicLab MagicDog</a> is the education unit, and it is the right buy for a school or a lab that wants to teach control and gait. Buying the second for a security round is the most common mistake we see; buying the first for a classroom is the second most common.</p>\n<p>For teaching and research budgets the <a href=\"/products/agibot-d1-edu\">AGIBOT D1 EDU</a> sits between them, and it is where most university courses should start.</p>\n\n<div class=\"cta-block\">\n  <p>Send us the route, the waypoints and what the report has to prove. We will tell you whether a quadruped is the right machine for it at all.</p>\n</div>\n",
+    "targetQuery": "inspection robot dog",
+    "pillar": "quadruped"
+  },
+  {
     "slug": "humanoid-robot-university-labs",
     "title": "Humanoid Robot for University Labs: What to Buy First",
     "excerpt": "A demo unit performs. A research platform gets opened, reprogrammed and published from. What a university lab should ask before it signs.",
