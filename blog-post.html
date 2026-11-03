@@ -111,10 +111,10 @@ body { background: var(--bg-0); color: var(--white); font-family: var(--font-bod
 .article-content figure img { width: 100%; height: auto; display: block; border-radius: 14px; border: 1px solid rgba(74,168,200,0.14); }
 .article-content figcaption { margin-top: 12px; font-size: 12.5px; line-height: 1.6; color: var(--grey-1); letter-spacing: 0.01em; }
 .article-content .cut { display: block; width: 100%; max-width: 420px; margin: 36px auto; background: linear-gradient(180deg, rgba(12,24,40,0.9), rgba(6,13,24,0.9)); border-radius: 18px; padding: 26px; border: 1px solid rgba(74,168,200,0.12); }
-.article-content table { display: block; max-width: 100%; overflow-x: auto; width: 100%; border-collapse: collapse; margin: 34px 0; font-size: 15px; }
-.article-content thead th { text-align: left; font-family: var(--font-main); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey-1); font-weight: 400; padding: 0 18px 12px 0; border-bottom: 1px solid rgba(74,168,200,0.25); white-space: nowrap; }
+.article-content table { display: table; max-width: 100%; width: 100%; border-collapse: collapse; margin: 34px 0; font-size: 15px; }
+.article-content thead th { text-align: left; font-family: var(--font-main); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--grey-1); font-weight: 400; padding: 0 18px 12px 0; border-bottom: 1px solid rgba(74,168,200,0.25); }
 .article-content tbody td { padding: 14px 18px 14px 0; border-bottom: 1px solid rgba(74,168,200,0.10); vertical-align: top; line-height: 1.6; }
-.article-content tbody td:first-child { color: var(--white); font-weight: 500; white-space: nowrap; }
+.article-content tbody td:first-child { color: var(--white); font-weight: 500; }
 .article-content tbody tr:last-child td { border-bottom: 0; }
 .article-content .callout { margin: 38px 0; padding: 22px 26px; border-left: 3px solid var(--accent); background: rgba(74,168,200,0.07); border-radius: 0 14px 14px 0; font-size: 16px; line-height: 1.7; color: #CBD5DE; }
 .article-content .callout .callout-title { display: block; font-family: var(--font-main); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent-light); margin-bottom: 8px; }
@@ -310,7 +310,8 @@ body { background: var(--bg-0); color: var(--white); font-family: var(--font-bod
 /* ── Article media (responsive) ── */
 .article-cover img,.article-content img{max-width:100%;height:auto}
 .article-content iframe{max-width:100%}
-.article-content table{display:block;max-width:100%;overflow-x:auto}
+.article-content table{display:table;max-width:100%}
+@media (max-width:720px){.article-content table{display:block;overflow-x:auto}}
 .article-wrap>*{min-width:0}
 /* ── SEO FAQ ── */
 .article-faq{margin-top:44px;padding-top:28px;border-top:1px solid rgba(74,168,200,.14)}
