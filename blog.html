@@ -368,8 +368,9 @@ fetch('blog-posts.json')
   .then(r => r.json())
   .then(posts => {
     // Draft posts (status: "draft") stay in blog-posts.json but are never rendered publicly.
+    const stamp = p => { const t = Date.parse(String(p.date || '')); return isNaN(t) ? 0 : t; };
     posts = posts.filter(p => p.status !== 'draft')
-      .sort((a, b) => String(b.date || '').localeCompare(String(a.date || '')));
+      .sort((a, b) => stamp(b) - stamp(a));
     const stat = document.getElementById('stat-count');
     if (stat) stat.textContent = posts.length;
     const coverPath = function(p) { return p.coverUrl || 'blog/covers/' + p.slug + '.jpg'; };
