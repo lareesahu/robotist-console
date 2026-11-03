@@ -117,45 +117,6 @@
     "pillar": "clean"
   },
   {
-    "slug": "repeat-robot-deployments-second-site",
-    "title": "The Second Site Is the Real Test: What Repeat Robot Deployments Require",
-    "excerpt": "Factories now run humanoids in the hundreds and quadrupeds log thousands of inspections a week, so the argument has moved from whether robots work to whether a deployment can be repeated. The checks that decide whether site two happens without the vendor camped in your office.",
-    "category": "Robotics in Business",
-    "date": "October 30, 2026",
-    "readTime": "4 min",
-    "coverUrl": "blog/covers/repeat-robot-deployments-second-site.jpg",
-    "keywords": [
-      "repeat robot deployment",
-      "multi-site robot rollout",
-      "industrial humanoid deployment",
-      "quadruped fleet management",
-      "robot total cost of ownership"
-    ],
-    "seoTitle": "Repeat Robot Deployments: The Second-Site Test",
-    "metaDescription": "Repeat deployments are the real test of a robot vendor: throughput, uptime, spares, fleet software and total cost. What to check before site two.",
-    "faq": [
-      {
-        "q": "How many robots do I need before a deployment counts as repeatable?",
-        "a": "Two sites is enough. The count matters less than what the second site needs from you: the same integration done again without vendor engineers on the floor, spares already in the region, and a fleet tool that can carry the extra units. If site two requires the same effort as site one, you bought a pilot, not a deployment."
-      },
-      {
-        "q": "Should I buy a robot or pay per hour through robots-as-a-service?",
-        "a": "Buy when the duty cycle is steady and the task is stable, because capital spread over three years of daily use usually beats a per-hour rate. Take robots-as-a-service when volume is uncertain or the workflow is still changing, since it puts utilisation risk on the vendor and keeps the capital free. Price both against the labour the robot actually replaces, not against the machine's list price."
-      },
-      {
-        "q": "What should I ask a vendor before committing to a second site?",
-        "a": "Ask for a reference customer who has reordered rather than one with a demo video, ask how many units the fleet software can manage, ask the spare-part lead time for a failed actuator or sensor, and ask who trains the second shift. A vendor that cannot answer all four in writing is not ready to replicate a deployment."
-      }
-    ],
-    "source": "linkedin",
-    "sourcePost": "https://www.linkedin.com/feed/update/urn:li:activity:7520857210265108490/",
-    "status": "draft",
-    "draftedAt": "2026-10-30",
-    "publishedAt": "2026-10-30T04:15:20Z",
-    "dateModified": "2026-11-03",
-    "content": "<p>A robot in front of a camera and a robot working a shift on your floor are two different products. The gap is not the machine. It is everything around it: power, spares, software, and the technician who already knows which joint fails first.</p>\n<p>The industry has moved onto that ground. The talk is no longer about walking demonstrations but repeat deployments: the second site, the third, the fifth, each standing up without the vendor's engineers camped in your office. It is a fair test: only a system that survives contact with operations twice can pass it.</p>\n<h3>What the deployment numbers now look like</h3>\n<p>UBTECH shipped 1,079 Walker S2 humanoids across 2025, running at BYD, Geely, FAW-Volkswagen and Foxconn. Its BYD work, at roughly 100 to 200 units, is the largest commercial humanoid deployment on public record. AGIBOT passed 5,000 production units in December 2025 and its 10,000th humanoid in March 2026. On the quadruped side the numbers are quieter but older: ANYbotics has around 200 ANYmal units in industrial service logging thousands of inspections a week, including explosion-protected work offshore.</p>\n<p>Behind those figures sits capacity that did not exist two years ago: Agility Robotics' RoboFab in Salem, Oregon is built for up to 10,000 robots a year.</p>\n<h3>Throughput is the number that survives scrutiny</h3>\n<p>UBTECH has been direct about the current limit: the Walker S2 runs at most half as efficiently as a human worker. That reads as failure until you price the alternative: hazardous, confined-space or overnight work where the alternative is no worker at all. On a consumer-electronics line, AGIBOT's G2 has been reported at 310 units an hour on 18 to 20 second cycles.</p>\n<p>The buyer's version of that number is not the vendor's cycle time. It is your takt time, your shift pattern, and the hours the robot is genuinely available: a machine at half human speed running two unstaffed shifts beats a human-rate machine that needs a fortnight of integration at every new task.</p>\n<h3>Four things that decide whether site two happens</h3>\n<ul>\n<li><strong>Uptime and energy.</strong> Autonomous battery swap and hot-swappable packs decide whether a unit works a 24-hour schedule or a demonstration window.</li>\n<li><strong>Fleet software.</strong> A platform that manages one robot is a product. One that manages a fleet, pushes task updates and reports failures is infrastructure; Agility Arc is the clearest case of a vendor selling that layer on its own.</li>\n<li><strong>Spares and service footprint.</strong> Where the technician, the joint and the sensor physically live matters more than the spec sheet when a site is 900 km from a port.</li>\n<li><strong>Replayable integration.</strong> Vision-language-action stacks turn a new box size or SKU into a spoken instruction rather than a re-engineering project. If every task change is a project, site two will not happen.</li>\n</ul>\n<h3>Reading the price you were quoted</h3>\n<p>Published robot prices are starting points, not deployment costs. Boston Dynamics' Spot is quoted from about $74,500 for a base kit, with configured deployments commonly reported above $150,000 once sensors, software and service are added. Our catalogue shows where entry points sit: the <a href=\"/products/adam-u.html\">ADAM U</a> humanoid platform at USD 45,000, the <a href=\"/products/agibot-a3.html\">AGIBOT A3 Ultra</a> at USD 109,999, and the <a href=\"/products/magiclab-magicdog-y1.html\">MagicLab MagicDog Y1</a> industrial quadruped, configured per job, 45 kg payload, 6 m/s top speed.</p>\n<p><img src=\"/robots-cut/agibot_a3.webp\" alt=\"Full-size AGIBOT humanoid platform used for supervised industrial deployment\" loading=\"lazy\" style=\"width:100%;height:auto\"></p>\n<p>Ask for three-year total cost of ownership: integration, training, spares, software licences and the labour the robot replaces. Where volume is uncertain, robots-as-a-service prices the deployment per hour and keeps the capital risk on the vendor's side; where the duty cycle is steady, buying usually wins.</p>\n<h3>What to ask before you commit</h3>\n<p>Demand a reference site that has reordered, not one with a video. Ask what happens when a joint fails on a Saturday, and who trains the second shift. Then pilot the task that already hurts: the overnight patrol round, the line nobody wants to staff.</p>\n<p>The platforms we ship are chosen for that second-site problem: units that arrive configured, with setup, training and maintenance handled on site rather than left with your team. <a href=\"/contact.html\">Tell us the duty cycle you need to cover</a> and we will map it to a <a href=\"/products/agibot-a3.html\">full-size humanoid</a> or an industrial quadruped, and say which of your tasks it should not be doing yet.</p>"
-  },
-  {
     "slug": "european-quadruped-supply-buyers-guide",
     "title": "Europe's First Dutch Quadruped: What It Changes for Robot Buyers",
     "excerpt": "DENA Robotics has built what it calls the first quadruped designed and built in the Netherlands, with a humanoid planned next. The milestone matters less for the machine than for what a European supply track changes for buyers.",
