@@ -1,5 +1,44 @@
 [
   {
+    "slug": "humanoid-robot-university-labs",
+    "title": "Humanoid Robot for University Labs: What to Buy First",
+    "excerpt": "A demo unit performs. A research platform gets opened, reprogrammed and published from. What a university lab should ask before it signs.",
+    "category": "Research",
+    "date": "2026-11-03",
+    "readTime": "7 min",
+    "coverUrl": "blog/covers/humanoid-robot-university-labs.jpg",
+    "keywords": [
+      "humanoid robot university",
+      "humanoid robot research platform",
+      "humanoid robot for labs"
+    ],
+    "seoTitle": "Humanoid Robot University",
+    "metaDescription": "What a university lab checks before buying a humanoid: SDK access, serviceability, spares, safety, and the integration time nobody budgets.",
+    "faq": [
+      {
+        "q": "Do we need a full-size humanoid for student projects?",
+        "a": "Usually not. A compact platform such as the AGIBOT X2 Ultra covers most student work on interaction and prototyping; full-size bodies matter when the study is about human presence, scale or balance."
+      },
+      {
+        "q": "What should we ask for before the quote?",
+        "a": "The SDK reference and a sample repository. A platform whose API documentation arrives after payment is a demonstration device, not a research tool."
+      },
+      {
+        "q": "Who maintains it after the grant ends?",
+        "a": "Name that person before purchase. Battery ageing, finger wear and firmware updates continue whether or not the project does."
+      }
+    ],
+    "source": "robotist editorial",
+    "sourcePost": "",
+    "status": "draft",
+    "draftedAt": "2026-11-03T12:00:00Z",
+    "publishedAt": null,
+    "dateModified": "2026-11-03T12:00:00Z",
+    "content": "<p class=\"lede\">A university buys a humanoid once every few years, and the decision outlives the person who made it. The question that matters is not which machine looks best in a video. It is which machine still has a working SDK, a spare part and a research student on it in two years' time.</p>\n\n<div class=\"callout\">\n  <div class=\"callout-title\">THE DIFFERENCE IN ONE LINE</div>\n  <p>A demo unit performs. A research platform gets opened, reprogrammed, dropped, repaired and published from. Buy the second one.</p>\n</div>\n\n<h2>Start with what you will measure, not with the model</h2>\n<p>Every lab that regrets a purchase made the same first move: it compared robots. The useful first move is to write down the study. Bipedal locomotion and balance work needs torque transparency and joint control at a low level. Manipulation work needs hands with enough degrees of freedom to hold a real object and enough force feedback to know when it is holding one. Human-robot interaction work needs a face, a voice, and a body that behaves predictably around people who have never seen a robot before.</p>\n<p>Those three labs need three different machines. None of them is best served by the model with the best trade-show footage.</p>\n\n<h2>What the numbers on the page actually tell you</h2>\n<p>Degrees of freedom is the number most often quoted and the least often understood. It tells you the shape of the body, not the quality of the control you get over it.</p>\n\n<table>\n  <thead>\n    <tr><th>Platform</th><th>What the spec says</th><th>What it implies for a lab</th></tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>LimX LUNA</td>\n      <td>160 cm, 27 degrees of freedom, AI task editor, video-to-motion, kinesthetic teaching</td>\n      <td>Fast to a working demonstration. Strong for interaction studies, public trials and teaching showcases; the motion tooling is the point, not the joint count.</td>\n    </tr>\n    <tr>\n      <td>LimX OLI</td>\n      <td>33 degrees of freedom, NVIDIA Orin NX at 157 TOPS, ROS2</td>\n      <td>The research default in this range. ROS2 support means a student can publish to it in the first week rather than the first semester.</td>\n    </tr>\n    <tr>\n      <td>ADAM PRO</td>\n      <td>41 degrees of freedom, modular actuators, integrated motion capture, five-finger hands</td>\n      <td>Aimed at AI labs and industrial work; the modular actuator design matters when something fails at 4pm on a Friday.</td>\n    </tr>\n    <tr>\n      <td>Fourier GR-3</td>\n      <td>55 degrees of freedom, 12 of them in the hands, emotion engine, micro-expression recognition</td>\n      <td>Care and companionship research. Buy it when the study is about people's response to the body, not about locomotion.</td>\n    </tr>\n    <tr>\n      <td>AGIBOT X2 Ultra</td>\n      <td>Compact embodied AI platform for prototyping and research</td>\n      <td>The entry point. Smaller body, smaller experiments, much smaller commitment.</td>\n    </tr>\n  </tbody>\n</table>\n\n<figure>\n  <img src=\"/robots-cut/fourier_gr3_upscale.webp\" alt=\"Fourier GR-3 humanoid robot\" style=\"max-width:320px;display:block;margin:0 auto;\">\n  <figcaption>The GR-3 is a care robot: twelve degrees of freedom in the hands and an expression layer. Useful only if your study is about people, not about gait.</figcaption>\n</figure>\n\n<h2>Four things that decide whether it survives a semester</h2>\n<p>None of these appear on a brochure, and each of them has ended a project.</p>\n<p><strong>1. SDK access and documentation.</strong> Ask for the SDK documentation before the quote, not after. If the vendor cannot send a link to the API reference, the machine is a demonstration device with a robot-shaped body.</p>\n<p><strong>2. Serviceability.</strong> Ask which parts are field-replaceable and which need to go back to the factory. A humanoid that has to fly to Shenzhen for a knee replacement is unusable in a teaching timetable.</p>\n<p><strong>3. Spare parts and consumables.</strong> Batteries age whether or not the robot runs. Hands wear at the fingers. Ask what a battery costs and how long it is stocked.</p>\n<p><strong>4. Safety behaviour around untrained people.</strong> A lab is full of people who will walk in front of a moving robot. Emergency stop placement, force sensing, fall mitigation and speed limits are not optional features when students are the test subjects.</p>\n\n<h2>Budget the integration, not the machine</h2>\n<p>The purchase order is the smallest line in a humanoid project. The larger lines are the research assistant who learns the stack, the replacement parts across three years, the safety assessment for the building, and the time between delivery and the first publishable result.</p>\n<p>That last number is the honest one. Ask a vendor what a typical lab reaches a first working demonstration in, and treat a vague answer as an answer.</p>\n\n<div class=\"pullquote\">If the first experiment needs a firmware update nobody at the vendor will send, the platform was never a platform.</div>\n\n<h2>What a lab should ask before signing</h2>\n<ul class=\"checklist\">\n  <li>SDK documentation and a sample repository, sent before the quote</li>\n  <li>Which joints and sensors are field-replaceable, and the lead time on each</li>\n  <li>Battery cost and stock life</li>\n  <li>Emergency stop behaviour, force limits and fall handling, in writing</li>\n  <li>The name of another lab running the same model, and permission to call them</li>\n  <li>What the vendor does on delivery day: unboxing only, or commissioning on site</li>\n</ul>\n\n<h2>How we choose between them</h2>\n<p>We ask what the lab intends to publish, what the building allows, and who will maintain it. Then we map the answer to a platform and say plainly when a cheaper machine does the job, or when the honest recommendation is to wait a year.</p>\n<p>Two platforms cover most of what we are asked for: the <a href=\"/products/limx-oli\">LimX OLI</a> for locomotion and ROS2 research, and the <a href=\"/products/luna-limx\">LimX LUNA</a> where the study involves people watching or interacting. For care research the <a href=\"/products/fourier-gr-3\">Fourier GR-3</a> is the different machine it claims to be, and worth the step up only if the research question is about response rather than motion.</p>\n\n<div class=\"cta-block\">\n  <p>Tell us the study, the building and the person who will maintain the robot. We will tell you which platform survives it, and which does not.</p>\n</div>\n",
+    "targetQuery": "humanoid robot university",
+    "pillar": "humanoid"
+  },
+  {
     "slug": "commercial-cleaning-robots-australia",
     "title": "Commercial Cleaning Robots Australia: The First 30 Days",
     "excerpt": "A floor robot does not change cleaning overnight. What changes in the first month is the round, the edges and the inspection that decides whether a floor is clean.",
