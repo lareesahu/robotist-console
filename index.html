@@ -3092,27 +3092,31 @@ body::after {
   100% { background-position: 50% -200%; }
 }
 
-.reveal {
+.js-reveal .reveal {
   opacity: 0;
   transform: translateY(36px);
   transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
               transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.reveal.visible {
+.js-reveal .reveal.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal .reveal { opacity: 1; transform: none; transition: none; }
+}
+
 /* Robot cards: staggered card entrance */
-.robot-card.reveal {
+.js-reveal .robot-card.reveal {
   opacity: 0;
   transform: translateY(30px) scale(0.97);
   transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
               transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.robot-card.reveal.visible {
+.js-reveal .robot-card.reveal.visible {
   opacity: 1;
   transform: translateY(0) scale(1);
 }
@@ -4833,17 +4837,48 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 // ── SCROLL REVEAL ──
-const revealEls = document.querySelectorAll('.reveal');
-const revealObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      revealObserver.unobserve(entry.target);
+// Content stays visible when JS is absent or a script above throws: the hidden
+// start state only applies once this class is set below.
+document.documentElement.classList.add('js-reveal');
+const revealEls = [...document.querySelectorAll('.reveal')];
+const revealObserver = 'IntersectionObserver' in window
+  ? new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -40px 0px' })
+  : null;
+
+// Anything already on screen — or scrolled past, e.g. on a restored scroll
+// position — shows immediately instead of waiting for an intersection event.
+function revealInView() {
+  const vh = window.innerHeight;
+  revealEls.forEach(el => {
+    if (el.classList.contains('visible')) return;
+    const r = el.getBoundingClientRect();
+    if (r.top < vh + 1) {
+      el.classList.add('visible');
+      if (revealObserver) revealObserver.unobserve(el);
     }
   });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+}
 
-revealEls.forEach(el => revealObserver.observe(el));
+revealEls.forEach(el => {
+  if (revealObserver) revealObserver.observe(el);
+  else el.classList.add('visible');
+});
+revealInView();
+window.addEventListener('load', () => { revealInView(); setTimeout(revealInView, 1200); });
+// Belt and braces: a scroll tick can never leave a section stuck invisible.
+let revealTick = false;
+window.addEventListener('scroll', () => {
+  if (revealTick) return;
+  revealTick = true;
+  requestAnimationFrame(() => { revealTick = false; revealInView(); });
+}, { passive: true });
 
 // ── SCENARIOS SLIDER ──
 const slides = document.querySelectorAll('.scenario-slide');
