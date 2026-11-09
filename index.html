@@ -3734,6 +3734,17 @@ body::after {
 #at-a-glance .geo-list li{position:relative;padding-left:22px;font-size:15px;line-height:1.6;color:var(--white)}
 #at-a-glance .geo-list li::before{content:'';position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--accent)}
 @media(max-width:640px){#at-a-glance .geo-lede{font-size:16px}}
+
+/* ── Catalogue legibility pass ─────────────────────────────────────────────
+   The product cut-outs are tall (about 1:2.5), so an 82% box cap inside a
+   padded well left each robot drawn at roughly a third of the frame width.
+   Letting the image use the well and shrinking the padding gives the machine
+   the height it needs without cropping head or feet. Small caps below 11px
+   were unreadable on a laptop screen at 100%. */
+#catalogue .robot-card-img-wrap { padding: 10px; }
+#catalogue .robot-card-img { max-width: 96%; max-height: 96%; object-fit: contain; }
+.robot-featured-badge { font-size: 10px; }
+.robot-cat-tag { font-size: 10px; }
 </style>
 <!-- geo-layer:head-css:end -->
 <!-- geo-layer:start -->
