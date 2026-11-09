@@ -1230,20 +1230,6 @@ body::after {
   width: auto;
   max-width: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 14px 20px rgba(0, 0, 0, 0.45));
-}
-/* the near-black shell needs the rim light to hold its silhouette on the pane */
-.cta-machine.tone-dark::before {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 42%;
-  width: 78%;
-  height: 78%;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  background: radial-gradient(circle at 50% 46%, rgba(74, 168, 200, 0.34), rgba(74, 168, 200, 0) 60%);
-  pointer-events: none;
 }
 .cta-machine img { position: relative; z-index: 1; }
 .cta-machine figcaption {
@@ -1613,6 +1599,28 @@ body::after {
 }
 
 /* Category tag — top-left corner, never overlaps badge */
+.tag-3d {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--font-main);
+  font-size: 8px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #06121E;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  padding: 4px 9px;
+  z-index: 4;
+  box-shadow: 0 6px 18px rgba(74, 168, 200, 0.28);
+}
+.tag-3d svg { width: 9px; height: 9px; }
+
 .robot-cat-tag {
   position: absolute;
   top: 14px;
@@ -2445,7 +2453,9 @@ body::after {
    LEADERSHIP SECTION — Editorial Stagger Layout
    ═══════════════════════════════════════════════ */
 .leadership {
-  padding: var(--section-pad) var(--gutter);
+  /* --lead-close: the team row ends above its own 56px padding, so the full
+     section pad here left a dead band before the at-a-glance block. */
+  padding: var(--section-pad) var(--gutter) 8px;
   background: var(--bg-0);
   border-top: 1px solid rgba(255,255,255,0.05);
   position: relative;
@@ -3690,6 +3700,88 @@ body::after {
 .grn-invitation h2 { font-size: var(--h2-band); line-height: 1.1; letter-spacing: -.035em; font-weight: 500; }
 .grn-invitation .grn-kicker { color: var(--accent); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; }
 .grn-invitation a { display: inline-flex; align-items: center; min-height: 48px; color: var(--accent-light); border-bottom: 1px solid var(--accent); text-decoration: none; }
+.network-coverage { position: relative; z-index: 1; padding: var(--band-pad) var(--gutter); border-top: 1px solid var(--grey-3); background: var(--bg-1); }
+.network-coverage-inner { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: clamp(36px, 5vw, 80px); align-items: start; }
+.network-copy h2 { font-size: var(--h2-band); line-height: 1.1; letter-spacing: -.035em; font-weight: 500; margin: 14px 0 0; }
+.network-copy p { color: #C3D0DC; line-height: 1.75; max-width: 52ch; margin: 20px 0 26px; }
+.network-link { display: inline-flex; align-items: center; min-height: 48px; color: var(--accent-light); border-bottom: 1px solid var(--accent); text-decoration: none; }
+.network-link:hover { color: var(--white); }
+.coverage { list-style: none; margin: 40px 0 0; padding: 0; border-top: 1px solid var(--grey-3); }
+.coverage li { display: grid; grid-template-columns: minmax(120px, 0.6fr) minmax(0, 1fr); gap: 18px; padding: 17px 0; border-bottom: 1px solid var(--grey-3); align-items: baseline; }
+.coverage-city { font-family: var(--font-main); font-size: 15px; font-weight: 600; letter-spacing: -.01em; color: var(--white); display: inline-flex; align-items: center; }
+.coverage-city::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); margin-right: 11px; flex: none; }
+.coverage-note { font-size: 12.5px; line-height: 1.5; color: var(--grey-1); }
+/* ── Deployment capacity — motion library ──────────────────────────────
+   Two entry points (3D viewer, licensed catalogue) plus the per-class
+   mapping. Thumbs are the library's own renders, so nothing here is a
+   placeholder image.                                            */
+.motion-capacity { position: relative; z-index: 1; padding: var(--band-pad) var(--gutter); border-top: 1px solid var(--grey-3); background: var(--bg-1); }
+.mc-inner { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(32px, 4vw, 64px); align-items: start; }
+.mc-title { font-size: var(--h2-band); line-height: 1.1; letter-spacing: -.035em; font-weight: 500; margin: 14px 0 0; max-width: 22ch; }
+.mc-lede { color: #C3D0DC; line-height: 1.75; max-width: 54ch; margin: 20px 0 0; }
+.mc-lede + .mc-lede { margin-top: 14px; }
+.mc-stats { display: flex; flex-wrap: wrap; gap: 8px 24px; margin: 26px 0 0; padding: 0; list-style: none; font-size: 12.5px; color: var(--grey-1); }
+.mc-stats b { color: var(--white); font-weight: 600; font-variant-numeric: tabular-nums; margin-right: 4px; }
+.mc-links { display: flex; flex-wrap: wrap; gap: 10px 28px; margin-top: 26px; }
+.mc-link { display: inline-flex; align-items: center; min-height: 44px; color: var(--accent-light); border-bottom: 1px solid var(--accent); text-decoration: none; font-size: 13.5px; }
+.mc-link:hover { color: var(--white); }
+.mc-stage { display: flex; flex-direction: column; gap: 12px; }
+.mc-frame { display: block; position: relative; border: 1px solid var(--grey-3); background: var(--bg-2); text-decoration: none; overflow: hidden; }
+.mc-frame img { display: block; width: 100%; height: clamp(300px, 27vw, 430px); object-fit: cover; object-position: center 42%; background: #04101C; }
+.mc-frame-meta { position: absolute; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 16px; background: linear-gradient(to top, rgba(4, 12, 22, .95), rgba(4, 12, 22, .5) 65%, transparent); }
+.mc-clip-name { font-family: var(--font-main); font-size: 15px; font-weight: 600; color: var(--white); letter-spacing: -.01em; }
+.mc-clip-spec { font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: #8FA3B5; }
+.mc-thumbs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.mc-thumb { padding: 0; border: 1px solid var(--grey-3); background: var(--bg-2); cursor: pointer; overflow: hidden; display: block; transition: border-color .2s, transform .2s; }
+.mc-thumb img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center 45%; }
+.mc-thumb:hover { border-color: var(--accent-dim); transform: translateY(-2px); }
+.mc-thumb[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.mc-thumb:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.mc-stage-note { font-size: 12px; line-height: 1.6; color: var(--grey-1); margin: 2px 0 0; }
+.mc-map { max-width: 1400px; margin: clamp(44px, 6vw, 72px) auto 0; border-top: 1px solid var(--grey-3); padding-top: clamp(26px, 3vw, 38px); }
+.mc-map-head { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; flex-wrap: wrap; margin-bottom: 8px; }
+.mc-map-title { font-size: clamp(18px, 1.6vw, 23px); font-weight: 600; letter-spacing: -.015em; margin: 0; color: var(--white); }
+.mc-map-note { font-size: 12.5px; color: var(--grey-1); margin: 0; }
+.mc-row { display: grid; grid-template-columns: minmax(160px, 200px) minmax(0, 1fr) minmax(0, 1.15fr); gap: 18px 28px; padding: 18px 0; border-top: 1px solid var(--grey-3); align-items: start; }
+.mc-rows .mc-row:last-child { border-bottom: 1px solid var(--grey-3); }
+.mc-row-class { font-size: 14.5px; font-weight: 600; color: var(--white); }
+.mc-row-count { font-size: 11.5px; color: var(--grey-1); margin-top: 4px; }
+.mc-clips { display: flex; flex-wrap: wrap; gap: 6px; }
+.mc-clip { font-size: 11.5px; line-height: 1.5; color: var(--accent-light); border: 1px solid var(--grey-3); background: rgba(74, 168, 200, .06); padding: 3px 9px; text-decoration: none; }
+.mc-clip:hover { border-color: var(--accent); color: var(--white); }
+.mc-models { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 12.5px; line-height: 1.9; }
+.mc-model { color: #A9BACB; text-decoration: none; border-bottom: 1px solid transparent; }
+.mc-model:hover { color: var(--white); border-bottom-color: var(--accent); }
+@media (max-width: 1100px) {
+  .mc-inner { grid-template-columns: 1fr; }
+  .mc-row { grid-template-columns: 1fr; gap: 10px; }
+}
+@media (max-width: 700px) {
+  .mc-thumbs { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+  .mc-stats { gap: 6px 18px; }
+}
+.latest-posts { position: relative; z-index: 1; padding: var(--band-pad) var(--gutter); border-top: 1px solid var(--grey-3); }
+.latest-inner { max-width: 1400px; margin: 0 auto; }
+.latest-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 28px; margin-bottom: 34px; flex-wrap: wrap; }
+.latest-all { margin-bottom: 6px; }
+.latest-title { font-size: var(--h2-band); line-height: 1.1; letter-spacing: -.035em; font-weight: 500; margin: 12px 0 0; }
+.latest-all { display: inline-flex; align-items: center; min-height: 44px; color: var(--accent-light); border-bottom: 1px solid var(--accent); text-decoration: none; font-size: 13px; }
+.latest-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+.post-card { display: flex; flex-direction: column; background: var(--bg-1); border: 1px solid var(--grey-3); text-decoration: none; overflow: hidden; transition: border-color .25s, background .25s; }
+.post-card:hover { border-color: var(--accent-dim); background: var(--bg-2); }
+.post-cover { aspect-ratio: 16/9; background: var(--bg-2); overflow: hidden; }
+.post-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.post-body { padding: 24px 26px 32px; display: flex; flex-direction: column; flex: 1; }
+.post-category { font-size: 10px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--accent-light); margin-bottom: 10px; }
+.post-title { font-family: var(--font-main); font-size: 17px; font-weight: 600; letter-spacing: -.01em; color: var(--white); line-height: 1.35; margin: 0 0 10px; }
+.post-excerpt { font-size: 13px; color: var(--grey-1); line-height: 1.65; flex: 1; margin: 0 0 16px; }
+.post-meta { font-size: 11.5px; letter-spacing: .04em; color: #8FA3B5; }
+.latest-fallback { color: var(--grey-1); font-size: 14px; }
+@media (max-width: 900px) {
+  .network-coverage-inner { grid-template-columns: 1fr; gap: 32px; }
+  .latest-grid { grid-template-columns: 1fr; }
+  .coverage li { grid-template-columns: 1fr; gap: 4px; }
+}
 @media(max-width: 700px) { .grn-invitation { grid-template-columns: 1fr; gap: 20px; padding-top: 55px; padding-bottom: 55px; } }
 
 /* The Why section reads left/right on a wide screen: the argument stays put on the
@@ -3720,12 +3812,12 @@ body::after {
 }
 </style>
   <!-- Spline Viewer runtime -->
-  <script type="module" src="https://unpkg.com/@splinetool/viewer/build/spline-viewer.js"></script>
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.98/build/spline-viewer.js"></script>
 
 <link rel="stylesheet" href="/mobile-usability.css">
 <!-- geo-layer:head-css:start -->
 <style>/* geo-layer */
-#at-a-glance{background:var(--bg-1);padding:var(--section-pad) 0;border-top:1px solid rgba(74,168,200,.08)}
+#at-a-glance{background:var(--bg-1);padding:clamp(40px,4vw,48px) 0 var(--section-pad);border-top:1px solid rgba(74,168,200,.08)}
 #at-a-glance .geo-wrap{max-width:var(--container);margin:0 auto;padding:0 var(--gutter)}
 #at-a-glance .geo-eyebrow{display:inline-block;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--accent-light);margin-bottom:14px}
 #at-a-glance h2{font-size:var(--h2-section);line-height:1.12;color:var(--white);margin:0 0 18px}
@@ -3734,17 +3826,6 @@ body::after {
 #at-a-glance .geo-list li{position:relative;padding-left:22px;font-size:15px;line-height:1.6;color:var(--white)}
 #at-a-glance .geo-list li::before{content:'';position:absolute;left:0;top:9px;width:7px;height:7px;border-radius:50%;background:var(--accent)}
 @media(max-width:640px){#at-a-glance .geo-lede{font-size:16px}}
-
-/* ── Catalogue legibility pass ─────────────────────────────────────────────
-   The product cut-outs are tall (about 1:2.5), so an 82% box cap inside a
-   padded well left each robot drawn at roughly a third of the frame width.
-   Letting the image use the well and shrinking the padding gives the machine
-   the height it needs without cropping head or feet. Small caps below 11px
-   were unreadable on a laptop screen at 100%. */
-#catalogue .robot-card-img-wrap { padding: 10px; }
-#catalogue .robot-card-img { max-width: 96%; max-height: 96%; object-fit: contain; }
-.robot-featured-badge { font-size: 10px; }
-.robot-cat-tag { font-size: 10px; }
 </style>
 <!-- geo-layer:head-css:end -->
 <!-- geo-layer:start -->
@@ -3767,6 +3848,107 @@ body::after {
 }
 </script>
 <!-- geo-layer:end -->
+<style id="nav-industries-css">
+.nav-sub{position:relative}
+.nav-caret{display:inline-block;width:6px;height:6px;margin-left:8px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px);opacity:.55;transition:transform .18s ease}
+.nav-sub:hover .nav-caret,.nav-sub:focus-within .nav-caret{transform:rotate(-135deg) translateY(-2px);opacity:1}
+.nav-sub:hover .nav-sub-toggle,.nav-sub:focus-within .nav-sub-toggle{color:#F0F4F8}
+.nav-submenu{position:absolute;top:100%;left:-16px;padding:10px 10px 12px;min-width:290px;background:#0A131F;border:1px solid rgba(240,244,248,.13);border-radius:12px;box-shadow:0 26px 64px rgba(0,0,0,.62);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .16s ease,transform .16s ease,visibility .16s;z-index:80}
+.nav-sub:hover .nav-submenu,.nav-sub:focus-within .nav-submenu{opacity:1;visibility:visible;transform:translateY(0)}
+.nav-submenu a{display:block;padding:10px 12px;border-radius:7px;text-decoration:none;font-size:14px;font-weight:500;line-height:1.35;color:#E6EDF4;min-height:0}
+.nav-submenu a span{display:block;margin-top:4px;font-size:12.5px;font-weight:400;letter-spacing:0;color:#9FB2C4;text-transform:none}
+.nav-submenu a:hover,.nav-submenu a:focus-visible{background:rgba(74,168,200,.13);color:#fff}
+@media (max-width:900px){
+  .nav-sub{width:100%}
+  .nav-caret{display:none}
+  .nav-submenu{position:static;opacity:1;visibility:visible;transform:none;min-width:0;padding:0 0 6px 14px;background:transparent;border:0;box-shadow:none}
+  .nav-submenu a{padding:7px 0;font-size:15px;color:#A9BACB}
+  .nav-submenu a span{display:none}
+}
+
+/* ===== PREMIUM CARD (2026-11-03) =====
+   Flat dark pane, hairline border, neutral studio plate. Replaces the blue-white gradient well,
+   the inset white highlight and the painted contact shadow, which read as plastic. */
+.robot-card {
+  background: #0A141F;
+  border: 1px solid rgba(168, 205, 230, 0.10);
+  box-shadow: none;
+  border-radius: 6px;
+  transition: transform .35s cubic-bezier(.22, 1, .36, 1), border-color .35s,
+              box-shadow .35s, background .35s;
+}
+.robot-card:hover,
+.robot-card.reveal.visible:hover {
+  transform: translateY(-4px);
+  border-color: rgba(168, 205, 230, 0.26);
+  background: #0C1826;
+  box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.85);
+}
+.robot-card .robot-card-img-wrap {
+  width: calc(100% - 14px);
+  margin: 7px;
+  padding: 24px;
+  border-radius: 3px;
+  background: linear-gradient(180deg, #F7F8F9 0%, #EDEFF1 100%);
+  box-shadow: none;
+}
+.robot-card .robot-card-img-wrap::before,
+.robot-card .robot-card-img-wrap::after { display: none; }
+.robot-card:hover .robot-card-img { transform: scale(1.02); }
+.robot-card .robot-info {
+  background: transparent;
+  border-top: 1px solid rgba(168, 205, 230, 0.08);
+  padding: 16px 18px 18px;
+  min-height: 112px;
+}
+.robot-card .robot-info-name {
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: #EFF4F8;
+  margin-bottom: 4px;
+}
+.robot-card .robot-info-price {
+  font-size: 11.5px;
+  letter-spacing: 0.02em;
+  color: var(--accent-light);
+}
+.robot-card .robot-info-best {
+  font-size: 11.5px;
+  color: #93A6B7;
+  margin-top: 7px;
+}
+.robot-card .robot-cat-tag {
+  background: rgba(6, 13, 22, 0.72);
+  border: 1px solid rgba(168, 205, 230, 0.18);
+  color: #A9BECD;
+  border-radius: 2px;
+  letter-spacing: 0.16em;
+  backdrop-filter: blur(6px);
+}
+.robot-card .robot-featured-badge {
+  background: var(--accent-light);
+  color: #04101A;
+  border-radius: 2px;
+  letter-spacing: 0.18em;
+  font-weight: 600;
+}
+@media (max-width: 560px) {
+  .robot-grid { grid-template-columns: 1fr; gap: 14px; }
+  .robot-card .robot-info-name,
+  .robot-card .robot-info-best { white-space: normal; overflow: visible; }
+}
+
+/* ── Catalogue legibility pass ─────────────────────────────────────────────
+   The product cut-outs are tall (about 1:2.5), so an 82% box cap inside a
+   padded well left each robot drawn at roughly a third of the frame width.
+   Letting the image use the well and shrinking the padding gives the machine
+   the height it needs without cropping head or feet. Small caps below 11px
+   were unreadable on a laptop screen at 100%. */
+#catalogue .robot-card-img-wrap { padding: 10px; }
+#catalogue .robot-card-img { max-width: 96%; max-height: 96%; object-fit: contain; }
+.robot-featured-badge { font-size: 10px; }
+.robot-cat-tag { font-size: 10px; }
+</style>
 </head>
 <body>
 
@@ -3778,6 +3960,16 @@ body::after {
   <ul class="nav-links">
     <li><a href="index.html#catalogue">Catalogue</a></li>
     <li><a href="index.html#services">Services</a></li>
+    <li class="nav-sub">
+      <a href="/industries/hotels.html" class="nav-sub-toggle" aria-haspopup="true" aria-expanded="false">Industries<span class="nav-caret" aria-hidden="true"></span></a>
+      <div class="nav-submenu" role="menu" aria-label="Industries">
+        <a role="menuitem" href="/industries/hotels.html">Hotels &amp; hospitality<span>Cleaning, delivery and guest service</span></a>
+        <a role="menuitem" href="/industries/facilities.html">Cleaning &amp; facilities<span>Contract cleaners, offices, venues</span></a>
+        <a role="menuitem" href="/industries/warehousing.html">Warehousing &amp; logistics<span>Large floors, between-shift cleaning</span></a>
+        <a role="menuitem" href="/industries/retail.html">Retail &amp; showrooms<span>Floors, stock moves, customer help</span></a>
+      </div>
+    </li>
+
     <li><a href="compare.html">Compare</a></li>
     <li><a href="/blog.html">Blog</a></li> <li><a href="about.html">About</a></li>
     <li><a href="contact.html">Contact</a></li>
@@ -4091,6 +4283,7 @@ body::after {
 <div class="robot-card-img-wrap">
 <img alt="LimX OLI bipedal humanoid robot — 33-DOF, NVIDIA Orin NX 157 TOPS, ROS2 support, USD 65,900" class="robot-card-img" loading="lazy" src="robots-cut/limx_oli.webp"/>
 </div>
+<span class="tag-3d" title="Interactive 3D preview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5z"/><path d="M3 7l9 5 9-5"/><path d="M12 12v10"/></svg>3D</span>
 <span class="robot-cat-tag">Humanoid</span>
 <div class="robot-info">
 <a href="products/limx-oli.html" style="text-decoration:none;color:inherit;display:block;"><div class="robot-info-name">LimX OLI</div></a>
@@ -4153,6 +4346,7 @@ body::after {
 <div class="robot-card-img-wrap">
 <img alt="MagicLab MagicDog emotion-expressing quadruped — 13-DOF, 3 m/s, open SDK, USD 8,000" class="robot-card-img" loading="lazy" src="robots-cut/magiclab_magicdog.webp"/>
 </div>
+<span class="tag-3d" title="Interactive 3D preview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5z"/><path d="M3 7l9 5 9-5"/><path d="M12 12v10"/></svg>3D</span>
 <span class="robot-cat-tag">Quadruped</span>
 <div class="robot-info">
 <a href="products/magiclab-magicdog.html" style="text-decoration:none;color:inherit;display:block;"><div class="robot-info-name">MagicLab MagicDog</div></a>
@@ -4424,9 +4618,144 @@ body::after {
 <!-- ══════════════════════════════════════════════
      SERVICE PACKAGES
      ══════════════════════════════════════════════ -->
-<section class="grn-invitation" aria-labelledby="grn-heading">
-  <div><p class="grn-kicker">Global Robotics Network</p><h2 id="grn-heading">The next chapter<br>needs people like you.</h2></div>
-  <div><p>Bringing robotics into the real world takes different kinds of expertise. Join the conversation with Robotist's Global Robotics Network.</p><a href="/grn/">Discover GRN &amp; apply to join ↗</a></div>
+<section class="network-coverage" id="network" aria-labelledby="network-heading">
+  <div class="network-coverage-inner">
+    <div class="network-copy">
+      <div class="section-eyebrow">Global Robotics Network</div>
+      <h2 id="network-heading">People on the ground,<br>not a call centre.</h2>
+      <p>Robotist deployments are supported by independent specialists across Asia-Pacific — engineers who have commissioned the machines they recommend, and who pick up when a site needs someone on it.</p>
+      <a class="network-link" href="/grn/">Meet the network ↗</a>
+    </div>
+    <ul class="coverage">
+      <li><span class="coverage-city">Sydney</span><span class="coverage-note">Headquarters · APAC deployment</span></li>
+      <li><span class="coverage-city">Melbourne</span><span class="coverage-note">Electronics · humanoid &amp; legged systems</span></li>
+      <li><span class="coverage-city">Kuala Lumpur</span><span class="coverage-note">ROS 2 · autonomous navigation</span></li>
+      <li><span class="coverage-city">Shanghai</span><span class="coverage-note">Supply · engineering</span></li>
+      <li><span class="coverage-city">Hangzhou</span><span class="coverage-note">Manufacturing partners</span></li>
+    </ul>
+  </div>
+</section>
+<!-- ══════════════════════════════════════════════
+     DEPLOYMENT CAPACITY — motion library
+     Two libraries, one purpose: prove the movement before the machine ships.
+     Clip thumbs come from /motion-library/thumbs/, mapping from motion-library/models.json.
+     ══════════════════════════════════════════════ -->
+<section class="motion-capacity" id="motion" aria-labelledby="motion-heading">
+  <div class="mc-inner">
+    <div class="mc-copy">
+      <div class="section-eyebrow">Deployment capacity</div>
+      <h2 id="motion-heading" class="mc-title">You should see the movement before you sign for the machine.</h2>
+      <p class="mc-lede">A robot is not deployed because it arrived in a crate. It is deployed when it does what your site actually asks — walks a corridor at shift change, kneels beside a patient, takes one step up, holds still for an inspection photograph.</p>
+      <p class="mc-lede">Two libraries make that test possible: 26 captured performances and 25 licensed records, both retargeted onto a 23-joint humanoid rig and exported as joint-space animation at 50 frames a second — the format a robot controller accepts without translation. Every machine on this page ships with the set its body can perform.</p>
+      <ul class="mc-stats">
+        <li><b>26</b> playable clips</li>
+        <li><b>23</b> joints per rig</li>
+        <li><b>50</b> fps joint space</li>
+        <li><b>25</b> licensed records</li>
+      </ul>
+      <div class="mc-links">
+        <a class="mc-link" href="/motion-library/">Open the 3D library ↗</a>
+        <a class="mc-link" href="/library.html">Search the licensed catalogue ↗</a>
+      </div>
+    </div>
+    <div class="mc-stage">
+      <a class="mc-frame" id="mcFrame" href="/motion-library/?clip=stair_climb">
+        <img src="/motion-library/thumbs/stair_climb.webp" alt="Stair climb — 23-joint rig preview" width="1200" height="675" loading="lazy" decoding="async">
+        <div class="mc-frame-meta"><span class="mc-clip-name">Stair climb</span><span class="mc-clip-spec">locomotion · 10 s · 50 fps</span></div>
+      </a>
+      <div class="mc-thumbs" role="group" aria-label="Preview a clip">
+        <button class="mc-thumb" type="button" data-clip="stair_climb" data-name="Stair climb" data-spec="locomotion · 10 s · 50 fps" data-thumb="/motion-library/thumbs/stair_climb.webp" aria-pressed="true" aria-label="Preview Stair climb"><img src="/motion-library/thumbs/stair_climb.webp" alt="" loading="lazy" decoding="async"></button>
+        <button class="mc-thumb" type="button" data-clip="jog_slow" data-name="Slow jog" data-spec="locomotion · 10 s · 50 fps" data-thumb="/motion-library/thumbs/jog_slow.webp" aria-pressed="false" aria-label="Preview Slow jog"><img src="/motion-library/thumbs/jog_slow.webp" alt="" loading="lazy" decoding="async"></button>
+        <button class="mc-thumb" type="button" data-clip="wave" data-name="Wave" data-spec="gesture · 10 s · 50 fps" data-thumb="/motion-library/thumbs/wave.webp" aria-pressed="false" aria-label="Preview Wave"><img src="/motion-library/thumbs/wave.webp" alt="" loading="lazy" decoding="async"></button>
+        <button class="mc-thumb" type="button" data-clip="tai_chi" data-name="Tai chi form" data-spec="form · 10 s · 50 fps" data-thumb="/motion-library/thumbs/tai_chi.webp" aria-pressed="false" aria-label="Preview Tai chi form"><img src="/motion-library/thumbs/tai_chi.webp" alt="" loading="lazy" decoding="async"></button>
+        <button class="mc-thumb" type="button" data-clip="crawl" data-name="Low crawl" data-spec="locomotion · 10 s · 50 fps" data-thumb="/motion-library/thumbs/crawl.webp" aria-pressed="false" aria-label="Preview Low crawl"><img src="/motion-library/thumbs/crawl.webp" alt="" loading="lazy" decoding="async"></button>
+        <button class="mc-thumb" type="button" data-clip="prone_to_stand" data-name="Prone to stand" data-spec="daily · 9.98 s · 50 fps" data-thumb="/motion-library/thumbs/prone_to_stand.webp" aria-pressed="false" aria-label="Preview Prone to stand"><img src="/motion-library/thumbs/prone_to_stand.webp" alt="" loading="lazy" decoding="async"></button>
+      </div>
+      <p class="mc-stage-note">Pick a clip to preview it here; the frame opens it in the 3D viewer.</p>
+    </div>
+  </div>
+  <div class="mc-map">
+    <div class="mc-map-head">
+      <h3 class="mc-map-title">Which set applies to which machine</h3>
+      <p class="mc-map-note">Same library, mapped to the body that has to perform it.</p>
+    </div>
+    <div class="mc-rows">
+      <div class="mc-row">
+        <div><div class="mc-row-class">Bipedal humanoids</div><div class="mc-row-count">6 clips · 10 machines</div></div>
+        <div class="mc-clips"><a class="mc-clip" href="/motion-library/?clip=wave">Wave</a><a class="mc-clip" href="/motion-library/?clip=tai_chi">Tai chi form</a><a class="mc-clip" href="/motion-library/?clip=jog_slow">Slow jog</a><a class="mc-clip" href="/motion-library/?clip=stair_climb">Stair climb</a><a class="mc-clip" href="/motion-library/?clip=crawl">Low crawl</a><a class="mc-clip" href="/motion-library/?clip=prone_to_stand">Prone to stand</a></div>
+        <div class="mc-models"><a class="mc-model" href="/products/pndbotics-adam.html">ADAM SP</a><a class="mc-model" href="/products/fourier-gr-3.html">Fourier GR-3</a><a class="mc-model" href="/products/adam-u.html">ADAM U</a><a class="mc-model" href="/products/agibot-a3.html">AGIBOT A3 Ultra</a><a class="mc-model" href="/products/agibot-x2.html">AGIBOT X2 Ultra</a><a class="mc-model" href="/products/casbot-02-edu.html">CASBOT 02 EDU</a><a class="mc-model" href="/products/casbot-4-piece-band.html">CASBOT 4 Piece Band</a><a class="mc-model" href="/products/kepler-spe-bumblebee.html">Kepler S-PE BumbleBee</a><a class="mc-model" href="/products/limx-oli.html">LimX OLI</a><a class="mc-model" href="/products/magiclab-magicbot-g1.html">MagicLab MagicBot G1</a></div>
+      </div>
+      <div class="mc-row">
+        <div><div class="mc-row-class">Wheeled humanoids</div><div class="mc-row-count">4 clips · 2 machines</div></div>
+        <div class="mc-clips"><a class="mc-clip" href="/motion-library/?clip=wave">Wave</a><a class="mc-clip" href="/motion-library/?clip=tai_chi">Tai chi form</a><a class="mc-clip" href="/motion-library/?clip=warmup">Warm-up</a><a class="mc-clip" href="/motion-library/?clip=windmill">Windmill stretch</a></div>
+        <div class="mc-models"><a class="mc-model" href="/products/unix-ai-panther.html">UniX AI Panther</a><a class="mc-model" href="/products/unix-ai-wanda.html">UniX AI Wanda 2.0</a></div>
+      </div>
+      <div class="mc-row">
+        <div><div class="mc-row-class">Quadrupeds</div><div class="mc-row-count">4 clips · 6 machines</div></div>
+        <div class="mc-clips"><a class="mc-clip" href="/motion-library/?clip=stair_climb">Stair climb</a><a class="mc-clip" href="/motion-library/?clip=crawl">Low crawl</a><a class="mc-clip" href="/motion-library/?clip=jog_slow">Slow jog</a><a class="mc-clip" href="/motion-library/?clip=sprint">Sprint</a></div>
+        <div class="mc-models"><a class="mc-model" href="/products/magiclab-magicdog-y1.html">MagicLab MagicDog Y1</a><a class="mc-model" href="/products/magiclab-magicdog.html">MagicLab MagicDog</a><a class="mc-model" href="/products/genisom-m1.html">Genisom M1</a><a class="mc-model" href="/products/genisom-l1.html">Genisom L1</a><a class="mc-model" href="/products/genisom-l1-edu.html">Genisom L1 EDU</a><a class="mc-model" href="/products/agibot-d1.html">AGIBOT D1 EDU</a></div>
+      </div>
+      <div class="mc-row">
+        <div><div class="mc-row-class">Companion humanoids</div><div class="mc-row-count">3 clips · 1 machine</div></div>
+        <div class="mc-clips"><a class="mc-clip" href="/motion-library/?clip=wave">Wave</a><a class="mc-clip" href="/motion-library/?clip=tai_chi">Tai chi form</a><a class="mc-clip" href="/motion-library/?clip=warmup">Warm-up</a></div>
+        <div class="mc-models"><a class="mc-model" href="/products/droidup-moya.html">DroidUp Moya</a></div>
+      </div>
+      <div class="mc-row">
+        <div><div class="mc-row-class">Expressive heads</div><div class="mc-row-count">2 machines · catalogue records only</div></div>
+        <div class="mc-clips"><a class="mc-clip" href="/library.html?cat=Gesture">Gesture records</a></div>
+        <div class="mc-models"><a class="mc-model" href="/products/tangible-future-xiaoling-3.html">Tangible Future Xiaoling 3.0</a><a class="mc-model" href="/products/ldtech-intelligent-head.html">LDTech Intelligent Head</a></div>
+      </div>
+      <div class="mc-row">
+        <div><div class="mc-row-class">Wheeled bases & fixed cells</div><div class="mc-row-count">4 machines · catalogue records only</div></div>
+        <div class="mc-clips"><a class="mc-clip" href="/library.html?cat=Locomotion">Locomotion records</a><a class="mc-clip" href="/library.html?cat=Logistics">Logistics records</a></div>
+        <div class="mc-models"><a class="mc-model" href="/products/isage-star-sageman.html">iSAGE STAR-SageMan</a><a class="mc-model" href="/products/gausium-phantas.html">Gausium Phantas</a><a class="mc-model" href="/products/keenon-c40-p1.html">Keenon C40-P1</a><a class="mc-model" href="/products/qisheng-d2.html">QiSheng D2</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="latest-posts" id="insights" aria-labelledby="posts-heading">
+  <div class="latest-inner">
+    <div class="latest-head">
+      <div>
+        <div class="section-eyebrow">From the blog</div>
+        <h2 id="posts-heading" class="latest-title">Latest thinking.</h2>
+      </div>
+      <a class="latest-all" href="/blog.html">All articles ↗</a>
+    </div>
+    <div class="latest-grid" id="latest-grid">
+      <!--LATEST-POSTS:START — server-rendered fallback; the script below refreshes it when blog-posts.json loads -->
+      <a class="post-card" href="/blog/european-quadruped-supply-buyers-guide.html">
+        <div class="post-cover"><img src="/blog/covers/european-quadruped-supply-buyers-guide.jpg" alt="" loading="lazy" decoding="async"></div>
+        <div class="post-body">
+          <div class="post-category">Robotics in Business</div>
+          <h3 class="post-title">Europe&#x27;s First Dutch Quadruped: What It Changes for Robot Buyers</h3>
+          <p class="post-excerpt">DENA Robotics has built what it calls the first quadruped designed and built in the Netherlands, with a humanoid planned next. The milestone matters less for the machine than for what a European supply track changes for buyers.</p>
+          <div class="post-meta">October 15, 2026 · 4 min</div>
+        </div>
+      </a>
+      <a class="post-card" href="/blog/quadruped-endurance-raibo2-marathon.html">
+        <div class="post-cover"><img src="/blog/covers/quadruped-endurance-raibo2-marathon.jpg" alt="" loading="lazy" decoding="async"></div>
+        <div class="post-body">
+          <div class="post-category">Humanoid &amp; Mobile Robot Insights</div>
+          <h3 class="post-title">What RAIBO2&#x27;s Marathon Run Means for Quadruped Endurance</h3>
+          <p class="post-excerpt">A KAIST quadruped completed a full 42.195 km marathon on a single battery charge. What the result - now published in Nature - tells buyers about quadruped endurance in real deployments.</p>
+          <div class="post-meta">October 13, 2026 · 3 min</div>
+        </div>
+      </a>
+      <a class="post-card" href="/blog/autonomous-inspection-quadrupeds-anybotics-shift.html">
+        <div class="post-cover"><img src="/blog/covers/autonomous-inspection-quadrupeds-anybotics-shift.jpg" alt="" loading="lazy" decoding="async"></div>
+        <div class="post-body">
+          <div class="post-category">Automation Use Cases</div>
+          <h3 class="post-title">Autonomous Inspection at Scale: Lessons from ANYbotics&#x27; Shift Platform</h3>
+          <p class="post-excerpt">ANYbotics&#x27; Shift platform links robot fleets, inspection data and maintenance systems into one workflow. The launch signals a bigger shift: inspection robots are becoming enterprise infrastructure.</p>
+          <div class="post-meta">October 13, 2026 · 3 min</div>
+        </div>
+      </a>
+      <!--LATEST-POSTS:END-->
+    </div>
+    <noscript><p class="latest-fallback">Read the latest at <a href="/blog.html">the Robotist blog</a>.</p></noscript>
+  </div>
 </section>
 <section class="services" id="services">
   <div class="services-inner">
@@ -5582,6 +5911,89 @@ document.querySelectorAll('.robot-card').forEach(function(card) {
   document.addEventListener('click', function (e) {
     if (e.target.closest && e.target.closest('.robot-filter, .filter-pill, [data-category]')) setTimeout(mark, 250);
   }, true);
+})();
+</script>
+<script>
+(function () {
+  var grid = document.getElementById('latest-grid');
+  if (!grid || !window.fetch) return;
+  fetch('/blog-posts.json', { cache: 'no-store' })
+    .then(function (r) { return r.ok ? r.json() : Promise.reject(new Error('blog index unavailable')); })
+    .then(function (posts) {
+      var PRICING = /(cost|pricing|\bprice[sd]?\b|per shift|per square|\bbudget\b|\bUSD\b|\$)/i;
+      var sorted = posts.filter(function (p) {
+        if (p.status && p.status !== 'published') return false;
+        var hay = [p.title, p.excerpt, p.keywords].filter(Boolean).join(' ');
+        return !PRICING.test(hay);
+      }).sort(function (a, b) {
+        return new Date(b.date) - new Date(a.date);
+      }).slice(0, 3);
+      var frag = document.createDocumentFragment();
+      sorted.forEach(function (post) {
+        var card = document.createElement('a');
+        card.className = 'post-card';
+        card.href = '/blog/' + post.slug + '.html';
+        var cover = document.createElement('div');
+        cover.className = 'post-cover';
+        var img = document.createElement('img');
+        img.src = '/' + String(post.coverUrl || '').replace(/^\//, '');
+        img.alt = '';
+        img.loading = 'lazy';
+        img.decoding = 'async';
+        cover.appendChild(img);
+        var body = document.createElement('div');
+        body.className = 'post-body';
+        var cat = document.createElement('div');
+        cat.className = 'post-category';
+        cat.textContent = post.category || 'Insight';
+        var title = document.createElement('h3');
+        title.className = 'post-title';
+        title.textContent = post.title || '';
+        var excerpt = document.createElement('p');
+        excerpt.className = 'post-excerpt';
+        excerpt.textContent = post.excerpt || '';
+        var meta = document.createElement('div');
+        meta.className = 'post-meta';
+        meta.textContent = [post.date, post.readTime].filter(Boolean).join(' · ');
+        body.appendChild(cat);
+        body.appendChild(title);
+        body.appendChild(excerpt);
+        body.appendChild(meta);
+        card.appendChild(cover);
+        card.appendChild(body);
+        frag.appendChild(card);
+      });
+      // Only swap in fresh cards when the index actually produced some: the
+      // server-rendered cards stay if the index is empty, so this band can
+      // never render as an empty section.
+      if (frag.childNodes.length) grid.replaceChildren(frag);
+    })
+    .catch(function () {
+      if (grid.children.length) return;
+      var band = document.getElementById('insights');
+      if (band) band.hidden = true;
+    });
+})();
+</script>
+<script>
+/* Deployment capacity — clip switcher. Swaps the preview frame and retargets
+   its link so the click always lands on the clip on screen. */
+(function () {
+  var frame = document.getElementById('mcFrame');
+  if (!frame) return;
+  var img = frame.querySelector('img');
+  var name = frame.querySelector('.mc-clip-name');
+  var spec = frame.querySelector('.mc-clip-spec');
+  var thumbs = [].slice.call(document.querySelectorAll('.mc-thumb'));
+  thumbs.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      img.src = btn.dataset.thumb;
+      name.textContent = btn.dataset.name;
+      spec.textContent = btn.dataset.spec;
+      frame.href = '/motion-library/?clip=' + btn.dataset.clip;
+      thumbs.forEach(function (b) { b.setAttribute('aria-pressed', String(b === btn)); });
+    });
+  });
 })();
 </script>
 </body>
