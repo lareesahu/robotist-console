@@ -223,6 +223,24 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); 
 }
 </style>
 <link rel="stylesheet" href="/mobile-usability.css">
+<style id="nav-industries-css">
+.nav-sub{position:relative}
+.nav-caret{display:inline-block;width:6px;height:6px;margin-left:8px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px);opacity:.55;transition:transform .18s ease}
+.nav-sub:hover .nav-caret,.nav-sub:focus-within .nav-caret{transform:rotate(-135deg) translateY(-2px);opacity:1}
+.nav-sub:hover .nav-sub-toggle,.nav-sub:focus-within .nav-sub-toggle{color:#F0F4F8}
+.nav-submenu{position:absolute;top:100%;left:-16px;padding:10px 10px 12px;min-width:290px;background:#0A131F;border:1px solid rgba(240,244,248,.13);border-radius:12px;box-shadow:0 26px 64px rgba(0,0,0,.62);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .16s ease,transform .16s ease,visibility .16s;z-index:80}
+.nav-sub:hover .nav-submenu,.nav-sub:focus-within .nav-submenu{opacity:1;visibility:visible;transform:translateY(0)}
+.nav-submenu a{display:block;padding:10px 12px;border-radius:7px;text-decoration:none;font-size:14px;font-weight:500;line-height:1.35;color:#E6EDF4;min-height:0}
+.nav-submenu a span{display:block;margin-top:4px;font-size:12.5px;font-weight:400;letter-spacing:0;color:#9FB2C4;text-transform:none}
+.nav-submenu a:hover,.nav-submenu a:focus-visible{background:rgba(74,168,200,.13);color:#fff}
+@media (max-width:900px){
+  .nav-sub{width:100%}
+  .nav-caret{display:none}
+  .nav-submenu{position:static;opacity:1;visibility:visible;transform:none;min-width:0;padding:0 0 6px 14px;background:transparent;border:0;box-shadow:none}
+  .nav-submenu a{padding:7px 0;font-size:15px;color:#A9BACB}
+  .nav-submenu a span{display:none}
+}
+</style>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -232,6 +250,16 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); 
   <ul class="nav-links">
     <li><a href="index.html#catalogue">Catalogue</a></li>
     <li><a href="index.html#services">Services</a></li>
+    <li class="nav-sub">
+      <a href="/industries/hotels.html" class="nav-sub-toggle" aria-haspopup="true" aria-expanded="false">Industries<span class="nav-caret" aria-hidden="true"></span></a>
+      <div class="nav-submenu" role="menu" aria-label="Industries">
+        <a role="menuitem" href="/industries/hotels.html">Hotels &amp; hospitality<span>Cleaning, delivery and guest service</span></a>
+        <a role="menuitem" href="/industries/facilities.html">Cleaning &amp; facilities<span>Contract cleaners, offices, venues</span></a>
+        <a role="menuitem" href="/industries/warehousing.html">Warehousing &amp; logistics<span>Large floors, between-shift cleaning</span></a>
+        <a role="menuitem" href="/industries/retail.html">Retail &amp; showrooms<span>Floors, stock moves, customer help</span></a>
+      </div>
+    </li>
+
     <li><a href="compare.html">Compare</a></li>
     <li><a href="/blog.html">Blog</a></li> <li><a href="about.html">About</a></li>
     <li><a href="contact.html">Contact</a></li>
@@ -335,7 +363,35 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-light); 
       <a class="lp-link" href="blog.html">All articles →</a>
     </div>
     <div class="blog-grid" id="blog-grid">
-      <div class="blog-loading">Loading articles…</div>
+      <!--LATEST-POSTS:START — server-rendered so the band is never empty -->
+      <a href="/blog/european-quadruped-supply-buyers-guide.html" class="blog-card">
+        <div class="blog-card-cover"><img src="blog/covers/european-quadruped-supply-buyers-guide.jpg" alt="" loading="lazy"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-category">Robotics in Business</div>
+          <h3 class="blog-card-title">Europe&#x27;s First Dutch Quadruped: What It Changes for Robot Buyers</h3>
+          <p class="blog-card-excerpt">DENA Robotics has built what it calls the first quadruped designed and built in the Netherlands, with a humanoid planned next. The milestone matters less for the machine than for what a European supply track changes for buyers.</p>
+          <div class="blog-card-meta"><span>May 17, 2026</span><span>4 min read</span></div>
+        </div>
+      </a>
+      <a href="/blog/quadruped-endurance-raibo2-marathon.html" class="blog-card">
+        <div class="blog-card-cover"><img src="blog/covers/quadruped-endurance-raibo2-marathon.jpg" alt="" loading="lazy"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-category">Humanoid &amp; Mobile Robot Insights</div>
+          <h3 class="blog-card-title">What RAIBO2&#x27;s Marathon Run Means for Quadruped Endurance</h3>
+          <p class="blog-card-excerpt">A KAIST quadruped completed a full 42.195 km marathon on a single battery charge. What the result - now published in Nature - tells buyers about quadruped endurance in real deployments.</p>
+          <div class="blog-card-meta"><span>June 14, 2026</span><span>3 min read</span></div>
+        </div>
+      </a>
+      <a href="/blog/autonomous-inspection-quadrupeds-anybotics-shift.html" class="blog-card">
+        <div class="blog-card-cover"><img src="blog/covers/autonomous-inspection-quadrupeds-anybotics-shift.jpg" alt="" loading="lazy"></div>
+        <div class="blog-card-body">
+          <div class="blog-card-category">Automation Use Cases</div>
+          <h3 class="blog-card-title">Autonomous Inspection at Scale: Lessons from ANYbotics&#x27; Shift Platform</h3>
+          <p class="blog-card-excerpt">ANYbotics&#x27; Shift platform links robot fleets, inspection data and maintenance systems into one workflow. The launch signals a bigger shift: inspection robots are becoming enterprise infrastructure.</p>
+          <div class="blog-card-meta"><span>June 10, 2026</span><span>3 min read</span></div>
+        </div>
+      </a>
+      <!--LATEST-POSTS:END-->
     </div>
   </section>
 
@@ -429,6 +485,7 @@ fetch('blog-posts.json')
     const coverPath = (p) => p.coverUrl || 'blog/covers/' + p.slug + '.jpg';
     const grid = document.getElementById('blog-grid');
     const latest = posts.slice(0, 3);
+    if (!latest.length) return;   // keep the server-rendered cards
     grid.innerHTML = latest.map(p => `
       <a href="/blog/${p.slug}.html" class="blog-card">
         <div class="blog-card-cover"><img src="${coverPath(p)}" alt="" loading="lazy"></div>
@@ -442,7 +499,9 @@ fetch('blog-posts.json')
     `).join('');
   })
   .catch(() => {
-    document.getElementById('blog-grid').innerHTML = '<div class="blog-loading">Unable to load articles. Please try again.</div>';
+    const g = document.getElementById('blog-grid');
+    const band = g && g.closest('section');
+    if (band && !g.children.length) band.hidden = true;
   });
 </script>
 <!-- Analytics (privacy-friendly beacon — always active, no cookies) -->
