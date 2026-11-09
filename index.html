@@ -2508,7 +2508,9 @@ body::after {
 .leader-img-wrap {
   position: relative;
   overflow: hidden;
-  background: #000;
+  /* page colour, not #000: a lazy portrait that paints a beat late should not
+     read as a black block sitting in the team section */
+  background: var(--bg-0);
   aspect-ratio: 4 / 5;
 }
 
