@@ -1,0 +1,267 @@
+{
+ "clipSets": {
+  "biped": [
+   "wave",
+   "tai_chi",
+   "jog_slow",
+   "stair_climb",
+   "crawl",
+   "prone_to_stand"
+  ],
+  "wheeled": [
+   "wave",
+   "tai_chi",
+   "warmup",
+   "windmill"
+  ],
+  "quadruped": [
+   "stair_climb",
+   "crawl",
+   "jog_slow",
+   "sprint"
+  ],
+  "companion": [
+   "wave",
+   "tai_chi",
+   "warmup"
+  ]
+ },
+ "labels": {
+  "biped": "Bipedal humanoids",
+  "wheeled": "Wheeled humanoids",
+  "quadruped": "Quadrupeds",
+  "companion": "Companion humanoids",
+  "head": "Expressive heads",
+  "base": "Wheeled bases & fixed cells"
+ },
+ "recordCats": {
+  "head": [
+   "Gesture"
+  ],
+  "base": [
+   "Locomotion",
+   "Logistics"
+  ]
+ },
+ "models": {
+  "pndbotics-adam": "biped",
+  "fourier-gr-3": "biped",
+  "adam-u": "biped",
+  "agibot-a3": "biped",
+  "agibot-x2": "biped",
+  "casbot-02-edu": "biped",
+  "casbot-4-piece-band": "biped",
+  "kepler-spe-bumblebee": "biped",
+  "limx-oli": "biped",
+  "magiclab-magicbot-g1": "biped",
+  "unix-ai-panther": "wheeled",
+  "unix-ai-wanda": "wheeled",
+  "magiclab-magicdog-y1": "quadruped",
+  "magiclab-magicdog": "quadruped",
+  "genisom-m1": "quadruped",
+  "genisom-l1": "quadruped",
+  "genisom-l1-edu": "quadruped",
+  "agibot-d1": "quadruped",
+  "droidup-moya": "companion",
+  "tangible-future-xiaoling-3": "head",
+  "ldtech-intelligent-head": "head",
+  "isage-star-sageman": "base",
+  "gausium-phantas": "base",
+  "keenon-c40-p1": "base",
+  "qisheng-d2": "base"
+ },
+ "modelClips": {
+  "agibot-a3": [
+   "sprint",
+   "standing_jump",
+   "kick_spinning",
+   "punch_hook",
+   "tai_chi",
+   "wave"
+  ],
+  "magiclab-magicbot-g1": [
+   "sprint",
+   "jog_slow",
+   "stair_climb",
+   "standing_jump",
+   "tai_chi",
+   "wave"
+  ],
+  "agibot-x2": [
+   "jog_slow",
+   "stair_climb",
+   "squat",
+   "tai_chi",
+   "wave",
+   "warmup"
+  ],
+  "adam-u": [
+   "jog_slow",
+   "stair_climb",
+   "crawl",
+   "prone_to_stand",
+   "tai_chi",
+   "wave"
+  ],
+  "pndbotics-adam": [
+   "jog_slow",
+   "stair_climb",
+   "crawl",
+   "prone_to_stand",
+   "tai_chi",
+   "wave"
+  ],
+  "casbot-02-edu": [
+   "jog_slow",
+   "stair_climb",
+   "squat",
+   "prone_to_stand",
+   "tai_chi",
+   "wave"
+  ],
+  "kepler-spe-bumblebee": [
+   "stair_climb",
+   "crawl",
+   "jog_slow",
+   "squat",
+   "prone_to_stand",
+   "wave"
+  ],
+  "limx-oli": [
+   "jog_slow",
+   "stair_climb",
+   "squat",
+   "tai_chi",
+   "wave",
+   "prone_to_stand"
+  ],
+  "fourier-gr-3": [
+   "wave",
+   "tai_chi",
+   "warmup",
+   "walk_to_sit"
+  ],
+  "casbot-4-piece-band": [
+   "wave",
+   "tai_chi",
+   "warmup",
+   "windmill"
+  ],
+  "droidup-moya": [
+   "wave",
+   "tai_chi",
+   "warmup",
+   "walk_to_sit"
+  ],
+  "unix-ai-panther": [
+   "wave",
+   "tai_chi",
+   "warmup",
+   "windmill",
+   "punch_hook"
+  ],
+  "unix-ai-wanda": [
+   "wave",
+   "tai_chi",
+   "warmup",
+   "windmill",
+   "punch_hook"
+  ],
+  "magiclab-magicdog": [
+   "stair_climb",
+   "crawl",
+   "jog_slow",
+   "sprint"
+  ],
+  "magiclab-magicdog-y1": [
+   "stair_climb",
+   "crawl",
+   "jog_slow",
+   "sprint"
+  ],
+  "genisom-m1": [
+   "stair_climb",
+   "crawl",
+   "jog_slow",
+   "sprint"
+  ],
+  "genisom-l1": [
+   "stair_climb",
+   "crawl",
+   "jog_slow",
+   "sprint"
+  ],
+  "genisom-l1-edu": [
+   "stair_climb",
+   "crawl",
+   "jog_slow",
+   "sprint"
+  ],
+  "agibot-d1": [
+   "stair_climb",
+   "crawl",
+   "jog_slow",
+   "sprint"
+  ],
+  "ldtech-intelligent-head": [],
+  "tangible-future-xiaoling-3": [],
+  "isage-star-sageman": [],
+  "gausium-phantas": [],
+  "keenon-c40-p1": [],
+  "qisheng-d2": []
+ },
+ "modelBasis": {
+  "agibot-a3": "173 cm, 18 km/h top speed, somersaults and aerial kicks in AgiBot's own demonstrations",
+  "magiclab-magicbot-g1": "350 N·m joints, running gait and dynamic manoeuvres on the MagicBot platform",
+  "agibot-x2": "1.8 m/s top speed, 120 N·m peak joints, compact agile frame",
+  "adam-u": "full-size research biped with no published acrobatic capability",
+  "pndbotics-adam": "research biped with no published acrobatic capability",
+  "casbot-02-edu": "6 km/h top speed, interaction-focused biped",
+  "kepler-spe-bumblebee": "75 kg industrial biped: uneven ground and push recovery, no acrobatics",
+  "limx-oli": "research biped, walking and stairs, no published jumps",
+  "fourier-gr-3": "care-bot: expressive gait and gestures, no published running or stunts",
+  "casbot-4-piece-band": "performance band unit: upper-body choreography",
+  "droidup-moya": "0.83 m/s human-like gait, built for expressive interaction",
+  "unix-ai-panther": "wheeled dual-arm chassis with no legs, so upper-body motion only",
+  "unix-ai-wanda": "wheeled dual-arm chassis with no legs, so upper-body motion only",
+  "magiclab-magicdog": "quadruped gait",
+  "magiclab-magicdog-y1": "quadruped gait",
+  "genisom-m1": "quadruped gait",
+  "genisom-l1": "quadruped gait",
+  "genisom-l1-edu": "quadruped gait",
+  "agibot-d1": "quadruped gait",
+  "ldtech-intelligent-head": "head-only rig: no library clip is driven by a head",
+  "tangible-future-xiaoling-3": "head-only rig: no library clip is driven by a head",
+  "isage-star-sageman": "wheeled chassis: library clips are humanoid rigs",
+  "gausium-phantas": "wheeled cleaning chassis: library clips are humanoid rigs",
+  "keenon-c40-p1": "wheeled delivery chassis: library clips are humanoid rigs",
+  "qisheng-d2": "wheeled service chassis: library clips are humanoid rigs"
+ },
+ "modelNames": {
+  "adam-u": "ADAM U",
+  "agibot-a3": "AGIBOT A3 Ultra",
+  "agibot-d1": "AGIBOT D1 EDU",
+  "agibot-x2": "AGIBOT X2 Ultra",
+  "casbot-02-edu": "CASBOT 02 EDU",
+  "casbot-4-piece-band": "CASBOT 4 Piece Band",
+  "droidup-moya": "DroidUp Moya",
+  "fourier-gr-3": "Fourier GR-3",
+  "gausium-phantas": "Gausium Phantas",
+  "genisom-l1-edu": "Genisom L1 EDU",
+  "genisom-l1": "Genisom L1",
+  "genisom-m1": "Genisom M1",
+  "isage-star-sageman": "iSAGE STAR-SageMan",
+  "keenon-c40-p1": "Keenon C40-P1",
+  "kepler-spe-bumblebee": "Kepler S-PE BumbleBee",
+  "ldtech-intelligent-head": "LDTech Intelligent Head",
+  "limx-oli": "LimX OLI",
+  "magiclab-magicbot-g1": "MagicLab MagicBot G1",
+  "magiclab-magicdog-y1": "MagicLab MagicDog Y1",
+  "magiclab-magicdog": "MagicLab MagicDog",
+  "pndbotics-adam": "ADAM SP",
+  "qisheng-d2": "Qisheng D2",
+  "tangible-future-xiaoling-3": "Tangible Future Xiaoling 3.0",
+  "unix-ai-panther": "UniX AI Panther",
+  "unix-ai-wanda": "UniX AI Wanda 2.0"
+ }
+}
