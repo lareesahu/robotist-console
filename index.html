@@ -3740,10 +3740,6 @@ body::after {
 .mc-thumb[aria-pressed="true"] { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
 .mc-thumb:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 .mc-stage-note { font-size: 12px; line-height: 1.6; color: var(--grey-1); margin: 2px 0 0; }
-.mc-map { max-width: 1400px; margin: clamp(44px, 6vw, 72px) auto 0; border-top: 1px solid var(--grey-3); padding-top: clamp(26px, 3vw, 38px); }
-.mc-map-head { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; flex-wrap: wrap; margin-bottom: 8px; }
-.mc-map-title { font-size: clamp(18px, 1.6vw, 23px); font-weight: 600; letter-spacing: -.015em; margin: 0; color: var(--white); }
-.mc-map-note { font-size: 12.5px; color: var(--grey-1); margin: 0; }
 .mc-row { display: grid; grid-template-columns: minmax(160px, 200px) minmax(0, 1fr) minmax(0, 1.15fr); gap: 18px 28px; padding: 18px 0; border-top: 1px solid var(--grey-3); align-items: start; }
 .mc-rows .mc-row:last-child { border-bottom: 1px solid var(--grey-3); }
 .mc-row-class { font-size: 14.5px; font-weight: 600; color: var(--white); }
@@ -3855,16 +3851,18 @@ body::after {
 .nav-caret{display:inline-block;width:6px;height:6px;margin-left:8px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px);opacity:.55;transition:transform .18s ease}
 .nav-sub:hover .nav-caret,.nav-sub:focus-within .nav-caret{transform:rotate(-135deg) translateY(-2px);opacity:1}
 .nav-sub:hover .nav-sub-toggle,.nav-sub:focus-within .nav-sub-toggle{color:#F0F4F8}
-.nav-submenu{position:absolute;top:100%;left:-16px;padding:10px 10px 12px;min-width:290px;background:#0A131F;border:1px solid rgba(240,244,248,.13);border-radius:12px;box-shadow:0 26px 64px rgba(0,0,0,.62);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .16s ease,transform .16s ease,visibility .16s;z-index:80}
+.nav-submenu{position:absolute;top:calc(100% + 18px);left:-18px;padding:4px 0;min-width:300px;background:var(--bg-0,#03080F);border:1px solid rgba(255,255,255,.09);box-shadow:0 22px 48px rgba(0,0,0,.55);opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .18s ease,transform .18s ease,visibility .18s;z-index:60}
+.nav-sub::after{content:"";position:absolute;top:100%;left:-18px;width:300px;height:20px}
 .nav-sub:hover .nav-submenu,.nav-sub:focus-within .nav-submenu{opacity:1;visibility:visible;transform:translateY(0)}
-.nav-submenu a{display:block;padding:10px 12px;border-radius:7px;text-decoration:none;font-size:14px;font-weight:500;line-height:1.35;color:#E6EDF4;min-height:0}
-.nav-submenu a span{display:block;margin-top:4px;font-size:12.5px;font-weight:400;letter-spacing:0;color:#9FB2C4;text-transform:none}
-.nav-submenu a:hover,.nav-submenu a:focus-visible{background:rgba(74,168,200,.13);color:#fff}
+.nav-submenu a{display:block;padding:11px 18px;border-left:2px solid transparent;text-decoration:none;font-size:11px;font-weight:300;letter-spacing:.14em;text-transform:uppercase;line-height:1.4;color:var(--grey-1,#8FA3B5);min-height:0}
+.nav-submenu a span{display:block;margin-top:5px;font-size:10px;font-weight:300;letter-spacing:.06em;text-transform:none;color:rgba(143,163,181,.72);line-height:1.45}
+.nav-submenu a:hover span,.nav-submenu a:focus-visible span{color:rgba(234,241,247,.75)}
+.nav-submenu a:hover,.nav-submenu a:focus-visible{background:transparent;color:#fff;border-left-color:var(--accent,#4AA8C8)}
 @media (max-width:900px){
   .nav-sub{width:100%}
   .nav-caret{display:none}
   .nav-submenu{position:static;opacity:1;visibility:visible;transform:none;min-width:0;padding:0 0 6px 14px;background:transparent;border:0;box-shadow:none}
-  .nav-submenu a{padding:7px 0;font-size:15px;color:#A9BACB}
+  .nav-submenu a{padding:7px 0;font-size:15px;font-weight:400;letter-spacing:.02em;text-transform:none;color:#A9BACB;border-left:0}
   .nav-submenu a span{display:none}
 }
 
@@ -4646,9 +4644,8 @@ body::after {
   <div class="mc-inner">
     <div class="mc-copy">
       <div class="section-eyebrow">Deployment capacity</div>
-      <h2 id="motion-heading" class="mc-title">You should see the movement before you sign for the machine.</h2>
-      <p class="mc-lede">A robot is not deployed because it arrived in a crate. It is deployed when it does what your site actually asks — walks a corridor at shift change, kneels beside a patient, takes one step up, holds still for an inspection photograph.</p>
-      <p class="mc-lede">Two libraries make that test possible: 26 captured performances and 25 licensed records, both retargeted onto a 23-joint humanoid rig and exported as joint-space animation at 50 frames a second — the format a robot controller accepts without translation. Every machine on this page ships with the set its body can perform.</p>
+      <h2 id="motion-heading" class="mc-title">See the movement before you sign.</h2>
+      <p class="mc-lede">A robot is deployed when it moves the way your site needs — the corridor at shift change, the step up, the hold for an inspection photo. Every machine here ships with the motion set its body can run.</p>
       <ul class="mc-stats">
         <li><b>26</b> playable clips</li>
         <li><b>23</b> joints per rig</li>
@@ -4673,47 +4670,10 @@ body::after {
         <button class="mc-thumb" type="button" data-clip="crawl" data-name="Low crawl" data-spec="locomotion · 10 s · 50 fps" data-thumb="/motion-library/thumbs/crawl.webp" aria-pressed="false" aria-label="Preview Low crawl"><img src="/motion-library/thumbs/crawl.webp" alt="" loading="lazy" decoding="async"></button>
         <button class="mc-thumb" type="button" data-clip="prone_to_stand" data-name="Prone to stand" data-spec="daily · 9.98 s · 50 fps" data-thumb="/motion-library/thumbs/prone_to_stand.webp" aria-pressed="false" aria-label="Preview Prone to stand"><img src="/motion-library/thumbs/prone_to_stand.webp" alt="" loading="lazy" decoding="async"></button>
       </div>
-      <p class="mc-stage-note">Pick a clip to preview it here; the frame opens it in the 3D viewer.</p>
+      <p class="mc-stage-note">Pick a clip to preview it.</p>
     </div>
   </div>
-  <div class="mc-map">
-    <div class="mc-map-head">
-      <h3 class="mc-map-title">Which set applies to which machine</h3>
-      <p class="mc-map-note">Same library, mapped to the body that has to perform it.</p>
-    </div>
-    <div class="mc-rows">
-      <div class="mc-row">
-        <div><div class="mc-row-class">Bipedal humanoids</div><div class="mc-row-count">6 clips · 10 machines</div></div>
-        <div class="mc-clips"><a class="mc-clip" href="/motion-library/?clip=wave">Wave</a><a class="mc-clip" href="/motion-library/?clip=tai_chi">Tai chi form</a><a class="mc-clip" href="/motion-library/?clip=jog_slow">Slow jog</a><a class="mc-clip" href="/motion-library/?clip=stair_climb">Stair climb</a><a class="mc-clip" href="/motion-library/?clip=crawl">Low crawl</a><a class="mc-clip" href="/motion-library/?clip=prone_to_stand">Prone to stand</a></div>
-        <div class="mc-models"><a class="mc-model" href="/products/pndbotics-adam.html">ADAM SP</a><a class="mc-model" href="/products/fourier-gr-3.html">Fourier GR-3</a><a class="mc-model" href="/products/adam-u.html">ADAM U</a><a class="mc-model" href="/products/agibot-a3.html">AGIBOT A3 Ultra</a><a class="mc-model" href="/products/agibot-x2.html">AGIBOT X2 Ultra</a><a class="mc-model" href="/products/casbot-02-edu.html">CASBOT 02 EDU</a><a class="mc-model" href="/products/casbot-4-piece-band.html">CASBOT 4 Piece Band</a><a class="mc-model" href="/products/kepler-spe-bumblebee.html">Kepler S-PE BumbleBee</a><a class="mc-model" href="/products/limx-oli.html">LimX OLI</a><a class="mc-model" href="/products/magiclab-magicbot-g1.html">MagicLab MagicBot G1</a></div>
-      </div>
-      <div class="mc-row">
-        <div><div class="mc-row-class">Wheeled humanoids</div><div class="mc-row-count">4 clips · 2 machines</div></div>
-        <div class="mc-clips"><a class="mc-clip" href="/motion-library/?clip=wave">Wave</a><a class="mc-clip" href="/motion-library/?clip=tai_chi">Tai chi form</a><a class="mc-clip" href="/motion-library/?clip=warmup">Warm-up</a><a class="mc-clip" href="/motion-library/?clip=windmill">Windmill stretch</a></div>
-        <div class="mc-models"><a class="mc-model" href="/products/unix-ai-panther.html">UniX AI Panther</a><a class="mc-model" href="/products/unix-ai-wanda.html">UniX AI Wanda 2.0</a></div>
-      </div>
-      <div class="mc-row">
-        <div><div class="mc-row-class">Quadrupeds</div><div class="mc-row-count">4 clips · 6 machines</div></div>
-        <div class="mc-clips"><a class="mc-clip" href="/motion-library/?clip=stair_climb">Stair climb</a><a class="mc-clip" href="/motion-library/?clip=crawl">Low crawl</a><a class="mc-clip" href="/motion-library/?clip=jog_slow">Slow jog</a><a class="mc-clip" href="/motion-library/?clip=sprint">Sprint</a></div>
-        <div class="mc-models"><a class="mc-model" href="/products/magiclab-magicdog-y1.html">MagicLab MagicDog Y1</a><a class="mc-model" href="/products/magiclab-magicdog.html">MagicLab MagicDog</a><a class="mc-model" href="/products/genisom-m1.html">Genisom M1</a><a class="mc-model" href="/products/genisom-l1.html">Genisom L1</a><a class="mc-model" href="/products/genisom-l1-edu.html">Genisom L1 EDU</a><a class="mc-model" href="/products/agibot-d1.html">AGIBOT D1 EDU</a></div>
-      </div>
-      <div class="mc-row">
-        <div><div class="mc-row-class">Companion humanoids</div><div class="mc-row-count">3 clips · 1 machine</div></div>
-        <div class="mc-clips"><a class="mc-clip" href="/motion-library/?clip=wave">Wave</a><a class="mc-clip" href="/motion-library/?clip=tai_chi">Tai chi form</a><a class="mc-clip" href="/motion-library/?clip=warmup">Warm-up</a></div>
-        <div class="mc-models"><a class="mc-model" href="/products/droidup-moya.html">DroidUp Moya</a></div>
-      </div>
-      <div class="mc-row">
-        <div><div class="mc-row-class">Expressive heads</div><div class="mc-row-count">2 machines · catalogue records only</div></div>
-        <div class="mc-clips"><a class="mc-clip" href="/library.html?cat=Gesture">Gesture records</a></div>
-        <div class="mc-models"><a class="mc-model" href="/products/tangible-future-xiaoling-3.html">Tangible Future Xiaoling 3.0</a><a class="mc-model" href="/products/ldtech-intelligent-head.html">LDTech Intelligent Head</a></div>
-      </div>
-      <div class="mc-row">
-        <div><div class="mc-row-class">Wheeled bases & fixed cells</div><div class="mc-row-count">4 machines · catalogue records only</div></div>
-        <div class="mc-clips"><a class="mc-clip" href="/library.html?cat=Locomotion">Locomotion records</a><a class="mc-clip" href="/library.html?cat=Logistics">Logistics records</a></div>
-        <div class="mc-models"><a class="mc-model" href="/products/isage-star-sageman.html">iSAGE STAR-SageMan</a><a class="mc-model" href="/products/gausium-phantas.html">Gausium Phantas</a><a class="mc-model" href="/products/keenon-c40-p1.html">Keenon C40-P1</a><a class="mc-model" href="/products/qisheng-d2.html">QiSheng D2</a></div>
-      </div>
-    </div>
-  </div>
+  
 </section>
 
 <section class="latest-posts" id="insights" aria-labelledby="posts-heading">
