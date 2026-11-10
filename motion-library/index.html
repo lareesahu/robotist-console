@@ -19,24 +19,92 @@
 <script type="importmap">
 { "imports": { "three": "./vendor/three.module.js", "three/addons/": "./vendor/" } }
 </script>
+<style id="site-nav-css">
+/* Site navigation — identical on every page, scoped to #mainNav so a page's own
+   .nav / .companion-nav rules cannot drift from it. */
+#mainNav{position:fixed;top:0;left:0;right:0;z-index:900;height:72px;display:flex;align-items:center;
+  justify-content:space-between;padding:0 clamp(24px,6vw,80px);transition:background .4s,border-color .4s;
+  font-family:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif}
+#mainNav.scrolled{background:rgba(3,8,16,.88);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
+  border-bottom:1px solid rgba(74,168,200,.08)}
+#mainNav .nav-logo{display:flex;align-items:center;text-decoration:none}
+#mainNav .nav-logo img{height:28px;width:auto;display:block}
+#mainNav .nav-links{display:flex;align-items:center;gap:40px;list-style:none;margin:0;padding:0}
+#mainNav .nav-links a{font-weight:300;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:#8FA3B5;text-decoration:none;transition:color .2s}
+#mainNav .nav-links a:hover{color:#fff}
+#mainNav .nav-actions{display:flex;align-items:center;gap:12px}
+#mainNav .nav-cta{display:inline-flex;align-items:center;justify-content:center;min-height:42px;line-height:1;
+  font-weight:500;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#03080F;background:#4AA8C8;
+  padding:0 26px;text-decoration:none;transition:background .2s,transform .15s}
+#mainNav .nav-cta--ghost{background:transparent;color:#8FA3B5;border:1px solid rgba(255,255,255,.18)}
+#mainNav .nav-cta:hover{background:#63B9D6;transform:translateY(-1px)}
+#mainNav .nav-cta--ghost:hover{color:#fff;border-color:rgba(255,255,255,.45)}
+#mainNav .nav-sub{position:relative}
+#mainNav .nav-caret{display:inline-block;width:6px;height:6px;margin-left:8px;border-right:1.5px solid currentColor;
+  border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px);opacity:.55;transition:transform .18s}
+#mainNav .nav-sub:hover .nav-caret,#mainNav .nav-sub:focus-within .nav-caret{transform:rotate(-135deg) translateY(-2px);opacity:1}
+#mainNav .nav-sub:hover .nav-sub-toggle,#mainNav .nav-sub:focus-within .nav-sub-toggle{color:#F0F4F8}
+#mainNav .nav-submenu{position:absolute;top:calc(100% + 16px);left:-18px;padding:4px 0;min-width:300px;
+  background:#03080F;border:1px solid rgba(255,255,255,.09);border-radius:0;box-shadow:0 22px 48px rgba(0,0,0,.55);
+  opacity:0;visibility:hidden;transform:translateY(6px);transition:opacity .18s,transform .18s,visibility .18s;z-index:60}
+#mainNav .nav-sub::after{content:"";position:absolute;top:100%;left:-18px;width:300px;height:20px}
+#mainNav .nav-sub:hover .nav-submenu,#mainNav .nav-sub:focus-within .nav-submenu{opacity:1;visibility:visible;transform:none}
+#mainNav .nav-submenu a{display:block;padding:11px 18px;border-left:2px solid transparent;font-size:11px;
+  letter-spacing:.14em;text-transform:uppercase;color:#8FA3B5;text-decoration:none}
+#mainNav .nav-submenu a span{display:block;margin-top:5px;font-size:10px;letter-spacing:.06em;text-transform:none;
+  color:rgba(143,163,181,.72);line-height:1.45}
+#mainNav .nav-submenu a:hover{color:#fff;border-left-color:#4AA8C8;background:transparent}
+#mainNav .nav-submenu a:hover span{color:rgba(234,241,247,.75)}
+#mainNav .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px}
+#mainNav .nav-hamburger span{display:block;width:24px;height:1px;background:#8FA3B5;transition:transform .2s,opacity .2s}
+#mainNav .nav-hamburger.active span:nth-child(1){transform:rotate(45deg) translateY(6px)}
+#mainNav .nav-hamburger.active span:nth-child(2){opacity:0}
+#mainNav .nav-hamburger.active span:nth-child(3){transform:rotate(-45deg) translateY(-6px)}
+@media(max-width:900px){
+  #mainNav .nav-links{display:none;flex-direction:column}
+  #mainNav .nav-links.open{display:flex;position:absolute;top:72px;left:0;right:0;background:rgba(3,8,16,.97);
+    backdrop-filter:blur(24px);padding:18px 24px;gap:14px;z-index:400;border-bottom:1px solid rgba(74,168,200,.1)}
+  #mainNav .nav-hamburger{display:flex}
+  #mainNav .nav-submenu{position:static;opacity:1;visibility:visible;transform:none;background:transparent;
+    border:0;box-shadow:none;padding:6px 0 0 12px;min-width:0}
+  #mainNav .nav-sub::after{display:none}
+  #mainNav .nav-submenu a{padding:8px 0;font-size:14px;letter-spacing:.02em;text-transform:none;color:#A9BACB}
+  #mainNav .nav-submenu a span{display:none}
+  #mainNav .nav-links a{font-size:14px;letter-spacing:.02em;text-transform:none;color:#A9BACB;padding:6px 0}
+  #mainNav .nav-actions{gap:8px}
+  #mainNav .nav-cta{padding:0 14px;min-height:38px;font-size:10px}
+  #mainNav .nav-cta--ghost{display:none}
+}
+</style>
 </head>
 <body>
 
-<nav class="nav" id="mainNav">
-  <a href="/" class="nav-logo"><img src="/images/logo.svg" alt="Robotist"></a>
+<nav class="nav" id="mainNav" data-nav="canonical">
+  <a href="/" class="nav-logo"><img src="/images/logo.svg" alt="Robotist" style="height:28px;width:auto;" width="132" height="28"></a>
   <ul class="nav-links">
     <li><a href="/#catalogue">Catalogue</a></li>
     <li><a href="/#services">Services</a></li>
+    <li class="nav-sub">
+      <a href="/industries/hotels.html" class="nav-sub-toggle" aria-haspopup="true" aria-expanded="false">Industries<span class="nav-caret" aria-hidden="true"></span></a>
+      <div class="nav-submenu" role="menu" aria-label="Industries">
+        <a role="menuitem" href="/industries/hotels.html">Hotels &amp; hospitality<span>Cleaning, delivery and guest service</span></a>
+        <a role="menuitem" href="/industries/facilities.html">Cleaning &amp; facilities<span>Contract cleaners, offices, venues</span></a>
+        <a role="menuitem" href="/industries/warehousing.html">Warehousing &amp; logistics<span>Large floors, between-shift cleaning</span></a>
+        <a role="menuitem" href="/industries/retail.html">Retail &amp; showrooms<span>Floors, stock moves, customer help</span></a>
+      </div>
+    </li>
     <li><a href="/compare.html">Compare</a></li>
-    <li><a href="/motion-library/" aria-current="page">Motion library</a></li>
-    <li><a href="/blog.html">Blog</a></li> <li><a href="/about.html">About</a></li>
+    <li><a href="/motion-library/">Motion library</a></li>
+    <li><a href="/blog.html">Blog</a></li>
+    <li><a href="/about.html">About</a></li>
     <li><a href="/contact.html">Contact</a></li>
   </ul>
   <div class="nav-actions">
     <a href="/grn/" class="nav-cta nav-cta--ghost">Join us</a>
-    <a href="/contact.html" class="nav-cta">Get Started</a>
+    <a href="/contact.html" onclick="openInquiry();return false" class="nav-cta">Get Started</a>
   </div>
-  <button class="nav-hamburger" id="nav-toggle" aria-label="Menu" aria-expanded="false">
+  <button class="nav-hamburger" aria-label="Menu" aria-expanded="false">
     <span></span><span></span><span></span>
   </button>
 </nav>
@@ -135,5 +203,24 @@
 
 <script type="module" src="viewer.js?v=20261026r"></script>
 <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+<script id="site-nav-js">
+(function () {
+  var nav = document.getElementById('mainNav');
+  if (!nav) return;
+  var links = nav.querySelector('.nav-links');
+  var burger = nav.querySelector('.nav-hamburger');
+  var onScroll = function () { nav.classList.toggle('scrolled', window.scrollY > 60); };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  if (burger) {
+    burger.addEventListener('click', function (e) {
+      e.preventDefault();
+      var open = links.classList.toggle('open');
+      burger.classList.toggle('active', open);
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+})();
+</script>
 </body>
 </html>

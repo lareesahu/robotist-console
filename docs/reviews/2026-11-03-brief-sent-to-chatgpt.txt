@@ -1,0 +1,69 @@
+I need a hard evaluation of a content plan before I spend two months writing it. You are reviewing as a B2B content strategist who understands robotics distribution, not as a cheerleader.
+
+CONTEXT
+
+Robotist (robotist.com.au) is a global robotics platform: it sources, advises and delivers robot hardware (quadrupeds, humanoids, cleaning robots, industrial arms, interaction robots, companion heads) to businesses, universities and venues, with operations in Shanghai, Hangzhou and Sydney and shipping worldwide. English site, B2B, buyers are people with budget authority and a real site, not enthusiasts. Most models are quoted rather than sold at list price.
+
+The blog exists to capture demand from buyers who are already searching, and to give the salesperson something to send. It is not a news blog and it is not a hobbyist blog.
+
+WHAT IS ALREADY BUILT
+
+1. An editorial standard (excerpt below) that governs voice, sourcing, structure, metadata, images and a 10-line pass/fail gate. A validator refuses any draft that breaks the hard rules, and drafts are published by a human, never automatically.
+
+2. A plan of 25 model Profiles, in four waves. Every model on the shelf gets one Profile. Format: 1,200-1,800 words, sections = what it is / what it does in a working day / what it costs / what it does badly / how it compares / what to do next, plus a comparison table and a 4-question buyer FAQ.
+
+Wave 1 catalogue leaders (priced or flagship, image on hand); Wave 2 humanoid bench; Wave 3 wheeled, education and fleet; Wave 4 interaction, care and industrial precision.
+
+| Wave | Model | Target query | Buyer | Price shown |
+| --- | --- | --- | --- | --- |
+| 1 | MagicLab MagicDog | magicdog quadruped for university lab price | University lab, STEM programme | quote (WDP on request) |
+| 1 | MagicLab MagicDog Y1 | quadruped robot 45kg payload inspection | Plant engineer, security operator | quote |
+| 1 | Genisom M1 | rugged quadruped robot rubble disaster response | Site operator, emergency services | quote |
+| 1 | Keenon C40-P1 | hotel cleaning robot 15 hour runtime | Hotel GM, facilities manager | quote |
+| 1 | Gausium Phantas | autonomous floor scrubber hotel airport | Facilities manager, airport retail | quote |
+| 1 | LimX OLI | humanoid robot ROS2 Orin NX research platform | University lab, embodied-AI team | quote |
+| 2 | ADAM U | full size humanoid robot university price | University lab | USD 45,000 |
+| 2 | PNDbotics ADAM SP | humanoid robot modular actuators maintenance | University lab, integrator | quote |
+| 2 | MagicBot G1 | general purpose humanoid robot pilot | Plant engineer, integrator | quote |
+| 2 | AGIBOT X2 Ultra | half size humanoid robot events retail | Venue operator, retail | USD 49,999 |
+| 2 | AGIBOT A3 Ultra | agibot a3 ultra price deployment | Plant engineer, large integrator | USD 109,999 |
+| 2 | Kepler S-PE BumbleBee | humanoid robot 100 TOPS onboard compute | University lab | USD 88,000 |
+| 3 | Unix Panther | wheeled humanoid robot indoor manipulation | Facility manager, integrator | quote |
+| 3 | Unix Wanda 2.0 | VR teleoperation humanoid robot staffing | Facility manager, integrator | quote |
+| 3 | CASBOT 02 EDU | biped humanoid robot university teaching | University lab | USD 69,000 |
+| 3 | AGIBOT D1 EDU | cheap quadruped robot education price | School, university, STEM programme | USD 7,999 |
+| 3 | Genisom L1 | quadruped robot research open API endurance | University lab | quote |
+| 3 | Genisom L1 EDU | quadruped robot curriculum university package | University lab, education buyer | quote |
+| 3 | CASBOT 4 Piece Band | robot performance show fleet cost | Venue operator, show producer | USD 333,000 |
+| 4 | Fourier GR-3 | care robot humanoid elderly assistance | Care provider, hospital | quote |
+| 4 | DroidUp Moya | biomimetic companion robot preorder | Venue operator, collector, showroom | coming soon |
+| 4 | Tangible Future Xiaoling 3.0 | interactive robot head exhibition price | Venue operator, museum | USD 5,000 |
+| 4 | LDTech Intelligent Head | robot head voice interaction exhibition | Venue operator, integrator | USD 6,000 |
+| 4 | iSAGE STAR-SageMan | quad arm industrial robot quality control | Plant engineer, quality manager | quote |
+| 4 | Qisheng D2 | compact pick and place robot cell price | Plant engineer, integrator | quote |
+
+3. A second series is planned separately: Verdicts, 1,800-2,600 words, ranking several models against a published rubric for one buying job.
+
+STANDARD, CONDENSED
+
+- Three types: Signal 500-700 (one development, what it changes for a buyer), Profile 1,200-1,800, Verdict 1,800-2,600.
+- Voice: active, concrete, one idea per sentence, no hype vocabulary (revolutionary, cutting-edge, seamless, leverage...), no AI tells, expand abbreviations once, admit at least one limit in every Profile.
+- Research: a saved research pack per article; specs from the manufacturer's own page linked inline; price always with currency and "as of Month YYYY"; vendor claims labelled as claims, never as measured results; two independent sources beyond the vendor; never invent market sizes, customer names or test results; no "we tested it" unless we did.
+- Linking: 3-6 external links inline, 3-5 links to our own product pages, 2 sibling articles; never link a competitor product page from a Profile.
+- Images: one hero cover plus 2-3 inline figures for a Profile, real product photography first, cut-outs only for covers, rights recorded, no AI generation.
+- Freshness: "Last checked" line per Profile, quarterly re-verification of price and two headline specs.
+
+WHAT I WANT FROM YOU
+
+Be specific and decisive. Reference the model names and queries above.
+
+1. Strategy: is a catalogue-first Profile plan the right way to build demand for a robotics dealer site? What is it missing that would actually rank or convert?
+2. Queries: go through the target queries. Which are unrealistically phrased, too thin, or not what a buyer types? Give the replacement query for each one you would change.
+3. Order: is the wave order commercially right? Which articles should be the first five written, and why those.
+4. Gaps: name the article types or topics that are missing, with a one-line reason each (I suspect comparison, total cost of ownership, procurement/import questions, "how to buy a robot" education, and job-specific pages, but tell me what you actually think).
+5. Standard: where is the editorial standard over-engineered or under-specified for B2B robotics?
+6. Risk: what kills this plan in practice - thin content at scale, no visual proof, no internal demand data, quote-only pricing, something else?
+7. Score: rate strategy, query quality, sequencing, differentiation and execution-readiness out of 10 each.
+8. Give me a revised first-10-week calendar, one article per week, with type and the one job each does.
+
+No preamble. Structure it under those eight headings. Be blunt where it is weak.

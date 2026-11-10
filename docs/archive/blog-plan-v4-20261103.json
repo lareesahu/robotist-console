@@ -1,0 +1,1372 @@
+{
+  "project": "robotist",
+  "version": 4,
+  "generated": "2026-11-03",
+  "supersedes": "blog-plan.json v2 — ten-article pilot",
+  "basis": "Owner pushback 2026-11-03 + revised evaluation docs/reviews/2026-11-03-pushback-review.md",
+  "principle": "Standards carry the quality; volume carries the credibility. No human writing bottleneck, no scarcity plan.",
+  "volume": {
+    "articles": 42,
+    "weeks": 8,
+    "cadence": {
+      "weeks_1_4": 6,
+      "weeks_5_6": 5,
+      "weeks_7_8": 4
+    },
+    "continuation": "Weeks 9–12: 3–5 articles a week if the backlog still holds distinct buying questions. Six-month target 51–60 evergreen assets plus signals.",
+    "note": "A production target, not a traffic forecast."
+  },
+  "content_mix": {
+    "profiles": 24,
+    "buyer_guides": 10,
+    "verdicts": 8
+  },
+  "title_system": {
+    "principle": "B2B virality means a facilities manager forwards it to an operations director, not a million impressions.",
+    "mechanisms": [
+      "financial stakes",
+      "professional risk",
+      "unexpected constraints",
+      "conflicting specifications",
+      "defensible purchasing decisions"
+    ],
+    "patterns": [
+      {
+        "n": 1,
+        "pattern": "Price isn't the cost",
+        "example": "What a Commercial Cleaning Robot Really Costs Over Three Years",
+        "mechanism": "Budget curiosity, hidden-cost anxiety",
+        "risk": "Must substantiate the extra costs"
+      },
+      {
+        "n": 2,
+        "pattern": "Direct price comparison",
+        "example": "Phantas or C40-P1: Which Cleaning Robot Survives a Full Shift?",
+        "mechanism": "Anchoring and an immediate trade-off",
+        "risk": "Configurations may not be comparable"
+      },
+      {
+        "n": 3,
+        "pattern": "Spec contradiction",
+        "example": "Keenon C40-P1 Runs Up to 15 Hours. Which Cleaning Mode?",
+        "mechanism": "Challenges an assumption without accusing anyone",
+        "risk": "Operating modes must be accurate"
+      },
+      {
+        "n": 4,
+        "pattern": "Expensive mistake",
+        "example": "Before You Book an Inspection Pilot, Check These 7 Site Requirements",
+        "mechanism": "Loss aversion, professional responsibility",
+        "risk": "The seven requirements must be real"
+      },
+      {
+        "n": 5,
+        "pattern": "Overlooked dependency",
+        "example": "A MagicDog Y1 Inspects Nothing Until Someone Answers These Three Questions",
+        "mechanism": "Closes the gap between hardware and deployment",
+        "risk": "Cannot imply one integration is mandatory"
+      },
+      {
+        "n": 6,
+        "pattern": "Buyer's hard question",
+        "example": "What You're Really Buying When You Buy an ADAM U",
+        "mechanism": "Turns curiosity into a budget question",
+        "risk": "Needs the actual listed configuration"
+      },
+      {
+        "n": 7,
+        "pattern": "Suitability challenge",
+        "example": "Can an AGIBOT X2 Ultra Work at Your Next Event?",
+        "mechanism": "Personal relevance, resolved uncertainty",
+        "risk": "Must not confuse demos with deployments"
+      },
+      {
+        "n": 8,
+        "pattern": "Deal-breaker list",
+        "example": "3 Reasons a MagicDog Might Be Wrong for Your Site",
+        "mechanism": "Contrarian honesty, risk avoidance",
+        "risk": "Exclusions follow documented requirements"
+      },
+      {
+        "n": 9,
+        "pattern": "Technical misconception",
+        "example": "ROS 2 Compatible Doesn't Mean Research-Ready: What to Check on LimX OLI",
+        "mechanism": "Authority through correcting an assumption",
+        "risk": "No implied defects"
+      },
+      {
+        "n": 10,
+        "pattern": "Operational scenario",
+        "example": "Planning Two Cleaning Shifts With Keenon C40-P1? Check Its Runtime by Mode",
+        "mechanism": "Immediate applicability",
+        "risk": "Needs real mode data, not an invented test"
+      },
+      {
+        "n": 11,
+        "pattern": "Marginal-cost decision",
+        "example": "Genisom L1 vs L1 EDU: One Decision, Two Invoices",
+        "mechanism": "Makes an abstract comparison tangible",
+        "risk": "Listed prices need equivalent inclusions"
+      },
+      {
+        "n": 12,
+        "pattern": "Evidence-gap reveal",
+        "example": "AGIBOT X2 Ultra: What You Can Verify Before You Pay",
+        "mechanism": "Confidence, transparency under uncertainty",
+        "risk": "Separate published evidence from open questions"
+      }
+    ],
+    "pass_fail_gate": [
+      {
+        "check": "Named entity",
+        "rule": "Every model name or identifier resolves to exactly one catalogue product ID and an approved configuration."
+      },
+      {
+        "check": "Number validation",
+        "rule": "Every price, percentage, performance figure, duration and count matches a verified fact or a reproducible calculation."
+      },
+      {
+        "check": "Price freshness",
+        "rule": "A price in a title needs an approved offer record checked within 30 days, with configuration and currency."
+      },
+      {
+        "check": "Promise integrity",
+        "rule": "Reject unsupported outcome claims: replaces staff, guaranteed ROI, proven safer, eliminates downtime."
+      },
+      {
+        "check": "Answer coverage",
+        "rule": "The article contains an identifiable, evidence-based answer to the title's central question."
+      },
+      {
+        "check": "Evidentiary alignment",
+        "rule": "A title implying testing, ranking or measured performance links to evidence of exactly that kind."
+      },
+      {
+        "check": "Duplicate targeting",
+        "rule": "Reject a title whose intent duplicates an existing page without a materially different answer."
+      }
+    ],
+    "claim_contract": {
+      "title": "Genisom L1 vs L1 EDU: One Decision, Two Invoices",
+      "model_ids": [
+        "keenon-c40-p1",
+        "gausium-phantas"
+      ],
+      "claims": [
+        {
+          "type": "price_difference",
+          "value": 1450,
+          "currency": "USD",
+          "formula": "10700 - 9250",
+          "fact_ids": [
+            "keenon-c40-p1.price",
+            "gausium-phantas.price"
+          ]
+        }
+      ],
+      "requires_configuration_comparability": true
+    },
+    "numbers_in_titles": "Prices and model names help with procurement intent and branded search; counts help only when the article carries the checklist; none of them rescue an article that does not deliver the promise.",
+    "price_rule": "Price leads at most one title in five, and only where price is the buyer's actual question — a cost guide, a marginal-cost verdict, a verification-before-you-pay piece. Everywhere else the title leads with the decision, the constraint or the misconception, and the price lives in the body. A catalogue where every headline carries a number reads like a price list and stops being credible.",
+    "price_led_count": 5
+  },
+  "evidence_status": [
+    "verified_manufacturer_spec",
+    "verified_commercial_offer",
+    "independent_report",
+    "robotist_observation",
+    "editorial_inference",
+    "unknown",
+    "conflict"
+  ],
+  "publication_gate": {
+    "architecture": "Verified product registry + versioned research packs → research agent → writing agent → audit agent → deterministic validation gate → release queue or repair/hold.",
+    "blocks": [
+      {
+        "block": "A. Identity and source integrity",
+        "controls": [
+          "Model name resolves to one product ID and approved configuration",
+          "Every quantitative claim has a fact ID, primary source and verification date",
+          "Source documents archived with the specification revision",
+          "Conflicting sources raise an exception, never a silent choice",
+          "Manufacturer performance claims attributed with operating conditions"
+        ]
+      },
+      {
+        "block": "B. Commercial correctness",
+        "controls": [
+          "Every price from the approved pricing database with currency, configuration, offer type and last-checked date",
+          "Any price in H1, metadata or body matches that record",
+          "Purchase, indicative, subscription, landed and total-ownership prices are separate fields",
+          "Availability, lead time, warranty and support match the operational record",
+          "Every CTA resolves to a real product or buying-job form and reaches sales routing"
+        ]
+      },
+      {
+        "block": "C. Originality and differentiation",
+        "controls": [
+          "No page repeats another's primary intent",
+          "Each Profile carries at least three decision-relevant findings the product page does not",
+          "Similarity thresholds calibrated internally, never reported as Google thresholds"
+        ]
+      },
+      {
+        "block": "D. Claims, title and language",
+        "controls": [
+          "Title passes all seven title checks",
+          "Every evidence status is declared, and unknown is never written as fact",
+          "No banned hype language",
+          "Abbreviations expanded on first use",
+          "No unsupported comparison or ranking"
+        ]
+      },
+      {
+        "block": "E. Technical and search delivery",
+        "controls": [
+          "Self-canonical URL, descriptive title, crawlable internal links",
+          "Accessible tables with headers",
+          "Structured data matches the visible page",
+          "Index submission logged and checked after two weeks",
+          "No rendering or broken-link defects"
+        ]
+      },
+      {
+        "block": "F. Post-publication monitoring",
+        "controls": [
+          "Pages with no impressions after 60 days get revised or merged",
+          "Price or specification change triggers a refresh",
+          "Lead attribution per article slug",
+          "Broken CTA or form submission alert",
+          "Quarterly live-article pass"
+        ]
+      }
+    ]
+  },
+  "exception_path": "Internal commercial offers, distribution authorisation, local compliance conclusions and genuine field-test claims need an authorised record or they are held. Human intervention is the exception mechanism, not the writing bottleneck.",
+  "calendar": [
+    {
+      "n": 1,
+      "week": 1,
+      "theme": "Commercial demand",
+      "type": "profile",
+      "model": "Gausium Phantas",
+      "title": "What Your Hotel Lobby Actually Gets From a Gausium Phantas",
+      "target_query": "hotel cleaning robot",
+      "layer": "editorial"
+    },
+    {
+      "n": 2,
+      "week": 1,
+      "theme": "Commercial demand",
+      "type": "profile",
+      "model": "Keenon C40-P1",
+      "title": "Keenon C40-P1 Runs Up to 15 Hours. Which Cleaning Mode?",
+      "target_query": "keenon c40 price",
+      "layer": "editorial"
+    },
+    {
+      "n": 3,
+      "week": 1,
+      "theme": "Commercial demand",
+      "type": "profile",
+      "model": "MagicDog Y1",
+      "title": "A MagicDog Y1 Inspects Nothing Until Someone Answers These Three Questions",
+      "target_query": "magicdog y1 price",
+      "layer": "editorial"
+    },
+    {
+      "n": 4,
+      "week": 1,
+      "theme": "Commercial demand",
+      "type": "profile",
+      "model": "LimX OLI",
+      "title": "ROS 2 Compatible Doesn't Mean Research-Ready: What to Check on LimX OLI",
+      "target_query": "limx oli robot price",
+      "layer": "editorial"
+    },
+    {
+      "n": 5,
+      "week": 1,
+      "theme": "Commercial demand",
+      "type": "buyer-guide",
+      "model": "Cleaning robot total cost of ownership",
+      "title": "What a Commercial Cleaning Robot Really Costs Over Three Years",
+      "target_query": "commercial cleaning robot price",
+      "layer": "editorial"
+    },
+    {
+      "n": 6,
+      "week": 1,
+      "theme": "Commercial demand",
+      "type": "verdict",
+      "model": "Phantas vs C40-P1",
+      "title": "Phantas or C40-P1: Which Cleaning Robot Survives a Full Shift?",
+      "target_query": "gausium phantas vs keenon c40",
+      "layer": "editorial"
+    },
+    {
+      "n": 7,
+      "week": 2,
+      "theme": "Research procurement",
+      "type": "profile",
+      "model": "Genisom M1",
+      "title": "The Genisom M1 Is Sold on Terrain. Buyers Should Start With the Job.",
+      "target_query": "genisom m1",
+      "layer": "editorial"
+    },
+    {
+      "n": 8,
+      "week": 2,
+      "theme": "Research procurement",
+      "type": "profile",
+      "model": "MagicLab MagicDog",
+      "title": "3 Reasons a MagicDog Might Be Wrong for Your Site",
+      "target_query": "magicdog robot",
+      "layer": "editorial"
+    },
+    {
+      "n": 9,
+      "week": 2,
+      "theme": "Research procurement",
+      "type": "profile",
+      "model": "ADAM U",
+      "title": "What You're Really Buying When You Buy an ADAM U",
+      "target_query": "pndbotics adam",
+      "layer": "editorial"
+    },
+    {
+      "n": 10,
+      "week": 2,
+      "theme": "Research procurement",
+      "type": "profile",
+      "model": "CASBOT 02 EDU",
+      "title": "CASBOT 02 EDU: What a University Gets, and What It Doesn't",
+      "target_query": "casbot 02",
+      "layer": "editorial"
+    },
+    {
+      "n": 11,
+      "week": 2,
+      "theme": "Research procurement",
+      "type": "buyer-guide",
+      "model": "Humanoid for university research",
+      "title": "Buying a Humanoid for a University Lab: the Approval Path Nobody Documents",
+      "target_query": "humanoid robot for university research",
+      "layer": "editorial"
+    },
+    {
+      "n": 12,
+      "week": 2,
+      "theme": "Research procurement",
+      "type": "verdict",
+      "model": "OLI vs ADAM U vs CASBOT 02",
+      "title": "LimX OLI vs ADAM U vs CASBOT 02 EDU: Which One Belongs in a Lab?",
+      "target_query": "humanoid robot for university research",
+      "layer": "editorial"
+    },
+    {
+      "n": 13,
+      "week": 3,
+      "theme": "Quadrupeds and education",
+      "type": "profile",
+      "model": "AGIBOT D1 EDU",
+      "title": "The AGIBOT D1 EDU Is a Teaching Platform. Here's What It Can't Teach.",
+      "target_query": "agibot d1",
+      "layer": "editorial"
+    },
+    {
+      "n": 14,
+      "week": 3,
+      "theme": "Quadrupeds and education",
+      "type": "profile",
+      "model": "Genisom L1",
+      "title": "Genisom L1: the Robot You Buy When the Corridor Is the Problem",
+      "target_query": "genisom l1",
+      "layer": "editorial"
+    },
+    {
+      "n": 15,
+      "week": 3,
+      "theme": "Quadrupeds and education",
+      "type": "profile",
+      "model": "Genisom L1 EDU",
+      "title": "Genisom L1 vs L1 EDU: One Decision, Two Invoices",
+      "target_query": "genisom l1",
+      "layer": "editorial"
+    },
+    {
+      "n": 16,
+      "week": 3,
+      "theme": "Quadrupeds and education",
+      "type": "profile",
+      "model": "MagicBot G1",
+      "title": "MagicBot G1: Demo Video, or Deployable Machine?",
+      "target_query": "magicbot g1",
+      "layer": "editorial"
+    },
+    {
+      "n": 17,
+      "week": 3,
+      "theme": "Quadrupeds and education",
+      "type": "buyer-guide",
+      "model": "Industrial quadruped site readiness",
+      "title": "Industrial Quadruped Site-Readiness: 11 Questions Before You Book a Pilot",
+      "target_query": "inspection robot dog",
+      "layer": "editorial"
+    },
+    {
+      "n": 18,
+      "week": 3,
+      "theme": "Quadrupeds and education",
+      "type": "verdict",
+      "model": "Y1 vs M1",
+      "title": "MagicDog Y1 vs Genisom M1: Which Quadruped Belongs in a Plant?",
+      "target_query": "quadruped robot inspection price",
+      "layer": "editorial"
+    },
+    {
+      "n": 19,
+      "week": 4,
+      "theme": "Humanoid investments",
+      "type": "profile",
+      "model": "AGIBOT X2 Ultra",
+      "title": "AGIBOT X2 Ultra: What You Can Verify Before You Pay",
+      "target_query": "agibot x2",
+      "layer": "editorial"
+    },
+    {
+      "n": 20,
+      "week": 4,
+      "theme": "Humanoid investments",
+      "type": "profile",
+      "model": "AGIBOT A3 Ultra",
+      "title": "The AGIBOT A3 Ultra Spec Sheet Says One Thing. Your Site Says Another.",
+      "target_query": "agibot a3 price",
+      "layer": "editorial"
+    },
+    {
+      "n": 21,
+      "week": 4,
+      "theme": "Humanoid investments",
+      "type": "profile",
+      "model": "Kepler BumbleBee",
+      "title": "Kepler BumbleBee: What a Humanoid at This End of the Market Is Really For",
+      "target_query": "kepler bumblebee",
+      "layer": "editorial"
+    },
+    {
+      "n": 22,
+      "week": 4,
+      "theme": "Humanoid investments",
+      "type": "profile",
+      "model": "ADAM SP",
+      "title": "ADAM SP: the Demo Unit, or the One You Should Quote?",
+      "target_query": "pndbotics adam",
+      "layer": "editorial"
+    },
+    {
+      "n": 23,
+      "week": 4,
+      "theme": "Humanoid investments",
+      "type": "buyer-guide",
+      "model": "Importing from China to Australia",
+      "title": "Importing a Robot From China to Australia: Landed Cost, Duty and Warranty",
+      "target_query": "importing robots australia",
+      "layer": "editorial"
+    },
+    {
+      "n": 24,
+      "week": 4,
+      "theme": "Humanoid investments",
+      "type": "verdict",
+      "model": "G1 vs A3 Ultra",
+      "title": "MagicBot G1 vs AGIBOT A3 Ultra: Two Humanoids, Two Buckets of Evidence",
+      "target_query": "humanoid robot comparison",
+      "layer": "editorial"
+    },
+    {
+      "n": 25,
+      "week": 5,
+      "theme": "Wheeled platforms and care",
+      "type": "profile",
+      "model": "UniX Panther",
+      "title": "UniX Panther: a Wheeled Humanoid, and the Floor It Needs",
+      "target_query": "unix ai panther price",
+      "layer": "editorial"
+    },
+    {
+      "n": 26,
+      "week": 5,
+      "theme": "Wheeled platforms and care",
+      "type": "profile",
+      "model": "UniX Wanda 2.0",
+      "title": "UniX Wanda 2.0 Is Teleoperated. That Changes Who Has to Be in the Room.",
+      "target_query": "unix ai wanda",
+      "layer": "editorial"
+    },
+    {
+      "n": 27,
+      "week": 5,
+      "theme": "Wheeled platforms and care",
+      "type": "profile",
+      "model": "Fourier GR-3",
+      "title": "Fourier GR-3: Care Robotics Stuck Between Demonstration and Deployment",
+      "target_query": "fourier gr 3 price",
+      "layer": "editorial"
+    },
+    {
+      "n": 28,
+      "week": 5,
+      "theme": "Wheeled platforms and care",
+      "type": "buyer-guide",
+      "model": "Pilot cost and feasibility",
+      "title": "What a 90-Day Humanoid Pilot Actually Requires",
+      "target_query": "humanoid pilot",
+      "layer": "editorial"
+    },
+    {
+      "n": 29,
+      "week": 5,
+      "theme": "Wheeled platforms and care",
+      "type": "verdict",
+      "model": "Panther vs Wanda 2.0",
+      "title": "UniX Panther vs UniX Wanda 2.0: Autonomy or a Remote Operator?",
+      "target_query": "unix ai panther",
+      "layer": "editorial"
+    },
+    {
+      "n": 30,
+      "week": 6,
+      "theme": "Events and companion robotics",
+      "type": "profile",
+      "model": "CASBOT 4 Piece Band",
+      "title": "The CASBOT 4 Piece Band: Buying an Audience Reaction",
+      "target_query": "robot rental for events",
+      "layer": "editorial"
+    },
+    {
+      "n": 31,
+      "week": 6,
+      "theme": "Events and companion robotics",
+      "type": "profile",
+      "model": "DroidUp Moya",
+      "title": "DroidUp Moya: Available When? Everything Else Comes Second.",
+      "target_query": "droidup moya price",
+      "layer": "editorial"
+    },
+    {
+      "n": 32,
+      "week": 6,
+      "theme": "Events and companion robotics",
+      "type": "profile",
+      "model": "Xiaoling 3.0",
+      "title": "Xiaoling 3.0 Sells the Interaction. Here's What Runs It.",
+      "target_query": "xiaoling robot",
+      "layer": "editorial"
+    },
+    {
+      "n": 33,
+      "week": 6,
+      "theme": "Events and companion robotics",
+      "type": "buyer-guide",
+      "model": "Exhibitions and events",
+      "title": "Robot Deployment for Events: 9 Things That Break on Site",
+      "target_query": "robot rental for events",
+      "layer": "editorial"
+    },
+    {
+      "n": 34,
+      "week": 6,
+      "theme": "Events and companion robotics",
+      "type": "verdict",
+      "model": "X2 Ultra vs CASBOT Band",
+      "title": "AGIBOT X2 Ultra vs CASBOT 4 Piece Band: Two Very Different Event Bets",
+      "target_query": "robot for events",
+      "layer": "editorial"
+    },
+    {
+      "n": 35,
+      "week": 7,
+      "theme": "Support and education",
+      "type": "profile",
+      "model": "LDTech Intelligent Head",
+      "title": "LDTech Intelligent Head: What Interactive Robotics Costs You After the Invoice",
+      "target_query": "reception robot price",
+      "layer": "editorial"
+    },
+    {
+      "n": 36,
+      "week": 7,
+      "theme": "Support and education",
+      "type": "buyer-guide",
+      "model": "Warranty and support",
+      "title": "Robot Warranty and Support: Buy, Lease or Robots-as-a-Service?",
+      "target_query": "robot rental",
+      "layer": "editorial"
+    },
+    {
+      "n": 37,
+      "week": 7,
+      "theme": "Support and education",
+      "type": "buyer-guide",
+      "model": "Integration and cybersecurity",
+      "title": "Robot Integration and Cybersecurity: What Your IT Team Will Ask",
+      "target_query": "robot integration",
+      "layer": "editorial"
+    },
+    {
+      "n": 38,
+      "week": 7,
+      "theme": "Support and education",
+      "type": "verdict",
+      "model": "MagicDog vs D1 EDU",
+      "title": "MagicDog vs AGIBOT D1 EDU: Research Platform or Inspection Tool?",
+      "target_query": "inspection robot dog",
+      "layer": "editorial"
+    },
+    {
+      "n": 39,
+      "week": 8,
+      "theme": "Industrial and integration",
+      "type": "profile",
+      "model": "iSAGE STAR-SageMan",
+      "title": "iSAGE STAR-SageMan: 'Industrial-Grade' Is a Claim. Here's How to Test It.",
+      "target_query": "isage",
+      "layer": "editorial"
+    },
+    {
+      "n": 40,
+      "week": 8,
+      "theme": "Industrial and integration",
+      "type": "buyer-guide",
+      "model": "Pilot acceptance criteria",
+      "title": "90-Day Pilot Acceptance Criteria: Define Success Before You Sign",
+      "target_query": "robot pilot",
+      "layer": "editorial"
+    },
+    {
+      "n": 41,
+      "week": 8,
+      "theme": "Industrial and integration",
+      "type": "buyer-guide",
+      "model": "Humanoid TCO",
+      "title": "Total Cost of Ownership for a Humanoid Research Platform",
+      "target_query": "humanoid robot price",
+      "layer": "editorial"
+    },
+    {
+      "n": 42,
+      "week": 8,
+      "theme": "Industrial and integration",
+      "type": "verdict",
+      "model": "Xiaoling vs LDTech",
+      "title": "Xiaoling 3.0 vs LDTech Intelligent Head: Interaction, Compared",
+      "target_query": "reception robot price",
+      "layer": "editorial"
+    }
+  ],
+  "inventory": {
+    "note": "Research inventory retained; the live 24-model catalogue is the publishing baseline. Qisheng D2 has no catalogue entry — verify before any coverage.",
+    "models": [
+      {
+        "model": "MagicLab MagicDog",
+        "slug": "magiclab-magicdog-what-a-13-dof-quadruped-teaches",
+        "product": "/products/magiclab-magicdog.html",
+        "wave": 1,
+        "title_seed": "MagicDog: what a 13-DOF quadruped teaches that a simulation cannot",
+        "query": "MagicLab MagicDog price",
+        "angle": "The entry legged platform on our shelf. Where the open SDK gets a student to a publishable experiment, and where it runs out of compute.",
+        "buyer": "University lab, STEM programme",
+        "price": "quote (WDP on request)",
+        "tags": [
+          "quadruped",
+          "education",
+          "research",
+          "university",
+          "evaluate"
+        ],
+        "facts_to_verify": [
+          "price",
+          "SDK limits",
+          "runtime",
+          "payload"
+        ],
+        "status": "inventory",
+        "note": "deprioritised — casual research traffic, not institutional procurement"
+      },
+      {
+        "model": "MagicLab MagicDog Y1",
+        "slug": "magicdog-y1-45kg-payload-industrial-quadruped",
+        "product": "/products/magiclab-magicdog-y1.html",
+        "wave": 1,
+        "title_seed": "MagicDog Y1: what 45 kg of payload buys on a real patrol route",
+        "query": "MagicDog Y1 price and specifications",
+        "angle": "Speed and payload put it in the industrial band. The article sizes a route: sensor bay weight, battery, shift length, and the terrain it still refuses.",
+        "buyer": "Plant engineer, security operator",
+        "price": "USD 64,900",
+        "tags": [
+          "quadruped",
+          "inspection",
+          "security-patrol",
+          "plant-engineer",
+          "evaluate"
+        ],
+        "facts_to_verify": [
+          "payload",
+          "speed",
+          "endurance",
+          "IP rating",
+          "price"
+        ],
+        "status": "inventory",
+        "price_source": "https://robotist.com.au/products/magiclab-magicdog-y1.html"
+      },
+      {
+        "model": "Genisom M1",
+        "slug": "genisom-m1-rugged-quadruped-80cm-clearance",
+        "product": "/products/genisom-m1.html",
+        "wave": 1,
+        "title_seed": "Genisom M1: the 80 cm clearance band, and what it costs to run",
+        "query": "Genisom M1 robot price",
+        "angle": "Clearance is the spec that decides rubble, stairs and site debris. What that buys in field work, and what rugged costs in service and spares.",
+        "buyer": "Site operator, emergency services",
+        "price": "quote (WDP on request)",
+        "tags": [
+          "quadruped",
+          "inspection",
+          "plant-engineer",
+          "deploy"
+        ],
+        "facts_to_verify": [
+          "clearance",
+          "weight",
+          "runtime",
+          "price",
+          "service interval"
+        ],
+        "status": "inventory",
+        "note": "delay — needs a real inspection workflow, not rugged-terrain claims"
+      },
+      {
+        "model": "Keenon C40-P1",
+        "slug": "keenon-c40-p1-shifts-per-charge-hotel-floorplan",
+        "product": "/products/keenon-c40-p1.html",
+        "wave": 1,
+        "title_seed": "Keenon C40-P1: how many shifts one charge actually covers",
+        "query": "Keenon C40 cleaning robot price",
+        "angle": "1,100 m2/h and 15 hours on paper. The article turns both into a floor plan, a shift rota and a number the hotel GM can defend.",
+        "buyer": "Hotel GM, facilities manager",
+        "price": "USD 10,700",
+        "tags": [
+          "cleaning",
+          "hospitality",
+          "facility-manager",
+          "buy"
+        ],
+        "facts_to_verify": [
+          "claimed coverage",
+          "runtime under load",
+          "water/waste handling",
+          "lift integration",
+          "price"
+        ],
+        "status": "pilot",
+        "price_source": "https://robotist.com.au/products/keenon-c40-p1.html"
+      },
+      {
+        "model": "Gausium Phantas",
+        "slug": "gausium-phantas-4-in-1-when-the-squeegee-earns-its-keep",
+        "product": "/products/gausium-phantas.html",
+        "wave": 1,
+        "title_seed": "Gausium Phantas: four functions, and when the squeegee earns its keep",
+        "query": "Gausium Phantas price",
+        "angle": "Sweep, scrub, squeegee and dry on one chassis at 1,180 m2/h. Which two functions a hotel actually uses, and what the other two cost to carry.",
+        "buyer": "Facilities manager, airport retail",
+        "price": "USD 9,250",
+        "tags": [
+          "cleaning",
+          "hospitality",
+          "facility-manager",
+          "buy"
+        ],
+        "facts_to_verify": [
+          "claimed coverage",
+          "tank sizes",
+          "runtime",
+          "price",
+          "service network"
+        ],
+        "status": "pilot",
+        "price_source": "https://robotist.com.au/products/gausium-phantas.html"
+      },
+      {
+        "model": "LimX OLI",
+        "slug": "limx-oli-157-tops-decides-what-you-can-research",
+        "product": "/products/limx-oli.html",
+        "wave": 1,
+        "title_seed": "LimX OLI: why 157 TOPS decides which research you can run",
+        "query": "LimX OLI humanoid robot price",
+        "angle": "33 degrees of freedom and Orin-class compute. The article maps the compute budget to real research: perception, whole-body control, or both.",
+        "buyer": "University lab, embodied-AI team",
+        "price": "USD 65,900",
+        "tags": [
+          "humanoid",
+          "research",
+          "university",
+          "evaluate"
+        ],
+        "facts_to_verify": [
+          "compute",
+          "DOF",
+          "payload",
+          "price",
+          "SDK"
+        ],
+        "status": "pilot",
+        "price_source": "https://robotist.com.au/products/limx-oli.html"
+      },
+      {
+        "model": "ADAM U",
+        "slug": "adam-u-what-45k-buys-in-a-humanoid-lab",
+        "product": "/products/adam-u.html",
+        "wave": 2,
+        "title_seed": "ADAM U: what USD 45,000 buys in a humanoid lab platform",
+        "query": "PNDbotics ADAM U price",
+        "angle": "The lowest full-size price on the shelf. What the money covers, what it leaves out, and the first experiment it makes possible.",
+        "buyer": "University lab",
+        "price": "USD 45,000",
+        "tags": [
+          "humanoid",
+          "research",
+          "university",
+          "buy"
+        ],
+        "facts_to_verify": [
+          "price",
+          "DOF",
+          "compute",
+          "payload",
+          "support"
+        ],
+        "status": "inventory"
+      },
+      {
+        "model": "PNDbotics ADAM SP",
+        "slug": "adam-sp-modular-actuators-five-year-cost",
+        "product": "/products/pndbotics-adam.html",
+        "wave": 2,
+        "title_seed": "ADAM SP: modular actuators and the five-year repair bill",
+        "query": "PNDbotics ADAM SP price and specifications",
+        "angle": "41 degrees of freedom built on swappable actuators. What repairability is worth over five years, and which failures a lab can fix itself.",
+        "buyer": "University lab, integrator",
+        "price": "quote (WDP on request)",
+        "tags": [
+          "humanoid",
+          "research",
+          "plant-engineer",
+          "maintain"
+        ],
+        "facts_to_verify": [
+          "price",
+          "actuator swap procedure",
+          "DOF",
+          "weight"
+        ],
+        "status": "inventory"
+      },
+      {
+        "model": "MagicBot G1",
+        "slug": "magicbot-g1-general-purpose-pilot",
+        "product": "/products/magiclab-magicbot-g1.html",
+        "wave": 2,
+        "title_seed": "MagicBot G1: general-purpose is a promise — here is the pilot that tests it",
+        "query": "MagicLab MagicBot G1 price",
+        "angle": "What a general-purpose humanoid has to prove in 90 days before a plant signs anything, and the three tasks worth starting with.",
+        "buyer": "Plant engineer, integrator",
+        "price": "quote (WDP on request)",
+        "tags": [
+          "humanoid",
+          "research",
+          "plant-engineer",
+          "deploy"
+        ],
+        "facts_to_verify": [
+          "price",
+          "payload",
+          "runtime",
+          "safety certification"
+        ],
+        "status": "inventory",
+        "note": "defer — needs pilot evidence"
+      },
+      {
+        "model": "AGIBOT X2 Ultra",
+        "slug": "agibot-x2-half-size-venue-case",
+        "product": "/products/agibot-x2.html",
+        "wave": 2,
+        "title_seed": "AGIBOT X2 Ultra: the half-size humanoid and the venue case",
+        "query": "AGIBOT X2 Ultra price",
+        "angle": "At USD 49,999 it lands in venues and retail before factories. What half-size solves, and the interactions it still fumbles.",
+        "buyer": "Venue operator, retail",
+        "price": "USD 49,999",
+        "tags": [
+          "humanoid",
+          "interaction",
+          "venue",
+          "buy"
+        ],
+        "facts_to_verify": [
+          "price",
+          "DOF",
+          "runtime",
+          "payload",
+          "safety"
+        ],
+        "status": "inventory",
+        "note": "later — pair with event-experience content"
+      },
+      {
+        "model": "AGIBOT A3 Ultra",
+        "slug": "agibot-a3-what-110k-must-earn",
+        "product": "/products/agibot-a3.html",
+        "wave": 2,
+        "title_seed": "AGIBOT A3 Ultra: what a USD 109,999 humanoid must earn each month",
+        "query": "AGIBOT A3 Ultra price",
+        "angle": "The top of the shelf. The article works backwards from the price to the hours, the tasks and the payback a buyer has to see.",
+        "buyer": "Plant engineer, large integrator",
+        "price": "USD 109,999",
+        "tags": [
+          "humanoid",
+          "research",
+          "plant-engineer",
+          "buy"
+        ],
+        "facts_to_verify": [
+          "price",
+          "payload",
+          "runtime",
+          "deployment evidence"
+        ],
+        "status": "inventory",
+        "note": "defer — needs deployment-readiness evidence"
+      },
+      {
+        "model": "Kepler S-PE BumbleBee",
+        "slug": "kepler-bumblebee-onboard-compute-research",
+        "product": "/products/kepler-spe-bumblebee.html",
+        "wave": 2,
+        "title_seed": "Kepler BumbleBee: onboard compute versus a tethered rig",
+        "query": "Kepler BumbleBee humanoid robot price",
+        "angle": "30 degrees of freedom and 100 TOPS in the body. When onboard compute beats a workstation on a cable, and what it costs in battery.",
+        "buyer": "University lab",
+        "price": "USD 88,000",
+        "tags": [
+          "humanoid",
+          "research",
+          "university",
+          "evaluate"
+        ],
+        "facts_to_verify": [
+          "price",
+          "compute",
+          "runtime",
+          "SDK"
+        ],
+        "status": "inventory"
+      },
+      {
+        "model": "Unix Panther",
+        "slug": "unix-panther-wheels-versus-legs-indoors",
+        "product": "/products/unix-ai-panther.html",
+        "wave": 3,
+        "title_seed": "UniX AI Panther: wheels, 16 hours, and the case against legs indoors",
+        "query": "UniX AI Panther robot price",
+        "angle": "34 degrees of freedom on a wheeled base with a 16-hour battery. Where indoor work rewards wheels, and what a wheeled humanoid cannot reach.",
+        "buyer": "Facility manager, integrator",
+        "price": "quote (WDP on request)",
+        "tags": [
+          "wheeled-humanoid",
+          "research",
+          "facility-manager",
+          "evaluate"
+        ],
+        "facts_to_verify": [
+          "price",
+          "runtime",
+          "payload",
+          "DOF"
+        ],
+        "status": "inventory"
+      },
+      {
+        "model": "Unix Wanda 2.0",
+        "slug": "unix-wanda-teleoperation-first-deployment",
+        "product": "/products/unix-ai-wanda.html",
+        "wave": 3,
+        "title_seed": "UniX AI Wanda 2.0: teleoperation as the first deployment",
+        "query": "UniX Wanda 2.0 teleoperation",
+        "angle": "Quest 3S control turns a humanoid into a remote worker. What that changes for staffing, and the tasks where latency still shows.",
+        "buyer": "Facility manager, integrator",
+        "price": "quote (WDP on request)",
+        "tags": [
+          "wheeled-humanoid",
+          "teleoperation",
+          "facility-manager",
+          "deploy"
+        ],
+        "facts_to_verify": [
+          "price",
+          "latency",
+          "runtime",
+          "DOF"
+        ],
+        "status": "inventory"
+      },
+      {
+        "model": "CASBOT 02 EDU",
+        "slug": "casbot-02-edu-what-students-break",
+        "product": "/products/casbot-02-edu.html",
+        "wave": 3,
+        "title_seed": "CASBOT 02 EDU: what students break, and what repairs cost",
+        "query": "CASBOT 02 EDU price",
+        "angle": "A full-size biped for teaching at USD 69,000. The failure modes a lab actually hits, and the spares a course needs on the shelf.",
+        "buyer": "University lab",
+        "price": "USD 69,000",
+        "tags": [
+          "humanoid",
+          "education",
+          "university",
+          "maintain"
+        ],
+        "facts_to_verify": [
+          "price",
+          "spares list",
+          "DOF",
+          "safety"
+        ],
+        "status": "inventory"
+      },
+      {
+        "model": "AGIBOT D1 EDU",
+        "slug": "agibot-d1-what-7999-includes",
+        "product": "/products/agibot-d1.html",
+        "wave": 3,
+        "title_seed": "AGIBOT D1 EDU: what USD 7,999 includes, and what it does not",
+        "query": "AGIBOT D1 EDU quadruped price",
+        "angle": "The cheapest legged platform we list. An honest package list: what arrives, what the course still has to buy, and the labs it can carry.",
+        "buyer": "School, university, STEM programme",
+        "price": "USD 7,999",
+        "tags": [
+          "quadruped",
+          "education",
+          "university",
+          "buy"
+        ],
+        "facts_to_verify": [
+          "price",
+          "included accessories",
+          "SDK",
+          "runtime"
+        ],
+        "status": "inventory"
+      },
+      {
+        "model": "Genisom L1",
+        "slug": "genisom-l1-endurance-research",
+        "product": "/products/genisom-l1.html",
+        "wave": 3,
+        "title_seed": "Genisom L1: designing a study around a six-kilometre walk",
+        "query": "Genisom L1 robot price",
+        "angle": "A compact research quadruped with a 6 km range. What endurance buys in field studies, and the payload it trades away.",
+        "buyer": "University lab",
+        "price": "quote (WDP on request)",
+        "tags": [
+          "quadruped",
+          "research",
+          "university",
+          "evaluate"
+        ],
+        "facts_to_verify": [
+          "price",
+          "range",
+          "payload",
+          "API"
+        ],
+        "status": "inventory",
+        "note": "combine with Genisom L1 EDU"
+      },
+      {
+        "model": "Genisom L1 EDU",
+        "slug": "genisom-l1-edu-curriculum-worth",
+        "product": "/products/genisom-l1-edu.html",
+        "wave": 3,
+        "title_seed": "Genisom L1 EDU: what a curriculum package is actually worth",
+        "query": "Genisom L1 EDU robotics kit",
+        "angle": "A teaching quadruped shipped with lab modules. When the curriculum saves a term of preparation, and when a lab writes its own anyway.",
+        "buyer": "University lab, education buyer",
+        "price": "quote (WDP on request)",
+        "tags": [
+          "quadruped",
+          "education",
+          "university",
+          "buy"
+        ],
+        "facts_to_verify": [
+          "price",
+          "curriculum contents",
+          "DOF",
+          "support"
+        ],
+        "status": "inventory",
+        "note": "combine with Genisom L1"
+      },
+      {
+        "model": "CASBOT 4 Piece Band",
+        "slug": "casbot-four-piece-band-fleet-economics",
+        "product": "/products/casbot-4-piece-band.html",
+        "wave": 3,
+        "title_seed": "CASBOT 4 Piece Band: the economics of a four-robot performance fleet",
+        "query": "robot band for corporate events",
+        "angle": "Four coordinated humanoids at USD 333,000. What a venue books, what a show costs to run, and what happens when one robot is down.",
+        "buyer": "Venue operator, show producer",
+        "price": "USD 333,000",
+        "tags": [
+          "humanoid",
+          "interaction",
+          "venue",
+          "buy"
+        ],
+        "facts_to_verify": [
+          "price",
+          "coordination software",
+          "runtime",
+          "spares"
+        ],
+        "status": "inventory",
+        "note": "opportunistic — narrow buyer pool"
+      },
+      {
+        "model": "Fourier GR-3",
+        "slug": "fourier-gr3-what-a-12-dof-hand-enables-in-care",
+        "product": "/products/fourier-gr-3.html",
+        "wave": 4,
+        "title_seed": "Fourier GR-3: what a 12-DOF hand actually enables in care",
+        "query": "Fourier GR-3 humanoid robot price",
+        "angle": "55 degrees of freedom, dexterous hands and an emotion engine, built for care. Which care tasks it can hold, and which still need a person.",
+        "buyer": "Care provider, hospital",
+        "price": "quote (WDP on request)",
+        "tags": [
+          "humanoid",
+          "interaction",
+          "care-provider",
+          "evaluate"
+        ],
+        "facts_to_verify": [
+          "price",
+          "hand payload",
+          "safety certification",
+          "runtime"
+        ],
+        "status": "inventory"
+      },
+      {
+        "model": "DroidUp Moya",
+        "slug": "droidup-moya-preorder-questions",
+        "product": "/products/droidup-moya.html",
+        "wave": 4,
+        "title_seed": "DroidUp Moya: the questions to ask before pre-ordering a companion humanoid",
+        "query": "DroidUp Moya price and availability",
+        "angle": "Announced, not yet shipping. What an unreleased platform has to answer on support, firmware and spares before anyone pays a deposit.",
+        "buyer": "Venue operator, collector, showroom",
+        "price": "coming soon",
+        "tags": [
+          "humanoid",
+          "interaction",
+          "venue",
+          "evaluate"
+        ],
+        "facts_to_verify": [
+          "release date",
+          "price",
+          "support terms",
+          "warranty"
+        ],
+        "status": "inventory",
+        "note": "hold — coming-soon, no commercial availability"
+      },
+      {
+        "model": "Tangible Future Xiaoling 3.0",
+        "slug": "xiaoling-3-what-a-5000-head-does-in-a-venue",
+        "product": "/products/tangible-future-xiaoling-3.html",
+        "wave": 4,
+        "title_seed": "Xiaoling 3.0: what a USD 5,000 expressive head does in a venue",
+        "query": "Xiaoling 3.0 robot head price",
+        "angle": "A compact expressive head at USD 5,000. Where it earns its place at a reception or an exhibition, and what it cannot do without a body.",
+        "buyer": "Venue operator, museum",
+        "price": "USD 5,000",
+        "tags": [
+          "companion-head",
+          "interaction",
+          "venue",
+          "buy"
+        ],
+        "facts_to_verify": [
+          "price",
+          "DOF",
+          "voice stack",
+          "integration"
+        ],
+        "status": "inventory"
+      },
+      {
+        "model": "LDTech Intelligent Head",
+        "slug": "ldtech-head-9-dof-kiosk-alternative",
+        "product": "/products/ldtech-intelligent-head.html",
+        "wave": 4,
+        "title_seed": "LDTech Intelligent Head: a USD 6,000 answer to the kiosk",
+        "query": "LDTech interactive robot head price",
+        "angle": "Nine degrees of freedom and a voice stack at USD 6,000. When an expressive head beats a screen, and the integration work it needs.",
+        "buyer": "Venue operator, integrator",
+        "price": "USD 6,000",
+        "tags": [
+          "companion-head",
+          "interaction",
+          "venue",
+          "evaluate"
+        ],
+        "facts_to_verify": [
+          "price",
+          "DOF",
+          "SDK",
+          "voice stack"
+        ],
+        "status": "inventory"
+      },
+      {
+        "model": "iSAGE STAR-SageMan",
+        "slug": "isage-sageman-four-arms-versus-four-cells",
+        "product": "/products/isage-star-sageman.html",
+        "wave": 4,
+        "title_seed": "iSAGE SageMan: four arms against four workstations",
+        "query": "iSAGE STAR-SageMan robot specifications",
+        "angle": "Plus or minus 0.03 mm repeatability on four arms. When one machine beats four cells, and what the integration still costs.",
+        "buyer": "Plant engineer, quality manager",
+        "price": "quote (WDP on request)",
+        "tags": [
+          "industrial-arm",
+          "quality-control",
+          "plant-engineer",
+          "buy"
+        ],
+        "facts_to_verify": [
+          "price",
+          "repeatability",
+          "throughput",
+          "integration cost"
+        ],
+        "status": "inventory"
+      },
+      {
+        "model": "Qisheng D2",
+        "slug": "qisheng-d2-compact-cell-footprint",
+        "product": "/products/qisheng-d2.html",
+        "wave": 4,
+        "title_seed": "Qisheng D2: throughput per square metre in a compact cell",
+        "query": "Qisheng D2 pick and place robot",
+        "angle": "A precision workstation for pick-and-place and inspection. What a compact footprint saves, and where the integration bill lands.",
+        "buyer": "Plant engineer, integrator",
+        "price": "quote (WDP on request)",
+        "tags": [
+          "industrial-arm",
+          "quality-control",
+          "plant-engineer",
+          "evaluate"
+        ],
+        "facts_to_verify": [
+          "price",
+          "cycle time",
+          "payload",
+          "integration"
+        ],
+        "status": "inventory",
+        "note": "verify first — page exists but the model is not listed in the homepage catalogue"
+      }
+    ]
+  },
+  "preflight": [
+    {
+      "task": "Reconcile catalogue to the live 24 models",
+      "status": "open"
+    },
+    {
+      "task": "Stand up the pricing database with configuration, offer type and last-checked date",
+      "status": "open"
+    },
+    {
+      "task": "Fact registry with fact IDs and evidence status",
+      "status": "open"
+    },
+    {
+      "task": "Title checker consuming the structured claim list",
+      "status": "open"
+    },
+    {
+      "task": "Lead attribution from article slug to inquiry form",
+      "status": "open"
+    }
+  ],
+  "seo": {
+    "workflow": "docs/SEO-WORKFLOW.md",
+    "data": "docs/seo-keywords.json",
+    "finding": "Robotist ranks for no non-branded query tested (0/6); it ranks 2nd only for 'robotist gausium phantas'.",
+    "layers": [
+      {
+        "layer": "1. money pages",
+        "count": 24,
+        "target": "<model> price · <model> australia · <model> review",
+        "note": "Extend the existing product page. Delivered price, availability, lead time, warranty, support. This is where price belongs."
+      },
+      {
+        "layer": "2. australian job pages",
+        "count": 12,
+        "target": "commercial cleaning robots australia · hotel housekeeping robots · quadruped inspection robots australia",
+        "note": "The resellers' turf, answered with stock, prices and landed cost."
+      },
+      {
+        "layer": "3. comparison pages",
+        "count": 8,
+        "target": "<a> vs <b>",
+        "note": "What AI answer engines cite; robots.txt already allows GPTBot, PerplexityBot, ClaudeBot."
+      },
+      {
+        "layer": "4. editorial and signals",
+        "count": 42,
+        "target": "distribution and links",
+        "note": "Twelve-pattern titles. Credibility, not ranking."
+      },
+      {
+        "layer": "5. answer layer",
+        "count": "every page",
+        "target": "direct answer in the first 60 words, spec table with conditions, FAQ schema matching visible text",
+        "note": "Writable by AI engines without invention."
+      }
+    ],
+    "title_rule": "Titles lead with the decision, the constraint or the misconception. Money is never the subject of an article: a price may appear as a fact inside a sentence, never as the frame, the title, or a table of figures.",
+    "priority_rule": "Intent and SERP gap set priority. No keyword-volume API exists on this machine, so no volumes are quoted anywhere.",
+    "kpi": "Impressions and average position on the target query at 14/30/60 days, plus qualified inquiries attributed to the slug. Traffic is diagnostic only."
+  },
+  "money_pages": [
+    {
+      "page": "/products/<model>.html",
+      "scope": "all 24 stocked models",
+      "must_carry": [
+        "published price or a stated quote path with the reason",
+        "Australian availability and lead time",
+        "warranty and support route",
+        "what is included and what is not",
+        "spec table with operating conditions",
+        "direct answer in the first 60 words"
+      ]
+    }
+  ]
+}

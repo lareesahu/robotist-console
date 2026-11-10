@@ -1,0 +1,88 @@
+{
+  "project": "robotist",
+  "version": 5,
+  "created": "2026-11-03",
+  "supersedes": "v4 — 42-article calendar built on invented titles (archived: docs/archive/blog-plan-v4-20261103.json)",
+  "basis": "Live Google Autocomplete en-AU (15 seeds, 131 queries, 2026-11-03) + catalogue of 26 robots from /api/catalogue + SERP shape checked per target.",
+  "inventory": {"humanoid": 14, "quadruped": 6, "companion": 3, "cleaning": 2, "industrial": 1},
+  "rules": {
+    "titles": "The first three words must be the target query, taken verbatim from autocomplete.",
+    "money": "Price is never the subject. A figure may appear as a fact inside a sentence, never in a table.",
+    "publish": "Drafts into the manager only. Lareesa publishes.",
+    "links": "Every article links 2+ product pages and carries 3+ FAQ entries.",
+    "measure": "Impressions and average position on the target query at 14, 30 and 60 days."
+  },
+  "pillars": [
+    {
+      "id": "clean",
+      "name": "Commercial cleaning",
+      "hub": "commercial cleaning robots australia",
+      "skus": ["gausium-phantas", "keenon-c40-p1"],
+      "articles": [
+        {"n": 1, "target": "commercial cleaning robots australia", "title": "Commercial Cleaning Robots Australia: The First 30 Days", "slug": "commercial-cleaning-robots-australia", "stage": "decision", "angle": "What changes on site in month one: the night round, edges, the inspection that decides clean."},
+        {"n": 2, "target": "floor scrubber robot", "title": "Floor Scrubber Robot: Which Model Fits Which Floor", "slug": "floor-scrubber-robot-which-floor", "stage": "consideration", "angle": "Scrubber, sweeper, combo; deck width; the floors that break each one."},
+        {"n": 3, "target": "are cleaning robots worth it", "title": "Are Cleaning Robots Worth It: Three Tests Before You Buy", "slug": "are-cleaning-robots-worth-it", "stage": "awareness", "angle": "Labour shape, floor regularity, night supervision."},
+        {"n": 4, "target": "floor cleaning robot australia", "title": "Floor Cleaning Robot Australia: Hotels, Airports and Malls", "slug": "floor-cleaning-robot-australia", "stage": "consideration", "angle": "What each building type demands from the machine and the route."},
+        {"n": 5, "target": "gausium phantas mapping", "title": "Gausium Phantas Mapping: How the Robot Learns Your Floor", "slug": "gausium-phantas-mapping", "stage": "decision", "angle": "First mapping run, what it records, what it misses, how to correct it."},
+        {"n": 6, "target": "keenon c40 datasheet", "title": "Keenon C40 Datasheet: What the Numbers Do Not Say", "slug": "keenon-c40-datasheet", "stage": "decision", "angle": "Runtime down to mode and tank state; the sheet assumes a clean floor."},
+        {"n": 7, "target": "robots that clean", "title": "Robots That Clean: Where They Stop and People Start", "slug": "robots-that-clean-where-they-stop", "stage": "awareness", "angle": "The human edges: cubicles, spills, judgement, inspection."}
+      ]
+    },
+    {
+      "id": "humanoid",
+      "name": "Humanoids",
+      "hub": "humanoid robot",
+      "skus": ["luna-limx", "fourier-gr-3", "agibot-x2", "limx-oli", "pndbotics-adam"],
+      "articles": [
+        {"n": 8, "target": "humanoid robot university", "title": "Humanoid Robot for University Labs: What to Buy First", "slug": "humanoid-robot-university-labs", "stage": "decision", "angle": "Research platform versus demo unit: SDK, payload, serviceability, spares."},
+        {"n": 9, "target": "humanoid robot research", "title": "Humanoid Robot Research: Six Projects One Platform Unlocks", "slug": "humanoid-robot-research-projects", "stage": "awareness", "angle": "Manipulation, locomotion, interaction, teleoperation, datasets, teaching."},
+        {"n": 10, "target": "human robot interaction research", "title": "Human Robot Interaction Research: Design the Study Before the Robot", "slug": "human-robot-interaction-research", "stage": "awareness", "angle": "Protocol, consent, environment, and what the platform must expose."},
+        {"n": 11, "target": "how much does it cost to build a humanoid robot", "title": "How Much Does It Cost to Build a Humanoid Robot", "slug": "cost-to-build-a-humanoid-robot", "stage": "consideration", "angle": "Actuators, hands, batteries, and the integration time nobody budgets."},
+        {"n": 12, "target": "humanoid robot examples", "title": "Humanoid Robot Examples: What Each One Is Actually For", "slug": "humanoid-robot-examples", "stage": "awareness", "angle": "Model-by-model purpose: research, retail, teleoperation, performance."},
+        {"n": 13, "target": "humanoid robot jobs", "title": "Humanoid Robot Jobs: Roles That Appear After Deployment", "slug": "humanoid-robot-jobs", "stage": "awareness", "angle": "Operators, maintainers, data stewards, safety officers."},
+        {"n": 14, "target": "humanoid robot price", "title": "Humanoid Robot Price: What Moves the Number", "slug": "humanoid-robot-price-what-moves-it", "stage": "consideration", "angle": "Degrees of freedom, hands, battery, sensors, support. No table of figures."}
+      ]
+    },
+    {
+      "id": "quadruped",
+      "name": "Quadrupeds",
+      "hub": "quadruped robot",
+      "skus": ["magiclab-magicdog-y1", "magiclab-magicdog", "agibot-d1-edu", "genisom-m1"],
+      "articles": [
+        {"n": 15, "target": "inspection robot dog", "title": "Inspection Robot Dog: What a Patrol Round Actually Tests", "slug": "inspection-robot-dog-patrol-round", "stage": "decision", "angle": "Routes, waypoints, thermal, report output, and the failure that matters."},
+        {"n": 16, "target": "quadruped robot dog", "title": "Quadruped Robot Dog: Six Models and Who Each One Suits", "slug": "quadruped-robot-dog-models", "stage": "consideration", "angle": "Payload, stairs, runtime, ingress protection, SDK, matched to buyer type."},
+        {"n": 17, "target": "quadruped robot kit", "title": "Quadruped Robot Kit: Teaching vs Research Buying", "slug": "quadruped-robot-kit-teaching-research", "stage": "consideration", "angle": "EDU kits, repairability, documentation, class size."},
+        {"n": 18, "target": "quadruped robot price", "title": "Quadruped Robot Price: Four Decisions That Set It", "slug": "quadruped-robot-price-decisions", "stage": "consideration", "angle": "Payload class, sensor load, ingress protection, support tier."},
+        {"n": 19, "target": "how much is a robot dog", "title": "How Much Is a Robot Dog: What Each Step Buys", "slug": "how-much-is-a-robot-dog", "stage": "awareness", "angle": "Toy, education, industrial, and the jump between them."},
+        {"n": 20, "target": "what is a robot dog", "title": "What Is a Robot Dog: the Capability Line People Miss", "slug": "what-is-a-robot-dog", "stage": "awareness", "angle": "Legs versus wheels, terrain, why quadrupeds exist."}
+      ]
+    },
+    {
+      "id": "service",
+      "name": "Service and delivery",
+      "hub": "service robot",
+      "skus": ["keenon-c40-p1", "gausium-phantas", "droidup-moya"],
+      "articles": [
+        {"n": 21, "target": "service robot", "title": "Service Robot: What Actually Runs After the Demo", "slug": "service-robot-after-the-demo", "stage": "consideration", "angle": "Uptime, spares, consumables, staff training."},
+        {"n": 22, "target": "delivery robots australia", "title": "Delivery Robots Australia: Indoor, Outdoor, and the Line", "slug": "delivery-robots-australia", "stage": "consideration", "angle": "Lifts, doors, weather, footpaths, insurance."},
+        {"n": 23, "target": "restaurant service robot", "title": "Restaurant Service Robot: the Floor Plan Decides", "slug": "restaurant-service-robot-floor-plan", "stage": "decision", "angle": "Aisle width, tray stability, pickup windows, guest path."},
+        {"n": 24, "target": "hotel delivery robot", "title": "Hotel Delivery Robot: Lifts, Privacy and the Night Desk", "slug": "hotel-delivery-robot", "stage": "decision", "angle": "Integration, guest handling, exceptions."},
+        {"n": 25, "target": "service robots examples", "title": "Service Robots Examples: Six Deployments That Hold Up", "slug": "service-robots-examples", "stage": "awareness", "angle": "Cleaning, delivery, patrol, inspection, hospitality, lab."}
+      ]
+    },
+    {
+      "id": "buy",
+      "name": "Buying in Australia",
+      "hub": "how to buy commercial robot australia",
+      "skus": [],
+      "articles": [
+        {"n": 26, "target": "how to buy commercial robot australia", "title": "How to Buy a Commercial Robot in Australia: the Sequence", "slug": "how-to-buy-commercial-robot-australia", "stage": "decision", "angle": "Brief, trial, site survey, finance, support, sign-off."},
+        {"n": 27, "target": "robot hire australia", "title": "Robot Hire Australia: When Renting Beats Owning", "slug": "robot-hire-australia", "stage": "consideration", "angle": "Seasonal demand, pilots, capital timing."},
+        {"n": 28, "target": "autonomous mobile robots", "title": "Autonomous Mobile Robots: the Vocabulary Buyers Get Wrong", "slug": "autonomous-mobile-robots-vocabulary", "stage": "awareness", "angle": "AMR, AGV, cobot, humanoid, and where each fits."},
+        {"n": 29, "target": "warehouse robot cleaner", "title": "Warehouse Robot Cleaner: Dust, Pallet Gaps, Night Windows", "slug": "warehouse-robot-cleaner", "stage": "decision", "angle": "Warehouse floors are not lobbies."},
+        {"n": 30, "target": "inspection robot price", "title": "Inspection Robot Price: Sensors Set the Number", "slug": "inspection-robot-price", "stage": "consideration", "angle": "Thermal, LiDAR, acoustic, and what each adds to the round."}
+      ]
+    }
+  ],
+  "article_count": 30
+}

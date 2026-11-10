@@ -1,0 +1,1910 @@
+{
+  "collected": "2026-11-03",
+  "locale": "en-AU",
+  "source": "Google Autocomplete (suggestqueries), 32 seed terms",
+  "total_queries": 301,
+  "clusters": {
+    "model": 101,
+    "job": 96,
+    "category": 85,
+    "au-category": 6,
+    "research": 13
+  },
+  "price_intent": 34,
+  "serp_audit": [
+    {
+      "query": "gausium phantas",
+      "robotist_ranked": false,
+      "who_ranks": [
+        "gausium.com",
+        "taski.com",
+        "future-machines.com",
+        "gausium.co.nz",
+        "robocorpus.be",
+        "easytoclean.co",
+        "okmbot.de"
+      ]
+    },
+    {
+      "query": "robotist gausium phantas",
+      "robotist_ranked": true,
+      "position": 2,
+      "note": "branded only"
+    },
+    {
+      "query": "keenon c40 robot australia",
+      "robotist_ranked": false,
+      "who_ranks": [
+        "robotcobot.com.au",
+        "robotsquare.com.au",
+        "optima-robotics.com",
+        "hit-equipment.com.au",
+        "industrial-robotics.com.au"
+      ]
+    },
+    {
+      "query": "commercial cleaning robot australia price",
+      "robotist_ranked": false,
+      "who_ranks": [
+        "robo-tek.com.au",
+        "workplacerobotics.com.au",
+        "intellicleanrobotics.com.au",
+        "robotspecialist.com.au",
+        "aussierobots.com",
+        "robobuddy.com.au"
+      ]
+    },
+    {
+      "query": "humanoid robot for university research",
+      "robotist_ranked": false,
+      "who_ranks": [
+        "nexthumanoid.com",
+        "originofbots.com",
+        "humanoidhub.ai",
+        "researchgate.net"
+      ]
+    },
+    {
+      "query": "quadruped robot inspection price",
+      "robotist_ranked": false,
+      "who_ranks": [
+        "robotpriceindex.com",
+        "robostore.com",
+        "althumans.com",
+        "chinatechfrontier.com",
+        "botsmarket.com"
+      ]
+    },
+    {
+      "query": "robot for hotel housekeeping australia",
+      "robotist_ranked": false,
+      "who_ranks": [
+        "quantumrobotics.com.au",
+        "robotx.au",
+        "technology4hotels.com.au",
+        "automaate.au",
+        "robotsquare.com.au"
+      ]
+    }
+  ],
+  "serp_patterns": [
+    "International price-index sites own model + price queries (robotpriceindex, bigbotstore, botsmarket).",
+    "Australian resellers own category + australia queries (robo-tek, workplacerobotics, robotx, quantumrobotics, automaate, robotsquare, robotcobot).",
+    "No Australian seller owns model + price + australia — the gap."
+  ],
+  "technical": {
+    "sitemap_urls": 58,
+    "blog_urls_in_sitemap": 13,
+    "robots": "open to GPTBot, PerplexityBot, ClaudeBot, Google-Extended, Bingbot",
+    "site_query_surfacing": 7
+  },
+  "limits": "No keyword-volume API is configured on this machine, so priority is set by intent and by the competition gap seen in the SERP, not by invented search volumes.",
+  "queries": [
+    {
+      "query": "agibot a3",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "agibot a3 buy",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "agibot a3 humanoid",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "agibot a3 humanoid robot",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "agibot a3 kung fu",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "agibot a3 price",
+      "cluster": "model",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "agibot a3 robot",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "agibot a3 sdk",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "agibot a3 ultra",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "agibot a3 ultra price",
+      "cluster": "model",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "ai reception robot",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "ai robot for hotel",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "autonomous mobile robot price",
+      "cluster": "category",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "autonomous mobile robot project",
+      "cluster": "research",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "autonomous mobile robotics worldskills",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "autonomous mobile robots",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "autonomous mobile robots (amrs)",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "autonomous mobile robots book",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "autonomous mobile robots companies",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "autonomous mobile robots examples",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "autonomous mobile robots for exploratory synthetic chemistry",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "autonomous mobile robots pdf",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "casbot 02",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "cleaning robot",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "cleaning robot australia",
+      "cluster": "au-category",
+      "price_intent": false,
+      "geo_au": true
+    },
+    {
+      "query": "cleaning robot humanoid",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "cleaning robot india",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "cleaning robot names",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "cleaning robot price",
+      "cluster": "job",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "cleaning robot price in bd",
+      "cluster": "job",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "cleaning robot price in china",
+      "cluster": "job",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "cleaning robot price in dubai",
+      "cluster": "job",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "cleaning robot price in india",
+      "cluster": "job",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "cleaning robot price in kerala",
+      "cluster": "job",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "cleaning robot price in nepal",
+      "cluster": "job",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "cleaning robot price in pakistan",
+      "cluster": "job",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "cleaning robot price in qatar",
+      "cluster": "job",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "cleaning robot price in sri lanka",
+      "cluster": "job",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "cleaning robot vacuum",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "cleaning robot wall-e",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "cleaning robot with mop",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "cleaning robot with mop india",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "cleaning robots for home",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "cobot",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "cobot australia",
+      "cluster": "au-category",
+      "price_intent": false,
+      "geo_au": true
+    },
+    {
+      "query": "cobot meaning",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "cobot palletiser",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "cobot pty ltd",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "cobot robot",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "cobot welder",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "cobot welding",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "cobotics",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "coboticz",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "commercial cleaning robot india",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "commercial cleaning robot malaysia",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "commercial cleaning robot price",
+      "cluster": "job",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "commercial cleaning robot singapore",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "commercial cleaning robot uk",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "commercial cleaning robot vacuum",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "commercial cleaning robots australia",
+      "cluster": "au-category",
+      "price_intent": false,
+      "geo_au": true
+    },
+    {
+      "query": "commercial cleaning robots canada",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "commercial cleaning robots for sale",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "commercial cleaning robots market",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "cost of cleaning robot",
+      "cluster": "job",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "delivery robot",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "delivery robot drives off pier",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "delivery robot fails",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "delivery robot for hotel",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "delivery robot hit by train",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "delivery robot off pier",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "delivery robot us",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "delivery robots america",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "delivery robots australia",
+      "cluster": "au-category",
+      "price_intent": false,
+      "geo_au": true
+    },
+    {
+      "query": "delivery robots gold coast",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "delivery robots los angeles",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "droidup moya",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "droidup moya for sale",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "droidup moya humanoid robot",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "droidup moya price",
+      "cluster": "model",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "droidup moya reddit",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "droidup moya robot",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "droidup moya robot body heat",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "droidup moya robot features",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "droidup moya robot price",
+      "cluster": "model",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "droidup moya video",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "fourier gr 2 gr 3",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "fourier gr 3 humanoid robot",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "fourier gr 3 price",
+      "cluster": "model",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "fourier gr 3 robot",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "fourier gr-3",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "fourier gr-3 care-bot",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "fourier gr-3c",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "fourier intelligence gr 3",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "gausium phantas",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "gausium phantas extra",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "gausium phantas manual",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "gausium phantas mapping",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "gausium phantas price",
+      "cluster": "model",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "gausium phantas pro",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "gausium phantas robot",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "gausium phantas s1",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "gausium phantas video",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "gausium phantas workstation",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "genesis ai robot dog",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "genesome",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "genesomega",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "genisom",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "genisom ai",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "genisom ai l1",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "genisom l1",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "genisom m1",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "genisom robot",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "genome",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "hospitality robot price",
+      "cluster": "job",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "hospitality robots",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "hospitality robots companies",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "hospitality robots market",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "hospitality service robots",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "hotel cleaning machine",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "hotel cleaning robot",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "hotel floor cleaning robot",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "hotel housekeeping robot zerith h1",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "hotel housekeeping robots",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "hotel room cleaning robot",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "hotel vacuum robot",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "humanoid robot",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "humanoid robot australia",
+      "cluster": "au-category",
+      "price_intent": false,
+      "geo_au": true
+    },
+    {
+      "query": "humanoid robot fighting",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "humanoid robot fighting league",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "humanoid robot for sale",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "humanoid robot games",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "humanoid robot hospitality",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "humanoid robot olympics",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "humanoid robot price",
+      "cluster": "category",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "humanoid robots china",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "humanoid robots for sale now",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "inspection robot",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "inspection robot arm",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "inspection robot crawler",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "inspection robot dog",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "inspection robot market size",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "inspection robot price",
+      "cluster": "job",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "inspection robot with camera",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "inspection robotics in oil and gas industry",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "inspection robots for sale",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "inspection robots market",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "keenon c40",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "keenon c40 brochure",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "keenon c40 cleaning robot",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "keenon c40 datasheet",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "keenon c40 kleenbot",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "keenon c40 manual",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "keenon c40 price",
+      "cluster": "model",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "keenon c40 robot",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "keenon c40 video",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "keenon c40 workstation",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "lim x oil price",
+      "cluster": "category",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "limx oli",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "limx oli cost",
+      "cluster": "model",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "limx oli height",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "limx oli humanoid",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "limx oli humanoid robot",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "limx oli robot",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "limx oli robot price",
+      "cluster": "model",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "limx oli super",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "magic dog app",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "magic dog robot",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "magic dog sdk",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "magic dog y1",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "magicdog",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "magicdog github",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "magicdog magiclab",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "magicdog pro",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "magicdog w",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "magicdogs net reviews",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "magiclab magic dog",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "magiclab magic dog pro",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "magiclab magic dog-w",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "magiclab magicdog y1",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "majlis hospitality robot",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "mirokai hospitality robot",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "mobile reception robot",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "oli limx dynamics",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "pndbotics adam",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "pndbotics adam lite",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "pndbotics adam pro",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "pndbotics adam robot musician",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "pndbotics adam u",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "pndbotics adam-u ultra",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "quadruped robot",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "quadruped robot 3d model",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "quadruped robot design",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "quadruped robot dog",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "quadruped robot github",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "quadruped robot kit",
+      "cluster": "research",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "quadruped robot leg design",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "quadruped robot military",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "quadruped robot price",
+      "cluster": "category",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "quadruped robot project",
+      "cluster": "research",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "reception robot",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "reception robot japan",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "reception robot price",
+      "cluster": "job",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "receptionist robot",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "receptionist robot humanoid",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "receptionist robot price",
+      "cluster": "job",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "receptionist robot wall e",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "research robot ai",
+      "cluster": "research",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "research robot maintenance code",
+      "cluster": "research",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "research robotics",
+      "cluster": "research",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "research robotics ideas",
+      "cluster": "research",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "research robotics ideas for students",
+      "cluster": "research",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "research robotics jobs",
+      "cluster": "research",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "research robotics title",
+      "cluster": "research",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "research robotics title ideas",
+      "cluster": "research",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "research robotics topics",
+      "cluster": "research",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "research robots examples",
+      "cluster": "research",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "robot cleaner for hotels",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "robot dog",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "robot dog australia",
+      "cluster": "au-category",
+      "price_intent": false,
+      "geo_au": true
+    },
+    {
+      "query": "robot dog blooket",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "robot dog ekka",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "robot dog for adults",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "robot dog kmart",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "robot dog movie",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "robot dog toy",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "robot dog toy 2000s",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "robot dogs for sale",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "robot for hotel",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "robot for hotel cleaning",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "robot for hotel housekeeping",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "robot for hotel service",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "robot hotel tokyo",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "robot reception hotel",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "robot rental",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "robot rental for events",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "robot rental for events india",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "robot rental for events malaysia",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "robot rental for party",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "robot rental in india",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "robot rental malaysia",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "robot rental near me",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "robot rental singapore",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "robot rental uae",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "robot vacuum for hotels",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "robots for hotel industry",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "robots hospitality industry",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "room cleaning robot price",
+      "cluster": "job",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "service robot co",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "service robot picture",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "service robot price",
+      "cluster": "category",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "service robot vacuum",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "service robot vacuum reviews",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "service robotics stock",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "service robotime com",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "service robots",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "service robots examples",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "service robots images",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "telepresence robot",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "telepresence robot amazon",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "telepresence robot av1",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "telepresence robot cheap",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "telepresence robot diy",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "telepresence robot for sale",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "telepresence robot gif",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "telepresence robot price",
+      "cluster": "category",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "telepresence robot rental",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "telepresence robots in healthcare",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "unicorn robot",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "unicorn robot attack",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "unicorn robot attack 2",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "unicorn robot attack song",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "unicorn robot chicken",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "unicorn robot game",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "unicorn robot tokyo",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "unicorn robot toy",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "unicorn robot transformer",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "unicorn robotics companies",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "unix ai has unveiled panther",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "unix ai panther",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "unix ai panther buy",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "unix ai panther price",
+      "cluster": "model",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "unix ai panther review",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "unix ai panther robot",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "unix ai panther robot price",
+      "cluster": "model",
+      "price_intent": true,
+      "geo_au": false
+    },
+    {
+      "query": "unix ai panther series",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "unix ai's humanoid panther robot",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "warehouse robot cleaner",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "warehouse robot picker",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "warehouse robot project",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "warehouse robot vacuum",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "warehouse robotic automation",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "warehouse robotics associate",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "warehouse robotics stocks",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "warehouse robots",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "warehouse robots amazon",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "warehouse robots examples",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "what does miko robot do",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "what is miko robot",
+      "cluster": "category",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "xiaoling ai companion robot",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "xiaoling robot",
+      "cluster": "model",
+      "price_intent": false,
+      "geo_au": false
+    },
+    {
+      "query": "zerith robotics hospitality robots",
+      "cluster": "job",
+      "price_intent": false,
+      "geo_au": false
+    }
+  ]
+}
