@@ -3120,6 +3120,11 @@ body::after {
   .js-reveal .reveal { opacity: 1; transform: none; transition: none; }
 }
 
+/* No scripting at all: the content is the page, so show it. */
+@media (scripting: none) {
+  .js-reveal .reveal { opacity: 1; transform: none; }
+}
+
 /* Robot cards: staggered card entrance */
 .js-reveal .robot-card.reveal {
   opacity: 0;
@@ -5211,6 +5216,12 @@ revealEls.forEach(el => {
 });
 revealInView();
 window.addEventListener('load', () => { revealInView(); setTimeout(revealInView, 1200); });
+// Fail-safe: nothing may stay invisible. If a reveal never fires — observer missed,
+// page restored mid-scroll, jump link, slow device — the content below must still be there.
+setTimeout(() => {
+  document.querySelectorAll('.js-reveal .reveal:not(.visible)').forEach(el => el.classList.add('visible'));
+}, 2500);
+
 // Belt and braces: a scroll tick can never leave a section stuck invisible.
 let revealTick = false;
 window.addEventListener('scroll', () => {
