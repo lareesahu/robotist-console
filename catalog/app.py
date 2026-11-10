@@ -337,9 +337,11 @@ def create_app(config=None):
         try:
             with urllib.request.urlopen(upstream_request,timeout=60) as upstream:
                 return Response(upstream.read(),status=upstream.status,mimetype='application/json')
-        except urllib.error.HTTPError:
+        except urllib.error.HTTPError as error:
+            app.logger.warning('assistant upstream %s: %s', error.code, error.read().decode('utf-8','replace')[:300])
             return jsonify(error='The assistant is unavailable right now.'),502
-        except Exception:
+        except Exception as error:
+            app.logger.warning('assistant transport: %s', error)
             return jsonify(error='The assistant is unavailable right now.'),504
     app.config['MAX_CONTENT_LENGTH']=12*1024*1024
 
