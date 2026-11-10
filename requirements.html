@@ -780,6 +780,24 @@ img { max-width: 100%; height: auto; display: block; }
 }
 </style>
 <link rel="stylesheet" href="/mobile-usability.css">
+<style id="nav-industries-css">
+.nav-sub{position:relative}
+.nav-caret{display:inline-block;width:6px;height:6px;margin-left:8px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px);opacity:.55;transition:transform .18s ease}
+.nav-sub:hover .nav-caret,.nav-sub:focus-within .nav-caret{transform:rotate(-135deg) translateY(-2px);opacity:1}
+.nav-sub:hover .nav-sub-toggle,.nav-sub:focus-within .nav-sub-toggle{color:#F0F4F8}
+.nav-submenu{position:absolute;top:100%;left:-16px;padding:10px 10px 12px;min-width:290px;background:#0A131F;border:1px solid rgba(240,244,248,.13);border-radius:12px;box-shadow:0 26px 64px rgba(0,0,0,.62);opacity:0;visibility:hidden;transform:translateY(4px);transition:opacity .16s ease,transform .16s ease,visibility .16s;z-index:80}
+.nav-sub:hover .nav-submenu,.nav-sub:focus-within .nav-submenu{opacity:1;visibility:visible;transform:translateY(0)}
+.nav-submenu a{display:block;padding:10px 12px;border-radius:7px;text-decoration:none;font-size:14px;font-weight:500;line-height:1.35;color:#E6EDF4;min-height:0}
+.nav-submenu a span{display:block;margin-top:4px;font-size:12.5px;font-weight:400;letter-spacing:0;color:#9FB2C4;text-transform:none}
+.nav-submenu a:hover,.nav-submenu a:focus-visible{background:rgba(74,168,200,.13);color:#fff}
+@media (max-width:900px){
+  .nav-sub{width:100%}
+  .nav-caret{display:none}
+  .nav-submenu{position:static;opacity:1;visibility:visible;transform:none;min-width:0;padding:0 0 6px 14px;background:transparent;border:0;box-shadow:none}
+  .nav-submenu a{padding:7px 0;font-size:15px;color:#A9BACB}
+  .nav-submenu a span{display:none}
+}
+</style>
 </head>
 <body>
 
@@ -795,6 +813,16 @@ img { max-width: 100%; height: auto; display: block; }
   <ul class="nav-links">
     <li><a href="index.html#catalogue">Catalogue</a></li>
     <li><a href="index.html#services">Services</a></li>
+    <li class="nav-sub">
+      <a href="/industries/hotels.html" class="nav-sub-toggle" aria-haspopup="true" aria-expanded="false">Industries<span class="nav-caret" aria-hidden="true"></span></a>
+      <div class="nav-submenu" role="menu" aria-label="Industries">
+        <a role="menuitem" href="/industries/hotels.html">Hotels &amp; hospitality<span>Cleaning, delivery and guest service</span></a>
+        <a role="menuitem" href="/industries/facilities.html">Cleaning &amp; facilities<span>Contract cleaners, offices, venues</span></a>
+        <a role="menuitem" href="/industries/warehousing.html">Warehousing &amp; logistics<span>Floor care between shifts, inspection rounds</span></a>
+        <a role="menuitem" href="/industries/retail.html">Retail &amp; showrooms<span>Floors, customer help, stock-move projects</span></a>
+      </div>
+    </li>
+
     <li><a href="compare.html">Compare</a></li>
     <li><a href="/blog.html">Blog</a></li> <li><a href="about.html">About</a></li>
     <li><a href="contact.html">Contact</a></li>
@@ -1584,10 +1612,22 @@ reqForm.addEventListener('submit', function(event) {
   reqStatus.textContent = '';
 
   const formData = new FormData(form);
-  fetch('https://formspree.io/f/mnjevgjq', {
-    method: 'POST',
-    body: formData,
+  formData.append('form_kind', 'requirements');
+  fetch('/inquiry/token', {
+    credentials: 'same-origin',
     headers: { 'Accept': 'application/json' }
+  })
+  .then(response => response.ok ? response.json() : {})
+  .catch(() => ({}))
+  .then(tokenBody => {
+    if (tokenBody && tokenBody.token) { formData.append('submission_token', tokenBody.token); }
+    if (tokenBody && tokenBody.csrf) { formData.append('csrf', tokenBody.csrf); }
+    return fetch('/inquiries', {
+      method: 'POST',
+      body: formData,
+      credentials: 'same-origin',
+      headers: { 'Accept': 'application/json' }
+    });
   })
   .then(response => {
     if (response.ok) {
